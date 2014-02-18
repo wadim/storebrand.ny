@@ -4,75 +4,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    aws: grunt.file.readJSON('/Users/nils/grunt-aws.json'),
-    s3: {
-      options: {
-        key: '<%= aws.key %>',
-        secret: '<%= aws.secret %>',
-        bucket: 'stbdesign',
-        access: 'public-read',
-        region: 'eu-west-1',
-        headers: {
-          //
-        }
-      },
-      dev: {
-        options: {
-          encodePaths: false,
-          maxOperations: 4,
-          access: 'public-read'
-        },
-        upload: [
-          {
-            //verify: true, //check md5
-            src: 'js/dist/*.js',
-            dest: 'webmanual/js/dist/'
-          },
-          {
-            src: 'css/*',
-            dest: 'webmanual/css/'
-          },
-          {
-            src: '*.html',
-            dest: 'webmanual/'
-          },
-          {
-            src: 'images/*',
-            dest: 'webmanual/images/'
-          },
-          {
-            src: 'images/stb-sprites/*',
-            dest: 'webmanual/images/stb-sprites/'
-          },
-          {
-            src: 'images/stb-icons/*',
-            dest: 'webmanual/images/stb-icons/'
-          },
-          {
-            src: 'images/progressrow-lg/*',
-            dest: 'webmanual/images/progressrow-lg/'
-          },
-          {
-            src: 'images/progressrow-md/*',
-            dest: 'webmanual/images/progressrow-md/'
-          },
-          {
-            src: 'images/stb-icons/stb-slider/*',
-            dest: 'webmanual/images/stb-icons/stb-slider/'
-          },
-          {
-            src: 'fonts/*',
-            dest: 'webmanual/fonts/'
-          },
-          {
-            src: 'log/*.html',
-            dest: 'webmanual/log/'
-          }
-        ]
-      }
-    },
-
-
     spritesheet: {
 
       clickable130: {
@@ -275,10 +206,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
 
   // Default task
-  grunt.registerTask('sprites', ['spritesheet', 'recess', 'clean']);
-  grunt.registerTask('gitlog', ['shell']);
-
-  // do-it-all-task: sprite-gen, git-log, s3 upload
-  grunt.registerTask('publish', ['spritesheet', 'recess', 'clean', 'shell']);
-
-};
+  grunt.registerTask('default', ['spritesheet', 'recess', 'clean']);
+ };
