@@ -1,0 +1,21 @@
+
+.stb-box {
+
+  padding: 12px 10px 10px 10px;
+  margin-bottom: 20px;
+
+  // set a transparent border so all variants are same size:
+  border: 1px solid transparent;
+
+  // some boxes have borders:
+  &.stbcolor-support.fourth {
+    border: 1px solid @stb-support-color3;
+  }
+
+  // reset ul/ol padding inside boxes
+  ul.stb,ol.stb {
+    padding-bottom: 0;
+  }
+
+
+}

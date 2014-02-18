@@ -1,0 +1,48 @@
+      // Datepicker
+        
+        /* Norwegian initialisation for the jQuery UI date picker plugin. */
+        /* Written by Naimdjon Takhirov (naimdjon@gmail.com). */
+        $.datepicker.regional['no'] = {
+          closeText: 'Lukk',
+              prevText: '&laquo;Forrige',
+          nextText: 'Neste&raquo;',
+          currentText: 'I dag',
+              monthNames: ['Januar','Februar','Mars','April','Mai','Juni',
+              'Juli','August','September','Oktober','November','Desember'],
+              monthNamesShort: ['Jan','Feb','Mar','Apr','Mai','Jun',
+              'Jul','Aug','Sep','Okt','Nov','Des'],
+          dayNamesShort: ['Søn','Man','Tir','Ons','Tor','Fre','Lør'],
+          dayNames: ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'],
+          dayNamesMin: ['Sø','Ma','Ti','On','To','Fr','Lø'],
+          weekHeader: 'Uke',
+              dateFormat: 'dd.mm.yy',
+          firstDay: 1,
+          isRTL: false,
+          showMonthAfterYear: false,
+          yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['no']);
+
+        $('#datepicker').datepicker().children().show();
+        
+        $('#datepicker2').datepicker({
+           changeMonth: true,
+          changeYear: true,
+          showButtonPanel: true,
+          showOtherMonths: true,
+          selectOtherMonths: true,
+          minDate: "+3D",
+          maxDate: "+2Y +3M +10D",
+          beforeShowDay: $.datepicker.noWeekends
+        });
+
+
+/*
+    <!-- Datepicker -->
+    <h2 class="demoHeaders">Datovelger - Norsk</h2>
+    <div id="datepicker"></div>
+    <br>
+    <p>Velg dato: <input type="date" id="datepicker2"></p>
+    <p>(Diverse options er satt i denne - feks tidligst om 3 dager og senest om 3 år og noen måneder, velge dato i neste/forrige måned, helger er disablet)
+*/
+        
+ 

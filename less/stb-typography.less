@@ -1,0 +1,151 @@
+
+
+/****************************
+*         TYPOGRAPHY        *
+****************************/
+
+/* signa book webfonts */
+@font-face {
+  font-family: 'SignaWeb-Book';
+  src: url('../fonts/SignaWeb-Book.eot');
+  src: url('../fonts/SignaWeb-Book.eot?iefix') format('eot'),
+       url('../fonts/SignaWeb-Book.woff') format('woff');
+}
+@font-face {
+  font-family: 'SignaWeb-Light';
+  src: url('../fonts/SignaWeb-Light.eot');
+  src: url('../fonts/SignaWeb-Light.eot?iefix') format('eot'),
+       url('../fonts/SignaWeb-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'SignaWeb-Bold';
+  src: url('../fonts/SignaWeb-Bold.eot');
+  src: url('../fonts/SignaWeb-Bold.eot?iefix') format('eot'),
+       url('../fonts/SignaWeb-Bold.woff') format('woff');
+}
+
+
+// BS defaults (wip/ keep for reference)
+@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+// @font-family-base:        @font-family-sans-serif;
+
+@font-family-sans-serif:  Arial, ArialMT, sans-serif;
+@font-family-signa:       "SignaWeb-Book", Georgia, "Times New Roman", Times, serif;
+@font-family-signa-bold:  "SignaWeb-Bold", Georgia, "Times New Roman", Times, serif;
+@font-family-signa-light: "SignaWeb-Light", Georgia, "Times New Roman", Times, serif;
+
+.stb-font {
+  font-family: @font-family-signa;
+}
+.stb-font-bold {
+  font-family: @font-family-signa-bold;
+}
+.stb-font-light {
+  font-family: @font-family-signa-light;
+}
+
+// h1-h6:
+h1 {
+  font-size: 30px;
+  line-height: 32px;
+  margin: 0;
+  padding: 14px 14px 14px 0;
+  color: @stb-support-color1;
+  font-family: @font-family-sans-serif;
+  &.stbfont {
+    font-family: @font-family-signa;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 26px;
+  margin: 0;
+  padding: 12px 12px 12px 0;
+  color: @stb-support-color1;
+  &.stbfont {
+    font-family: @font-family-signa;
+  }
+}
+h3 {
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0;
+  padding: 12px 12px 12px 0;
+  color: @stb-support-color1;
+  &.stbfont {
+    font-family: @font-family-signa;
+  }
+}
+h4 {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0;
+  padding: 10px 10px 10px 0;
+  color: @stb-support-color1;
+  &.stbfont {
+    font-family: @font-family-signa;
+  }
+}
+h5 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
+  margin: 0;
+  padding: 10px 10px 10px 0;
+  color: @stb-support-color1;
+}
+h6 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  margin: 0;
+  padding: 10px 10px 10px 0;
+  color: @stb-support-color1;
+}
+
+p {
+  font-size: 14px;
+  line-height: 18px;
+  color: @stb-primary-black;
+
+  &.ingress {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+// inline: force elements to inline + skip padding:
+.inline {
+  display: inline;
+  .clearfix();
+}
+
+// Bullet lists
+ul.stb,ol.stb { 
+  margin: 14px 10px 10px 20px;
+  padding-bottom: 14px;
+  li {
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 10px;
+
+    //WIP special handling for double-nested lists
+    ul.stb,ol.stb {
+      margin: 8px 10px 0 0;
+      padding: 0 0 0 20px;
+      li:last-child {
+        padding-bottom: 0;
+      }
+    }
+  } //end:li
+  li:last-child{
+    padding-bottom: 0;
+  }
+
+} //end:ul.stb
+
+small, .petit {
+  font-size: 10px;
+  line-height: 12px; //not defined in manual, guessing 12px.
+  font-style: italic;
+}

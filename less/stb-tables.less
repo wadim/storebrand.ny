@@ -1,0 +1,29 @@
+
+// VARIABLES
+@table-bg-accent: @stb-support-color4;
+
+
+table.stb-table {
+
+  .table();
+
+  // set borders & colors to stb-style:
+  border: 1px solid @stb-support-color3;
+  thead {
+    background-color: @table-bg-accent;
+
+    &:first-child > tr:first-child > th {
+      border-bottom-width: 1px;
+    }
+  }
+
+  // stripe the table:
+  tbody > tr:nth-child(even) {
+    > td,
+    > th {
+      background-color: @table-bg-accent;
+    }
+  }
+
+}
+

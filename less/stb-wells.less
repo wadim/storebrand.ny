@@ -1,0 +1,54 @@
+
+@expander-height: 35px;
+@expander-negative-margin: -20px; // TODO: we might be able to calculate this value
+
+.stb-well {
+  .well();
+
+  background-color: @stb-support-color4;
+  border-color: @stb-support-color3;
+
+  &.stb-well-expanding {
+    // needed?
+  }
+  
+  .expanding-content {
+    margin-top: @expander-height + 6;
+  }
+
+  .expanding-top {
+    position: absolute;
+    width: inherit;
+    height: @expander-height;
+    margin-left: @expander-negative-margin;
+    border-bottom: 1px solid @stb-support-color3;
+
+    .box-shadow(0 8px 17px -12px rgba(0,0,0,.45));
+  }
+
+  .expanding-bottom {
+    position: absolute;
+    bottom: @expander-height;
+    width: inherit;
+    height: @expander-height;
+    margin-left: @expander-negative-margin;
+    border-top: 1px solid @stb-support-color3;
+
+    .box-shadow(0 -8px 17px -12px rgba(0,0,0,.45));
+  }
+
+  span.expander-icon {
+    &:empty {
+      width: 100% !important; //TODO: !important is hacky, find a better way to avoid css specifity problems with .glyphicon class
+    }
+    width: 100%;
+    display: inline-block;
+    .glyphicon();
+    .glyphicon-chevron-up();
+    font-size: 20px;
+    color: @stb-func-color-first-light;
+    padding-right: 10px;
+    .text-right();
+  }
+
+}

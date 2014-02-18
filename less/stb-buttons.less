@@ -1,0 +1,169 @@
+
+.stb-btn {
+  // import BS defaults:
+  .btn;
+  .btn-default;
+
+  &:focus{
+  outline: 0;
+  }
+  
+  // base setup:
+  border: none;
+  background-color: @stb-func-color-first-light;
+  color: @stb-support-color4;
+  height: 30px;
+  font-weight: bold;
+  padding: 0 10px;
+  min-width: 100px;
+
+  // stop ppl from making too long buttons
+  max-width: 200px;
+  overflow: hidden;
+  cursor: pointer;
+
+  // smooth transitions on hover:
+  .transition(all .025s ease-in-out);
+  transition-property: background-color, color;
+
+  // States:
+  &:hover,&:focus,&:active {
+    background-color: @stb-func-color-first;
+    color: @stb-support-color4;
+  }
+
+  &.disabled {
+    background-color: @stb-support-color2;
+    color: @stb-primary-white;
+    cursor: not-allowed;
+
+    &:hover,&:active,&:focus {
+      background-color: @stb-support-color2;
+      color: @stb-primary-white;
+    }
+  }
+
+  &.alarm {
+    background-color: @stb-func-color-third;
+    color: @stb-primary-white;
+  }
+
+
+  // Button variations:
+  &.primary {
+    // do nothing, yet
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: @stb-func-color-first-light;
+
+    border: 1px solid @stb-func-color-first-light;
+    // 2px border offsets our text, fix:
+    line-height: 1;
+
+    &:hover {
+      background-color: @stb-primary-white;
+      color: @stb-func-color-first;
+      border-color: @stb-func-color-first;
+      .box-shadow(none);
+    }
+    &:focus,&:active {
+      border-width: 2px;
+      .box-shadow(none);
+    }
+
+    &.disabled {
+      background-color: transparent;
+      color: @stb-support-color1;
+      border-color: @stb-support-color1;
+      cursor: not-allowed;
+    }
+    &.alarm {
+      background-color: transparent;
+      color: @stb-func-color-third;
+      border-color: @stb-func-color-third;
+      &:hover {
+        color: @stb-contrast-storebrand1;
+        border-color: @stb-contrast-storebrand1;
+      }
+    }
+
+  }
+
+  &.secondary2 {
+    background-color: @stb-support-color4;
+    color: @stb-func-color-first-light;
+
+    &:hover {
+    // background-color: @stb-support-color3;
+    color: @stb-func-color-first;
+      .box-shadow(none);
+    }
+    &:focus {
+      .box-shadow(none);
+    }
+
+    &:active {
+      .box-shadow(none);
+      background-color: @stb-support-color3;
+    }
+
+    &.disabled {
+      background-color: @stb-support-color2;
+      color: @stb-primary-white;
+      cursor: not-allowed;
+    }
+
+    &.alarm {
+      background-color: @stb-support-color3;
+      color: @stb-func-color-third;
+    }
+
+  }
+
+  &.link-icon {
+    background-color: @stb-primary-white;
+    color: @stb-func-color-first-light;
+    &:hover,&:focus {
+      color: @stb-func-color-first;
+      .box-shadow(none);
+    }
+    &:active {
+      background-color: @stb-support-color4;
+    }
+    &.disabled {
+      color: @stb-support-color2;
+      cursor: not-allowed;
+    }
+    &.alarm {
+      color: @stb-func-color-third;
+    }
+  }
+
+
+  // Sizes:
+
+  &.stb-btn-lg {
+    font-size: 18px;
+    height: 40px;
+    padding: 0 20px;
+    min-width: 160px;
+
+    max-width: 300px;
+    overflow: hidden;
+
+  }
+
+  &.stb-btn-sm {
+    .btn-sm();
+  }
+
+  &.stb-btn-xs {
+    .btn-xs();
+  }
+
+}
+
+
+

@@ -1,0 +1,42 @@
+
+.tooltip {
+  font-size: 14px;
+  font-family: @font-family-sans-serif;
+  font-weight: bold;
+
+  &.in{
+    .opacity(1);
+  }
+  .tooltip-inner {
+    background-color: @stb-func-color-first-light;
+    padding: 6px 14px;
+
+    &[data-theme=light]{
+      background-color: @stb-support-color3;
+    }
+  }
+
+
+  // color the arrows: these need to have higher specificity than BS defaults
+  &.top {  
+    .tooltip-arrow {
+      border-top-color: @stb-func-color-first-light;
+    }
+  }
+  &.bottom {  
+    .tooltip-arrow {
+      border-bottom-color: @stb-func-color-first-light;
+    }
+  }
+  &.right {
+    .tooltip-arrow {
+      border-right-color: @stb-func-color-first-light;
+    }
+  }
+  &.left {
+    .tooltip-arrow {
+      border-left-color: @stb-func-color-first-light;
+    }
+  }
+
+}

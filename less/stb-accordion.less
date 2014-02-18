@@ -1,0 +1,83 @@
+
+ul.accordion {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    background: none;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1px;
+    border-bottom: 1px solid @stb-support-color3; //#dddddd;
+    background-color: @stb-primary-white;
+
+    // numeric index:
+    a {
+      display: block;
+      font-size: 16px;
+      line-height: 18px;
+
+      color: @stb-primary-black;
+      padding: 10px 30px 10px 20px;
+      position: relative;
+
+      &:hover,
+      &:focus,
+      &.open {
+        text-decoration: none;
+        background-color: @stb-support-color4; // #f1f8fe;
+      }
+
+      // open/closed icons:
+      .expander {
+        .stb-glyphicon();
+        .glyphicon-plus-sign();
+        float: right;
+      }
+      &.open {
+        .expander {
+          .glyphicon-minus-sign();
+        }
+      }
+
+      // numeric index:
+      .number {
+        position: absolute;
+        left: 5px;
+        color: #838383;
+      }
+    }
+
+    .answer {
+      display: none;
+      padding: 10px;
+      line-height: 18px;
+
+      &.open {
+        display: block;
+      }
+
+      // tweak ul/ol inside answer-element:
+      ul {
+        padding-left: 20px;
+        li {
+          list-style: disc outside none;
+          border: none;
+          margin-bottom: 5px;
+          margin-left: 13px;
+        }
+      }
+      ol {
+        padding-left: 20px;
+        li {
+          list-style: decimal;
+          border: none;
+          margin-bottom: 5px;
+          margin-left: 13px;
+        }
+      }
+    }
+
+  }
+}

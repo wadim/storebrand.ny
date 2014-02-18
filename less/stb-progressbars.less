@@ -1,0 +1,181 @@
+
+// Progressbar-like breadcrumbs
+
+@progrow-separator-width: 104%;
+
+ul.stb-progressrow {
+
+  list-style-type: none;
+
+  // base setup
+  li {
+    display: inline-block;
+    height: 20px;
+    min-width: 125px;
+    color: @stb-support-color2;
+    padding: 0;
+    margin: 0;
+    .text-center();
+
+    // larger variant:
+    &.lg {
+      height: 30px;
+      min-width: 140px;
+      vertical-align: middle;
+      line-height: 30px;
+
+      // hover needs more attention. is this even possible without js?
+      // &.light:hover {
+      //   background-color: @stb-func-color-first;
+      //   color: @stb-support-color4;
+      // }
+
+    }
+  }
+
+  // define our light-grey variant
+  // we need to use a few psuedo-selectors to make these "arrow" separators work
+  li.light {
+    background-color: @stb-support-color4;
+
+    // define the "arrow" separator:
+    &:after {
+      content: "";
+      height: 20px;
+      width: @progrow-separator-width;
+      display: inline-block;
+      background-image: url(../images/progressrow-sm/progrow-light-to-light.png);
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+
+    // arrow switches from light to grey
+    &.switch-to-grey:after {
+      content: "";
+      height: 20px;
+      width: @progrow-separator-width;
+      display: inline-block;
+      background-image: url(../images/progressrow-sm/progrow-light-to-grey.png);
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+
+    // last-child should not have arrow
+    &:last-child:after {
+      display: none;
+    }
+
+
+    // Large variant: uses larger bg-image
+
+    // add the "arrow" between li's
+    &.lg:after {
+      height: 30px;
+      position: relative;
+      top: -30px;
+      width: @progrow-separator-width;
+      background-image: url(../images/progressrow-lg/progrow-light-to-light.png);
+    }
+
+    // arrow switches from light to grey
+    &.lg.switch-to-grey:after {
+      height: 30px;
+      background-image: url(../images/progressrow-lg/progrow-light-to-grey.png);
+    }
+
+
+  }
+
+
+  // 'dark' variant: currently blue.
+  li.dark {
+    background-color: @stb-func-color-first-light;
+    color: @stb-support-color4;
+
+    &:after {
+      content: "";
+      height: 20px;
+      width: @progrow-separator-width;
+      display: inline-block;
+      background-image: url(../images/progressrow-sm/progrow-blue-to-blue.png);
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+
+    &.switch-to-grey:after {
+      content: "";
+      height: 20px;
+      width: @progrow-separator-width;
+      display: inline-block;
+      background-image: url(../images/progressrow-sm/progrow-blue-to-grey.png);
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+
+    // todo: last-child
+
+    // Large variant: uses larger bg-image
+
+    // add the "arrow" between li's
+    &.lg:after {
+      height: 30px;
+      position: relative;
+      top: -30px;
+      width: @progrow-separator-width;
+      background-image: url(../images/progressrow-lg/progrow-blue-to-blue.png);
+    }
+
+    // arrow switches from light to grey
+    &.lg.switch-to-grey:after {
+      height: 30px;
+      background-image: url(../images/progressrow-lg/progrow-blue-to-grey.png);
+    }
+  }
+
+
+
+  // disabled state: currently grey
+  li.disabled {
+    background-color: @stb-support-color3;
+    &:after {
+      content: "";
+      height: 20px;
+      width: @progrow-separator-width;
+      display: inline-block;
+      background-image: url(../images/progressrow-sm/progrow-grey-to-grey.png);
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+    &:last-child:after {
+      display: none;
+    }
+  }
+
+}
+
+
+/****************************
+*      Progress-bars        *
+*****************************/
+
+.stb-progress {
+  .progress();
+  background-color: @stb-support-color3;
+  .box-shadow(inset 0 0 4px rgba(0,0,0,.35));
+
+  &.grey {
+    
+    .stb-progress-bar {
+      background-color: @stb-support-color4;
+      .box-shadow(inset 0 0 4px rgba(0,0,0,.35));
+    }
+  }
+
+  .stb-progress-bar {
+    .progress-bar();
+    .box-shadow(inset 0 0 4px rgba(0,0,0,.55));
+
+    .border-right-radius(2px);
+    background-color: @stb-func-color-first-light;
+  }
+}

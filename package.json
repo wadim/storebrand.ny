@@ -1,0 +1,21 @@
+{
+  "name": "webmanual",
+  "version": "0.1.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt-shell": "~0.6.1",
+    "patsy": "0.2.2-beta",
+    "node-spritesheet": "https://github.com/nilsel/node-spritesheet/tarball/b000fa4ad615daaaf9e54d5bd032d7b599f9e504",
+    "grunt": "~0.4.2",
+    "grunt-recess": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0"
+  }
+}

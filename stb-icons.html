@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Storebrand Webmanual 0.1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/webmanual.css">
+    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/dist/tooltip.js"></script>
+    <script type="text/javascript" src="js/dist/popover.js"></script>
+    <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
+    <style type="text/css">
+      .row>div>span {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <script>
+    $(document).ready(function(){
+
+      var iconlist = [
+        'airplane',
+        'arm-sling',
+        'arrow-left',
+        'arrow-right',
+        'briefcase',
+        'cabin',
+        'calculator',
+        'calendar',
+        'campingwagon',
+        'car',
+        'card-account',
+        'card-bank',
+        'card-credit',
+        'cat-and-dog',
+        'chat-conversation',
+        'chat',
+        'check',
+        'circle-check',
+        'circle-collapse',
+        'circle-expand',
+        'circle-question',
+        'debt-insurance',
+        'disabled-icon',
+        'document',
+        'envelope',
+        'first-aid-box',
+        'furniture',
+        'house-credit',
+        'house-firstloan',
+        'house-loan',
+        'house-savings',
+        'house',
+        'info',
+        'keychain',
+        'lily-eol',
+        'lock-closed',
+        'lock-open',
+        'minus',
+        'moped',
+        'motorcycle',
+        'newspaper',
+        'pencil',
+        'person-tie',
+        'person',
+        'persons',
+        'piggybank',
+        'plus',
+        'prize',
+        'sailboat',
+        'savings-funds',
+        'savings-junior',
+        'search',
+        'shipping-box',
+        'sign-stop',
+        'sign-warning',
+        'smartphone',
+        'square-list',
+        'star',
+        'stethoscope',
+        'teddybear',
+        'telephone',
+        'valuables',
+        'x'
+      ];
+
+      // generate all the icons from our array:
+      for(var i=0; i <= iconlist.length; i++){
+        $('#row1').append('<span class="stb-sprite-72 '+iconlist[i]+'"></span>');
+        $('#row2').append('<span class="stb-sprite-72 '+iconlist[i]+' neutral"></span>');
+      };
+
+
+      // add tooltips to all the icons:
+      $('span.stb-sprite-72').each(function(){
+        var name = $(this).attr('class').split(' ')[1];
+        $(this).tooltip({title: name, placement: 'auto top'});
+      });
+
+      $("span[class^='stb-sprite']").each(function(){
+        $(this).on('click', function(){
+          $('#markupGenerator #markupGen-class2').text( $(this).attr('class').split(' ')[0] );
+          if( $(this).hasClass('neutral') ){
+            $('#markupGenerator #markupGen-class2').text( $(this).attr('class').split(' ')[0] + ' neutral' );
+          }
+        });
+      });
+
+      // change sizes:
+      $('button').on('click', function(){
+        var newSize = $(this).attr('data-targetsize');
+
+        $('.row>div>span').removeClass('stb-sprite-130');
+        $('.row>div>span').removeClass('stb-sprite-72');
+        $('.row>div>span').removeClass('stb-sprite-32');
+        $('.row>div>span').removeClass('stb-sprite-24');
+        $('.row>div>span').removeClass('stb-sprite-16');
+
+        $('.row>div>span').addClass(newSize);
+
+        $('#markupGenerator #markupGen-class1').text(newSize);
+
+      });
+
+      $('button').each(function(){
+        var baseClass = $(this).attr('data-targetsize');
+        $(this).tooltip({ title: 'Base class: ' + baseClass, placement: 'auto top' });
+      });
+
+      $('button[data-targetsize=stb-sprite-32]').trigger('click');
+
+    });
+    </script>
+
+    <div class="container">
+      <row class="col-md-12 airgap">
+        <h1 class="stbfont">Storebrand Icons</h1>
+        <button class="stb-btn stb-btn-xs" data-targetsize="stb-sprite-130">X-Large (130px)</button>
+        <button class="stb-btn stb-btn-xs" data-targetsize="stb-sprite-72">Large (72px)</button>
+        <button class="stb-btn stb-btn-xs" data-targetsize="stb-sprite-32">Medium (32px)</button>
+        <button class="stb-btn stb-btn-xs" data-targetsize="stb-sprite-24">Small (24px)</button>
+        <button class="stb-btn stb-btn-xs" data-targetsize="stb-sprite-16">X-small (16px)</button>
+        <br>
+        <div class="airgap">
+          <a href="index.html">Back to index</a>
+        </div>
+        <div class="airgap">
+          <div id="markupGenerator">
+            <strong>Code example:</strong> (click size-button and icon to get classnames)<br>
+            <pre>&lt;span class="<span id="markupGen-class1">stb-sprite-72</span> <span id="markupGen-class2">iconName</span>"&gt;&lt;/span&gt;</pre>
+          </div>
+        </div>
+      </row>
+      <div class="row">
+        <div class="col-md-12 airgap" id="row1">
+          <!-- content appends here -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 airgap" id="row2">
+          <h3>Add classname "neutral" for grey/disabled icons:</h3>
+          <!-- content appends here -->
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
+
+

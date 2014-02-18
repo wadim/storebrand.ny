@@ -1,0 +1,268 @@
+/***********************************
+*  Custom inline form based on BS  *
+************************************/
+
+.stb-form-inline {
+
+  .form-inline();
+
+  input {
+    .form-control();
+    // tweak the default BS transition-speed:
+    .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
+    display: inline-block; // yay!
+
+    &:hover {
+      color: @stb-func-color-first;
+      border-color: @stb-func-color-first;
+    }
+  }
+
+  // input and buttons line up with no spacing:
+  input.has-submit {
+    .border-right-radius(0);
+  }
+  button.is-submit {
+    .border-left-radius(0);
+    position: relative;
+    height: 34px;
+    left: -4px;
+  }
+
+  .stb-form-group {
+    .form-group(); //adds some sane margins
+
+    display: inline-block;
+    vertical-align: middle;
+
+    >label {
+      height: 15px; //half of input-height
+    }
+
+    // alarm-colors:
+    &.alarm {
+      input {
+        background-color: @stb-primary-white;
+        border-color: @stb-primary-red;
+        color: @stb-primary-red;
+      }
+      button {
+        background-color: @stb-primary-red;
+        color: @stb-primary-white;
+      }
+    }
+
+    // handle hover-styles for both input and button:
+    &:hover {
+
+      input.has-submit {
+        border-color: @stb-func-color-first;
+      }
+      button.is-submit {
+        background-color: @stb-func-color-first;
+      }
+      
+      // alarm-varian has other colors:
+      &.alarm {
+        input.has-submit {
+          border-color: @stb-func-color-second;
+        }
+        button.is-submit {
+          background-color: @stb-func-color-second;
+        }
+      }
+      //todo: add hover-colors for disabled
+
+    }
+  } //end:stb-form-group
+
+
+  button[disabled] {
+    background-color: @stb-support-color2;
+    &:hover {
+      background-color: @stb-support-color2;
+    }
+  }
+  input[disabled] {
+    background-color: @stb-support-color4;
+    color: @stb-support-color3;
+  }
+
+}
+
+
+/*************************************
+* Custom checkbox+radio using images *
+*************************************/
+// refenence: http://www.thecssninja.com/css/custom-inputs-using-css
+
+form.stb-custom-form {
+
+  label {
+    padding-left: 32px;
+    padding-top: 4px;
+  }
+
+  input.stb-custom-input {
+    padding: 0;
+    margin: 0;
+    height: 16px;
+    width: 16px;
+    float: left;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+  }
+
+  // the :not-selector keeps IE8 from trying to parse, degrading gracefully
+  // use a md5 hash so we're sure we dont affect any 'real' elements
+  &:not(#foo_4fb3cf3aee22719b0a464e043903bb3e) {
+
+    input:hover + label,
+    input:focus + label,
+    input + label:hover,
+    input:focus + label {
+      // color: @stb-func-color-first;
+    }
+
+    input + label {
+      background: url(../images/stb-form-sprites.png) -8px -7px no-repeat;
+      height: 31px;
+    }
+    input[type=radio] + label {
+      background-position: -8px -167px;
+    }
+    input[type=radio]:checked + label {
+      background-position: -8px -208px;
+    }
+    input[type=checkbox]:checked + label {
+      background-position: -8px -48px;
+    }
+
+    input[type=checkbox]:hover:checked + label,
+    input[type=checkbox]:focus:checked + label,
+    input[type=checkbox]:checked + label:hover,
+    input[type=checkbox]:focus:checked + label {
+     // background-position: 0 -101px;
+    }
+
+    input[type=radio]:hover:checked + label,
+    input[type=radio]:focus:checked + label,
+    input[type=radio]:checked + label:hover,
+    input[type=radio]:focus:checked + label {
+      // background-position: -8px -208px;
+    }
+
+
+    /* Hover & Focus styles */
+    input[type=checkbox]:hover + label,
+    input[type=checkbox]:focus + label,
+    input[type=checkbox] + label:hover {
+      // background-position: 0 -21px;
+    }
+
+    input[type=radio]:hover + label,
+    input[type=radio]:focus + label,
+    input[type=radio] + label:hover {
+      // background-position: 0 -181px;
+    }
+
+    /* Active styles */
+    input[type=checkbox]:active + label,
+    input[type=checkbox] + label:hover:active {
+      // background-position: 0 -41px;
+    }
+    input[type=radio]:active + label,
+    input[type=radio] + label:hover:active {
+      // background-position: 0 -201px;
+    }
+    input[type=checkbox]:active:checked + label,
+    input[type=checkbox]:checked + label:hover:active {
+      // background-position: 0 -121px;
+    }
+    input[type=radio]:active:checked + label,
+    input[type=radio]:checked + label:hover:active {
+      // background-position: -8px -208px;
+    }
+
+    /* Disabled styles */
+    input[type=checkbox]:disabled + label,
+    input[type=checkbox]:hover:disabled + label,
+    input[type=checkbox]:focus:disabled + label,
+    input[type=checkbox]:disabled + label:hover,
+    input[type=checkbox]:disabled + label:hover:active {
+      background-position: -8px -7px;
+    }
+    // input[type=radio]:disabled + label,
+    // input[type=radio]:hover:disabled + label,
+    // input[type=radio]:focus:disabled + label,
+    // input[type=radio]:disabled + label:hover,
+    // input[type=radio]:disabled + label:hover:active {
+    //   background-position: -8px -221px;
+    // }
+    input[type=checkbox]:disabled:checked + label,
+    input[type=checkbox]:hover:disabled:checked + label,
+    input[type=checkbox]:focus:disabled:checked + label,
+    input[type=checkbox]:disabled:checked + label:hover,
+    input[type=checkbox]:disabled:checked + label:hover:active {
+      background-position: -8px -88px;
+    }
+    // input[type=radio]:disabled:checked + label,
+    // input[type=radio]:hover:disabled:checked + label,
+    // input[type=radio]:focus:disabled:checked + label,
+    // input[type=radio]:disabled:checked + label:hover,
+    // input[type=radio]:disabled:checked + label:hover:active {
+    //   background-position: -8px -88px;
+    // }
+
+
+
+  } // end of :not(#foo)
+
+
+}
+
+.stb-select {
+  outline: none;
+  // border: 1px solid @stb-func-color-first-light;
+  color: @stb-primary-white;
+  font-size: 14px;
+
+  label{
+    border-radius: 2px;
+    background-color: @stb-func-color-first-light;
+    padding: 8px 4px 4px 12px;
+    width: 100%;
+    height: 35px;
+    &:after {
+      float: right;
+      .stb-glyphicon();
+      .glyphicon-chevron-down();
+      content: "\e114"; //need to to this manually (?!)
+      color: @stb-primary-white;
+      padding-right: 8px;
+    }
+  }
+  ul {
+    padding: 0;
+    top: 2px;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+
+    font-size: 14px;
+    list-style-type: none;
+    background-color: @stb-primary-white;
+    color: @stb-primary-black;
+    border-radius: 3px;
+    border: 1px solid @stb-support-color3;
+
+    li {
+      // margin-top: 4px;
+      // margin-bottom: 4px;
+      padding: 8px 8px 8px 18px;
+      &:hover {
+        background-color: @stb-support-color4;
+      }
+    }
+  }
+}
