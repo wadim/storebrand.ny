@@ -5,9 +5,36 @@
 
 
 // PRIMARY COLORS
-@stb-primary-color:        #da291c;
-@stb-primary-black:        #000;
-@stb-primary-white:        #fff;
+@stb-primary-color:      #da291c;
+@stb-primary-black:      #000;
+@stb-primary-white:      #fff;
+
+// SECONDARY COLORS (Need a better / more descriptive name...)
+@stb-secondary-charcoal: #404040;
+@stb-secondary-moss:     #5f6e57;
+@stb-secondary-forest:   #6c8524;
+@stb-secondary-dust:     #776654;
+@stb-secondary-nude:     #c7b299;
+@stb-secondary-sand:     #efe8df;
+
+// BACKGROUND COLORS
+@stb-background-rose:    #fff0f0;
+@stb-background-mint:    #ecf2c2;
+
+// CHART COLORS
+@stb-chart-orange:       #faa61a;
+@stb-chart-peach:        #fff0d9;
+
+// OUTLINE COLORS
+@stb-outline-pink:       #ffb3b3;
+@stb-outline-lime:       #819f2b;
+
+// GREY COLORS
+@stb-grey-first:         #f2f2f2;
+@stb-grey-second:        #e6e6e6;
+@stb-grey-third:         #ccc;
+@stb-grey-fourth:        #a6a6a6;
+@stb-grey-fifth:         #666;
 
 // FUNCTION COLORS
 // blue
@@ -61,11 +88,10 @@
 * lets us change/tune profile without touching any markup at all
 */
 
-// PRIMARY COLORS (stb-red, black, white)
+// PRIMARY COLORS (stb-red, black, white, charcoal)
 .stbcolor-primary {
   &.first {
     background-color: @stb-primary-color;
-
     // white text
     p,ul,ol {
       color: @stb-primary-white;
@@ -86,6 +112,48 @@
   }
 
 }
+
+// BACKGROUND COLORS (moss, lime, dust, nude, sand)
+.stbcolor-background {
+  &.first {
+    background-color: @stb-background-rose;
+    border: 1px solid @stb-outline-pink; 
+  }
+  
+  &.second {
+    background-color: @stb-background-mint;
+    border: 1px solid @stb-outline-lime;    
+  }
+}
+
+// SECONDARY COLORS
+.stbcolor-secondary {
+  &.first {
+    background-color: @stb-secondary-charcoal;
+  }
+  
+  &.second {
+    background-color: @stb-secondary-moss;
+  }
+
+  &.third {
+    background-color: @stb-secondary-forest;
+  }
+
+  &.fourth {
+    background-color: @stb-secondary-dust;
+  }
+  
+  &.fifth {
+    background-color: @stb-secondary-nude;
+  }
+
+  &.sixth {
+    background-color: @stb-secondary-sand;
+  }  
+  
+ }
+
 
 // FUNCTION COLORS (normal+light version)
 .stbcolor-func {
