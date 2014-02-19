@@ -36,52 +36,6 @@
 @stb-grey-fourth:        #a6a6a6;
 @stb-grey-fifth:         #666;
 
-// FUNCTION COLORS
-// blue
-@stb-func-color-first:     #005378;
-@stb-func-color-first-light: #0086c0;
-
-// green(ish)
-@stb-func-color-second: #7a9a4a;
-@stb-func-color-second-light: #eef9c8;
-
-// white/red
-@stb-func-color-third:    @stb-primary-color;
-@stb-func-color-third-light: @stb-primary-white;
-
-
-// SUPPORT COLORS (greys)
-@stb-support-color1:       #4e4d4d;
-@stb-support-color2:       #787878;
-@stb-support-color3:       #dadada;
-@stb-support-color4:       #f4f4f4;
-
-
-// CONTRAST COLORS
-@stb-contrast-storebrand1: #881a11;
-@stb-contrast-storebrand2: #b32217;
-@stb-contrast-storebrand3: #da291c;
-@stb-contrast-storebrand4: #da6057;
-
-@stb-contrast-positive1:   #4c602e;
-@stb-contrast-positive2:   #627c3c;
-@stb-contrast-positive3:   #7a9a4a;
-@stb-contrast-positive4:   #a9c17e;
-
-@stb-contrast-negative1:   #b57415;
-@stb-contrast-negative2:   #e0901a;
-@stb-contrast-negative3:   #faa11d;
-@stb-contrast-negative4:   #f9b753;
-
-@stb-contrast-neutral1:    #4e4d4d;
-@stb-contrast-neutral2:    #787878;
-@stb-contrast-neutral3:    #dadada;
-@stb-contrast-neutral4:    #f4f4f4;
-
-
-// CUSTOM GREEN
-@stb-color-custom-green:   @stb-func-color-second-light;
-
 /*
 * Abstract away color-names in classes:
 * This lets us separate concerns; no colors defined in the markup,
@@ -134,6 +88,10 @@
   
   &.second {
     background-color: @stb-secondary-moss;
+    // Example that adds red text color on buttons that use the classes "stbcolor-secondary second", see stb-buttons.less
+    &.stb-btn {
+      color: @stb-primary-color;
+    }
   }
 
   &.third {
@@ -153,8 +111,89 @@
   }  
   
  }
+ 
+// GREY COLORS
+.stbcolor-grey {
+  &.first {
+    background-color: @stb-grey-first;
+  }
+  
+  &.second {
+    background-color: @stb-grey-second;
+  }
+  
+  &.third {
+    background-color: @stb-grey-third;
+  }
+  
+  &.fourth {
+    background-color: @stb-grey-fourth;
+  }
+  
+  &.fifth {
+    background-color: @stb-grey-fifth;
+  }
+}
+
+// CHART COLORS
+.stbcolor-visuals {
+  &.first {
+    background-color: @stb-chart-orange;  
+  }
+  
+  &.second {
+    background-color: @stb-chart-peach;    
+  }
+}
+ 
+// From here on down, all the code is from the old Web manual, eventually to be removed completely 
+ 
+// FUNCTION COLORS
+// blue
+@stb-func-color-first:     #005378;
+@stb-func-color-first-light: #0086c0;
+
+// green(ish)
+@stb-func-color-second: #7a9a4a;
+@stb-func-color-second-light: #eef9c8;
+
+// white/red
+@stb-func-color-third:    @stb-primary-color;
+@stb-func-color-third-light: @stb-primary-white;
 
 
+// SUPPORT COLORS (greys)
+@stb-support-color1:       #4e4d4d;
+@stb-support-color2:       #787878;
+@stb-support-color3:       #dadada;
+@stb-support-color4:       #f4f4f4;
+
+
+// CONTRAST COLORS
+@stb-contrast-storebrand1: #881a11;
+@stb-contrast-storebrand2: #b32217;
+@stb-contrast-storebrand3: #da291c;
+@stb-contrast-storebrand4: #da6057;
+
+@stb-contrast-positive1:   #4c602e;
+@stb-contrast-positive2:   #627c3c;
+@stb-contrast-positive3:   #7a9a4a;
+@stb-contrast-positive4:   #a9c17e;
+
+@stb-contrast-negative1:   #b57415;
+@stb-contrast-negative2:   #e0901a;
+@stb-contrast-negative3:   #faa11d;
+@stb-contrast-negative4:   #f9b753;
+
+@stb-contrast-neutral1:    #4e4d4d;
+@stb-contrast-neutral2:    #787878;
+@stb-contrast-neutral3:    #dadada;
+@stb-contrast-neutral4:    #f4f4f4;
+
+
+// CUSTOM GREEN
+@stb-color-custom-green:   @stb-func-color-second-light; 
+ 
 // FUNCTION COLORS (normal+light version)
 .stbcolor-func {
   &.first {

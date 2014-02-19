@@ -70,9 +70,12 @@
                 <code>Class: stbcolor-primary first/second/third</code>
               </div>
               <div class="row">
-                <div class="color-swatch stbcolor-primary first"></div>
-                <div class="color-swatch stbcolor-primary second"></div>
-                <div class="color-swatch stbcolor-primary third" style="border: 1px solid #c4c4c4"></div>              
+                <div id="primary-first" data-placement="auto top" data-title="Storebrand Red" class="color-swatch stbcolor-primary first"></div>
+                <script>$('#primary-first').tooltip();</script>
+                <div id="primary-second" data-placement="auto top" data-title="Black" class="color-swatch stbcolor-primary second"></div>
+                <script>$('#primary-second').tooltip();</script>
+                <div id="primary-third" data-placement="auto top" data-title="White" class="color-swatch stbcolor-primary third" style="border: 1px solid #c4c4c4"></div>
+                <script>$('#primary-third').tooltip();</script>              
               </div>
             </div>
             <div class="col-md-6">
@@ -82,14 +85,17 @@
                 <code>Class: stbcolor-background first/second</code>
               </div>
               <div class="row">
-                <div class="color-swatch stbcolor-background first"></div>
-                <div class="color-swatch stbcolor-background second"></div>
+                <div id="background-first" data-placement="auto top" data-title="Rose with a rim of Pink" class="color-swatch stbcolor-background first"></div>
+                <script>$('#background-first').tooltip();</script>
+                <div id="background-second" data-placement="auto top" data-title="Mint with a rim of Lime" class="color-swatch stbcolor-background second"></div>
+                <script>$('#background-second').tooltip();</script>
               </div>
             </div>
 
           </div> <!-- /row -->
 
           <hr/>
+          
           <div class="row">
             <div class="col-md-6">
               <div class="row">
@@ -98,179 +104,70 @@
                 <code>Class: stbcolor-secondary first/second/third/fourth/fifth/sixth</code>
               </div>
               <div class="row">
-                <div class="color-swatch stbcolor-secondary first"></div>
-                <div class="color-swatch stbcolor-secondary second"></div>
-                <div class="color-swatch stbcolor-secondary third"></div>
-                <div class="color-swatch stbcolor-secondary fourth"></div>
-                <div class="color-swatch stbcolor-secondary fifth"></div>
-                <div class="color-swatch stbcolor-secondary sixth"></div>  
+                <div id="secondary-first" data-placement="auto top" data-title="Charcoal" class="color-swatch stbcolor-secondary first"></div>
+                <script>$('#secondary-first').tooltip();</script>
+                <div id="secondary-second" data-placement="auto top" data-title="Moss" class="color-swatch stbcolor-secondary second"></div>
+                <script>$('#secondary-second').tooltip();</script>
+                <div id="secondary-third" data-placement="auto top" data-title="Forest" class="color-swatch stbcolor-secondary third"></div>
+                <script>$('#secondary-third').tooltip();</script>
+                <div id="secondary-fourth" data-placement="auto top" data-title="Dust" class="color-swatch stbcolor-secondary fourth"></div>
+                <script>$('#secondary-fourth').tooltip();</script>
+                <div id="secondary-fifth" data-placement="auto top" data-title="Nude" class="color-swatch stbcolor-secondary fifth"></div>
+                <script>$('#secondary-fifth').tooltip();</script>
+                <div id="secondary-sixth" data-placement="auto top" data-title="Sand" class="color-swatch stbcolor-secondary sixth"></div>
+                <script>$('#secondary-sixth').tooltip();</script>
+              </div>
+            </div>
+
+          </div> <!-- /row -->
+
+          <hr/>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <p><strong>Grey colors</strong> used for dull stuff (?)</p>
+                <i>Examples: ?</i><br>
+                <code>Class: stbcolor-grey first/second/third/fourth/fifth</code>
+              </div>
+              <div class="row">
+                <div id="grey-first" data-placement="auto top" data-title="Grey 1" class="color-swatch stbcolor-grey first"></div>
+                <script>$('#grey-first').tooltip();</script>
+                <div id="grey-second" data-placement="auto top" data-title="Grey 2" class="color-swatch stbcolor-grey second"></div>
+                <script>$('#grey-second').tooltip();</script>
+                <div id="grey-third" data-placement="auto top" data-title="Grey 3" class="color-swatch stbcolor-grey third"></div>
+                <script>$('#grey-third').tooltip();</script>
+                <div id="grey-fourth" data-placement="auto top" data-title="Grey 4" class="color-swatch stbcolor-grey fourth"></div>
+                <script>$('#grey-fourth').tooltip();</script>
+                <div id="grey-fifth" data-placement="auto top" data-title="Grey 5" class="color-swatch stbcolor-grey fifth"></div>
+                <script>$('#grey-fifth').tooltip();</script>
+              </div>
+            </div> <!-- /col-md-9 -->
+
+          </div> <!-- /row -->
+
+          <hr/>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <p><strong>Presentation colors</strong> used for graphs, charts and other visual presentations</p>
+                <i>Examples: Bar charts, pie diagrams, ...</i><br>
+                <code>Class: stbcolor-visual first/second</code>
+              </div>
+              <div class="row">
+                <div id="visuals-first" data-placement="auto top" data-title="Orange" class="color-swatch stbcolor-visuals first"></div>
+                <script>$('#visuals-first').tooltip();</script>
+                <div id="visuals-second" data-placement="auto top" data-title="Peach" class="color-swatch stbcolor-visuals second"></div>
+                <script>$('#visuals-second').tooltip();</script>
               </div>
             </div>
 
           </div> <!-- /row -->
           
-          <hr />
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <p><strong>Function colors</strong> are used on elements which is important for the user to differantiate, and is more important than showing our brand-colors.</p>
-                <i>ex: Buttons, links, messages, errors</i><br>
-                <code>Class: stbcolor-func first/second/third +light</code>
-              </div>
-              <div class="row">
-                <div class="color-swatch stbcolor-func first light"></div>
-                <div class="color-swatch stbcolor-func first"></div>
-              </div>
-              <div class="row">
-                <div class="color-swatch stbcolor-func second light"></div>
-                <div class="color-swatch stbcolor-func second"></div>
-              </div>
-              <div class="row">
-                <div class="color-swatch stbcolor-func third light" style="border: 1px solid #ccc;"></div>
-                <div class="color-swatch stbcolor-func third"></div>
-              </div>
-            </div>
-
-          </div> <!-- /row -->
-          <hr/>
-
-          <div class="row">
-            <p>
-              <strong>Contrast colors</strong> are used on elements or graphics which sorts or compares different elements to create a overview.
-            </p>
-            <i>ex: graphs, diagrams, tables, legend</i><br>
-            <code>Class: stbcolor-contrast first/second/third/fourth a/b/c/d</code>
-          </div> <!-- /row -->
-          <div class="row airgap-sm">
-            <strong class="clearfix">First:</strong>
-            <div class="color-swatch stbcolor-contrast first d"></div>
-            <div class="color-swatch stbcolor-contrast first c"></div>
-            <div class="color-swatch stbcolor-contrast first b"></div>
-            <div class="color-swatch stbcolor-contrast first a"></div>
-          </div>
-          <div class="row airgap-sm">
-            <strong class="clearfix">Second:</strong>
-            <div class="color-swatch stbcolor-contrast second d"></div>
-            <div class="color-swatch stbcolor-contrast second c"></div>
-            <div class="color-swatch stbcolor-contrast second b"></div>
-            <div class="color-swatch stbcolor-contrast second a"></div>
-          </div>
-          <div class="row airgap-sm">
-            <strong class="clearfix">Third:</strong> <small>note: only primary brand-color on this, no variations.</small>
-            <div class="color-swatch stbcolor-contrast third"></div>
-          </div>
-          <div class="row airgap-sm">
-            <strong class="clearfix">Fourth:</strong>
-            <div class="color-swatch stbcolor-contrast fourth d"></div>
-            <div class="color-swatch stbcolor-contrast fourth c"></div>
-            <div class="color-swatch stbcolor-contrast fourth b"></div>
-            <div class="color-swatch stbcolor-contrast fourth a"></div>
-          </div>
-
-        </div> <!-- col-md-9 -->
-
+        </div> 
+        
       </div> <!-- /Colors Row -->
-
-      <hr class="airgap"/>    
-    
-      <div class="row">
-        <div class="col-md-3" id="index-nav" role="navigation">
-          <h1>Old Colors</h1>
-        </div>
-
-        <div class="col-md-9" id="webfarger">
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <p><strong>Primary colors</strong> should be used on elements that are linked to the Storebrand branding.</p>
-                <i>ex: Logos, banners, top-menus, text</i><br>
-                <code>Class: stbcolor-primary first/second/third</code>
-              </div>
-              <div class="row">
-                <div class="color-swatch stbcolor-primary first"></div>
-                <div class="color-swatch stbcolor-primary second"></div>
-                <div class="color-swatch stbcolor-primary third" style="border: 1px solid #c4c4c4"></div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row">
-                <p><strong>Support colors</strong> are used for neutral elements which is not linked to Storebrand-branding, or clikcable actions.</p>
-                <i>ex: Boxes, lines, tables</i><br>
-                <code>Class: stbcolor-support first/second/third/fourth</code>
-              </div>
-              <div class="row">
-                <div class="color-swatch stbcolor-support first"></div>
-                <div class="color-swatch stbcolor-support second"></div>
-                <div class="color-swatch stbcolor-support third"></div>
-                <div class="color-swatch stbcolor-support fourth"></div>
-              </div>
-            </div>
-
-          </div> <!-- /row -->
-
-          <hr/>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <p><strong>Function colors</strong> are used on elements which is important for the user to differantiate, and is more important than showing our brand-colors.</p>
-                <i>ex: Buttons, links, messages, errors</i><br>
-                <code>Class: stbcolor-func first/second/third +light</code>
-              </div>
-              <div class="row">
-                <div class="color-swatch stbcolor-func first light"></div>
-                <div class="color-swatch stbcolor-func first"></div>
-              </div>
-              <div class="row">
-                <div class="color-swatch stbcolor-func second light"></div>
-                <div class="color-swatch stbcolor-func second"></div>
-              </div>
-              <div class="row">
-                <div class="color-swatch stbcolor-func third light" style="border: 1px solid #ccc;"></div>
-                <div class="color-swatch stbcolor-func third"></div>
-              </div>
-            </div>
-
-          </div> <!-- /row -->
-          <hr/>
-
-          <div class="row">
-            <p>
-              <strong>Contrast colors</strong> are used on elements or graphics which sorts or compares different elements to create a overview.
-            </p>
-            <i>ex: graphs, diagrams, tables, legend</i><br>
-            <code>Class: stbcolor-contrast first/second/third/fourth a/b/c/d</code>
-          </div> <!-- /row -->
-          <div class="row airgap-sm">
-            <strong class="clearfix">First:</strong>
-            <div class="color-swatch stbcolor-contrast first d"></div>
-            <div class="color-swatch stbcolor-contrast first c"></div>
-            <div class="color-swatch stbcolor-contrast first b"></div>
-            <div class="color-swatch stbcolor-contrast first a"></div>
-          </div>
-          <div class="row airgap-sm">
-            <strong class="clearfix">Second:</strong>
-            <div class="color-swatch stbcolor-contrast second d"></div>
-            <div class="color-swatch stbcolor-contrast second c"></div>
-            <div class="color-swatch stbcolor-contrast second b"></div>
-            <div class="color-swatch stbcolor-contrast second a"></div>
-          </div>
-          <div class="row airgap-sm">
-            <strong class="clearfix">Third:</strong> <small>note: only primary brand-color on this, no variations.</small>
-            <div class="color-swatch stbcolor-contrast third"></div>
-          </div>
-          <div class="row airgap-sm">
-            <strong class="clearfix">Fourth:</strong>
-            <div class="color-swatch stbcolor-contrast fourth d"></div>
-            <div class="color-swatch stbcolor-contrast fourth c"></div>
-            <div class="color-swatch stbcolor-contrast fourth b"></div>
-            <div class="color-swatch stbcolor-contrast fourth a"></div>
-          </div>
-
-        </div> <!-- col-md-9 -->
-
-      </div> <!-- /row -->
 
       <hr class="airgap"/>
 
