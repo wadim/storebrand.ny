@@ -5,11 +5,10 @@
   margin-bottom: 20px;
 
   // set a transparent border so all variants are same size:
-  border: 1px solid transparent;
+  border: 1px solid transparent;  
 
-  // some boxes have borders:
-  &.stbcolor-support.fourth {
-    border: 1px solid @stb-support-color3;
+  &.border{
+    border: 1px solid;
   }
 
   // reset ul/ol padding inside boxes
@@ -17,5 +16,30 @@
     padding-bottom: 0;
   }
 
+  //some boxes have borders:
+  &.stbcolor-support.fourth {
+    border: 1px solid @stb-support-color3;
+  }
+  
+
+  // Styling for the different boxtypes
+  &.stbcolor-secondary.first {
+    color: @stb-primary-white;
+    a{
+      text-decoration: underline;
+    }
+  }
+
+   &.stbcolor-secondary.second {
+    color: @stb-primary-white;
+    a {
+      color: @stb-primary-white;
+      text-decoration: underline;
+    }
+  }
+
+
+
+  
 
 }
