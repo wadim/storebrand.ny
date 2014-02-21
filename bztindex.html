@@ -57,7 +57,7 @@
 
       <div class="row"><!-- Colors Row -->
         <div class="col-md-3" id="index-nav" role="navigation">
-          <h2>Colors (Done)</h2>
+          <h2>Colors (Done-ish)</h2>
         </div>
 
         <div class="col-md-9" id="webfarger">
@@ -181,220 +181,185 @@
       
       <div class="row">
         <div class="col-md-3">
-          <h2>Buttons (Done)</h2>
+          <h2>Buttons (Done-ish)</h2>
         </div>
         <div class="col-md-9">
+          <div class="row">
 
-          <div class="col-md-4">
-            <p class="center-block">
-              <strong class="clearfix">Large button</strong>
-              Height 40px<br>
-              Min-width 160px
-              <button class="stb-btn stb-btn-lg airgap-sm">Shop 'til you drop</button>
-              <p>
-                <strong>Class:</strong> <code>stb-btn stb-btn-lg</code>
+            <div class="col-md-11">
+              <p class="center-block">
+                Buttons come in three sizes;
+                <br /><br />
+                <strong>Standard button</strong>: <button class="stb-btn">Standard</button><br />
+                Height: 30px<br />
+                Width: 100-200px<br />
+                Font size: 14px<br />
+                <br />
+                <strong>Large button</strong>: <button class="stb-btn stb-btn-lg">Large</button><br />
+                Height: 40px<br />
+                Width: 160-300px<br />
+                Font size: 18px<br />
+                <br />
+                <strong>Small button</strong>: <button class="stb-btn stb-btn-sm">Small</button><br />
+                Height: 28px<br />
+                Width: 50-150px<br />
+                Font size: 12px<br />
+                <br />
               </p>
+            </div>
+
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <strong>Usage:</strong> <br>
+              <pre class="prettyprint">
+&lt;button class="stb-btn"&gt;Standard&lt;/button&gt;
+&lt;button class="stb-btn stb-btn-lg"&gt;Large&lt;/button&gt;
+&lt;button class="stb-btn stb-btn-sm"&gt;Small&lt;/button&gt;</pre>               
+            </div>
           </div>
 
-          <div class="col-md-4">
-            <p>
-              <strong class="clearfix">Primary button</strong>
-              Height 30px <br>
-              Min-width 100px
-            </p>
-            <button class="stb-btn primary airgap-sm">I can't stop</button>
-            <p>
-              <strong>Class:</strong> <code>stb-btn primary</code>
-            </p>
+          <hr>
+
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Standard buttons</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Primary</strong>
+              <button class="stb-btn">Primary action</button><br /><br />
+              <code>Class: stb-btn</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn link-icon">Primary action <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+              <code>Class:<br />stb-btn link-icon</code>
+            </div>
+  
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Secondary</strong>
+              <button class="stb-btn secondary">Action</button><br /><br />
+              <code>Class: stb-btn secondary</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn secondary link-icon">Action <span class="glyphicon glyphicon-arrow-right"></span></button><br /><br />
+              <code>Class:<br />stb-btn secondary link-icon</code>
+            </div>
+
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Warning / Alarm</strong>
+              <button class="stb-btn alarm">Warning</button><br /><br />
+              <code>Class: stb-btn alarm</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn alarm link-icon">Warning <span class="stb-sprite-16 keychain neutral"></button><br /><br />
+              <code>Class:<br />stb-btn secondary link-icon</code>
+            </div>
+
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Disabled</strong>
+              <button class="stb-btn disabled">Can't touch this</button><br /><br />
+              <code>Class: stb-btn disabled</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+              <code>Class:<br />stb-btn disabled link-icon</code>
+            </div>
+        
+          </div> <!-- /row -->
+      
+          <hr>
+
+          <div class="row">
+            <div class="col-md-3">
+              <h2>Large buttons</h2>
+            </div>
           </div>
 
-          <div class="col-md-4">
-            <p>
-              <strong class="clearfix">Alternative button</strong>
-              Height 30px <br>
-              Min-width 100px
-            </p>
-            <button class="stb-btn secondary airgap-sm">I'ts two o'clock</button>
-            <p>
-              <strong>Class:</strong> <code>stb-btn secondary</code>
-            </p>
-          </div>
+          <div class="row">
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Primary</strong>
+              <button class="stb-btn stb-btn-lg">Primary action</button><br /><br />
+              <code>Class: +stb-btn-lg</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn stb-btn-lg link-icon">Primary action <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+              <code>Class: +stb-btn-lg</code>
+            </div>
+
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Secondary</strong>
+              <button class="stb-btn stb-btn-lg secondary">Action</button><br /><br />
+              <code>Class: +stb-btn-lg</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn stb-btn-lg secondary link-icon">Action <span class="glyphicon glyphicon-arrow-right"></span></button><br /><br />
+              <code>Class: +stb-btn-lg</code>
+            </div>
+
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Warning / Alarm</strong>
+              <button class="stb-btn stb-btn-lg alarm">Warning</button><br /><br />
+              <code>Class: +stb-btn-lg</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn stb-btn-lg alarm link-icon">Warning <span class="stb-sprite-24 keychain neutral"></span></button><br /><br />
+              <code>Class: +stb-btn-lg</code>
+            </div>
+
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Disabled</strong>
+              <button class="stb-btn stb-btn-lg disabled">Can't touch this</button><br /><br />
+              <code>Class: +stb-btn-lg</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn stb-btn-lg disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+              <code>Class: +stb-btn-lg</code>
+            </div>
+        
+          </div> <!-- /row -->
+          
+          <hr>
+        
+          <div class="row">
+            <div class="col-md-3">
+              <h2>Small buttons</h2>
+            </div>
+          </div>        
+  
+          <div class="row">
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Primary</strong>
+              <button class="stb-btn stb-btn-sm">Primary action</button><br /><br />
+              <code>Class: +stb-btn-sm</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn stb-btn-sm link-icon">Primary action <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+              <code>Class: +stb-btn-sm</code><br />
+            </div>
+
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Secondary</strong>
+              <button class="stb-btn stb-btn-sm secondary">Action</button><br /><br />
+              <code>Class: +stb-btn-sm</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn stb-btn-sm secondary link-icon">Action <span class="glyphicon glyphicon-arrow-right"></span></button><br /><br />
+              <code>Class: +stb-btn-sm</code>
+            </div>
+
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Warning / Alarm</strong>
+              <button class="stb-btn stb-btn-sm alarm">Warning</button><br /><br />
+              <code>Class: +stb-btn-sm</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn stb-btn-sm alarm link-icon">Warning <span class="glyphicon glyphicon-arrow-left"></span></button><br /><br />
+              <code>Class: +stb-btn-sm</code>
+            </div>
+
+            <div class="col-md-3 col-xs-11 text-center">
+              <strong class="clearfix">Disabled</strong>
+              <button class="stb-btn stb-btn-sm disabled">Can't touch this</button><br /><br />
+              <code>Class: +stb-btn-sm</code><br /><br />
+              With icon:<br />
+              <button class="stb-btn stb-btn-sm disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+              <code>Class: +stb-btn-sm</code>
+            </div>
+          </div> <!-- /row --> 
 
         </div>
-
-        <hr class="airgap">       
-        
-        <div class="row">
-          <div class="col-md-9 col-md-offset-3">
-            <strong>Usage:</strong> <br>
-            <pre class="prettyprint">&lt;button class="stb-btn primary"&gt;Action&lt;/button&gt;</pre>
-          </div>
-        </div>
-
-        <hr class="airgap">
-
-        <div class="row">
-          <div class="col-md-9 col-md-offset-3">
-            <h2>Standard buttons</h2>
-          </div>
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Primary</strong>
-            <button class="stb-btn">Primary action</button><br /><br />
-            <code>Class: stb-btn</code><br /><br />
-          </div>
-  
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Secondary</strong>
-            <button class="stb-btn secondary">Action</button><br /><br />
-            <code>Class: stb-btn secondary</code>
-          </div>
-
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Warning / Alarm</strong>
-            <button class="stb-btn alarm">Action</button><br /><br />
-            <code>Class: stb-btn alarm</code>
-          </div>
-
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Disabled</strong>
-            <button class="stb-btn disabled">Can't touch this</button><br /><br />
-            <code>Class: stb-btn disabled</code>
-          </div>
-        
-        </div> <!-- /row -->
-      
-        <div class="row">
-          <div class="col-md-3">
-            <p>With icons</p>
-          </div>
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn link-icon">Primary action <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
-            <code>Class:<br />stb-btn link-icon</code><br /><br />
-          </div>
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn secondary link-icon">Action <span class="glyphicon glyphicon-arrow-right"></span></button><br /><br />
-            <code>Class:<br />stb-btn secondary link-icon</code>
-          </div>        
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn alarm link-icon">Action <span class="glyphicon glyphicon-arrow-left"></span></button><br /><br />
-            <code>Class:<br />stb-btn secondary link-icon</code>
-          </div>          
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
-            <code>Class:<br />stb-btn disabled link-icon</code>
-          </div>
-
-        </div> <!-- /row -->
-        <hr class="airgap">
-
-        <div class="row">
-          <div class="col-md-3">
-            <h2>Large buttons</h2>
-          </div>
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Primary</strong>
-            <button class="stb-btn stb-btn-lg">Primary action</button><br /><br />
-            <code>Class: +stb-btn-lg</code><br /><br />
-          </div>
-
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Secondary</strong>
-            <button class="stb-btn stb-btn-lg secondary">Action</button><br /><br />
-            <code>Class: +stb-btn-lg</code>
-          </div>
-
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Warning / Alarm</strong>
-            <button class="stb-btn stb-btn-lg alarm">Action</button><br /><br />
-            <code>Class: +stb-btn-lg</code>
-          </div>
-
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Disabled</strong>
-            <button class="stb-btn stb-btn-lg disabled">Can't touch this</button><br /><br />
-            <code>Class: +stb-btn-lg</code>
-          </div>
-        
-        </div> <!-- /row -->
-      
-        <div class="row">
-          <div class="col-md-3">
-            <p>With icons</p>
-          </div>
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn stb-btn-lg link-icon">Primary action <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
-            <code>Class: +stb-btn-lg</code>
-          </div>
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn stb-btn-lg secondary link-icon">Action <span class="glyphicon glyphicon-arrow-right"></span></button><br /><br />
-            <code>Class: +stb-btn-lg</code>
-          </div>        
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn stb-btn-lg alarm link-icon">Action <span class="glyphicon glyphicon-arrow-left"></span></button><br /><br />
-            <code>Class: +stb-btn-lg</code>
-          </div>          
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn stb-btn-lg disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
-            <code>Class: +stb-btn-lg</code>
-          </div>
-
-        </div> <!-- /row -->
-
-        <hr class="airgap">
-  
-        <div class="row">
-          <div class="col-md-3">
-            <h2>Small buttons</h2>
-          </div>
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Primary</strong>
-            <button class="stb-btn stb-btn-sm">Primary action</button><br /><br />
-            <code>Class: +stb-btn-sm</code><br /><br />
-          </div>
-
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Secondary</strong>
-            <button class="stb-btn stb-btn-sm secondary">Action</button><br /><br />
-            <code>Class: +stb-btn-sm</code>
-          </div>
-
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Warning / Alarm</strong>
-            <button class="stb-btn stb-btn-sm alarm">Action</button><br /><br />
-            <code>Class: +stb-btn-sm</code>
-          </div>
-
-          <div class="col-md-2 col-xs-11 text-center">
-            <strong class="clearfix">Disabled</strong>
-            <button class="stb-btn stb-btn-sm disabled">Can't touch this</button><br /><br />
-            <code>Class: +stb-btn-sm</code>
-          </div>
-        
-        </div> <!-- /row -->
-      
-        <div class="row">
-          <div class="col-md-3">
-            <p>With icons</p>
-          </div>
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn stb-btn-sm link-icon">Primary action <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
-            <code>Class: +stb-btn-sm</code>
-          </div>
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn stb-btn-sm secondary link-icon">Action <span class="glyphicon glyphicon-arrow-right"></span></button><br /><br />
-            <code>Class: +stb-btn-sm</code>
-          </div>        
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn stb-btn-sm alarm link-icon">Action <span class="glyphicon glyphicon-arrow-left"></span></button><br /><br />
-            <code>Class: +stb-btn-sm</code>
-          </div>          
-          <div class="col-md-2 col-xs-11 text-center">
-            <button class="stb-btn stb-btn-sm disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
-            <code>Class: +stb-btn-sm</code>
-          </div>
-
-        </div> <!-- /row -->
-
       </div> <!-- /Buttons row -->
       
       <hr class="airgap">  

@@ -30,7 +30,7 @@
   
   &:hover, &:focus, &:active {
     .stbcolor-secondary.third .darker;
-    // Why is this necessary? It should stay white by default from base rule?
+    // Needs specification because stb-btn:hover has default color
     color: @stb-primary-white;
   }
   
@@ -77,10 +77,9 @@
 
   &.stb-btn-sm {
     .btn-sm();
-  }
-
-  &.stb-btn-xs {
-    .btn-xs();
+    height: 28px;
+    min-width: 50px;
+    max-width: 150px;
   }
 
 }
