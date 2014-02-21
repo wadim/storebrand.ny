@@ -477,15 +477,15 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3 col-md-offset-3">
-          <div class="stb-box stbcolor-primary first">
-            <p>Their faces on the ground, not daring to lift their eyes and behold such a prodigy.</p>
+          <div class="stb-box stbcolor-secondary second">
+            <p>SEC SECTheir faces on the ground, not daring to lift their eyes and behold such a prodigy.</p>
             <a href="#stb-box">Said the bird</a>
           </div>
         </div>
 
         <div class="col-md-4">
-          <div class="stb-box stbcolor-primary first">
-            <p>Boxes inherits width from the parent element.</p>
+          <div class="stb-box stbcolor-background first">
+            <p>BACK FIRST Boxes inherits width from the parent element.</p>
             <ul class="stb">
               <li>List item one!</li>
               <li>The second item</li>
@@ -496,8 +496,8 @@ $('ul[data-widget=stbFaq]').stbFaq();
       </div>
       <div class="row">
         <div class="col-md-3 col-md-offset-3">
-          <div class="stb-box stbcolor-support second">
-            <p>Their faces on the ground, not daring to lift their eyes and behold such a prodigy.</p>
+          <div class="stb-box stbcolor-background second">
+            <p>BACK SEC Their faces on the ground, not daring to lift their eyes and behold such a prodigy.</p>
             <a href="#stb-box">Said the bird</a>
           </div>
         </div>
@@ -583,70 +583,57 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div>
       </div>
 
-
-      <hr class="airgap">
+     <hr class="airgap">
 
       <div class="row">
-        <div class="col-md-3">
-          <h1>Standard buttons</h1>
-        </div>
-      </div>
+       
+      
       <div class="row">
         <div class="col-md-3 col-xs-1">
-          <h5>Standard</h5>
-          <h5>Mouseover</h5>
-          <h5>Disabled</h5>
-          <h5>Error</h5>
+          <h1>Standard buttons</h1>
         </div>
         <div class="col-md-2 col-xs-11 text-center">
           <strong class="clearfix">Primary</strong>
-          <button class="stb-btn">Primary action</button>
+          <button class="stb-btn" onclick="$(this).toggleClass('stb-btn-lg')">Kjøp</button>
           <span class="airgap-sm"></span>
-          <button class="stb-btn fauxHoverPrimary">Primary action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn disabled">Primary action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn alarm">Primary action</button>
+          <strong class="clearfix">Iconbutton</strong>
+          <button class="stb-btn link-icon" onclick="$(this).toggleClass('stb-btn-lg')"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
+          
         </div>
 
         <div class="col-md-2 col-xs-11 text-center">
-          <strong class="clearfix">Secondary 1</strong>
-          <button class="stb-btn secondary">Action</button>
+          <strong class="clearfix">Secondary1</strong>
+          <button class="stb-btn secondary1" onclick="$(this).toggleClass('stb-btn-lg')">Tilbake</button>
           <span class="airgap-sm"></span>
-          <button class="stb-btn secondary fauxHoverSecondary">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary disabled">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary alarm">Action</button>
-          <span class="airgap-sm"></span>
-
+          <strong class="clearfix">Iconbutton</strong>
+          <button class="stb-btn link-icon linksec1" onclick="$(this).toggleClass('stb-btn-lg')"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
         </div>
 
         <div class="col-md-2 col-xs-11 text-center">
-          <strong class="clearfix">Secondary 2</strong>
-          <button class="stb-btn secondary2">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary2 fauxHoverSecondary2">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary2 disabled">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary2 alarm">Action</button>
-          <span class="airgap-sm"></span>
+          <strong class="clearfix">Alarm</strong>
+          <button class="stb-btn alarm" onclick="$(this).toggleClass('stb-btn-lg')">Avbryt</button>
+          <span class="airgap-sm"></span>   
+          <strong class="clearfix">Iconbutton</strong>
+          <button class="stb-btn link-icon linkalarm" onclick="$(this).toggleClass('stb-btn-lg')"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
         </div>
 
         <div class="col-md-2 col-xs-11 text-center">
-          <strong class="clearfix">Button w/icon</strong>
-          <button class="stb-btn link-icon"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn link-icon fauxHoverLinkIcon"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn link-icon disabled"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn link-icon alarm"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
-          <span class="airgap-sm"></span>
-        </div>
+          <strong class="clearfix" >Disabled <span class="glyphicon glyphicon-info-sign" data-placement="auto top" data-content="You must accept all terms of the purchase before continuing" data-trigger="hover" data-toggle="popover" id="demo-popover" class="stb-btn stb-btn-disabled" data-original-title="" title=""></span></strong>
 
+          <button class="stb-btn disabled" >Videre</button>
+          <span class="airgap-sm"></span>  
+          <strong class="clearfix">Iconbutton</strong>
+          <button class="stb-btn link-icon disabled" onclick="$(this).toggleClass('stb-btn-lg')"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>      
+        </div>
+              <hr class="airgap">
+  
       </div> <!-- /row -->
+
+       <div class="row">
+        <div class="col-md-12">
+          <p>Click on the buttons to change size</p>
+        </div>
+      </div> 
 
       <hr class="airgap">
 

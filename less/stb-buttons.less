@@ -1,6 +1,6 @@
 
 .stb-btn {
-  // import BS defaults:
+  //----------------------------------------  import BS defaults:
   .btn;
   .btn-default;
 
@@ -8,11 +8,12 @@
   outline: 0;
   }
   
+  //---------------------------------------- default:
   // base setup:
   border: none;
-  background-color: @stb-func-color-first-light;
-  color: @stb-support-color4;
-  height: 30px;
+  .stbcolor-secondary.third;
+  height:40px;
+  border-radius: 0px;
   font-weight: bold;
   padding: 0 10px;
   min-width: 100px;
@@ -28,13 +29,12 @@
 
   // States:
   &:hover,&:focus,&:active {
-    background-color: @stb-func-color-first;
-    color: @stb-support-color4;
+    .stbcolor-secondary.second;
   }
 
   &.disabled {
     background-color: @stb-support-color2;
-    color: @stb-primary-white;
+    color: @stb-grey-third;
     cursor: not-allowed;
 
     &:hover,&:active,&:focus {
@@ -43,107 +43,87 @@
     }
   }
 
-  &.alarm {
-    background-color: @stb-func-color-third;
-    color: @stb-primary-white;
-  }
-
-
-  // Button variations:
+  
+  //---------------------------------------- primary:
   &.primary {
-    // do nothing, yet
+    // for now btn is primary, maybe set classname for the default also?
+    
   }
 
-  &.secondary {
-    background-color: transparent;
-    color: @stb-func-color-first-light;
-
-    border: 1px solid @stb-func-color-first-light;
-    // 2px border offsets our text, fix:
+//---------------------------------------- Secondary1:
+  &.secondary1 {
+    
+    .stbcolor-grey.fifth;
     line-height: 1;
 
     &:hover {
-      background-color: @stb-primary-white;
-      color: @stb-func-color-first;
-      border-color: @stb-func-color-first;
+      .stbcolor-grey.third;
       .box-shadow(none);
     }
     &:focus,&:active {
-      border-width: 2px;
       .box-shadow(none);
     }
 
     &.disabled {
       background-color: transparent;
-      color: @stb-support-color1;
+      color: @stb-grey-third;
       border-color: @stb-support-color1;
       cursor: not-allowed;
     }
-    &.alarm {
-      background-color: transparent;
-      color: @stb-func-color-third;
-      border-color: @stb-func-color-third;
-      &:hover {
-        color: @stb-contrast-storebrand1;
-        border-color: @stb-contrast-storebrand1;
-      }
-    }
-
   }
 
-  &.secondary2 {
-    background-color: @stb-support-color4;
-    color: @stb-func-color-first-light;
-
-    &:hover {
-    // background-color: @stb-support-color3;
-    color: @stb-func-color-first;
-      .box-shadow(none);
-    }
-    &:focus {
-      .box-shadow(none);
-    }
-
-    &:active {
-      .box-shadow(none);
-      background-color: @stb-support-color3;
-    }
+//---------------------------------------- alarm:
+  &.alarm {
+      background-color: @stb-primary-color;
+      color: @stb-primary-white;
+      &:hover {
+        color: @stb-grey-third; 
+        border-color: @stb-contrast-storebrand1;
+      }
 
     &.disabled {
       background-color: @stb-support-color2;
-      color: @stb-primary-white;
+      color: @stb-grey-third;
       cursor: not-allowed;
-    }
-
-    &.alarm {
-      background-color: @stb-support-color3;
-      color: @stb-func-color-third;
     }
 
   }
 
+//---------------------------------------- icon:
   &.link-icon {
+    //.stbcolor-secondary.third;
     background-color: @stb-primary-white;
-    color: @stb-func-color-first-light;
+    //color: @stb-func-color-first-light;
+    color: @stb-secondary-forest;
+
     &:hover,&:focus {
-      color: @stb-func-color-first;
+      color: @stb-support-color2;
       .box-shadow(none);
     }
+
     &:active {
       background-color: @stb-support-color4;
     }
+
     &.disabled {
-      color: @stb-support-color2;
+      color: @stb-grey-third;
       cursor: not-allowed;
     }
-    &.alarm {
-      color: @stb-func-color-third;
+
+    &.linksec1 {
+      color: @stb-grey-fifth;
+      &:hover{
+        color:@stb-grey-third;
+      }
+    }
+
+    &.linkalarm {
+      color: @stb-primary-color;
     }
   }
 
 
-  // Sizes:
-
+  //---------------------------------------- Sizes:
   &.stb-btn-lg {
     font-size: 18px;
     height: 40px;

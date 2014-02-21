@@ -89,13 +89,24 @@
   &.second {
     background-color: @stb-secondary-moss;
     // Example that adds red text color on buttons that use the classes "stbcolor-secondary second", see stb-buttons.less
-    &.stb-btn {
-      color: @stb-primary-color;
+     &.stb-box p {
+      color: @stb-primary-white;
     }
+     &.stb-box a {
+      color: @stb-primary-white;
+      text-decoration: underline;
+    }
+    &.stb-btn {
+      color: @stb-primary-white;
+    }
+
   }
 
   &.third {
     background-color: @stb-secondary-forest;
+    &.stb-btn{
+    color: @stb-primary-white;
+    }
   }
 
   &.fourth {
