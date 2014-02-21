@@ -57,7 +57,7 @@
 
       <div class="row"><!-- Colors Row -->
         <div class="col-md-3" id="index-nav" role="navigation">
-          <h1>Colors</h1>
+          <h2>Colors (Done)</h2>
         </div>
 
         <div class="col-md-9" id="webfarger">
@@ -81,7 +81,7 @@
             <div class="col-md-6">
               <div class="row">
                 <p><strong>Background colors</strong> for various user interface elements. The background comes with preset border/outline colors.</p>
-                <i>Examples: Boxes, ?</i><br>
+                <i>Examples: Boxes, ?</i><br /><br />
                 <code>Class: stbcolor-background first/second</code>
               </div>
               <div class="row">
@@ -101,7 +101,7 @@
               <div class="row">
                 <p><strong>Secondary colors</strong> are used on important elements besides branding.</p>
                 <i>Examples: Buttons, links, messages, errors</i><br>
-                <code>Class: stbcolor-secondary first/second/third/fourth/fifth/sixth</code>
+                <code>Class:<br />stbcolor-secondary first/second/third/fourth/fifth/sixth</code>
               </div>
               <div class="row">
                 <div id="secondary-first" data-placement="auto top" data-title="Charcoal" class="color-swatch stbcolor-secondary first"></div>
@@ -118,6 +118,19 @@
                 <script>$('#secondary-sixth').tooltip();</script>
               </div>
             </div>
+            <div class="col-md-6">
+              <div class="row">
+                <p><strong>Darker colors</strong> used for hover effects</p>
+                <i>Examples: Buttons, links, ...</i><br /><br /><br />
+                <code>Class: darker</code>
+              </div>
+              <div class="row">
+                <div id="primarycolor-first-darker" data-placement="auto top" data-title="Darker Storebrand Red" class="color-swatch stbcolor-primary first darker"></div>
+                <script>$('#primarycolor-first-darker').tooltip();</script>
+                <div id="secondarycolor-third-darker" data-placement="auto top" data-title="Darker Forest" class="color-swatch stbcolor-secondary third darker"></div>
+                <script>$('#secondarycolor-third-darker').tooltip();</script>
+              </div>
+            </div>
 
           </div> <!-- /row -->
 
@@ -126,21 +139,21 @@
           <div class="row">
             <div class="col-md-6">
               <div class="row">
-                <p><strong>Grey colors</strong> used for dull stuff (?)</p>
-                <i>Examples: ?</i><br>
-                <code>Class: stbcolor-grey first/second/third/fourth/fifth</code>
+                <p><strong>Gray colors</strong> used for dull stuff (?)</p>
+                <i>Examples: ?</i><br /><br />
+                <code>Class: stbcolor-gray first/second/third/fourth/fifth</code>
               </div>
               <div class="row">
-                <div id="grey-first" data-placement="auto top" data-title="Grey 1" class="color-swatch stbcolor-grey first"></div>
-                <script>$('#grey-first').tooltip();</script>
-                <div id="grey-second" data-placement="auto top" data-title="Grey 2" class="color-swatch stbcolor-grey second"></div>
-                <script>$('#grey-second').tooltip();</script>
-                <div id="grey-third" data-placement="auto top" data-title="Grey 3" class="color-swatch stbcolor-grey third"></div>
-                <script>$('#grey-third').tooltip();</script>
-                <div id="grey-fourth" data-placement="auto top" data-title="Grey 4" class="color-swatch stbcolor-grey fourth"></div>
-                <script>$('#grey-fourth').tooltip();</script>
-                <div id="grey-fifth" data-placement="auto top" data-title="Grey 5" class="color-swatch stbcolor-grey fifth"></div>
-                <script>$('#grey-fifth').tooltip();</script>
+                <div id="gray-first" data-placement="auto top" data-title="Gray 1" class="color-swatch stbcolor-gray first"></div>
+                <script>$('#gray-first').tooltip();</script>
+                <div id="gray-second" data-placement="auto top" data-title="Gray 2" class="color-swatch stbcolor-gray second"></div>
+                <script>$('#gray-second').tooltip();</script>
+                <div id="grey-third" data-placement="auto top" data-title="Gray 3" class="color-swatch stbcolor-gray third"></div>
+                <script>$('#gray-third').tooltip();</script>
+                <div id="gray-fourth" data-placement="auto top" data-title="Gray 4" class="color-swatch stbcolor-gray fourth"></div>
+                <script>$('#gray-fourth').tooltip();</script>
+                <div id="gray-fifth" data-placement="auto top" data-title="Gray 5" class="color-swatch stbcolor-gray fifth"></div>
+                <script>$('#gray-fifth').tooltip();</script>
               </div>
             </div> <!-- /col-md-6 -->
 
@@ -165,10 +178,230 @@
       </div> <!-- /Colors Row -->
 
       <hr class="airgap"/>
-
+      
       <div class="row">
         <div class="col-md-3">
-          <h1>Headers</h1>
+          <h2>Buttons (Done)</h2>
+        </div>
+        <div class="col-md-9">
+
+          <div class="col-md-4">
+            <p class="center-block">
+              <strong class="clearfix">Large button</strong>
+              Height 40px<br>
+              Min-width 160px
+              <button class="stb-btn stb-btn-lg airgap-sm">Shop 'til you drop</button>
+              <p>
+                <strong>Class:</strong> <code>stb-btn stb-btn-lg</code>
+              </p>
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              <strong class="clearfix">Primary button</strong>
+              Height 30px <br>
+              Min-width 100px
+            </p>
+            <button class="stb-btn primary airgap-sm">I can't stop</button>
+            <p>
+              <strong>Class:</strong> <code>stb-btn primary</code>
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              <strong class="clearfix">Alternative button</strong>
+              Height 30px <br>
+              Min-width 100px
+            </p>
+            <button class="stb-btn secondary airgap-sm">I'ts two o'clock</button>
+            <p>
+              <strong>Class:</strong> <code>stb-btn secondary</code>
+            </p>
+          </div>
+
+        </div>
+
+        <hr class="airgap">       
+        
+        <div class="row">
+          <div class="col-md-9 col-md-offset-3">
+            <strong>Usage:</strong> <br>
+            <pre class="prettyprint">&lt;button class="stb-btn primary"&gt;Action&lt;/button&gt;</pre>
+          </div>
+        </div>
+
+        <hr class="airgap">
+
+        <div class="row">
+          <div class="col-md-9 col-md-offset-3">
+            <h2>Standard buttons</h2>
+          </div>
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Primary</strong>
+            <button class="stb-btn">Primary action</button><br /><br />
+            <code>Class: stb-btn</code><br /><br />
+          </div>
+  
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Secondary</strong>
+            <button class="stb-btn secondary">Action</button><br /><br />
+            <code>Class: stb-btn secondary</code>
+          </div>
+
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Warning / Alarm</strong>
+            <button class="stb-btn alarm">Action</button><br /><br />
+            <code>Class: stb-btn alarm</code>
+          </div>
+
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Disabled</strong>
+            <button class="stb-btn disabled">Can't touch this</button><br /><br />
+            <code>Class: stb-btn disabled</code>
+          </div>
+        
+        </div> <!-- /row -->
+      
+        <div class="row">
+          <div class="col-md-3">
+            <p>With icons</p>
+          </div>
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn link-icon">Primary action <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+            <code>Class:<br />stb-btn link-icon</code><br /><br />
+          </div>
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn secondary link-icon">Action <span class="glyphicon glyphicon-arrow-right"></span></button><br /><br />
+            <code>Class:<br />stb-btn secondary link-icon</code>
+          </div>        
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn alarm link-icon">Action <span class="glyphicon glyphicon-arrow-left"></span></button><br /><br />
+            <code>Class:<br />stb-btn secondary link-icon</code>
+          </div>          
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+            <code>Class:<br />stb-btn disabled link-icon</code>
+          </div>
+
+        </div> <!-- /row -->
+        <hr class="airgap">
+
+        <div class="row">
+          <div class="col-md-3">
+            <h2>Large buttons</h2>
+          </div>
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Primary</strong>
+            <button class="stb-btn stb-btn-lg">Primary action</button><br /><br />
+            <code>Class: +stb-btn-lg</code><br /><br />
+          </div>
+
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Secondary</strong>
+            <button class="stb-btn stb-btn-lg secondary">Action</button><br /><br />
+            <code>Class: +stb-btn-lg</code>
+          </div>
+
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Warning / Alarm</strong>
+            <button class="stb-btn stb-btn-lg alarm">Action</button><br /><br />
+            <code>Class: +stb-btn-lg</code>
+          </div>
+
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Disabled</strong>
+            <button class="stb-btn stb-btn-lg disabled">Can't touch this</button><br /><br />
+            <code>Class: +stb-btn-lg</code>
+          </div>
+        
+        </div> <!-- /row -->
+      
+        <div class="row">
+          <div class="col-md-3">
+            <p>With icons</p>
+          </div>
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn stb-btn-lg link-icon">Primary action <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+            <code>Class: +stb-btn-lg</code>
+          </div>
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn stb-btn-lg secondary link-icon">Action <span class="glyphicon glyphicon-arrow-right"></span></button><br /><br />
+            <code>Class: +stb-btn-lg</code>
+          </div>        
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn stb-btn-lg alarm link-icon">Action <span class="glyphicon glyphicon-arrow-left"></span></button><br /><br />
+            <code>Class: +stb-btn-lg</code>
+          </div>          
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn stb-btn-lg disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+            <code>Class: +stb-btn-lg</code>
+          </div>
+
+        </div> <!-- /row -->
+
+        <hr class="airgap">
+  
+        <div class="row">
+          <div class="col-md-3">
+            <h2>Small buttons</h2>
+          </div>
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Primary</strong>
+            <button class="stb-btn stb-btn-sm">Primary action</button><br /><br />
+            <code>Class: +stb-btn-sm</code><br /><br />
+          </div>
+
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Secondary</strong>
+            <button class="stb-btn stb-btn-sm secondary">Action</button><br /><br />
+            <code>Class: +stb-btn-sm</code>
+          </div>
+
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Warning / Alarm</strong>
+            <button class="stb-btn stb-btn-sm alarm">Action</button><br /><br />
+            <code>Class: +stb-btn-sm</code>
+          </div>
+
+          <div class="col-md-2 col-xs-11 text-center">
+            <strong class="clearfix">Disabled</strong>
+            <button class="stb-btn stb-btn-sm disabled">Can't touch this</button><br /><br />
+            <code>Class: +stb-btn-sm</code>
+          </div>
+        
+        </div> <!-- /row -->
+      
+        <div class="row">
+          <div class="col-md-3">
+            <p>With icons</p>
+          </div>
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn stb-btn-sm link-icon">Primary action <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+            <code>Class: +stb-btn-sm</code>
+          </div>
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn stb-btn-sm secondary link-icon">Action <span class="glyphicon glyphicon-arrow-right"></span></button><br /><br />
+            <code>Class: +stb-btn-sm</code>
+          </div>        
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn stb-btn-sm alarm link-icon">Action <span class="glyphicon glyphicon-arrow-left"></span></button><br /><br />
+            <code>Class: +stb-btn-sm</code>
+          </div>          
+          <div class="col-md-2 col-xs-11 text-center">
+            <button class="stb-btn stb-btn-sm disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+            <code>Class: +stb-btn-sm</code>
+          </div>
+
+        </div> <!-- /row -->
+
+      </div> <!-- /Buttons row -->
+      
+      <hr class="airgap">  
+     
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Headers</h2>
         </div>
         <div class="col-md-9">
           <i class="airgap"><strong>Arial</strong> is the standard font on storebrand.no.</i>
@@ -194,7 +427,7 @@
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Text</h1>
+          <h2>Text</h2>
         </div>
         <div class="col-md-9">
           <p class="ingress">Ingress-paragraph: a bit larger. "A big un, Granser", he chuckled. The old man shook his head. "They get thicker every day," he complained in a thin, undependable falsetto. "Who'd have thought I'd live to see the time when a man would be afraid of his life on the way to the Cliff House. When I was a boy, Edwin, men and women and little babies used to come out here from San Francisco by tens of thousands on a nice day. And there weren't any bears then.</p>
@@ -210,7 +443,7 @@
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Bullet lists</h1>
+          <h2>Bullet lists</h2>
         </div>
         <div class="col-md-9">
           <ul class="stb">
@@ -236,7 +469,7 @@
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Links in text</h1>
+          <h2>Links in text</h2>
         </div>
         <div class="col-md-9">
           <p>
@@ -261,7 +494,7 @@
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Petit text</h1>
+          <h2>Petit text</h2>
         </div>
         <div class="col-md-9">
           <p>
@@ -280,7 +513,7 @@
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Image captions</h1>
+          <h2>Image captions</h2>
         </div>
         <div class="col-md-9">
           <figure>
@@ -310,7 +543,7 @@
       <hr class="airgap"/>
 
       <div class="row">
-        <div class="col-md-3"><h1>FAQ</h1></div>
+        <div class="col-md-3"><h2>FAQ</h2></div>
         <div class="col-md-9">
 
           <h4>Frequently asked:</h4>
@@ -372,7 +605,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <hr class="airgap"/>
 
       <div class="row">
-        <div class="col-md-3"><h1>Tables</h1></div>
+        <div class="col-md-3"><h2>Tables</h2></div>
         <div class="col-md-9">
           <table class="stb-table">
             <thead>
@@ -449,7 +682,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <hr class="airgap"/>
 
       <div class="row">
-        <div class="col-md-3"><h1>Boxes</h1></div>
+        <div class="col-md-3"><h2>Boxes</h2></div>
         <div class="col-md-9">
 
           <p>Boxes with color defined for background, text and links, plus some padding/margin. Colors on <code>&lt;a&gt;</code> and <code>&lt;p&gt;</code> are adjusted according to which stbcolor-* class is used. Width of the box scales to parent-element.</p>
@@ -513,129 +746,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div>
       </div>
 
-      <hr class="airgap"/>
-
+      <hr class="airgap">      
+      
       <div class="row">
         <div class="col-md-3">
-          <h1>Buttons</h1>
-        </div>
-        <div class="col-md-9">
-
-          <div class="col-md-4">
-            <p class="center-block">
-              <strong class="clearfix">Large button</strong>
-              Height 40px<br>
-              Min-width 160px
-              <button class="stb-btn stb-btn-lg airgap-sm">Shop 'til you drop</button>
-              <p>
-                <strong>Class:</strong> <code>stb-btn stb-btn-lg</code>
-              </p>
-          </div>
-
-          <div class="col-md-4">
-            <p>
-              <strong class="clearfix">Primary button</strong>
-              Height 30px <br>
-              Min-width 100px
-            </p>
-            <button class="stb-btn primary airgap-sm">I can't stop</button>
-            <p>
-              <strong>Class:</strong> <code>stb-btn primary</code>
-            </p>
-          </div>
-
-          <div class="col-md-4">
-            <p>
-              <strong class="clearfix">Alternative button</strong>
-              Height 30px <br>
-              Min-width 100px
-            </p>
-            <button class="stb-btn secondary airgap-sm">I'ts two o'clock</button>
-            <p>
-              <strong>Class:</strong> <code>stb-btn secondary</code>
-            </p>
-          </div>
-
-        </div>
-
-      </div> <!-- /row -->
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <strong>Usage:</strong> <br>
-          <pre class="prettyprint">&lt;button class="stb-btn primary"&gt;Action&lt;/button&gt;</pre>
-        </div>
-      </div>
-
-
-      <hr class="airgap">
-
-      <div class="row">
-        <div class="col-md-3">
-          <h1>Standard buttons</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 col-xs-1">
-          <h5>Standard</h5>
-          <h5>Mouseover</h5>
-          <h5>Disabled</h5>
-          <h5>Error</h5>
-        </div>
-        <div class="col-md-2 col-xs-11 text-center">
-          <strong class="clearfix">Primary</strong>
-          <button class="stb-btn">Primary action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn fauxHoverPrimary">Primary action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn disabled">Primary action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn alarm">Primary action</button>
-        </div>
-
-        <div class="col-md-2 col-xs-11 text-center">
-          <strong class="clearfix">Secondary 1</strong>
-          <button class="stb-btn secondary">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary fauxHoverSecondary">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary disabled">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary alarm">Action</button>
-          <span class="airgap-sm"></span>
-
-        </div>
-
-        <div class="col-md-2 col-xs-11 text-center">
-          <strong class="clearfix">Secondary 2</strong>
-          <button class="stb-btn secondary2">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary2 fauxHoverSecondary2">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary2 disabled">Action</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn secondary2 alarm">Action</button>
-          <span class="airgap-sm"></span>
-        </div>
-
-        <div class="col-md-2 col-xs-11 text-center">
-          <strong class="clearfix">Button w/icon</strong>
-          <button class="stb-btn link-icon"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn link-icon fauxHoverLinkIcon"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn link-icon disabled"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
-          <span class="airgap-sm"></span>
-          <button class="stb-btn link-icon alarm"><span class="glyphicon glyphicon-shopping-cart"></span> Sjekk pris</button>
-          <span class="airgap-sm"></span>
-        </div>
-
-      </div> <!-- /row -->
-
-      <hr class="airgap">
-
-      <div class="row">
-        <div class="col-md-3">
-          <h1>Checkboxes and radiobuttons</h1>
+          <h2>Checkboxes and radiobuttons</h2>
         </div>
         <div class="col-md-9">
           <i class="airgap">Customized radio and checkboxes, completely javascript-free.</i>
@@ -681,7 +796,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Large buttons</h1>
+          <h2>Large buttons</h2>
           Arial bold <br>
           size 18px
         </div>
@@ -705,7 +820,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Inputfields</h1>
+          <h2>Inputfields</h2>
           fontsize 14px
         </div>
         <div class="col-md-9">
@@ -780,7 +895,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Select menu/ lists</h1>
+          <h2>Select menu/ lists</h2>
         </div>
         <div class="col-md-9">
           <div class="row">
@@ -866,7 +981,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Custom elements</h1>
+          <h2>Custom elements</h2>
         </div>
         <div class="col-md-9">
 
@@ -919,7 +1034,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Progressbars/ rows</h1>
+          <h2>Progressbars/ rows</h2>
           <i>Progressbar-like breadcrumb elements. Used below header, above main content to track progress in a multi-step sequence.</i>
         </div>
         <div class="col-md-9">
@@ -1006,7 +1121,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Popovers</h1>
+          <h2>Popovers</h2>
         </div>
         <div class="col-md-9">
           <i class="airgap">Note: popover does not have namespaced classnames; markup/classnames are inside bootstrap javascript-files. We simply override the css with same classnames as default BS.</i>
@@ -1044,7 +1159,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Tooltips</h1>
+          <h2>Tooltips</h2>
         </div>
         <div class="col-md-9">
           <i class="airgap" style="margin-bottom: 50px;">Grey version: difficult to implement cleanly, put on hold. Note: tooltips does not have namespaced classnames.</i>
@@ -1083,7 +1198,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Message boxes</h1>
+          <h2>Message boxes</h2>
         </div>
         <div class="col-md-9">
           <div class="stb-alert stb-alert-success col-md-7 clearfix"><span class="icon-info"></span>Document saved, press any key to continue.</div>
@@ -1108,7 +1223,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Wells / expanding boxes</h1>
+          <h2>Wells / expanding boxes</h2>
         </div>
         <div class="col-md-9">
           <div class="stb-well" style="float: left; width: 300px; height: 200px;">This is a box (also known as .well)</div>
@@ -1126,7 +1241,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Standard icons</h1>
+          <h2>Standard icons</h2>
         </div>
         <div class="col-md-4">
           <i><strong>Icons</strong> are used to illustrate call-to-action; icons should be clickable and grouped with a anchor-tag.</i>
@@ -1155,7 +1270,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Navigation icons</h1>
+          <h2>Navigation icons</h2>
         </div>
         <div class="col-md-9">
           <div class="row airgap-md">
@@ -1215,7 +1330,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <hr class="airgap">
 
       <div class="row">
-        <div class="col-md-3"><h1>Icon sizes</h1></div>
+        <div class="col-md-3"><h2>Icon sizes</h2></div>
         <div class="col-md-9">
           <i class="airgap-sm"><strong>Standard sizes</strong> used on icons.</i><br>
           <table style="text-align:center;">
@@ -1276,7 +1391,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-3">
-          <h1>Icon library (spritesheet)</h1>
+          <h2>Icon library (spritesheet)</h2>
         </div>
         <div class="col-md-9">
           <i class="airgap-top">Clickable icons, available in sizes: (130px), 72px, 32px, 24px and 16px.</i><br>

@@ -1,4 +1,3 @@
-
 .stb-btn {
   //----------------------------------------  import BS defaults:
   .btn;
@@ -8,131 +7,72 @@
   outline: 0;
   }
   
-  //---------------------------------------- default:
-  // base setup:
+  // NEW BUTTON SETUP
+  // Base setup, defaults set for "primary button", so there is no need to add a class to indicate that the button is primary
   border: none;
+  color: @stb-primary-white;
   .stbcolor-secondary.third;
-  height:40px;
+  height: 30px;
   border-radius: 0px;
-  font-weight: bold;
+  font-weight: bold; 
   padding: 0 10px;
   min-width: 100px;
-
-  // stop ppl from making too long buttons
+  .box-shadow(none);
+  
+  // Stop developers from making buttons that are too wide
   max-width: 200px;
   overflow: hidden;
   cursor: pointer;
-
-  // smooth transitions on hover:
+  
+  // Smooth transition on hover:
   .transition(all .025s ease-in-out);
   transition-property: background-color, color;
-
-  // States:
-  &:hover,&:focus,&:active {
-    .stbcolor-secondary.second;
-  }
-
-  &.disabled {
-    background-color: @stb-grey-third;
-    color: @stb-grey-first;
-    cursor: not-allowed;
-
-    &:hover,&:active,&:focus {
-      background-color: @stb-support-color2;
-      color: @stb-primary-white;
-    }
-  }
-
   
-  //---------------------------------------- primary:
-  &.primary {
-    // for now btn is primary, maybe set classname for the default also?
-    
+  &:hover, &:focus, &:active {
+    .stbcolor-secondary.third .darker;
+    // Why is this necessary? It should stay white by default from base rule?
+    color: @stb-primary-white;
   }
-
-//---------------------------------------- Secondary1:
-  &.secondary1 {
+  
+  &.disabled {
+    background-color: @stb-gray-third;
+    color: @stb-gray-first;
+    cursor: not-allowed;
     
-    .stbcolor-grey.fourth;
-    line-height: 1;
-
-    &:hover {
-      .stbcolor-grey.fifth;
-      .box-shadow(none);
-    }
-    &:focus,&:active {
-      .box-shadow(none);
-    }
-
-    &.disabled {
-      background-color: transparent;
-      color: @stb-grey-third;
-      border-color: @stb-support-color1;
-      cursor: not-allowed;
+    &:hover, &:active, &:focus {
+      // No change for disabled buttons
     }
   }
-
-//---------------------------------------- alarm:
+  
+  &.secondary {
+    .stbcolor-gray.fourth;
+    
+    &:hover, &:focus, &:active {
+      .stbcolor-gray.fifth;
+    }
+  }
+  
   &.alarm {
-      background-color: @stb-primary-color;
-      color: @stb-primary-white;
-      &:hover {
-        color: @stb-grey-third; 
-        border-color: @stb-contrast-storebrand1;
-      }
-
-    &.disabled {
-      background-color: @stb-support-color2;
-      color: @stb-grey-third;
-      cursor: not-allowed;
+    .stbcolor-primary .first;
+    .box-shadow(none);
+    
+    &:hover, &:focus, &:active {
+      .stbcolor-primary.first .darker;
     }
-
   }
 
-//---------------------------------------- icon:
   &.link-icon {
-    //.stbcolor-secondary.third;
-    background-color: @stb-primary-white;
-    //color: @stb-func-color-first-light;
-    color: @stb-secondary-forest;
-
-    &:hover,&:focus {
-      color: @stb-support-color2;
-      .box-shadow(none);
-    }
-
-    &:active {
-      background-color: @stb-support-color4;
-    }
-
-    &.disabled {
-      color: @stb-grey-third;
-      cursor: not-allowed;
-    }
-
-    &.linksec1 {
-      color: @stb-grey-fourth;
-      &:hover{
-        color:@stb-grey-fifth;
-      }
-    }
-
-    &.linkalarm {
-      color: @stb-primary-color;
-    }
+    font-weight: normal;
   }
-
-
-  //---------------------------------------- Sizes:
+  
+  // Alternative sizes 
   &.stb-btn-lg {
     font-size: 18px;
     height: 40px;
     padding: 0 20px;
     min-width: 160px;
-
     max-width: 300px;
     overflow: hidden;
-
   }
 
   &.stb-btn-sm {
@@ -144,6 +84,3 @@
   }
 
 }
-
-
-

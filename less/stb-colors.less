@@ -30,11 +30,16 @@
 @stb-outline-lime:       #819f2b;
 
 // GREY COLORS
-@stb-grey-first:         #f2f2f2;
-@stb-grey-second:        #e6e6e6;
-@stb-grey-third:         #ccc;
-@stb-grey-fourth:        #a6a6a6;
-@stb-grey-fifth:         #666;
+@stb-gray-first:         #f2f2f2;
+@stb-gray-second:        #e6e6e6;
+@stb-gray-third:         #ccc;
+@stb-gray-fourth:        #a6a6a6;
+@stb-gray-fifth:         #666;
+
+// DARKER COLORS
+@stb-primary-color-darker:     #bf1d19;
+@stb-secondary-forest-darker:  #576b1d;
+
 
 /*
 * Abstract away color-names in classes:
@@ -54,6 +59,9 @@
     a {
       color: @stb-primary-white;
       text-decoration: underline;
+    }
+    &.darker {
+      background-color: @stb-primary-color-darker;
     }
   }
 
@@ -92,21 +100,13 @@
      &.stb-box p {
       color: @stb-primary-white;
     }
-     &.stb-box a {
-      color: @stb-primary-white;
-      text-decoration: underline;
-    }
-    &.stb-btn {
-      color: @stb-primary-white;
-    }
-
   }
 
   &.third {
     background-color: @stb-secondary-forest;
-    &.stb-btn{
-    color: @stb-primary-white;
-    }
+    &.darker {
+      background-color: @stb-secondary-forest-darker;
+    }    
   }
 
   &.fourth {
@@ -123,26 +123,26 @@
   
  }
  
-// GREY COLORS
-.stbcolor-grey {
+// GRAY COLORS
+.stbcolor-gray {
   &.first {
-    background-color: @stb-grey-first;
+    background-color: @stb-gray-first;
   }
   
   &.second {
-    background-color: @stb-grey-second;
+    background-color: @stb-gray-second;
   }
   
   &.third {
-    background-color: @stb-grey-third;
+    background-color: @stb-gray-third;
   }
   
   &.fourth {
-    background-color: @stb-grey-fourth;
+    background-color: @stb-gray-fourth;
   }
   
   &.fifth {
-    background-color: @stb-grey-fifth;
+    background-color: @stb-gray-fifth;
   }
 }
 
@@ -174,7 +174,7 @@
 @stb-func-color-third-light: @stb-primary-white;
 
 
-// SUPPORT COLORS (greys)
+// SUPPORT COLORS (grays)
 @stb-support-color1:       #4e4d4d;
 @stb-support-color2:       #787878;
 @stb-support-color3:       #dadada;
