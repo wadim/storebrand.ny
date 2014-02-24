@@ -1,9 +1,7 @@
-
 .row h1:nth(1) {
   margin-top: 0;
   padding-top: 0;
 }
-
 
 .color-swatch {
   .img-circle;
@@ -16,7 +14,7 @@
 .color-code {
   font-family: @font-family-monospace;
   font-size: 10px;
-  color: @stb-support-color2;
+  color: @stb-gray-fifth;
   position: relative;
   top: @stb-colorswatch-size + 2;
   text-align: center;
@@ -31,42 +29,11 @@ code {
 }
 
 .fauxHoverLink {
-  color: @stb-func-color-first;
+  color: @stb-secondary-dust;
   text-decoration: underline;
 }
 
-.fauxHoverClass {
-  color: @stb-primary-white;
-  background-color: @stb-func-color-first;
-}
-.fauxHoverPrimary {
-  background-color: @stb-func-color-first !important;
-  color: @stb-support-color4 !important;
-}
-.fauxHoverSecondary {
-  background-color: @stb-primary-white !important;
-  color: @stb-func-color-first !important;
-  border-color: @stb-func-color-first !important;
-}
-.fauxHoverSecondary2 {
-  // background-color: @stb-support-color3 !important;
-  color: @stb-func-color-first !important;
-}
-.fauxHoverLinkIcon {
-  color: @stb-func-color-first !important;
-}
-
-button.fauxInputHover {
-  background-color: @stb-func-color-first !important;
-}
-input.fauxInputHover {
-  color: @stb-func-color-first !important;
-  border-color: @stb-func-color-first !important;
-}
-
-
-
-// airgaps: moar whitespace
+// Airgaps: more whitespace
 // TODO: move into core? (consider implementing sm/md/lg sizes)
 hr.airgap {
   margin-top: 40px;
@@ -113,11 +80,43 @@ h6>code {
   }
 }
 
-// image + caption (html5 elems)
+// From here on down, either modify colors for new palette and move up, or delete if not needed.
+
+.fauxHoverClass {
+  color: @stb-primary-white;
+  background-color: @stb-func-color-first;
+}
+.fauxHoverPrimary {
+  background-color: @stb-func-color-first !important;
+  color: @stb-support-color4 !important;
+}
+.fauxHoverSecondary {
+  background-color: @stb-primary-white !important;
+  color: @stb-func-color-first !important;
+  border-color: @stb-func-color-first !important;
+}
+.fauxHoverSecondary2 {
+  // background-color: @stb-support-color3 !important;
+  color: @stb-func-color-first !important;
+}
+.fauxHoverLinkIcon {
+  color: @stb-func-color-first !important;
+}
+
+button.fauxInputHover {
+  background-color: @stb-func-color-first !important;
+}
+input.fauxInputHover {
+  color: @stb-func-color-first !important;
+  border-color: @stb-func-color-first !important;
+}
+
+// image + caption (html5 elements)
 figure {
   max-width: 720px;
   position: relative;
 }
+
 // put this somewhere smart:
 .imageText {
   text-shadow: 0 1px 2px #000;
@@ -126,14 +125,11 @@ figure {
   bottom: 0;
   height: 40px;
   width: 100%;
-
   margin: 0;
   padding: 10px;
-
   font-size: 10px;
   color: #fff;
   background-color: rgba(0,0,0,0.3);
-
 }
 
 .one-third {

@@ -39,12 +39,14 @@
         </div>
 
         <div class="col-md-9">
-          <h1 class="featurette-heading stbfont" style="margin-top: 20px;">Web Manual for storebrand.ny (work in progress)</h1>
+          <h1 class="featurette-heading stbfont">Web Manual for storebrand.ny<br /> (work in progress)</h1>
           <p class="lead">
-            This page contains Web elements available for creating Web content for Storebrand.
+            This page describes all elements available for creating Web content for Storebrand.
           </p>
           <p>
             The design details are being worked out as you read this, so don't worry if something looks a bit odd. 
+          </p>
+          <p>We use the standard grid from Bootstrap 3, meaning that we have 12 columns and responsive design, allowing us to responsively divide the page contents horizontally into any combination of 12 in total (12, 6+6, 3+3+3+3, 4+4+4, 9+3, 8+4, and so on). We use the standard Bootstrap <a href="http://getbootstrap.com/css/#grid">syntax</a> for this. 
           </p>
         </div>
 
@@ -178,6 +180,115 @@
       </div> <!-- /Colors Row -->
 
       <hr class="airgap"/>
+     
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Typography / Headers</h2>
+          (Done-ish)
+        </div>
+        <div class="col-md-9">
+          <p><strong>Open Sans</strong> is the standard font on storebrand.no. Arial is the preferred fallback.<br />
+          <strong>Note:</strong> Italics is not the strongest skill of the Open Sans font family. Please avoid exposing this.</p>
+          <h1>Header 1 <code>font-size 40px; line-height: 46px; padding: 14px;</code></h1>
+          <h2>Header 2 <code>font-size 24px; line-height: 30px; padding: 12px;</code></h2>
+          <h3>Header 3 <code>font-size 20px; line-height: 22px; padding: 12px;</code></h3>
+          <h4>Header 4 <code>font-size 18px; line-height: 20px; padding: 10px;</code></h4>
+          <h5>Header 5 <code>font-size 16px; line-height: 18px; padding: 10px; font-weight: bold;</code></h5>
+          <h6>Header 6 <code>font-size 14px; line-height: 16px; padding: 10px; font-weight: bold;</code></h6>
+          <strong>Code:</strong> <code>&lt;h1-h6&gt;</code>
+
+          <hr/>
+          <p><strong>Signa</strong> is only used in advertising, campaigns and for "special occasions".<br /> Note: Only H1-H4 are available in Signa, H5-H6 should always use Arial.</p>
+          <h1 class="stbfont">Header 1 <code>font-size 40px; line-height: 46px; padding: 14px;</code></h1>
+          <h2 class="stbfont">Header 2 <code>font-size 24px; line-height: 30px; padding: 12px;</code></h2>
+          <h3 class="stbfont">Header 3 <code>font-size 20px; line-height: 22px; padding: 12px;</code></h3>
+          <h4 class="stbfont">Header 4 <code>font-size 18px; line-height: 20px; padding: 10px; font-weight: bold;</code></h4>
+          <strong>Code:</strong> <code>&lt;h1-h6 class="stbfont"&gt;</code>
+        </div>
+      </div> <!-- /Typography / Headers row -->
+
+      <hr class="airgap"/>
+
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Typography / Texts</h2>
+          (Done-ish)
+        </div>
+        <div class="col-md-9">
+          <p class="ingress">Lead paragraph (ingress): This is bolder. This is where the author grabs the attention of the reader. Lead paragraphs usually include brief answers to all main questions answered by the following text when it comes to who, what, why, when, where, and how.</p>
+          <strong>Code:</strong> <code>&lt;p class="ingress"&gt;...&lt;/&gt;</code><br />
+          <code>font-size: 16px; line-height: 22px; font-weight: 700;</code>
+
+          <p class="airgap-top">A paragraph is a <strong>passage</strong> in a section of text that is about a different subject from the preceding text section, marked by commencing on a new line.</p>
+          <p>And then the next paragraph follows. It's about something else.</p>
+          <strong>Code:</strong> <code>&lt;p&gt;...&lt;/p&gt;</code><br />
+          <code>font-size: 16px; line-height: 22px;</code>
+          <br />
+          <p class="airgap-top">
+            In some cases, like for publishing dates, source references and footnotes, you can use <strong>small</strong>, like so:<br />
+            <small>This part of the text is small and not very important, but still possible to read.</small>
+          </p>
+          <br /><strong>Code:</strong> <code>&lt;small&gt;</code> or <code>&lt;span/p/div class="petit"&gt;</code><br />
+          <code>font-size: 12px; line-height: 16px;</code>
+          <p>
+            <blockquote>
+              And here's a blockquote.<br />
+              <small>Yours truly</small>
+            </blockquote>
+          </p>          
+        </div>
+      </div> <!-- /Typography / Text row -->
+
+      <hr class="airgap"/>      
+      
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Typography / Links</h2>
+          (Done-ish)
+        </div>
+        <div class="col-md-9">
+          <p>
+            Storebrand will always <a href="#3">invest</a> in ways that benefits the planet in the <a href="#3">long run</a>.
+          </p>
+          Standard and hover (and not visited):<br>
+          <a href="#3" style="color: #404040;">http://www.storebrand.no/</a> (charcoal)
+        </div>
+      </div>   
+      <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+          Visited:<br>
+          <a href="#3" class="fauxHoverLink">http://www.storebrand.no/</a> (dust)
+        </div>
+        <div class="col-md-9 col-md-offset-3 airgap-top">
+          <strong>Code:</strong> <code>&lt;a href="..."&gt;...&lt;/a&gt;</code>
+        </div>
+      </div>
+      
+      <hr class="airgap"/>
+
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Typography / Lists</h2>
+          (Done-ish)
+        </div>
+        <div class="col-md-9">
+          <ul class="stb">
+            <li>See what a list looks like.
+            <li>font-size: 16px; line-height: 22px;</li>
+              <ol class="stb">
+                <li>Sub/child-lists, ordered or unordered, can also be used.</li>
+                <li>font-size: 16px; line-height: 22px;</li>
+              </ol>
+            </li>
+            <li>This concludes what you need to know about unordered lists.</li>
+          </ul>
+          Note: Always use classname <code>stb</code> on normal lists (<code>ul/ol</code>), to avoid crashing with menu-items and other custom lists. <br>
+          <strong>Code:</strong> <code>&lt;ul class="stb"&gt;...&lt;/ul&gt;</code>
+
+        </div>
+      </div> <!-- /Typography / Lists row -->
+
+      <hr class="airgap"/>
       
       <div class="row">
         <div class="col-md-3">
@@ -206,8 +317,7 @@
                 <strong>Small button</strong>: <button class="stb-btn stb-btn-sm">Small</button><br />
                 Height: 28px<br />
                 Width: 50-150px<br />
-                Font size: 12px<br />
-                <br />
+                Font size: 12px
               </p>
             </div>
 
@@ -263,7 +373,7 @@
               <button class="stb-btn disabled">Can't touch this</button><br /><br />
               <code>Class: stb-btn disabled</code><br /><br />
               With icon:<br />
-              <button class="stb-btn disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+              <button class="stb-btn disabled link-icon">Can't touch this <span class="stb-sprite-16 valuables neutral"></span></button><br /><br />
               <code>Class:<br />stb-btn disabled link-icon</code>
             </div>
         
@@ -310,7 +420,7 @@
               <button class="stb-btn stb-btn-lg disabled">Can't touch this</button><br /><br />
               <code>Class: +stb-btn-lg</code><br /><br />
               With icon:<br />
-              <button class="stb-btn stb-btn-lg disabled link-icon">Can't touch this <span class="glyphicon glyphicon-shopping-cart"></span></button><br /><br />
+              <button class="stb-btn stb-btn-lg disabled link-icon">Can't touch this <span class="stb-sprite-24 valuables neutral"></span></button><br /><br />
               <code>Class: +stb-btn-lg</code>
             </div>
         
@@ -364,119 +474,7 @@
 
         </div>
       </div> <!-- /Buttons row -->
-      
-      <hr class="airgap">  
      
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Headers</h2>
-        </div>
-        <div class="col-md-9">
-          <i class="airgap"><strong>Arial</strong> is the standard font on storebrand.no.</i>
-          <h1>Header 1 <code>font-size 30px; padding: 14px;</code></h1>
-          <h2>Header 2 <code>font-size 24px; padding: 12px;</code></h2>
-          <h3>Header 3 <code>font-size 20px; padding: 12px;</code></h3>
-          <h4>Header 4 <code>font-size 18px; padding: 10px; font-weight: bold;</code></h4>
-          <h5>Header 5 <code>font-size 16px; padding: 10px; font-weight: bold;</code></h5>
-          <h6>Header 6 <code>font-size 14px; padding: 10px; font-weight: bold;</code></h6>
-          <strong>Code:</strong> <code>&lt;h1-6&gt;</code>
-
-          <hr/>
-          <i class="airgap"><strong>Signa</strong> are used in advertising, campaigns and in "special" occations.<br> Note: only H1-H4 is available in Signa, H5-H6 should always use Arial.</i>
-          <h1 class="stbfont">Header 1 <code>font-size 30px; padding: 14px;</code></h1>
-          <h2 class="stbfont">Header 2 <code>font-size 24px; padding: 12px;</code></h2>
-          <h3 class="stbfont">Header 3 <code>font-size 20px; padding: 12px;</code></h3>
-          <h4 class="stbfont">Header 4 <code>font-size 18px; padding: 10px; font-weight: bold;</code></h4>
-          <strong>Code:</strong> <code>&lt;h1-6 class="stbfont"&gt;</code>
-        </div>
-      </div> <!-- /row -->
-
-      <hr class="airgap"/>
-
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Text</h2>
-        </div>
-        <div class="col-md-9">
-          <p class="ingress">Ingress-paragraph: a bit larger. "A big un, Granser", he chuckled. The old man shook his head. "They get thicker every day," he complained in a thin, undependable falsetto. "Who'd have thought I'd live to see the time when a man would be afraid of his life on the way to the Cliff House. When I was a boy, Edwin, men and women and little babies used to come out here from San Francisco by tens of thousands on a nice day. And there weren't any bears then.</p>
-          <strong>Code:</strong> <code>&lt;p class="ingress"&gt;...&lt;/&gt;</code>
-
-          <p class="airgap-top">Regular paragraph. Under cover of this I pushed on, wet and shivering now, towards my own house. I walked among the trees trying to find the footpath. It was very dark indeed in the wood, for the lightning was now becoming infrequent, and the hail, which was pouring down in a torrent, fell in columns through the gaps in the heavy foliage.</p>
-          <p>Aouda and Fix feared that Mr. Fogg might take it into his head to get out; but that gentleman contented himself with saying to his servant, "See what is the matter." Passepartout rushed out of the car. Thirty or forty passengers had already descended, amongst them Colonel Stamp Proctor.</p>
-          <strong>Code:</strong> <code>&lt;p&gt;...&lt;/p&gt;</code>
-        </div>
-      </div> <!-- /row -->
-
-      <hr class="airgap"/>
-
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Bullet lists</h2>
-        </div>
-        <div class="col-md-9">
-          <ul class="stb">
-            <li>See what is the matter
-              <ul class="stb">
-                <li>Sub/child-lists can also be used.</li>
-                <li>The sky was blue</li>
-              </ul>
-            </li>
-            <li>It was very dark indeed in the wood, for the lightning was now becoming infrequent, and the hail, which was pouring down in a torrent, fell in columns through the gaps in the heavy foliage.</li>
-            <li>The lightning was now becoming infrequent</li>
-            <li>How heading when last seen?</li>
-            <li>This was beyond the boys, and they let it slip by, words and thoughts, as a mere senile wandering in the narrative.</li>
-            <li>I did not dare to go back towards the pit.</li>
-          </ul>
-          Note: use classname <code>stb</code> on lists (<code>ul/ol</code>), to avoid crashing with menu-items and other custom lists. <br>
-          <strong>Code:</strong> <code>&lt;ul class="stb"&gt;...&lt;/ul&gt;</code>
-
-        </div>
-      </div> <!-- /row -->
-
-      <hr class="airgap"/>
-
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Links in text</h2>
-        </div>
-        <div class="col-md-9">
-          <p>
-            And her suburban avenues of <a href="#">house-walls</a> lying over upon each other, <a href="#1">as a tossed pack of cards</a>;—it is not these things alone which make tearless Lima, the <a href="#2">strangest, saddest city thou can'st see</a>. For Lima has taken the white veil; and there is a higher horror in this whiteness of her woe.
-          </p>
-          Standard:<br>
-          <a href="#3">http://www.storebrand.no/</a>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          Mouseover:<br>
-          <a href="#3" class="fauxHoverLink">http://www.storebrand.no/</a>
-        </div>
-        <div class="col-md-9 col-md-offset-3 airgap-top">
-          <strong>Code:</strong> <code>&lt;a href="..."&gt;...&lt;/a&gt;</code>
-        </div>
-      </div>
-
-      <hr class="airgap"/>
-
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Petit text</h2>
-        </div>
-        <div class="col-md-9">
-          <p>
-            <i><strong>Petit</strong> (meaning small) are used for publish-dates, source-reference and footnotes.</i>
-          </p>
-          <p class="petit">
-            "It may be," said the Lion. "If you have," continued the Tin Woodman, "you ought to be glad, for it proves you have a heart. For my part, I have no heart; so I cannot have heart disease." "Perhaps," said the Lion thoughtfully, "if I had no heart I should not be a coward." "Have you brains?" asked the Scarecrow. "I suppose so. I've never looked to see," replied the Lion. "I am going to the Great Oz to ask him to give me some," remarked the Scarecrow, "for my head is stuffed with straw."
-          </p>
-          <p>
-            <strong>Code:</strong> <code>&lt;small&gt;</code> or <code>&lt;span/p/div class="petit"&gt; ...</code>
-          </p>
-        </div>
-      </div>
-
       <hr class="airgap"/>
 
       <div class="row">
@@ -1420,8 +1418,43 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 
     </div> <!-- /container -->
-
+    
     <!-- testing: -->
+
+    <div class="green">
+      <div class="container">
+        <div class="row blue">
+          <div class="col-md-6">
+            <p>This is a test</p>
+          </div>
+        <div class="col-md-6 red">
+          <p>This is a test2</p>
+        </div>
+      </div>
+      <div class="row">
+        <p>This is a test</p>
+      </div>
+      <div class="row red">
+        <div class="col-md-6">
+          <p>This is a test</p>
+        </div>
+        <div class="col-md-6 blue">
+          <p>This is a test2</p>
+        </div>
+      </div>
+    </div>
+    <style>
+      .red {
+        background: red;
+      }
+      .green {
+        background:green;
+      }    
+      .blue {
+        background:blue;
+      }  
+    </style>    
+
     <div class="row">
       <div class="stbcolor-func first light" style="height: 300px;"></div>
       <div class="stbcolor-func first" style="height: 300px;"></div>
