@@ -76,7 +76,6 @@
     }
   } //end:stb-form-group
 
-
   button[disabled] {
     background-color: @stb-support-color2;
     &:hover {
@@ -92,9 +91,9 @@
 
 
 /*************************************
-* Custom checkbox+radio using images *
+* Custom checkbox + radio using images *
 *************************************/
-// refenence: http://www.thecssninja.com/css/custom-inputs-using-css
+// reference: http://www.thecssninja.com/css/custom-inputs-using-css
 
 form.stb-custom-form {
 
@@ -117,12 +116,10 @@ form.stb-custom-form {
   // the :not-selector keeps IE8 from trying to parse, degrading gracefully
   // use a md5 hash so we're sure we dont affect any 'real' elements
   &:not(#foo_4fb3cf3aee22719b0a464e043903bb3e) {
-
     input:hover + label,
     input:focus + label,
     input + label:hover,
     input:focus + label {
-      // color: @stb-func-color-first;
     }
 
     input + label {
@@ -143,7 +140,7 @@ form.stb-custom-form {
     input[type=checkbox]:focus:checked + label,
     input[type=checkbox]:checked + label:hover,
     input[type=checkbox]:focus:checked + label {
-     // background-position: 0 -101px;
+      // background-position: 0 -101px;
     }
 
     input[type=radio]:hover:checked + label,
@@ -152,7 +149,6 @@ form.stb-custom-form {
     input[type=radio]:focus:checked + label {
       // background-position: -8px -208px;
     }
-
 
     /* Hover & Focus styles */
     input[type=checkbox]:hover + label,
@@ -191,7 +187,7 @@ form.stb-custom-form {
     input[type=checkbox]:focus:disabled + label,
     input[type=checkbox]:disabled + label:hover,
     input[type=checkbox]:disabled + label:hover:active {
-      background-position: -8px -7px;
+    //  background-position: -8px -7px;
     }
     // input[type=radio]:disabled + label,
     // input[type=radio]:hover:disabled + label,
