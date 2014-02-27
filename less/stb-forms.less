@@ -208,15 +208,7 @@ form.stb-custom-form {
     input[type=checkbox]:focus:disabled + label,
     input[type=checkbox]:disabled + label:hover,
     input[type=checkbox]:disabled + label:hover:active {
-    //  background-position: -8px -7px;
     }
-    // input[type=radio]:disabled + label,
-    // input[type=radio]:hover:disabled + label,
-    // input[type=radio]:focus:disabled + label,
-    // input[type=radio]:disabled + label:hover,
-    // input[type=radio]:disabled + label:hover:active {
-    //   background-position: -8px -221px;
-    // }
     input[type=checkbox]:disabled:checked + label,
     input[type=checkbox]:hover:disabled:checked + label,
     input[type=checkbox]:focus:disabled:checked + label,
@@ -224,58 +216,7 @@ form.stb-custom-form {
     input[type=checkbox]:disabled:checked + label:hover:active {
       background-position: -8px -88px;
     }
-    // input[type=radio]:disabled:checked + label,
-    // input[type=radio]:hover:disabled:checked + label,
-    // input[type=radio]:focus:disabled:checked + label,
-    // input[type=radio]:disabled:checked + label:hover,
-    // input[type=radio]:disabled:checked + label:hover:active {
-    //   background-position: -8px -88px;
-    // }
 
-  } // end of :not(#foo)
+  } // end of :not(#foo) (IE8 fix)
 
-}
-
-.stb-select {
-  outline: none;
-  // border: 1px solid @stb-func-color-first-light;
-  color: @stb-primary-white;
-  font-size: 14px;
-
-  label{
-    border-radius: 2px;
-    background-color: @stb-func-color-first-light;
-    padding: 8px 4px 4px 12px;
-    width: 100%;
-    height: 35px;
-    &:after {
-      float: right;
-      .stb-glyphicon();
-      .glyphicon-chevron-down();
-      content: "\e114"; //need to to this manually (?!)
-      color: @stb-primary-white;
-      padding-right: 8px;
-    }
-  }
-  
-  ul {
-    padding: 0;
-    top: 2px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-    font-size: 14px;
-    list-style-type: none;
-    background-color: @stb-primary-white;
-    color: @stb-primary-black;
-    border-radius: 3px;
-    border: 1px solid @stb-support-color3;
-
-    li {
-      // margin-top: 4px;
-      // margin-bottom: 4px;
-      padding: 8px 8px 8px 18px;
-      &:hover {
-        background-color: @stb-support-color4;
-      }
-    }
-  }
 }

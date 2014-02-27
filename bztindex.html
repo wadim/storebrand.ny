@@ -25,11 +25,6 @@
   </head>
   <body>
 
-  <style type="text/css">
-    .prettyprint {
-      font-size: 11px;
-    }
-  </style>
     <div class="container marketing">
 
       <div class="row featurette">
@@ -53,7 +48,7 @@
       </div>
 
     </div>
-    <hr/>
+    <hr />
 
     <div class="container">
 
@@ -97,7 +92,7 @@
 
           </div> <!-- /row -->
 
-          <hr/>
+          <hr />
           
           <div class="row">
             <div class="col-md-6">
@@ -137,7 +132,7 @@
 
           </div> <!-- /row -->
 
-          <hr/>
+          <hr />
           
           <div class="row">
             <div class="col-md-6">
@@ -151,7 +146,7 @@
                 <script>$('#gray-first').tooltip();</script>
                 <div id="gray-second" data-placement="auto top" data-title="Gray 2" class="color-swatch stbcolor-gray second"></div>
                 <script>$('#gray-second').tooltip();</script>
-                <div id="grey-third" data-placement="auto top" data-title="Gray 3" class="color-swatch stbcolor-gray third"></div>
+                <div id="gray-third" data-placement="auto top" data-title="Gray 3" class="color-swatch stbcolor-gray third"></div>
                 <script>$('#gray-third').tooltip();</script>
                 <div id="gray-fourth" data-placement="auto top" data-title="Gray 4" class="color-swatch stbcolor-gray fourth"></div>
                 <script>$('#gray-fourth').tooltip();</script>
@@ -180,7 +175,7 @@
         
       </div> <!-- /Colors Row -->
 
-      <hr class="airgap"/>
+      <hr class="airgap" />
      
       <div class="row">
         <div class="col-md-3">
@@ -208,7 +203,7 @@
         </div>
       </div> <!-- /Typography / Headers row -->
 
-      <hr class="airgap"/>
+      <hr class="airgap" />
 
       <div class="row">
         <div class="col-md-3">
@@ -240,7 +235,7 @@
         </div>
       </div> <!-- /Typography / Text row -->
 
-      <hr class="airgap"/>      
+      <hr class="airgap" />      
       
       <div class="row">
         <div class="col-md-3">
@@ -292,7 +287,7 @@
         </div>
       </div>
       
-      <hr class="airgap"/>
+      <hr class="airgap" />
 
       <div class="row">
         <div class="col-md-3">
@@ -310,13 +305,93 @@
             </li>
             <li>This concludes what you need to know about unordered lists.</li>
           </ul>
-          Note: Always use classname <code>stb</code> on normal lists (<code>ul/ol</code>), to avoid crashing with menu-items and other custom lists. <br>
+          Note: Always use classname <code>stb</code> on normal lists (<code>ul/ol</code>), to avoid crashing with menu-items and other custom lists. <br />
           <strong>Code:</strong> <code>&lt;ul class="stb"&gt;...&lt;/ul&gt;</code>
 
         </div>
       </div> <!-- /Typography / Lists row -->
+      
+      <hr class="airgap" />
 
-      <hr class="airgap"/>
+      <div class="row"> <!-- FAQ row -->
+        <div class="col-md-3">
+          <h2>FAQ</h2>
+          (Done-ish)
+        </div>
+        <div class="col-md-9">
+          <h4>Frequently Asked Questions ("Accordion")</h4>
+          <p>          
+            "The accordion" can be used to initially hide contents on pages that would otherwise seem overwhelming at first glance.
+          </p>
+          <p>
+            Example:
+          </p>
+          <div class="stbcolor-secondary sixth"> <!-- FAQ example div -->
+            <br />
+            <h3>Alt om din pensjon</h3>
+            <ul class="accordion" data-widget="stbFaq">
+              <li>
+                <a href="#" class="twister">Hvordan får jeg oversikt over hva jeg får i pensjon?
+                  <span class="number">1</span>
+                  <span class="expander"></span>
+                </a>
+                <div class="answer">
+                  <ul>
+                    <li>Har du pensjon i Storebrand, logg inn på dine personlige sider for fullstendig oversikt. Der kan du også hente inn tallene dine fra folketrygden (NAV).</li>
+                    <li>Har du fripoliser eller pensjonskapitalbevis fra tidligere arbeidsgivere, finner du disse på minpensjon.no</li>
+                    <li>Prøv vår kalkulator som enkelt viser deg hva du kan forvente å få i pensjon. Vi gir deg også en vurdering av hvor mye du bør spare for å få den pensjonen du ønsker deg.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#" class="twister">Hva består egentlig pensjon av?
+                  <span class="number">2</span>
+                  <span class="expander"></span>
+                </a>
+                <div class="answer">
+                  Pensjon består av:   <br />
+                  <ol>
+                    <li>Folketrygden - opptjening betalt av staten. Hvor mye du får, kommer an på hvor gammel du er, ditt lønnsnivå og hvor lenge du har jobbet.</li>
+                    <li>Tjenestepensjon - dette betales av din arbeidsgiver. Her finnes det forskjellige avtaler og det lønner seg å være bevisst på hva du får fra din arbeidsgiver.</li>
+                    <li>AFP - Avtalefestet pensjon. Betales av arbeidsgiver, men fungerer litt som folketrygden. Ikke alle har denne avtalen, så undersøk hos din arbeidsgiver.</li>
+                  </ol>
+                </div>
+              </li>
+            </ul>
+            <br />
+          </div> <!-- / FAQ example div -->
+
+          <br />
+          <p>
+            The FAQ is contained in a normal ul list:
+          </p>
+          <p>
+            <strong>Note</strong> Using the FAQ requires the <a href="js/src/stb-ui-faq.js">stb-ui-faq.js</a> jQuery plugin.
+          </p>
+          <br />
+          <pre class="prettyprint">
+&lt;ul class="accordion" data-widget="stbFaq"&gt;
+  &lt;li&gt;
+    &lt;a href="#" class="twister"&gt;Question here
+      &lt;span class="number"&gt;Optional numbering&lt;span&gt;
+      &lt;span class="expander"&gt;&lt;span&gt;
+    &lt;/a&gt;
+    &lt;div class="answer"&gt; Answer-text here (a,b,i,ul,ol allowed) &lt;/span&gt;
+  &lt;/li&gt;
+  &lt;!-- One more li item per question/answer pair --&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+// Initialize the padding of the FAQ with necessary tagging:
+$('ul[data-widget=stbFaq]').stbFaq();
+&lt;/script&gt;
+
+</pre>
+
+        </div>
+      </div>      
+
+      <hr class="airgap" />
       
       <div class="row">
         <div class="col-md-3">
@@ -354,7 +429,7 @@
           
           <div class="row">
             <div class="col-md-6">
-              <strong>Usage:</strong> <br>
+              <strong>Usage:</strong> <br />
               <pre class="prettyprint">
 &lt;button class="stb-btn"&gt;Standard&lt;/button&gt;
 &lt;button class="stb-btn stb-btn-lg"&gt;Large&lt;/button&gt;
@@ -362,7 +437,7 @@
             </div>
           </div>
 
-          <hr>
+          <hr />
 
           <div class="row">
             <div class="col-md-12">
@@ -408,7 +483,7 @@
         
           </div> <!-- /row -->
       
-          <hr>
+          <hr />
 
           <div class="row">
             <div class="col-md-3">
@@ -455,7 +530,7 @@
         
           </div> <!-- /row -->
           
-          <hr>
+          <hr />
         
           <div class="row">
             <div class="col-md-3">
@@ -504,11 +579,12 @@
         </div>
       </div> <!-- /Buttons row -->
      
-      <hr class="airgap">
+      <hr class="airgap" />
 
       <div class="row"> <!-- / General input fields row -->
         <div class="col-md-3">
           <h2>Text input fields</h2>
+          (Done-ish)
         </div>
         <div class="col-md-9">
           <p>
@@ -655,7 +731,7 @@
         </div>
       </div> <!-- / General input fields row -->
      
-      <hr class="airgap"/>    
+      <hr class="airgap" />    
       
       <div class="row">
         <div class="col-md-3">
@@ -694,7 +770,7 @@
           </div>
           <div class="row">
             <div class="col-12-md">
-              <strong>Code:</strong> <br>
+              <strong>Code:</strong> <br />
               <pre class="prettyprint">&lt;form class=&quot;stb-custom-form&quot;&gt;
   &lt;h5&gt;Choose wisely, A or B?&lt;/h5&gt;
     &lt;!-- radio buttons --&gt;
@@ -714,7 +790,7 @@
         </div>
       </div> <!-- /Radio button and checkbox row -->
 
-      <hr class="airgap"> 
+      <hr class="airgap" /> 
 
       <div class="row"> <!-- Dropdown select -->
         <div class="col-md-3">
@@ -776,7 +852,7 @@
         </div>
       </div> <!-- /Dropdown / Select -->      
       
-      <hr class="airgap">       
+      <hr class="airgap" />       
       
       <div class="row"><!-- Sliders row -->
         <div class="col-md-3">
@@ -820,7 +896,168 @@
         </div>
       </div>  <!-- /Sliders row -->      
       
-      <hr class="airgap">         
+      <hr class="airgap" />   
+
+      <div class="row"><!-- Datepicker row -->
+        <div class="col-md-3">
+          <h2>Datepicker</h2>
+          (Done-ish)
+        </div>      
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-12">
+              <p>Increasingly, the best choice is to use native form elements. For datepickers, this is doubly so.</p>
+              <p>Consider what happens when your datepicker is used on a smart phone, a "smart-TV" or, theoretically, a Windows Phone. Manufacturers of these devices put a lot of work into creating the best possible user experience. Customizing the datepicker will generally obstruct that goal.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+
+            </div>
+          </div>
+          <div class="row">
+            <h3>Datepicker - jQuery UI, localized for Norway</h3>
+            Velg dato:
+            <input id="datepicker" data-widget="stb-datepicker" class="ui-dateinput"><label for="datepicker">&nbsp;</label>
+          </div>
+          <div class="row">
+            <strong class="airgap-top">HTML:</strong><br />
+            <pre class="prettyprint">
+&lt;input id=&quot;datepicker&quot; data-widget=&quot;stb-datepicker&quot; class=&quot;ui-dateinput&quot;&gt;
+&lt;label for=&quot;datepicker&quot;&gt;&amp;nbsp;&lt;/label&gt;</pre>
+            <p>
+              See <a href="js/src/demo-datepicker.js">javascript-code</a> for usage instructions.
+            </p>
+            <p>
+              <strong>Note</strong>: Requires <a href="js/dist/jquery-ui-1.10.3.datepicker.js">jQuery UI Datepicker 1.10.3.</a>
+            <p>
+            <hr class="airgap" /> 
+            <p>
+              HTML5 will eventually deliver a standard datepicker. This hasn't yet been implemented that well in all browsers. Here you can see the current state of it, with no styling at all: 
+            </p> 
+            <p>
+              Please date me: <input type="date" name="bday">
+            </p>
+          </div>         
+        </div>
+      </div>  <!-- /Datepicker row -->        
+
+      <hr class="airgap" />
+
+      <div class="row"> <!-- Progress bar row -->
+        <div class="col-md-3">
+          <h2>Progress row</h2>
+          (Done-ish)
+        </div>
+        <div class="col-md-9">
+          <h3>Step-by-step breadcrumbs</h3>
+          <p>
+            "Progress bar"-like breadcrumb elements. Use below header and above main content to track progress in a multi-step sequence. There are two versions, grey-scale and color.
+          </p>
+          <p>The bar is made up of ul-lists with :after-selectors for the arrow-like graphic.</p>
+          <h4>Light version</h4>
+          <ul class="stb-progressrow">
+            <li class="stb-progress-item light"></li>
+            <li class="stb-progress-item light"></li>
+            <li class="stb-progress-item light switch-to-grey"></li>
+            <li class="stb-progress-item light disabled"></li>
+            <li class="stb-progress-item light disabled"></li>
+          </ul>
+          <pre class="prettyprint">&lt;!-- Note: This example only shows markup for given states --&gt;
+&lt;ul class=&quot;stb-progressrow&quot;&gt;
+  &lt;li class=&quot;stb-progress-item light&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;stb-progress-item light switch-to-grey&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;stb-progress-item light disabled&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+          <h4>Dark version</h4>
+          <ul class="stb-progressrow">
+            <li class="stb-progress-item dark"></li>
+            <li class="stb-progress-item dark"></li>
+            <li class="stb-progress-item dark switch-to-grey"></li>
+            <li class="stb-progress-item disabled"></li>
+            <li class="stb-progress-item disabled"></li>
+          </ul>
+          <pre class="prettyprint">
+&lt;ul class=&quot;stb-progressrow&quot;&gt;
+  &lt;li class=&quot;stb-progress-item dark&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;stb-progress-item dark switch-to-grey&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;stb-progress-item disabled&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+          <hr />
+          <p>
+            You can also add text inside each step of a taller version of the progress row;
+          </p>
+          <ul class="stb-progressrow">
+            <li class="one-third stb-progress-item lg light">You were here</li>
+            <li class="one-third stb-progress-item lg light switch-to-grey">You are here</li>
+            <li class="one-third stb-progress-item lg disabled">You will be here</li>
+          </ul>
+          <ul class="stb-progressrow">
+            <li class="one-third stb-progress-item lg dark">You were here</li>
+            <li class="one-third stb-progress-item lg dark switch-to-grey">You are here</li>
+            <li class="one-third stb-progress-item lg disabled">You will be here</li>
+          </ul>
+          <pre class="prettyprint">// Code: Simply add class .lg for large rows and add text inside the li elements.</pre>
+        </div>
+
+      </div> <!-- /Progress row row (Hehe!) -->
+      
+      <hr class="airgap" />
+      
+      <div class="row"> <!-- Progress bar row -->
+        <div class="col-md-3">
+          <h2>Progress bar</h2>
+          (Done-ish)
+        </div>
+
+        <div class="col-md-9">
+          <p>
+            For use cases where you can show a progress bar based on percentage (0-100), and not necessarily on a set number of steps, you can use this progress bar.
+          </p>
+          <p>
+            <button class="stb-btn" id="progressbar-trigger">Use this button</button> to see random progress jumps up and down the scales below:
+          </p>
+          <!-- Gray version -->
+          <div class="stb-progress grey">
+            <div class="stb-progress-bar" data-widget="progressExample" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <span class="sr-only">60% Complete</span>
+            </div>
+          </div>
+          <!-- Color version -->
+          <div class="stb-progress">
+            <div class="stb-progress-bar" data-widget="progressExample" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <span class="sr-only">60% Complete</span>
+            </div>
+          </div>
+          <p>
+            <strong>Code:</strong>
+          </p>
+          <pre class="prettyprint">
+&lt;div class=&quot;stb-progress&quot;&gt; &lt;!-- add class .grey for grey variant --&gt;
+  &lt;div class=&quot;stb-progress-bar&quot; data-widget=&quot;progressExample&quot; role=&quot;progressbar&quot;
+    aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 60%;&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;60% Complete&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  $('div.stb-progress div[data-widget=progressExample]').css({width: newPercentValue + '%'});
+&lt;/script&gt;
+          </pre>
+          <p>
+            The .sr-only class is used as a fallback for screen readers. Animation is done through css transitions.
+          </p>
+        </div>
+        
+      </div> <!-- /Progress bar row -->      
+      
+      
+      <hr class="airgap" />  
+      
+<h1>NB! RESTEN ER ENNÅ IKKE KONVERTERT TIL NYTT DESIGN!</h1>      
+      
+      <hr class="airgap" />  
       
       <div class="row">
         <div class="col-md-3">
@@ -848,68 +1085,6 @@
     Figure caption text here.
   &lt;/figcaption&gt;
 &lt;/figure&gt;</pre>
-        </div>
-      </div>
-
-      <hr class="airgap"/>
-
-      <div class="row">
-        <div class="col-md-3"><h2>FAQ</h2></div>
-        <div class="col-md-9">
-
-          <h4>Frequently asked:</h4>
-          <ul class="accordion" data-widget="stbFaq">
-            <li>
-              <a href="#" class="twister">Hvordan får jeg oversikt over hva jeg får i pensjon?
-                <span class="number">1</span>
-                <span class="expander"></span>
-              </a>
-              <div class="answer">
-                <ul>
-                  <li>Har du pensjon i Storebrand, logg inn på dine personlige sider for fullstendig oversikt. Der kan du også hente inn tallene dine fra folketrygden (NAV).</li>
-                  <li>Har du fripoliser eller pensjonskapitalbevis fra tidligere arbeidsgivere, finner du disse på minpensjon.no</li>
-                  <li>Prøv vår kalkulator som enkelt viser deg hva du kan forvente å få i pensjon. Vi gir deg også en vurdering av hvor mye du bør spare for å få den pensjonen du ønsker deg.</li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <a href="#" class="twister">Hva består egentlig pensjon av?
-                <span class="number">2</span>
-                <span class="expander"></span>
-              </a>
-              <div class="answer">
-                Pensjon består av:   <br>1. Folketrygden - &nbsp;opptjening betalt  av staten . Hvor mye du får, kommer an på hvor gammel du er, ditt lønnsnivå  og hvor lenge du har jobbet.
-                <br>2. Tjenestepensjon - &nbsp;dette betales  av din arbeidsgiver. Her finnes det forskjellige avtaler og det lønner  seg å være bevisst på hva du får fra din arbeidsgiver.
-                <br>3. AFP - Avtalefestet pensjon. Betales  av arbeidsgiver, men fungerer litt som folketrygden. Ikke alle har denne  avtalen, så undersøk hos din arbeidsgiver.
-              </div>
-            </li>
-
-          </ul>
-
-          <br>
-          <i>FAQ's is contained in a ul-list:</i> <br>
-          <strong>Note: requires the <a href="js/src/stb-ui-faq.js">stb-ui-faq.js</a> jQuery plugin.</strong><br>
-          <br>
-          <pre class="prettyprint">
-&lt;ul class="accordion" data-widget="stbFaq"&gt;
-  &lt;li&gt;
-    &lt;a href="#" class="twister"&gt;Question here
-      &lt;span class="number"&gt;Optional numbering&lt;span&gt;
-      &lt;span class="expander"&gt;&lt;span&gt;
-    &lt;/a&gt;
-    &lt;div clas="answer"&gt; Answer-text here (a,b,i,ul,ol allowed) &lt;/span&gt;
-  &lt;/li&gt;
-  &lt;!-- add more li's after this --&gt;
-&lt;/ul&gt;
-
-&lt;script&gt;
-// to init:
-$('ul[data-widget=stbFaq]').stbFaq();
-&lt;/script&gt;
-
-</pre>
-
         </div>
       </div>
 
@@ -966,8 +1141,8 @@ $('ul[data-widget=stbFaq]').stbFaq();
               </tr>
             </tbody>
           </table>
-          <small>TODO: padding inside the right-side of the table needs to be bigger.</small> <br>
-          <strong>Code:</strong> <br>
+          <small>TODO: padding inside the right-side of the table needs to be bigger.</small> <br />
+          <strong>Code:</strong> <br />
           <pre class="prettyprint">
 &lt;table class=&quot;stb-table&quot;&gt;
   &lt;thead&gt;
@@ -1048,7 +1223,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       </div>
       <div class="row">
         <div class="col-md-9 col-md-offset-3">
-          <strong>Code:</strong><br>
+          <strong>Code:</strong><br />
           <pre class="prettyprint">
 &lt;div class="stb-box stbcolor-primary first"&gt;
   &lt;p&gt;...&lt;/p&gt;
@@ -1057,120 +1232,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div>
       </div>
 
-      <hr class="airgap">
-
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Custom elements</h2>
-        </div>
-        <div class="col-md-9">
-
-          <!-- Datepicker -->
-          <h3>Datepicker - Localized</h3>
-          Velg dato:
-          <input id="datepicker" data-widget="stb-datepicker" class="ui-dateinput"><label for="datepicker">&nbsp;</label>
-
-        </div>
-      </div> <!-- /row -->
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <strong class="airgap-top">HTML:</strong><br>
-          <pre class="prettyprint">
-&lt;input id=&quot;datepicker&quot; data-widget=&quot;stb-datepicker&quot; class=&quot;ui-dateinput&quot;&gt;
-&lt;label for=&quot;datepicker&quot;&gt;&amp;nbsp;&lt;/label&gt;</pre>
-
-          See the <a href="js/src/demo-datepicker.js">javascript-code</a> for example usage. <strong>Reqires <a href="js/dist/jquery-ui-1.10.3.datepicker.js">jQuery UI Datepicker 1.10.3.</a></strong>
-        </div>
-      </div>
-
-      <hr class="airgap">
-
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Progressbars/ rows</h2>
-          <i>Progressbar-like breadcrumb elements. Used below header, above main content to track progress in a multi-step sequence.</i>
-        </div>
-        <div class="col-md-9">
-          <h3>Step-by-step breadcrumbs</h3>
-          <p>These are made up of ul-lists with :after-selectors for the arrow-like graphic.</p>
-          <ul class="stb-progressrow">
-            <li class="stb-progress-item light"></li>
-            <li class="stb-progress-item light"></li>
-            <li class="stb-progress-item light switch-to-grey"></li>
-            <li class="stb-progress-item light disabled"></li>
-            <li class="stb-progress-item light disabled"></li>
-          </ul>
-          <pre class="prettyprint">&lt;!-- note: these exmaples only show markup for changing states --&gt;
-&lt;ul class=&quot;stb-progressrow&quot;&gt;
-  &lt;li class=&quot;stb-progress-item light&quot;&gt;&lt;/li&gt;
-  &lt;li class=&quot;stb-progress-item light switch-to-grey&quot;&gt;&lt;/li&gt;
-  &lt;li class=&quot;stb-progress-item light disabled&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre>
-
-          <ul class="stb-progressrow">
-            <li class="stb-progress-item dark"></li>
-            <li class="stb-progress-item dark"></li>
-            <li class="stb-progress-item dark switch-to-grey"></li>
-            <li class="stb-progress-item disabled"></li>
-            <li class="stb-progress-item disabled"></li>
-          </ul>
-          <pre class="prettyprint">&lt;ul class=&quot;stb-progressrow&quot;&gt;
-  &lt;li class=&quot;stb-progress-item dark&quot;&gt;&lt;/li&gt;
-  &lt;li class=&quot;stb-progress-item dark switch-to-grey&quot;&gt;&lt;/li&gt;
-  &lt;li class=&quot;stb-progress-item disabled&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre>
-
-          <i class="airgap-top">Step-by-step breadcrumbs with text</i>
-          <ul class="stb-progressrow">
-            <li class="one-third stb-progress-item lg light">You were here</li>
-            <li class="one-third stb-progress-item lg light switch-to-grey">You are here</li>
-            <li class="one-third stb-progress-item lg disabled">You have not been here</li>
-          </ul>
-          <ul class="stb-progressrow">
-            <li class="one-third stb-progress-item lg dark">You were here</li>
-            <li class="one-third stb-progress-item lg dark switch-to-grey">You are here</li>
-            <li class="one-third stb-progress-item lg disabled">You have not been here</li>
-          </ul>
-          <pre class="prettyprint">// Note: add class .lg for large rows, and add text inside the li's.</pre>
-        <small>TODO: get second opinion on css setup (may need refactoring)</small>
-        </div>
-
-        <div class="col-md-3">
-          &nbsp;
-        </div>
-
-        <div class="col-md-9">
-          <p class="airgap-top">
-            <i>Progress-bars</i> <br>
-            <button class="stb-btn" id="progressbar-trigger">Click for animation</button>
-          </p>
-          <!-- grey variant -->
-          <div class="stb-progress grey">
-            <div class="stb-progress-bar" data-widget="progressExample" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-              <span class="sr-only">60% Complete</span>
-            </div>
-          </div>
-          <div class="stb-progress">
-            <div class="stb-progress-bar" data-widget="progressExample" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-              <span class="sr-only">60% Complete</span>
-            </div>
-          </div>
-          <pre class="prettyprint">&lt;div class=&quot;stb-progress&quot;&gt; &lt;!-- add class .grey for grey variant --&gt;
-  &lt;div class=&quot;stb-progress-bar&quot; data-widget=&quot;progressExample&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 60%;&quot;&gt;
-    &lt;span class=&quot;sr-only&quot;&gt;60% Complete&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;script&gt;
-  $('div.stb-progress div[data-widget=progressExample]').css({width: newPercentValue + '%'});
-&lt;/script&gt;
-</pre>
-<small>The .sr-only class is used only for screen-readers. Animation is done with css transitions.</small>
-        </div>
-
-
-      </div> <!-- /row -->
-
-      <hr class="airgap">
+      <hr class="airgap" />
 
       <div class="row">
         <div class="col-md-3">
@@ -1185,14 +1247,14 @@ $('ul[data-widget=stbFaq]').stbFaq();
                   data-trigger="hover"
                   data-content="Mr. Fogg learned all this in consulting his Bradshaw, which gave him the daily movements of the trans-Atlantic steamers."
                   data-placement="auto top">Hover for popover</button>
-          <br>
+          <br />
           <strong class="airgap-top">Requires Bootstrap's popover.js + tooltip.js</strong>
 
         </div>
       </div> <!-- /row -->
       <div class="row">
         <div class="col-md-9 col-md-offset-3">
-          <strong class="airgap-top">Code:</strong> <br>
+          <strong class="airgap-top">Code:</strong> <br />
           <pre class="prettyprint">
 &lt;button class=&quot;stb-btn stb-btn-primary&quot;
         id=&quot;demo-popover&quot;
@@ -1233,7 +1295,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       </div> <!-- /row -->
       <div class="row">
         <div class="col-md-9 col-md-offset-3">
-          <strong class="airgap-top">Code:</strong><br>
+          <strong class="airgap-top">Code:</strong><br />
           <pre class="prettyprint">&lt;button class=&quot;stb-btn secondary&quot;
         id=&quot;demo-tooltip-1&quot;
         data-placement=&quot;auto top&quot;
@@ -1247,7 +1309,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       </div>
 
 
-      <hr class="airgap">
+      <hr class="airgap" />
 
       <div class="row">
         <div class="col-md-3">
@@ -1306,15 +1368,15 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row">
         <div class="col-md-4 col-md-offset-3">
           <div class="col-md-6 text-center">
-            <span class="stb-icon teddy xl">&nbsp;</span><br>Clickable
+            <span class="stb-icon teddy xl">&nbsp;</span><br />Clickable
           </div>
           <div class="col-md-6 text-center">
-            <span class="stb-icon teddy xl hover">&nbsp;</span><br>Hover-state
+            <span class="stb-icon teddy xl hover">&nbsp;</span><br />Hover-state
           </div>
         </div>
 
         <div class="col-md-4 text-center">
-            <span class="stb-icon teddy neutral xl">&nbsp;</span><br>Neutral
+            <span class="stb-icon teddy neutral xl">&nbsp;</span><br />Neutral
 
         </div>
       </div>
@@ -1328,45 +1390,45 @@ $('ul[data-widget=stbFaq]').stbFaq();
         <div class="col-md-9">
           <div class="row airgap-md">
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-remove"></span> <br>
+              <span class="stb-glyphicon glyphicon-remove"></span> <br />
               remove/close
             </div>
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-plus"></span> <br>
+              <span class="stb-glyphicon glyphicon-plus"></span> <br />
               add/plus
             </div>
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-minus"></span> <br>
+              <span class="stb-glyphicon glyphicon-minus"></span> <br />
               remove/minus
             </div>
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-chevron-up"></span> <br>
+              <span class="stb-glyphicon glyphicon-chevron-up"></span> <br />
               collapser / to top
             </div>
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-chevron-right"></span> <br>
+              <span class="stb-glyphicon glyphicon-chevron-right"></span> <br />
               expander / to right
             </div>
           </div> <!-- /internal row -->
           <div class="row airgap-md">
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-question-sign"></span> <br>
+              <span class="stb-glyphicon glyphicon-question-sign"></span> <br />
               help/tips
             </div>
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-plus-sign"></span> <br>
+              <span class="stb-glyphicon glyphicon-plus-sign"></span> <br />
               expand FAQ item
             </div>
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-minus-sign"></span> <br>
+              <span class="stb-glyphicon glyphicon-minus-sign"></span> <br />
               collapse FAQ item
             </div>
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-chevron-down"></span> <br>
+              <span class="stb-glyphicon glyphicon-chevron-down"></span> <br />
               expand field / go to bottom
             </div>
             <div class="col-md-2 text-center">
-              <span class="stb-glyphicon glyphicon-chevron-left"></span> <br>
+              <span class="stb-glyphicon glyphicon-chevron-left"></span> <br />
               expand to left / go to left
             </div>
           </div> <!-- /internal row -->
@@ -1380,12 +1442,12 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div> <!-- /col-md-9 -->
       </div> <!-- /row -->
 
-      <hr class="airgap">
+      <hr class="airgap" />
 
       <div class="row">
         <div class="col-md-3"><h2>Icon sizes</h2></div>
         <div class="col-md-9">
-          <i class="airgap-sm"><strong>Standard sizes</strong> used on icons.</i><br>
+          <i class="airgap-sm"><strong>Standard sizes</strong> used on icons.</i><br />
           <table style="text-align:center;">
             <thead>
               <th width="30%">
@@ -1396,11 +1458,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
             </thead>
             <tbody>
               <tr>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear">&nbsp;</span><br>130px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear">&nbsp;</span><br>72px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear">&nbsp;</span><br>32px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear">&nbsp;</span><br>24px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear">&nbsp;</span><br>16px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear">&nbsp;</span><br />130px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear">&nbsp;</span><br />72px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear">&nbsp;</span><br />32px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear">&nbsp;</span><br />24px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear">&nbsp;</span><br />16px</td>
               </tr>
             </tbody>
           </table>
@@ -1420,11 +1482,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
             </thead>
             <tbody>
               <tr>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear neutral">&nbsp;</span><br>130px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear neutral">&nbsp;</span><br>72px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear neutral">&nbsp;</span><br>32px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear neutral">&nbsp;</span><br>24px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear neutral">&nbsp;</span><br>16px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear neutral">&nbsp;</span><br />130px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear neutral">&nbsp;</span><br />72px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear neutral">&nbsp;</span><br />32px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear neutral">&nbsp;</span><br />24px</td>
+                <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear neutral">&nbsp;</span><br />16px</td>
               </tr>
             </tbody>
           </table>
@@ -1440,14 +1502,14 @@ $('ul[data-widget=stbFaq]').stbFaq();
       </div>
 
 
-      <hr class="airgap">
+      <hr class="airgap" />
 
       <div class="row">
         <div class="col-md-3">
           <h2>Icon library (spritesheet)</h2>
         </div>
         <div class="col-md-9">
-          <i class="airgap-top">Clickable icons, available in sizes: (130px), 72px, 32px, 24px and 16px.</i><br>
+          <i class="airgap-top">Clickable icons, available in sizes: (130px), 72px, 32px, 24px and 16px.</i><br />
           <p>
             Base classnames: <code>.stb-sprite-130 .stb-sprite-72 .stb-sprite-32 .stb-sprite-24 .stb-sprite-16</code>
           </p>
@@ -1475,7 +1537,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <div class="row">
         <div class="col-md-9 col-md-offset-3">
-          <i class="airgap-top">Neutral icons:</i> append class <code>neutral</code>.<br>
+          <i class="airgap-top">Neutral icons:</i> append class <code>neutral</code>.<br />
           <span class="stb-sprite-72 neutral car"></span>
           <span class="stb-sprite-72 neutral sailboat"></span>
           <span class="stb-sprite-72 neutral savings-funds"></span>
@@ -1501,7 +1563,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div>
       </div>
 
-      <hr class="airgap">
+      <hr class="airgap" />
 
 
     </div> <!-- /container -->

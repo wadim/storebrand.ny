@@ -1,4 +1,3 @@
-
 ul.accordion {
   margin: 0;
   padding: 0;
@@ -9,15 +8,14 @@ ul.accordion {
     width: 100%;
     padding: 0;
     margin-bottom: 1px;
-    border-bottom: 1px solid @stb-support-color3; //#dddddd;
+    border-bottom: 1px solid @stb-gray-third;
     background-color: @stb-primary-white;
 
-    // numeric index:
-    a {
+    // Display numbered list items
+    a.twister {
       display: block;
       font-size: 16px;
       line-height: 18px;
-
       color: @stb-primary-black;
       padding: 10px 30px 10px 20px;
       position: relative;
@@ -26,13 +24,14 @@ ul.accordion {
       &:focus,
       &.open {
         text-decoration: none;
-        background-color: @stb-support-color4; // #f1f8fe;
+        background-color: @stb-gray-first;
       }
 
-      // open/closed icons:
+      // Display open/close icons:
       .expander {
         .stb-glyphicon();
         .glyphicon-plus-sign();
+        color: @stb-outline-lime;
         float: right;
       }
       &.open {
@@ -41,11 +40,11 @@ ul.accordion {
         }
       }
 
-      // numeric index:
+      // FAQ item number display:
       .number {
         position: absolute;
         left: 5px;
-        color: #838383;
+        color: @stb-secondary-charcoal;
       }
     }
 
