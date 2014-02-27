@@ -10,12 +10,16 @@
     .form-control();
     // tweak the default BS transition-speed:
     .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
-    display: inline-block; // yay!
+    display: inline-block; 
 
     &:hover {
-      color: @stb-func-color-first;
-      border-color: @stb-func-color-first;
+      color: @stb-secondary-charcoal;
+      border-color: @stb-secondary-charcoal;
+      &[disabled] {
+        border-color: @stb-gray-fourth;
+      }
     }
+
   }
 
   // input and buttons line up with no spacing:
@@ -30,7 +34,7 @@
   }
 
   .stb-form-group {
-    .form-group(); //adds some sane margins
+    .form-group(); //Adds sane margins
 
     display: inline-block;
     vertical-align: middle;
@@ -38,13 +42,22 @@
     >label {
       height: 15px; //half of input-height
     }
+    
+    // Ok colors
+    &.valid {
+      input {
+        background-color: @stb-background-mint;
+        border-color: @stb-outline-lime;
+        color: @stb-primary-black;        
+      }
+    }
 
-    // alarm-colors:
+    // Alarm colors:
     &.alarm {
       input {
-        background-color: @stb-primary-white;
-        border-color: @stb-primary-color;
-        color: @stb-primary-color;
+        background-color: @stb-background-rose;
+        border-color: @stb-outline-pink;
+        color: @stb-primary-black;
       }
       button {
         background-color: @stb-primary-color;
@@ -56,30 +69,38 @@
     &:hover {
 
       input.has-submit {
-        border-color: @stb-func-color-first;
+        border-color: @stb-secondary-charcoal;
+        &[disabled]{
+          border-color: @stb-gray-third;
+        }       
       }
       button.is-submit {
-        background-color: @stb-func-color-first;
+        background-color: @stb-secondary-forest-darker;
+        &[disabled]{
+          background-color: @stb-gray-fourth;
+        }
       }
       
-      // alarm-varian has other colors:
+      // Alarm colors:
       &.alarm {
         input.has-submit {
-          border-color: @stb-func-color-second;
+          background-color: @stb-background-rose;
+          border-color: @stb-outline-pink;
+          color: @stb-primary-black;
         }
         button.is-submit {
-          background-color: @stb-func-color-second;
+          background-color: @stb-primary-color;
+          color: @stb-primary-white;
         }
       }
-      //todo: add hover-colors for disabled
 
     }
   } //end:stb-form-group
 
   button[disabled] {
-    background-color: @stb-support-color2;
+    background-color: @stb-gray-fourth;
     &:hover {
-      background-color: @stb-support-color2;
+      background-color: @stb-gray-fourth;
     }
   }
   input[disabled] {
@@ -90,9 +111,9 @@
 }
 
 
-/*************************************
+/***************************************
 * Custom checkbox + radio using images *
-*************************************/
+****************************************/
 // reference: http://www.thecssninja.com/css/custom-inputs-using-css
 
 form.stb-custom-form {
@@ -211,10 +232,7 @@ form.stb-custom-form {
     //   background-position: -8px -88px;
     // }
 
-
-
   } // end of :not(#foo)
-
 
 }
 
@@ -239,12 +257,11 @@ form.stb-custom-form {
       padding-right: 8px;
     }
   }
+  
   ul {
     padding: 0;
     top: 2px;
-
     box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-
     font-size: 14px;
     list-style-type: none;
     background-color: @stb-primary-white;

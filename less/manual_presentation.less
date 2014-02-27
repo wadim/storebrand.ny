@@ -80,36 +80,28 @@ h6>code {
   }
 }
 
-// From here on down, either modify colors for new palette and move up, or delete if not needed.
+input.fauxInputHover {
+  color: @stb-primary-black;
+  border-color: @stb-secondary-charcoal;
+}
 
-.fauxHoverClass {
-  color: @stb-primary-white;
-  background-color: @stb-func-color-first;
-}
-.fauxHoverPrimary {
-  background-color: @stb-func-color-first !important;
-  color: @stb-support-color4 !important;
-}
-.fauxHoverSecondary {
-  background-color: @stb-primary-white !important;
-  color: @stb-func-color-first !important;
-  border-color: @stb-func-color-first !important;
-}
-.fauxHoverSecondary2 {
-  // background-color: @stb-support-color3 !important;
-  color: @stb-func-color-first !important;
-}
-.fauxHoverLinkIcon {
-  color: @stb-func-color-first !important;
+input.fauxInputFocus {
+  color: @stb-primary-black;
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  box-shadow: inset 0 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
 }
 
 button.fauxInputHover {
-  background-color: @stb-func-color-first !important;
+  background-color: @stb-secondary-forest-darker;
 }
-input.fauxInputHover {
-  color: @stb-func-color-first !important;
-  border-color: @stb-func-color-first !important;
+
+button.fauxInputFocus {
+  background-color: @stb-secondary-forest;
 }
+
+// From here on down, either modify colors for new palette and move above this line, or delete if not used.
 
 // image + caption (html5 elements)
 figure {
@@ -117,7 +109,7 @@ figure {
   position: relative;
 }
 
-// put this somewhere smart:
+// put this where it belongs:
 .imageText {
   text-shadow: 0 1px 2px #000;
   z-index: 2;
@@ -134,9 +126,4 @@ figure {
 
 .one-third {
   width: 32%;
-}
-
-// remove these for demo; annoys designers :)
-input, select {
-  outline: none;
 }
