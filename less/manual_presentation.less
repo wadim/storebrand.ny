@@ -38,7 +38,6 @@ code {
 }
 
 // Airgaps: more whitespace
-// TODO: move into core? (consider implementing sm/md/lg sizes)
 hr.airgap {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -103,27 +102,4 @@ button.fauxInputHover {
 
 button.fauxInputFocus {
   background-color: @stb-secondary-forest;
-}
-
-// From here on down, either modify colors for new palette and move above this line, or delete if not used.
-
-// image + caption (html5 elements)
-figure {
-  max-width: 720px;
-  position: relative;
-}
-
-// put this where it belongs:
-.imageText {
-  text-shadow: 0 1px 2px #000;
-  z-index: 2;
-  position: absolute;
-  bottom: 0;
-  height: 40px;
-  width: 100%;
-  margin: 0;
-  padding: 10px;
-  font-size: 10px;
-  color: #fff;
-  background-color: rgba(0,0,0,0.3);
 }

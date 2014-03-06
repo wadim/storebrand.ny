@@ -1,45 +1,54 @@
-
 .stb-box {
 
   padding: 12px 10px 10px 10px;
   margin-bottom: 20px;
 
-  // set a transparent border so all variants are same size:
+  // Set a transparent border so that all variants with/without visible borders initially have the same size:
   border: 1px solid transparent;  
-
-  &.border{
-    border: 1px solid;
-  }
-
+  
   // reset ul/ol padding inside boxes
   ul.stb,ol.stb {
     padding-bottom: 0;
   }
-
-  //some boxes have borders:
-  &.stbcolor-support.fourth {
-    border: 1px solid @stb-support-color3;
+  
+  // Box combinations not covered by stb-colors.less
+  &.first {
+    .stbcolor-primary .third
   }
   
-
-  // Styling for the different boxtypes
-  &.stbcolor-secondary.first {
-    color: @stb-primary-white;
-    a{
-      text-decoration: underline;
-    }
-  }
-
-   &.stbcolor-secondary.second {
-    color: @stb-primary-white;
+  &.second {
+    .stbcolor-secondary.sixth;
     a {
-      color: @stb-primary-white;
-      text-decoration: underline;
+      font-weight: strong;
     }
   }
-
-
-
   
+  &.third {
+    .stbcolor-gray .first;
+    border: 1px solid @stb-gray-third;
+  }
+  
+  &.fourth {
+    .stbcolor-background .first;
+  }  
 
+  &.fifth {
+    .stbcolor-background .second;
+  }    
+  
+  // Centering contents (primarily buttons) inside boxes
+  div.center-me {
+    text-align: center;
+  }
+
+  // Forcing solid border
+  &.border {
+    border: 1px solid;
+  }
+
+  // Forcing dotted border
+  &.dottedborder {
+    border: 1px dotted;
+  }
+  
 }

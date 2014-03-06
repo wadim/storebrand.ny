@@ -1,6 +1,4 @@
 
-
-
 $('document').ready(function(){
 
   // simulate moving progressbar:
@@ -11,8 +9,7 @@ $('document').ready(function(){
 
   // tooltip and popover:
   $('#demo-popover').popover();
-  $('#demo-tooltip-1').tooltip('show');
-  $('#demo-tooltip-2').tooltip('show');
+  $('#demo-a-popover').popover();
 
   // datepicker
   $('select[data-widget=chosenSelect]').chosen();

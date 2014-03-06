@@ -1,22 +1,17 @@
-
 // VARIABLES
-@table-bg-accent: @stb-support-color4;
-
-
 table.stb-table {
-
   .table();
 
   // set borders & colors to stb-style:
-  border: 1px solid @stb-support-color3;
+  border: 1px solid @stb-gray-third;
   thead {
-    background-color: @table-bg-accent;
+    background-color: @stb-gray-first;
 
     &:first-child > tr:first-child > th {
       border-bottom-width: 1px;
     }
   }
-
+  
   // remove borders inside table:
   tbody > tr > td {
     border: 0;
@@ -26,9 +21,28 @@ table.stb-table {
   tbody > tr:nth-child(even) {
     > td,
     > th {
-      background-color: @table-bg-accent;
+      background-color: @stb-gray-first;
     }
   }
-
+  
+  // Extra padding-right at right end of table
+  tr td:last-child, thead tr th:last-child {
+    padding-right: 12px;
+  }   
 }
 
+.hoverable {
+  tbody {
+    > tr:hover {
+      background-color: @stb-chart-peach;
+    }    
+  }
+  
+   tbody > tr:nth-child(even):hover {
+    > td,
+    > th {
+      background-color: @stb-chart-peach;
+    }
+  } 
+  
+}

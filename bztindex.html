@@ -30,11 +30,15 @@
       <div class="row featurette">
 
         <div class="col-md-3">
-          <img class="featurette-image img-responsive" src="images/fjell.jpg" alt="A New Dawn Threatens" />
+         <p>
+           <br />
+           <img class="featurette-image img-responsive" src="images/logo.storebrand.240x50.transparent.png" alt="A New Dawn Threatens" />
+         </p>
         </div>
 
         <div class="col-md-9">
-          <h1 class="featurette-heading stbfont">Web Manual for storebrand.ny<br /> (work in progress)</h1>
+          <h1 class="featurette-heading stbfont">Web Manual for storebrand.ny</h1>
+          <h2>(Forever work in progress)</h2>
           <p class="lead">
             This page describes all elements available for creating Web content for Storebrand.
           </p>
@@ -64,29 +68,29 @@
             <div class="col-md-6">
               <div class="row">
                 <p><strong>Primary colors</strong> should be used on elements that are linked to the Storebrand branding and are assumed to be lasting colours, currently red ("Storebrand Red"), black and white.</p>
-                <i>Example use: Logos, banners, top-menus, text</i><br>
+                <p>Example use: Logos, banners, top-menus, text</p>
                 <code>Class: stbcolor-primary first/second/third</code>
               </div>
               <div class="row">
-                <div id="primary-first" data-placement="auto top" data-title="Storebrand Red" class="color-swatch stbcolor-primary first"></div>
-                <script>$('#primary-first').tooltip();</script>
-                <div id="primary-second" data-placement="auto top" data-title="Black" class="color-swatch stbcolor-primary second"></div>
-                <script>$('#primary-second').tooltip();</script>
-                <div id="primary-third" data-placement="auto top" data-title="White" class="color-swatch stbcolor-primary third" style="border: 1px solid #c4c4c4"></div>
-                <script>$('#primary-third').tooltip();</script>              
+                <div id="primary-first" data-placement="top" data-trigger="hover" data-content="Storebrand Red" class="color-swatch stbcolor-primary first"></div>
+                <script>$('#primary-first').popover();</script>
+                <div id="primary-second" data-placement="top" data-trigger="hover" data-content="Black" class="color-swatch stbcolor-primary second"></div>
+                <script>$('#primary-second').popover();</script>
+                <div id="primary-third" data-placement="top" data-trigger="hover" data-content="White" class="color-swatch stbcolor-primary third" style="border: 1px solid #c4c4c4"></div>
+                <script>$('#primary-third').popover();</script>              
               </div>
             </div>
             <div class="col-md-6">
               <div class="row">
                 <p><strong>Background colors</strong> for various user interface elements. The background comes with preset border/outline colors.</p>
-                <i>Examples: Boxes, ?</i><br /><br />
+                <p>Example use: Boxes, ?</p><br />
                 <code>Class: stbcolor-background first/second</code>
               </div>
               <div class="row">
-                <div id="background-first" data-placement="auto top" data-title="Rose with a rim of Pink" class="color-swatch stbcolor-background first"></div>
-                <script>$('#background-first').tooltip();</script>
-                <div id="background-second" data-placement="auto top" data-title="Mint with a rim of Lime" class="color-swatch stbcolor-background second"></div>
-                <script>$('#background-second').tooltip();</script>
+                <div id="background-first" data-placement="top" data-trigger="hover" data-content="Rose with a rim of Pink" class="color-swatch stbcolor-background first"></div>
+                <script>$('#background-first').popover();</script>
+                <div id="background-second" data-placement="auto" data-trigger="hover" data-content="Mint with a rim of Lime" class="color-swatch stbcolor-background second"></div>
+                <script>$('#background-second').popover();</script>
               </div>
             </div>
 
@@ -98,35 +102,35 @@
             <div class="col-md-6">
               <div class="row">
                 <p><strong>Secondary colors</strong> are used on important elements besides branding.</p>
-                <i>Examples: Buttons, links, messages, errors</i><br>
+                <p>Example use: Buttons, links, messages, errors</p>
                 <code>Class:<br />stbcolor-secondary first/second/third/fourth/fifth/sixth</code>
               </div>
               <div class="row">
-                <div id="secondary-first" data-placement="auto top" data-title="Charcoal" class="color-swatch stbcolor-secondary first"></div>
-                <script>$('#secondary-first').tooltip();</script>
-                <div id="secondary-second" data-placement="auto top" data-title="Moss" class="color-swatch stbcolor-secondary second"></div>
-                <script>$('#secondary-second').tooltip();</script>
-                <div id="secondary-third" data-placement="auto top" data-title="Forest" class="color-swatch stbcolor-secondary third"></div>
-                <script>$('#secondary-third').tooltip();</script>
-                <div id="secondary-fourth" data-placement="auto top" data-title="Dust" class="color-swatch stbcolor-secondary fourth"></div>
-                <script>$('#secondary-fourth').tooltip();</script>
-                <div id="secondary-fifth" data-placement="auto top" data-title="Nude" class="color-swatch stbcolor-secondary fifth"></div>
-                <script>$('#secondary-fifth').tooltip();</script>
-                <div id="secondary-sixth" data-placement="auto top" data-title="Sand" class="color-swatch stbcolor-secondary sixth"></div>
-                <script>$('#secondary-sixth').tooltip();</script>
+                <div id="secondary-first" data-placement="top" data-trigger="hover" data-content="Charcoal" class="color-swatch stbcolor-secondary first"></div>
+                <script>$('#secondary-first').popover();</script>
+                <div id="secondary-second" data-placement="top" data-trigger="hover" data-content="Moss" class="color-swatch stbcolor-secondary second"></div>
+                <script>$('#secondary-second').popover();</script>
+                <div id="secondary-third" data-placement="top" data-trigger="hover" data-content="Forest" class="color-swatch stbcolor-secondary third"></div>
+                <script>$('#secondary-third').popover();</script>
+                <div id="secondary-fourth" data-placement="auto" data-trigger="hover" data-content="Dust" class="color-swatch stbcolor-secondary fourth"></div>
+                <script>$('#secondary-fourth').popover();</script>
+                <div id="secondary-fifth" data-placement="top" data-trigger="hover" data-content="Nude" class="color-swatch stbcolor-secondary fifth"></div>
+                <script>$('#secondary-fifth').popover();</script>
+                <div id="secondary-sixth" data-placement="top" data-trigger="hover" data-content="Sand" class="color-swatch stbcolor-secondary sixth"></div>
+                <script>$('#secondary-sixth').popover();</script>
               </div>
             </div>
             <div class="col-md-6">
               <div class="row">
                 <p><strong>Darker colors</strong> used for hover effects</p>
-                <i>Examples: Buttons, links, ...</i><br /><br /><br />
+                <p>Example use: Buttons, links, ...</p><br /><br />
                 <code>Class: darker</code>
               </div>
               <div class="row">
-                <div id="primarycolor-first-darker" data-placement="auto top" data-title="Darker Storebrand Red" class="color-swatch stbcolor-primary first darker"></div>
-                <script>$('#primarycolor-first-darker').tooltip();</script>
-                <div id="secondarycolor-third-darker" data-placement="auto top" data-title="Darker Forest" class="color-swatch stbcolor-secondary third darker"></div>
-                <script>$('#secondarycolor-third-darker').tooltip();</script>
+                <div id="primarycolor-first-darker" data-placement="top" data-trigger="hover" data-content="Darker Storebrand Red" class="color-swatch stbcolor-primary first darker"></div>
+                <script>$('#primarycolor-first-darker').popover();</script>
+                <div id="secondarycolor-third-darker" data-placement="top" data-trigger="hover" data-content="Darker Forest" class="color-swatch stbcolor-secondary third darker"></div>
+                <script>$('#secondarycolor-third-darker').popover();</script>
               </div>
             </div>
 
@@ -138,34 +142,34 @@
             <div class="col-md-6">
               <div class="row">
                 <p><strong>Gray colors</strong> used for dull stuff (?)</p>
-                <i>Examples: ?</i><br /><br />
+                <p>Example use: ?</p><br />
                 <code>Class: stbcolor-gray first/second/third/fourth/fifth</code>
               </div>
               <div class="row">
-                <div id="gray-first" data-placement="auto top" data-title="Gray 1" class="color-swatch stbcolor-gray first"></div>
-                <script>$('#gray-first').tooltip();</script>
-                <div id="gray-second" data-placement="auto top" data-title="Gray 2" class="color-swatch stbcolor-gray second"></div>
-                <script>$('#gray-second').tooltip();</script>
-                <div id="gray-third" data-placement="auto top" data-title="Gray 3" class="color-swatch stbcolor-gray third"></div>
-                <script>$('#gray-third').tooltip();</script>
-                <div id="gray-fourth" data-placement="auto top" data-title="Gray 4" class="color-swatch stbcolor-gray fourth"></div>
-                <script>$('#gray-fourth').tooltip();</script>
-                <div id="gray-fifth" data-placement="auto top" data-title="Gray 5" class="color-swatch stbcolor-gray fifth"></div>
-                <script>$('#gray-fifth').tooltip();</script>
+                <div id="gray-first" data-placement="top" data-trigger="hover" data-content="Gray 1" class="color-swatch stbcolor-gray first"></div>
+                <script>$('#gray-first').popover();</script>
+                <div id="gray-second" data-placement="top" data-trigger="hover" data-content="Gray 2" class="color-swatch stbcolor-gray second"></div>
+                <script>$('#gray-second').popover();</script>
+                <div id="gray-third" data-placement="top" data-trigger="hover" data-content="Gray 3" class="color-swatch stbcolor-gray third"></div>
+                <script>$('#gray-third').popover();</script>
+                <div id="gray-fourth" data-placement="top" data-trigger="hover" data-content="Gray 4" class="color-swatch stbcolor-gray fourth"></div>
+                <script>$('#gray-fourth').popover();</script>
+                <div id="gray-fifth" data-placement="top" data-trigger="hover" data-content="Gray 5" class="color-swatch stbcolor-gray fifth"></div>
+                <script>$('#gray-fifth').popover();</script>
               </div>
             </div> <!-- /col-md-6 -->
 
             <div class="col-md-6">
               <div class="row">
                 <p><strong>Presentation colors</strong> used for graphs, charts and other visual presentations</p>
-                <i>Examples: Bar charts, pie diagrams, ...</i><br>
+                <p>Example use: Bar charts, pie diagrams, ...</p>
                 <code>Class: stbcolor-visual first/second</code>
               </div>
               <div class="row">
-                <div id="visuals-first" data-placement="auto top" data-title="Orange" class="color-swatch stbcolor-visuals first"></div>
-                <script>$('#visuals-first').tooltip();</script>
-                <div id="visuals-second" data-placement="auto top" data-title="Peach" class="color-swatch stbcolor-visuals second"></div>
-                <script>$('#visuals-second').tooltip();</script>
+                <div id="visuals-first" data-placement="top" data-trigger="hover" data-content="Orange" class="color-swatch stbcolor-visuals first"></div>
+                <script>$('#visuals-first').popover();</script>
+                <div id="visuals-second" data-placement="top" data-trigger="hover" data-content="Peach" class="color-swatch stbcolor-visuals second"></div>
+                <script>$('#visuals-second').popover();</script>
               </div>
             </div>
 
@@ -183,8 +187,8 @@
           (Done-ish)
         </div>
         <div class="col-md-9">
-          <p><strong>Open Sans</strong> is the standard font on storebrand.no. Arial is the preferred fallback.<br />
-          <strong>Note:</strong> Italics is not the strongest skill of the Open Sans font family. Please avoid exposing this.</p>
+          <p><strong>Open Sans</strong> is the standard font on storebrand.no. Arial is the preferred fallback.</p>
+          <p><strong>Note:</strong> Italics across platforms is not the strongest quality of the Open Sans font family. Please avoid exposing this.</p>
           <h1>Header 1 <code>font-size 40px; line-height: 46px; padding: 14px;</code></h1>
           <h2>Header 2 <code>font-size 24px; line-height: 30px; padding: 12px;</code></h2>
           <h3>Header 3 <code>font-size 20px; line-height: 22px; padding: 12px;</code></h3>
@@ -194,7 +198,8 @@
           <strong>Code:</strong> <code>&lt;h1-h6&gt;</code>
 
           <hr/>
-          <p><strong>Signa</strong> is only used in advertising, campaigns and for "special occasions".<br /> Note: Only H1-H4 are available in Signa, H5-H6 should always use Arial.</p>
+          <p><strong>Signa</strong> is only used in advertising, campaigns and for "special occasions".</p>
+          <p><strong>Note</strong>: Only H1-H4 are available in Signa, H5-H6 should always use Arial.</p>
           <h1 class="stbfont">Header 1 <code>font-size 40px; line-height: 46px; padding: 14px;</code></h1>
           <h2 class="stbfont">Header 2 <code>font-size 24px; line-height: 30px; padding: 12px;</code></h2>
           <h3 class="stbfont">Header 3 <code>font-size 20px; line-height: 22px; padding: 12px;</code></h3>
@@ -207,31 +212,34 @@
 
       <div class="row">
         <div class="col-md-3">
-          <h2>Typography / Texts</h2>
+          <h2>Typography / Text</h2>
           (Done-ish)
         </div>
         <div class="col-md-9">
+          <h3>Lead paragraph</h3>
           <p class="ingress">Lead paragraph (ingress): This is bolder. This is where the author grabs the attention of the reader. Lead paragraphs usually include brief answers to all main questions answered by the following text when it comes to who, what, why, when, where, and how.</p>
           <strong>Code:</strong> <code>&lt;p class="ingress"&gt;...&lt;/&gt;</code><br />
           <code>font-size: 16px; line-height: 22px; font-weight: 700;</code>
-
-          <p class="airgap-top">A paragraph is a <strong>passage</strong> in a section of text that is about a different subject from the preceding text section, marked by commencing on a new line.</p>
+          <br /><br />
+          <h3>General paragraph</h3>
+          <p>A paragraph is a <strong>passage</strong> in a section of text that is about a different subject from the preceding text section, marked by commencing on a new line.</p>
           <p>And then the next paragraph follows. It's about something else.</p>
           <strong>Code:</strong> <code>&lt;p&gt;...&lt;/p&gt;</code><br />
           <code>font-size: 16px; line-height: 22px;</code>
-          <br />
-          <p class="airgap-top">
+          <br /><br />
+          <h3>Small print</h3>
+          <p>
             In some cases, like for publishing dates, source references and footnotes, you can use <strong>small</strong>, like so:<br />
             <small>This part of the text is small and not very important, but still possible to read.</small>
           </p>
           <br /><strong>Code:</strong> <code>&lt;small&gt;</code> or <code>&lt;span/p/div class="petit"&gt;</code><br />
           <code>font-size: 12px; line-height: 16px;</code>
-          <p>
-            <blockquote>
-              And here's a blockquote.<br />
-              <small>Yours truly</small>
-            </blockquote>
-          </p>          
+          <br />
+          <br />
+          <blockquote>
+            And here's a standard blockquote.<br />
+            <small>Yours truly</small>
+          </blockquote>          
         </div>
       </div> <!-- /Typography / Text row -->
 
@@ -297,7 +305,7 @@
         <div class="col-md-9">
           <ul class="stb">
             <li>See what a list looks like.
-            <li>font-size: 16px; line-height: 22px;</li>
+            <li>font-size: 16px; line-height: 22px;
               <ol class="stb">
                 <li>Sub/child-lists, ordered or unordered, can also be used.</li>
                 <li>font-size: 16px; line-height: 22px;</li>
@@ -310,6 +318,313 @@
 
         </div>
       </div> <!-- /Typography / Lists row -->
+
+      <hr class="airgap"/>
+
+      <div class="row"><!-- Tables row -->
+        <div class="col-md-3">
+          <h2>Tables</h2>
+          (Done-ish)
+        </div>
+        <div class="col-md-9">
+          <p>
+            Tables are not to be used as a way to space out contents, but in some cases it is a good way to present lists of information. We have a version with hover-effect on rows, but keep in mind that this isn't too useful on touch devices.
+          </p>
+          <h4>Standard table</h4>
+          <table class="stb-table">
+            <thead>
+              <tr>
+                <th>Aksjefond</th>
+                <th class="text-right">Forvaltningshonorar</th>
+                <th class="text-right">Andre gebyrer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Storebrand Barnespar</td>
+                <td class="text-right">1,50%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand Aksjespar</td>
+                <td class="text-right">1,50%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand Global</td>
+                <td class="text-right">2,00%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand Norge</td>
+                <td class="text-right">2,00%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand WGA Healthcare</td>
+                <td class="text-right">1,75%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand Vekst</td>
+                <td class="text-right">0,40%</td>
+                <td class="text-right">0</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <h4>Table with hover effect</h4>
+                    <table class="stb-table hoverable">
+            <thead>
+              <tr>
+                <th>Aksjefond</th>
+                <th class="text-right">Forvaltningshonorar</th>
+                <th class="text-right">Andre gebyrer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Storebrand Barnespar</td>
+                <td class="text-right">1,50%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand Aksjespar</td>
+                <td class="text-right">1,50%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand Global</td>
+                <td class="text-right">2,00%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand Norge</td>
+                <td class="text-right">2,00%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand WGA Healthcare</td>
+                <td class="text-right">1,75%</td>
+                <td class="text-right">0</td>
+              </tr>
+              <tr>
+                <td>Storebrand Vekst</td>
+                <td class="text-right">0,40%</td>
+                <td class="text-right">0</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <strong>Code:</strong> <br />
+          <pre class="prettyprint">
+&lt;table class=&quot;stb-table [hoverable]&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Aksjefond&lt;/th&gt;
+      &lt;th class=&quot;text-right&quot;&gt;Forvaltningshonorar&lt;/th&gt;
+      &lt;th class=&quot;text-right&quot;&gt;Andre gebyrer&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Storebrand Barnespar&lt;/td&gt;
+      &lt;td class=&quot;text-right&quot;&gt;1,50%&lt;/td&gt;
+      &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
+      ...
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+        </div>
+      </div> <!-- /Tables row -->
+
+      <hr class="airgap" />
+
+      <div class="row"> <!-- Boxes row -->
+        <div class="col-md-3">
+          <h2>Boxes</h2>
+          (Done-ish)
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-12">
+              <p>
+                Boxes are established using divs with class stb-box + version class (e.g. "stb-box first"). They come with predefined background, text and link colors, plus some padding/margin. The width of the box scales to its parent element.
+              </p>
+              <p>
+                If you need to center something inside a box, e.g. a button, place it inside a div with class center-me.
+              </p>
+            </div>
+          </div>
+          
+          <hr />
+          
+          <div class="row">
+         
+            <div class="col-md-4 stbcolor-secondary sixth">
+              <p>class="first" on nude</p>
+              <div class="stb-box first">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn stb-btn-lg">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>
+            </div>  
+            <div class="col-md-1">
+              &nbsp;
+            </div>
+            <div class="col-md-4">
+              <p>class="second" on white</p>
+              <div class="stb-box second">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>
+            </div>
+          </div>
+          
+          <hr />
+ 
+          <div class="row">
+            <div class="col-md-4 stbcolor-secondary sixth">
+              <p>class="third" on nude</p>
+              <div class="stb-box third">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn stb-btn-lg">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>
+            </div>
+            <div class="col-md-1">
+              &nbsp;
+            </div>
+            <div class="col-md-4">
+              <p>class="third" on white</p>
+              <div class="stb-box third">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn stb-btn-lg">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>
+            </div>
+          </div> 
+
+          <hr />
+ 
+          <div class="row">
+            <div class="col-md-4 stbcolor-secondary sixth">
+              <p>class="fourth" on nude</p>
+              <div class="stb-box fourth">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn stb-btn-lg alarm">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>            
+            </div>
+            <div class="col-md-1">
+              &nbsp;
+            </div>
+            <div class="col-md-4">
+              <p>class="fourth" on white</p>
+              <div class="stb-box fourth">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn stb-btn-lg alarm">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="col-md-4 stbcolor-secondary sixth">
+              <p>class="fifth" on nude</p>
+              <div class="stb-box fifth">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn stb-btn-lg">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>            
+            </div>
+            <div class="col-md-1">
+              &nbsp;
+            </div>
+            <div class="col-md-4">
+              <p>class="fifth" on white</p>
+              <div class="stb-box fifth">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn stb-btn-lg">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>
+            </div>
+          </div>
+          
+          <hr />
+
+          <div class="row">
+            <div class="col-md-4 stbcolor-secondary sixth">
+              <p>Any box can force a dotted border:</p>
+              <p>class="fifth dottedborder" on nude</p>
+              <div class="stb-box fifth dottedborder">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn stb-btn-lg">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>            
+            </div>
+            <div class="col-md-1">
+              &nbsp;
+            </div>
+            <div class="col-md-4">
+              <p>Any box can force a solid border:</p>
+              <p>class="second border" on white</p>
+              <div class="stb-box second border">
+                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="center-me" style=""><button class="stb-btn stb-btn-lg">Samle avtaler</button></div>
+                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+              </div>
+            </div>
+          </div>          
+          
+          <div class="row">
+            <div class="col-md-8">
+          <h4>Code:</h4>
+          <pre class="prettyprint">
+&lt;div class="stb-box first / second / third + solid / dotted"&gt;
+  ... Box html contents ...
+  &lt;div class="center-me"&gt;... Centered box html contents&lt;/div&gt;
+&lt;/div&gt;</pre>      
+            </div>
+           
+          </div>              
+          
+        </div> <!-- /col-md-9 -->
+
+      </div> <!-- /Boxes row -->
+      
+
+      <hr class="airgap" />
+
+      <div class="row"> <!-- Notification row -->
+        <div class="col-md-3">
+          <h2>Notification</h2>
+        </div>
+        <div class="col-md-9">
+          <p>
+            "Small boxes" for use when just a quick notice is needed:
+          </p>
+          <div class="stb-alert stb-alert-success col-md-7 clearfix"><span class="icon-info"></span>Document saved, press any key to continue.</div>
+          <div class="stb-alert stb-alert-alarm col-md-7 clearfix"><span class="icon-alarm"></span>The server made a boo-boo.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+          <strong>Code:</strong>
+          <pre class="prettyprint">
+&lt;!-- OK-state: --&gt;
+&lt;div class=&quot;stb-alert stb-alert-success&quot;&gt;
+  &lt;span class=&quot;icon-info&quot;&gt;&lt;/span&gt;Document saved, press any key to continue.
+&lt;/div&gt;
+&lt;!-- Error-state: --&gt;
+&lt;div class=&quot;stb-alert stb-alert-alarm&quot;&gt;
+  &lt;span class=&quot;icon-alarm&quot;&gt;&lt;/span&gt;The server made a boo-boo.
+&lt;/div&gt;</pre>
+        </div>
+      </div> <!-- /Notification row -->
       
       <hr class="airgap" />
 
@@ -468,7 +783,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
               <button class="stb-btn alarm">Warning</button><br /><br />
               <code>Class: stb-btn alarm</code><br /><br />
               With icon:<br />
-              <button class="stb-btn alarm link-icon">Warning <span class="stb-sprite-16 keychain neutral"></button><br /><br />
+              <button class="stb-btn alarm link-icon">Warning <span class="stb-sprite-16 keychain neutral"></span></button><br /><br />
               <code>Class:<br />stb-btn secondary link-icon</code>
             </div>
 
@@ -596,7 +911,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
             </div>
 
             <div class="stb-form-group">
-              <input type="text" class="" placeholder="Placeholder" style="width: 180px;">
+              <input id="formInput1" type="text" class="" placeholder="Placeholder" style="width: 180px;">
             </div>
           </form>
 
@@ -606,7 +921,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
               </div>
 
               <div class="stb-form-group">
-                <input type="text" class="" placeholder="Placeholder" style="width: 180px;">
+                <input id="formInput2" type="text" class="" placeholder="Placeholder" style="width: 180px;">
               </div>
           </form>
 
@@ -616,7 +931,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
               </div>
 
               <div class="stb-form-group">
-                <input type="text" class="fauxInputHover" placeholder="Placeholder" style="width: 180px;">
+                <input id="formInput3" type="text" class="fauxInputHover" placeholder="Placeholder" style="width: 180px;">
               </div>
           </form>          
           
@@ -626,93 +941,93 @@ $('ul[data-widget=stbFaq]').stbFaq();
               </div>
 
               <div class="stb-form-group">
-                <input type="text" class="fauxInputFocus" value="Show me some love|" style="width: 180px;">
+                <input id="formInput4" type="text" class="fauxInputFocus" value="Show me some love|" style="width: 180px;">
               </div>
           </form>            
 
           <form class="stb-form-inline" role="form">
               <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput4">Disabled</label>
+                <label for="formInput5">Disabled</label>
               </div>
 
               <div class="stb-form-group">
-                <input type="text" class="" style="width: 180px;" placeholder="Can't touch this" disabled>
+                <input id="formInput5" type="text" class="" style="width: 180px;" placeholder="Can't touch this" disabled>
               </div>
           </form>   
           
           <form class="stb-form-inline" role="form">
               <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput4">Error in field input</label>
+                <label for="formInput6">Error in field input</label>
               </div>
               <div class="stb-form-group alarm">
-                <input type="text" class="" value="God exists!" style="width: 180px;"> <span class="glyphicon glyphicon-info-sign input-faulty"></span> <span class="input-faulty">Sounds about wrong!</span>
+                <input id="formInput6" type="text" class="" value="God exists!" style="width: 180px;"> <span class="glyphicon glyphicon-info-sign input-faulty"></span> <span class="input-faulty">Sounds about wrong!</span>
               </div>
           </form>
 
           <form class="stb-form-inline" role="form">
               <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput5">Input becomes valid</label>
+                <label for="formInput7">Input becomes valid</label>
               </div>
               <div class="stb-form-group valid">
-                <input type="text" class="" value="I'll never be Beyonce..." style="width: 180px;"> <span class="glyphicon glyphicon-ok input-valid"></span> <span class="input-valid">Sounds about right!</span>
+                <input id="formInput7" type="text" class="" value="I'll never be Beyonce..." style="width: 180px;"> <span class="glyphicon glyphicon-ok input-valid"></span> <span class="input-valid">Sounds about right!</span>
               </div>
           </form>          
           
           <form class="stb-form-inline" role="form">
               <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput6">Textarea ("large input")</label>
+                <label for="formInput8">Textarea ("large input")</label>
               </div>
               <div class="stb-form-group">
-                <textarea class="form-control" rows="4" cols="40"></textarea>
+                <textarea id="formInput8" class="form-control" rows="4" cols="40" ></textarea>
               </div>
           </form>          
 
           <form class="stb-form-inline" role="form">
               <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput7">With action button</label>
+                <label for="formInput9">With action button</label>
               </div>
               <div class="stb-form-group">
-                <input id="formInput7" type="text" class="has-submit" placeholder="Text..." style="width: 200px;">
+                <input id="formInput9" type="text" class="has-submit" placeholder="Text..." style="width: 200px;">
                 <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
               </div>
           </form>
 
           <form class="stb-form-inline" role="form">
               <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput8">Hover with button</label>
+                <label for="formInput10">Hover with button</label>
               </div>
               <div class="stb-form-group">
-                <input id="formInput8" type="text" class="has-submit fauxInputHover" placeholder="Text..." style="width: 200px;">
+                <input id="formInput10" type="text" class="has-submit fauxInputHover" placeholder="Text..." style="width: 200px;">
                 <button type="submit" class="stb-btn stb-form is-submit fauxInputHover">Enter</button>
               </div>
           </form>
 
           <form class="stb-form-inline" role="form">
               <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput9">Focus with button</label>
+                <label for="formInput11">Focus with button</label>
               </div>
               <div class="stb-form-group">
-                <input id="formInput9" type="text" class="has-submit fauxInputFocus" value="Portveien|" style="width: 200px;">
+                <input id="formInput11" type="text" class="has-submit fauxInputFocus" value="Portveien|" style="width: 200px;">
                 <button type="submit" class="stb-btn stb-form is-submit fauxInputFocus">Enter</button>
               </div>
           </form>          
           
           <form class="stb-form-inline" role="form">
               <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput10">Disabled</label>
+                <label for="formInput12">Disabled</label>
               </div>
               <div class="stb-form-group">
-                <input id="formInput10" type="text" class="has-submit" placeholder="Fødselsnummer" style="width: 200px;" disabled>
+                <input id="formInput12" type="text" class="has-submit" placeholder="Fødselsnummer" style="width: 200px;" disabled>
                 <button type="submit" class="stb-btn stb-form is-submit" disabled>Enter</button>
               </div>
           </form>
 
           <form class="stb-form-inline" role="form">
               <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput11">Error in field input</label>
+                <label for="formInput13">Error in field input</label>
               </div>
               <div class="stb-form-group alarm">
-                <input id="formInput11" type="text" class="has-submit" value="Portveien 3" style="width: 200px;">
+                <input id="formInput13" type="text" class="has-submit" value="Portveien 3" style="width: 200px;">
                 <button type="submit" class="stb-btn stb-form is-submit">Enter</button> <span class="glyphicon glyphicon-info-sign input-faulty"></span> <span class="input-faulty">Sounds about wrong!</span>
               </div>
           </form>
@@ -742,7 +1057,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <div class="row">
             <form class="stb-custom-form">
               <div class="col-md-12">
-                <i class="airgap">Customized radio and checkboxes, completely JavaScript-free.</i>            
+                <p>Customized radio and checkboxes, completely JavaScript-free.</p>
               </div>
               <div class="col-md-6">
                 <p>
@@ -806,7 +1121,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
             </div>
             <div class="col-md-12">
               <h3>Recommended default BS-style select</h3>
-              <select id="" class="form-control" style="width: 200px;">
+              <select id="select-demo" class="form-control" style="width: 200px;">
                 <option value="">Pick a number</option>
                 <option value="1">Number one</option>
                 <option value="2">Number two</option>
@@ -826,7 +1141,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
               <h3>Custom style with autocomplete</h3>
               <p>
                 <select data-widget="chosenSelect" class="form-control" data-placeholder="Pick a number" style="width: 400px;">
-                  <option value=""></option>
+                  <option value="0"></option>
                   <option value="1">Number one</option>
                   <option value="2">Number two</option>
                   <option value="3">Number three</option>
@@ -876,21 +1191,19 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <div class="row">
             <div class="col-md-12">
               <p><br /><strong>Note</strong>: Our slider is based on Egorkhmelev's jslider (see <a href="https://github.com/egorkhmelev/jslider">GitHub</a>for code with more options), stripped down and with a few improvements:</p>
-              <p>            
-                <ul>
-                  <li>Self-contained JS-file, all dependencies are included at the top of the file.</li>
-                  <li>Improvements &amp; some pull-requests have been included (resize, redraw-functions ++)</li>
-                  <li>Minor edits to the markup template</li>
-                  <li>Customized styles/graphics</li>
-                </ul>
-              </p>
+              <ul>
+                <li>Self-contained JS-file, all dependencies are included at the top of the file.</li>
+                <li>Improvements &amp; some pull-requests have been included (resize, redraw-functions ++)</li>
+                <li>Minor edits to the markup template</li>
+                <li>Customized styles/graphics</li>
+              </ul>
               <p>
                 <strong>Required JS + CSS:</strong>
-                <ul>
-                  <li><a href="js/dist/jquery.slider.all.js">jquery.slider.all.js</a></li>
-                  <li><a href="less/stb-ui-slider.less">stb-ui-slider.less</a></li>
-                </ul>
               </p>
+              <ul>
+                <li><a href="js/dist/jquery.slider.all.js">jquery.slider.all.js</a></li>
+                <li><a href="less/stb-ui-slider.less">stb-ui-slider.less</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1051,28 +1364,50 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div>
         
       </div> <!-- /Progress bar row -->      
-      
-      
+
       <hr class="airgap" />  
       
-<h1>NB! RESTEN ER ENNÅ IKKE KONVERTERT TIL NYTT DESIGN!</h1>      
-      
-      <hr class="airgap" />  
-      
-      <div class="row">
+      <div class="row"> <!-- Image row -->
         <div class="col-md-3">
-          <h2>Image captions</h2>
+          <h2>Image with caption</h2>
+          (Done-ish)
         </div>
         <div class="col-md-9">
-          <figure>
-            <img src="images/IMG0022.jpg" class="img-responsive" />
-            <figcaption class="imageText">
-              'I should like to have it explained,' said the Mock Turtle. 'She can't explain it,' said the Gryphon hastily.
+          <p>
+            By adding the class img-responsive to an image tag, the image will behave responsively.
+          </p>
+          <p>
+            Size, color, positioning and other details regarding image and caption must most likely be locally defined per use case. See source code on this page for an example of how it can be done.
+          </p>
+          <figure class="snowpic">
+            <img src="images/snow.gif" class="img-responsive" alt="Let it snow..." />
+            <figcaption class="myCaption">
+              A lot of people like snow. I find it to be an unnecessary freezing of water.
             </figcaption>
+            <style>
+              figure.snowpic {
+                max-width: 720px;
+                position: relative;
+              }
+            
+              figure.snowpic > figcaption.myCaption {
+                text-shadow: 0 1px 2px #000;
+                z-index: 2;
+                position: absolute;
+                bottom: 0;
+                height: 40px;
+                width: 100%;
+                margin: 0;
+                padding: 10px;
+                font-size: 16px;
+                color: #fff;
+                background-color: rgba(0,0,0,0.3);            
+              }
+            </style>
           </figure>
 
         </div>
-      </div> <!-- /row -->
+      </div> <!-- /Image row -->
 
       <div class="row">
         <!-- <div class="col-md-3"></div> -->
@@ -1080,181 +1415,55 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <strong class="airgap-top">Code:</strong>
           <pre class="prettyprint">
 &lt;figure&gt;
-  &lt;img src=&quot;images/IMG0022.jpg&quot; class=&quot;img-responsive&quot; /&gt;
+  &lt;img src=&quot;images/snow.gif&quot; class=&quot;img-responsive&quot; /&gt;
   &lt;figcaption class=&quot;imageText&quot;&gt;
     Figure caption text here.
   &lt;/figcaption&gt;
 &lt;/figure&gt;</pre>
         </div>
-      </div>
-
-      <hr class="airgap"/>
-
-      <div class="row">
-        <div class="col-md-3"><h2>Tables</h2></div>
-        <div class="col-md-9">
-          <table class="stb-table">
-            <thead>
-              <tr>
-                <th>Aksjefond</th>
-                <th class="text-right">Forvaltningshonorar</th>
-                <th class="text-right">Kjøpsgebyr</th>
-                <th class="text-right">Salgsgebyr</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Storebrand Barnespar</td>
-                <td class="text-right">1,50%</td>
-                <td class="text-right">0</td>
-                <td class="text-right">0</td>
-              </tr>
-              <tr>
-                <td>Storebrand Aksjespar</td>
-                <td class="text-right">1,50%</td>
-                <td class="text-right">0</td>
-                <td class="text-right">0</td>
-              </tr>
-              <tr>
-                <td>Storebrand Global</td>
-                <td class="text-right">2,00%</td>
-                <td class="text-right">0</td>
-                <td class="text-right">0</td>
-              </tr>
-              <tr>
-                <td>Storebrand Norge</td>
-                <td class="text-right">2,00%</td>
-                <td class="text-right">0</td>
-                <td class="text-right">0</td>
-              </tr>
-              <tr>
-                <td>Storebrand WGA Healthcare</td>
-                <td class="text-right">1,75%</td>
-                <td class="text-right">0</td>
-                <td class="text-right">0</td>
-              </tr>
-              <tr>
-                <td>Storebrand Vekst</td>
-                <td class="text-right">0,40%</td>
-                <td class="text-right">0</td>
-                <td class="text-right">0</td>
-              </tr>
-            </tbody>
-          </table>
-          <small>TODO: padding inside the right-side of the table needs to be bigger.</small> <br />
-          <strong>Code:</strong> <br />
-          <pre class="prettyprint">
-&lt;table class=&quot;stb-table&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Aksjefond&lt;/th&gt;
-      &lt;th class=&quot;text-right&quot;&gt;Forvaltningshonorar&lt;/th&gt;
-      &lt;th class=&quot;text-right&quot;&gt;Kj&oslash;psgebyr&lt;/th&gt;
-      &lt;th class=&quot;text-right&quot;&gt;Salgsgebyr&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Storebrand Barnespar&lt;/td&gt;
-      &lt;td class=&quot;text-right&quot;&gt;1,50%&lt;/td&gt;
-      &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
-      &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</pre>
-        </div>
-      </div>
-
-      <hr class="airgap"/>
-
-      <div class="row">
-        <div class="col-md-3"><h2>Boxes</h2></div>
-        <div class="col-md-9">
-
-          <p>Boxes with color defined for background, text and links, plus some padding/margin. Colors on <code>&lt;a&gt;</code> and <code>&lt;p&gt;</code> are adjusted according to which stbcolor-* class is used. Width of the box scales to parent-element.</p>
-
-        </div> <!-- /col-md-9 -->
-
-      </div> <!-- /row -->
-
-      <div class="row">
-        <div class="col-md-3 col-md-offset-3">
-          <div class="stb-box stbcolor-primary first">
-            <p>Their faces on the ground, not daring to lift their eyes and behold such a prodigy.</p>
-            <a href="#stb-box">Said the bird</a>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="stb-box stbcolor-primary first">
-            <p>Boxes inherits width from the parent element.</p>
-            <ul class="stb">
-              <li>List item one!</li>
-              <li>The second item</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col-md-3 col-md-offset-3">
-          <div class="stb-box stbcolor-support second">
-            <p>Their faces on the ground, not daring to lift their eyes and behold such a prodigy.</p>
-            <a href="#stb-box">Said the bird</a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 col-md-offset-3">
-          <div class="stb-box stbcolor-support fourth">
-            <p>Their faces on the ground, not daring to lift their eyes and behold such a prodigy.</p>
-            <a href="#stb-box">Said the bird</a>
-
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 col-md-offset-3">
-          <div class="stb-box stbcolor-func second light">
-            <p>Their faces on the ground, not daring to lift their eyes and behold such a prodigy.</p>
-            <a href="#stb-box">Said the bird</a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <strong>Code:</strong><br />
-          <pre class="prettyprint">
-&lt;div class="stb-box stbcolor-primary first"&gt;
-  &lt;p&gt;...&lt;/p&gt;
-  &lt;a href="#"&gt;...&lt;/a&gt;
-&lt;/div&gt;</pre>
-        </div>
-      </div>
-
-      <hr class="airgap" />
+      </div>      
+            
+      <hr class="airgap" />  
 
       <div class="row">
         <div class="col-md-3">
-          <h2>Popovers</h2>
+          <h2>Popover</h2>
+          (Done-ish)
         </div>
         <div class="col-md-9">
-          <i class="airgap">Note: popover does not have namespaced classnames; markup/classnames are inside bootstrap javascript-files. We simply override the css with same classnames as default BS.</i>
-          <p>Popover and tooltops will change placement (top/bottom/right/left) if there is no room for the preferred placement.</p>
-          <button class="stb-btn stb-btn-primary"
-                  id="demo-popover"
-                  data-toggle="popover"
-                  data-trigger="hover"
-                  data-content="Mr. Fogg learned all this in consulting his Bradshaw, which gave him the daily movements of the trans-Atlantic steamers."
-                  data-placement="auto top">Hover for popover</button>
-          <br />
-          <strong class="airgap-top">Requires Bootstrap's popover.js + tooltip.js</strong>
-
-        </div>
-      </div> <!-- /row -->
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <strong class="airgap-top">Code:</strong> <br />
+          <p>
+            <strong>Note</strong>: Popover does not have namespaced class names; markup/class names are inside Bootstrap javascript-files. We simply override the CSS with the same classnames as default BS.
+          </p>
+          <p>Display of popover can be done on click, hover or focus for the element. For full documentation, see <a href="http://getbootstrap.com/javascript/#popovers">Bootstrap</a>.
+          <p>
+            If there's not enough room to show the popover at the desired placement (top, bottom, right, left), the popover will automatically fail to an alternative placement.
+          </p>
+          <p> Examples (please hover for demo):
+            <button 
+              class="stb-btn stb-btn-primary"
+              id="demo-popover"
+              data-toggle="popover"
+              data-trigger="hover"
+              data-content="In matters of style, swim with the current; in matters of principle, stand like a rock."
+              data-placement="top">
+              Hover popover button
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" 
+              id="demo-a-popover"
+              data-toggle="popover"
+              data-trigger="hover"
+              data-content="In matters of style, swim with the current; in matters of principle, stand like a rock."
+              data-placement="bottom">
+              Link with hover-popover
+            </a>
+          </p>
+          <p>
+            Popover requires Bootstrap's popover.js + tooltip.js. Also, note that standard Bootstrap offers tooltip, which is just a simpler version of popover. We have deliberately not included tooltip in our web manual, because popover probably covers our needs. 
+          </p>
+          <p>
+            <strong class="airgap-top">Code:</strong>
+          </p>
           <pre class="prettyprint">
 &lt;button class=&quot;stb-btn stb-btn-primary&quot;
         id=&quot;demo-popover&quot;
@@ -1266,103 +1475,26 @@ $('ul[data-widget=stbFaq]').stbFaq();
 &lt;script&gt;
   // use this in document.ready or similar:
   $('#demo-popover').popover();
-&lt;/script&gt;</pre>
+&lt;/script&gt;
+          </pre>
         </div>
-      </div> <!-- /row -->
-
-      <hr class="airgap">
-
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Tooltips</h2>
-        </div>
-        <div class="col-md-9">
-          <i class="airgap" style="margin-bottom: 50px;">Grey version: difficult to implement cleanly, put on hold. Note: tooltips does not have namespaced classnames.</i>
-          <button class="stb-btn secondary"
-                  id="demo-tooltip-1"
-                  data-placement="auto top"
-                  data-title="The quick">Hover for tooltip
-          </button>
-
-          <button class="stb-btn secondary"
-                  id="demo-tooltip-2"
-                  data-placement="auto top"
-                  data-theme="light"
-                  data-title="Brown fox">Hover for tooltip
-          </button>
-
-        </div>
-      </div> <!-- /row -->
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <strong class="airgap-top">Code:</strong><br />
-          <pre class="prettyprint">&lt;button class=&quot;stb-btn secondary&quot;
-        id=&quot;demo-tooltip-1&quot;
-        data-placement=&quot;auto top&quot;
-        data-title=&quot;The quick&quot;&gt;Hover for tooltip
-&lt;/button&gt;
-&lt;script&gt;
-  // use this in document.ready or similar:
-  $('#demo-tooltip-1').tooltip();
-&lt;/script&gt;</pre>
-        </div>
-      </div>
-
-
+      </div> <!-- /Popover row -->
+      
       <hr class="airgap" />
 
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Message boxes</h2>
-        </div>
-        <div class="col-md-9">
-          <div class="stb-alert stb-alert-success col-md-7 clearfix"><span class="icon-info"></span>Document saved, press any key to continue.</div>
-          <div class="stb-alert stb-alert-alarm col-md-7 clearfix"><span class="icon-alarm"></span>The server made a boo-boo.</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <strong>Code:</strong>
-          <pre class="prettyprint">&lt;!-- OK-state: --&gt;
-&lt;div class=&quot;stb-alert stb-alert-success&quot;&gt;
-  &lt;span class=&quot;icon-info&quot;&gt;&lt;/span&gt;Document saved, press any key to continue.
-&lt;/div&gt;
-&lt;!-- Error-state: --&gt;
-&lt;div class=&quot;stb-alert stb-alert-alarm&quot;&gt;
-  &lt;span class=&quot;icon-alarm&quot;&gt;&lt;/span&gt;The server made a boo-boo.
-&lt;/div&gt;</pre>
-        </div>
-      </div>
-
-      <hr class="airgap">
-
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Wells / expanding boxes</h2>
-        </div>
-        <div class="col-md-9">
-          <div class="stb-well" style="float: left; width: 300px; height: 200px;">This is a box (also known as .well)</div>
-
-          <div class="stb-well stb-well-expanding" style="float: left; margin-left: 3em; width: 300px; height: 200px;">
-            <div class="expanding-top">&nbsp;<span class="expander-icon"></span></div>
-            <div class="expanding-content">Expanding box: not quite there yet.</div>
-            <div class="expanding-bottom">&nbsp;<span class="expander-icon"></span></div>
-          </div>
-        </div>
-
-      </div> <!-- /row -->
-
-      <hr class="airgap">
-
-      <div class="row">
+      <div class="row"> <!-- Standard icons row -->
         <div class="col-md-3">
           <h2>Standard icons</h2>
         </div>
         <div class="col-md-4">
-          <i><strong>Icons</strong> are used to illustrate call-to-action; icons should be clickable and grouped with a anchor-tag.</i>
+          <p>
+            <strong>Icons</strong> are used to illustrate call-to-action. Icons should be clickable and grouped with an anchor tag.
+          </p>
         </div>
         <div class="col-md-4">
-          <i><strong>Neutral icons</strong> are used for product description, lists/tables, un-selected product.</i>
+          <p>
+            <strong>Neutral icons</strong> can be used to display a product that is not selected and/or can not be selected.
+          </p>
         </div>
       </div>
       <div class="row">
@@ -1379,15 +1511,98 @@ $('ul[data-widget=stbFaq]').stbFaq();
             <span class="stb-icon teddy neutral xl">&nbsp;</span><br />Neutral
 
         </div>
-      </div>
+      </div> <!-- /Standard icons row -->  
+
+      <hr class="airgap" />
+
+      <div class="row"> <!-- Icon size row -->
+        <div class="col-md-3">
+          <h2>Icon sizes</h2>
+          (Done-ish)
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <p>
+              <strong>Standard sizes</strong> for current icons (pre-storebrand.ny) are shown below.<br />
+              We may well change this into SVG or font-based icons in due course...
+            </p>
+            <table style="text-align:center;">
+              <thead>
+                <tr>
+                  <th style="width: 30%">
+                  <th style="width: 20%">
+                  <th style="width: 20%">
+                  <th style="width: 15%">
+                  <th style="width: 10%">
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear">&nbsp;</span><br />130px</td>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear">&nbsp;</span><br />72px</td>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear">&nbsp;</span><br />32px</td>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear">&nbsp;</span><br />24px</td>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear">&nbsp;</span><br />16px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <hr />
+          
+          <div class="row">
+            <strong>Neutral icons:</strong> (There is no hover action on these.)<br />
+            <table style="text-align:center;">
+              <thead>
+                <tr>
+                  <th style="width: 30%">
+                  <th style="width: 20%">
+                  <th style="width: 20%">
+                  <th style="width: 15%">
+                  <th style="width: 10%">
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear neutral">&nbsp;</span><br />130px</td>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear neutral">&nbsp;</span><br />72px</td>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear neutral">&nbsp;</span><br />32px</td>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear neutral">&nbsp;</span><br />24px</td>
+                  <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear neutral">&nbsp;</span><br />16px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <hr />
+          
+          <div class="row">
+            <div class="col-md-12">
+              <strong class="">Usage:</strong><br><code> &lt;span class="stb-sprite-130/72/32/24/16 teddybear [neutral]"&gt;&lt;span&gt; </code>
+              <br />
+              <p>
+                See the <a href="http://elements.storebrand.no/webmanual/stb-icons.html">icon overview</a> for list of available icons.
+              </p>
+            </div>
+          </div>   
+        </div> 
+        
+      </div> <!-- /Icon size row -->
 
       <hr class="airgap">
 
-      <div class="row">
+      <div class="row"> <!-- Navigation icons row -->
         <div class="col-md-3">
           <h2>Navigation icons</h2>
+          (Done-ish)
         </div>
         <div class="col-md-9">
+          <p>
+            We have the entire standard glyphicon library available, but we have put it behind a synonym class, stb-glyphicon, in order to "enhance" the icons with our chosen font size and text color. 
+          </p>
+          <p>
+            For individual icons in addition to those listed below, see the <a href="http://getbootstrap.com/components/#glyphicons" target="_blank">Twitter Bootstrap</a> documentation.
+          </p>
           <div class="row airgap-md">
             <div class="col-md-2 text-center">
               <span class="stb-glyphicon glyphicon-remove"></span> <br />
@@ -1433,185 +1648,186 @@ $('ul[data-widget=stbFaq]').stbFaq();
             </div>
           </div> <!-- /internal row -->
 
-          <div class="row">
-            <div class="col-md-12">
-              <i><strong>Icon names</strong> are prefixed with: <code>.stb-glyphicon</code>, for individual icon-names, see <a href="http://getbootstrap.com/components/#glyphicons" target="_blank">Twitter Bootstrap</a> documentation.</i>
-            </div>
-          </div> <!-- /row -->
-
         </div> <!-- /col-md-9 -->
-      </div> <!-- /row -->
+      </div> <!-- / Navigation icons row -->      
 
       <hr class="airgap" />
 
-      <div class="row">
-        <div class="col-md-3"><h2>Icon sizes</h2></div>
-        <div class="col-md-9">
-          <i class="airgap-sm"><strong>Standard sizes</strong> used on icons.</i><br />
-          <table style="text-align:center;">
-            <thead>
-              <th width="30%">
-              <th width="20%">
-              <th width="20%">
-              <th width="15%">
-              <th width="10%">
-            </thead>
-            <tbody>
-              <tr>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear">&nbsp;</span><br />130px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear">&nbsp;</span><br />72px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear">&nbsp;</span><br />32px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear">&nbsp;</span><br />24px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear">&nbsp;</span><br />16px</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div> <!-- /row -->
-
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <i class="airgap-sm"><strong>Neutral icons:</strong> no action or hover on these (?).</i><br>
-          <table style="text-align:center;">
-            <thead>
-              <th width="30%">
-              <th width="20%">
-              <th width="20%">
-              <th width="15%">
-              <th width="10%">
-            </thead>
-            <tbody>
-              <tr>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear neutral">&nbsp;</span><br />130px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear neutral">&nbsp;</span><br />72px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear neutral">&nbsp;</span><br />32px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear neutral">&nbsp;</span><br />24px</td>
-                <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear neutral">&nbsp;</span><br />16px</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div> <!-- /row -->
-
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <strong class="">Usage:</strong><br><code> &lt;span class="stb-sprite-130/72/32/24/16 teddybear [neutral]"&gt;&lt;span&gt; </code>
-          <br>
-          <a href="stb-icons.html">See the icon-overview for more info.</a>
-        </div>
-      </div>
-
-
-      <hr class="airgap" />
-
-      <div class="row">
+      <div class="row"> <!-- Backgrounds section row -->
         <div class="col-md-3">
-          <h2>Icon library (spritesheet)</h2>
+          <h2>Background playground</h2>
+          (Done-ish)
         </div>
         <div class="col-md-9">
-          <i class="airgap-top">Clickable icons, available in sizes: (130px), 72px, 32px, 24px and 16px.</i><br />
           <p>
-            Base classnames: <code>.stb-sprite-130 .stb-sprite-72 .stb-sprite-32 .stb-sprite-24 .stb-sprite-16</code>
+            The palette colors can be used to add a colored background in the entire width of the page or just the width of any given element.
           </p>
-
-          <span class="stb-sprite-72 car"></span>
-          <span class="stb-sprite-72 sailboat"></span>
-          <span class="stb-sprite-72 savings-funds"></span>
-
-          <span class="stb-sprite-32 car"></span>
-          <span class="stb-sprite-32 sailboat"></span>
-          <span class="stb-sprite-32 savings-funds"></span>
-
-          <span class="stb-sprite-24 car"></span>
-          <span class="stb-sprite-24 sailboat"></span>
-          <span class="stb-sprite-24 savings-funds"></span>
-
-          <span class="stb-sprite-16 car"></span>
-          <span class="stb-sprite-16 sailboat"></span>
-          <span class="stb-sprite-16 savings-funds"></span>
-
-          <br>
-          <strong>Usage:</strong> <code>&lt;span class="stb-sprite-72 boligkreditt"&gt;&lt;/span&gt;</code>
+          <p>
+            Below is a selection of examples of combinations. 
+          </p>
         </div>
-      </div> <!-- /row -->
-
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <i class="airgap-top">Neutral icons:</i> append class <code>neutral</code>.<br />
-          <span class="stb-sprite-72 neutral car"></span>
-          <span class="stb-sprite-72 neutral sailboat"></span>
-          <span class="stb-sprite-72 neutral savings-funds"></span>
-
-          <span class="stb-sprite-32 neutral car"></span>
-          <span class="stb-sprite-32 neutral sailboat"></span>
-          <span class="stb-sprite-32 neutral savings-funds"></span>
-
-          <span class="stb-sprite-24 neutral car"></span>
-          <span class="stb-sprite-24 neutral sailboat"></span>
-          <span class="stb-sprite-24 neutral savings-funds"></span>
-
-          <span class="stb-sprite-16 neutral car"></span>
-          <span class="stb-sprite-16 neutral sailboat"></span>
-          <span class="stb-sprite-16 neutral savings-funds"></span>
-          <br>
-          <strong>Usage:</strong> <code>&lt;span class="stb-sprite-72 boligkreditt neutral"&gt;&lt;/span&gt;</code>
-          <br>
-          <div class="alert alert-warning airgap-sm">
-            <span class="glyphicon glyphicon-bullhorn"></span> <b>Classnames:</b> See the <a href="stb-icons.html">icon-overview page</a> for all the icons and classnames used.
-          </div>
-
-        </div>
-      </div>
-
-      <hr class="airgap" />
-
-
+      </div> <!-- /Backgrounds section row -->      
+      
     </div> <!-- /container -->
     
     <!-- testing: -->
 
-    <div class="green">
+    <div class="stbcolor-secondary sixth">
+      <p>
+        Sand
+      </p>
       <div class="container">
-        <div class="row blue">
-          <div class="col-md-6">
-            <p>This is a test</p>
+        <div class="row stbcolor-secondary fifth">
+          <div class="col-md-12">
+            <p>
+              Nude
+            </p>
+            <br />
+            <br />
+            <br />
           </div>
-        <div class="col-md-6 red">
-          <p>This is a test2</p>
         </div>
-      </div>
-      <div class="row">
-        <p>This is a test</p>
-      </div>
-      <div class="row red">
-        <div class="col-md-6">
-          <p>This is a test</p>
+        <div class="row stbcolor-secondary fourth">
+          <div class="col-md-12">
+            <p style="color: #fff;">
+              Dust
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
         </div>
-        <div class="col-md-6 blue">
-          <p>This is a test2</p>
+        <div class="row">
+          <div class="col-md-6 stbcolor-secondary third">
+            <p style="color: #fff;">
+              Forest
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+          <div class="col-md-6 stbcolor-secondary third darker">
+            <p style="color: #fff;">
+              Darker forest 
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>            
+        </div>          
+        <div class="row stbcolor-secondary second">
+          <div class="col-md-12">
+            <p style="color: #fff;">
+              Moss
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div> 
+        <div class="row stbcolor-visuals first">
+          <div class="col-md-12">
+            <p>
+              Orange
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
         </div>
+        <div class="row stbcolor-visuals second">
+          <div class="col-md-12">
+            <p>
+              Peach
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>          
+        &nbsp;
       </div>
     </div>
-    <style>
-      .red {
-        background: red;
-      }
-      .green {
-        background:green;
-      }    
-      .blue {
-        background:blue;
-      }  
-    </style>    
 
-    <div class="row">
-      <div class="stbcolor-func first light" style="height: 300px;"></div>
-      <div class="stbcolor-func first" style="height: 300px;"></div>
-      <div class="stbcolor-func second light" style="height: 300px;"></div>
-      <div class="stbcolor-func second" style="height: 300px;"></div>
-      <div class="stbcolor-func third light" style="height: 300px;"></div>
-      <div class="stbcolor-func third" style="height: 300px;"></div>
-    </div>
+    <div class="stbcolor-primary second">
+      <p style="color:#fff">
+        Meet the Grays
+      </p>
+      <div class="container">
+        <div class="row stbcolor-primary third">
+          <div class="col-md-12">
+            <p>
+              White
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>      
+        <div class="row stbcolor-gray first">
+          <div class="col-md-12">
+            <p>
+              Gray 1
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>
+        <div class="row stbcolor-gray second">
+          <div class="col-md-12">
+            <p>
+              Gray 2
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>
+        <div class="row stbcolor-gray third">
+          <div class="col-md-12">
+            <p>
+              Gray 3
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>        
+        <div class="row stbcolor-gray fourth">
+          <div class="col-md-12">
+            <p>
+              Gray 4
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>
+        <div class="row stbcolor-gray fifth">
+          <div class="col-md-12">
+            <p>
+              Gray 5
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>      
+        <div class="row stbcolor-secondary first">
+          <div class="col-md-12">
+            <p>
+              Charcoal
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>        
+
+        &nbsp;
+      </div>
+    </div>    
 
   </body>
 </html>

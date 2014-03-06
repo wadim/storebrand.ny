@@ -3,7 +3,7 @@
 // Author: unknown 3'rd party, q2i@storebrand.no
 
 // Usage: $('ul[data-widget=stbFaq]').stbFaq();
-// See the webmanual for markup-example
+// See web manual for markup-example
 
 (function($){
 
@@ -19,7 +19,8 @@
           text.slideUp(200);
         }
         else {
-          // ga('send', 'event', 'Forside pensjon - Twister', 'Les', 'Svar nummer ' +$(this).children(".number").html());
+          // Eksempel på logging av bruk av FAQ-en. Må ha både sidenavn og FAQ-navn for å skille på sider med mer enn én FAQ.
+          // ga('send', 'event', '[Sidenavn]', 'Les [FAQ-navn]', 'Svar nummer ' +$(this).children(".number").html());
           $(this).addClass("open");
           text.slideDown(200);
         }

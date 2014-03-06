@@ -2,12 +2,12 @@
 // bootstrap-chosen-variables.less: leave these here for now (keep it clean!)
 
 @chosen-background: @stb-primary-white;
-@chosen-border: @stb-support-color3;
-@chosen-border-hover: @stb-func-color-first;
+@chosen-border: @stb-gray-third;
+@chosen-border-hover: @stb-gray-first;
 @chosen-border-radius: @input-border-radius;
 @chosen-multi-border-radius: 0;
 @chosen-box-shadow: ~"inset 0 1px 1px rgba(0, 0, 0, .075)";
-@chosen-drop-border: @gray-light;
+@chosen-drop-border: @stb-gray-first;
 @chosen-drop-box-shadow: ~"0 8px 8px rgba(0, 0, 0, .25)";
 @chosen-drop-zindex: 1060;
 @chosen-focus-border: rgba(82, 168, 236, .8);
@@ -16,7 +16,6 @@
 @chosen-height: @input-height-base;
 @chosen-multi-height: @input-height-base + 6px;
 @chosen-sprite-path: "../images/chosen-sprite.png";
-
 
 //
 // bootstrap-chosen.less
@@ -95,7 +94,7 @@
       }
 
       &.highlighted {
-        background-color: @link-color;
+        background-color: @stb-secondary-charcoal;
         color: white;
 
         em {
@@ -105,12 +104,12 @@
 
       &.disabled-result {
         display: list-item;
-        color: @gray-light;
+        color: @stb-gray-first;
       }
     }
 
     .no-results {
-      background: @gray-lighter;
+      background: @stb-gray-second;
       display: list-item;
     }
   }
@@ -207,8 +206,8 @@
         // background: url("@{chosen-sprite-path}") no-repeat 0 7px;
         .stb-glyphicon();
         .glyphicon-chevron-down();
-
-        background-color: @stb-func-color-first-light;
+        
+        background-color: @stb-secondary-forest;
         color: @stb-primary-white;
         display: block;
         height: 100%;
@@ -222,7 +221,7 @@
   }
 
   .chosen-default {
-    color: @gray-light;
+    color: @stb-gray-second;
   }
 
   .chosen-search {
@@ -311,7 +310,7 @@
       border: 1px solid @chosen-border;
       .border-top-radius(@chosen-border-radius);
       .border-bottom-radius(@chosen-border-radius);
-      #gradient > .vertical(white, @gray-lighter);
+      #gradient > .vertical(white, @stb-gray-first);
       .box-shadow(@chosen-box-shadow);
       color: @gray-dark;
       cursor: default;

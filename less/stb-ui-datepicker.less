@@ -21,7 +21,7 @@
 }
 
 input#datepicker:hover + label[for=datepicker] {
-  background-color: @stb-func-color-first;
+  background-color: @stb-secondary-forest;
 }
 
 label[for=datepicker] {
@@ -31,7 +31,7 @@ label[for=datepicker] {
   width: 45px;
   height: 34px;
   padding: 7px 5px 4px 14px;
-  background-color: @stb-func-color-first-light;
+  background-color: @stb-secondary-forest;
 
   // add our calendar-icon:
   font-size: 18px;
@@ -41,7 +41,7 @@ label[for=datepicker] {
   top: 4px;
 
   &:hover {
-    background-color: @stb-func-color-first;
+    background-color: @stb-secondary-forest-darker;
   }
 }
 
@@ -52,7 +52,7 @@ label[for=datepicker] {
   width: 12em;
 
   &:hover {
-    border-color: @stb-func-color-first;
+    border-color: @stb-secondary-forest-darker;
   }
 
 }
@@ -69,12 +69,11 @@ label[for=datepicker] {
 }
 
 .ui-datepicker .ui-datepicker-header {
-  background-color: @stb-func-color-first-light;
+  background-color: @stb-secondary-forest;
   position: relative;
   top: 2px;
   padding: 4px 0;
   border: none;
-  // border-bottom: 1px solid @stb-func-color-first;
 }
 
 .ui-datepicker-header .ui-state-disabled span {
@@ -120,37 +119,11 @@ label[for=datepicker] {
   right: 3px;
 }
 
-// .ui-datepicker .ui-datepicker-prev span {
-//   background-position: 0px -35px !important;
-// }
-
-// .ui-datepicker .ui-datepicker-next span {
-//   background-position: -19px -35px !important;
-// }
-
-// .ui-datepicker .ui-datepicker-prev-hover span {
-//   background-position: 0px -54px !important;
-// }
-
-// .ui-datepicker .ui-datepicker-next-hover span {
-//   background-position: -19px -54px !important;
-// }
-
-// .ui-datepicker .ui-datepicker-prev span,
-//   .ui-datepicker .ui-datepicker-next span {
-//   width: 19px;
-//   height: 19px;
-//   display: block;
-//   position: absolute;
-//   //// background: transparent url(images/icon_sprite.png) no-repeat;
-// }
-
 .ui-datepicker .ui-datepicker-title {
   margin: 0 2.3em;
   line-height: 1.8em;
   text-align: center;
   font-weight: bold;
-  // text-shadow: 0 1px 0 rgba(0,0,0,0.6);
 }
 
 .ui-datepicker .ui-datepicker-title select {
@@ -179,7 +152,7 @@ label[for=datepicker] {
   text-align: center;
   font-weight: bold;
   border: 0;
-  color: @stb-func-color-first-light;
+  color: @stb-secondary-forest;
 }
 
 .ui-datepicker td {
@@ -218,7 +191,7 @@ label[for=datepicker] {
 
 .ui-datepicker .ui-state-default {
   background: transparent;
-  border-color: #FFF;
+  border-color: #fff;
   .box-shadow(none);
   .text-center();
 }
@@ -231,10 +204,10 @@ label[for=datepicker] {
 
 
 .ui-datepicker .ui-state-active {
-  background-color: @stb-func-color-first-light;
+  background-color: @stb-secondary-forest;
   color: @stb-primary-white; //!important;
   font-weight: bold;
-  text-shadow: 0 1px 1px @stb-func-color-first;
+  text-shadow: 0 1px 1px @stb-secondary-forest-darker;
   .text-center();
   box-shadow: inset 0 0 5px 0 rgba(0,0,0,0.35);
   border-radius: 2px;
