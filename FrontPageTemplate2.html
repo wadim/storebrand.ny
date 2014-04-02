@@ -1,0 +1,478 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Storebrand.ny Web Manual (work in progress)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/dist/tooltip.js"></script>
+    <script type="text/javascript" src="js/dist/popover.js"></script>
+    <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+    <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+    <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+    <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
+    <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
+
+<style>
+/* adjust body when menu is open */
+body.slide-active {
+    overflow-x: hidden
+}
+/*first child of #page-content so it doesn't shift around*/
+.no-margin-top {
+    margin-top: 0px!important
+}
+/*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
+#page-content {
+    position: relative;
+    padding-top: 70px;
+    left: 0;
+}
+#page-content.slide-active {
+    padding-top: 0
+}
+/* put toggle bars on the left :: not using button */
+#slide-nav .navbar-toggle {
+    cursor: pointer;
+    position: relative;
+    line-height: 0;
+    float: left;
+    margin: 0;
+    width: 30px;
+    height: 40px;
+    padding: 10px 0 0 0;
+    border: 0;
+    background: transparent;
+}
+/* icon bar prettyup - optional */
+#slide-nav .navbar-toggle > .icon-bar {
+    width: 100%;
+    display: block;
+    height: 3px;
+    margin: 5px 0 0 0;
+}
+#slide-nav .navbar-toggle.slide-active .icon-bar {
+    background: white
+}
+.navbar-header {
+    position: relative
+}
+/* un fix the navbar when active so that all the menu items are accessible */
+.navbar.navbar-fixed-top.slide-active {
+    position: relative
+}
+.nogap{
+    margin-bottom:0px;
+}
+/* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
+@media (max-width:767px) { 
+
+  #slide-nav .container {
+      margin: 0;
+      padding: 0!important;
+  }
+  #slide-nav .navbar-header {
+      margin: 0 auto;
+      padding: 0 15px;
+  }
+  #slide-nav .navbar.slide-active {
+      position: absolute;
+      width: 80%;
+      top: -1px;
+      z-index: 1000;
+  }
+  #slide-nav #slidemenu {
+      background: #f7f7f7;
+      left: -100%;
+      width: 80%;
+      min-width: 0;
+      position: absolute;
+      padding-left: 0;
+      z-index: 2;
+      top: -8px;
+      margin: 0;
+  }
+  #slide-nav #slidemenu .navbar-nav {
+      min-width: 0;
+      width: 100%;
+      margin: 0;
+  }
+  #slide-nav #slidemenu .navbar-nav .dropdown-menu li a {
+      min-width: 0;
+      width: 80%;
+      white-space: normal;
+  }
+  #slide-nav {
+      border-top: 0
+  }
+  #slide-nav.navbar-inverse #slidemenu {
+      background: #333
+  }
+  /* this is behind the navigation but the navigation is not inside it so that the navigation is accessible and scrolls*/
+  #slide-nav #navbar-height-col {
+      position: fixed;
+      top: 0;
+      height: 100%;
+      width: 80%;
+      left: -80%;
+      background: #eee;
+  }
+  #slide-nav.navbar-inverse #navbar-height-col {
+      background: #333;
+      z-index: 1;
+      border: 0;
+  }
+  #slide-nav .navbar-form {
+      width: 100%;
+      margin: 8px 0;
+      text-align: center;
+      overflow: hidden;
+      /*fast clearfixer*/
+  }
+  #slide-nav .navbar-form .form-control {
+      text-align: center
+  }
+  #slide-nav .navbar-form .btn {
+      width: 100%
+  }
+  
+}
+
+@media (min-width:768px) { 
+  #page-content {
+      left: 0!important
+  }
+  .navbar.navbar-fixed-top.slide-active {
+      position: fixed
+  }
+  .navbar-header {
+      left: 0!important
+  }
+}
+.nav.navbar-nav li a{
+    color:#FFF;
+}
+}
+
+
+</style>
+
+<script>
+$(document).ready(function () {
+
+
+    //stick in the fixed 100% height behind the navbar but don't wrap it
+    $('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));
+
+    // Enter your ids or classes
+    var toggler = '.navbar-toggle';
+    var pagewrapper = '#page-content';
+    var navigationwrapper = '.navbar-header';
+    var menuwidth = '100%'; // the menu inside the slide menu itself
+    var slidewidth = '80%';
+    var menuneg = '-100%';
+    var slideneg = '-80%';
+
+
+    $("#slide-nav").on("click", toggler, function (e) {
+
+        var selected = $(this).hasClass('slide-active');
+
+        $('#slidemenu').stop().animate({
+            left: selected ? menuneg : '0px'
+        });
+
+        $('#navbar-height-col').stop().animate({
+            left: selected ? slideneg : '0px'
+        });
+
+        $(pagewrapper).stop().animate({
+            left: selected ? '0px' : slidewidth
+        });
+
+        $(navigationwrapper).stop().animate({
+            left: selected ? '0px' : slidewidth
+        });
+
+
+        $(this).toggleClass('slide-active', !selected);
+        $('#slidemenu').toggleClass('slide-active');
+
+
+        $('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
+
+
+    });
+
+
+    var selected = '#slidemenu, #page-content, body, .navbar, .navbar-header';
+
+
+    $(window).on("resize", function () {
+
+        if ($(window).width() > 767 && $('.navbar-toggle').is(':hidden')) {
+            $(selected).removeClass('slide-active');
+        }
+    });
+
+
+
+
+});
+</script>
+
+  </head>
+
+  <body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="slide-nav" style="background:#DA291C">
+  <div class="container">
+   <div class="navbar-header">
+    <a class="navbar-toggle"> 
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+     </a>
+    <a class="navbar-brand" style="color:#FFF" href="#">Storebrand</a>
+   </div>
+   <div id="slidemenu">
+     
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="search" placeholder="Søk i våre sider" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Søk</button>
+          </form>
+     
+    <ul class="nav navbar-nav">
+     <li class="active"><a href="#">Person</a></li>
+     <li><a href="#about">Bedrift</a></li>
+     <li><a href="#contact">Kontakt oss</a></li>
+     <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Andre områder <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+       <li><a href="#">Action</a></li>
+       <li><a href="#">Another action</a></li>
+       <li><a href="#">Something else here</a></li>
+       <li class="divider"></li>
+       <li class="dropdown-header">Nav header</li>
+       <li><a href="#">Separated link</a></li>
+       <li><a href="#">One more separated link</a></li>
+       <li><a href="#">Action</a></li>
+       <li><a href="#">Another action</a></li>
+       <li><a href="#">Something else here</a></li>
+       <li class="divider"></li>
+       <li class="dropdown-header">Nav header</li>
+       <li><a href="#">Separated link</a></li>
+       <li><a href="#">One more separated link</a></li>
+       <li><a href="#">Action</a></li>
+       <li><a href="#">Another action</a></li>
+       <li><a href="#">Something else here</a></li>
+       <li class="divider"></li>
+       <li class="dropdown-header">Nav header</li>
+       <li><a href="#">Separated link test long title goes here</a></li>
+       <li><a href="#">One more separated link</a></li>
+      </ul>
+     </li>
+    </ul>
+          
+   </div>
+  </div>
+ </div>
+
+
+   
+
+     <div class="container">
+
+<hr><hr>
+
+
+       <div class="row">
+        <div class="col-md-12">
+
+               <div class="row">
+            <div class="col-md-6">
+              <div class="stb-box second nogap">
+                <h2>Bedre pensjon, helt enkelt</h2>
+                <h3>Hos Storebrand har vi vært opptatt av pensjon lenge, så vi har blitt ganske gode på det. Nå har vi blitt gode på å lære det bort også.</h3>
+
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="stb-box first nogap">
+               <h3>Mange av våre kunder vet ikke at de er det. 1/3 nordmenn har tjenestepensjon i Sotorebrand gjennom sin arbeidsgiver. Har du?</h3>
+                <div class="stb-form-group">
+                  <input type="text" style="width: 180px;height:30px;" placeholder="Ditt fødselsnummer" class="" id="formInput1">
+                  <div class="stb-btn">Logg inn</div> <div class="stb-btn secondary">Sjekk om jeg er kunde</div>
+                </div>  
+              </div>
+            </div>
+          </div> <!--End row-->
+
+          
+         <div class="row">
+            <div class="col-md-12">
+                <img src="images/tavle.png"style="width:100%">
+            </div>
+          </div> <!--End row-->
+
+          <div class="row">
+            
+            <div class="col-md-6 visible-lg">
+              <img src="images/mobilhand.png">
+            </div>
+
+            <div class="col-md-6">
+              <div class="stb-box">
+                <img src="http://www.storebrand.no/site/stb.nsf/Get/get2020957ae706aff70be3d542a918136a/$FILE/Kalkulator_32.png" class="pull-left">
+                <p>Sjekk pris og bestill</p>
+                <br>
+                <select data-widget="chosenSelect" class="form-control" data-placeholder="Velg produkt">
+                  <option value=""></option>
+                  <option value="1">Bilforsikring</option>
+                  <option value="2">Barneforsikring</option>
+                  <option value="3">Helseforsikring</option>
+                  <option value="4">Tilhengerforsikring</option>
+                  <option value="4">Dødsfallforsiring</option>
+                </select>
+                  <script>
+                    $('select[data-widget=chosenSelect]').chosen();
+                  </script>
+                  <br><br>
+                  <div class="stb-btn" onclick="alert('Går videre')">Gå videre</div>
+              </div>
+                 <div class="stb-box second">
+                    <h2>Totaløkonomi</h2>
+                    <h3>Vi gjør alt med tanke på at du skal få en best mulig pensjon. Både lånerenter og prisen på bilforsikringvirker inn på din totale økonomi og dermed også på din pensjon.</h3>
+                  </div>
+            </div>
+          </div> <!--End row-->
+
+           <div class="row">
+            <div class="col-md-12">
+              <div class="stb-box fourth">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2>Ditt pensjonstall</h2>
+                    <h3>Summen av folketrygden, tenejstepensjon og egen sparing kaller vi ditt pensjonstall. Det er rett og slett summen med penger som du skal leve av som pensjonist.</h3>
+                    <h3>Beregn ditt pensjonstall og se hvordan du ligger an med sparingen</h3>
+
+                  </div>
+                  <div class="col-md-6">
+                    <h2>&nbsp;</h2>
+                    <div class="stb-form-group">
+                       Når vil du gå av med pensjon  <span id="stb-slider-value" class="stb-font-bold text-center"></span>
+                      <input id="stb-slider" type="slider" name="stb-slider" value="63" />
+                      <div class="stb-btn">Gå videre i beregningen</div>
+                    </div>  
+                  </div>
+                </div>    
+              </div>  
+            </div>  
+          </div> <!--End row-->
+</div></div>
+    </div>  <!--End container-->  
+
+
+<!-- Footer mobile -->
+<div id="footerMobile" class="visible-xs visible-sm" style="background-color: #DA291C;bottom: 0;width: 100%;">
+    <div class="containerWide" style="color:#FFF;">
+       <center><h3><a href="#top">Til toppen</a></h3></center>
+    </div>
+</div>              
+
+<!--Footer desktop tablet -->
+        <div id="footer" class="hidden-xs hidden-sm" style="background-color: #DA291C;bottom: 0;width: 100%;">
+          <div class="containerWide" style="color:#FFF;">
+            <center><h3><a class="bigWhite" href="#" onclick="$('body,html').animate({scrollTop: 0}, 800);return false;">Til toppen</a></h3></center>
+            
+        <div class="row">
+          <div class="col-md-6">
+               <div class="row" style="margin-bottom:50px;">
+
+              <div class="col-md-4">
+                <ul class="nav">
+                  <li><a class="bigWhite" href="#"><b>Hjelp</b></a></li>
+                  <li><a href="#">Ofte stilte spørsmål</a></li>
+                  <li><a href="#">Chat med oss</a></li>
+                  <li><a href="#">Ring 08880</a></li>
+                  <li><a href="#">Send e-post</a></li>
+                  <li><a href="#">Avtal time</a></li>
+                </ul>  
+              </div> 
+
+              <div class="col-md-4">
+                <ul class="nav">
+                  <li><a class="bigWhite" href="#"><b>Sosiale medier</b></a></li>
+                  <li><a href="#">facebook</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Blogg</a></li>
+                  <li><a href="#">Youtube</a></li>
+                </ul>  
+              </div> 
+
+              <div class="col-md-4">
+                <ul class="nav">
+                  <li><a class="bigWhite" href="#"><b>Produkter</b></a></li>
+                  <li><a href="#">Pensjon</a></li>
+                  <li><a href="#">Bank</a></li>
+                  <li><a href="#">Forsikring</a></li>
+                  <li><a href="#">Fond</a></li>
+                  <li><a href="#">Sparing</a></li>
+                </ul>  
+              </div> 
+              
+            </div> 
+          </div>
+          <div class="col-md-6">
+               <div class="row">
+
+              <div class="col-md-4">
+                <ul class="nav">
+                  <li><a class="bigWhite" href="#"><b>Tjenester</b></a></li>
+                  <li><a href="#">Mitt forbruk</a></li>
+                  <li><a href="#">Nettbank</a></li>
+                  <li><a href="#">Ditt pensjonstall</a></li>
+                  <li><a href="#">Bilkalkulator</a></li>
+                  <li><a href="#">Fordelsportalen</a></li>
+                </ul>  
+              </div> 
+
+              <div class="col-md-4">
+                <ul class="nav">
+                  <li><a class="bigWhite" href="#"><b>Om Storebrand</b></a></li>
+                  <li><a href="#">Fakta</a></li>
+                  <li><a href="#">Investor relations</a></li>
+                  <li><a href="#">Presse</a></li>
+                  <li><a href="#">Bærekraft</a></li>
+                  <li><a href="#">Ledelsen</a></li>
+                </ul>  
+              </div> 
+
+              <div class="col-md-4">
+                <ul class="nav">
+                  <li><a class="bigWhite" href="#">Søk</a></li>
+                  <li><a href="#">Logg inn</a></li>
+                  <li><a href="#">Om siden</a></li>
+                </ul>  
+              </div> 
+              
+            </div> 
+          </div>
+        </div>    
+
+    </div> <!--End container -->   
+  </body>
+</html>
