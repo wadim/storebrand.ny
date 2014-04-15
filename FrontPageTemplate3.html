@@ -22,7 +22,18 @@
     <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
     <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
     <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
+<script>
+/* Equal heights på stb-boxes */
+setTimeout(function() {
+    $('.row').each(function() {
+        var rowheight = $(this).height();
+        $(this).find('.stb-box').each(function() {
+            $(this).css({"height": rowheight });
+        })
+    })
+}, 10); 
 
+</script>
 <style>
 .nogap{
   margin-bottom:0px;

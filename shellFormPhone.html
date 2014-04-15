@@ -27,10 +27,10 @@
 
 function doOneGo(){
 
-$('#one').slideUp();
-$('#two').slideUp();
-$('#three').slideDown();
-$('#four').slideDown();
+$('#bone').hide();
+$('#btwo').hide();
+$('#bthree').slideDown();
+$('#bfour').slideDown();
 
 }
 
@@ -39,119 +39,66 @@ $('#four').slideDown();
   </head>
   <body>
 
-    <div class="container marketing">
-
-      <div class="row featurette">
-
-        <div class="col-md-3">
-         <br>
-           <img class="featurette-image img-responsive" src="http://www.storebrand.no/site/stb.nsf/logo.storebrand.172x21.png" alt="Storebrand.no" />
-         
-        </div>
-
-        <div class="col-md-9">
-          
-          <div class="hidden-sm hidden-xs" style="margin-top:10px;"></div>
-          <div class="visible-xs" style="margin-top:15px;"></div>
-
-          <form class="stb-form-inline pull-right" role="form">
-              <div class="stb-form-group">
-                  <input type="text" id="fnrText" class="has-submit" placeholder="Fødselsnummer" style="width: 130px;" onfocus="$(this).css('width','200px');$('#btnLogIn').removeClass('stb-btn-sm');" onblur="$(this).css('width','130px');$('#btnLogIn').addClass('stb-btn-sm');">
-                  <button type="submit" id="btnLogIn" class="stb-btn stb-btn-sm stb-form is-submit">Logg inn</button>
-
-                  <input type="text" id="searchText" class="has-submit" placeholder="Søk" onfocus="$('#fnrText').attr('disabled','disabled');$('#btnLogIn').attr('disabled','disabled');$(this).css('width','200px'); $('#showSearch').hide(); $('#doSearch').removeClass('hidden');" onblur="$('#btnLogIn').removeAttr('disabled');$('#fnrText').removeAttr('disabled');$(this).css('width','50px'); $('#showSearch').show(); $('#doSearch').addClass('hidden');"style="width: 50px;margin-left:50px;">
-                  <span id="showSearch" class="stb-sprite-16 search" onclick="$('#searchText').css('width','200px'); $('#showSearch').hide(); $('#doSearch').removeClass('hidden');" ></span>
-                  <button id="doSearch" type="submit" class="stb-btn stb-form is-submit hidden">
-                    Søk  <span class="glyphicon glyphicon-search"></span>
-                  </div>
-              </div>
-          </form>
-        </div>
-
-      </div>
-
-    </div>
+   
    
 
-   <div class="container">  
-      <div class="row">
-
-         <div class="col-md-6">
-            <div class="stb-box first">
-              <h1>Sjekk pris</h1>
-            </div>  
-         </div>
-        
-         <div class="col-md-6">
-            <div class="stb-box fifth">
-              <h2>Vi trenger fødselsnummerer ditt for å kunne gi deg pris på bilforsikring </h2>
-                  <form class="stb-form-inline" role="form">
-                      <div class="stb-form-group">
-                          <input type="text" id="fnrCheck" class="has-submit" placeholder="Fødselsnummer" style="width: 130px;">
-                          <button type="submit" id="btnCheck" class="stb-btn stb-btn-sm stb-form is-submit">Kundesjekk</button>
-                          <span onclick="$('#checkInfotext').toggle()" class="stb-sprite-16 info" id="showSearch"></span>
-                          <div id="checkInfotext" style="display:none;"><h3>Lorem ipsum</h3><p> Verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha</p></div>
-                      </div>  
-                  </form>  
-            </div>            
-         </div>
-
-     </div>
-  </div><!--End Container-->         
-
-<div class="stbcolor-secondary second top-pad">  
+ <div class="stbcolor-secondary second top-pad">  
   <div class="container">  
       <div class="row">
 
          <div class="col-md-12" id="one">
-            <div class="stb-box fifth">
+          <h1>Sjekk pris</h1>
+         </div> 
+      </div>
+    </div>
+
+  <div class="container">  
+      <div class="row">
+
+         <div class="col-md-12" id="bone">
+            <div class="stb-box first">
                 <label for "carBrand">Bilmerke</label>
                 <select id="carBrand" data-widget="chosenSelect" class="form-control" data-placeholder="Velg bilmerke">
                     <option value=""></option>
-                    <option value="1">Number one</option>
-                    <option value="2">Number two</option>
-                    <option value="3">Number three</option>
-                    <option value="4">Number four</option>
-                    <option value="5">Number five</option>
+                    <option value="1">Alfa Romeo</option>
+                    <option value="2">BMW</option>
+                    <option value="3">Chevrolet</option>
+                    <option value="4">Datsun</option>
+                    <option value="5">Mazda</option>
+                    <option value="6">Opel</option>
+                    <option value="7">Lada</option>
                 </select>
             </div>
         </div>      
-        <div class="col-md-12" id="two">
-            <div class="stb-box fifth">
+        <div class="col-md-12" id="btwo">
+            <div class="stb-box first">
                 <label for "yearlyRange">Årlig kjørelengde</label>
                 <select id="yearlyRange" data-widget="chosenSelect" class="form-control" data-placeholder="Velg årlig kjørelengde">
                     <option value=""></option>
-                    <option value="1">Number one</option>
-                    <option value="2">Number two</option>
-                    <option value="3">Number three</option>
-                    <option value="4">Number four</option>
-                    <option value="5">Number five</option>
+                    <option value="1">8000 km</option>
+                    <option value="2">12000 km</option>
+                    <option value="3">16000 km</option>
+                    <option value="4">Fritt</option>
                 </select>
             </div>
         </div>
 
-        <div class="col-md-12" id="oneGo">
-            
-                <a href="#" onclick="doOneGo(); return false;" style="color:#FFF;" class="pull-right" onclick="">Videre >></a>
-            
+        <div class="col-md-12" id="boneGo">
+               <a href="#" onclick="doOneGo(); return false;" style="color:#FFF;" class="pull-right" onclick="">Videre >></a>
         </div>      
 
-        <div class="col-md-12" style="display:none" id="three">
-            <div class="stb-box fifth">
-                <label for "firstReg">Registrert første gang</label>
-                <select id="firstReg" data-widget="chosenSelect" class="form-control" data-placeholder="Registert første gang">
-                    <option value=""></option>
-                    <option value="1">Number one</option>
-                    <option value="2">Number two</option>
-                    <option value="3">Number three</option>
-                    <option value="4">Number four</option>
-                    <option value="5">Number five</option>
-                </select>
+        <div class="col-md-12" style="display:none" id="bthree">
+            <div class="stb-box first">
+                 <form class="stb-custom-form">
+                <h5>Gjenfinningssystem</h5>
+                <input class="stb-custom-input" type="radio" id="alarmYes" value="Yes" name="a" /><label class="stb-custom-imput" for="a">Ja</label> 
+                <input class="stb-custom-input" type="radio" id="alarmNo" value="No" name="b" /><label class="stb-custom-imput" for="b">Nei</label> <br>
+              </form>  
             </div>
         </div>
   
-           <div class="col-md-12" style="display:none;" id="four">
-            <div class="stb-box fifth">
+           <div class="col-md-12" style="display:none;" id="bfour">
+            <div class="stb-box first">
               <form class="stb-custom-form">
                 <h5>Bilalarm (FG-godkjent)</h5>
                 <input class="stb-custom-input" type="radio" id="alarmYes" value="Yes" name="a" /><label class="stb-custom-imput" for="a">Ja</label> <br>
@@ -160,7 +107,7 @@ $('#four').slideDown();
             </div>
         </div>  
 
-        <div class="col-md-12 hidden" id="five">
+        <div class="col-md-12 hidden" id="bfive">
             <div class="stb-box fifth">
               <form class="stb-custom-form">
                 <h5>Er det brukere at bilen under 24 år</h5>

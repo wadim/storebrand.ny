@@ -23,7 +23,36 @@
     <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
     <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
 
+<script>
 
+$(document).ready(function(){  
+
+$('#carBrand').change(function() {
+  var temp = $('#carBrand').val();
+  $('#info1').html('<div class="stb-btn disabled">'+ temp + '</div>');
+});
+
+$('#yearlyRange').change(function() {
+  var temp = $('#yearlyRange').val();
+  $('#info2').html('<div class="stb-btn disabled">'+ temp + '</div>');
+});
+
+$('#firstReg').change(function() {
+  var temp = $('#firstReg').val();
+  $('#info3').html('<div class="stb-btn disabled">'+ temp + '</div>');
+});
+
+$('#alarmYes').change(function() {  var temp = $('#alarmYes').val();  $('#info4').html('<div class="stb-btn disabled">'+ temp + '</div>');});
+$('#alarmNo').change(function() {  var temp = $('#alarmNo').val();  $('#info4').html('<div class="stb-btn disabled">'+ temp + '</div>');});
+$('#24Yes').change(function() {  var temp = $('#24Yes').val();  $('#info5').html('<div class="stb-btn disabled">'+ temp + '</div>');});
+$('#24No').change(function() {  var temp = $('#24No').val();  $('#info5').html('<div class="stb-btn disabled">'+ temp + '</div>');});
+$('#pay0').change(function() {  var temp = $('#pay0').val();  $('#info6').html('<div class="stb-btn disabled">'+ temp + '</div>');$('#moveOn').removeClass('secondary');});
+$('#pay1').change(function() {  var temp = $('#pay1').val();  $('#info6').html('<div class="stb-btn disabled">'+ temp + '</div>');$('#moveOn').removeClass('secondary');});
+$('#payMore').change(function() {  var temp = $('#payMore').val();  $('#info6').html('<div class="stb-btn disabled">'+ temp + '</div>'); $('#moveOn').removeClass('secondary');});
+
+
+});
+</script>
 
   </head>
   <body>
@@ -48,9 +77,9 @@
                   <input type="text" id="fnrText" class="has-submit" placeholder="Fødselsnummer" style="width: 130px;" onfocus="$(this).css('width','200px');$('#btnLogIn').removeClass('stb-btn-sm');" onblur="$(this).css('width','130px');$('#btnLogIn').addClass('stb-btn-sm');">
                   <button type="submit" id="btnLogIn" class="stb-btn stb-btn-sm stb-form is-submit">Logg inn</button>
 
-                  <input type="text" id="searchText" class="has-submit" placeholder="Søk" onfocus="$('#fnrText').attr('disabled','disabled');$('#btnLogIn').attr('disabled','disabled');$(this).css('width','200px'); $('#showSearch').hide(); $('#doSearch').removeClass('hidden');" onblur="$('#btnLogIn').removeAttr('disabled');$('#fnrText').removeAttr('disabled');$(this).css('width','50px'); $('#showSearch').show(); $('#doSearch').addClass('hidden');"style="width: 50px;margin-left:50px;">
+                  <input type="text" id="searchText" class="has-submit" placeholder="Søk" onkeypress="if(event.keyCode==13) { window.location.href='file:///C:/GITHUB/GitHub/storebrand.ny/Sokeside.html'; return false;}" onfocus="$('#fnrText').attr('disabled','disabled');$('#btnLogIn').attr('disabled','disabled');$(this).css('width','200px'); $('#showSearch').hide(); $('#doSearch').removeClass('hidden');" onblur="$('#btnLogIn').removeAttr('disabled');$('#fnrText').removeAttr('disabled');$(this).css('width','50px'); $('#showSearch').show(); $('#doSearch').addClass('hidden');"style="width: 50px;margin-left:50px;">
                   <span id="showSearch" class="stb-sprite-16 search" onclick="$('#searchText').css('width','200px'); $('#showSearch').hide(); $('#doSearch').removeClass('hidden');" ></span>
-                  <button id="doSearch" type="submit" class="stb-btn stb-form is-submit hidden">
+                  <button id="doSearch" type="submit" class="stb-btn stb-form is-submit hidden" onclick="window.location.href='file:///C:/GITHUB/GitHub/storebrand.ny/Sokeside.html'; return false;">
                     Søk  <span class="glyphicon glyphicon-search"></span>
                   </div>
               </div>
@@ -97,24 +126,25 @@
                 <label for "carBrand">Bilmerke</label>
                 <select id="carBrand" data-widget="chosenSelect" class="form-control" data-placeholder="Velg bilmerke">
                     <option value=""></option>
-                    <option value="1">Number one</option>
-                    <option value="2">Number two</option>
-                    <option value="3">Number three</option>
-                    <option value="4">Number four</option>
-                    <option value="5">Number five</option>
+                    <option value="Alfa Romeo">Alfa Romeo</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Datsun">Datsun</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Lada">Lada</option>
                 </select>
             </div>
         </div>      
         <div class="col-md-4">
             <div class="stb-box first">
                 <label for "yearlyRange">Årlig kjørelengde</label>
-                <select id="yearlyRange" data-widget="chosenSelect" class="form-control" data-placeholder="Velg årlig kjørelengde">
+                <select id="yearlyRange" class="form-control" data-placeholder="Velg årlig kjørelengde">
                     <option value=""></option>
-                    <option value="1">Number one</option>
-                    <option value="2">Number two</option>
-                    <option value="3">Number three</option>
-                    <option value="4">Number four</option>
-                    <option value="5">Number five</option>
+                    <option value="8000 km">8000 km</option>
+                    <option value="12000 km">12000 km</option>
+                    <option value="16000 km">16000 km</option>
+                    <option value="Fri lengde">Fri lengde</option>
                 </select>
             </div>
         </div>
@@ -123,11 +153,14 @@
                 <label for "firstReg">Registrert første gang</label>
                 <select id="firstReg" data-widget="chosenSelect" class="form-control" data-placeholder="Registert første gang">
                     <option value=""></option>
-                    <option value="1">Number one</option>
-                    <option value="2">Number two</option>
-                    <option value="3">Number three</option>
-                    <option value="4">Number four</option>
-                    <option value="5">Number five</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
                 </select>
             </div>
         </div>
@@ -141,18 +174,22 @@
          <div class="col-md-4">
             <div class="stb-box first">
               <form class="stb-custom-form">
-                <h5>Bilalarm (FG-godkjent)</h5>
-                <input class="stb-custom-input" type="radio" id="alarmYes" value="Yes" name="a" /><label class="stb-custom-imput" for="a">Ja</label> <br>
-                <input class="stb-custom-input" type="radio" id="alarmNo" value="No" name="b" /><label class="stb-custom-imput" for="b">Nei</label> <br>
-              </form>  
-            </div>
+                      <h5>Bilalarm (FG-godkjent)</h5>
+                      <p>
+                        <input class="stb-custom-input" type="radio" value="Alarm" id="alarmYes" name="aaa"><label class="stb-custom-imput" for="alarmYes">Ja</label> <br>
+                        <input class="stb-custom-input" type="radio" value="Ikke alarm" id="alarmNo" name="aaa"><label class="stb-custom-imput" for="alarmNo">Nei</label> <br>
+                      </p>
+              </form>
+         </div>
+
+
         </div>      
         <div class="col-md-4">
             <div class="stb-box first">
               <form class="stb-custom-form">
                 <h5>Er det brukere at bilen under 24 år</h5>
-                <input class="stb-custom-input" type="radio" id="24Yes" value="Yes" name="a" /><label class="stb-custom-imput" for="a">Ja</label> <br>
-                <input class="stb-custom-input" type="radio" id="24No" value="No" name="b" /><label class="stb-custom-imput" for="b">Nei</label> <br>
+                <input class="stb-custom-input" type="radio" id="24Yes" value="Under 24 år" name="aab" /><label class="stb-custom-imput" for="24Yes">Ja</label> <br>
+                <input class="stb-custom-input" type="radio" id="24No" value="Ingen under 24 år" name="aab" /><label class="stb-custom-imput" for="24No">Nei</label> <br>
               </form>  
             </div>
         </div>
@@ -160,13 +197,26 @@
             <div class="stb-box first">
               <form class="stb-custom-form">
                 <h5>Antall skader som har medført utbetaling på bilforsikring din siste 3 år</h5>
-                <input class="stb-custom-input" type="radio" id="pay0" value="0" name="a" /><label class="stb-custom-imput" for="a">0</label> <br>
-                <input class="stb-custom-input" type="radio" id="pay1" value="1" name="b" /><label class="stb-custom-imput" for="b">1</label> <br>
-                <input class="stb-custom-input" type="radio" id="payMore" value="2+" name="c" /><label class="stb-custom-imput" for="c">2 eller fler</label> <br>
+                <input class="stb-custom-input" type="radio" id="pay0" value="Ingen skader siste 3 år" name="aac" /><label class="stb-custom-imput" for="pay0">0</label> <br>
+                <input class="stb-custom-input" type="radio" id="pay1" value="En skade siste 3 år" name="aac" /><label class="stb-custom-imput" for="pay1">1</label> <br>
+                <input class="stb-custom-input" type="radio" id="payMore" value="To eller flere skader siste 3 år" name="aac" /><label class="stb-custom-imput" for="payMore">2 eller fler</label> <br>
               </form>  
             </div>
         </div>
      </div>
+ </div> <!-- End container-->  
+
+
+<div class="container">  
+      <div class="row">
+         <div class="col-md-12">
+            <div class="stb-box first">
+              <span id="info1"></span>  <span id="info2"></span>   <span id="info3"></span>  <span id="info4"></span> <span id="info5"></span>  <span id="info6"></span>
+
+              <div class="stb-btn secondary" id="moveOn">Gå videre</div>
+            </div>
+        </div>
+      </div>  
  </div> <!-- End container-->  
 <!--/div-->
 

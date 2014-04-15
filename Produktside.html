@@ -23,7 +23,18 @@
     <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
     <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
 
+<script>
+/* Equal heights på stb-boxes */
+setTimeout(function() {
+    $('.row').each(function() {
+        var rowheight = $(this).height();
+        $(this).find('.stb-box').each(function() {
+            $(this).css({"height": rowheight });
+        })
+    })
+}, 10); 
 
+</script>
 
   </head>
   <body>
@@ -65,31 +76,31 @@
     <div class="container">
       <div class="row">
          <div class="col-md-12">
-          <h1>Lorem ipsum</h1>
+          <h1>Spar til din pensjon</h1>
          </div>
       </div>    
     </div>
-    
+
+
+   
     <div class="container">  
      <div class="row">
          <div class="col-md-6">
               <div class="stb-box second nogap">
-                <h2>Alpha verso grimt</h2>
-                <h3>Terra scriptum delta echo verso grimt delta scriptum sierra verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra scriptum delta</h3>
-                <img src="images/houseWomen.png">
-
+                  <h2>Start en spareavtale</h2>
+                  <h2>Når du starter en spareavtale, trekkes et fast beløp fra kontoen din hver måned - det er ikke så mye som skal til. </h2>
+                  <br>
+                  <center><h2> Enkelt og greit</h3></center>
+                  <br>
+                  <center><div class ="stb-btn stb-btn-lg">Start sparing</div></center>
               </div>
             </div>
             
             <div class="col-md-6">
-              <div class="stb-box first nogap">
+              <div class="stb-box second nogap">
                 <h2>Alpha verso grimt</h2>
-               <p>Verso grimt delta scriptum sierra alpha verso grimt delta scriptum echo sierra alpha verso grimt delta scriptum sierra alpha terra</p>
-               <p>Verso grimt delta scriptum sierra alpha grimt delta scriptum terra sierra alpha verso grimt delta scriptum sierra alpha terra</p>
-               
-               <p>Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</p>
-               <h3><a href="#">Les mer </a></h3>
-                 
+                <h3>Terra scriptum delta echo verso grimt delta scriptum sierra verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra scriptum delta</h3>
+                <img src="images/houseWomen.png" class="img-responsive">
               </div>
             </div>
       </div>      
@@ -98,12 +109,53 @@
      <div class="container">
         <div class="row">
              <div class="col-md-12">
-                <img src="images/barneforsikring.png" style="width:100%">
+
+             <figure class="snowpic">
+            <img src="images/barneforsikring.png" style="width:100%" class="img-responsive" alt="Let it snow..." />
+            <figcaption class="myCaption">
+              Barneforsikring sikrer dine barn når noe skjer.
+            </figcaption>
+            <style>
+              figure.snowpic {
+                max-width: 100%;
+                position: relative;
+              }
+            
+              figure.snowpic > figcaption.myCaption {
+                text-shadow: 0 1px 2px #000;
+                z-index: 2;
+                position: absolute;
+                bottom: 0;
+                height: 50px;
+                width: 100%;
+                margin: 0;
+                padding: 10px;
+                font-size: 16px;
+                color: #fff;
+                background-color: rgba(0,0,0,0.3);            
+              }
+            </style>
+   
              </div>
         </div>  
      </div>   
+<br>
+     <div class="container">
+        <div class="row">
+             <div class="col-md-6" style="padding-right:0px;">
+              <div class="stb-box nogap"style="background:#da291c; padding:30px;">
+                  <br>
+                  <h2 style="color:#FFF">Vår barneforsikring sikrer barnet ditt økonomisk ved ulykke, sykdom og uførehet.</h2>
+                  <br>
+                  <center><div class ="stb-btn stb-btn-lg">Bestill barneforsikring</div></center>
+              </div>  
+             </div> 
 
-
+             <div class="col-md-6 nogap" style="padding-left:0px;">
+                  <img src="images/bestitestgutt.png" class="img-responsive" style="width:100%">
+             </div>
+        </div>  
+     </div>  
 
  
 
