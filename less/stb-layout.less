@@ -1,0 +1,57 @@
+
+
+
+.stb-row {
+
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 12px 10px 10px 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;  
+   
+   &.innerBox{
+  margin-left: 10px;
+  margin-right: 10px;
+  } 
+
+ 
+  &.first {
+    .stbcolor-primary .third;
+  }
+  
+  &.second {
+  margin-left: 0px;
+  margin-right: 0px;
+    .stbcolor-secondary.sixth;
+    a {
+      font-weight: strong;
+    }
+  }
+  
+  &.third {
+    .stbcolor-gray .first;
+    border: 1px solid @stb-gray-third;
+  }
+  
+  &.fourth {
+    .stbcolor-background .first;
+  }  
+
+  &.fifth {
+    .stbcolor-background .second;
+  }   
+
+ }    
+ 
+
+
+//Adding top padding for wide color
+  .top-pad {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+//Gives no gap between rows - needs to be modified
+  .nogap{
+  margin-bottom:0px;
+}
