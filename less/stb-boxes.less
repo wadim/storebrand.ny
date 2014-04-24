@@ -2,18 +2,10 @@
 
   padding: 12px 10px 10px 10px;
   margin-bottom: 20px;
-
-  // Set a transparent border so that all variants with/without visible borders initially have the same size:
   border: 1px solid transparent;  
   
-  // reset ul/ol padding inside boxes
-  ul.stb,ol.stb {
-    padding-bottom: 0;
-  }
-  
-  // Box combinations not covered by stb-colors.less
   &.first {
-    .stbcolor-primary .third
+    .stbcolor-primary .third;
   }
   
   &.second {
@@ -36,6 +28,10 @@
     .stbcolor-background .second;
   }    
 
+  &.sixth {
+    .stbcolor-background .third;
+  } 
+
  
   
   // Centering contents (primarily buttons) inside boxes
@@ -53,16 +49,9 @@
     border: 1px dotted;
   }
 
-  
+  ul.stb,ol.stb {
+    padding-bottom: 0;
+  }
   
 }
 
-//Adding top padding for wide color
-  .top-pad {
-    padding-top: 30px;
-    padding-bottom: 30px
-  }
-//Gives no gap between rows - needs to be modified
-  .nogap{
-  margin-bottom:0px;
-}

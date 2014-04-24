@@ -11,6 +11,11 @@
 
 // SECONDARY COLORS (Need a better / more descriptive name...)
 @stb-secondary-charcoal: #404040;
+
+//Losvik tester
+@stb-secondary-linkcolor-hover:  darken(@stb-secondary-dust, 15%);
+
+
 @stb-secondary-moss:     #5f6e57;
 @stb-secondary-forest:   #6c8524;
 @stb-secondary-dust:     #776654;
@@ -85,6 +90,13 @@
   &.second {
     background-color: @stb-background-mint;
     border: 1px solid @stb-outline-lime;    
+  }
+
+  &.third {
+    background-color: @stb-primary-color;
+    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+      color: @stb-primary-white;
+      } 
   }
 }
 
