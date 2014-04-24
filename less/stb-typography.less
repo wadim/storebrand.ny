@@ -72,7 +72,7 @@ h2 {
   line-height: 30px;
   margin: 0;
   padding: 12px 12px 12px 0;
-  color: @stb-primary-black;
+  color: @stb-primary-color;
   font-family: @font-family-sans-serif;
   &.stbfont {
     font-family: @font-family-signa;
@@ -170,8 +170,6 @@ a.help, a.help:hover, a.help:visited {
   font-weight: bold;
 }
 
-
-
 // inline: force elements to inline + skip padding:
 .inline {
   display: inline;
@@ -219,3 +217,18 @@ ul.stb,ol.stb {
 } //end:ul.stb
 
 // End of styling of ordered and unordered lists
+
+//Mediaquery for typography
+
+
+//Small devices 
+@media (max-width: @screen-sm-min) {
+  p {
+    font-size: 12px;
+    line-height: 14px;
+    &.ingress {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+}
