@@ -5,13 +5,13 @@
 
 
 /* SCROLL TO FUNCTION ************************************************************/
-function scrollTo(id){ 
+function scrollTo(id,more){ 
   $('html,body').animate({scrollTop: $('#'+id).height()}, 800);
 }
 
 
-/* VERIFY PERSONAL ID NR ************************************************************/
-function verifyNationalIdentityNumber(theField) {
+/* Verify National Identity Number ***********************************************/
+function verifyID(theField) {
 var nr = theField.value;
 var pn = new Array()
 var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0)
