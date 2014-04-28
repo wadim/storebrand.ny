@@ -10,7 +10,7 @@ function scrollTo(id,more){
 }
 
 
-/* VERIFY PERSONAL ID NR ************************************************************/
+/* Verify National Identity Number ***********************************************/
 function verifyID(theField) {
 var nr = theField.value;
 var pn = new Array()
