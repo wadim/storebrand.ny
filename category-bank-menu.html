@@ -1,0 +1,446 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Skisse - Produktside</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/stb-main.css">    
+    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+    <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+    <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+    <!-- Opplegg for sticky toppmeny -->
+    <style>
+      /* Bootstrap 3 helpers */
+      .navbar-form input, .form-inline input {
+	      width:auto;
+      }
+
+      header {
+	      height:70px;
+      }
+
+      #nav.affix {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index:999;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready (function (){
+        $('#nav').affix({
+          offset: {
+            top: $('header').height()
+          }
+        });	
+      });
+      
+      // Hiding/showing menubar depending on last scroll activity
+      var lastScrollTop = 0;
+      $(window).scroll(function(event){
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop & st > 150){
+        //removing .navfixed when user scroll down
+         $('#nav').fadeOut(200);
+        } else {
+        //adding .navfixed when user scroll down
+          $('#nav').fadeIn(200);
+        }
+        lastScrollTop = st;
+      });
+
+    </script>
+    <!-- /Slutt på opplegg for sticky toppmeny -->
+    
+  </head>
+  <body>
+  
+    <header class="stbhead">
+      <div class="navbar navbar-default">
+        <div class="container visible-md visible-lg">
+          <div class="navbar-collapse collapse" id="universal-navbar">
+            <ul class="nav pull-right navbar-nav">
+              <li><a href="#">Hiv</a></li>
+              <li><a href="#">Ohoy</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <h2>Pensjon - Enkelt og greit</h2>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="stb-sprite-32 square-list"></span>
+          </a>
+          <div class="navbar-collapse collapse" id="main-navbar">
+            <ul class="nav navbar-nav">
+              <li><img src="images/logo.storebrand.172x21.png" alt="Logo - Storebrand - Pensjon, enkelt og greit." style="width:150px; margin-top: 15px; margin-right: 10px;"/></li>
+              <li class="active"><a href="#">Bank</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Fond</a></li>
+              <li class="divider"></li>              
+              <li><a href="#">Pensjon</a></li>
+              <li class="divider"></li>              
+              <li><a href="#">Forsikring</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+              <li><button type="button" class="btn navbar-btn" onclick="$('#sidebar').slideToggle();" /></li>              
+            </ul>
+            <ul class="nav pull-right navbar-nav">
+              <li>
+                <form class="navbar-form">
+                  <input type="text" class="form-control" placeholder="S&oslash;k i sidene">
+                  <button type="submit" class="btn btn-default stbcolor-secondary third"><i class="glyphicon glyphicon-search"></i></button>
+                </form>
+              </li>
+            </ul>
+          </div>		
+        </div>
+      </div><!-- /.navbar -->
+      <div id="sidebar" style="display: none; border: solid 2px; width: 150px; padding: 10px; z-index:999; background: #fff;">
+        <ul>
+          <li>Hello</li>
+          <li>Hello</li>
+          <li>Hello hello hello</li>
+          <li>Hello</li>
+          <li>Hello</li>
+          <li>Hello hello hello</li>
+          <li>Hello</li>        
+        </ul>
+      </div>
+    </div>
+    
+        
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Bank</h1>
+          <ul class="list-inline">
+            <li><a href="#">L&aring;n til bolig</a></li>
+            <li><a href="#">Konto og kort</a></li>
+            <li><a href="#">Banksparing</a></li>
+            <li><a href="#">Nett og mobil</a></li>
+          </ul>              
+        </div>
+      </div>
+    </div>
+     
+    <div class="stbcolor-secondary sixth">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="images/house.png" class="img-responsive pull-left" alt="Bilde av hus" />
+          </div>
+          <div class="col-md-5">
+            <h2>Bolig: Hvor mye kan jeg l&aring;ne?</h2>
+
+            <div>
+              Boligens verdi: <span id="stb-slider-value" class="stb-font-bold text-center"></span> kr
+              <input id="stb-slider" type="slider" name="stb-slider" value="0" />
+            </div>
+
+            <div>
+              Husstandens inntekt: <span id="stb-slider-value2" class="stb-font-bold text-center"></span> kr
+              <input id="stb-slider2" type="slider" name="stb-slider2" value="0" />
+            </div>          
+            <br />
+            <p class="pull-right">
+              <button class="stb-btn stb-btn-lg">G&aring; videre i beregningen</button>       
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>  
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>L&aring;n til bolig</h2>
+          <p class="text-justify">
+            Denne teksten er en ingress til temaet "l&aring;n til bolig". Nederst m&aring; det v&aelig;re en knapp som sender deg til en dybdeartikkel om temaet, der du kan gj&oslash;re videre unders&oslash;kelser rundt temaet. Eller er det kanskje mer enn nok av knapper p&aring; denne siden allerede?
+          </p>
+          <a href="#">Mer om l&aring;n til bolig</a>
+          
+        </div>
+        <div class="col-md-6">
+          <hr />
+          <h3>Boligl&aring;n for unge</h3>
+          <div class="row">
+            <div class="col-md-3">
+              <img src="images/house-small.png" class="img-responsive" alt="Bilde av enda et hus" />
+            </div>
+            <div class="col-md-9">
+              <p>
+                Boligl&aring;n for unge er et spesielt gunstig l&aring;netilbud til deg som er under 34 &aring;r.
+              </p>
+              <ul class="stb">
+                <li>3,40% nominell rente</li>
+                <li>L&aringn inntil 85 % av boligens verdi</li>
+                <li>Inntil 40 &aring;rs nedbetalingstid</li>
+              </ul>
+              <button class="stb-btn">S&oslash;k om boligl&aring;n for unge</button>
+            </div>
+            
+          </div>
+          <hr />
+          <h3>Superl&aring;n</h3>
+          <p>Spesielt gunstig l&aring;netilbud til deg under 34 &aring;r ></p>
+          <hr />
+          <h3>Byggel&aringn</h3>
+          <p>Spesielt gunstig l&aring;netilbud til deg som skal bygge hus ></p>          
+          <hr />
+          <p>
+            <a href="#">Alle v&aring;re boligl&aring;n</a>
+          </p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <hr />
+          <h3>Sparing i fond</h3>
+          <div class="row">
+            <div class="col-md-3">
+              <img src="images/house-small.png" class="img-responsive" alt="Bilde av ENDA et hus" />
+            </div>
+            <div class="col-md-9">
+              <p>
+                &Aring; spare i fond er et godt alternativ n&aring;r du &oslash;nsker bedre avkastning enn den renten du f&aring;r p&aring; sparekontoen din.
+              </p>
+              <button class="stb-btn">Velg blant v&aring;re fond</button>
+            </div>
+            
+          </div>
+          <hr />
+          <a href="#">Alle v&aring;re spareprodukter</a>
+        
+        </div>
+        <div class="col-md-6">
+          <h2>Banksparing</h2>
+          <p>
+            Denne teksten er en ingress til temaet "banksparing". Nederst m&aring; det v&aelig;re en knapp som sender deg til en dybdeartikkel om temaet, eller kanskje heller en vanlig lenke?
+          </p>
+          <p>
+            <a href="#">Mer om banksparing</a>
+          </p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Konto og kort</h2>
+          <p>
+            Denne teksten er en ingress til temaet "konto og kort". Nederst m&aring; det v&aelig;re en knapp som sender deg til en dybdeartikkel om temaet, eller kanskje heller en vanlig lenke?
+          </p>
+          <p>
+            <a href="#">Mer om banksparing</a>
+          </p>
+          <hr />
+          <h3>Brukskonto med Visa og kredittkort</h3>
+          <p>
+            Spesielt gunstig l&aring;netilbud til deg under 34 &aring;r >
+          </p>
+          <hr />
+          <p>
+            <a href="#">Alle v&aring;re konti og kort</a>
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <h2>Nett og mobil</h2>
+          <p>
+            Denne teksten er en ingress til temaet "nett og mobil". Nederst m&aring; det v&aelig;re en knapp som sender deg til en dybdeartikkel om temaet, eller kanskje heller en vanlig lenke?
+          </p>
+          <p>
+            <a href="#">Mer om nett og mobil</a>
+          </p>          
+          <hr />
+          <h3>Mobilbank</h3>
+          <p>
+            Banken med det til en hver tid >
+          </p>
+          <hr />
+          <p>
+            <a href="#">Alle v&aring;re nett- og mobilprodukter</a>
+          </p>
+        </div>        
+        
+      </div>
+      <hr />
+      
+    </div>
+    
+    <!-- Bunnmeny -->
+    <div class="stbcolor-primary first">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 stbcolor-primary first darker">
+            <p class="text-center" style="color: #fff; font-size: 22px; line-height: 30px; margin-top: 10px;">
+              <a href="#">^ Til toppen ^</a>
+            </p>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+
+          <div class="col-md-2">
+            <p>
+              <strong>Hjelp</strong>
+            <p>
+            <p>
+              Ofte stilte sp&oslash;rsm&aring;l
+            </p>
+            <p>
+              Ring 08880
+            </p>
+            <p>
+              Send e-post
+            </p>
+            <p>
+              Chat med oss
+            </p>
+          </div>
+
+          <div class="col-md-2">
+            <p>
+              <strong>Sosiale medier</strong>
+            <p>
+            <p>
+              Facebook
+            </p>
+            <p>
+              Twitter
+            </p>
+            <p>
+              Blogg
+            </p>
+            <p>
+              Youtube
+            </p>
+            <p>
+              Storebrand og sosiale medier
+            </p>
+          </div>          
+          
+          <div class="col-md-2">
+            <p>
+              <strong>Produkter</strong>
+            <p>
+            <p>
+              Pensjon og sparing
+            </p>
+            <p>
+              Bank og l&aring;n
+            </p>
+            <p>
+              Skadeforsikring
+            </p>
+            <p>
+              Personforsikring
+            </p>
+            <p>
+              Om din total&oslash;konomi
+            </p>
+          </div>          
+
+          <div class="col-md-2">
+            <p>
+              <strong>Tjenester</strong>
+            <p>
+            <p>
+              Mitt forbruk
+            </p>
+            <p>
+              Nettbank
+            </p>
+            <p>
+              Ditt pensjonstall
+            </p>
+            <p>
+              Storebrand Fordel
+            </p>
+            <p>
+              Mobilapplikasjoner
+            </p>
+            <p>
+              Behovsveileder
+            </p>
+          </div> 
+          
+          <div class="col-md-2">
+            <p>
+              <strong>Om Storebrand</strong>
+            <p>
+            <p>
+              Fakta om Storebrand
+            </p>
+            <p>
+              Investor Relations
+            </p>
+            <p>
+              B&aelig;rekraft
+            </p>
+            <p>
+              Jobb i Storebrand
+            </p>
+            <p>
+              V&aring;rt kundeombud
+            </p>
+            <p>
+              Presse
+            </p>
+          </div> 
+
+          <div class="col-md-2">
+            <p class="text-right">
+              <strong>S&oslash;k</strong> <span class="stb-sprite-16 search neutral"></span>
+            <p>
+            <p class="text-right">
+              <strong>Logg inn</strong> <span class="stb-sprite-16 lock-closed neutral"></span>
+            </p>
+          </div>           
+          
+        </div>
+        
+        <div class="row">
+          <p>
+            &copy; Storebrand - <a href="#">Om siden og personopplysninger</a>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+    <!-- /Bunnmeny -->
+          
+  </body>
+</html>
