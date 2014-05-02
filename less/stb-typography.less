@@ -30,7 +30,7 @@
   src: url('../fonts/Open-Sans-Light.woff') format('woff');
 }
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans Bold';
   font-style: normal;
   font-weight: 700;
   src: url('../fonts/Open-Sans-Bold.woff') format('woff');
@@ -39,6 +39,7 @@
 // Font definitions
 @font-family-monospace:       Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-sans-serif:      "Open Sans", Arial, ArialMT, sans-serif;
+@font-family-sans-serif-bold: "Open Sans Bold", Arial, ArialMT, sans-serif;
 @font-family-signa:           "SignaWeb-Book", Georgia, "Times New Roman", Times, serif;
 @font-family-signa-bold:      "SignaWeb-Bold", Georgia, "Times New Roman", Times, serif;
 @font-family-signa-light:     "SignaWeb-Light", Georgia, "Times New Roman", Times, serif;
@@ -68,8 +69,8 @@ h1 {
   }
 }
 h2 {
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 40px;
+  line-height: 46px;
   margin: 0;
   padding: 12px 12px 12px 0;
   color: @stb-primary-color;
@@ -79,8 +80,8 @@ h2 {
   }
 }
 h3 {
-  font-size: 20px;
-  line-height: 22px;
+  font-size: 24px;
+  line-height: 30px;
   margin: 0;
   padding: 12px 12px 12px 0;
   color: @stb-primary-black;
@@ -90,8 +91,8 @@ h3 {
   }
 }
 h4 {
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 22px;
   margin: 0;
   padding: 10px 10px 10px 0;
   color: @stb-primary-black;
@@ -124,10 +125,10 @@ p {
   line-height: 22px;
   color: @stb-primary-black;
   font-family: @font-family-sans-serif;
-  &.ingress {
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: bold;   
+  &.intro {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;     
   }
 }
 
@@ -152,6 +153,8 @@ small, .petit {
 }
 
 blockquote {
+  font-size: 16px;
+  line-height: 22px;
   border-left: 5px solid @stb-primary-color;
 }
 
@@ -223,12 +226,44 @@ ul.stb,ol.stb {
 
 //Small devices 
 @media (max-width: @screen-sm-min) {
+  h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  h3 {
+    font-size: 16px;
+    line-height: 22px;
+  }  
+
+  h3 {
+    font-size: 14px;
+    line-height: 18px;
+  }   
+  
   p {
-    font-size: 12px;
-    line-height: 14px;
-    &.ingress {
-      font-size: 16px;
-      line-height: 18px;
+    font-size: 14px;
+    line-height: 18px;
+    &.intro {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  
+  blockquote {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  ul.stb,ol.stb { 
+    li {
+      font-size: 14px;
+      line-height: 18px;  
     }
   }
 }

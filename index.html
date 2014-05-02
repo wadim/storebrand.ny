@@ -191,9 +191,9 @@
           <p><strong>Open Sans</strong> is the standard font on storebrand.no. Arial is the preferred fallback.</p>
           <p><strong>Note:</strong> Italics across platforms is not the strongest quality of the Open Sans font family. Please avoid exposing this.</p>
           <h1>Header 1 <code>font-size 40px; line-height: 46px; padding: 14px;</code></h1>
-          <h2>Header 2 <code>font-size 24px; line-height: 30px; padding: 12px;</code></h2>
-          <h3>Header 3 <code>font-size 20px; line-height: 22px; padding: 12px;</code></h3>
-          <h4>Header 4 <code>font-size 18px; line-height: 20px; padding: 10px;</code></h4>
+          <h2>Header 2 <code>font-size 40px; line-height: 46px; padding: 12px;</code></h2>
+          <h3>Header 3 <code>font-size 24px; line-height: 30px; padding: 12px;</code></h3>
+          <h4>Header 4 <code>font-size 16px; line-height: 22px; padding: 10px;</code></h4>
           <h5>Header 5 <code>font-size 16px; line-height: 18px; padding: 10px; font-weight: bold;</code></h5>
           <h6>Header 6 <code>font-size 14px; line-height: 16px; padding: 10px; font-weight: bold;</code></h6>
           <strong>Code:</strong> <code>&lt;h1-h6&gt;</code>
@@ -202,9 +202,9 @@
           <p><strong>Signa</strong> is only used in advertising, campaigns and for "special occasions".</p>
           <p><strong>Note</strong>: Only H1-H4 are available in Signa, H5-H6 should always use Arial.</p>
           <h1 class="stbfont">Header 1 <code>font-size 40px; line-height: 46px; padding: 14px;</code></h1>
-          <h2 class="stbfont">Header 2 <code>font-size 24px; line-height: 30px; padding: 12px;</code></h2>
-          <h3 class="stbfont">Header 3 <code>font-size 20px; line-height: 22px; padding: 12px;</code></h3>
-          <h4 class="stbfont">Header 4 <code>font-size 18px; line-height: 20px; padding: 10px; font-weight: bold;</code></h4>
+          <h2 class="stbfont">Header 2 <code>font-size 40px; line-height: 46px; padding: 12px;</code></h2>
+          <h3 class="stbfont">Header 3 <code>font-size 24px; line-height: 30px; padding: 12px;</code></h3>
+          <h4 class="stbfont">Header 4 <code>font-size 16px; line-height: 22px; padding: 10px; font-weight: bold;</code></h4>
           <strong>Code:</strong> <code>&lt;h1-h6 class="stbfont"&gt;</code>
         </div>
       </div> <!-- /Typography / Headers row -->
@@ -218,9 +218,9 @@
         </div>
         <div class="col-md-9">
           <h3>Lead paragraph</h3>
-          <p class="ingress">Lead paragraph (ingress): This is bolder. This is where the author grabs the attention of the reader. Lead paragraphs usually include brief answers to all main questions answered by the following text when it comes to who, what, why, when, where, and how.</p>
-          <strong>Code:</strong> <code>&lt;p class="ingress"&gt;...&lt;/&gt;</code><br />
-          <code>font-size: 16px; line-height: 22px; font-weight: 700;</code>
+          <p class="intro">Lead paragraph (intro): This is bolder. This is where the author grabs the attention of the reader. Lead paragraphs usually include brief answers to all main questions answered by the following text when it comes to who, what, why, when, where, and how.</p>
+          <strong>Code:</strong> <code>&lt;p class="intro"&gt;...&lt;/&gt;</code><br />
+          <code>font-size: 24px; line-height: 30px; font-weight: 700;</code>
           <br /><br />
           <h3>General paragraph</h3>
           <p>A paragraph is a <strong>passage</strong> in a section of text that is about a different subject from the preceding text section, marked by commencing on a new line.</p>
@@ -1078,51 +1078,82 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <h2>Radio button and checkbox</h2>
           (Done-ish)
         </div>
+        
         <div class="col-md-9">
           <div class="row">
-            <form class="stb-custom-form">
+            <form>
               <div class="col-md-12">
-                <p>Customized radio and checkboxes, completely JavaScript-free.</p>
+                <p>Standard html input functionality, only slightly styled:</p>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-12">
+                <h3>Radio buttons</h3>
                 <p>
-                  Radio button<br />
                   <strong>Choose wisely:</strong>
-                <p>
-                <input class="stb-custom-input" type="radio" value="a" id="a" name="aorb" />
-                <label class="stb-custom-imput" for="a">African swallow</label> <br />
-                <input class="stb-custom-input" type="radio" value="b" id="b" name="aorb" checked />
-                <label class="stb-custom-imput" for="b">European swallow</label> <br />
-              </div>
-              <div class="col-md-6">
-                <p>
-                  Checkbox<br />
-                  <strong>This and/or that?</strong>
                 </p>
-                <input class="stb-custom-input" type="checkbox" name="cbox0" id="cbox0" value="some_value" />
-                <label for="cbox0">Check this out</label><br />
-                <input class="stb-custom-input" type="checkbox" name="cbox1" id="cbox1" value="some_value" checked />
-                <label for="cbox1">Check that out</label><br />
-                <input class="stb-custom-input" type="checkbox" checked name="cbox2" id="cbox2" value="some_value2" disabled />
-                <label for="cbox2">Can't touch this (disabled)</label>
+                <p>
+                  <input class="stb-radio" type="radio" id="radio1" name="stb-a" value="African swallow" /><label for="radio1">African swallow</label>
+                  <input class="stb-radio" type="radio" id="radio2" name="stb-a" value="European Swallow" /><label for="radio2">European swallow</label>
+                  <input class="stb-radio" type="radio" id="radio3" name="stb-a" value="Checked" checked /><label for="radio3">Chosen</label>
+                  <input class="stb-radio" type="radio" id="radio4" name="stb-a" value="Can't touch this" disabled /><label for="radio4">Can't touch this (disabled)</label>
+                </p>
               </div>
             </form>
           </div>
           <div class="row">
+            <form>
+              <div class="col-md-12">
+                <h3>Checkboxes</h3>
+                <p>
+                  <strong>This and/or that?</strong>
+                </p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p>
+                      All in one row: 
+                    </p>
+                    <p>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox1" name="stb-c" value="This" /><label for="checkbox1">This</label>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox2" name="stb-c" value="That" /><label for="checkbox2">That</label>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox3" name="stb-c" value="Chosen" checked /><label for="checkbox3">Chosen</label>                  
+                      <input class="stb-checkbox" type="checkbox" id="checkbox4" name="stb-c" value="Can't touch this" disabled /><label for="checkbox4">Can't touch this (disabled)</label>
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p>
+                      Nice and orderly in rows: 
+                    </p>
+                    <p>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox11" name="stb-d" value="This" /><label for="checkbox11" style="width: 280px;">This</label><br />
+                      <input class="stb-checkbox" type="checkbox" id="checkbox12" name="stb-d" value="That" /><label for="checkbox12" style="width: 280px;">That</label><br />
+                      <input class="stb-checkbox" type="checkbox" id="checkbox13" name="stb-d" value="Chosen" checked/><label for="checkbox13" style="width: 280px;">Chosen</label><br />
+                      <input class="stb-checkbox" type="checkbox" id="checkbox14" name="stb-d" value="Can't touch this" disabled /><label for="checkbox14" style="width: 280px;">Can't touch this (disabled)</label><br />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="row">
             <div class="col-12-md">
               <strong>Code:</strong> <br />
-              <pre class="prettyprint">&lt;form class=&quot;stb-custom-form&quot;&gt;
-  &lt;h5&gt;Choose wisely, A or B?&lt;/h5&gt;
-    &lt;!-- radio buttons --&gt;
-    &lt;input class=&quot;stb-custom-input&quot; type=&quot;radio&quot; id=&quot;a&quot; value=&quot;a&quot; name=&quot;aorb&quot; /&gt;
-    &lt;label class=&quot;stb-custom-imput&quot; for=&quot;a&quot;&gt;I want A&lt;/label&gt; &lt;br&gt;
-    &lt;input class=&quot;stb-custom-input&quot; type=&quot;radio&quot; id=&quot;b&quot; value=&quot;b&quot; name=&quot;aorb&quot; checked /&gt;
-    &lt;label class=&quot;stb-custom-imput&quot; for=&quot;b&quot;&gt;I'd rather have B&lt;/label&gt; &lt;br&gt;
-    &lt;!-- checkboxes --&gt;
-    &lt;input class=&quot;stb-custom-input&quot; id=&quot;cbox1&quot; type=&quot;checkbox&quot; /&gt;
-    &lt;label for=&quot;cbox1&quot;&gt;Check this out&lt;/label&gt;&lt;br&gt;
-    &lt;input class=&quot;stb-custom-input&quot; id=&quot;cbox2&quot; type=&quot;checkbox&quot; checked disabled /&gt;
-    &lt;label for=&quot;cbox2&quot;&gt;Can't touch this (disabled)&lt;/label&gt;
+              <pre class="prettyprint">
+&lt;form&gt;
+  &lt;h5&gt;Pick your poison&lt;/h5&gt;
+    &lt;!-- Radio buttons --&gt;
+    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;a&quot; value=&quot;a&quot; name=&quot;aorb&quot; /&gt;
+    &lt;label for=&quot;a&quot;&gt;I want poison A&lt;/label&gt;
+    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;b&quot; value=&quot;b&quot; name=&quot;aorb&quot; checked /&gt;
+    &lt;label for=&quot;b&quot;&gt;I want poison B&lt;/label&gt;
+    &lt;!-- Checkboxes --&gt;
+    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox1&quot; type=&quot;checkbox&quot; /&gt;
+    &lt;label for=&quot;checkbox1&quot;&gt;Check this out&lt;/label&gt;&lt;br&gt;
+    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox2&quot; type=&quot;checkbox&quot; /&gt;
+    &lt;label for=&quot;checkbox2&quot;&gt;Check that out&lt;/label&gt;&lt;br&gt;
+    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox3&quot; type=&quot;checkbox&quot; disabled /&gt;
+    &lt;label for=&quot;checkbox3&quot;&gt;Can't touch this (disabled)&lt;/label&gt;
 &lt;/form&gt;</pre>
               <p>Be precise when using input+label; ID and for-attributes must match, and the order must be input, then label.</p>
             </div>

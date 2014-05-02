@@ -110,113 +110,54 @@
 
 }
 
+/***************************************************
+* Fairly standard radio buttons and checkboxes     *
+***************************************************/
 
-/***************************************
-* Custom checkbox + radio using images *
-****************************************/
-// reference: http://www.thecssninja.com/css/custom-inputs-using-css
+input[type=radio].stb-radio {
+  display: none; 
 
-form.stb-custom-form {
-
-  label {
-    padding-left: 32px;
-    padding-top: 4px;
+  & + label {
+    display: inline-block; 
+    margin: -2px;
+    padding: 8px 20px 8px 28px;
+    border: solid 1px @stb-gray-second;
+    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-secondary-sand;
+    background-position: -6px -160px;
   }
-
-  input.stb-custom-input {
-    padding: 0;
-    margin: 0;
-    height: 16px;
-    width: 16px;
-    float: left;
-    position: absolute;
-    left: 0;
-    opacity: 0;
+  
+  &:checked + label {
+    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background-position: -6px -200px;
   }
+  
+  &:disabled + label {
+    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-gray-second;
+    background-position: -6px -160px;
+    color: @stb-gray-fourth;
+  }
+}
 
-  // the :not-selector keeps IE8 from trying to parse, degrading gracefully
-  // use a md5 hash so we're sure we dont affect any 'real' elements
-  &:not(#foo_4fb3cf3aee22719b0a464e043903bb3e) {
-    input:hover + label,
-    input:focus + label,
-    input + label:hover,
-    input:focus + label {
-    }
+input[type=checkbox].stb-checkbox {
+  display: none; 
 
-    input + label {
-      background: url(../images/stb-form-sprites.png) -8px -7px no-repeat;
-      height: 31px;
-    }
-    input[type=radio] + label {
-      background-position: -8px -167px;
-    }
-    input[type=radio]:checked + label {
-      background-position: -8px -208px;
-    }
-    input[type=checkbox]:checked + label {
-      background-position: -8px -48px;
-    }
-
-    input[type=checkbox]:hover:checked + label,
-    input[type=checkbox]:focus:checked + label,
-    input[type=checkbox]:checked + label:hover,
-    input[type=checkbox]:focus:checked + label {
-      // background-position: 0 -101px;
-    }
-
-    input[type=radio]:hover:checked + label,
-    input[type=radio]:focus:checked + label,
-    input[type=radio]:checked + label:hover,
-    input[type=radio]:focus:checked + label {
-      // background-position: -8px -208px;
-    }
-
-    /* Hover & Focus styles */
-    input[type=checkbox]:hover + label,
-    input[type=checkbox]:focus + label,
-    input[type=checkbox] + label:hover {
-      // background-position: 0 -21px;
-    }
-
-    input[type=radio]:hover + label,
-    input[type=radio]:focus + label,
-    input[type=radio] + label:hover {
-      // background-position: 0 -181px;
-    }
-
-    /* Active styles */
-    input[type=checkbox]:active + label,
-    input[type=checkbox] + label:hover:active {
-      // background-position: 0 -41px;
-    }
-    input[type=radio]:active + label,
-    input[type=radio] + label:hover:active {
-      // background-position: 0 -201px;
-    }
-    input[type=checkbox]:active:checked + label,
-    input[type=checkbox]:checked + label:hover:active {
-      // background-position: 0 -121px;
-    }
-    input[type=radio]:active:checked + label,
-    input[type=radio]:checked + label:hover:active {
-      // background-position: -8px -208px;
-    }
-
-    /* Disabled styles */
-    input[type=checkbox]:disabled + label,
-    input[type=checkbox]:hover:disabled + label,
-    input[type=checkbox]:focus:disabled + label,
-    input[type=checkbox]:disabled + label:hover,
-    input[type=checkbox]:disabled + label:hover:active {
-    }
-    input[type=checkbox]:disabled:checked + label,
-    input[type=checkbox]:hover:disabled:checked + label,
-    input[type=checkbox]:focus:disabled:checked + label,
-    input[type=checkbox]:disabled:checked + label:hover,
-    input[type=checkbox]:disabled:checked + label:hover:active {
-      background-position: -8px -88px;
-    }
-
-  } // end of :not(#foo) (IE8 fix)
-
+  & + label {
+    display: inline-block; 
+    margin: -2px;
+    padding: 8px 20px 8px 28px;
+    border: solid 1px @stb-gray-second;
+    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-secondary-sand;
+    background-position: -6px 0px;
+  }
+  
+  &:checked + label {
+    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background-position: -6px -40px;
+  }
+  
+  &:disabled + label {
+    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-gray-second;
+    background-position: -6px 0px;
+    color: @stb-gray-fourth;
+  }
 }
