@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Anbefalte fond</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="css/stb-main.css">    
+    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+    <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+    <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+    <!-- Opplegg for sticky toppmeny -->
+    <style>
+      /* Bootstrap 3 helpers */
+      .navbar-form input, .form-inline input {
+	      width:auto;
+      }
+
+      header {
+	      height:50px;
+      }
+
+      #nav.affix {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index:999;
+      }
+    </style>
+    <script type="text/javascript">
+
+
+/* Equal heights på stb-boxes*/
+setTimeout(function() {
+    $('.row').each(function() { 
+        var rowheight = $(this).height();
+        $(this).find('.stb-box').each(function() {
+            $(this).css({"height": rowheight });
+        })
+    })
+}, 10); 
+
+
+
+
+      $(document).ready (function (){
+        
+        //Changes box-type by click for test
+         $('.stb-box').click(function() {
+           if(~$(this).attr('class').indexOf('first')){
+            $(this).removeClass('first');
+            $(this).addClass('second');
+          } 
+           else if(~$(this).attr('class').indexOf('second')){
+            $(this).removeClass('second');
+            $(this).addClass('third');
+          }
+            else if(~$(this).attr('class').indexOf('third')){
+            $(this).removeClass('third');
+            $(this).addClass('fourth');
+          }
+            else if(~$(this).attr('class').indexOf('fourth')){
+            $(this).removeClass('fourth');
+            $(this).addClass('fifth');
+          }
+          else{
+            $(this).removeClass();
+            $(this).addClass('stb-box first');
+          }
+          
+        });
+
+        $('#nav').affix({
+          offset: {
+            top: $('header').height()
+          }
+        });	
+
+       
+
+      });
+      
+      // Hiding/showing menubar depending on last scroll activity
+      var lastScrollTop = 0;
+      $(window).scroll(function(event){
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop & st > 50){
+        //removing .navfixed when user scroll down
+         $('#nav').fadeOut(200);
+        } else {
+        //adding .navfixed when user scroll down
+          $('#nav').fadeIn(200);
+        }
+        lastScrollTop = st;
+      });
+
+    </script>
+    <!-- /Slutt på opplegg for sticky toppmeny -->
+    
+  </head>
+  <body>
+  
+      
+
+    <div id="navTop" style="display:none;">
+      <div class="navbar navbar-default" style="background:black;border-top:none;border-left:none;border-right:none;border-color:#DA291C; margin-bottom:0px; height:100%;">
+        <div class="container ">
+          <div class="row">
+          <div class="col-md-12">
+            <h1>Våre anbefalte fond</h1>
+             <ul class="stb" style="color:red;">
+                <li>Et attraktivt aksjefond for deler av sparepengene dine. Fondet investerer hovedsaklig i andre Storebrand- og Delphi-fond. Omtrent 1/3 er norske fond og 2/3 regionale eller globale fond.  </li>
+                <li>Høy risiko (6 av 7). Vi anbefaler at du planlegger å spare i minst 5 år. </li>
+                <li>Årlig forvaltningshonorar er ca. 1,50&nbsp;%.</li>
+                <li>Et attraktivt aksjefond for deler av sparepengene dine. Fondet investerer hovedsaklig i andre Storebrand- og Delphi-fond. Omtrent 1/3 er norske fond og 2/3 regionale eller globale fond.  </li>
+                <li>Høy risiko (6 av 7). Vi anbefaler at du planlegger å spare i minst 5 år. </li>
+                <li>Årlig forvaltningshonorar er ca. 1,50&nbsp;%.</li>
+              </ul>
+          </div>
+        </div>
+         </div>
+      </div>
+    </div>
+
+
+    <div id="nav">
+      <div class="navbar navbar-default" role="navigation" style="border-top:none;border-left:none;border-right:none;border-color:#DA291C; margin-bottom:0px;">
+        <div class="container">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="stb-sprite-32 square-list"></span>
+          </a>
+          <div class="navbar-collapse collapse" id="main-navbar">
+            <ul class="nav navbar-nav">
+              <li><img src="images/logo.storebrand.172x21.png" alt="Logo - Storebrand - Pensjon, enkelt og greit." style="width:150px; margin-top: 15px; margin-right: 10px;"/></li>
+              <li class="active"><a href="#">Bank</a></li>
+              <li class="divider"></li>
+              <li><a href="#"style="color:red">Fond</a></li>
+              <li class="divider"></li>              
+              <li><a href="#">Sparing</a></li>
+              <li class="divider"></li>              
+              <li><a href="#">Forsikring</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tjenester <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Kalkulatorer</a></li>
+                  <li><a href="#">Alle vare tjenester</a></li>
+                  <li><a href="#">Fordel</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Forsikringer</li>
+                  <li><a href="#">Finn ditt behov</a></li>
+                  <li><a href="#">Finn forsikring</a></li>
+                </ul>
+              </li>
+              <li><a href="#" onclick="$('#sidebar').slideToggle(); return false">Mer</a></li>   
+              <li><a href="#" onclick="$('#nav.affix').attr('top','');$('#navTop').show(); return false">Topp</a></li>             
+            </ul>
+            <ul class="nav pull-right navbar-nav">
+              <li>
+                <form class="navbar-form">
+                  <input type="text" class="form-control" placeholder="S&oslash;k i sidene">
+                  <button type="submit" class="btn btn-default stbcolor-secondary third"><i class="glyphicon glyphicon-search"></i></button>
+                </form>
+              </li>
+            </ul>
+          </div>    
+        </div>
+      </div><!-- /.navbar -->
+      <div id="sidebar" style="display: none; border: solid 2px; width: 18%; padding: 10px; z-index:999; background: #F8F8F8; padding:25px;">
+        <h2>Mer</h2>
+        <ul>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>      
+        </ul>
+      </div>
+    </div>
+    
+    <br><br><br>
+    
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Våre anbefalte fond</h1>
+          </div>
+        </div>
+    </div>  
+    
+    <div class="container">
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="stb-box second">
+              <p class="intro">AksjeSpar </p>
+              <p><strong>- spar i mange aksjefond samtidig</strong></p>
+              <ul class="stb">
+                <li>Et attraktivt aksjefond for deler av sparepengene dine. Fondet investerer hovedsaklig i andre Storebrand- og Delphi-fond. Omtrent 1/3 er norske fond og 2/3 regionale eller globale fond.  </li>
+                <li>Høy risiko (6 av 7). Vi anbefaler at du planlegger å spare i minst 5 år. </li>
+                <li>Årlig forvaltningshonorar er ca. 1,50&nbsp;%.</li>
+              </ul>
+              <br>
+              <a class="pull-right" href="#">Kvartalsrapport</a><button class="stb-btn">Kjøp Storebrand AksjeSpar</button> <a style="margin-left:35px;" href="#">Månedsrapport</a>
+            </div>  
+          </div>
+
+          <div class="col-md-6">
+            <div class="stb-box second">
+               <p class="intro">Høyrente</p>
+               <p><strong> - lavere risiko og årlig utbytte</strong></p>
+               <ul class="stb"> 
+                <li>Fondet investerer i norske rentepapirer. Mulighet for høyere avkastning enn du får på en vanlig sparekonto i banken. Å ha andeler i rentefond, er en selvfølge i en balansert spareportefølje. </li>
+                <li>Lav risiko (2 av 7). Vi anbefaler at du planlegger å spare i minst 1 år. </li>
+                <li>Årlig forvaltningshonorar er 0,35&nbsp;%  </li>
+              </ul>
+              <br>
+              <button class="stb-btn"> Kjøp Storebrand Høyrente</button> <a style="margin-left:35px;" href="#">Månedsrapport</a>
+          </div>
+        </div>
+
+    </div>     
+
+    <div class="container">
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="stb-box second">
+              <p class="intro">Kombinasjon</p>
+              <p><strong> - du trenger bare ett fond</strong></p>
+                <ul class="stb"> 
+                  <li>Fondet investerer i aksjer, eiendom og rentepapirer. Alt du trenger for en komplett fondsportefølje. Det gir lavere risiko enn et rent aksjefond og samtidig muligheten for høyere avkastning enn vanlig banksparing.  </li>
+                  <li>Middels risiko (4 av 7), men vi anbefaler likevel at du sparer i minst 5 år. </li>
+                  <li>Årlig forvaltningshonorar er ca. 1,2 %. Honoraret tilsvarer en vektet fordeling av forvaltningshonoraret for de fondene som til enhver tid inngår i porteføljen. 
+                  </li>
+                </ul>
+                <br>
+              <a class="pull-right" href="#">Kvartalsrapport</a><button class="stb-btn"> Kjøp Storebrand Kombinasjon</button> <a style="margin-left:35px;" href="#">Månedsrapport</a>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="stb-box second">
+                 <p class="intro">Trippel Smart</p>
+                 <p><strong> - spar bærekraftig</strong></p>
+                <ul class="stb">
+                  <li>Fondet investerer i norske og utenlandske selskaper som er finansielt robuste og samtidig ledende på bærekraft i sin bransje,</li>
+                  <li>Høy risiko (6 av 7). Vi anbefaler at du planlegger å spare i 5 år eller mer.</li>
+                  <li>Årlig forvaltningshonorar er 0,75&nbsp;%.</li>
+                </ul>
+                  <br>
+              <a class="pull-right" href="#">Kvartalsrapport</a><button class="stb-btn"> Kjøp Storebrand Kombinasjon</button> <a style="margin-left:35px;" href="#">Månedsrapport</a>  
+            </div>          
+          </div>
+
+        </div>
+    </div> 
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="stb-box second">
+                  <p class="intro">Sparfondene</p>
+                  <p><strong> - god avkastning og nedtrappende risiko</strong></p>
+                <ul class="stb">
+                  <li>En serie kominbasjonsfond som gradvis reduserer aksjeandelen og risikoen mot fondets utløpsdato. Like godt egnet enten du skal spare til barna eller til pensjonen.</li>
+                  <li>Selv om du har bestemt at sparingen skal vare fram til 2030 eller 2040, så er det ingen bindingstid.</li>
+                  <li>Middels til høy risiko (4 til 6 av 7) - fondet med kortest sparehorisont har lavest risiko. Vi anbefaler at du planlegger å spare i 5 år eller mer.</li>
+                  <li>Forvaltningshonorar for Sparfondene er mellom 0,60&nbsp;% og 1,00&nbsp;%. Forvaltningshonoraret reduseres i takt med aksjeandelen i fondet.</li>
+                </ul>
+                <p>Velg fondet med det årstallet som stemmer best med når du har tenkt å bruke av pengene. </p>
+                <button class="stb-btn"> Spar til 2020</button> <button class="stb-btn"> Spar til 2030</button> <button class="stb-btn"> Spar til 2040</button>
+            </div>
+          </div>   
+          <div class="col-md-6">
+            <div class="stb-box second">
+                <p class="intro"Start en spareavtale</p> 
+                  <ul class="accordion" data-widget="stbFaq">
+                    <li>
+                        <a href="#" class="twister">Slik finner du de mest bærekraftige selskapene<span class="number"></span><span class="expander"></span></a>
+                        <div class="answer"> Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</span>
+                    </li>
+                    <li>
+                        <a href="#" class="twister">Selskaper som er med i fondene<span class="number"></span><span class="expander"></span></a>
+                        <div class="answer"> Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</span>
+                    </li>
+                    <li>
+                        <a href="#" class="twister">Etiske og grønne fond<span class="number"></span><span class="expander"></span></a>
+                        <div class="answer"> Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</span>
+                    </li>
+                </ul>
+                  <p>Når du starter en spareavtale, trekkes et fast beløp fra kontoen din hver måned og sparingen går av seg selv. Minste sparebeløp er 100 kroner. </p>
+                  <p><strong>Ingen bindingstid</strong> <br>Selv om vi anbefaler at du sparer i 5 år eller mer, så er det ingen bindingstid på sparepengene. Du kan når som helst innløse andelene eller reinvestere i et annet fond. For å innløse eller reinvestere fondsandeler, logger du deg på dine personlige sider. Skjema finner du under "Sparing". </p>
+                  <p>Eller, du kan inngå en <a href="Pages/fond_uttaksavtale.html">uttaksavtale</a> med regelmessig innløsning av fondsandelene. <br> <br>Du betaler ingen gebyr for å kjøpe eller selge fondsandeler i Storebrand. <a href="Pages/fond_priser.html">Alle våre priser</a> </p>
+             </div>
+          </div>  
+        </div>
+     </div>      
+
+
+      
+
+    
+    <hr><hr>
+ 
+    
+       <!-- Bunnmeny desktop-->
+    <div class="stbcolor-primary third navbar-fixed-bottom hidden-xs hidden-sm" style="border-top:solid; border-color:#DA291C;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              <ul class="nav navbar-nav">
+                  <li><a href="#">Om siden og personopplysninger</a></li>
+                  <li><a href="#">In english</a></li>
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sosiale medier <b class="caret"></b></a>
+                      <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                        <li><a href="#">Facebook</a></li>
+                          <li><a href="#">Twitter</a></li>
+                          <li><a href="#">Youtube</a></li>
+                          <li class="divider"></li>
+                          <li class="dropdown-header">Blogg</li>
+                          <li><a href="#">Penger og pensjon</a></li>                          
+                          <li><a href="#">Storebrand i sosiale medier</a></li>
+                     </ul>
+                  </li>
+              </ul>
+
+              <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">Om Storebrand <b class="caret"></b></a>
+                      <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                              <li><a href="#">Fakta om Storebrand</a></li>
+                          <li><a href="#">Investor relations</a></li>
+                          <li><a href="#">Jobb i Storebrand</a></li>
+                          <li><a href="#">Presse</a></li>
+                          <li><a href="#">Barekraft</a></li>                          
+                          <li><a href="#">Verneombudet</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="#">Presse</a></li>
+                  <li><a href="#">Kontakt oss</a></li>
+                  <li><a onclick="$('body,html').animate({scrollTop: 0}, 800);return false;" href="#" class="bigWhite">Til toppen</a></li>
+              </ul>
+
+
+          </div>  
+        </div> 
+      </div>
+    </div>
+    <!-- /Bunnmeny -->
+    <!-- Bunnmeny phone-->
+    <div class="stbcolor-primary third navbar-fixed-bottom visible-xs visible-sm" style="border-top:solid; border-color:#DA291C;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+               <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#"><b class="glyphicon glyphicon-align-justify"></b></a>
+                      <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                          <li><a href="#">Om siden og personopplysninger</a></li>
+                          <li><a href="#">In english</a></li>
+                          <li><a href="#">Fakta om Storebrand</a></li>
+                          <li><a href="#">Investor relations</a></li>
+                          <li><a href="#">Jobb i Storebrand</a></li>
+                          <li><a href="#">Presse</a></li>
+                          <li><a href="#">Barekraft</a></li>                          
+                          <li><a href="#">Verneombudet</a></li>
+                          <li>&nbsp;</li>
+                     </ul>
+                  </li>
+              </ul>
+          </div>  
+        </div> 
+      </div>
+    </div>
+    <!-- /Bunnmeny -->
+
+
+     
+          
+  </body>
+</html>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hytteforsikring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="css/stb-main.css">    
+    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+    <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+    <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+    <!-- Opplegg for sticky toppmeny -->
+    <style>
+      /* Bootstrap 3 helpers */
+      .navbar-form input, .form-inline input {
+	      width:auto;
+      }
+
+      header {
+	      height:50px;
+      }
+
+      #nav.affix {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index:999;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready (function (){
+        $('#nav').affix({
+          offset: {
+            top: $('header').height()
+          }
+        });	
+      });
+      
+      // Hiding/showing menubar depending on last scroll activity
+      var lastScrollTop = 0;
+      $(window).scroll(function(event){
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop & st > 150){
+        //removing .navfixed when user scroll down
+         $('#nav').fadeOut(200);
+        } else {
+        //adding .navfixed when user scroll down
+          $('#nav').fadeIn(200);
+        }
+        lastScrollTop = st;
+      });
+
+    </script>
+    <!-- /Slutt på opplegg for sticky toppmeny -->
+    
+  </head>
+  <body>
+  
+      
+
+    <div id="nav">
+      <div class="navbar navbar-default" role="navigation" style="border-top:none;border-left:none;border-right:none;border-color:#DA291C; margin-bottom:0px;">
+        <div class="container">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="stb-sprite-32 square-list"></span>
+          </a>
+          <div class="navbar-collapse collapse" id="main-navbar">
+            <ul class="nav navbar-nav">
+              <li><img src="images/logo.storebrand.172x21.png" alt="Logo - Storebrand - Pensjon, enkelt og greit." style="width:150px; margin-top: 15px; margin-right: 10px;"/></li>
+              <li class="active"><a href="#">Bank</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Fond</a></li>
+              <li class="divider"></li>              
+              <li><a href="#">Sparing</a></li>
+              <li class="divider"></li>              
+              <li><a href="#" style="color:red">Forsikring</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tjenester <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Kalkulatorer</a></li>
+                  <li><a href="#">Alle vare tjenester</a></li>
+                  <li><a href="#">Fordel</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Forsikringer</li>
+                  <li><a href="#">Finn ditt behov</a></li>
+                  <li><a href="#">Finn forsikring</a></li>
+                </ul>
+              </li>
+              <li><a href="#" onclick="$('#sidebar').slideToggle(); return false">Mer</a></li>   
+              <li><a href="#" onclick="$('.stbhead').slideToggle(); return false">Topp</a></li>             
+            </ul>
+            <ul class="nav pull-right navbar-nav">
+              <li>
+                <form class="navbar-form">
+                  <input type="text" class="form-control" placeholder="S&oslash;k i sidene">
+                  <button type="submit" class="btn btn-default stbcolor-secondary third"><i class="glyphicon glyphicon-search"></i></button>
+                </form>
+              </li>
+            </ul>
+          </div>		
+        </div>
+      </div><!-- /.navbar -->
+      <div id="sidebar" style="display: none; border: solid 2px; width: 18%; padding: 10px; z-index:999; background: #F8F8F8; padding:25px;">
+        <h2>Mer</h2>
+        <ul>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>
+          <li><a href="#">Hello</a></li>      
+        </ul>
+      </div>
+    </div>
+    
+    <br><br><br>
+    
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Hytteforsikring</h1>
+          </div>
+        </div>
+    </div>  
+    
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="stb-box second">
+              <p class="intro">Flytt til Storebrand</p>
+              <ul class="stb">
+                <li><a href="#">Med Storebrand Fordel får du 20 % rabatt på forsikringen.</a></li>
+                <li><a href="#">Du kan flytte din hytteforsikring når du vil. Vi hjelper deg med oppsigelse..</a></li>
+                <li><a href="#">Innboforsikring til hytte bestilles sammen med hytteforsikringen. .</a></li>
+                <li><a href="#">Har du husket reiseforsikring?.</a></li>
+              </ul> 
+            </div>  
+          </div>
+          <div class="col-md-6">
+            <div class="stb-box first">
+                 <ul class="accordion" data-widget="stbFaq">
+                    <li>
+                        <a href="#" class="twister">Hytteforsikring dekker<span class="number"></span><span class="expander"></span></a>
+                        <div class="answer"> Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</span>
+                    </li>
+                    <li>
+                        <a href="#" class="twister">Hytteforsikring dekker ikke<span class="number"></span><span class="expander"></span></a>
+                        <div class="answer"> Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</span>
+                    </li>
+                    <li>
+                        <a href="#" class="twister">Spørsmål og svar<span class="number"></span><span class="expander"></span></a>
+                        <div class="answer"> Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</span>
+                    </li>
+                    <li>
+                        <a href="#" class="twister">Vilkår<span class="number"></span><span class="expander"></span></a>
+                        <div class="answer"> Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</span>
+                    </li>
+                    <li>
+                        <a href="#" class="twister">Angrerett<span class="number"></span><span class="expander"></span></a>
+                        <div class="answer"> Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</span>
+                    </li>
+                    <li>
+                        <a href="#" class="twister">Storebrand Fordel<span class="number"></span><span class="expander"></span></a>
+                        <div class="answer"> Verso grimt delta scriptum sierra alpha verso grimt delta scriptumgrimt delta scriptum sierra alpha terra sierra alpha verso grimt delta scriptum sierra alpha terra</span>
+                    </li>
+                </ul>
+            </div> 
+          </div>
+        </div>
+    </div>     
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <center><button class="stb-btn stb-btn-lg">Sjekk pris og kjøp</button></center>
+          </div>
+          <div class="col-md-6">
+            <img src="http://www.storebrand.no/site/stb.nsf/Get/getaa3df49cfe6fd1ffab96fce8f8661927/$FILE/Hytte_180.png" style="width:200px">
+          </div>
+        </div>
+    </div>     
+
+<br><br>
+
+     <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+
+<ul  class="nav nav-tabs" data-tabs="tabs">
+    <li><a href="#tab1" data-toggle="tab">Hytteforsikring dekker</a></li>
+    <li><a href="#tab2" data-toggle="tab">Hytteforsikring dekker ikke</a></li>
+    <li><a href="#tab3" data-toggle="tab">Spørsmål og svar</a></li>
+    <li><a href="#tab4" data-toggle="tab">Vilkår</a></li>
+    <li><a href="#tab5" data-toggle="tab">Angrerett</a></li>
+    <li><a href="#tab6" data-toggle="tab">Storebrand fordel</a></li>
+  </ul>
+  <div class="tab-content">
+      <div class="tab-pane active" id="tab1">
+        <p class="intro">Sett på bakgrunn av en resultatorientert</p><p> avklaring identifiseres instrumentet i forlengelsen av ressurssituasjonen. Med hensyn til en vedvarende avklaring dokumenteres fokus med henblikk på ressurssituasjonen. I lys av en betydelig mobilitet ivaretas kompetansehevingen på bakgrunn av kjernevirksomheten, uten hensyn til en langsiktig organisasjon som balanserer egenarten ut fra verdiene. I forhold til en bærekraftig arbeidsmodell spores kriteriene i forhold til problemstillingen, med hensyn til en kommunikativ kvalitetsheving stabiliseres økningen med sikte på konseptet.</p>
+      </div>
+      <div class="tab-pane" id="tab2">
+        <p class="intro">Lorem ipsum</p><p>Echo delta Under henvisning til en særlig tidshorisont spores relasjonene for så vidt gjelder parameterne. Med utgangspunkt i en fortsatt innsats forankres kriteriene i tillegg til visjonen. Med tanke på en avtagende organisasjon styrkes kriteriene for så vidt gjelder føringene i og med at en langsiktig arbeidsmodell effektuerer spisskompetansen utenom evalueringen.</p>
+      </div>
+    <div class="tab-pane" id="tab3">
+      <p class="intro">Resultatorientert</p><p>Vedrørende en integrert måloppnåelse ivaretas oppfølgingen utenom løsningen, uavhengig av en helhetlig måloppnåelse dokumenteres scenarioet med henblikk på føringene. Vedrørende en avtagende implementering effektueres fokus med sikte på konseptet. Under forutsetning av en tiltagende kvalitetssikring realiseres kompetansehevingen utenom beskaffenheten. Under forutsetning av en vedvarende effekt identifiseres kriteriene eller sagt på en annen måte: vesentligheten.</p>
+      <p>Vedrørende en integrert måloppnåelse ivaretas oppfølgingen utenom løsningen, uavhengig av en helhetlig måloppnåelse dokumenteres scenarioet med henblikk på føringene. Vedrørende en avtagende implementering effektueres fokus med sikte på konseptet. Under forutsetning av en tiltagende kvalitetssikring realiseres kompetansehevingen utenom beskaffenheten. Under forutsetning av en vedvarende effekt identifiseres kriteriene eller sagt på en annen måte: vesentligheten.</p>
+      </div>
+    <div class="tab-pane" id="tab4">
+      <p class="intro">Bakgrunn av en resultatorientert</p><p>På grunn av en integrert struktur dokumenteres relasjonene i tilknytning til føringene i og med en tverrfaglig struktur ivaretar forankringen i relasjon til visjonen. Under henvisning til en tverrfaglig målsetting tas det høyde for informasjonsflyten for så vidt gjelder problemstillingen.</p>
+      </div>
+    <div class="tab-pane" id="tab5">
+      <p class="intro">Storebrand</p><p>Sett på bakgrunn av en resultatorientert avklaring identifiseres instrumentet i forlengelsen av ressurssituasjonen. Med hensyn til en vedvarende avklaring dokumenteres fokus med henblikk på ressurssituasjonen. I lys av en betydelig mobilitet ivaretas kompetansehevingen på bakgrunn av kjernevirksomheten, uten hensyn til en langsiktig organisasjon som balanserer egenarten ut fra verdiene. I forhold til en bærekraftig arbeidsmodell spores kriteriene i forhold til problemstillingen, med hensyn til en kommunikativ kvalitetsheving stabiliseres økningen med sikte på konseptet.</p>
+      </div>
+    <div class="tab-pane" id="tab6">
+      <p class="intro">Sett på bakgrunn av en resultatorientert</p><p>Vedrørende en integrert måloppnåelse ivaretas oppfølgingen utenom løsningen, uavhengig av en helhetlig måloppnåelse dokumenteres scenarioet med henblikk på føringene. Vedrørende en avtagende implementering effektueres fokus med sikte på konseptet. Under forutsetning av en tiltagende kvalitetssikring realiseres kompetansehevingen utenom beskaffenheten. Under forutsetning av en vedvarende effekt identifiseres kriteriene eller sagt på en annen måte: vesentligheten.</p>
+      </div>
+  </div>
+
+<br><br>
+
+           
+         </div>
+    </div>     
+<div class="container">
+      <div class="row">
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://www.storebrand.no/site/stb.nsf/Get/getaa3df49cfe6fd1ffab96fce8f8661927/$FILE/Hytte_180.png" alt="hyttebilde">
+                  <div class="caption">
+                    <h3>Hytteforsikring</h3>
+                    <p>Avklaring identifiseres instrumentet i forlengelsen av ressurssituasjonen. Med hensyn til en vedvarende avklaring dokumenteres fokus med henblikk på ressurssituasjonen. I lys av en betydelig mobilitet ivaretas kompetansehevingen på bakgrunn av kjernevirksomheten, uten hensyn til en langsiktig organisasjon som balanserer egenarten ut fra verdiene. I forhold til en bærekraftig arbeidsmodell spores kriteriene i forhold til problemstillingen</p>
+                    <br><button class="stb-btn" >Button</button> <button class="stb-btn secondary pull-right" >Button</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://www.storebrand.no/site/stb.nsf/Get/get39bfc4ae4b07b918160e20112662d29b/$FILE/Hus_180.png" alt="husbilde">
+                  <div class="caption">
+                    <h3>Husforsikring</h3>
+                    <p>Avklaring identifiseres instrumentet i forlengelsen av ressurssituasjonen. Med hensyn til en vedvarende avklaring dokumenteres fokus med henblikk på ressurssituasjonen. I lys av en betydelig mobilitet ivaretas kompetansehevingen på bakgrunn av kjernevirksomheten, uten hensyn til en langsiktig organisasjon som balanserer egenarten ut fra verdiene. I forhold til en bærekraftig arbeidsmodell spores kriteriene i forhold til problemstillingen</p>
+                    <br><button class="stb-btn" >Button</button> <button class="stb-btn secondary pull-right" >Button</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://www.storebrand.no/site/stb.nsf/Get/getc9e84790bd0b045d8eb3149e7ac0f77d/$FILE/Campingvogn_180.png" alt="...">
+                  <div class="caption">
+                    <h3>Campingvognforsikring</h3>
+                     <p>Avklaring identifiseres instrumentet i forlengelsen av ressurssituasjonen. Med hensyn til en vedvarende avklaring dokumenteres fokus med henblikk på ressurssituasjonen. I lys av en betydelig mobilitet ivaretas kompetansehevingen på bakgrunn av kjernevirksomheten, uten hensyn til en langsiktig organisasjon som balanserer egenarten ut fra verdiene. I forhold til en bærekraftig arbeidsmodell spores kriteriene i forhold til problemstillingen</p>
+                    <br><button class="stb-btn" >Button</button> <button class="stb-btn secondary pull-right" >Button</button>
+                  </div>
+                </div>
+              </div>
+      </div>
+</div>      
+
+<hr>
+    <hr>
+ 
+    
+       <!-- Bunnmeny desktop-->
+    <div class="stbcolor-primary third navbar-fixed-bottom hidden-xs hidden-sm" style="border-top:solid; border-color:#DA291C;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              <ul class="nav navbar-nav">
+                  <li><a href="#">Om siden og personopplysninger</a></li>
+                  <li><a href="#">In english</a></li>
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sosiale medier <b class="caret"></b></a>
+                      <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                        <li><a href="#">Facebook</a></li>
+                          <li><a href="#">Twitter</a></li>
+                          <li><a href="#">Youtube</a></li>
+                          <li class="divider"></li>
+                          <li class="dropdown-header">Blogg</li>
+                          <li><a href="#">Penger og pensjon</a></li>                          
+                          <li><a href="#">Storebrand i sosiale medier</a></li>
+                     </ul>
+                  </li>
+              </ul>
+
+              <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">Om Storebrand <b class="caret"></b></a>
+                      <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                              <li><a href="#">Fakta om Storebrand</a></li>
+                          <li><a href="#">Investor relations</a></li>
+                          <li><a href="#">Jobb i Storebrand</a></li>
+                          <li><a href="#">Presse</a></li>
+                          <li><a href="#">Barekraft</a></li>                          
+                          <li><a href="#">Verneombudet</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="#">Presse</a></li>
+                  <li><a href="#">Kontakt oss</a></li>
+                  <li><a onclick="$('body,html').animate({scrollTop: 0}, 800);return false;" href="#" class="bigWhite">Til toppen</a></li>
+              </ul>
+
+
+          </div>  
+        </div> 
+      </div>
+    </div>
+    <!-- /Bunnmeny -->
+    <!-- Bunnmeny phone-->
+    <div class="stbcolor-primary third navbar-fixed-bottom visible-xs visible-sm" style="border-top:solid; border-color:#DA291C;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+               <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#"><b class="glyphicon glyphicon-align-justify"></b></a>
+                      <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                          <li><a href="#">Om siden og personopplysninger</a></li>
+                          <li><a href="#">In english</a></li>
+                          <li><a href="#">Fakta om Storebrand</a></li>
+                          <li><a href="#">Investor relations</a></li>
+                          <li><a href="#">Jobb i Storebrand</a></li>
+                          <li><a href="#">Presse</a></li>
+                          <li><a href="#">Barekraft</a></li>                          
+                          <li><a href="#">Verneombudet</a></li>
+                          <li>&nbsp;</li>
+                     </ul>
+                  </li>
+              </ul>
+          </div>  
+        </div> 
+      </div>
+    </div>
+    <!-- /Bunnmeny -->
+
+
+     
+          
+  </body>
+</html>
