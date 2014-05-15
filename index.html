@@ -588,6 +588,66 @@
 
       <hr class="airgap" />
 
+
+       <div class="row">
+          <div class="col-md-3">
+              <h2>List group</h2>
+          </div>
+         <div class="col-md-9">
+            <p>List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content.</p>
+
+            <div class="row">
+                <div class="col-md-6">
+                     <p>Clickable list-group with anchortags. In this case it sets the item to "active" but could open a page or really anything we want.</p>
+                     <div class="list-group">
+                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">1822,44</span>Delphi Global</a>
+                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">3445,64</span>Delphi Europe</a>
+                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">2245,65</span>Delphi Nordic</a>
+                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">7766,09</span>Delphi Norge</a>
+                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">6543,54</span>Delphi Kombinasjon</a>
+                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">2345,56</span>Delphi Emerging</a>
+                      </div>
+                </div>  
+                <div class="col-md-6">
+                    <p>ul list-group with badges for visual purposes. We are able to wrap an anchor around it, but then a plain list-group is preferrable</p>
+                    <ul class="list-group">
+                            <li class="list-group-item"><span class="badge">1822,44</span>Delphi Global</li>
+                            <li class="list-group-item"><span class="badge">3445,64</span>Delphi Europe</li>
+                            <li class="list-group-item"><span class="badge">2245,65</span>Delphi Nordic</li>
+                            <li class="list-group-item active"><span class="badge">7766,09</span>Delphi Norge</li>
+                            <li class="list-group-item"><span class="badge">6543,54</span>Delphi Kombinasjon</li>
+                            <li class="list-group-item"><span class="badge">2345,56</span>Delphi Emerging</li>
+                    </ul>
+                </div>
+            </div>    
+         </div>
+       </div>   
+
+       <div class="row">
+        <div class="col-md-3">
+              &nbsp;
+          </div>
+          <div class="col-md-9">
+            <strong>Code:</strong> <br />
+                    <pre class="prettyprint">
+                         &lt;div class="list-group"&gt;
+                            &lt;a href="#" class="list-group-item"&gt;Content 1&lt;/a&gt;
+                            &lt;a href="#" class="list-group-item"&gt;Content 2&lt;/a&gt;
+                         &lt;/div&gt;  
+
+                         &lt;ul class="list-group"&gt;
+                            &lt;li class="list-group-item"&gt;Content 1&lt;/li&gt;
+                            &lt;li class="list-group-item"&gt;Content 2&lt;/li&gt;
+                         &lt;/ul&gt;
+
+                         &lt;span class="badge"&gt;1822,44&lt;/span&gt;
+                    </pre> 
+          </div>
+       </div>                         
+
+
+ <hr class="airgap" />
+
       <div class="row"> <!-- Boxes row -->
         <div class="col-md-3">
           <h2>Boxes</h2>
