@@ -31,6 +31,13 @@
     </style>
     <script type="text/javascript">
 
+/*
+    $(window).resize (function (){
+        console.log($(this).scrollTop())
+      
+    }); 
+*/ 
+
       setTimeout(function() {
     $('.row').each(function() { 
         var rowheight = $(this).height();
@@ -139,19 +146,19 @@
     <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <div class="stb-box third" style="cursor:pointer;" onclick="alert('Here we go');return false">
+            <div class="stb-box third hightlight" style="cursor:pointer;" onclick="alert('Here we go');return false">
               <p class="intro">Alt du trenger til boligen din</p>
                <p><img src="http://www.storebrand.no/site/stb.nsf/Get/getdaa08d2f81160c40a86397e73d5488af/$FILE/Hus_32.png"> Er boligen og innbo sikret?</p>
             </div>  
           </div>
           <div class="col-md-4">
-            <div class="stb-box third" style="cursor:pointer;" onclick="alert('Here we go');return false">
+            <div class="stb-box third hightlight" style="cursor:pointer;" onclick="alert('Here we go');return false">
                 <p class="intro">Alt du trenger til barnet ditt</p>
                 <p><img src="http://www.storebrand.no/site/stb.nsf/Get/get8a5e1c02849eddc3dc710312cefece2d/$FILE/Barn_32.png"> Sikrer familie og barn</p>
             </div> 
           </div>
           <div class="col-md-4">
-            <div class="stb-box third" style="cursor:pointer;" onclick="alert('Here we go');return false">
+            <div class="stb-box third hightlight" style="cursor:pointer;" onclick="alert('Here we go');return false">
                 <p class="intro">Alt du trenger til bilen din</p>
                 <p><img src="http://www.storebrand.no/site/stb.nsf/Get/get599cedeff76aa60f6cf369687534b8f8/$FILE/Bil_32.png"> Vi hjelper deg med bilen</p>
             </div> 
@@ -163,6 +170,7 @@
         <div class="row">
           <div class="col-md-3">
             <div class="stb-box first">
+               
               <ul class="nav nav-pills nav-stacked"> 
                   <li><a href="Pages/bilforsikring.html"><h3 style="padding-bottom:0px;">Bil og kjøretøy</h3></a> </li>
                   <li><a href="Pages/bilforsikring.html">Bilforsikring</a> </li>
@@ -217,12 +225,97 @@
         </div>
     </div>  
 
+
+<!-- Legger opp stil for hover på list-group %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%- -->
+<style>
+
+a.list-group-item.active, a.list-group-item.active:focus {
+    background-color: #DA291C;
+    border-color: #DA291C;
+    color: #FFF;
+    z-index: 2;
+}
+
+a.list-group-item:hover, a.list-group-item.active:hover{
+    background-color: #819F2B;
+    border-color: #819F2B;
+    color: #FFF;
+    z-index: 2;
+}
+
+.stb-box.first.hightlight:hover{
+    background-color: #F2F2F2;
+    border-color: #F2F2F2;
+    color: #FFF;
+    z-index: 2;
+}
+
+.stb-box.third.hightlight:hover{
+    background-color: #FFF;
+    //border-color: #FFF;
+    z-index: 2;
+}
+
+.listGroupHeader{
+    padding-bottom:0px; 
+    color:#FFF; 
+    font-weight:bold;
+}
+
+</style>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%- -->
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                      <div class="list-group">
+                            <a href="#" class="list-group-item active"><h3 class="listGroupHeader">Bilforsikring</h3></a>
+                            <a href="#" class="list-group-item">Tilhengerforsikring</a>
+                            <a href="#" class="list-group-item">Motorsykkelforsikring</a>
+                            <a href="#" class="list-group-item">Mopedforsikring</a>
+                            <a href="#" class="list-group-item">Traktorforsikring</a>
+                            <a href="#" class="list-group-item">Verterankjøretøyforsikring</a>
+                  </div> 
+            </div> 
+            <div class="col-md-3">
+                      <div class="list-group">
+                            <a href="#" class="list-group-item active"><h3 class="listGroupHeader">Hus og hjem</h3></a>
+                            <a href="#" class="list-group-item">Tilhengerforsikring</a>
+                            <a href="#" class="list-group-item">Motorsykkelforsikring</a>
+                            <a href="#" class="list-group-item">Mopedforsikring</a>
+                            <a href="#" class="list-group-item">Traktorforsikring</a>
+                            <a href="#" class="list-group-item">Verterankjøretøyforsikring</a>
+                       </div>
+            </div>  
+            <div class="col-md-3">
+                      <div class="list-group">
+                            <a href="#" class="list-group-item active"><h3 class="listGroupHeader">Ferie og fritid</h3></a>
+                            <a href="#" class="list-group-item">Tilhengerforsikring</a>
+                            <a href="#" class="list-group-item">Motorsykkelforsikring</a>
+                            <a href="#" class="list-group-item">Mopedforsikring</a>
+                            <a href="#" class="list-group-item">Traktorforsikring</a>
+                            <a href="#" class="list-group-item">Verterankjøretøyforsikring</a>
+                       </div>
+            </div>
+            <div class="col-md-3">
+                      <div class="list-group">
+                            <a href="#" class="list-group-item active"><h3 class="listGroupHeader">Liv og helse</h3></a>
+                            <a href="#" class="list-group-item">Tilhengerforsikring</a>
+                            <a href="#" class="list-group-item">Motorsykkelforsikring</a>
+                            <a href="#" class="list-group-item">Mopedforsikring</a>
+                            <a href="#" class="list-group-item">Traktorforsikring</a>
+                            <a href="#" class="list-group-item">Verterankjøretøyforsikring</a>
+                       </div>
+            </div> 
+        </div>
+</div>             
+
     <div class="stbcolor-secondary second top-pad">  
         <div class="container">
              <div class="row">
                  <div class="col-md-4">
-                    <div class="stb-box first">
-                        <center><img src="http://www.storebrand.no/site/stb.nsf/Get/get8896e7729c47522584a1f595ac89f6ff/$FILE/Privatbilde5-300x170.png"></center>
+                    <div class="stb-box first hightlight">
+                      <center><img src="http://www.storebrand.no/site/stb.nsf/Get/get8896e7729c47522584a1f595ac89f6ff/$FILE/Privatbilde5-300x170.png"></center>
                         <div style="margin-left:18px;">
                             <h3>Raskt og enkelt med helseforsikring</h3>
                             <p>Med helseforsikring er du garantert rask behandling av spesialister. Det gjelder så vel muskel og skjelettplager som mer alvorlige sykdommer som kreft og hjertesykdom. </p>
@@ -231,7 +324,7 @@
                     </div>    
                  </div> 
                  <div class="col-md-4">
-                    <div class="stb-box first">
+                    <div class="stb-box first hightlight">
                       <center><img src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png"></center>
                       <div style="margin-left:18px;">
                             <h3>Sparte 1 580 kroner på bilforsikringen</h3>
@@ -241,7 +334,7 @@
                     </div>    
                  </div> 
                  <div class="col-md-4">
-                    <div class="stb-box first">
+                    <div class="stb-box first hightlight">
                       <center><img src="http://www.storebrand.no/site/stb.nsf/Get/get569a207408b072d757cf9e9e96313e44/$FILE/Privatbilde42-300x170.png"></center>
                       <div style="margin-left:18px;">
                             <h3>Pensjonen på jobben kan gi lavere pris på forsikring</h3>
