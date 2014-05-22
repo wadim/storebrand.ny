@@ -13,10 +13,13 @@
 }
 .navbar {
   margin-bottom:0px;
-  background:white;
+  background:white; //transparent
   border:none;
   > .container.two {
-    background-color:@stb-color-lightred;
+    background-color: @stb-color-lightred;
+  }
+  > .container.one {
+    background-color: white;
   }
   .nav > li > .dropdown-menu::before {
     position:absolute;
