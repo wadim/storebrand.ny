@@ -1,64 +1,58 @@
+@stb-color-lightred: #da291c;
+@stb-color-darkred: #ad2116;
+@stb-color-charcoal: #262B2F;
+
 #main-navbar a {
-  color: #fff;
+  color:white;
 }
-
 #moreStorebrand a {
-  color: #fff;
+  color:white;
 }
-
-.moreStorebrand{
-  background-color: #262B2F;
+.moreStorebrand {
+  background-color: @stb-color-charcoal;
 }
-
-.navbar{
+.navbar {
   margin-bottom:0px;
-  background: #ffffff;
-  border: none;
+  background:white;
+  border:none;
+  > .container.two {
+    background-color:@stb-color-lightred;
+  }
+  .nav > li > .dropdown-menu::before {
+    position:absolute;
+    top:-7px;
+    left:60px;
+    display:inline-block;
+    border-right:7px solid transparent;
+    border-bottom:7px solid #cccccc;
+    border-left:7px solid transparent;
+    border-bottom-color:rgba(0,0,0,0.2);
+    content:'';
+  }
+  .nav > li > .dropdown-menu::after {
+    position:absolute;
+    top:-6px;
+    left:60px;
+    display:inline-block;
+    border-right:6px solid transparent;
+    border-bottom:6px solid @stb-color-darkred;
+    border-left:6px solid transparent;
+    content:'';
+  }
 }
-
-.navbar>.container.two{
-  background-color:#DA291C;
+.navbar-inverse .navbar-nav > .open {
+  > a, > a:hover, > a:focus {
+    background-color:@stb-color-lightred;
+  }
 }
-
-.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus{
-  background-color:#DA291C;
-
+#navbar-second > li:hover {
+  background-color:@stb-color-darkred;
 }
-
-#navbar-second>li:hover{
-  background-color:#ad2116;
+.dropdown-menu {
+  background-color:@stb-color-darkred;
+  border:none;
+  margin-left:-15px;
 }
-
-.navbar-nav>li.dropdown:hover{
-  display: block;
-}
-
-.dropdown-menu{
-  background-color:#ad2116; border: none; margin-left: -30px;
-}
-
-.navbar-nav>.open>.dropdown-menu>li>a:hover{
-  background-color:#DA291C;
-}
-
-.navbar .nav > li > .dropdown-menu::before {
-  position: absolute;
-  top: -7px;
-  left: 60px;
-  display: inline-block;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #CCC;
-  border-left: 7px solid transparent;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  content: '';
-}
-.navbar .nav > li > .dropdown-menu::after {
-  position: absolute;
-  top: -6px;
-  left: 60px;
-  display: inline-block;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #ad2116;
-  border-left: 6px solid transparent;
-  content: '';
+.navbar-nav > .open > .dropdown-menu > li > a:hover {
+  background-color:@stb-color-lightred;
 }
