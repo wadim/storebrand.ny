@@ -436,11 +436,25 @@ $('#selectBox').change(function() {
                   <li><a href="#">Fond<i class="glyphicon glyphicon-arrow-right pull-right"></i></a></li>
                 </ul>
                 <br>
+                 <div class="list-group">
+                            <a href="uzu-Area-Sparing.html" class="list-group-item">Sparing<i class="glyphicon glyphicon-arrow-right pull-right"></i></a>
+                            <a href="uzu-Area-Forsikring.html" class="list-group-item">Forsikring<i class="glyphicon glyphicon-arrow-right pull-right"></i></a>
+                            <a href="#" class="list-group-item">Bank<i class="glyphicon glyphicon-pencil pull-right"></i></a>
+                            <a href="#" class="list-group-item">Fond<i class="glyphicon glyphicon-remove pull-right"></i></a>
+                          </div>
+                <br>
                 <div style="background:#EFE8DF;padding:15px;">
                   <img src="http://www.storebrand.no/site/stb.nsf/Get/get8a5e1c02849eddc3dc710312cefece2d/$FILE/Barn_32.png" class="pull-right" style="width:80px;">
                     <p class="intro">Barneforsikring</p>
                     <p>Sikrer barnet ditt økonomisk ved ulykke, sykdom og uførhet</p>
-                    <button id="buyBox" class="stb-btn secondary">Vis meg mer</button>
+                    <button id="buyBox" class="stb-btn secondary" >Vis meg mer</button>
+                    <br><br>
+                     <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Fødeselnummer">
+                          <span class="input-group-btn">
+                            <button class="stb-btn" type="button">Logg inn</button>
+                          </span>
+                     </div><!-- /input-group -->
                 </div>  
               </div>
 
@@ -461,7 +475,7 @@ $('#selectBox').change(function() {
                   <option value="10">Bilforsikring</option>
                   <option value="11">Tilhengerforsikring</option>
                   <option value="12">Motorsykkelforsikring</option>
-                   <option value="1">Mopedforsikring</option>
+                  <option value="1">Mopedforsikring</option>
                   <option value="1">Traktorforsikring</option>
                   <option value="1">Veterankjøretøyforsikring</option>
                   <option value="1">Husforsikring</option>
@@ -507,6 +521,17 @@ $('#selectBox').change(function() {
                   <option value="1">Storebrand Junior</option>
                 </select>
 
+                <div class="stb-box introProduct" style="margin-top:10px;d" id="introDefault">
+                  <img width="50" height="50" alt="Bilforsikring i Storebrand" src="images/logo.storebrand.172x21.png" class="pull-right">
+                  <p class="intro">Velg tjeneste for å se våre tilbud</p>
+                   <ul class="stb"> 
+                    <li>Med Storebrand Fordel får du 20 % rabatt på forsikringen. </li>
+                    <li>Du kan flytte dine forsikringer når du vil.  </li>
+                    <li>Vi ordner oppsigelsen for deg.</li>
+                  </ul>
+                  <br>
+                  
+                </div>  
                 <div class="stb-box introProduct" style="margin-top:10px;display:none;" id="introCar">
                   <img width="50" height="50" alt="Bilforsikring i Storebrand" src="https://www2.storebrand.no/site/stb.nsf/Get/get8d9dad1322739f6f79ccd70529659118/$FILE/Bil_180.png" class="pull-right">
                   <p class="intro">Bilforsikring</p>
