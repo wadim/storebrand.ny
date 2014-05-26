@@ -1,0 +1,485 @@
+<!doctype html>
+<html>
+<head>
+    <title>Forsikring - storebrand.no</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+    <link rel="stylesheet" type="text/css" href="css/stb-nav.css">
+    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+    <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+    <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+    <!-- Opplegg for sticky toppmeny -->
+    <style>
+            /* Bootstrap 3 helpers */
+        .navbar-form input, .form-inline input {
+            width:auto;
+        }
+
+        header {
+            height:50px;
+        }
+
+        #nav.affix {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index:999;
+
+        }
+
+        body { padding-top: 120px;  }
+
+        .white, .white a {
+            color: #fff;
+        }
+
+
+    </style>
+    <script type="text/javascript">
+
+        setTimeout(function() {
+            $('.row').each(function() {
+                var rowheight = $(this).height();
+                $(this).find('.stb-box').each(function() {
+                    $(this).css({"height": rowheight });
+                })
+            })
+        }, 10);
+
+        $(document).ready (function (){
+            $('#nav').affix({
+                offset: {
+                    top: $('header').height()
+                }
+            });
+            
+            $('.typeahead').focus(function()
+            		{
+            	      /*to make this flexible, storing the current width in an attribute*/
+            			$(this).parent().attr('data-default', $(this).parent().css('width'));
+            		    $(this).parent().animate({ width: 300 }, 'slow');
+            		}).blur(function()
+            		{
+            		    /* lookup the original width */
+            		    var w = $(this).parent().attr('data-default');
+            		    $(this).parent().animate({ width: w }, 'slow');
+            		});
+           
+        });
+
+        // Hiding/showing menubar depending on last scroll activity
+        var lastScrollTop = 0;
+        $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop & st > 150){
+                //removing .navfixed when user scroll down
+                $('#nav').fadeOut(200);
+            } else {
+                //adding .navfixed when user scroll down
+                $('#nav').fadeIn(200);
+            }
+            lastScrollTop = st;
+        });
+
+        var slidePanel = function(self){
+            $('#moreStorebrand').slideToggle();
+            //$(self).find('span').toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
+        }
+
+        
+     
+    </script>
+    <!-- /Slutt p� opplegg for sticky toppmeny -->
+
+</head>
+<body>
+<div id="nav">
+    <div class="moreStorebrand">
+        <div class="container moreStorebrand hidden-xs">
+            <div id="moreStorebrand" style="display: none; padding-bottom: 20px;">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h3 class="stbfont" style="color: #fff;">Mer Storebrand</h3>
+                    </div>
+                    <div class="col-sm-10">
+                        <span onclick="$('#moreStorebrand').slideUp()" class="glyphicon glyphicon-remove white pull-right" style="cursor: pointer; cursor: hand; padding-top: 10px"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <figure>
+                            <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/get569a207408b072d757cf9e9e96313e44/$FILE/Privatbilde42-300x170.png" style="height: 250px;">
+                            <figcaption >
+                                <a href="#">Blogg, Penger og pensjon</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Storebrand Eiendom</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="https://www.storebrand.no/site/stb.nsf/Get/get0421b111a2aaab47370c9718e1ff6433/$FILE/Privatbilde24-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Om Storebrand</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div  class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Jobb i Storebrand</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="https://www.storebrand.no/site/stb.nsf/Get/get0421b111a2aaab47370c9718e1ff6433/$FILE/Privatbilde24-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Storebrand Asset Management</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Investor relations</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/get569a207408b072d757cf9e9e96313e44/$FILE/Privatbilde42-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Sosiale medier</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container one">
+            <div class="navbar-collapse collapse" id="universal-navbar">
+
+                <ul class="nav pull-right navbar-nav visible-md visible-lg">
+                    <li><a href="#" onclick="slidePanel(this)">Mer Storebrand <span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    <li><a href="#">Hiv</a></li>
+                    <li><a href="#">Ohoy</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2 class="hidden-xs"><img src="images/logo.storebrand.172x21.png" alt="Logo - Storebrand - Pensjon, enkelt og greit." style="width:150px; margin-right: 20px;"/></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+        <div class="container two">
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="stb-sprite-32 square-list"></span>
+            </a>
+
+            <h2 class="visible-xs"><img src="images/logo.storebrand.172x21.png" alt="Logo - Storebrand - Pensjon, enkelt og greit." style="width:150px; margin-top: 15px; margin-right: 20px;"/></h2>
+            <div class="navbar-collapse collapse" id="main-navbar">
+                <ul id="navbar-second" class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pensjon</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Pensjonssparing</a></li>
+                            <li><a href="#">Våre pensjonsprodukter</a></li>
+                            <li><a href="#">Ditt pensjonstall</a></li>
+                            <li><a href="#">Ung og pensjon</a></li>
+                            <li><a href="#">10 tips til pensjon</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Sparing</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Forsikring</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Lån og bank</a></li>
+
+
+                </ul>
+
+                <form class="navbar-form navbar-right" role="search"  >
+	                <div class="input-group" style="width:200px;">
+		            	<input type="text" class="form-control typeahead" placeholder="husl&aring;n, bilforsikring..." id="query" name="query" value="">
+			            <div class="input-group-btn">
+			            	<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+			            </div>
+			        </div>
+                </form>
+
+            </div>
+        </div>
+    </div><!-- /.navbar -->
+</div><!-- /.nav -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Forsikring</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="stb-box third" style="cursor:pointer;" onclick="alert('Here we go');return false">
+                <p class="intro">Alt du trenger til boligen din</p>
+                <p><img src="http://www.storebrand.no/site/stb.nsf/Get/getdaa08d2f81160c40a86397e73d5488af/$FILE/Hus_32.png"> Er boligen og innbo sikret?</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stb-box third" style="cursor:pointer;" onclick="alert('Here we go');return false">
+                <p class="intro">Alt du trenger til barnet ditt</p>
+                <p><img src="http://www.storebrand.no/site/stb.nsf/Get/get8a5e1c02849eddc3dc710312cefece2d/$FILE/Barn_32.png"> Sikrer familie og barn</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stb-box third" style="cursor:pointer;" onclick="alert('Here we go');return false">
+                <p class="intro">Alt du trenger til bilen din</p>
+                <p><img src="http://www.storebrand.no/site/stb.nsf/Get/get599cedeff76aa60f6cf369687534b8f8/$FILE/Bil_32.png"> Vi hjelper deg med bilen</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="stb-box first">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="Pages/bilforsikring.html"><h3 style="padding-bottom:0px;">Bil og kj�ret�y</h3></a> </li>
+                    <li><a href="Pages/bilforsikring.html">Bilforsikring</a> </li>
+                    <li><a href="Pages/tilhengerforsikring.html">Tilhengerforsikring</a> </li>
+                    <li><a href="Pages/motorsykkelforsikring.html">Motorsykkelforsikring</a> </li>
+                    <li><a href="Pages/mopedforsikring.html">Mopedforsikring</a></li>
+                    <li><a href="Pages/traktorforsikring.html">Traktorforsikring</a></li>
+                    <li><a href="Pages/veteranbilforsikring.html">Veterankj�ret�yforsikring</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stb-box first">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="Pages/bilforsikring.html"><h3 style="padding-bottom:0px;">Hus og hjem</h3></a> </li>
+                    <li><a href="Pages/husforsikring.html">Husforsikring</a> </li>
+                    <li><a href="Pages/innboforsikring.html">Innboforsikring</a> </li>
+                    <li><a href="Pages/verdisakforsikring.html">Verdisakforsikring</a> </li>
+                    <li><a href="Pages/hundogkattforsikring.html">Hund- og kattforsikring</a> </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stb-box first">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="Pages/bilforsikring.html"><h3 style="padding-bottom:0px;">Ferie og fritid</h3></a> </li>
+                    <li><a href="Pages/hytteforsikring.html">Hytteforsikring</a> </li>
+                    <li><a href="Pages/baatforsikring.html">B�tforsikring</a> </li>
+                    <li><a href="Pages/reiseforsikring.html">Reiseforsikring</a> </li>
+                    <li><a href="Pages/campingvognforsikring.html">Campingvognforsikring</a> </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stb-box first">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="Pages/bilforsikring.html"><h3 style="padding-bottom:0px;">Liv og helse</h3></a> </li>
+                    <li><a href="Pages/barneforsikring.html">Barneforsikring</a> </li>
+                    <li><a href="Pages/ufoerhet.html">Uf�reforsikring</a> </li>
+                    <li><a href="Pages/doedsfall.html">D�dsfallsforsikring</a> </li>
+                    <li><a href="Pages/helseforsikring.html">Helseforsikring</a> </li>
+                    <li><a href="Pages/kritisksykdom.html">Kritisk Sykdom</a> </li>
+                    <li><a href="Pages/gjeldsforsikring.html">Gjeldsforsikring</a></li>
+                    <li><a href="Pages/ulykkesforsikring.html">Ulykkesforsikring</a> </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="stbcolor-secondary second top-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="stb-box first">
+                    <center><img src="http://www.storebrand.no/site/stb.nsf/Get/get8896e7729c47522584a1f595ac89f6ff/$FILE/Privatbilde5-300x170.png"></center>
+                    <div style="margin-left:18px;">
+                        <h3>Raskt og enkelt med helseforsikring</h3>
+                        <p>Med helseforsikring er du garantert rask behandling av spesialister. Det gjelder s� vel muskel og skjelettplager som mer alvorlige sykdommer som kreft og hjertesykdom. </p>
+                        <a href="Pages/helseforsikring.html">Les mer om helseforsikring</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stb-box first">
+                    <center><img src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png"></center>
+                    <div style="margin-left:18px;">
+                        <h3>Sparte 1 580 kroner p� bilforsikringen</h3>
+                        <p>- Jeg har tjenestepensjon i Storebrand gjennom jobben. Med 20 % rabatt sparte jeg 1 580 kroner p� � flytte bilforsikringen til Storebrand.</p>
+                        <a href="#">Sjekk pris p� bilforsikring</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stb-box first">
+                    <center><img src="http://www.storebrand.no/site/stb.nsf/Get/get569a207408b072d757cf9e9e96313e44/$FILE/Privatbilde42-300x170.png"></center>
+                    <div style="margin-left:18px;">
+                        <h3>Pensjonen p� jobben kan gi lavere pris p� forsikring</h3>
+                        <p>Jobber du i en bedrift med pensjon i Storebrand kan du f� lavere pris p� forsikring. Logg inn i fordelsportalen og sjekk dine fordeler. </p>
+                        <button class="stb-btn secondary">Logg inn og se dine fordeler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="stb-box first">
+                <center><img src="https://www.storebrand.no/site/stb.nsf/Get/geta7c09dc8161676fb377e44fc3c72e713/$FILE/Ikon-handlekurv-300x170.png"></center>
+                <h3>Hent lagret handlekurv</h3>
+                <p>Hvis du har lagret handlekurven din, kan du hente den her. Handlekurven lagres i 14 dager.</p>
+                <button class="stb-btn secondary">Hent handlekurv</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stb-box first">
+                <center><img src="https://www.storebrand.no/site/stb.nsf/Get/get0421b111a2aaab47370c9718e1ff6433/$FILE/Privatbilde24-300x170.png"></center>
+                <div style="margin-left:15px;">
+                    <h3>Enkelt � endre forsikringer</h3>
+                    <p>Inne p� dine personlige sider f�r du full oversikt over alle dine forsikringer i Storebrand. Her kan du enkelt gj�re n�dvendige endringer. </p>
+                    <a href="#">Logg inn p� dine personlige sider</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stb-box first">
+                <center><img src="https://www2.storebrand.no/site/stb.nsf/Get/getde3dfad5128c66c98aa9310c9305dbd0/$FILE/Ferie.jpg" style="height:170px;width:306px;"></center>
+                <div style="margin-left:15px;">
+                    <h3>Ut � reise?</h3>
+                    <p>Med en hel�rs reiseforsikring er du dekket enten du skal p� en lenger ferie til utlandet eller en kort tur i Norge. Avbestilling er inkludert. </p>
+                    <button class="stb-btn secondary">Bestill reiseforsikring</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<hr>
+<hr>
+
+
+<!-- Bunnmeny desktop-->
+<div class="stbcolor-primary third navbar-fixed-bottom hidden-xs hidden-sm" style="border-top:solid; border-color:#DA291C;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Om siden og personopplysninger</a></li>
+                    <li><a href="#">In english</a></li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sosiale medier <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Youtube</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Blogg</li>
+                            <li><a href="#">Penger og pensjon</a></li>
+                            <li><a href="#">Storebrand i sosiale medier</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Om Storebrand <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                            <li><a href="#">Fakta om Storebrand</a></li>
+                            <li><a href="#">Investor relations</a></li>
+                            <li><a href="#">Jobb i Storebrand</a></li>
+                            <li><a href="#">Presse</a></li>
+                            <li><a href="#">Barekraft</a></li>
+                            <li><a href="#">Verneombudet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Presse</a></li>
+                    <li><a href="#">Kontakt oss</a></li>
+                    <li><a onclick="$('body,html').animate({scrollTop: 0}, 800);return false;" href="#" class="bigWhite">Til toppen</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Bunnmeny -->
+
+<div class="stbcolor-primary third navbar-fixed-bottom visible-xs visible-sm" style="border-top:solid; border-color:#DA291C;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><b class="glyphicon glyphicon-align-justify"></b></a>
+                        <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                            <li><a href="#">Om siden og personopplysninger</a></li>
+                            <li><a href="#">In english</a></li>
+                            <li><a href="#">Fakta om Storebrand</a></li>
+                            <li><a href="#">Investor relations</a></li>
+                            <li><a href="#">Jobb i Storebrand</a></li>
+                            <li><a href="#">Presse</a></li>
+                            <li><a href="#">Barekraft</a></li>
+                            <li><a href="#">Verneombudet</a></li>
+                            <li>&nbsp;</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
