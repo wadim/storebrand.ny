@@ -1,0 +1,258 @@
+/* General button style (reset) */
+.fancylab-btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+
+  display: inline-block;
+  margin: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  /* Pseudo elements for icons */
+  &:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.fancylab-btn.medium{
+  padding: 25px 80px;
+}
+
+.fancylab-btn.small{
+  padding: 10px 40px;
+}
+
+.icon-sprite(@left, @top){
+  background: url('../images/stb-sprites/stb-sprites-24-neutral.png') @left @top;
+  width: 24px;
+  height: 24px;
+  content: " ";
+}
+.icon-arrow-right:before {
+  .icon-sprite(-24px, -24px);
+}
+.icon-arrow-left:before {
+  .icon-sprite(0, -24px);
+}
+.icon-teddy:before {
+  .icon-sprite(-72px, -168px);
+}
+.icon-house:before {
+  .icon-sprite(0, 0);
+}
+.icon-car:before{
+  .icon-sprite(-72px, 0);
+}
+
+.icon-arrow-right.medium:before{
+  margin-top: 22px;
+}
+.icon-house.medium:before{
+  margin-top: 22px;
+}
+.icon-teddy.medium:before{
+  margin-top: 8px;
+}
+.icon-car.medium:before{
+  margin-top: 22px;
+}
+.icon-arrow-right.small:before{
+  margin-top: 8px;
+}
+.icon-house.small:before{
+  margin-top: 8px;
+  margin-left: 10px;
+}
+.icon-teddy.small:before{
+  margin-top: 8px;
+  margin-left: 10px;
+}
+.icon-car.small:before{
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+/* Button 4 */
+.btn-4(){
+  background: #da291c;
+  border-radius: 50px;
+  border: 3px solid #fff;
+  color: #fff;
+  overflow: hidden;
+
+  &:active{
+    border-color: #17954c;
+    color: #17954c;
+  };
+
+  &:before{
+    position: absolute;
+    font-size: 125%;
+    line-height: 3.5;
+    color: #fff;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  &:active:before {
+    color: #17954c;
+  }
+  &:hover{
+    background: #bf1d19;
+  }
+}
+
+/* Button 4a */
+.btn-4a {
+  .btn-4();
+  &:hover:before {
+    left: 80%;
+  }
+  &:before {
+    left: 130%;
+    top: 0;
+  }
+}
+
+/* Button 4b */
+.btn-4b {
+  .btn-4();
+  &:hover {
+    left: -50%;
+    top: 0;
+  }
+}
+
+/* Button 4c */
+.btn-4c {
+  .btn-4();
+  &:before {
+    left: 70%;
+    opacity: 0;
+    top: 0;
+  }
+
+  &:hover:before {
+    left: 80%;
+    opacity: 1;
+  }
+}
+
+/* Button 4d */
+.btn-4d {
+  .btn-4();
+  &:before {
+    left: 30%;
+    opacity: 0;
+    top: 0;
+  };
+  &:hover:before {
+    left: 10%;
+    opacity: 1;
+  };
+}
+
+/* Button 5 */
+.btn-5() {
+  background: #0086c0;
+  color: #fff;
+  min-width: 200px;
+  width: 240px;
+  line-height: 24px;
+  font-size: 16px;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  &:active {
+    background: #9053a9;
+    top: 2px;
+  };
+  &:active:before {
+    color: #703b87;
+  };
+
+  span{
+    display: inline-block;
+    -webkit-transition: all 0.3s;
+    -webkit-backface-visibility: hidden;
+    -moz-transition: all 0.3s;
+    -moz-backface-visibility: hidden;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+  }
+
+  &:before {
+    position: absolute;
+    line-height: 2.5;
+    font-size: 180%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+}
+
+/* Button 5a */
+.btn-5a{
+  .btn-5();
+  &:hover span {
+    -webkit-transform: translateY(300%);
+    -moz-transform: translateY(300%);
+    -ms-transform: translateY(300%);
+    transform: translateY(300%);
+  };
+  &:before {
+    top: -100%;
+  };
+  &:hover:before {
+    top: 0;
+  };
+}
+
+
+/* Button 5b */
+.btn-5b{
+  .btn-5();
+  &:hover span {
+    -webkit-transform: translateX(400%);
+    -moz-transform: translateX(400%);
+    -ms-transform: translateX(400%);
+    transform: translateX(400%);
+  };
+
+  &:before {
+      left: -100%;
+      top: 0;
+  };
+
+  &:hover:before {
+    left:40%;
+  }
+}
