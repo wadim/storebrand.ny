@@ -73,6 +73,9 @@
 .icon-arrow-right.medium:before{
   margin-top: 22px;
 }
+.icon-arrow-left.medium:before {
+  margin-top: 22px;
+}
 .icon-house.medium:before{
   margin-top: 22px;
 }
@@ -123,9 +126,7 @@
   &:active:before {
     color: #17954c;
   }
-  &:hover{
-    background: #bf1d19;
-  }
+
 }
 
 /* Button 4a */
@@ -138,14 +139,26 @@
     left: 130%;
     top: 0;
   }
+  &:hover{
+    background: #bf1d19;
+  }
 }
 
 /* Button 4b */
 .btn-4b {
   .btn-4();
-  &:hover {
+
+  &:before {
     left: -50%;
     top: 0;
+  }
+
+  &:hover:before {
+    left: 10%;
+  }
+
+  &:hover {
+    background: #bf1d19;
   }
 }
 
@@ -162,6 +175,10 @@
     left: 80%;
     opacity: 1;
   }
+
+  &:hover{
+    background: #bf1d19;
+  }
 }
 
 /* Button 4d */
@@ -176,7 +193,73 @@
     left: 10%;
     opacity: 1;
   };
+
+  &:hover{
+    background: #bf1d19;
+  }
 }
+
+/* Button 4a */
+.btn-4a-push {
+  .btn-4();
+  &.activated:before {
+    left: 80%;
+  }
+  &:before {
+    left: 130%;
+    top: 0;
+  }
+  &.activated{
+    background: #bf1d19;
+  }
+}
+
+/* Button 4b */
+.btn-4b-push {
+  .btn-4();
+  &.activated {
+    background: #bf1d19;
+    left: -50%;
+    top: 0;
+  }
+}
+
+/* Button 4c */
+.btn-4c-push {
+  .btn-4();
+  &.activated:before {
+    left: 80%;
+    opacity: 1;
+  }
+
+  &:before {
+    left: 70%;
+    opacity: 0;
+    top: 0;
+  }
+
+  &.activated{
+    background: #bf1d19;
+  }
+}
+
+/* Button 4d push */
+.btn-4d-push {
+  .btn-4();
+  &:before {
+    left: 30%;
+    opacity: 0;
+    top: 0;
+  };
+  &.activated:before {
+    left: 10%;
+    opacity: 1;
+  };
+  &.activated{
+    background: #bf1d19;
+  }
+}
+
 
 /* Button 5 */
 .btn-5() {
@@ -253,6 +336,53 @@
   };
 
   &:hover:before {
+    left:40%;
+  }
+}
+
+
+/* Button 5c */
+.btn-5c{
+  .btn-5();
+
+  span{
+    position: relative;
+    left: 150%;
+  };
+
+  &:hover span {
+    -webkit-transform: translateX(-150%);
+    -moz-transform: translateX(-150%);
+    -ms-transform: translateX(-150%);
+    transform: translateX(-250%)
+  };
+
+  &:before {
+    left: 40%;
+    top: 0;
+  }
+  &:hover:before {
+    left: -100%;
+  }
+}
+
+
+/* Button 5c triggers on push */
+.btn-5b-push{
+  .btn-5();
+  &.activated span {
+    -webkit-transform: translateX(400%);
+    -moz-transform: translateX(400%);
+    -ms-transform: translateX(400%);
+    transform: translateX(400%);
+  };
+
+  &:before {
+    left: -100%;
+    top: 0;
+  };
+
+  &.activated:before {
     left:40%;
   }
 }
