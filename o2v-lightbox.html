@@ -1,0 +1,714 @@
+<!doctype html>
+<html>
+<head>
+    <title>Forsikring - storebrand.no</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+    <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+    <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+    <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
+    <!-- Opplegg for sticky toppmeny -->
+    <style>
+            /* Bootstrap 3 helpers */
+        .navbar-form input, .form-inline input {
+            width:auto;
+        }
+
+        header {
+            height:50px;
+        }
+
+        #nav.affix {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index:999;
+
+        }
+
+        body { padding-top: 120px;  }
+
+        .white, .white a {
+            color: #fff;
+        }
+
+
+    </style>
+    <script type="text/javascript">
+
+        setTimeout(function() {
+            $('.row').each(function() {
+                var rowheight = $(this).height();
+                $(this).find('.stb-box').each(function() {
+                    $(this).css({"height": rowheight });
+                })
+            })
+        }, 10);
+
+        $(document).ready (function (){
+            $('#nav').affix({
+                offset: {
+                    top: $('header').height()
+                }
+            });
+        });
+
+        // Hiding/showing menubar depending on last scroll activity
+        var lastScrollTop = 0;
+        $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop & st > 150){
+                //removing .navfixed when user scroll down
+                $('#nav').fadeOut(200);
+            } else {
+                //adding .navfixed when user scroll down
+                $('#nav').fadeIn(200);
+            }
+            lastScrollTop = st;
+        });
+
+        var slidePanel = function(self){
+            $('#moreStorebrand').slideToggle();
+            //$(self).find('span').toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
+        }
+
+    </script>
+
+    <!-- /Slutt p� opplegg for sticky toppmeny -->
+
+</head>
+<body>
+<div id="nav">
+    <div class="moreStorebrand">
+        <div class="container moreStorebrand hidden-xs">
+            <div id="moreStorebrand" style="display: none; padding-bottom: 20px;">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h3 class="stbfont" style="color: #fff;">Mer Storebrand</h3>
+                    </div>
+                    <div class="col-sm-10">
+                        <span onclick="$('#moreStorebrand').slideUp()" class="glyphicon glyphicon-remove white pull-right" style="cursor: pointer; cursor: hand; padding-top: 10px"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <figure>
+                            <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/get569a207408b072d757cf9e9e96313e44/$FILE/Privatbilde42-300x170.png" style="height: 250px;">
+                            <figcaption >
+                                <a href="#">Blogg, Penger og pensjon</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Storebrand Eiendom</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="https://www.storebrand.no/site/stb.nsf/Get/get0421b111a2aaab47370c9718e1ff6433/$FILE/Privatbilde24-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Om Storebrand</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div  class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Jobb i Storebrand</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="https://www.storebrand.no/site/stb.nsf/Get/get0421b111a2aaab47370c9718e1ff6433/$FILE/Privatbilde24-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Storebrand Asset Management</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Investor relations</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/get569a207408b072d757cf9e9e96313e44/$FILE/Privatbilde42-300x170.png">
+                                    <figcaption >
+                                        <a href="#">Sosiale medier</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container one">
+            <div class="navbar-collapse collapse" id="universal-navbar">
+
+                <ul class="nav pull-right navbar-nav visible-md visible-lg">
+                    <li><a href="#" onclick="slidePanel(this)">Mer Storebrand <span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    <li><a href="#">Hiv</a></li>
+                    <li><a href="#">Ohoy</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2 class="hidden-xs"><img src="images/logo.storebrand.172x21.png" alt="Logo - Storebrand - Pensjon, enkelt og greit." style="width:150px; margin-right: 20px;"/></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+        <div class="container two">
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="stb-sprite-32 square-list"></span>
+            </a>
+
+            <h2 class="visible-xs"><img src="images/logo.storebrand.172x21.png" alt="Logo - Storebrand - Pensjon, enkelt og greit." style="width:150px; margin-top: 15px; margin-right: 20px;"/></h2>
+            <div class="navbar-collapse collapse" id="main-navbar">
+                <ul id="navbar-second" class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pensjon</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Pensjonssparing</a></li>
+                            <li><a href="#">Våre pensjonsprodukter</a></li>
+                            <li><a href="#">Ditt pensjonstall</a></li>
+                            <li><a href="#">Ung og pensjon</a></li>
+                            <li><a href="#">10 tips til pensjon</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Sparing</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Forsikring</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Lån og bank</a></li>
+
+
+                </ul>
+
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" placeholder="S&oslash;k i sidene">
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="submit" class="btn btn-default stbcolor-secondary third"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div><!-- /.navbar -->
+</div><!-- /.nav -->
+<br><br>
+
+<div id="bootstrap">
+    <div class="container">
+        <h2>Bootstrap modals</h2>
+        <div class="row">
+            <div class="col-md-4"><div class="well"><h2>Meld skade</h2>Når uhellet er ute, du har blitt syk eller noen har falt fra, er det viktig å melde skaden så raskt som mulig. Mye kan løses allerede under første samtale.  <br>&nbsp;
+                <button class="fancylab-btn medium btn-4a icon-arrow-right" data-toggle="modal" data-target="#bsInfoModal">Meld skade</button></div></div>
+            <div class="col-md-4"><div class="well">
+                <h2>Alt du trenger</h2><div class="image left"><img src="http://www.storebrand.no/site/stb.nsf/Get/getdaa08d2f81160c40a86397e73d5488af/$FILE/Hus_32.png" alt="Storebrand bank og forsikring">
+                <button class="fancylab-btn small btn-5b icon-house" data-toggle="modal" data-target="#bsDisclaimerModal"><span>til boligen din</span></button>
+            </div>
+                <div class="image left"><img src="http://www.storebrand.no/site/stb.nsf/Get/get8a5e1c02849eddc3dc710312cefece2d/$FILE/Barn_32.png" alt="Storebrand bank og forsikring">
+                    <button class="fancylab-btn small btn-5b icon-teddy" data-toggle="modal" data-target="#bsDisclaimerModal"><span>til barnet ditt</span></button>
+                </div>
+                <div class="image left"><img src="http://www.storebrand.no/site/stb.nsf/Get/get599cedeff76aa60f6cf369687534b8f8/$FILE/Bil_32.png" alt="Storebrand bank og forsikring">
+                    <button class="fancylab-btn small btn-5b icon-car" data-toggle="modal" data-target="#bsDisclaimerModal"><span>til bilen din</span></button>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4"><div class="well"><h2>Har du det du trenger?</h2>Legg inn litt informasjon om deg selv, og se våre anbefalinger om bank og forsikring for deg. <br> <br>
+                <button class="fancylab-btn btn-4c medium icon-arrow-right" data-toggle="modal" data-target="#bsFormModal">Sjekk selv</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="bsFormModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #404040;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" style="color: #FFFFFF" id="myModalLabel">Om deg selv</h4>
+                </div>
+                <div class="modal-body" style="">
+                    <form class="form-horizontal" role="form">
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="inputLabel3" class="col-md-4 control-label">First name:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="inputLabel3" placeholder="First name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="inputLabel4" class="col-md-4 control-label">Last name:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="inputLabel4" placeholder="Last name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="input5" class="col-md-4 control-label">Telephone:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="input5" placeholder="Telephone number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      <div class="row">
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="input6" class="col-md-4 control-label">City:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="input6" placeholder="City">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="input7" class="col-md-4 control-label">Address:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="input7" placeholder="Address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="input8" class="col-md-4 control-label">Postal Code:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="input8" placeholder="Postal code">
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="row">
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-md-4 control-label">Email:</label>
+                                    <div class="col-md-8">
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-md-4 control-label">Password:</label>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="input9" class="col-md-4 control-label">Twitter:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="input9" placeholder="Twitter">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                <div class="modal-footer" style="padding: 0; margin: 0;">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="fancylab-btn small btn-4c icon-arrow-right">Send inn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="bsInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #404040;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" style="color: #FFFFFF" id="myModalLabel">Disclaimer/Vilkår</h4>
+                </div>
+                <div class="modal-body" style="">
+                    <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
+                </div>
+                <div class="modal-footer" style="padding: 0; margin: 0;">
+                    <p style="margin-right: 5%;"><input type="checkbox" data-dismiss="modal" style="margin-right: 1%;"><label for="terms">Jeg har lest informasjonen og er enig.</label></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="bsDisclaimerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #404040;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" style="color: #FFFFFF" id="myModalLabel">Bootstrap modal</h4>
+                </div>
+                <div class="modal-body" style="">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <figure>
+                                <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/get569a207408b072d757cf9e9e96313e44/$FILE/Privatbilde42-300x170.png" style="height: 250px;">
+                                <figcaption>
+                                    <a href="#">Blogg, Penger og pensjon</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <figure>
+                                        <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png">
+                                        <figcaption>
+                                            <a href="#">Storebrand Eiendom</a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-sm-4">
+                                    <figure>
+                                        <img class="img-responsive" src="https://www.storebrand.no/site/stb.nsf/Get/get0421b111a2aaab47370c9718e1ff6433/$FILE/Privatbilde24-300x170.png">
+                                        <figcaption>
+                                            <a href="#">Om Storebrand</a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-sm-4">
+                                    <figure>
+                                        <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png">
+                                        <figcaption>
+                                            <a href="#">Jobb i Storebrand</a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <figure>
+                                        <img class="img-responsive" src="https://www.storebrand.no/site/stb.nsf/Get/get0421b111a2aaab47370c9718e1ff6433/$FILE/Privatbilde24-300x170.png">
+                                        <figcaption>
+                                            <a href="#">Storebrand Asset Management</a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-sm-4">
+                                    <figure>
+                                        <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/getb75a236b47aa474e4743bccbdab9c594/$FILE/Privatbilde1-300x170.png">
+                                        <figcaption>
+                                            <a href="#">Investor relations</a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-sm-4">
+                                    <figure>
+                                        <img class="img-responsive" src="http://www.storebrand.no/site/stb.nsf/Get/get569a207408b072d757cf9e9e96313e44/$FILE/Privatbilde42-300x170.png">
+                                        <figcaption>
+                                            <a href="#">Sosiale medier</a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="padding: 0; margin: 0">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="fancylab-btn btn-4c small icon-arrow-right">Action</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="morphing">
+    <div class="container">
+        <h2>Morphing modals</h2>
+        <div class="row">
+            <div class="col-md-4 well">
+                <h2>Meld skade</h2>Når uhellet er ute, du har blitt syk eller noen har falt fra, er det viktig å melde skaden så raskt som mulig. Mye kan løses allerede under første samtale.  <br>&nbsp;
+                <div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed">
+                    <button type="button" class="fancylab-btn medium btn-morph icon-arrow-right">Meld skade</button>
+                    <div class="morph-content stbcolor-primary">
+                        <div>
+                            <div class="content-style-text">
+                                <span type="button" class="icon close" style="position: absolute; top: 20px; right: 20px;">&times;</span>
+                                <h2 style="color: #ffffff">Disclaimer/Vilkår</h2>
+                                <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
+                                <p><input id="terms1" type="checkbox"><label for="terms1">Jeg har lest informasjonen og er enig.</label></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="well">
+                <h2>Alt du trenger</h2>
+                <div class="row">
+                    <div class="col-md-2" style="margin-top: 5%;">
+                        <img src="http://www.storebrand.no/site/stb.nsf/Get/getdaa08d2f81160c40a86397e73d5488af/$FILE/Hus_32.png" alt="Storebrand bank og forsikring">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed">
+                            <button type="button" class="fancylab-btn small btn-5b icon-house"><span>til boligen din</span></button>
+                            <div class="morph-content stbcolor-secondary">
+                                <div>
+                                    <div class="content-style-text">
+                                        <span type="button" class="icon close" style="position: absolute; top: 20px; right: 20px;">&times;</span>
+                                        <h2 style="color: #ffffff">Disclaimer/Vilkår</h2>
+                                        <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
+                                        <p><input id="terms2" type="checkbox"><label for="terms2">Jeg har lest informasjonen og er enig.</label></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2" style="margin-top: 5%;">
+                        <img src="http://www.storebrand.no/site/stb.nsf/Get/get8a5e1c02849eddc3dc710312cefece2d/$FILE/Barn_32.png" alt="Storebrand bank og forsikring">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed">
+                            <button type="button" class="fancylab-btn small btn-5b icon-teddy"><span>til boligen din</span></button>
+                            <div class="morph-content stbcolor-secondary">
+                                <div>
+                                    <div class="content-style-text">
+                                        <span type="button" class="icon close" style="position: absolute; top: 20px; right: 20px;">&times;</span>
+                                        <h2 style="color: #ffffff">Disclaimer/Vilkår</h2>
+                                        <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
+                                        <p><input id="terms2" type="checkbox"><label for="terms2">Jeg har lest informasjonen og er enig.</label></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2" style="margin-top: 5%;">
+                        <img src="http://www.storebrand.no/site/stb.nsf/Get/get599cedeff76aa60f6cf369687534b8f8/$FILE/Bil_32.png" alt="Storebrand bank og forsikring">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed">
+                            <button type="button" class="fancylab-btn small btn-5b icon-car"><span>til boligen din</span></button>
+                            <div class="morph-content stbcolor-secondary">
+                                <div>
+                                    <div class="content-style-text">
+                                        <span type="button" class="icon close" style="position: absolute; top: 20px; right: 20px;">&times;</span>
+                                        <h2 style="color: #ffffff">Disclaimer/Vilkår</h2>
+                                        <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
+                                        <p><input id="terms2" type="checkbox"><label for="terms2">Jeg har lest informasjonen og er enig.</label></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4"><div class="well"><h2>Har du det du trenger?</h2>Legg inn litt informasjon om deg selv, og se våre anbefalinger om bank og forsikring for deg. <br> <br>
+                <div class="morph-button morph-button-2 morph-button-overlay morph-button-fixed">
+                    <button type="button" class="fancylab-btn medium btn-morph icon-arrow-right">Sjekk selv</button>
+                    <div class="morph-content" style="left: 690px; top: 390.234375px;">
+                        <div>
+                            <div class="content-style-overlay">
+                                <span type="button" class="icon close morph-close" style="position: absolute; top: 20px; right: 20px;">&times;</span>
+                                <h2>Om deg selv</h2>
+
+                                <form class="form-horizontal" role="form">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="inputLabel3" class="col-md-4 control-label">First name:</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="inputLabel3" placeholder="First name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="inputLabel4" class="col-md-4 control-label">Last name:</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="inputLabel4" placeholder="Last name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="input5" class="col-md-4 control-label">Telephone:</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="input5" placeholder="Telephone number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="input6" class="col-md-4 control-label">City:</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="input6" placeholder="City">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="input7" class="col-md-4 control-label">Address:</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="input7" placeholder="Address">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="input8" class="col-md-4 control-label">Postal Code:</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="input8" placeholder="Postal code">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="inputEmail" class="col-md-4 control-label">Email:</label>
+                                                <div class="col-md-8">
+                                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="inputPassword" class="col-md-4 control-label">Password:</label>
+                                                <div class="col-md-8">
+                                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="input9" class="col-md-4 control-label">Twitter:</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="input9" placeholder="Twitter">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="fancylab-btn medium btn-4a icon-arrow-right">Send inn</button>
+                        </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<!-- Bunnmeny desktop-->
+<div class="stbcolor-primary third navbar-fixed-bottom hidden-xs hidden-sm" style="border-top:solid; border-color:#DA291C;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Om siden og personopplysninger</a></li>
+                    <li><a href="#">In english</a></li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sosiale medier <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Youtube</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Blogg</li>
+                            <li><a href="#">Penger og pensjon</a></li>
+                            <li><a href="#">Storebrand i sosiale medier</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Om Storebrand <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                            <li><a href="#">Fakta om Storebrand</a></li>
+                            <li><a href="#">Investor relations</a></li>
+                            <li><a href="#">Jobb i Storebrand</a></li>
+                            <li><a href="#">Presse</a></li>
+                            <li><a href="#">Barekraft</a></li>
+                            <li><a href="#">Verneombudet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Presse</a></li>
+                    <li><a href="#">Kontakt oss</a></li>
+                    <li><a onclick="$('body,html').animate({scrollTop: 0}, 800);return false;" href="#" class="bigWhite">Til toppen</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Bunnmeny -->
+
+<div class="stbcolor-primary third navbar-fixed-bottom visible-xs visible-sm" style="border-top:solid; border-color:#DA291C;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><b class="glyphicon glyphicon-align-justify"></b></a>
+                        <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                            <li><a href="#">Om siden og personopplysninger</a></li>
+                            <li><a href="#">In english</a></li>
+                            <li><a href="#">Fakta om Storebrand</a></li>
+                            <li><a href="#">Investor relations</a></li>
+                            <li><a href="#">Jobb i Storebrand</a></li>
+                            <li><a href="#">Presse</a></li>
+                            <li><a href="#">Barekraft</a></li>
+                            <li><a href="#">Verneombudet</a></li>
+                            <li>&nbsp;</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/dist/classie.js"></script>
+<script src="js/dist/o2v-lightbox.js"></script>
+</body>
+</html>
