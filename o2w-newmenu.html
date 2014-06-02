@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>Forsikring - storebrand.no</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" scontent="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+    
+    <!--<script src="js/dist/less.js"></script>-->
     <link rel="stylesheet" type="text/css" href="css/stb-main.css">
     <link rel="stylesheet" type="text/css" href="css/stb-nav.css">
     <script type="text/javascript" src="js/dist/jquery.min.js"></script>
@@ -12,6 +14,9 @@
     <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
     <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
     <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+    <script type="text/javascript" src="js/src/the-basics.js"></script>
+    <script type="text/javascript" src="js/src/typeahead.bundle.js"></script>
+    
     <!-- Opplegg for sticky toppmeny -->
     <style>
             /* Bootstrap 3 helpers */
@@ -37,7 +42,38 @@
             color: #fff;
         }
 
-
+        .twitter-typeahead .tt-hint {
+            display: block;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.428571429;
+            border: 1px solid transparent;
+            border-radius:4px;
+        }
+        .twitter-typeahead .hint-small {
+            height: 30px;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 3px;
+            line-height: 1.5;
+        }
+        .twitter-typeahead .hint-large {
+            height: 45px;
+            padding: 10px 16px;
+            font-size: 18px;
+            border-radius: 6px;
+            line-height: 1.33;
+        }
+        .twitter-typeahead {
+            width: 100%;
+       }
+       .tt-dropdown-menu {
+            width: 100%;
+       }
+       .tt-hint {
+            width: 100%;
+       }
     </style>
     <script type="text/javascript">
 
@@ -49,6 +85,8 @@
                 })
             })
         }, 10);
+        
+      
 
         $(document).ready (function (){
             $('#nav').affix({
@@ -56,20 +94,9 @@
                     top: $('header').height()
                 }
             });
-            
-            $('.typeahead').focus(function()
-            		{
-            	      /*to make this flexible, storing the current width in an attribute*/
-            			$(this).parent().attr('data-default', $(this).parent().css('width'));
-            		    $(this).parent().animate({ width: 300 }, 'slow');
-            		}).blur(function()
-            		{
-            		    /* lookup the original width */
-            		    var w = $(this).parent().attr('data-default');
-            		    $(this).parent().animate({ width: w }, 'slow');
-            		});
-           
+              
         });
+
 
         // Hiding/showing menubar depending on last scroll activity
         var lastScrollTop = 0;
@@ -229,19 +256,19 @@
                     <li><a href="#">Forsikring</a></li>
                     <li class="divider"></li>
                     <li><a href="#">Lån og bank</a></li>
-
-
+                    <li style="position:relative">
+                   
                 </ul>
-
-                <form class="navbar-form navbar-right" role="search"  >
-	                <div class="input-group" style="width:200px;">
-		            	<input type="text" class="form-control typeahead" placeholder="husl&aring;n, bilforsikring..." id="query" name="query" value="">
-			            <div class="input-group-btn">
-			            	<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-			            </div>
-			        </div>
-                </form>
-
+                
+                <!-- Flexible search -->
+                <form class="stb-form-inline" role="search" style="margin-top: 8px;">
+                <div id="the-basics" class="navbar-right input-group" style="width:200px;">
+                	<input class="typeahead" type="text" placeholder="States of USA">
+                	 <div class="input-group-btn">
+		            	<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+		            </div>
+		        </div>
+		        </form>
             </div>
         </div>
     </div><!-- /.navbar -->
