@@ -1,0 +1,829 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Forsikring - storebrand.no</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/stb-main.css">
+
+<script type="text/javascript" src="js/dist/jquery.min.js"></script>
+<script type="text/javascript" src="js/dist/moment.min.js"></script>
+<script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/dist/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/dist/bootstrap-datetimepicker.nb.js"></script>
+<script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+<script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+<script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+<script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+<script type="text/javascript" src="js/dist/bootstrapValidator.min.js"></script>
+
+<!-- Opplegg for sticky toppmeny -->
+<style>
+        /* Bootstrap 3 helpers */
+    .navbar-form input, .form-inline input {
+        width:auto;
+    }
+
+    header {
+        height:50px;
+    }
+
+    #nav.affix {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index:999;
+    }
+
+    .stb-form-group.alarm input,
+    .stb-form-group.alarm textarea{
+        background-color: #FFF0F0;
+        border-color: #FFB3B3;
+        color: #000000;
+    }
+
+    .stb-form-group.valid input,
+    .stb-form-group.valid textarea{
+        background-color: #ECF2C2;
+        border-color: #819F2B;
+        color: #000000;
+    }
+
+    .errorMsg{
+        display:none;
+        color:#DA291C;
+    }
+
+    .bv-form .help-block {
+        margin-bottom: 0;
+    }
+    .nav-tabs li.bv-tab-success > a {
+        color: #3c763d;
+    }
+    .nav-tabs li.bv-tab-error > a {
+        color: #a94442;
+    }
+
+        /* Override feedback icon position */
+    form .has-feedback .input-group .form-control-feedback {
+        top: 0px;
+        right: -30px;
+    }
+
+    form .has-feedback.text-area i.glyphicon-remove {
+        top: 15px !important;
+    }
+
+    .input-group.date{
+        width: 20%;
+    }
+
+</style>
+<script type="text/javascript">
+
+function validateEmptyString(objektet){
+
+    var innhold=objektet.val();
+    if(innhold=='' | innhold==null){
+        objektet.parent().removeClass('valid');
+        objektet.parent().addClass('alarm');
+        objektet.prev().show();
+    }
+    else{
+        objektet.parent().removeClass('alarm');
+        objektet.parent().addClass('valid');
+        objektet.prev().hide();
+    }
+}
+
+$(document).ready(function(){
+
+    /* Norwegian initialisation for the jQuery UI date picker plugin. */
+    /* Written by Naimdjon Takhirov (naimdjon@gmail.com). */
+    $.datepicker.regional.no = {
+        closeText: 'Lukk',
+        prevText: '&laquo;',
+        nextText: '&raquo;',
+        currentText: 'I dag',
+        monthNames: ['Januar','Februar','Mars','April','Mai','Juni', 'Juli','August','September','Oktober','November','Desember'],
+        monthNamesShort: ['Jan','Feb','Mar','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Des'],
+        dayNamesShort: ['Søn','Man','Tir','Ons','Tor','Fre','Lør'],
+        dayNames: ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'],
+        dayNamesMin: ['Sø','Ma','Ti','On','To','Fr','Lø'],
+        weekHeader: 'Uke',
+        dateFormat: 'dd.mm.yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional.no);
+
+    $('input[data-widget=stb-datepicker]').datepicker().children().show();
+
+
+    $('.stb-radio.travel').change(function() {
+
+        if($('input:radio[name=travel]:checked').val()=="Leisure"){
+            console.log($('input:radio[name=travel]:checked').val());
+            $('#travelBusinessForm').slideUp();
+            $('#travelLeisureForm').slideDown();
+        }
+        else{
+            console.log($('input:radio[name=travel]:checked').val());
+            $('#travelLeisureForm').slideUp();
+            $('#travelBusinessForm').slideDown();
+        }
+
+        //if($('#leisure:checked').val()=='Yes')
+
+    });
+
+    $('.datePicker').datetimepicker();
+
+
+    var dateValid = {
+        message: 'Verdien er ikke en gyldig dato.',
+        callback: function(value,validator){
+            var m = new moment(value, 'DD.MM.YYYY', true);
+            return m.isValid();
+        }
+    };
+
+    var omTapetFields = { dateWhen: {
+        trigger: 'blur',
+        container: '.info-message',
+        message: 'Du må angi en dato for når skaden inntraff',
+        validators: {
+            callback: dateValid,
+            notEmpty: {
+                message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi en dato for når skaden inntraff'
+            }
+        }
+    },
+
+        itemLost: {
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvorfor du vil utelukke at gjenstanden er mistet!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvorfor du vil utelukke at gjenstanden er mistet!'
+                }
+            }
+        },
+
+        lostWhere:{
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff'
+                }
+            }
+        },
+
+        lostHow:{
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi på hvilken måte tapet kan ha skjedd!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi på hvilken måte tapet kan ha skjedd!'
+                }
+            }
+        },
+
+        lostActivities:{
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi sted når skaden skjedde og aktivitet!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi sted når skaden skjedde og aktivitet!'
+                }
+            }
+        },
+
+        lostEvents:{
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må svare på dette eller legge inn Nei som svar!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må svare på dette eller legge inn Nei som svar!'
+                }
+            }
+        },
+
+        safeKeeping:{
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!'
+                }
+            }
+        },
+        itemSecurity:{
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!'
+                }
+            }
+        },
+        lostTime:{
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi når skaden inntraff!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi når skaden inntraff!'
+                }
+            }
+        },
+        otherInfo:{
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!'
+                }
+            }
+        },
+        policeInfo:{
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!'
+                }
+            }
+        },
+        loss: {
+            threshold: 3,
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi om gjenstanden stjålet, mistet eller skadet!'
+                }
+            }
+        },
+        lossCar: {
+            threshold: 3,
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi om tapet gjelder tyveri fra bilen!'
+                }
+            }
+        },
+        lossWitness: {
+            threshold: 3,
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi om det var utenforstående vitne(r) til hendelsen!'
+                }
+            }
+        }};
+    var omReisenFields = {
+        dateTravelTo: {
+            trigger: 'blur',
+            container: '.info-message',
+            validators: {
+                callback: dateValid,
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi en dato for reise'
+                }
+            }
+
+        },
+
+        dateTravelFrom: {
+            trigger: 'blur',
+            container: '.info-message',
+            validators: {
+                callback: dateValid,
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi en dato for hjemreise'
+                }
+            }
+        },
+
+        destination: {
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!'
+                }
+            }
+        },
+
+        organizator: {
+            trigger: 'blur',
+            container: '.info-message',
+            message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi !',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi reisemål og hotell!'
+                }
+            }
+        },
+        insurance:{
+                threshold: 3,
+                container: '.info-message',
+                validators: {
+                    notEmpty: {
+                        message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har avbestillingsforsikring i et annet selskap!'
+                    }
+                }
+        },
+        creditInsurance:{
+            threshold: 3,
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har betalt reisen med et kort som inkluderer reiseforsikring!'
+                }
+            }
+
+        },
+        damagesLately:{
+            threshold: 3,
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling!'
+                }
+            }
+        }
+    };
+
+    var validationFields = $.extend({}, omTapetFields, omReisenFields);
+
+    $('#skademelding').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        submitHandler: function(validator, form, submitButton) {
+          $('#omTapet').hide();
+          $('#omReisen').show();
+        },
+        fields: validationFields
+    });
+
+    $('.datePicker')
+            .on('dp.change dp.show', function(e) {
+                var name = $(e.target).find('input').attr('name');
+                // Validate the date when user change it
+                $('#skademelding')
+                    // Get the bootstrapValidator instance
+                        .data('bootstrapValidator')
+                    // Mark the field as not validated, so it'll be re-validated when the user change date
+                        .updateStatus(name, 'NOT_VALIDATED', null)
+                    // Validate the field
+                        .validateField(name);
+            });
+});
+
+
+
+/*
+ $(window).resize (function (){
+ console.log($(this).scrollTop())
+
+ });
+ */
+
+setTimeout(function() {
+    $('.row').each(function() {
+        var rowheight = $(this).height();
+        $(this).find('.stb-box').each(function() {
+            $(this).css({"height": rowheight });
+        })
+    })
+}, 10);
+
+$(document).ready (function (){
+    $('#nav').affix({
+        offset: {
+            top: $('header').height()
+        }
+    });
+});
+
+// Hiding/showing menubar depending on last scroll activity
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop & st > 150){
+        //removing .navfixed when user scroll down
+        $('#nav').fadeOut(200);
+    } else {
+        //adding .navfixed when user scroll down
+        $('#nav').fadeIn(200);
+    }
+    lastScrollTop = st;
+});
+
+</script>
+<!-- /Slutt på opplegg for sticky toppmeny -->
+
+</head>
+<body>
+
+
+
+<div id="nav">
+    <div class="navbar navbar-default" role="navigation" style="border-bottom:solid; border-color:#DA291C; background:#E7E7E7">
+        <div class="container">
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="stb-sprite-32 square-list"></span>
+            </a>
+            <div class="navbar-collapse collapse" id="main-navbar">
+                <ul class="nav navbar-nav">
+                    <li><img src="images/logo.storebrand.172x21.png" alt="Logo - Storebrand - Pensjon, enkelt og greit." style="width:150px; margin-top: 15px; margin-right: 10px;"/></li>
+                    <li class="active"><a href="#">Bank</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Fond</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Sparing</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" style="color:red">Forsikring</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tjenester <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Kalkulatorer</a></li>
+                            <li><a href="#">Alle vare tjenester</a></li>
+                            <li><a href="#">Fordel</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Forsikringer</li>
+                            <li><a href="#">Finn ditt behov</a></li>
+                            <li><a href="#">Finn forsikring</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" onclick="$('#sidebar').slideToggle(); return false">Mer</a></li>
+                    <li><a href="#" onclick="$('.stbhead').slideToggle(); return false">Topp</a></li>
+                </ul>
+                <ul class="nav pull-right navbar-nav">
+                    <li>
+                        <form class="navbar-form">
+                            <input type="text" class="form-control" placeholder="S&oslash;k i sidene">
+                            <button type="submit" class="btn btn-default stbcolor-secondary third"><i class="glyphicon glyphicon-search"></i></button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div><!-- /.navbar -->
+</div>
+
+<br><br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Skademelding for reisegods</h1>
+            <ul class="stb-progressrow">
+                <li data-target="#step1" class="one-third stb-progress-item lg dark active">Om tapet/skaden</li>
+                <li data-target="#step2" class="one-third stb-progress-item lg dark  ">Tapt gjenstand</li>
+                <li data-target="#step3" class="one-third stb-progress-item lg dark ">Om reisen</li>
+                <li data-target="#step4" class="one-third stb-progress-item lg dark ">Personopplysninger</li>
+                <li data-target="#step5" class="one-third stb-progress-item lg dark switch-to-grey light ">Oppsummering</li>
+                <li data-target="#step6" class="one-third stb-progress-item lg disabled">Kvittering</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="container stbcolor-secondary sixth">
+
+<form id="skademelding" class="validateForm" role="form">
+
+<div id="omTapet" style="display: none; margin: 50px 0 50px 0;">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2>Om tapet/skaden</h2>
+            <hr>
+            <h3>Hva har skjedd?</h3>
+
+            <p>Er gjenstanden stjålet, mistet eller skadet?</p>
+            <div class="stb-form-group al form-group">
+                <span class="help-block info-message"></span>
+                <input type="radio" name="loss" id="lossYes" value="Yes" class="stb-radio"><label class="stb-custom-input" for="lossYes">Ja</label>
+                <input type="radio" name="loss" id="lossNo" value="No" class="stb-radio" ><label class="stb-custom-input" for="lossNo">Nei</label>
+            </div>
+            <br>
+            <br>
+            <p>Vil du utelukke at gjenstanden er mistet. Hvis ja, hvorfor det?</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="itemLost"></textarea>
+            </div>
+            <br>
+            <br>
+            <p>Når inntraff skaden?</p>
+            <div class="stb-form-group al form-group">
+                <span class="help-block info-message"></span>
+                <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
+                    <input type='text' class="form-control" name="dateWhen"/>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>Hvor inntraff tapet/skaden?</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="lostWhere"></textarea>
+            </div>
+            <br>
+            <br>
+            <p>Gjelder tapet tyveri fra bilen?</p>
+            <div class="stb-form-group al form-group">
+                <span class="help-block info-message"></span>
+                <input type="radio" name="lossCar" id="lossCarYes" value="Yes" class="stb-radio"><label for="lossCarYes" class="stb-custom-input">Ja</label>
+                <input type="radio" name="lossCar" id="lossCarNo" value="No" class="stb-radio" ><label for="lossCarNo" class="stb-custom-input">Nei</label>
+            </div>
+
+
+            <hr>
+
+            <h3>Hvordan skjedde det?</h3>
+            <p>På hvilken måte tror du tapet kan ha skjedd?</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="lostHow"></textarea>
+            </div>
+            <br>
+            <br>
+            <p>Hvor oppholdt du deg da tapet skjedde? Og hvilke aktiviteter ble utført?</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="lostActivities"></textarea>
+            </div>
+            <br>
+            <br>
+            <p>La du merke til en spesiell hendelse som kan ha noe med tapet å gjøre?</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="lostEvents" ></textarea>
+            </div>
+            <br>
+            <br>
+            <p>Var det utenforstående vitne(r) til hendelsen?</p>
+            <div class="stb-form-group al form-group">
+                <span class="help-block info-message"></span>
+                <input type="radio" name="lossWitness" id="lossWitnessYes"  value="Yes" class="stb-radio"><label for="lossWitnessYes"class="stb-custom-input">Ja</label>
+                <input type="radio" name="lossWitness" id="lossWitnessNo" value="No" class="stb-radio" ><label for="lossWitnessNo" class="stb-custom-input">Nei</label>
+            </div>
+
+
+            <hr>
+
+            <h3>Annet?</h3>
+            <p>Hvor lenge var gjenstanden oppbevart?</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="safeKeeping"></textarea>
+            </div>
+            <br>
+            <p>Hvordan sikret/passet du på gjenstanden i denne perioden?</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="itemSecurity"></textarea>
+            </div>
+            <br>
+            <p>Hvor lang tid gikk det før du oppdaget at gjenstanden var borte?</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="lostTime"></textarea>
+            </div>
+            <br>
+            <p>Anbdre opplysninger om skaden?</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="otherInfo"></textarea>
+            </div>
+            <br>
+            <p>Ved hvilken politistasjon er tapet/skaden meldt?</p>
+
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="1" class="form-control" name="policeInfo"></textarea>
+            </div>
+            <br>
+            <p>Bekreftelse fra politiet</p>
+            <p class="petit">Last opp bekreftelsen du fikk fra politiet da du meldte tapet/skaden til politiet</p>
+            <div class="list-group">
+                <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Bekreftelse fra politiet <span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
+            </div>
+            <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
+
+            <br>
+            <hr>
+            <div class="stb-form-group al form-group">
+                <button type="submit" class="stb-btn stb-btn-lg pull-right submitButton">Neste</button>
+                <button class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px;">Avbryt</button>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+<div id="omReisen" style="margin: 50px 0 50px 0;">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2>Om reisen</h2>
+            <hr>
+            <h3>Detaljer om reisen</h3>
+            <div class="stb-form-group">
+                <p>Detaljer om reisen</p>
+                <input type="radio" name="travel" id="travelLeisure" value="Leisure" class="stb-radio travel" checked="checked"><label for="travelLeisure" class="stb-custom-input">Fritidsreise</label>
+                <input type="radio" name="travel" id="travelBusiness" value="Business" class="stb-radio travel"><label for="travelBusiness" class="stb-custom-input">Forretningsreise</label>
+
+            </div>
+            <div id="travelLeisureForm" style="margin-top: 20px;">
+                <p>Utreisedato fra fast bopel?</p>
+                <div class="stb-form-group al form-group">
+                    <span class="help-block info-message"></span>
+                    <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
+                        <input type='text' class="form-control" name="dateTravelTo"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+
+                <p>Hjemreisedato fra fast bopel?</p>
+                <div class="stb-form-group al form-group">
+                    <span class="help-block info-message"></span>
+                    <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
+                        <input type='text' class="form-control" name="dateTravelFrom"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div id="travelBusinessForm" style="display:none;">
+                <div class="well" style="margin-top: 20px;">
+                  <p>Bekreftelse fra arbeidsgiver</p>
+                  <p class="petit">Last opp bekreftelsen fra arbeidsgiver om reisen</p>
+                  <div class="list-group">
+                    <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Bekreftelse fra Storebrand ASA <span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
+                  </div>
+                  <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
+                </div>
+                <p>Utreisedato fra fast bopel?</p>
+                <div class="stb-form-group al form-group">
+                    <span class="help-block info-message"></span>
+                    <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
+                        <input type='text' class="form-control" name="dateTravelTo"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+
+                <p>Hjemreisedato fra fast bopel?</p>
+                <div class="stb-form-group al form-group">
+                    <span class="help-block info-message"></span>
+                    <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
+                        <input type='text' class="form-control" name="dateTravelFrom"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <p>Reisemål og hotell</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="4" class="form-control" name="destination"></textarea>
+            </div>
+
+            <p>Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap</p>
+            <div class="stb-form-group al form-group text-area">
+                <span class="help-block info-message"></span>
+                <textarea cols="40" rows="1" class="form-control" name="organizator"></textarea>
+            </div>
+            <hr>
+            <h3>Forsikring</h3>
+            <p>Har du avbestillingsforsikring i et annet selskap?</p>
+            <div class="stb-form-group al form-group">
+                <span class="help-block info-message"></span>
+                <input type="radio" name="insurance" id="insuranceYes" value="Yes" class="stb-radio"><label for="insuranceYes" class="stb-custom-input">Ja</label>
+                <input type="radio" name="insurance" id="insuranceNo" value="No" class="stb-radio" ><label for="insuranceNo" class="stb-custom-input">Nei</label>
+            </div>
+            <p>Har du betalt reisen med et kort som inkluderer reiseforsikring?</p>
+            <div class="stb-form-group al form-group">
+                <span class="help-block info-message"></span>
+                <input type="radio" name="creditInsurance" id="creditInsuranceYes" value="Yes" class="stb-radio"><label for="creditInsuranceYes" class="stb-custom-input">Ja</label>
+                <input type="radio" name="creditInsurance" id="creditInsuranceNo" value="No" class="stb-radio" ><label for="creditInsuranceNo" class="stb-custom-input">Nei</label>
+            </div>
+            <p>Har du tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling?</p>
+            <div class="stb-form-group al form-group">
+                <span class="help-block info-message"></span>
+                <input type="radio" name="damagesLately" id="damagesLatelyYes" value="Yes" class="stb-radio"><label for="damagesLatelyYes" class="stb-custom-input">Ja</label>
+                <input type="radio" name="damagesLately" id="damagesLatelyNo" value="No" class="stb-radio" ><label for="damagesLatelyNo" class="stb-custom-input">Nei</label>
+            </div>
+            <hr>
+            <div class="stb-form-group al form-group">
+                <button type="submit" class="stb-btn stb-btn-lg pull-right submitButton">Neste</button>
+                <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; background: transparent; color: #000000;">Avbryt</a>
+                <a class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick="$('#omReisen').hide(); $('#omTapet').show();">Tilbake</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>
+</div>
+
+
+
+
+<!-- Bunnmeny desktop-->
+<div class="stbcolor-primary third navbar hidden-xs hidden-sm" style="border-top:solid; border-color:#DA291C;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Om siden og personopplysninger</a></li>
+                    <li><a href="#">In english</a></li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sosiale medier <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Youtube</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Blogg</li>
+                            <li><a href="#">Penger og pensjon</a></li>
+                            <li><a href="#">Storebrand i sosiale medier</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Om Storebrand <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                            <li><a href="#">Fakta om Storebrand</a></li>
+                            <li><a href="#">Investor relations</a></li>
+                            <li><a href="#">Jobb i Storebrand</a></li>
+                            <li><a href="#">Presse</a></li>
+                            <li><a href="#">Barekraft</a></li>
+                            <li><a href="#">Verneombudet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Presse</a></li>
+                    <li><a href="#">Kontakt oss</a></li>
+                    <li><a onclick="$('body,html').animate({scrollTop: 0}, 800);return false;" href="#" class="bigWhite">Til toppen</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Bunnmeny -->
+
+<div class="stbcolor-primary third navbar-fixed-bottom visible-xs visible-sm" style="border-top:solid; border-color:#DA291C;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><b class="glyphicon glyphicon-align-justify"></b></a>
+                        <ul class="dropdown-menu" style="top:auto; bottom:100%;">
+                            <li><a href="#">Om siden og personopplysninger</a></li>
+                            <li><a href="#">In english</a></li>
+                            <li><a href="#">Fakta om Storebrand</a></li>
+                            <li><a href="#">Investor relations</a></li>
+                            <li><a href="#">Jobb i Storebrand</a></li>
+                            <li><a href="#">Presse</a></li>
+                            <li><a href="#">Barekraft</a></li>
+                            <li><a href="#">Verneombudet</a></li>
+                            <li>&nbsp;</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
