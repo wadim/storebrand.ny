@@ -68,16 +68,33 @@
 
         /* Override feedback icon position */
     form .has-feedback .input-group .form-control-feedback {
-        top: 0px;
+        top: 0;
         right: -30px;
     }
 
     form .has-feedback.text-area i.glyphicon-remove {
-        top: 15px !important;
+        top: 20px !important;
+    }
+
+    form .has-feedback.select i.glyphicon-remove{
+        top: 40% !important;
+        left: 32%;
+    }
+    form .has-feedback.select i.glyphicon-ok{
+        left: 32%;
     }
 
     form .has-feedback.checkbox i.glyphicon-ok{
-        top:0;
+        left: 20%;
+        top: 0;
+    }
+
+    form .has-feedback.checkbox i.glyphicon-remove{
+        left: 20%;
+        top: 40%;
+    }
+    .select select{
+        width: 30%;
     }
 
     .input-group.date{
@@ -372,6 +389,14 @@ $(document).ready(function(){
                     message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling!'
                 }
             }
+        },
+        howOld:{
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor gammel gjenstanden er!'
+                }
+            }
         }
     };
 
@@ -410,17 +435,49 @@ $(document).ready(function(){
         $('.stepPanel.active').hide().removeClass('active');
         element.show().addClass('active');
         $('#nextButton').removeClass("disabled");
+        if(element.is('#oppsummering')){
+            populateSummary();
+        }
 
+        if(element.is('#omTapet')){
+            $('#backButton').hide();
+        }else{
+            $('#backButton').show();
+        }
     }
 
     if($('#omTapet').hasClass('active')){
         $('#backButton').hide();
     }
-
-
-
 });
 
+
+function populateSummary(){
+
+    var inputs = $('#skademelding :input');
+
+    inputs.each(function(index){
+        var element = $(this);
+        var selector = '#'+element.attr("name");
+
+        switch(this.nodeName){
+            case "INPUT":
+                if(element.attr('type') == "radio" && element.attr('checked','checked')){
+                    var value = element.attr('checked','checked');
+                }else if(element.attr('type') == "text"){
+                    var value = element.val();
+                }
+            break;
+
+            case "TEXTAREA":
+                var value = element.val();
+            break;
+        }
+        if(selector){
+            $(selector).text(value);
+        }
+    });
+}
 
 
 /*
@@ -540,7 +597,7 @@ $(window).scroll(function(event){
 
 <form id="skademelding" class="validateForm" role="form">
 
-<div id="omTapet" class="stepPanel active" style="margin: 50px 0 50px 0;">
+<div id="omTapet" class="stepPanel active" style=" margin: 50px 0 50px 0;">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2>Om tapet/skaden</h2>
@@ -662,7 +719,7 @@ $(window).scroll(function(event){
         </div>
     </div>
 </div>
-<div id="omReisen" class="stepPanel" style="display: none; margin: 50px 0 50px 0;">
+<div id="omReisen" class="stepPanel" style="display: none;margin: 50px 0 50px 0;">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2>Om reisen</h2>
@@ -752,11 +809,43 @@ $(window).scroll(function(event){
                 <input type="radio" name="damagesLately" id="damagesLatelyYes" value="Yes" class="stb-radio"><label for="damagesLatelyYes" class="stb-custom-input">Ja</label>
                 <input type="radio" name="damagesLately" id="damagesLatelyNo" value="No" class="stb-radio" ><label for="damagesLatelyNo" class="stb-custom-input">Nei</label>
             </div>
-            <hr>
-
+            <p> Hvor gammel er gjenstanden?</p>
+            <div class="stb-form-group al select">
+                <span class="help-block info-message"></span>
+                <select class="form-control" name="howOld">
+                    <option value=""></option>
+                    <option value="1">1 år</option>
+                    <option value="2">2 år</option>
+                    <option value="3">3 år</option>
+                    <option value="4">4 år</option>
+                    <option value="5">5 år</option>
+                    <option value="6">6 år</option>
+                    <option value="7">7 år</option>
+                    <option value="8">8 år</option>
+                    <option value="9">9 år</option>
+                    <option value="10">10 år</option>
+                </select>
+            </div>
         </div>
     </div>
 </div>
+<div id="oppsummering" class="stepPanel" style="display: none; margin: 50px 0 50px 0;">
+    <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Oppsummering</h2>
+        <hr>
+        <h3>Om tapet/skaden</h3>
+        <div id="personOpplysninger">
+          <ul class="list-group">
+             <li class="list-group-item">Er gjenstanden stjålet mistet eller skadet? <span id="itemLost" class="pull-right"></span></li>
+              <li class="list-group-item">Når skjedde tapet/skaden? <span id="dateWhen" class="pull-right"></span></li>
+          </ul>
+        </div>
+
+    </div>
+    </div>
+</div>
+
 <div class="row" style="margin-bottom: 50px;">
     <div class="col-md-10 col-md-offset-1">
     <div class="stb-form-group al" >
