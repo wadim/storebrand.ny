@@ -55,8 +55,10 @@
     }
 
     .bv-form .help-block {
-        margin-bottom: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
     }
+
     .nav-tabs li.bv-tab-success > a {
         color: #3c763d;
     }
@@ -72,6 +74,10 @@
 
     form .has-feedback.text-area i.glyphicon-remove {
         top: 15px !important;
+    }
+
+    form .has-feedback.checkbox i.glyphicon-ok{
+        top:0;
     }
 
     .input-group.date{
@@ -379,8 +385,7 @@ $(document).ready(function(){
             validating: 'glyphicon glyphicon-refresh'
         },
         submitHandler: function(validator, form, submitButton) {
-          $('#omTapet').hide();
-          $('#omReisen').show();
+          setActive($('.stepPanel.active').next('div.stepPanel'));
         },
         fields: validationFields
     });
@@ -396,7 +401,24 @@ $(document).ready(function(){
                         .updateStatus(name, 'NOT_VALIDATED', null)
                     // Validate the field
                         .validateField(name);
-            });
+    });
+    $('#backButton').click(function(){
+        setActive($('.stepPanel.active').prev('div.stepPanel'));
+    })
+
+    function setActive(element){
+        $('.stepPanel.active').hide().removeClass('active');
+        element.show().addClass('active');
+        $('#nextButton').removeClass("disabled");
+
+    }
+
+    if($('#omTapet').hasClass('active')){
+        $('#backButton').hide();
+    }
+
+
+
 });
 
 
@@ -518,7 +540,7 @@ $(window).scroll(function(event){
 
 <form id="skademelding" class="validateForm" role="form">
 
-<div id="omTapet" style="display: none; margin: 50px 0 50px 0;">
+<div id="omTapet" class="stepPanel active" style="margin: 50px 0 50px 0;">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2>Om tapet/skaden</h2>
@@ -526,7 +548,7 @@ $(window).scroll(function(event){
             <h3>Hva har skjedd?</h3>
 
             <p>Er gjenstanden stjålet, mistet eller skadet?</p>
-            <div class="stb-form-group al form-group">
+            <div class="stb-form-group al checkbox">
                 <span class="help-block info-message"></span>
                 <input type="radio" name="loss" id="lossYes" value="Yes" class="stb-radio"><label class="stb-custom-input" for="lossYes">Ja</label>
                 <input type="radio" name="loss" id="lossNo" value="No" class="stb-radio" ><label class="stb-custom-input" for="lossNo">Nei</label>
@@ -534,14 +556,14 @@ $(window).scroll(function(event){
             <br>
             <br>
             <p>Vil du utelukke at gjenstanden er mistet. Hvis ja, hvorfor det?</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="itemLost"></textarea>
             </div>
             <br>
             <br>
             <p>Når inntraff skaden?</p>
-            <div class="stb-form-group al form-group">
+            <div class="stb-form-group al">
                 <span class="help-block info-message"></span>
                 <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
                     <input type='text' class="form-control" name="dateWhen"/>
@@ -551,14 +573,14 @@ $(window).scroll(function(event){
             <br>
             <br>
             <p>Hvor inntraff tapet/skaden?</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="lostWhere"></textarea>
             </div>
             <br>
             <br>
             <p>Gjelder tapet tyveri fra bilen?</p>
-            <div class="stb-form-group al form-group">
+            <div class="stb-form-group al checkbox">
                 <span class="help-block info-message"></span>
                 <input type="radio" name="lossCar" id="lossCarYes" value="Yes" class="stb-radio"><label for="lossCarYes" class="stb-custom-input">Ja</label>
                 <input type="radio" name="lossCar" id="lossCarNo" value="No" class="stb-radio" ><label for="lossCarNo" class="stb-custom-input">Nei</label>
@@ -569,28 +591,28 @@ $(window).scroll(function(event){
 
             <h3>Hvordan skjedde det?</h3>
             <p>På hvilken måte tror du tapet kan ha skjedd?</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="lostHow"></textarea>
             </div>
             <br>
             <br>
             <p>Hvor oppholdt du deg da tapet skjedde? Og hvilke aktiviteter ble utført?</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="lostActivities"></textarea>
             </div>
             <br>
             <br>
             <p>La du merke til en spesiell hendelse som kan ha noe med tapet å gjøre?</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="lostEvents" ></textarea>
             </div>
             <br>
             <br>
             <p>Var det utenforstående vitne(r) til hendelsen?</p>
-            <div class="stb-form-group al form-group">
+            <div class="stb-form-group al checkbox">
                 <span class="help-block info-message"></span>
                 <input type="radio" name="lossWitness" id="lossWitnessYes"  value="Yes" class="stb-radio"><label for="lossWitnessYes"class="stb-custom-input">Ja</label>
                 <input type="radio" name="lossWitness" id="lossWitnessNo" value="No" class="stb-radio" ><label for="lossWitnessNo" class="stb-custom-input">Nei</label>
@@ -601,32 +623,32 @@ $(window).scroll(function(event){
 
             <h3>Annet?</h3>
             <p>Hvor lenge var gjenstanden oppbevart?</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="safeKeeping"></textarea>
             </div>
             <br>
             <p>Hvordan sikret/passet du på gjenstanden i denne perioden?</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="itemSecurity"></textarea>
             </div>
             <br>
             <p>Hvor lang tid gikk det før du oppdaget at gjenstanden var borte?</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="lostTime"></textarea>
             </div>
             <br>
             <p>Anbdre opplysninger om skaden?</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="otherInfo"></textarea>
             </div>
             <br>
             <p>Ved hvilken politistasjon er tapet/skaden meldt?</p>
 
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="1" class="form-control" name="policeInfo"></textarea>
             </div>
@@ -637,19 +659,10 @@ $(window).scroll(function(event){
                 <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Bekreftelse fra politiet <span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
             </div>
             <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
-
-            <br>
-            <hr>
-            <div class="stb-form-group al form-group">
-                <button type="submit" class="stb-btn stb-btn-lg pull-right submitButton">Neste</button>
-                <button class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px;">Avbryt</button>
-            </div>
-            <br>
-            <br>
         </div>
     </div>
 </div>
-<div id="omReisen" style="margin: 50px 0 50px 0;">
+<div id="omReisen" class="stepPanel" style="display: none; margin: 50px 0 50px 0;">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2>Om reisen</h2>
@@ -663,7 +676,7 @@ $(window).scroll(function(event){
             </div>
             <div id="travelLeisureForm" style="margin-top: 20px;">
                 <p>Utreisedato fra fast bopel?</p>
-                <div class="stb-form-group al form-group">
+                <div class="stb-form-group al">
                     <span class="help-block info-message"></span>
                     <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
                         <input type='text' class="form-control" name="dateTravelTo"/>
@@ -672,7 +685,7 @@ $(window).scroll(function(event){
                 </div>
 
                 <p>Hjemreisedato fra fast bopel?</p>
-                <div class="stb-form-group al form-group">
+                <div class="stb-form-group al">
                     <span class="help-block info-message"></span>
                     <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
                         <input type='text' class="form-control" name="dateTravelFrom"/>
@@ -690,7 +703,7 @@ $(window).scroll(function(event){
                   <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
                 </div>
                 <p>Utreisedato fra fast bopel?</p>
-                <div class="stb-form-group al form-group">
+                <div class="stb-form-group al">
                     <span class="help-block info-message"></span>
                     <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
                         <input type='text' class="form-control" name="dateTravelTo"/>
@@ -699,7 +712,7 @@ $(window).scroll(function(event){
                 </div>
 
                 <p>Hjemreisedato fra fast bopel?</p>
-                <div class="stb-form-group al form-group">
+                <div class="stb-form-group al">
                     <span class="help-block info-message"></span>
                     <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
                         <input type='text' class="form-control" name="dateTravelFrom"/>
@@ -709,43 +722,49 @@ $(window).scroll(function(event){
             </div>
 
             <p>Reisemål og hotell</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="4" class="form-control" name="destination"></textarea>
             </div>
 
             <p>Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap</p>
-            <div class="stb-form-group al form-group text-area">
+            <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
                 <textarea cols="40" rows="1" class="form-control" name="organizator"></textarea>
             </div>
             <hr>
             <h3>Forsikring</h3>
             <p>Har du avbestillingsforsikring i et annet selskap?</p>
-            <div class="stb-form-group al form-group">
+            <div class="stb-form-group al checkbox">
                 <span class="help-block info-message"></span>
                 <input type="radio" name="insurance" id="insuranceYes" value="Yes" class="stb-radio"><label for="insuranceYes" class="stb-custom-input">Ja</label>
                 <input type="radio" name="insurance" id="insuranceNo" value="No" class="stb-radio" ><label for="insuranceNo" class="stb-custom-input">Nei</label>
             </div>
             <p>Har du betalt reisen med et kort som inkluderer reiseforsikring?</p>
-            <div class="stb-form-group al form-group">
+            <div class="stb-form-group al checkbox">
                 <span class="help-block info-message"></span>
                 <input type="radio" name="creditInsurance" id="creditInsuranceYes" value="Yes" class="stb-radio"><label for="creditInsuranceYes" class="stb-custom-input">Ja</label>
                 <input type="radio" name="creditInsurance" id="creditInsuranceNo" value="No" class="stb-radio" ><label for="creditInsuranceNo" class="stb-custom-input">Nei</label>
             </div>
             <p>Har du tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling?</p>
-            <div class="stb-form-group al form-group">
+            <div class="stb-form-group al checkbox">
                 <span class="help-block info-message"></span>
                 <input type="radio" name="damagesLately" id="damagesLatelyYes" value="Yes" class="stb-radio"><label for="damagesLatelyYes" class="stb-custom-input">Ja</label>
                 <input type="radio" name="damagesLately" id="damagesLatelyNo" value="No" class="stb-radio" ><label for="damagesLatelyNo" class="stb-custom-input">Nei</label>
             </div>
             <hr>
-            <div class="stb-form-group al form-group">
-                <button type="submit" class="stb-btn stb-btn-lg pull-right submitButton">Neste</button>
-                <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; background: transparent; color: #000000;">Avbryt</a>
-                <a class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick="$('#omReisen').hide(); $('#omTapet').show();">Tilbake</a>
-            </div>
+
         </div>
+    </div>
+</div>
+<div class="row" style="margin-bottom: 50px;">
+    <div class="col-md-10 col-md-offset-1">
+    <div class="stb-form-group al" >
+    <hr>
+    <button id="nextButton" type="submit" class="stb-btn stb-btn-lg pull-right submitButton">Neste</button>
+    <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; background: transparent; color: #000000;">Avbryt</a>
+    <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
+    </div>
     </div>
 </div>
 
