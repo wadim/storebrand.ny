@@ -72,6 +72,15 @@
         right: -30px;
     }
 
+    form .has-feedback.input-group i.glyphicon-remove  {
+        top: 25px !important;
+        right: -30px;
+    }
+    form .has-feedback.input-group i.glyphicon-ok {
+        top: 5px !important;
+        right: -30px;
+    }
+
     form .has-feedback.text-area i.glyphicon-remove {
         top: 20px !important;
     }
@@ -145,13 +154,19 @@ $(document).ready(function(){
     $('input[data-widget=stb-datepicker]').datepicker().children().show();
 
 
-    $('.stb-radio.travel').change(function() {
+    $('.stb-radio').change(function() {
 
         if($('input:radio[name=travel]:checked').val()=="Leisure"){
             $('#travelBusinessForm').slideUp();
         }
         else{
             $('#travelBusinessForm').slideDown();
+        }
+
+        if($('input:radio[name=creditInsurance]:checked').val()=="Yes"){
+            $('#creditInsuranceInfo').slideDown();
+        }else{
+            $('#creditInsuranceInfo').slideUp();
         }
 
         //if($('#leisure:checked').val()=='Yes')
@@ -391,6 +406,46 @@ $(document).ready(function(){
             validators: {
                 notEmpty: {
                     message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor gammel gjenstanden er!'
+                }
+            }
+        },
+        cardOwner:{
+            trigger: 'blur',
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi kortholder!'
+                }
+            }
+        },
+        cardNumber:{
+            trigger: 'blur',
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi kort nummer!'
+                },
+                creditCard: {
+                    message: 'Kortnummeret er ikke gyldig'
+                }
+            }
+        },
+        damageReport:{
+            threshold: 3,
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om skaden er meldt dit!'
+                }
+            }
+        },
+
+        refund:{
+            trigger: 'blur',
+            container: '.info-message',
+            validators: {
+                notEmpty: {
+                    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har motatt erstatning!'
                 }
             }
         }
@@ -728,7 +783,7 @@ $(window).scroll(function(event){
         </div>
     </div>
 </div>
-<div id="omReisen" class="stepPanel" style=" display: none; margin: 50px 0 50px 0;">
+<div id="omReisen" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2>Om reisen</h2>
@@ -792,12 +847,43 @@ $(window).scroll(function(event){
                 <input type="radio" name="creditInsurance" id="creditInsuranceYes" value="Yes" class="stb-radio"><label for="creditInsuranceYes" class="stb-custom-input">Ja</label>
                 <input type="radio" name="creditInsurance" id="creditInsuranceNo" value="No" class="stb-radio" ><label for="creditInsuranceNo" class="stb-custom-input">Nei</label>
             </div>
+
+            <div id="creditInsuranceInfo" class="well" style="display: none;">
+
+                <p>Reisemål og hotell</p>
+                <div class="stb-form-group al input-group">
+                    <span class="help-block info-message"></span>
+                    <input type='text' class="form-control" name="cardOwner" placeholder="Fornavn og etternavn" />
+                </div>
+                <br>
+                <p>Kortnummer</p>
+                <div class="stb-form-group al input-group">
+                    <span class="help-block info-message"></span>
+                    <input type='text' class="form-control" name="cardNumber"/>
+                </div>
+
+                <br>
+                <p>Er skaden meldt dit? </p>
+                <div class="stb-form-group al checkbox">
+                    <span class="help-block info-message"></span>
+                    <input type="radio" name="damageReport" id="damageReportYes" value="Yes" class="stb-radio"><label for="damageReportYes" class="stb-custom-input">Ja</label>
+                    <input type="radio" name="damageReport" id="damageReportNo" value="No" class="stb-radio" ><label for="damageReportNo" class="stb-custom-input">Nei</label>
+                </div>
+                <br>
+                <p>Har du motatt erstatning? Hvor mye?</p>
+                <div class="stb-form-group al text-area">
+                    <span class="help-block info-message"></span>
+                    <textarea cols="40" rows="4" class="form-control" name="refund"></textarea>
+                </div>
+
+            </div>
             <p>Har du tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling?</p>
             <div class="stb-form-group al checkbox">
                 <span class="help-block info-message"></span>
                 <input type="radio" name="damagesLately" id="damagesLatelyYes" value="Yes" class="stb-radio"><label for="damagesLatelyYes" class="stb-custom-input">Ja</label>
                 <input type="radio" name="damagesLately" id="damagesLatelyNo" value="No" class="stb-radio" ><label for="damagesLatelyNo" class="stb-custom-input">Nei</label>
             </div>
+
             <p> Hvor gammel er gjenstanden?</p>
             <div class="stb-form-group al select">
                 <span class="help-block info-message"></span>
@@ -818,7 +904,7 @@ $(window).scroll(function(event){
         </div>
     </div>
 </div>
-<div id="oppsummering" class="stepPanel" style=" display:none; margin: 50px 0 50px 0;">
+<div id="oppsummering" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2>Oppsummering</h2>
