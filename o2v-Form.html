@@ -110,6 +110,40 @@
         width: 20%;
     }
 
+    div.square{
+        position:absolute;
+        width: 80px;
+        height: 80px;
+        background: #808080;
+        transform:rotate(45deg);
+        -ms-transform:rotate(45deg); /* IE 9 */
+        -webkit-transform:rotate(45deg);
+
+    }
+
+    div.square.completed{
+        background: #6C8524;
+    }
+
+    div.square:hover{
+        transform:rotate(90deg);
+        -ms-transform:rotate(90deg); /* IE 9 */
+        -webkit-transform:rotate(90deg);
+    }
+
+    div.square.active{
+        transform:rotate(90deg);
+        -ms-transform:rotate(90deg); /* IE 9 */
+        -webkit-transform:rotate(90deg);
+        background: #6C8524;
+    }
+
+    span.number{
+        position: absolute;
+        font-size: 50px;
+        color: white;
+    }
+
 </style>
 <script type="text/javascript">
 
@@ -461,7 +495,12 @@ $(document).ready(function(){
             validating: 'glyphicon glyphicon-refresh'
         },
         submitHandler: function(validator, form, submitButton) {
-          setActive($('.stepPanel.active').next('div.stepPanel'));
+          var panelSubmitted = $('.stepPanel.active');
+          stepPanel(panelSubmitted).addClass('completed').removeClass('current');
+          var nextPanel = panelSubmitted.next('div.stepPanel');
+          stepPanel(nextPanel).addClass('current');
+
+          setActive(nextPanel);
         },
         fields: validationFields
     });
@@ -511,19 +550,39 @@ function showMore(selector,hideIndex){
     });
 }
 
-function setActive(element){
-    $('.stepPanel.active').hide().removeClass('active');
-    element.show().addClass('active');
-    $('#nextButton').removeClass("disabled");
-    if(element.is('#oppsummering')){
-        populateSummary();
-    }
 
-    if(element.is('#omTapet')){
-        $('#backButton').hide();
-    }else{
-        $('#backButton').show();
+function navigateTo(next){
+    if(stepPanel(next).hasClass('completed')){
+        setActive(next);
+    }else if(stepPanel(next).hasClass('current')){
+        setActive(next);
     }
+}
+
+function stepPanel(element){
+    return $('#step-'+element.attr('id'));
+}
+
+function setActive(nextActive){
+
+        var currentActive = $('.stepPanel.active');
+
+        currentActive.hide().removeClass('active');
+        nextActive.show().addClass('active');
+
+        stepPanel(nextActive).addClass('active');
+        stepPanel(currentActive).removeClass('active');
+
+        $('#nextButton').removeClass("disabled");
+        if(nextActive.is('#oppsummering')){
+            populateSummary();
+        }
+
+        if(nextActive.is('#omTapet')){
+            $('#backButton').hide();
+        }else{
+            $('#backButton').show();
+        }
 }
 
 function populateSummary(){
@@ -639,20 +698,44 @@ $(window).scroll(function(event){
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Skademelding for reisegods</h1>
-            <ul class="stb-progressrow">
-                <li data-target="#step1" class="one-third stb-progress-item lg dark active">Om tapet/skaden</li>
-                <li data-target="#step2" class="one-third stb-progress-item lg dark  ">Tapt gjenstand</li>
-                <li data-target="#step3" class="one-third stb-progress-item lg dark ">Om reisen</li>
-                <li data-target="#step4" class="one-third stb-progress-item lg dark ">Personopplysninger</li>
-                <li data-target="#step5" class="one-third stb-progress-item lg dark switch-to-grey light ">Oppsummering</li>
-                <li data-target="#step6" class="one-third stb-progress-item lg disabled">Kvittering</li>
-            </ul>
+    <div class="row"style="margin-top: 50px">
+        <h1>Skademelding for reisegods</h1>
+    </div>
+    <div class="row"style="margin-top: 50px">
+        <div class="col-md-3 col-md-offset-2">
+            <div id="step-omTapet" class="square active" onclick="navigateTo($('#omTapet'))" style="margin-left: 8%; cursor: pointer;"><img /></div>
+        </div>
+        <div class="col-md-3">
+            <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="cursor: pointer"><img /></div>
+        </div>
+        <div class="col-md-3">
+            <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="margin-left: 5%; cursor: pointer;"><img /></div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 5px">
+        <div class="col-md-3 col-md-offset-2">
+            <span class="number" onclick="navigateTo($('#omTapet'))" style="margin-left: 17%; cursor: pointer">1</span>
+        </div>
+        <div class="col-md-3">
+            <span class="number" onclick="navigateTo($('#omReisen'))" style="margin-left: 9%; cursor: pointer" >2</span>
+        </div>
+        <div class="col-md-3">
+            <span class="number" onclick="navigateTo($('#oppsummering'))" style="margin-left: 14%; cursor: pointer">3</span>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 8%">
+        <div class="col-md-3 col-md-offset-2">
+            <h4>Om Tapet/Skaden</h4>
+        </div>
+        <div class="col-md-3">
+            <h4>Om Reisen</h4>
+        </div>
+        <div class="col-md-3">
+            <h4>Oppsummering</h4>
         </div>
     </div>
 </div>
+
 
 <br>
 <br>
@@ -971,8 +1054,8 @@ $(window).scroll(function(event){
     <div class="stb-form-group al" >
     <hr>
     <button id="nextButton" type="submit" class="stb-btn stb-btn-lg pull-right submitButton">Neste</button>
-    <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; background: transparent; color: #000000;">Avbryt</a>
-    <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
+    <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;">Avbryt</a>
+    <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
     </div>
     </div>
 </div>
