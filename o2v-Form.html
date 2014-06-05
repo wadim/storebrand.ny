@@ -148,13 +148,9 @@ $(document).ready(function(){
     $('.stb-radio.travel').change(function() {
 
         if($('input:radio[name=travel]:checked').val()=="Leisure"){
-            console.log($('input:radio[name=travel]:checked').val());
             $('#travelBusinessForm').slideUp();
-            $('#travelLeisureForm').slideDown();
         }
         else{
-            console.log($('input:radio[name=travel]:checked').val());
-            $('#travelLeisureForm').slideUp();
             $('#travelBusinessForm').slideDown();
         }
 
@@ -431,26 +427,49 @@ $(document).ready(function(){
         setActive($('.stepPanel.active').prev('div.stepPanel'));
     })
 
-    function setActive(element){
-        $('.stepPanel.active').hide().removeClass('active');
-        element.show().addClass('active');
-        $('#nextButton').removeClass("disabled");
-        if(element.is('#oppsummering')){
-            populateSummary();
-        }
 
-        if(element.is('#omTapet')){
-            $('#backButton').hide();
-        }else{
-            $('#backButton').show();
-        }
-    }
 
     if($('#omTapet').hasClass('active')){
         $('#backButton').hide();
     }
+
+    $('#oppsummering ul').each(function(index){
+       $(this).find('li:gt(2)').hide();
+       $(this).find('.showMore').show();
+       showMore(this,2);
+    });
+
 });
 
+function showMore(selector,hideIndex){
+
+    var showMore = $(selector).find('.showMore');
+
+    showMore.click(function() {
+        if(showMore.hasClass('open')){
+            $(selector).find('li:gt('+hideIndex+')').hide();
+            showMore.show();
+        }else{
+            $(selector).find('li:gt('+hideIndex+')').show();
+        }
+        showMore.toggleClass('open');
+    });
+}
+
+function setActive(element){
+    $('.stepPanel.active').hide().removeClass('active');
+    element.show().addClass('active');
+    $('#nextButton').removeClass("disabled");
+    if(element.is('#oppsummering')){
+        populateSummary();
+    }
+
+    if(element.is('#omTapet')){
+        $('#backButton').hide();
+    }else{
+        $('#backButton').show();
+    }
+}
 
 function populateSummary(){
 
@@ -458,24 +477,14 @@ function populateSummary(){
 
     inputs.each(function(index){
         var element = $(this);
-        var selector = '#'+element.attr("name");
 
-        switch(this.nodeName){
-            case "INPUT":
-                if(element.attr('type') == "radio" && element.attr('checked','checked')){
-                    var value = element.attr('checked','checked');
-                }else if(element.attr('type') == "text"){
-                    var value = element.val();
-                }
-            break;
+        if(element.attr('type') == "radio" && !element.is(':checked')){
+            return;
+        }
 
-            case "TEXTAREA":
-                var value = element.val();
-            break;
-        }
-        if(selector){
-            $(selector).text(value);
-        }
+        var value = element.val();
+        $('#'+element.attr("name")).text(value);
+
     });
 }
 
@@ -597,7 +606,7 @@ $(window).scroll(function(event){
 
 <form id="skademelding" class="validateForm" role="form">
 
-<div id="omTapet" class="stepPanel active" style=" margin: 50px 0 50px 0;">
+<div id="omTapet" class="stepPanel active" style="margin: 50px 0 50px 0;">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2>Om tapet/skaden</h2>
@@ -719,7 +728,7 @@ $(window).scroll(function(event){
         </div>
     </div>
 </div>
-<div id="omReisen" class="stepPanel" style="display: none;margin: 50px 0 50px 0;">
+<div id="omReisen" class="stepPanel" style=" display: none; margin: 50px 0 50px 0;">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2>Om reisen</h2>
@@ -731,25 +740,6 @@ $(window).scroll(function(event){
                 <input type="radio" name="travel" id="travelBusiness" value="Business" class="stb-radio travel"><label for="travelBusiness" class="stb-custom-input">Forretningsreise</label>
 
             </div>
-            <div id="travelLeisureForm" style="margin-top: 20px;">
-                <p>Utreisedato fra fast bopel?</p>
-                <div class="stb-form-group al">
-                    <span class="help-block info-message"></span>
-                    <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
-                        <input type='text' class="form-control" name="dateTravelTo"/>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                    </div>
-                </div>
-
-                <p>Hjemreisedato fra fast bopel?</p>
-                <div class="stb-form-group al">
-                    <span class="help-block info-message"></span>
-                    <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
-                        <input type='text' class="form-control" name="dateTravelFrom"/>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                    </div>
-                </div>
-            </div>
             <div id="travelBusinessForm" style="display:none;">
                 <div class="well" style="margin-top: 20px;">
                   <p>Bekreftelse fra arbeidsgiver</p>
@@ -759,25 +749,24 @@ $(window).scroll(function(event){
                   </div>
                   <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
                 </div>
-                <p>Utreisedato fra fast bopel?</p>
-                <div class="stb-form-group al">
-                    <span class="help-block info-message"></span>
-                    <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
-                        <input type='text' class="form-control" name="dateTravelTo"/>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                    </div>
-                </div>
-
-                <p>Hjemreisedato fra fast bopel?</p>
-                <div class="stb-form-group al">
-                    <span class="help-block info-message"></span>
-                    <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
-                        <input type='text' class="form-control" name="dateTravelFrom"/>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                    </div>
+            </div>
+            <p>Utreisedato fra fast bopel?</p>
+            <div class="stb-form-group al">
+                <span class="help-block info-message"></span>
+                <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
+                    <input type='text' class="form-control" name="dateTravelTo"/>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
             </div>
 
+            <p>Hjemreisedato fra fast bopel?</p>
+            <div class="stb-form-group al">
+                <span class="help-block info-message"></span>
+                <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
+                    <input type='text' class="form-control" name="dateTravelFrom"/>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
             <p>Reisemål og hotell</p>
             <div class="stb-form-group al text-area">
                 <span class="help-block info-message"></span>
@@ -829,20 +818,65 @@ $(window).scroll(function(event){
         </div>
     </div>
 </div>
-<div id="oppsummering" class="stepPanel" style="display: none; margin: 50px 0 50px 0;">
+<div id="oppsummering" class="stepPanel" style=" display:none; margin: 50px 0 50px 0;">
     <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-        <h2>Oppsummering</h2>
+        <div class="col-md-10 col-md-offset-1">
+            <h2>Oppsummering</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-md-offset-1">
+            <h3>Om tapet/skaden</h3>
+        </div>
+        <div class="col-md-1" style="margin-top: 20px">
+            <a style="cursor: pointer;" onclick="setActive($('#omTapet')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <ul class="list-group omTapet">
+             <li class="list-group-item">Er gjenstanden stjålet mistet eller skadet? <span id="loss" class="pull-right"></span></li>
+             <li class="list-group-item">Vil du utelukke at gjenstanden er mistet. Hvis ja, hvorfor det? <span id="itemLost" class="pull-right"></span></li>
+             <li class="list-group-item">Når skjedde tapet/skaden? <span id="dateWhen" class="pull-right"></span></li>
+             <li class="list-group-item">Hvor skjedde skaden? <span id="lostWhere" class="pull-right"></span></li>
+             <li class="list-group-item">Gjelder tapet tyveri fra bilen? <span id="lossCar" class="pull-right"></span></li>
+             <li class="list-group-item">På hvilken måte tror du tapet kan ha skjedd? <span id="lostHow" class="pull-right"></span></li>
+             <li class="list-group-item">Hvor oppholdt du deg da tapet skjedde? Og hvilke aktiviteter ble utført? <span id="lostActivities" class="pull-right"></span></li>
+             <li class="list-group-item">La du merke til en spesiell hendelse som kan ha noe med tapet å gjøre? <span id="lostEvents" class="pull-right"></span></li>
+             <li class="list-group-item">Var det utenforstående vitne(r) til hendelsen? <span id="lossWitness" class="pull-right"></span></li>
+             <li class="list-group-item">Hvor lenge var gjenstanden oppbevart?<span id="safeKeeping" class="pull-right"></span></li>
+             <li class="list-group-item">Hvordan sikret/passet du på gjenstanden i denne perioden? <span id="itemSecurity" class="pull-right"></span></li>
+             <li class="list-group-item">Hvor lang tid gikk det før du oppdaget at gjenstanden var borte? <span id="lostTime" class="pull-right"></span></li>
+             <li class="list-group-item">Anbdre opplysninger om skaden?<span id="otherInfo" class="pull-right"></span></li>
+             <li class="list-group-item">Ved hvilken politistasjon er tapet/skaden meldt? <span id="policeInfo" class="pull-right"></span></li>
+             <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
+          </ul>
         <hr>
-        <h3>Om tapet/skaden</h3>
-        <div id="personOpplysninger">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-md-offset-1">
+            <h3>Om reisen</h3>
+        </div>
+        <div class="col-md-1" style="margin-top: 20px">
+            <a style="cursor: pointer;" onclick="setActive($('#omReisen'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
           <ul class="list-group">
-             <li class="list-group-item">Er gjenstanden stjålet mistet eller skadet? <span id="itemLost" class="pull-right"></span></li>
-              <li class="list-group-item">Når skjedde tapet/skaden? <span id="dateWhen" class="pull-right"></span></li>
+              <li class="list-group-item">Utreisedato fra fast bopel? <span id="dateTravelTo" class="pull-right"></span></li>
+              <li class="list-group-item">Hjemreisedato fra fast bopel? <span id="dateTravelFrom" class="pull-right"></span></li>
+              <li class="list-group-item">Reisemål og hotell <span id="destination" class="pull-right"></span></li>
+              <li class="list-group-item">Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap <span id="organizator" class="pull-right"></span></li>
+              <li class="list-group-item">Har du avbestillingsforsikring i et annet selskap? <span id="insurance" class="pull-right"></span></li>
+              <li class="list-group-item">Har du betalt reisen med et kort som inkluderer reiseforsikring?<span id="creditInsurance" class="pull-right"></span></li>
+              <li class="list-group-item">Har du tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling?<span id="damagesLately" class="pull-right"></span></li>
+              <li class="list-group-item">Hvor gammel er gjenstanden?<span id="howOld" class="pull-right"></span></li>
+              <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
           </ul>
         </div>
-
-    </div>
     </div>
 </div>
 
