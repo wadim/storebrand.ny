@@ -558,10 +558,6 @@ $(document).ready(function(){
         },
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en email!'
-        },
-        identical: {
-          field: 'reEmailPerson',
-          message: 'Email feltene er ulike.'
         }
       }
 
@@ -648,10 +644,8 @@ $(document).ready(function(){
         },
         digits:{
           message: 'Personnummeret kan kun bestå av heltall.'
-        },
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en fødselsnummer!'
         }
+
       }
 
     }
@@ -670,7 +664,7 @@ $(document).ready(function(){
     submitHandler: function(validator, form, submitButton) {
       var panelSubmitted = $('.stepPanel.active');
       stepPanel(panelSubmitted).addClass('completed').removeClass('current');
-      var nextPanel = panelSubmitted.next('div.stepPanel');
+      var nextPanel = panelSubmitted.next('section.stepPanel');
       stepPanel(nextPanel).addClass('current');
 
       setActive(nextPanel);
@@ -691,7 +685,7 @@ $(document).ready(function(){
                     .validateField(name);
           });
   $('#backButton').click(function(){
-    setActive($('.stepPanel.active').prev('div.stepPanel'));
+    setActive($('.stepPanel.active').prev('section.stepPanel'));
   })
 
 
@@ -748,7 +742,7 @@ function stepPanel(element){
 }
 
 function setActive(nextActive){
-
+  $("#navigationButtons").show();
   var currentActive = $('.stepPanel.active');
 
   currentActive.hide().removeClass('active');
@@ -758,8 +752,12 @@ function setActive(nextActive){
   stepPanel(currentActive).removeClass('active');
 
   $('#nextButton').removeClass("disabled");
+
   if(nextActive.is('#oppsummering')){
     populateSummary();
+    $("#nextButton").text("Bekreft");
+  }else if(nextActive.is("#kvittering")){
+    $("#navigationButtons").hide();
   }
 
   if(nextActive.is('#omTapet')){
@@ -783,6 +781,10 @@ function populateSummary(){
     var value = element.val();
     $('#'+element.attr("name")).text(value);
 
+    //Set the email on "kvittering" panel
+    if(element.attr('name') == "emailPerson" ){
+      $('#confirmEmail').text(value);
+    }
   });
 }
 
@@ -923,7 +925,7 @@ $(window).scroll(function(event){
       <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="cursor: pointer;"><img /></div>
     </div>
     <div class="col-md-2">
-      <div id="step-kvittering" class="square" onclick="navigateTo($('#kvittering'))" style="cursor: pointer;"><img /></div>
+      <div id="step-kvittering" class="square" style="cursor: pointer;"><img /></div>
     </div>
   </div>
   <div id="stepNumbers" class="row" style="margin-top: 5px; margin-left: 5%">
@@ -943,7 +945,7 @@ $(window).scroll(function(event){
       <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="cursor: pointer">5</span>
     </div>
     <div class="col-md-2">
-      <span class="number" onclick="navigateTo($('#kvittering'))" name="step-kvittering" style="cursor: pointer">6</span>
+      <span class="number" name="step-kvittering" style="cursor: pointer">6</span>
     </div>
   </div>
   <div id="stepLabels" class="row" style="margin-top: 8%; margin-left: 3%;">
@@ -957,13 +959,13 @@ $(window).scroll(function(event){
       <h4 style="margin-left: 11%;">Om Reisen</h4>
     </div>
     <div class="col-md-2">
-      <h4 style="margin-left: -5%;">Personopplysninger</h4>
+      <h4 style="margin-left: -10%;">Personopplysninger</h4>
     </div>
     <div class="col-md-2">
       <h4 style="margin-left: -5%;">Oppsummering</h4>
     </div>
     <div class="col-md-2">
-      <h4 style="margin-left: 10%;">Kvittering</h4>
+      <h4 style="margin-left: 8%;">Kvittering</h4>
     </div>
   </div>
 </div>
@@ -971,7 +973,7 @@ $(window).scroll(function(event){
 <div class="container stbcolor-secondary sixth">
 
 <form id="skademelding" class="validateForm" role="form">
-<div id="omTapet" class="stepPanel active" style=" margin: 50px 0 50px 0;">
+<section id="omTapet" class="stepPanel active" style=" margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -1084,8 +1086,16 @@ $(window).scroll(function(event){
       <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
     </div>
   </div>
-</div>
-<div id="omReisen" class="stepPanel" style="display:none;margin: 50px 0 50px 0;">
+</section>
+<section id="taptGjenstand" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Tapt Gjenstand</h2>
+      <hr>
+    </div>
+  </div>
+</section>
+<section id="omReisen" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om reisen</h2>
@@ -1240,8 +1250,8 @@ $(window).scroll(function(event){
       </div>
     </div>
   </div>
-</div>
-<div id="personOpplysninger" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+</section>
+<section id="personOpplysninger" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Personopplysninger</h2>
@@ -1348,8 +1358,8 @@ $(window).scroll(function(event){
       </div>
     </div>
   </div>
-</div>
-<div id="oppsummering" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+</section>
+<section id="oppsummering" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
@@ -1438,14 +1448,48 @@ $(window).scroll(function(event){
       </ul>
     </div>
   </div>
-</div>
+</section>
+<section id="kvittering" class="stepPanel" style="display:none;  margin: 50px 0 50px 0;">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Kvittering</h2>
+      <hr>
+      <div class="well">
+       <p style="color: #6C8524;font-size: 20px;"><span class="stb-sprite-32 circle-check" style="margin-bottom: -1%;"></span> Skademeldingen er motatt.</p>
+        <h3>Hva skjer videre?</h3>
+        <ul class="stb">
+          <li>En bekreftelse av skademeldingen vil bli sendt til <span id="confirmEmail" style="color: #6C8524;"></span></li>
+          <li>En av våre konsulenter går igjennom skademeldingen. Vi vil kontakte deg hvis det
+              er behov for ytterlige opplysninger. Du vil deretter motta nærmere informasjon i
+              posten.
+          </li>
+          <li>Eventuell erstatning vil bli utbetalt når skaden er ferdig vurdert.</li>
+        </ul>
+        <hr style="margin-bottom: 10px;">
+        <div class="row">
+          <div class="col-md-4" style="font-size: 16px; font-weight: bolder;">
+            Reisegods
+          </div>
+          <div class="col-md-4">
+            Referansenummer - SKA-54321
+          </div>
+          <div class="col-md-4">
+           <a class="pull-right"><span class="glyphicon glyphicon-search"></span> Skriv ut</a>
+          </div>
+        </div>
+        <hr style="margin-top: 10px">
+      </div>
 
-<div class="row" style="margin-bottom: 50px;">
+    </div>
+  </div>
+</section>
+
+<div id="navigationButtons" class="row" style="margin-bottom: 50px;">
   <div class="col-md-10 col-md-offset-1">
     <div class="stb-form-group al" >
       <hr>
-      <button id="nextButton" type="submit" class="stb-btn stb-btn-lg pull-right submitButton">Neste</button>
-      <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;">Avbryt</a>
+      <button id="nextButton" type="submit" class="stb-btn stb-btn-lg pull-right submitButton navButton">Neste</button>
+      <a  class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;">Avbryt</a>
       <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
     </div>
   </div>
