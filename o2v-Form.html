@@ -152,7 +152,7 @@
   }
 
   span.imgSqr{
-    background-image:url('/images/step1.png');
+    background-image:url('/images/stripes.png');
     background-size:80px 60px;
     background-repeat:no-repeat;
   }
@@ -165,6 +165,13 @@
     cursor: pointer;
   }
 
+  .progressBar{
+    background-image:url('images/stripes.png');
+    background-repeat: repeat-x;
+    background-size: 100px;
+    background-position-y: 18px;
+
+  }
 
 </style>
 <script type="text/javascript">
@@ -905,69 +912,71 @@ $(window).scroll(function(event){
 </div>
 
 <div class="container">
-  <div class="row"style="margin-top: 50px;">
-    <h1>Skademelding for reisegods</h1>
-  </div>
-  <div id="stepFigures" class="row"style="margin-top: 50px; margin-left: 5%; ">
-    <div class="col-md-2">
-      <div id="step-omTapet" class="square active" onclick="navigateTo($('#omTapet'))" style="cursor: pointer;"><img /></div>
+    <div class="row"style="margin-top: 50px;">
+      <h1>Skademelding for reisegods</h1>
     </div>
-    <div class="col-md-2">
-      <div id="step-taptGjenstand" class="square" onclick="navigateTo($('#taptGjenstand'))" style="cursor: pointer"><img /></div>
+    <div class="progressBar">
+    <div id="stepFigures" class="row"style="margin-top: 50px; margin-left: 5%;">
+      <div class="col-md-2">
+        <div id="step-omTapet" class="square active" onclick="navigateTo($('#omTapet'))" style="cursor: pointer;"><img /></div>
+      </div>
+      <div class="col-md-2">
+        <div id="step-taptGjenstand" class="square" onclick="navigateTo($('#taptGjenstand'))" style="cursor: pointer"><img /></div>
+      </div>
+      <div class="col-md-2">
+        <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="cursor: pointer"><img /></div>
+      </div>
+      <div class="col-md-2">
+        <div id="step-personOpplysninger" class="square" onclick="navigateTo($('#personOpplysninger'))" style="cursor: pointer;"><img /></div>
+      </div>
+      <div class="col-md-2">
+        <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="cursor: pointer;"><img /></div>
+      </div>
+      <div class="col-md-2">
+        <div id="step-kvittering" class="square" style="cursor: pointer;"><img /></div>
+      </div>
     </div>
-    <div class="col-md-2">
-      <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="cursor: pointer"><img /></div>
+    <div id="stepNumbers" class="row" style="margin-top: 5px; margin-left: 5%">
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;margin-left: 14%;">1</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-tapGjenstand" style="cursor: pointer" >2</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="cursor: pointer" >3</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#personOpplysninger'))" name="step-personOpplysninger" style=" cursor: pointer" >4</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="cursor: pointer">5</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" name="step-kvittering" style="cursor: pointer">6</span>
+      </div>
     </div>
-    <div class="col-md-2">
-      <div id="step-personOpplysninger" class="square" onclick="navigateTo($('#personOpplysninger'))" style="cursor: pointer;"><img /></div>
+    <div id="stepLabels" class="row" style="margin-top: 8%; margin-left: 3%;">
+      <div class="col-md-2">
+        <h4>Om Tapet/Skaden</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: 4%;">Tapt Gjenstand</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: 11%;">Om Reisen</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: -10%;">Personopplysninger</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: -5%;">Oppsummering</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: 8%;">Kvittering</h4>
+      </div>
     </div>
-    <div class="col-md-2">
-      <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="cursor: pointer;"><img /></div>
-    </div>
-    <div class="col-md-2">
-      <div id="step-kvittering" class="square" style="cursor: pointer;"><img /></div>
-    </div>
-  </div>
-  <div id="stepNumbers" class="row" style="margin-top: 5px; margin-left: 5%">
-    <div class="col-md-2">
-      <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;margin-left: 14%;">1</span>
-    </div>
-    <div class="col-md-2">
-      <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-tapGjenstand" style="cursor: pointer" >2</span>
-    </div>
-    <div class="col-md-2">
-      <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="cursor: pointer" >3</span>
-    </div>
-    <div class="col-md-2">
-      <span class="number" onclick="navigateTo($('#personOpplysninger'))" name="step-personOpplysninger" style=" cursor: pointer" >4</span>
-    </div>
-    <div class="col-md-2">
-      <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="cursor: pointer">5</span>
-    </div>
-    <div class="col-md-2">
-      <span class="number" name="step-kvittering" style="cursor: pointer">6</span>
-    </div>
-  </div>
-  <div id="stepLabels" class="row" style="margin-top: 8%; margin-left: 3%;">
-    <div class="col-md-2">
-      <h4>Om Tapet/Skaden</h4>
-    </div>
-    <div class="col-md-2">
-      <h4 style="margin-left: 4%;">Tapt Gjenstand</h4>
-    </div>
-    <div class="col-md-2">
-      <h4 style="margin-left: 11%;">Om Reisen</h4>
-    </div>
-    <div class="col-md-2">
-      <h4 style="margin-left: -10%;">Personopplysninger</h4>
-    </div>
-    <div class="col-md-2">
-      <h4 style="margin-left: -5%;">Oppsummering</h4>
-    </div>
-    <div class="col-md-2">
-      <h4 style="margin-left: 8%;">Kvittering</h4>
-    </div>
-  </div>
+   </div>
 </div>
 
 <div class="container stbcolor-secondary sixth">
