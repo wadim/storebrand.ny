@@ -148,6 +148,7 @@
     position: absolute;
     font-size: 50px;
     color: white;
+    margin-left: 14%;
   }
 
   span.imgSqr{
@@ -235,8 +236,7 @@ $(document).ready(function(){
 
   $('.datePicker').datetimepicker();
 
-
-  var dateValid = {
+  var dateValidator = {
     message: 'Verdien er ikke en gyldig dato.',
     callback: function(value,validator){
       var m = new moment(value, 'DD.MM.YYYY', true);
@@ -249,7 +249,7 @@ $(document).ready(function(){
     container: '.info-message',
     message: 'Du må angi en dato for når skaden inntraff',
     validators: {
-      callback: dateValid,
+      callback: dateValidator,
       notEmpty: {
         message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi en dato for når skaden inntraff'
       }
@@ -393,7 +393,7 @@ $(document).ready(function(){
       trigger: 'blur',
       container: '.info-message',
       validators: {
-        callback: dateValid,
+        callback: dateValidator,
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi en dato for reise'
         }
@@ -405,7 +405,7 @@ $(document).ready(function(){
       trigger: 'blur',
       container: '.info-message',
       validators: {
-        callback: dateValid,
+        callback: dateValidator,
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi en dato for hjemreise'
         }
@@ -510,8 +510,155 @@ $(document).ready(function(){
       }
     }
   };
+  var personOpplysningerFields = {
+    birthNumber: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        stringLength: {
+          min: 11,
+          max: 11,
+          message: 'Personnummeret har feil antall siffer.'
+        },
+        digits:{
+          message: 'Personnummeret kan kun bestå av heltall.'
+        },
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en fødselsnummer!'
+        }
+      }
 
-  var validationFields = $.extend({}, omTapetFields, omReisenFields);
+    },
+    firstNamePerson: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et fornavn!'
+        }
+      }
+
+    },
+    lastNamePerson: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et etternavn!'
+        }
+      }
+
+    },
+    emailPerson: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        emailAddress: {
+          message: 'Dette er ikke en gyldig email adresse'
+        },
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en email!'
+        },
+        identical: {
+          field: 'reEmailPerson',
+          message: 'Email feltene er ulike.'
+        }
+      }
+
+    },
+    reEmailPerson: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        emailAddress: {
+          message: 'Dette er ikke en gyldig email adresse'
+        },
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må gjenta email!'
+        },
+        identical: {
+          field: 'emailPerson',
+          message: 'Email feltene er ulike.'
+        }
+      }
+
+    },
+    telephonePerson: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        stringLength: {
+          min: 8,
+          max: 8,
+          message: 'Telefonnummer må bestå av 8 siffer.'
+        },
+        digits:{
+          message: 'Telefonnummer kan kun bestå av heltall.'
+        },
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et telefonnummer!'
+        }
+      }
+
+    },
+    bankAccount: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        stringLength: {
+          min: 11,
+          max: 11,
+          message: 'Kontonummer må bestå av 11 siffer.'
+        },
+        digits:{
+          message: 'Kontonummer kan kun bestå av heltall.'
+        },
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et kontonummer!'
+        }
+      }
+
+    },
+    poliseNumber: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        stringLength: {
+          min: 7,
+          max: 7,
+          message: 'Polisenummer må bestå av 7 siffer.'
+        },
+        digits:{
+          message: 'Polisenummer kan kun bestå av heltall.'
+        },
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et polisenummer!'
+        }
+      }
+
+    },
+    birthNumberTable: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        stringLength: {
+          min: 11,
+          max: 11,
+          message: 'Personnummeret må bestå av 11 siffer.'
+        },
+        digits:{
+          message: 'Personnummeret kan kun bestå av heltall.'
+        },
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en fødselsnummer!'
+        }
+      }
+
+    }
+
+  };
+
+  var validationFields = $.extend({}, omTapetFields, omReisenFields, personOpplysningerFields);
 
   $('#skademelding').bootstrapValidator({
     message: 'This value is not valid',
@@ -639,16 +786,32 @@ function populateSummary(){
   });
 }
 
-function addTableRow(selector){
-  var damDescr = $('#damageDescription').val();
-  var insComp = $('#insuranceCompany').val();
-  if(damDescr && insComp){
-    var td1 ='<td>'+damDescr+'</td>';
-    var td2 = '<td class="text-right">'+insComp+'</td>';
-    var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-    var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
-  $(selector + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
+function addTableRow(tableId){
+  if(tableId == "familyTable"){
+    var birthNumb = $('#birthNumberTable').val();
+    var firstName = $('#firstNameTable').val();
+    var lastName = $('#lastNameTable').val();
+    var who = $('input[name=stb-a]:checked').next('label').text();
+    if(birthNumb && firstName && lastName && who){
+      var td1 ='<td>'+firstName+' '+lastName+'</td>';
+      var td2 = '<td class="text-right">'+who+'</td>';
+      var td3 = '<td class="text-right">'+birthNumb+'</td>';
+      var td4 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+      var td5 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
+      $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+td5+'</tr>');
+    }
+  }else{
+    var damDescr = $('#damageDescription').val();
+    var insComp = $('#insuranceCompany').val();
+    if(damDescr && insComp){
+      var td1 ='<td>'+damDescr+'</td>';
+      var td2 = '<td class="text-right">'+insComp+'</td>';
+      var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+      var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
+      $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
+    }
   }
+
 }
 
 /*
@@ -740,40 +903,67 @@ $(window).scroll(function(event){
 </div>
 
 <div class="container">
-  <div class="row"style="margin-top: 50px">
+  <div class="row"style="margin-top: 50px;">
     <h1>Skademelding for reisegods</h1>
   </div>
-  <div id="stepFigures" class="row"style="margin-top: 50px">
-    <div class="col-md-3 col-md-offset-2">
-      <div id="step-omTapet" class="square active" onclick="navigateTo($('#omTapet'))" style="margin-left: 8%; cursor: pointer;"><img /></div>
+  <div id="stepFigures" class="row"style="margin-top: 50px; margin-left: 5%; ">
+    <div class="col-md-2">
+      <div id="step-omTapet" class="square active" onclick="navigateTo($('#omTapet'))" style="cursor: pointer;"><img /></div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
+      <div id="step-taptGjenstand" class="square" onclick="navigateTo($('#taptGjenstand'))" style="cursor: pointer"><img /></div>
+    </div>
+    <div class="col-md-2">
       <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="cursor: pointer"><img /></div>
     </div>
-    <div class="col-md-3">
-      <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="margin-left: 5%; cursor: pointer;"><img /></div>
+    <div class="col-md-2">
+      <div id="step-personOpplysninger" class="square" onclick="navigateTo($('#personOpplysninger'))" style="cursor: pointer;"><img /></div>
+    </div>
+    <div class="col-md-2">
+      <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="cursor: pointer;"><img /></div>
+    </div>
+    <div class="col-md-2">
+      <div id="step-kvittering" class="square" onclick="navigateTo($('#kvittering'))" style="cursor: pointer;"><img /></div>
     </div>
   </div>
-  <div id="stepNumbers" class="row" style="margin-top: 5px">
-    <div class="col-md-3 col-md-offset-2">
-      <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="margin-left: 17%; cursor: pointer">1</span>
+  <div id="stepNumbers" class="row" style="margin-top: 5px; margin-left: 5%">
+    <div class="col-md-2">
+      <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;margin-left: 14%;">1</span>
     </div>
-    <div class="col-md-3">
-      <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="margin-left: 9%; cursor: pointer" >2</span>
+    <div class="col-md-2">
+      <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-tapGjenstand" style="cursor: pointer" >2</span>
     </div>
-    <div class="col-md-3">
-      <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="margin-left: 14%; cursor: pointer">3</span>
+    <div class="col-md-2">
+      <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="cursor: pointer" >3</span>
+    </div>
+    <div class="col-md-2">
+      <span class="number" onclick="navigateTo($('#personOpplysninger'))" name="step-personOpplysninger" style=" cursor: pointer" >4</span>
+    </div>
+    <div class="col-md-2">
+      <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="cursor: pointer">5</span>
+    </div>
+    <div class="col-md-2">
+      <span class="number" onclick="navigateTo($('#kvittering'))" name="step-kvittering" style="cursor: pointer">6</span>
     </div>
   </div>
-  <div id="stepLabels" class="row" style="margin-top: 8%">
-    <div class="col-md-3 col-md-offset-2">
+  <div id="stepLabels" class="row" style="margin-top: 8%; margin-left: 3%;">
+    <div class="col-md-2">
       <h4>Om Tapet/Skaden</h4>
     </div>
-    <div class="col-md-3">
-      <h4>Om Reisen</h4>
+    <div class="col-md-2">
+      <h4 style="margin-left: 4%;">Tapt Gjenstand</h4>
     </div>
-    <div class="col-md-3">
-      <h4>Oppsummering</h4>
+    <div class="col-md-2">
+      <h4 style="margin-left: 11%;">Om Reisen</h4>
+    </div>
+    <div class="col-md-2">
+      <h4 style="margin-left: -5%;">Personopplysninger</h4>
+    </div>
+    <div class="col-md-2">
+      <h4 style="margin-left: -5%;">Oppsummering</h4>
+    </div>
+    <div class="col-md-2">
+      <h4 style="margin-left: 10%;">Kvittering</h4>
     </div>
   </div>
 </div>
@@ -781,7 +971,7 @@ $(window).scroll(function(event){
 <div class="container stbcolor-secondary sixth">
 
 <form id="skademelding" class="validateForm" role="form">
-<div id="omTapet" class="stepPanel active" style="display:none; margin: 50px 0 50px 0;">
+<div id="omTapet" class="stepPanel active" style=" margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -895,7 +1085,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </div>
-<div id="omReisen" class="stepPanel" style="margin: 50px 0 50px 0;">
+<div id="omReisen" class="stepPanel" style="display:none;margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om reisen</h2>
@@ -1015,7 +1205,7 @@ $(window).scroll(function(event){
           <textarea id="insuranceCompany"  cols="40" rows="1" class="form-control" name="insuranceCompany"></textarea>
         </div>
 
-        <a id="addButton" class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#insuranceTable')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+        <a id="addButton" class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('insuranceTable')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
 
         <table id="insuranceTable" class="stb-table [hoverable]" style="margin-top: 10px;">
           <thead>
@@ -1047,6 +1237,114 @@ $(window).scroll(function(event){
           <option value="9">9 år</option>
           <option value="10">10 år</option>
         </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="personOpplysninger" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Personopplysninger</h2>
+      <hr>
+      <h3>Hvem står forikringen på?</h3>
+
+      <p>Fødselsnummer</p>
+      <div class="stb-form-group al input-group">
+        <span class="help-block info-message"></span>
+        <input type='text' class="form-control" name="birthNumber" placeholder="11 siffer" />
+      </div>
+
+      <p>Fornavn</p>
+      <div class="stb-form-group al input-group" style="width: 50%;">
+        <span class="help-block info-message"></span>
+        <input type='text' class="form-control" name="firstNamePerson"/>
+      </div>
+
+      <p>Etternavn</p>
+      <div class="stb-form-group al input-group" style="width: 50%;">
+        <span class="help-block info-message"></span>
+        <input type='text' class="form-control" name="lastNamePerson"/>
+      </div>
+
+      <p>E-post</p>
+      <div class="stb-form-group al input-group" style="width: 50%;">
+        <span class="help-block info-message"></span>
+        <input type='email' class="form-control" name="emailPerson"/>
+      </div>
+
+      <p>Gjenta e-post</p>
+      <div class="stb-form-group al input-group" style="width: 50%;">
+        <span class="help-block info-message"></span>
+        <input type='email' class="form-control" name="reEmailPerson" />
+      </div>
+
+      <p>Telefon</p>
+      <div class="stb-form-group al input-group">
+        <span class="help-block info-message"></span>
+        <input type='text' class="form-control" name="telephonePerson" />
+      </div>
+
+      <p>Kontonummer</p>
+      <div class="stb-form-group al input-group">
+        <span class="help-block info-message"></span>
+        <input type='text' class="form-control" name="bankAccount" placeholder="11 siffer" />
+      </div>
+
+      <p>Polisenummer</p>
+      <div class="stb-form-group al input-group">
+        <span class="help-block info-message"></span>
+        <input type='text' class="form-control" name="poliseNumber" placeholder="7 siffer" />
+      </div>
+
+      <hr>
+      <h3>Hvem var utstatt for hendelsen?</h3>
+
+      <p>Legg til de personene som tapte eller fikk skaden en gjenstand</p>
+
+      <div class="well">
+
+        <div class="stb-form-group al checkbox">
+          <span class="help-block info-message"></span>
+          <input type="radio" id="yourself" value="Yourself" name="stb-a"  class="stb-radio"><label for="yourself" class="stb-custom-input">Du som melder tapet/skaden</label>
+          <input type="radio" id="partner" value="Partner" name="stb-a" class="stb-radio"><label for="partner" class="stb-custom-input">Ektefeller/samboer/partner</label>
+          <input type="radio" id="barn" value="Barn" name="stb-a" class="stb-radio"><label for="barn" class="stb-custom-input">Barn</label>
+          <input type="radio" id="andre" value="Andre" name="stb-a" class="stb-radio" ><label for="andre" class="stb-custom-input">Andre</label>
+        </div>
+
+        <p>Fødselsnummer</p>
+        <div class="stb-form-group al input-group">
+          <span class="help-block info-message"></span>
+          <input id="birthNumberTable" type='text' class="form-control" name="birthNumberTable" placeholder="11 siffer" />
+        </div>
+
+        <p>Fornavn</p>
+        <div class="stb-form-group al input-group" style="width: 50%;">
+          <span class="help-block info-message"></span>
+          <input id="firstNameTable" type='text' class="form-control" name="firstNameTable"/>
+        </div>
+
+        <p>Etternavn</p>
+        <div class="stb-form-group al input-group" style="width: 50%;">
+          <span class="help-block info-message"></span>
+          <input id="lastNameTable" type='text' class="form-control" name="lastNameTable"/>
+        </div>
+
+
+        <a class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('familyTable')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+
+        <table id="familyTable" class="stb-table [hoverable]" style="margin-top: 10px;">
+          <thead>
+          <tr>
+            <th>Navn</th>
+            <th class="text-right">Hvem?</th>
+            <th class="text-right">Personnummer</th>
+            <th class="text-right"></th>
+            <th class="text-right"></th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -1112,6 +1410,30 @@ $(window).scroll(function(event){
         <li class="list-group-item">Har du betalt reisen med et kort som inkluderer reiseforsikring?<span id="creditInsurance" class="pull-right"></span></li>
         <li class="list-group-item">Har du tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling?<span id="damagesLately" class="pull-right"></span></li>
         <li class="list-group-item">Hvor gammel er gjenstanden?<span id="howOld" class="pull-right"></span></li>
+        <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
+      <h3>Personopplysninger</h3>
+    </div>
+    <div class="col-md-1" style="margin-top: 20px">
+      <a style="cursor: pointer;" onclick="setActive($('#personOpplysninger'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <ul class="list-group">
+        <li class="list-group-item">Fødselsnummer <span id="birthNumber" class="pull-right"></span></li>
+        <li class="list-group-item">Fornavn <span id="firstNamePerson" class="pull-right"></span></li>
+        <li class="list-group-item">Etternavn <span id="lastNamePerson" class="pull-right"></span></li>
+        <li class="list-group-item">Email <span id="emailPerson" class="pull-right"></span></li>
+        <li class="list-group-item">Telefon <span id="telephonePerson" class="pull-right"></span></li>
+        <li class="list-group-item">Kontonummer<span id="bankAccount" class="pull-right"></span></li>
+        <li class="list-group-item">Polisenummer<span id="poliseNumber" class="pull-right"></span></li>
         <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
       </ul>
     </div>
