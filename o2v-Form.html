@@ -251,58 +251,71 @@ $(document).ready(function(){
     }
   };
 
-  var omTapetFields = { dateWhen: {
-    trigger: 'blur',
-    container: '.info-message',
-    message: 'Du må angi en dato for når skaden inntraff',
-    validators: {
-      callback: dateValidator,
-      notEmpty: {
-        message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi en dato for når skaden inntraff'
+  var omTapetFields = {
+    loss: {
+      threshold: 3,
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om gjenstanden stjålet, mistet eller skadet!'
+        }
       }
-    }
-  },
-
+    },
     itemLost: {
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvorfor du vil utelukke at gjenstanden er mistet!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvorfor du vil utelukke at gjenstanden er mistet!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvorfor du vil utelukke at gjenstanden er mistet!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvorfor du vil utelukke at gjenstanden er mistet!'
         }
       }
     },
+    dateWhen: {
+      trigger: 'blur',
+      container: '.info-message',
+      message: 'Du må oppgi en dato for når skaden inntraff',
+      validators: {
+        callback: dateValidator
 
+      }
+    },
     lostWhere:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Du må oppgi hvor skaden inntraff!'
         }
       }
     },
-
+    lossCar: {
+      threshold: 3,
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om tapet gjelder tyveri fra bilen!'
+        }
+      }
+    },
     lostHow:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi på hvilken måte tapet kan ha skjedd!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi på hvilken måte tapet kan ha skjedd!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi på hvilken måte tapet kan ha skjedd!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi på hvilken måte tapet kan ha skjedd!'
         }
       }
     },
-
     lostActivities:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi sted når skaden skjedde og aktivitet!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi sted når skaden skjedde og aktivitet!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi sted når skaden skjedde og aktivitet!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi sted når skaden skjedde og aktivitet!'
         }
       }
     },
@@ -317,84 +330,66 @@ $(document).ready(function(){
         }
       }
     },
-
+    lossWitness: {
+      threshold: 3,
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om det var utenforstående vitne(r) til hendelsen!'
+        }
+      }
+    },
     safeKeeping:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor lenge gjenstanden var oppbevart!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor lenge gjenstanden var oppbevart!'
         }
       }
     },
     itemSecurity:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvordan du sikret passet!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvordan du sikret passet!'
         }
       }
     },
     lostTime:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi når skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi når skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi når skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi når skaden inntraff!'
         }
       }
     },
     otherInfo:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!'
         }
       }
     },
     policeInfo:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi hvor skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!'
         }
       }
     },
-    loss: {
-      threshold: 3,
-      container: '.info-message',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi om gjenstanden stjålet, mistet eller skadet!'
-        }
-      }
-    },
-    lossCar: {
-      threshold: 3,
-      container: '.info-message',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi om tapet gjelder tyveri fra bilen!'
-        }
-      }
-    },
-    lossWitness: {
-      threshold: 3,
-      container: '.info-message',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi om det var utenforstående vitne(r) til hendelsen!'
-        }
-      }
-    }};
+   };
   var taptGjenstandFields = {
     lostItemType: {
       trigger: 'blur',
@@ -459,41 +454,38 @@ $(document).ready(function(){
       validators: {
         callback: dateValidator,
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi en dato for reise'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en dato for reise'
         }
       }
 
     },
-
     dateTravelFrom: {
       trigger: 'blur',
       container: '.info-message',
       validators: {
         callback: dateValidator,
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi en dato for hjemreise'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en dato for hjemreise'
         }
       }
     },
-
     destination: {
+      trigger: 'blur',
+      container: '.info-message',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi reisemål og hotell!!',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi reisemål og hotell!'
+        }
+      }
+    },
+    organizator: {
       trigger: 'blur',
       container: '.info-message',
       message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!'
-        }
-      }
-    },
-
-    organizator: {
-      trigger: 'blur',
-      container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi reisemål og hotell!!',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi reisemål og hotell!'
         }
       }
     },
@@ -701,11 +693,8 @@ $(document).ready(function(){
         digits:{
           message: 'Personnummeret kan kun bestå av heltall.'
         }
-
       }
-
     }
-
   };
 
   var validationFields = $.extend({}, omTapetFields, taptGjenstandFields, omReisenFields, personOpplysningerFields);
@@ -719,20 +708,13 @@ $(document).ready(function(){
     },
     submitHandler: function(validator, form, submitButton) {
       if($("#nextButton").hasClass("leggTil")){
-        $('#leggTilGjenstand').hide();
-
+        showItemOverview()
         addTableRow('lostItemTable');
-
-        $("#nextButton").text('Neste').removeClass("leggTil disabled");
-        $("#gjenstandOversikt").show();
-
-
       }else{
         var panelSubmitted = $('.stepPanel.active');
         stepPanel(panelSubmitted).addClass('completed').removeClass('current');
         var nextPanel = panelSubmitted.next('section.stepPanel');
         stepPanel(nextPanel).addClass('current');
-
         setActive(nextPanel);
       }
 
@@ -781,11 +763,23 @@ $(document).ready(function(){
 
 });
 
+function cancelSubmitForm(){
+  if($('.stepPanel.active').is("#taptGjenstand")){
+    showItemOverview();
+  }
+}
+
+
+function showItemOverview(){
+  $("#leggTilGjenstand").hide();
+  $("#nextButton").text('Neste').removeClass("leggTil disabled");
+  $("#gjenstandOversikt").show();
+}
 
 function showAddItemLost(){
   $("#gjenstandOversikt").hide();
-  $('#leggTilGjenstand').show();
-  $("#nextButton").text('Legg til').removeClass("disabled").addClass("leggTil");
+  $("#leggTilGjenstand").show();
+  $("#nextButton").text("Legg til").removeClass("disabled").addClass("leggTil");
 }
 
 function showMore(selector,hideIndex){
@@ -836,9 +830,7 @@ function setActive(nextActive){
     }else if(nextActive.is("#kvittering")){
       $("#navigationButtons").hide();
     }else if(nextActive.is("#taptGjenstand")){
-      if($('#lostItemTable > tbody > tr').length){
-
-      }else{
+      if(!$('#lostItemTable > tbody > tr').length){
         showAddItemLost();
       }
     }
@@ -873,8 +865,24 @@ function populateSummary(){
       $('#confirmEmail').text(value);
     }
   });
+
+  var lostItemListMarkup = "";
+  $("#lostItemTable tbody tr").each(function(){
+      var items = $(this).find('td');
+        lostItemListMarkup += '<li class="list-group-item">Type Gjenstand <span class="pull-right">'+$(items[0]).text()+'</span></li>';
+        lostItemListMarkup += '<li class="list-group-item"><ul><li class="list-group-item">'+$(items[1]).text()+'</li></ul></li>';
+  });
+  lostItemListMarkup += '<li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>';
+
+  var lostItemNode =  $('#summaryTaptGjenstand');
+  lostItemNode.append(lostItemListMarkup);
+  lostItemNode.find('li:gt(2)').hide();
+  lostItemNode.find('.showMore').show();
+  showMore(lostItemNode,2);
+
 }
 
+//Function for adding row to table
 function addTableRow(tableId){
   if(tableId == "familyTable"){
     var birthNumb = $('#birthNumberTable').val();
@@ -890,9 +898,8 @@ function addTableRow(tableId){
       $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+td5+'</tr>');
     }
   }else if(tableId == "lostItemTable"){
-    var item = $('#lostItemType').val();
-    var td1 = '<td>'+item+'</td>';
-    var td2 = '<td>Kvittering på gjenstand.pdf</td>';
+    var td1 = '<td>'+ $('#lostItemType').val();+'</td>';
+    var td2 = '<td class="text-right">Kvittering på gjenstand.pdf</td>';
     var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
     var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
 
@@ -948,6 +955,35 @@ $(window).scroll(function(event){
   }
   lastScrollTop = st;
 });
+
+(function($) {
+  $.fn.bootstrapValidator.validators.emptyScrollValidator = {
+    /**
+     * @param {BootstrapValidator} validator The validator plugin instance
+     * @param {jQuery} $field The jQuery object represents the field element
+     * @param {Object} options The validator options
+     * @returns {boolean}
+     */
+    validate: function(validator, $field, options) {
+      // You can get the field value
+      // var value = $field.val();
+      //
+      // Perform validating
+      // ...
+      //
+      // return true if the field value is valid
+      // otherwise return false
+      if($field.val() == "" ){
+        $('html, body').animate({
+          scrollTop: $field.offset().top-100
+        }, 1000);
+        return false;
+      }
+
+      return true
+    }
+  };
+}(window.jQuery));
 
 </script>
 <!-- /Slutt på opplegg for sticky toppmeny -->
@@ -1070,7 +1106,7 @@ $(window).scroll(function(event){
 <div class="container stbcolor-secondary sixth">
 
 <form id="skademelding" class="validateForm" role="form">
-<section id="omTapet" class="stepPanel active" style="margin: 50px 0 50px 0;">
+<section id="omTapet" class="stepPanel active" style=" margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -1185,7 +1221,7 @@ $(window).scroll(function(event){
   </div>
 </section>
 <section id="taptGjenstand" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
-  <section id="leggTilGjenstand">
+  <section id="leggTilGjenstand"  >
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Legg til tapte og skadede gjenstander</h2>
@@ -1259,7 +1295,7 @@ $(window).scroll(function(event){
     </div>
   </div>
   </section>
-  <section id="gjenstandOversikt" style="display: none;">
+  <section id="gjenstandOversikt" style="display:none;">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <h2>Tapte og skadede gjenstander</h2>
@@ -1421,7 +1457,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="personOpplysninger" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+<section id="personOpplysninger" class="stepPanel" style="display:none;  margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Personopplysninger</h2>
@@ -1540,6 +1576,30 @@ $(window).scroll(function(event){
 
   <div class="row">
     <div class="col-md-9 col-md-offset-1">
+      <h3>Personopplysninger</h3>
+    </div>
+    <div class="col-md-1" style="margin-top: 20px">
+      <a style="cursor: pointer;" onclick="setActive($('#personOpplysninger'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <ul class="list-group">
+        <li class="list-group-item">Fødselsnummer <span id="birthNumber" class="pull-right"></span></li>
+        <li class="list-group-item">Fornavn <span id="firstNamePerson" class="pull-right"></span></li>
+        <li class="list-group-item">Etternavn <span id="lastNamePerson" class="pull-right"></span></li>
+        <li class="list-group-item">Email <span id="emailPerson" class="pull-right"></span></li>
+        <li class="list-group-item">Telefon <span id="telephonePerson" class="pull-right"></span></li>
+        <li class="list-group-item">Kontonummer<span id="bankAccount" class="pull-right"></span></li>
+        <li class="list-group-item">Polisenummer<span id="poliseNumber" class="pull-right"></span></li>
+        <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
       <h3>Om tapet/skaden</h3>
     </div>
     <div class="col-md-1" style="margin-top: 20px">
@@ -1572,6 +1632,24 @@ $(window).scroll(function(event){
 
   <div class="row">
     <div class="col-md-9 col-md-offset-1">
+      <h3>Tapt gjenstand</h3>
+    </div>
+    <div class="col-md-1" style="margin-top: 20px">
+      <a style="cursor: pointer;" onclick="setActive($('#taptGjenstand')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <ul id="summaryTaptGjenstand" class="list-group">
+
+      </ul>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
       <h3>Om reisen</h3>
     </div>
     <div class="col-md-1" style="margin-top: 20px">
@@ -1595,29 +1673,6 @@ $(window).scroll(function(event){
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-9 col-md-offset-1">
-      <h3>Personopplysninger</h3>
-    </div>
-    <div class="col-md-1" style="margin-top: 20px">
-      <a style="cursor: pointer;" onclick="setActive($('#personOpplysninger'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <ul class="list-group">
-        <li class="list-group-item">Fødselsnummer <span id="birthNumber" class="pull-right"></span></li>
-        <li class="list-group-item">Fornavn <span id="firstNamePerson" class="pull-right"></span></li>
-        <li class="list-group-item">Etternavn <span id="lastNamePerson" class="pull-right"></span></li>
-        <li class="list-group-item">Email <span id="emailPerson" class="pull-right"></span></li>
-        <li class="list-group-item">Telefon <span id="telephonePerson" class="pull-right"></span></li>
-        <li class="list-group-item">Kontonummer<span id="bankAccount" class="pull-right"></span></li>
-        <li class="list-group-item">Polisenummer<span id="poliseNumber" class="pull-right"></span></li>
-        <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
-      </ul>
-    </div>
-  </div>
 </section>
 <section id="kvittering" class="stepPanel" style="display:none;  margin: 50px 0 50px 0;">
   <div class="row">
@@ -1659,7 +1714,7 @@ $(window).scroll(function(event){
     <div class="stb-form-group al" >
       <hr>
       <button id="nextButton" type="submit" class="stb-btn stb-btn-lg pull-right submitButton navButton">Neste</button>
-      <a  class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;">Avbryt</a>
+      <a class="stb-btn stb-btn-lg secondary pull-right" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;">Avbryt</a>
       <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
     </div>
   </div>
