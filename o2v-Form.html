@@ -395,7 +395,64 @@ $(document).ready(function(){
         }
       }
     }};
+  var taptGjenstandFields = {
+    lostItemType: {
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi merke og modell!'
+        }
+      }
+
+    },
+    howOld:{
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor gammel gjenstanden er!'
+        }
+      }
+    },
+    purchasedWhere: {
+      trigger: 'blur',
+        container: '.info-message',
+        validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor gjenstanden ble kjøpt!'
+        }
+      }
+    },
+    itemNew:{
+      threshold: 3,
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om gjenstanden var ny ved anskaffelse'
+        }
+      }
+    },
+    itemRepairable:{
+      threshold: 3,
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om gjenstanden kan repareres'
+        }
+      }
+    },
+    itemExpences:{
+      trigger: 'blur',
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hva det vil koste å kjøpe ny / reparere gjenstanden'
+        }
+      }
+    }
+  }
   var omReisenFields = {
+
     dateTravelTo: {
       trigger: 'blur',
       container: '.info-message',
@@ -433,7 +490,7 @@ $(document).ready(function(){
     organizator: {
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi !',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi reisemål og hotell!!',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må angi reisemål og hotell!'
@@ -465,14 +522,6 @@ $(document).ready(function(){
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling!'
-        }
-      }
-    },
-    howOld:{
-      container: '.info-message',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor gammel gjenstanden er!'
         }
       }
     },
@@ -659,7 +708,7 @@ $(document).ready(function(){
 
   };
 
-  var validationFields = $.extend({}, omTapetFields, omReisenFields, personOpplysningerFields);
+  var validationFields = $.extend({}, omTapetFields, taptGjenstandFields, omReisenFields, personOpplysningerFields);
 
   $('#skademelding').bootstrapValidator({
     message: 'This value is not valid',
@@ -669,12 +718,24 @@ $(document).ready(function(){
       validating: 'glyphicon glyphicon-refresh'
     },
     submitHandler: function(validator, form, submitButton) {
-      var panelSubmitted = $('.stepPanel.active');
-      stepPanel(panelSubmitted).addClass('completed').removeClass('current');
-      var nextPanel = panelSubmitted.next('section.stepPanel');
-      stepPanel(nextPanel).addClass('current');
+      if($("#nextButton").hasClass("leggTil")){
+        $('#leggTilGjenstand').hide();
 
-      setActive(nextPanel);
+        addTableRow('lostItemTable');
+
+        $("#nextButton").text('Neste').removeClass("leggTil disabled");
+        $("#gjenstandOversikt").show();
+
+
+      }else{
+        var panelSubmitted = $('.stepPanel.active');
+        stepPanel(panelSubmitted).addClass('completed').removeClass('current');
+        var nextPanel = panelSubmitted.next('section.stepPanel');
+        stepPanel(nextPanel).addClass('current');
+
+        setActive(nextPanel);
+      }
+
     },
     fields: validationFields
   });
@@ -720,6 +781,13 @@ $(document).ready(function(){
 
 });
 
+
+function showAddItemLost(){
+  $("#gjenstandOversikt").hide();
+  $('#leggTilGjenstand').show();
+  $("#nextButton").text('Legg til').removeClass("disabled").addClass("leggTil");
+}
+
 function showMore(selector,hideIndex){
 
   var showMore = $(selector).find('.showMore');
@@ -749,29 +817,41 @@ function stepPanel(element){
 }
 
 function setActive(nextActive){
-  $("#navigationButtons").show();
+
   var currentActive = $('.stepPanel.active');
+  if(currentActive.attr('id') != nextActive.attr('id')){
+    currentActive.hide().removeClass('active');
+    nextActive.show().addClass('active');
 
-  currentActive.hide().removeClass('active');
-  nextActive.show().addClass('active');
+    $("#navigationButtons").show();
 
-  stepPanel(nextActive).addClass('active');
-  stepPanel(currentActive).removeClass('active');
+    stepPanel(nextActive).addClass('active');
+    stepPanel(currentActive).removeClass('active');
 
-  $('#nextButton').removeClass("disabled");
+    $('#nextButton').removeClass("disabled");
 
-  if(nextActive.is('#oppsummering')){
-    populateSummary();
-    $("#nextButton").text("Bekreft");
-  }else if(nextActive.is("#kvittering")){
-    $("#navigationButtons").hide();
+    if(nextActive.is('#oppsummering')){
+      populateSummary();
+      $("#nextButton").text("Bekreft");
+    }else if(nextActive.is("#kvittering")){
+      $("#navigationButtons").hide();
+    }else if(nextActive.is("#taptGjenstand")){
+      if($('#lostItemTable > tbody > tr').length){
+
+      }else{
+        showAddItemLost();
+      }
+    }
+
+
+
+    if(nextActive.is('#omTapet')){
+      $('#backButton').hide();
+    }else{
+      $('#backButton').show();
+    }
   }
 
-  if(nextActive.is('#omTapet')){
-    $('#backButton').hide();
-  }else{
-    $('#backButton').show();
-  }
 }
 
 function populateSummary(){
@@ -809,6 +889,14 @@ function addTableRow(tableId){
       var td5 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
       $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+td5+'</tr>');
     }
+  }else if(tableId == "lostItemTable"){
+    var item = $('#lostItemType').val();
+    var td1 = '<td>'+item+'</td>';
+    var td2 = '<td>Kvittering på gjenstand.pdf</td>';
+    var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+    var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
+
+    $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
   }else{
     var damDescr = $('#damageDescription').val();
     var insComp = $('#insuranceCompany').val();
@@ -941,7 +1029,7 @@ $(window).scroll(function(event){
         <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;margin-left: 14%;">1</span>
       </div>
       <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-tapGjenstand" style="cursor: pointer" >2</span>
+        <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-taptGjenstand" style="cursor: pointer" >2</span>
       </div>
       <div class="col-md-2">
         <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="cursor: pointer" >3</span>
@@ -982,7 +1070,7 @@ $(window).scroll(function(event){
 <div class="container stbcolor-secondary sixth">
 
 <form id="skademelding" class="validateForm" role="form">
-<section id="omTapet" class="stepPanel active" style=" margin: 50px 0 50px 0;">
+<section id="omTapet" class="stepPanel active" style="margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -1097,12 +1185,103 @@ $(window).scroll(function(event){
   </div>
 </section>
 <section id="taptGjenstand" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+  <section id="leggTilGjenstand">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <h2>Tapt Gjenstand</h2>
+      <h2>Legg til tapte og skadede gjenstander</h2>
       <hr>
+      <h3>Hva har skjedd?</h3>
+
+      <p>Type gjenstand</p>
+      <div class="stb-form-group al input-group" style="width: 40%;">
+        <span class="help-block info-message"></span>
+        <input id="lostItemType" type='text' class="form-control" name="lostItemType" placeholder="Merke og modell" />
+      </div>
+
+      <p> Hvor gammel er gjenstanden?</p>
+      <div class="stb-form-group al select">
+        <span class="help-block info-message"></span>
+        <select class="form-control" name="howOld">
+          <option value=""></option>
+          <option value="1">1 år</option>
+          <option value="2">2 år</option>
+          <option value="3">3 år</option>
+          <option value="4">4 år</option>
+          <option value="5">5 år</option>
+          <option value="6">6 år</option>
+          <option value="7">7 år</option>
+          <option value="8">8 år</option>
+          <option value="9">9 år</option>
+          <option value="10">10 år</option>
+          <option value="11">11 år</option>
+          <option value="12">12 år</option>
+          <option value="13">13 år</option>
+          <option value="14">14 år</option>
+          <option value="15">15 år</option>
+        </select>
+      </div>
+
+      <p>Hvor ble gjenstanden kjøpt?</p>
+      <div class="stb-form-group al text-area">
+        <span class="help-block info-message"></span>
+        <textarea cols="40" rows="4" class="form-control" name="purchasedWhere"></textarea>
+      </div>
+
+      <p>Var gjenstanden ny ved anskaffelse?</p>
+      <div class="stb-form-group al checkbox">
+        <span class="help-block info-message"></span>
+        <input type="radio" name="itemNew" id="itemNewYes" value="Yes" class="stb-radio"><label class="stb-custom-input" for="itemNewYes">Ja</label>
+        <input type="radio" name="itemNew" id="itemNewNo" value="No" class="stb-radio" ><label class="stb-custom-input" for="itemNewNo">Nei</label>
+      </div>
+
+      <p>Kan gjenstanden repareres?</p>
+      <div class="stb-form-group al checkbox">
+        <span class="help-block info-message"></span>
+        <input type="radio" name="itemRepairable" id="itemRepairableYes" value="Yes" class="stb-radio"><label class="stb-custom-input" for="itemRepairableYes">Ja</label>
+        <input type="radio" name="itemRepairable" id="itemRepairableNo" value="No" class="stb-radio" ><label class="stb-custom-input" for="itemRepairableNo">Nei</label>
+      </div>
+
+      <p>Hva vil det koste å kjøpe gjenstanden på nytt idag? / Hva vil det koste å reparere gjenstanden?</p>
+      <div class="stb-form-group al">
+        <span class="help-block info-message"></span>
+        <div class="input-group" style="width: 30%;">
+          <input type='text' class="form-control" name="itemExpences"><span class="input-group-addon">Kr</span>
+        </div>
+      </div>
+
+      <p style="margin-top: 20px;">Kvittering</p>
+      <p class="petit">Har du kvittering på gjenstanden, eller annet bevis på kjøpet (avbetaligngskontrakt, garanti e.l.)?</p>
+      <div class="list-group">
+        <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Kvittering på gjenstanden.pdf<span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
+      </div>
+      <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
+
     </div>
   </div>
+  </section>
+  <section id="gjenstandOversikt" style="display: none;">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>Tapte og skadede gjenstander</h2>
+        <hr>
+
+        <table id="lostItemTable" class="stb-table [hoverable]" style="margin-top: 10px;">
+          <thead>
+          <tr>
+            <th>Gjenstand</th>
+            <th class="text-right">Vedlagt dokument</th>
+            <th class="text-right"></th>
+            <th class="text-right"></th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <a class="stb-btn stb-btn-lg secondary pull-left" onclick="showAddItemLost()" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+
+      </div>
+    </div>
+  </section>
 </section>
 <section id="omReisen" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
   <div class="row">
@@ -1238,24 +1417,6 @@ $(window).scroll(function(event){
           <tbody>
           </tbody>
         </table>
-      </div>
-
-      <p> Hvor gammel er gjenstanden?</p>
-      <div class="stb-form-group al select">
-        <span class="help-block info-message"></span>
-        <select class="form-control" name="howOld">
-          <option value=""></option>
-          <option value="1">1 år</option>
-          <option value="2">2 år</option>
-          <option value="3">3 år</option>
-          <option value="4">4 år</option>
-          <option value="5">5 år</option>
-          <option value="6">6 år</option>
-          <option value="7">7 år</option>
-          <option value="8">8 år</option>
-          <option value="9">9 år</option>
-          <option value="10">10 år</option>
-        </select>
       </div>
     </div>
   </div>
