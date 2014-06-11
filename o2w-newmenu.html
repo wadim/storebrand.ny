@@ -8,14 +8,18 @@
     <!--<script src="js/dist/less.js"></script>-->
     <link rel="stylesheet" type="text/css" href="css/stb-main.css">
     <link rel="stylesheet" type="text/css" href="css/stb-nav.css">
-    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+     <script type="text/javascript" src="js/dist/jquery.min.js"></script>
     <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+    <!-- <link rel='stylesheet prefetch' href='http://raw.github.com/jharding/typeahead.js-bootstrap.css/master/typeahead.js-bootstrap.css'> -->
+    <link rel='stylesheet prefetch' href='css/o2w-typeahead.css'>
     <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
     <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
     <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
     <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
-    <script type="text/javascript" src="js/src/the-basics.js"></script>
-    <script type="text/javascript" src="js/src/typeahead.bundle.js"></script>
+    <script src='http://cdn.jsdelivr.net/typeahead.js/0.9.3/typeahead.min.js'> </script>
+    <script src='http://cdn.jsdelivr.net/hogan.js/2.0.0/hogan.common.js'></script>
+    <script type="text/javascript" src="js/search.js"></script>   
+    
     
     <!-- Opplegg for sticky toppmeny -->
     <style>
@@ -74,6 +78,18 @@
        .tt-hint {
             width: 100%;
        }
+       .tt-suggestion{
+       		padding:0;  		
+       }
+       .geo-name{
+       		padding: 5px 8px;
+       }
+       .text-muted{
+       	background-color: grey;
+       	padding: 5px 8px;
+       	color: #000;
+       	font-weight: bold;
+       }
     </style>
     <script type="text/javascript">
 
@@ -93,8 +109,7 @@
                 offset: {
                     top: $('header').height()
                 }
-            });
-              
+            });   		
         });
 
 
@@ -260,15 +275,27 @@
                    
                 </ul>
                 
-                <!-- Flexible search -->
-                <form class="stb-form-inline" role="search" style="margin-top: 8px;">
-                <div id="the-basics" class="navbar-right input-group" style="width:200px;">
-                	<input class="typeahead" type="text" placeholder="States of USA">
-                	 <div class="input-group-btn">
-		            	<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-		            </div>
+               
+             <form class="stb-form-inline" role="search" style="margin-top: 8px;">
+
+                <div id="the-basics" class="navbar-right input-group" style="width:100px;">
+               	<input class="typeahead" type="text" placeholder="States of USA">
+					<div class="input-group-btn">
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+					</div>
 		        </div>
+
+		    </form>
+
+		        
+		        <!--  
+		        <form action="#">
+					<div class="form-group">
+						<label for="location-1">Search for a location</label>
+						<input id="location-1" type="text" class="form-control typeahead" placeholder="Cannes" data-provide="typeahead" autocomplete="off">
+					</div>
 		        </form>
+		        -->
             </div>
         </div>
     </div><!-- /.navbar -->
