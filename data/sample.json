@@ -1,0 +1,29 @@
+{
+    "keywords": [
+        {
+            "Id": "1",
+            "categoryName": "pensjon",
+            "keyword": "sparing"
+        },
+        {
+            "Id": "2",
+            "categoryName": "pensjon",
+            "keyword": "Alderdom"
+        },
+		  {
+            "Id": "3",
+            "categoryName": "fond",
+            "keyword": "sparing"
+        },
+		  {
+            "Id": "4",
+            "categoryName": "fond",
+            "keyword": "equity"
+        },
+		  {
+            "Id": "5",
+            "categoryName": "bank",
+            "keyword": "sparing i lonn"
+        }
+	]
+}

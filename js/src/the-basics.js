@@ -5,9 +5,9 @@ $(document).ready(function() {
 
 var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
-    var matches, substringRegex;
-
+    var matches, substrRegex;
     // an array that will be populated with substring matches
+    
     matches = [];
 
     // regex used to determine if a string contains the substring `q`
@@ -41,7 +41,7 @@ var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
 $('#the-basics .typeahead').typeahead({
   hint: true,
   highlight: true,
-  minLength: 1
+  minLength: 3
 },
 {
   name: 'states',
