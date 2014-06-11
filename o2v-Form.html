@@ -707,17 +707,6 @@ $(document).ready(function(){
       validating: 'glyphicon glyphicon-refresh'
     },
     submitHandler: function(validator, form, submitButton) {
-      if($("#nextButton").hasClass("leggTil")){
-        showItemOverview()
-        addTableRow('lostItemTable');
-      }else{
-        var panelSubmitted = $('.stepPanel.active');
-        stepPanel(panelSubmitted).addClass('completed').removeClass('current');
-        var nextPanel = panelSubmitted.next('section.stepPanel');
-        stepPanel(nextPanel).addClass('current');
-        setActive(nextPanel);
-      }
-
     },
     fields: validationFields
   });
@@ -769,7 +758,27 @@ function cancelSubmitForm(){
   }
 }
 
-
+function validateForm(){
+ event.preventDefault();
+ var bsValidator = $('#skademelding').data('bootstrapValidator');
+ bsValidator.validate();
+ if(bsValidator.isValid()){
+   if($("#nextButton").hasClass("leggTil")){
+     showItemOverview()
+     addTableRow('lostItemTable');
+   }else{
+     var panelSubmitted = $('.stepPanel.active');
+     stepPanel(panelSubmitted).addClass('completed').removeClass('current');
+     var nextPanel = panelSubmitted.next('section.stepPanel');
+     stepPanel(nextPanel).addClass('current');
+     setActive(nextPanel);
+   }
+  }else{
+    $('html, body').animate({
+      scrollTop: $('div.has-error:first').offset().top-100
+    }, 1000);
+  }
+}
 function showItemOverview(){
   $("#leggTilGjenstand").hide();
   $("#nextButton").text('Neste').removeClass("leggTil disabled");
@@ -829,10 +838,14 @@ function setActive(nextActive){
       $("#nextButton").text("Bekreft");
     }else if(nextActive.is("#kvittering")){
       $("#navigationButtons").hide();
-    }else if(nextActive.is("#taptGjenstand")){
+    }
+
+    if(nextActive.is("#taptGjenstand")){
       if(!$('#lostItemTable > tbody > tr').length){
         showAddItemLost();
       }
+    }else{
+      $("#nextButton").text('Neste').removeClass("leggTil disabled");
     }
 
 
@@ -955,35 +968,6 @@ $(window).scroll(function(event){
   }
   lastScrollTop = st;
 });
-
-(function($) {
-  $.fn.bootstrapValidator.validators.emptyScrollValidator = {
-    /**
-     * @param {BootstrapValidator} validator The validator plugin instance
-     * @param {jQuery} $field The jQuery object represents the field element
-     * @param {Object} options The validator options
-     * @returns {boolean}
-     */
-    validate: function(validator, $field, options) {
-      // You can get the field value
-      // var value = $field.val();
-      //
-      // Perform validating
-      // ...
-      //
-      // return true if the field value is valid
-      // otherwise return false
-      if($field.val() == "" ){
-        $('html, body').animate({
-          scrollTop: $field.offset().top-100
-        }, 1000);
-        return false;
-      }
-
-      return true
-    }
-  };
-}(window.jQuery));
 
 </script>
 <!-- /Slutt på opplegg for sticky toppmeny -->
@@ -1713,7 +1697,7 @@ $(window).scroll(function(event){
   <div class="col-md-10 col-md-offset-1">
     <div class="stb-form-group al" >
       <hr>
-      <button id="nextButton" type="submit" class="stb-btn stb-btn-lg pull-right submitButton navButton">Neste</button>
+      <button id="nextButton" type="submit" onclick="validateForm()" class="stb-btn stb-btn-lg pull-right submitButton navButton">Neste</button>
       <a class="stb-btn stb-btn-lg secondary pull-right" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;">Avbryt</a>
       <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
     </div>
