@@ -94,12 +94,12 @@
   }
 
   form .has-feedback.checkbox i.glyphicon-ok{
-    left: 20%;
+    left: 200px;
     top: 0;
   }
 
   form .has-feedback.checkbox i.glyphicon-remove{
-    left: 20%;
+    left: 200px;
     top: 40%;
   }
   .select select{
@@ -169,8 +169,7 @@
     background-image:url('images/stripes.png');
     background-repeat: repeat-x;
     background-size: 100px;
-    background-position-y: 18px;
-
+    background-position: 0 18px;
   }
 
 </style>
@@ -257,24 +256,24 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om gjenstanden stjålet, mistet eller skadet!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden stjålet, mistet eller skadet!'
         }
       }
     },
     itemLost: {
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvorfor du vil utelukke at gjenstanden er mistet!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Hvorfor du vil utelukke at gjenstanden er mistet!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvorfor du vil utelukke at gjenstanden er mistet!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Hvorfor du vil utelukke at gjenstanden er mistet!'
         }
       }
     },
     dateWhen: {
       trigger: 'blur',
       container: '.info-message',
-      message: 'Du må oppgi en dato for når skaden inntraff',
+      message: 'Oppgi en dato for når skaden inntraff',
       validators: {
         callback: dateValidator
 
@@ -283,10 +282,10 @@ $(document).ready(function(){
     lostWhere:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Du må oppgi hvor skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvor skaden inntraff!'
         }
       }
     },
@@ -295,27 +294,27 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om tapet gjelder tyveri fra bilen!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppi om tapet gjelder tyveri fra bilen!'
         }
       }
     },
     lostHow:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi på hvilken måte tapet kan ha skjedd!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppi på hvilken måte tapet kan ha skjedd!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi på hvilken måte tapet kan ha skjedd!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppi på hvilken måte tapet kan ha skjedd!'
         }
       }
     },
     lostActivities:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi sted når skaden skjedde og aktivitet!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppi sted når skaden skjedde og aktivitet!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi sted når skaden skjedde og aktivitet!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppi sted når skaden skjedde og aktivitet!'
         }
       }
     },
@@ -323,10 +322,10 @@ $(document).ready(function(){
     lostEvents:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må svare på dette eller legge inn Nei som svar!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Svar på dette eller legge inn Nei som svar!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må svare på dette eller legge inn Nei som svar!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Svar på dette eller legge inn Nei som svar!'
         }
       }
     },
@@ -335,57 +334,57 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om det var utenforstående vitne(r) til hendelsen!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om det var utenforstående vitne(r) til hendelsen!'
         }
       }
     },
     safeKeeping:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor lenge gjenstanden var oppbevart!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvor lenge gjenstanden var oppbevart!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor lenge gjenstanden var oppbevart!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvor lenge gjenstanden var oppbevart!'
         }
       }
     },
     itemSecurity:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvordan du sikret passet!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvordan du sikret passet!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvordan du sikret passet!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvordan du sikret passet!'
         }
       }
     },
     lostTime:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi når skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi når skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi når skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi når skaden inntraff!'
         }
       }
     },
     otherInfo:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!'
         }
       }
     },
     policeInfo:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!'
         }
       }
     },
@@ -396,7 +395,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi merke og modell!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi merke og modell!'
         }
       }
 
@@ -405,7 +404,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor gammel gjenstanden er!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor gammel gjenstanden er!'
         }
       }
     },
@@ -414,7 +413,7 @@ $(document).ready(function(){
         container: '.info-message',
         validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hvor gjenstanden ble kjøpt!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi hvor gjenstanden ble kjøpt!'
         }
       }
     },
@@ -423,7 +422,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om gjenstanden var ny ved anskaffelse'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden var ny ved anskaffelse'
         }
       }
     },
@@ -432,7 +431,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om gjenstanden kan repareres'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden kan repareres'
         }
       }
     },
@@ -441,7 +440,10 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi hva det vil koste å kjøpe ny / reparere gjenstanden'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hva det vil koste å kjøpe ny / reparere gjenstanden'
+        },
+        integer:{
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Summen du skrev inn må være et heltall.'
         }
       }
     }
@@ -454,7 +456,7 @@ $(document).ready(function(){
       validators: {
         callback: dateValidator,
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en dato for reise'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi en dato for reise'
         }
       }
 
@@ -465,27 +467,27 @@ $(document).ready(function(){
       validators: {
         callback: dateValidator,
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en dato for hjemreise'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi en dato for hjemreise'
         }
       }
     },
     destination: {
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi reisemål og hotell!!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi reisemål og hotell!!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi reisemål og hotell!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi reisemål og hotell!'
         }
       }
     },
     organizator: {
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!'
         }
       }
     },
@@ -494,7 +496,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har avbestillingsforsikring i et annet selskap!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om du har avbestillingsforsikring i et annet selskap!'
         }
       }
     },
@@ -503,7 +505,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har betalt reisen med et kort som inkluderer reiseforsikring!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om du har betalt reisen med et kort som inkluderer reiseforsikring!'
         }
       }
 
@@ -513,7 +515,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om du har tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling!'
         }
       }
     },
@@ -522,7 +524,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi kortholder!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi kortholder!'
         }
       }
     },
@@ -531,7 +533,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi kort nummer!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi kort nummer!'
         },
         creditCard: {
           message: 'Kortnummeret er ikke gyldig'
@@ -543,7 +545,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om skaden er meldt dit!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om skaden er meldt dit!'
         }
       }
     },
@@ -553,7 +555,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi om du har motatt erstatning!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om du har motatt erstatning!'
         }
       }
     }
@@ -572,7 +574,7 @@ $(document).ready(function(){
           message: 'Personnummeret kan kun bestå av heltall.'
         },
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en fødselsnummer!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi en fødselsnummer!'
         }
       }
 
@@ -582,7 +584,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et fornavn!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi et fornavn!'
         }
       }
 
@@ -592,7 +594,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et etternavn!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi et etternavn!'
         }
       }
 
@@ -605,7 +607,7 @@ $(document).ready(function(){
           message: 'Dette er ikke en gyldig email adresse'
         },
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi en email!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi en email!'
         }
       }
 
@@ -618,7 +620,7 @@ $(document).ready(function(){
           message: 'Dette er ikke en gyldig email adresse'
         },
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må gjenta email!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  gjenta email!'
         },
         identical: {
           field: 'emailPerson',
@@ -640,7 +642,7 @@ $(document).ready(function(){
           message: 'Telefonnummer kan kun bestå av heltall.'
         },
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et telefonnummer!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi et telefonnummer!'
         }
       }
 
@@ -658,7 +660,7 @@ $(document).ready(function(){
           message: 'Kontonummer kan kun bestå av heltall.'
         },
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et kontonummer!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi et kontonummer!'
         }
       }
 
@@ -676,7 +678,7 @@ $(document).ready(function(){
           message: 'Polisenummer kan kun bestå av heltall.'
         },
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må oppgi et polisenummer!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi et polisenummer!'
         }
       }
 
@@ -707,17 +709,6 @@ $(document).ready(function(){
       validating: 'glyphicon glyphicon-refresh'
     },
     submitHandler: function(validator, form, submitButton) {
-      if($("#nextButton").hasClass("leggTil")){
-        showItemOverview()
-        addTableRow('lostItemTable');
-      }else{
-        var panelSubmitted = $('.stepPanel.active');
-        stepPanel(panelSubmitted).addClass('completed').removeClass('current');
-        var nextPanel = panelSubmitted.next('section.stepPanel');
-        stepPanel(nextPanel).addClass('current');
-        setActive(nextPanel);
-      }
-
     },
     fields: validationFields
   });
@@ -760,6 +751,9 @@ $(document).ready(function(){
           }
   );
 
+  $("#nextButton").click(function(event){
+    validateForm(event);
+  });
 
 });
 
@@ -769,7 +763,27 @@ function cancelSubmitForm(){
   }
 }
 
-
+function validateForm(event){
+ event.preventDefault();
+ var bsValidator = $('#skademelding').data('bootstrapValidator');
+ bsValidator.validate();
+ if(bsValidator.isValid()){
+   if($("#nextButton").hasClass("leggTil")){
+     showItemOverview()
+     addTableRow('lostItemTable');
+   }else{
+     var panelSubmitted = $('.stepPanel.active');
+     stepPanel(panelSubmitted).addClass('completed').removeClass('current');
+     var nextPanel = panelSubmitted.next('section.stepPanel');
+     stepPanel(nextPanel).addClass('current');
+     setActive(nextPanel);
+   }
+  }else{
+    $('html, body').animate({
+      scrollTop: $('div.has-error:first').offset().top-100
+    }, 1000);
+  }
+}
 function showItemOverview(){
   $("#leggTilGjenstand").hide();
   $("#nextButton").text('Neste').removeClass("leggTil disabled");
@@ -829,10 +843,14 @@ function setActive(nextActive){
       $("#nextButton").text("Bekreft");
     }else if(nextActive.is("#kvittering")){
       $("#navigationButtons").hide();
-    }else if(nextActive.is("#taptGjenstand")){
+    }
+
+    if(nextActive.is("#taptGjenstand")){
       if(!$('#lostItemTable > tbody > tr').length){
         showAddItemLost();
       }
+    }else{
+      $("#nextButton").text('Neste').removeClass("leggTil disabled");
     }
 
 
@@ -956,35 +974,6 @@ $(window).scroll(function(event){
   lastScrollTop = st;
 });
 
-(function($) {
-  $.fn.bootstrapValidator.validators.emptyScrollValidator = {
-    /**
-     * @param {BootstrapValidator} validator The validator plugin instance
-     * @param {jQuery} $field The jQuery object represents the field element
-     * @param {Object} options The validator options
-     * @returns {boolean}
-     */
-    validate: function(validator, $field, options) {
-      // You can get the field value
-      // var value = $field.val();
-      //
-      // Perform validating
-      // ...
-      //
-      // return true if the field value is valid
-      // otherwise return false
-      if($field.val() == "" ){
-        $('html, body').animate({
-          scrollTop: $field.offset().top-100
-        }, 1000);
-        return false;
-      }
-
-      return true
-    }
-  };
-}(window.jQuery));
-
 </script>
 <!-- /Slutt på opplegg for sticky toppmeny -->
 
@@ -1039,67 +1028,67 @@ $(window).scroll(function(event){
     <div class="row"style="margin-top: 50px;">
       <h1>Skademelding for reisegods</h1>
     </div>
-    <div class="progressBar">
-    <div id="stepFigures" class="row"style="margin-top: 50px; margin-left: 5%;">
-      <div class="col-md-2">
-        <div id="step-omTapet" class="square active" onclick="navigateTo($('#omTapet'))" style="cursor: pointer;"><img /></div>
+    <div class="progressBar hidden-xs hidden-sm">
+      <div id="stepFigures" class="row"style="margin-top: 50px; margin-left: 5%;">
+        <div class="col-md-2">
+          <div id="step-omTapet" class="square active" onclick="navigateTo($('#omTapet'))" style="cursor: pointer;"><img /></div>
+        </div>
+        <div class="col-md-2">
+          <div id="step-taptGjenstand" class="square" onclick="navigateTo($('#taptGjenstand'))" style="cursor: pointer"><img /></div>
+        </div>
+        <div class="col-md-2">
+          <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="cursor: pointer"><img /></div>
+        </div>
+        <div class="col-md-2">
+          <div id="step-personOpplysninger" class="square" onclick="navigateTo($('#personOpplysninger'))" style="cursor: pointer;"><img /></div>
+        </div>
+        <div class="col-md-2">
+          <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="cursor: pointer;"><img /></div>
+        </div>
+        <div class="col-md-2">
+          <div id="step-kvittering" class="square" style="cursor: pointer;"><img /></div>
+        </div>
       </div>
-      <div class="col-md-2">
-        <div id="step-taptGjenstand" class="square" onclick="navigateTo($('#taptGjenstand'))" style="cursor: pointer"><img /></div>
+      <div id="stepNumbers" class="row" style="margin-top: 5px; margin-left: 5%">
+        <div class="col-md-2">
+          <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;margin-left: 14%;">1</span>
+        </div>
+        <div class="col-md-2">
+          <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-taptGjenstand" style="cursor: pointer" >2</span>
+        </div>
+        <div class="col-md-2">
+          <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="cursor: pointer" >3</span>
+        </div>
+        <div class="col-md-2">
+          <span class="number" onclick="navigateTo($('#personOpplysninger'))" name="step-personOpplysninger" style=" cursor: pointer" >4</span>
+        </div>
+        <div class="col-md-2">
+          <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="cursor: pointer">5</span>
+        </div>
+        <div class="col-md-2">
+          <span class="number" name="step-kvittering" style="cursor: pointer">6</span>
+        </div>
       </div>
-      <div class="col-md-2">
-        <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="cursor: pointer"><img /></div>
+      <div id="stepLabels" class="row" style="margin-top: 8%; margin-left: 3%;">
+        <div class="col-md-2">
+          <h4>Om Tapet/Skaden</h4>
+        </div>
+        <div class="col-md-2">
+          <h4 style="margin-left: 4%;">Tapt Gjenstand</h4>
+        </div>
+        <div class="col-md-2">
+          <h4 style="margin-left: 11%;">Om Reisen</h4>
+        </div>
+        <div class="col-md-2">
+          <h4 style="margin-left: -10%;">Personopplysninger</h4>
+        </div>
+        <div class="col-md-2">
+          <h4 style="margin-left: -5%;">Oppsummering</h4>
+        </div>
+        <div class="col-md-2">
+          <h4 style="margin-left: 8%;">Kvittering</h4>
+        </div>
       </div>
-      <div class="col-md-2">
-        <div id="step-personOpplysninger" class="square" onclick="navigateTo($('#personOpplysninger'))" style="cursor: pointer;"><img /></div>
-      </div>
-      <div class="col-md-2">
-        <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="cursor: pointer;"><img /></div>
-      </div>
-      <div class="col-md-2">
-        <div id="step-kvittering" class="square" style="cursor: pointer;"><img /></div>
-      </div>
-    </div>
-    <div id="stepNumbers" class="row" style="margin-top: 5px; margin-left: 5%">
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;margin-left: 14%;">1</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-taptGjenstand" style="cursor: pointer" >2</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="cursor: pointer" >3</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#personOpplysninger'))" name="step-personOpplysninger" style=" cursor: pointer" >4</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="cursor: pointer">5</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" name="step-kvittering" style="cursor: pointer">6</span>
-      </div>
-    </div>
-    <div id="stepLabels" class="row" style="margin-top: 8%; margin-left: 3%;">
-      <div class="col-md-2">
-        <h4>Om Tapet/Skaden</h4>
-      </div>
-      <div class="col-md-2">
-        <h4 style="margin-left: 4%;">Tapt Gjenstand</h4>
-      </div>
-      <div class="col-md-2">
-        <h4 style="margin-left: 11%;">Om Reisen</h4>
-      </div>
-      <div class="col-md-2">
-        <h4 style="margin-left: -10%;">Personopplysninger</h4>
-      </div>
-      <div class="col-md-2">
-        <h4 style="margin-left: -5%;">Oppsummering</h4>
-      </div>
-      <div class="col-md-2">
-        <h4 style="margin-left: 8%;">Kvittering</h4>
-      </div>
-    </div>
    </div>
 </div>
 
