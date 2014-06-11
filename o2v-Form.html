@@ -755,6 +755,11 @@ $(document).ready(function(){
     validateForm(event);
   });
 
+  $('#addItemLostButton').click(function(event){
+     showAddItemLost();
+  });
+
+
 });
 
 function cancelSubmitForm(){
@@ -1302,7 +1307,7 @@ $(window).scroll(function(event){
           <tbody>
           </tbody>
         </table>
-        <a class="stb-btn stb-btn-lg secondary pull-left" onclick="showAddItemLost()" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+        <a id="addItemLostButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
 
       </div>
     </div>
