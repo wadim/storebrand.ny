@@ -169,8 +169,7 @@
     background-image:url('images/stripes.png');
     background-repeat: repeat-x;
     background-size: 100px;
-    background-position-y: 18px;
-
+    background-position: 0 18px;
   }
 
 </style>
@@ -749,6 +748,9 @@ $(document).ready(function(){
           }
   );
 
+  $("#nextButton").click(function(event){
+    validateForm(event);
+  });
 
 });
 
@@ -758,7 +760,7 @@ function cancelSubmitForm(){
   }
 }
 
-function validateForm(){
+function validateForm(event){
  event.preventDefault();
  var bsValidator = $('#skademelding').data('bootstrapValidator');
  bsValidator.validate();
@@ -1697,7 +1699,7 @@ $(window).scroll(function(event){
   <div class="col-md-10 col-md-offset-1">
     <div class="stb-form-group al" >
       <hr>
-      <button id="nextButton" type="submit" onclick="validateForm()" class="stb-btn stb-btn-lg pull-right submitButton navButton">Neste</button>
+      <button id="nextButton" type="submit" class="stb-btn stb-btn-lg pull-right submitButton navButton">Neste</button>
       <a class="stb-btn stb-btn-lg secondary pull-right" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;">Avbryt</a>
       <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
     </div>
