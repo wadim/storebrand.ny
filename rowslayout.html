@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Storebrand.ny layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+    <link rel="stylesheet" type="text/css" href="css/sticky.css">
+
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/dist/tooltip.js"></script>
+    <script type="text/javascript" src="js/dist/popover.js"></script>
+    <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+    <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+    <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+    <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
+    <script type="text/javascript" src="js/dist/stb-common.js"></script>
+    <script type="text/javascript" src="js/dist/holder.js"></script>
+    <!--script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script-->
+    
+
+<script>
+
+
+function checkFnr(){
+
+if(verifyID(fnr)){
+  $('#successFnr').removeClass('hidden');
+  $('#errorFnr').addClass('hidden');
+  }
+  else{
+  $('#successFnr').addClass('hidden');
+  $('#errorFnr').removeClass('hidden');
+  }
+}
+
+function getKey(){
+var temp=gup('key');
+$('#showKey').html('kEY VALUE IS: ' +temp);
+
+}  
+
+
+ var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+      //removing .navfixed when user scroll down
+         $('.navbar-wrapper').removeClass('navfixed', 1000);
+   } else {
+     //adding .navfixed when user scroll down
+       $('.navbar-wrapper').addClass('navfixed', 1000);
+   }
+   lastScrollTop = st;
+});
+
+</script>
+
+<style>
+.nogap{
+  margin-bottom:0px;
+}
+.wide{
+  padding-left:20px;
+ }
+
+ .containerWide {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+</style>
+
+  </head>
+  <body>
+
+<div class="navbar-wrapper">
+  <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+  <!--div class="container"-->
+
+
+   
+
+
+  <!--/div-->  <!-- /.container -->
+</div><!-- /.navbar-wrapper -->
+
+
+
+
+<!-- Ny test  ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
+
+<div style="margin-top:100px;"></div>
+
+<div class="container">
+          <div class="row stb-row">
+              <div class="col-md-6">
+                <div class="stb-box second">
+                  <h1>Enkel container</h1>
+                  <p>Med litt tekst i så vi kan se hvordan den blir i de forskjellige fasongene og slik at vi ser hvordan den oppfører seg responsivt.</p>
+                </div>  
+              </div>
+              <div class="col-md-6">
+                <div class="stb-box second">
+                  <h1>Enkel container</h1>
+                  <p>Med litt tekst i så vi kan se hvordan den blir i de forskjellige fasongene og slik at vi ser hvordan den oppfører seg responsivt.</p>
+                </div>  
+              </div>  
+          </div> 
+ </div> 
+
+ <div class="container">
+          <div class="row stb-row second innerBox">
+              <div class="col-md-6">
+                <div class="stb-box second">
+                  <h1>Enkel container</h1>
+                  <p>Med litt tekst i så vi kan se hvordan den blir i de forskjellige fasongene og slik at vi ser hvordan den oppfører seg responsivt.</p>
+                </div>               
+              </div>
+              <div class="col-md-6">
+                <div class="stb-box second">
+                  <h1>Enkel container</h1>
+                  <p>Med litt tekst i så vi kan se hvordan den blir i de forskjellige fasongene og slik at vi ser hvordan den oppfører seg responsivt.</p>
+                </div>  
+              </div>  
+          </div> 
+ </div> 
+
+ <div class="container">
+          <div class="row stb-row" style="background: url('images/tavle.png');height:300px;">
+              <div class="col-md-12" >
+                <h1 style="color:#FFF">Banneroverskrift</h1>
+                <h3 style="color:#FFF">Her er selve budskapet i dette banneret </h3>
+                <button class="stb-btn">Gå videre</button>
+
+                <h3 style="color:#FFF" class="pull-right">Og her er litt tekst til høyre </h3>  
+
+              </div>
+          </div> 
+ </div> 
+   
+
+  <!-- NYTT JUNI ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1>Enkel container uten box</h1>
+              </div> 
+          </div> 
+      
+          <div class="row">
+              <div class="col-md-12" style="background:#D3D3D3">
+                 <h2>Span 12 stb-box first</h2>
+                 
+              </div> 
+          </div>  
+      
+           <div class="row">
+               <div class="col-md-6 stb-box second">
+                   <h2>Span 12 stb-box second</h2>
+                   <div class="stb-btn" onclick="getKey();">Get key</div>
+                   <h3 id="showKey"></h3>
+               </div> 
+               <div class="col-md-6 stb-box second">
+                   <h2>Span 12 stb-box second</h2>
+                   <div class="stb-btn" onclick="getKey();">Get key</div>
+                   <h3 id="showKey"></h3>
+               </div> 
+            </div>  
+
+            <div class="row">
+               <div class="col-md-6" style="background:#EFE8DF">
+                    <h2>Span 12 stb-box AL</h2>
+               </div> 
+               <div class="col-md-6"style="background:#EFE8DF">
+                    <h2>Span 12 stb-box second</h2>
+               </div> 
+            </div>  
+
+      
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="stb-box third">
+                    <h2>Span 12 stb-box third</h2>
+                  </div>  
+               </div> 
+               <div class="col-md-6">
+                  <div class="stb-box third">
+                    <h2>Span 12 stb-box third</h2>
+                  </div>  
+               </div> 
+             </div>  
+      
+          <div class="row">
+              <div class="col-md-12 stb-box fourth">
+                <h2>Span 12 stb-box fourth</h2>
+              </div> 
+          </div>  
+     
+          <div class="row">
+            <div class="col-md-12 stb-box fifth">
+                <h2>Span 12 stb-box fifth</h2>
+            </div> 
+          </div>  
+
+      </div><!--End container-->   
+
+
+      <!-- vanlig ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1>Enkel container</h1>
+              </div> 
+          </div> 
+      
+          <div class="row">
+              <div class="col-md-12 stb-box first">
+                 <h2>Span 12 stb-box first</h2>
+                 <input type="number" id="fnr" onkeypress="if(event.keyCode==13){ checkFnr(); }"><div class="stb-btn" onclick="checkFnr();">Logg inn</div>
+                 <br><br>
+                 <div id="successFnr" class="stb-alert stb-alert-success col-md-3 clearfix hidden"><span class="icon-info"></span>Fnr success</div>
+                 <div id="errorFnr" class="stb-alert stb-alert-alarm col-md-3 clearfix hidden"><span class="icon-alarm"></span>Error validating fnr</div>
+              </div> 
+          </div>  
+      
+           <div class="row">
+               <div class="col-md-12 stb-box second">
+                   <h2>Span 12 stb-box second</h2>
+                   <div class="stb-btn" onclick="getKey();">Get key</div>
+                   <h3 id="showKey"></h3>
+               </div> 
+            </div>  
+      
+            <div class="row">
+               <div class="col-md-12 stb-box third">
+                 <h2>Span 12 stb-box third</h2>
+               </div> 
+             </div>  
+      
+          <div class="row">
+              <div class="col-md-12 stb-box fourth">
+                <h2>Span 12 stb-box fourth</h2>
+              </div> 
+          </div>  
+     
+          <div class="row">
+            <div class="col-md-12 stb-box fifth">
+                <h2>Span 12 stb-box fifth</h2>
+            </div> 
+          </div>  
+
+      </div><!--End container-->   
+       
+
+      <!-- dobbel ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1>Dobbel container</h1>
+              </div> 
+          </div> 
+     
+          <div class="row">
+              <div class="col-md-6 stb-box first">
+                 <h2>Span 6 stb-box first</h2>
+              </div> 
+              <div class="col-md-6 stb-box first">
+                 <h2>Span 6 stb-box first</h2>
+              </div> 
+          </div>  
+     
+           <div class="row">
+               <div class="col-md-6 stb-box second">
+                   <h2>Span 6 stb-box second</h2>
+               </div> 
+               <div class="col-md-6 stb-box second">
+                   <h2>Span 6 stb-box second</h2>
+               </div>
+            </div>  
+     
+            <div class="row">
+               <div class="col-md-6 stb-box third">
+                 <h2>Span 6 stb-box third</h2>
+               </div> 
+               <div class="col-md-6 stb-box third">
+                 <h2>Span 6 stb-box third</h2>
+               </div> 
+             </div>  
+     
+          <div class="row  stb-box fourth">
+              <div class="col-md-6">
+                <h2>Span 6 stb-box fourth</h2>
+              </div> 
+              <div class="col-md-6">
+                <h2>Span 6 stb-box fourth</h2>
+              </div> 
+          </div>  
+    
+          <div class="row">
+            <div class="col-md-6 stb-box fourth">
+                <h2>Span 6 stb-box fifth</h2>
+            </div> 
+            <div class="col-md-6 stb-box fifth">
+                <h2>Span 6 stb-box fifth</h2>
+            </div> 
+          </div>  
+      
+      </div><!--End container--> 
+
+<!-- Trippel ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1>Trippel container</h1>
+              </div> 
+          </div> 
+    
+          <div class="row">
+              <div class="col-md-4 stb-box first">
+                 <h2>Span 4 stb-box first</h2>
+              </div> 
+              <div class="col-md-4 stb-box first">
+                 <h2>Span 4 stb-box first</h2>
+              </div> 
+              <div class="col-md-4 stb-box first">
+                 <h2>Span 4 stb-box first</h2>
+              </div> 
+          </div>  
+      
+           <div class="row">
+               <div class="col-md-4 stb-box second">
+                   <h2>Span 4 stb-box second</h2>
+               </div> 
+               <div class="col-md-4 stb-box second">
+                   <h2>Span 4 stb-box second</h2>
+               </div> 
+               <div class="col-md-4 stb-box second">
+                   <h2>Span 4 stb-box second</h2>
+               </div> 
+            </div>  
+      
+            <div class="row">
+               <div class="col-md-4 stb-box third">
+                 <h2>Span 4 stb-box third</h2>
+               </div> 
+               <div class="col-md-4 stb-box third">
+                 <h2>Span 4 stb-box third</h2>
+               </div> 
+               <div class="col-md-4 stb-box third">
+                 <h2>Span 4 stb-box third</h2>
+               </div> 
+             </div>  
+      
+          <div class="row">
+              <div class="col-md-4 stb-box fourth">
+                <h2>Span 4 stb-box fourth</h2>
+              </div> 
+              <div class="col-md-4 stb-box fourth">
+                <h2>Span 4 stb-box fourth</h2>
+              </div> 
+              <div class="col-md-4 stb-box fourth">
+                <h2>Span 4 stb-box fourth</h2>
+              </div> 
+          </div>  
+     
+          <div class="row">
+            <div class="col-md-4 stb-box fifth">
+                <h2>Span 4 stb-box fifth</h2>
+            </div> 
+            <div class="col-md-4 stb-box fifth">
+                <h2>Span 4 stb-box fifth</h2>
+            </div> 
+            <div class="col-md-4 stb-box fifth">
+                <h2>Span 4 stb-box fifth</h2>
+            </div> 
+          </div>  
+
+      </div><!--End container-->       
+
+
+   <!-- wide new  ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
+      
+ <div class="stbcolor-secondary second top-pad">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1>Alle 12 col samlet i en farge</h1>
+                  <p>Denne må utenfor containeren og dermed er det spørsmål om alt skal legges i container?</p>
+              </div> 
+          </div> 
+     
+
+     
+      
+          <div class="row">
+              <div class="col-md-12 stb-box first">
+                 <h2>Span 12 stb-box first</h2>
+              </div> 
+          </div>  
+      
+           <div class="row">
+               <div class="col-md-12 stb-box second">
+                   <h2>Span 12 stb-box second</h2>
+               </div> 
+            </div>  
+      
+            <div class="row">
+               <div class="col-md-12 stb-box third">
+                 <h2>Span 12 stb-box third</h2>
+               </div> 
+             </div>  
+      
+          <div class="row">
+              <div class="col-md-12 stb-box fourth">
+                <h2>Span 12 stb-box fourth</h2>
+              </div> 
+          </div>  
+      
+          <div class="row">
+            <div class="col-md-12 stb-box fifth">
+                <h2>Span 12 stb-box fifth</h2>
+            </div> 
+          </div>  
+      </div> <!-- End toppad-->
+      </div>   <!--End container-->
+
+      <!-- dobbel wide ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1>Dobbel container hvor 2 har wide third</h1>
+              </div> 
+          </div> 
+      </div>
+
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 stb-box first">
+                 <h2>Span 6 stb-box first</h2>
+              </div> 
+              <div class="col-md-6 stb-box first">
+                 <h2>Span 6 stb-box first</h2>
+              </div> 
+          </div>  
+      </div>     
+<div class="stbcolor-secondary fourth top-pad">
+      <div class="container">
+           <div class="row">
+               <div class="col-md-6 stb-box second">
+                   <h2>Span 6 stb-box second</h2>
+               </div> 
+               <div class="col-md-6 stb-box second">
+                   <h2>Span 6 stb-box second</h2>
+               </div>
+            </div>  
+      </div>        
+
+      <div class="container">
+            <div class="row">
+               <div class="col-md-6 stb-box third">
+                 <h2>Span 6 stb-box third</h2>
+               </div> 
+               <div class="col-md-6 stb-box third">
+                 <h2>Span 6 stb-box third</h2>
+               </div> 
+             </div>  
+      </div>        
+</div>
+      <div class="container">
+          <div class="row  stb-box fourth">
+              <div class="col-md-6">
+                <h2>Span 6 stb-box fourth</h2>
+              </div> 
+              <div class="col-md-6">
+                <h2>Span 6 stb-box fourth</h2>
+              </div> 
+          </div>  
+      </div>     
+
+      <div class="container">
+          <div class="row">
+            <div class="col-md-6 stb-box fourth">
+                <h2>Span 6 stb-box fifth</h2>
+            </div> 
+            <div class="col-md-6 stb-box fifth">
+                <h2>Span 6 stb-box fifth</h2>
+            </div> 
+          </div>  
+      </div> 
+
+
+
+
+
+<div style="margin-bottom:50px;"></div>
+
+
+  </body>
+</html>
