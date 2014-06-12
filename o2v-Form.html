@@ -148,7 +148,7 @@
     position: absolute;
     font-size: 50px;
     color: white;
-    margin-left: 14%;
+    margin-left: 25px;
   }
 
   span.imgSqr{
@@ -187,6 +187,29 @@ function validateEmptyString(objektet){
     objektet.parent().removeClass('alarm');
     objektet.parent().addClass('valid');
     objektet.prev().hide();
+  }
+}
+
+/* Verify National Identity Number ***********************************************/
+function verifyID(nr) {
+  var pn = new Array();
+  var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
+  var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+  for(var i=0; i<nr.length; i++) {
+    pn[i] = nr.charAt(i);
+  }
+  var k1=0;
+  for(var i=0; i<v1.length; i++) {
+    k1 += pn[i]*v1[i];
+  }
+  var k2=0;
+  for(var i=0; i<v2.length; i++) {
+    k2 += pn[i]*v2[i];
+  }
+  if (k1%11==0 && k2%11==0 ) {
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -243,10 +266,16 @@ $(document).ready(function(){
   $('.datePicker').datetimepicker();
 
   var dateValidator = {
-    message: 'Verdien er ikke en gyldig dato.',
+    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Verdien er ikke en gyldig dato.',
     callback: function(value,validator){
       var m = new moment(value, 'DD.MM.YYYY', true);
       return m.isValid();
+    }
+  };
+  var idValidator = {
+    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Fødselsnummeret er ikke gyldig!',
+    callback: function(value, validor){
+      return verifyID(value);
     }
   };
 
@@ -276,7 +305,6 @@ $(document).ready(function(){
       message: 'Oppgi en dato for når skaden inntraff',
       validators: {
         callback: dateValidator
-
       }
     },
     lostWhere:{
@@ -565,17 +593,7 @@ $(document).ready(function(){
       trigger: 'blur',
       container: '.info-message',
       validators: {
-        stringLength: {
-          min: 11,
-          max: 11,
-          message: 'Personnummeret har feil antall siffer.'
-        },
-        digits:{
-          message: 'Personnummeret kan kun bestå av heltall.'
-        },
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi en fødselsnummer!'
-        }
+        callback: idValidator,
       }
 
     },
@@ -760,7 +778,17 @@ $(document).ready(function(){
   });
 
 
+
 });
+
+function fillOutPerson(){
+  var birthNumber = $('input[name=birthNumber]').val();
+  var firstName = $('input[name=firstNamePerson]').val();
+  var lastName = $('input[name=lastNamePerson]').val();
+  $('#birthNumberTable').val(birthNumber);
+  $('#firstNameTable').val(firstName);
+  $('#lastNameTable').val(lastName);
+}
 
 function cancelSubmitForm(){
   if($('.stepPanel.active').is("#taptGjenstand")){
@@ -848,9 +876,7 @@ function setActive(nextActive){
       $("#nextButton").text("Bekreft");
     }else if(nextActive.is("#kvittering")){
       $("#navigationButtons").hide();
-    }
-
-    if(nextActive.is("#taptGjenstand")){
+    }else if(nextActive.is("#taptGjenstand")){
       if(!$('#lostItemTable > tbody > tr').length){
         showAddItemLost();
       }
@@ -858,13 +884,12 @@ function setActive(nextActive){
       $("#nextButton").text('Neste').removeClass("leggTil disabled");
     }
 
-
-
     if(nextActive.is('#omTapet')){
       $('#backButton').hide();
     }else{
       $('#backButton').show();
     }
+    $('body,html').animate({scrollTop: 0}, 800);
   }
 
 }
@@ -890,18 +915,20 @@ function populateSummary(){
   });
 
   var lostItemListMarkup = "";
-  $("#lostItemTable tbody tr").each(function(){
-      var items = $(this).find('td');
-        lostItemListMarkup += '<li class="list-group-item">Type Gjenstand <span class="pull-right">'+$(items[0]).text()+'</span></li>';
-        lostItemListMarkup += '<li class="list-group-item"><ul><li class="list-group-item">'+$(items[1]).text()+'</li></ul></li>';
-  });
-  lostItemListMarkup += '<li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>';
-
   var lostItemNode =  $('#summaryTaptGjenstand');
-  lostItemNode.append(lostItemListMarkup);
-  lostItemNode.find('li:gt(2)').hide();
-  lostItemNode.find('.showMore').show();
-  showMore(lostItemNode,2);
+  if(lostItemNode.find('li').length == 0){
+    $("#lostItemTable tbody tr").each(function(){
+      var items = $(this).find('td');
+      lostItemListMarkup += '<li class="list-group-item">Type Gjenstand <span class="pull-right">'+$(items[0]).text()+'</span></li>';
+      lostItemListMarkup += '<li class="list-group-item"><ul><li class="list-group-item">'+$(items[1]).text()+'</li></ul></li>';
+    });
+    lostItemListMarkup += '<li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>';
+    lostItemNode.append(lostItemListMarkup);
+    lostItemNode.find('li:gt(2)').hide();
+    lostItemNode.find('.showMore').show();
+    showMore(lostItemNode,2);
+  }
+
 
 }
 
@@ -1056,7 +1083,7 @@ $(window).scroll(function(event){
       </div>
       <div id="stepNumbers" class="row" style="margin-top: 5px; margin-left: 5%">
         <div class="col-md-2">
-          <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;margin-left: 14%;">1</span>
+          <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;">1</span>
         </div>
         <div class="col-md-2">
           <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-taptGjenstand" style="cursor: pointer" >2</span>
@@ -1100,7 +1127,7 @@ $(window).scroll(function(event){
 <div class="container stbcolor-secondary sixth">
 
 <form id="skademelding" class="validateForm" role="form">
-<section id="omTapet" class="stepPanel active" style=" margin: 50px 0 50px 0;">
+<section id="omTapet" class="stepPanel active" style="margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -1451,7 +1478,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="personOpplysninger" class="stepPanel" style="display:none;  margin: 50px 0 50px 0;">
+<section id="personOpplysninger" class="stepPanel" style=" margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Personopplysninger</h2>
@@ -1515,7 +1542,7 @@ $(window).scroll(function(event){
 
         <div class="stb-form-group al checkbox">
           <span class="help-block info-message"></span>
-          <input type="radio" id="yourself" value="Yourself" name="stb-a"  class="stb-radio"><label for="yourself" class="stb-custom-input">Du som melder tapet/skaden</label>
+          <input type="radio" id="yourself" value="Yourself" name="stb-a" onclick="fillOutPerson()" class="stb-radio"><label for="yourself" class="stb-custom-input">Du som melder tapet/skaden</label>
           <input type="radio" id="partner" value="Partner" name="stb-a" class="stb-radio"><label for="partner" class="stb-custom-input">Ektefeller/samboer/partner</label>
           <input type="radio" id="barn" value="Barn" name="stb-a" class="stb-radio"><label for="barn" class="stb-custom-input">Barn</label>
           <input type="radio" id="andre" value="Andre" name="stb-a" class="stb-radio" ><label for="andre" class="stb-custom-input">Andre</label>
