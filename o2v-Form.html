@@ -870,12 +870,14 @@ function setActive(nextActive){
 
     if(nextActive.is('#oppsummering')){
       populateSummary();
-      $("#nextButton").text("Bekreft");
+      $("#nextButton").text("Send inn");
     }else if(nextActive.is("#kvittering")){
       $("#navigationButtons").hide();
     }else if(nextActive.is("#taptGjenstand")){
       if(!$('#lostItemTable > tbody > tr').length){
         showAddItemLost();
+      }else{
+        showItemOverview();
       }
     }else{
       $("#nextButton").text('Neste').removeClass("leggTil disabled");
