@@ -593,7 +593,7 @@ $(document).ready(function(){
       trigger: 'blur',
       container: '.info-message',
       validators: {
-        callback: idValidator,
+        callback: idValidator
       }
 
     },
@@ -705,13 +705,10 @@ $(document).ready(function(){
       trigger: 'blur',
       container: '.info-message',
       validators: {
-        stringLength: {
-          min: 11,
-          max: 11,
-          message: 'Personnummeret må bestå av 11 siffer.'
-        },
-        digits:{
-          message: 'Personnummeret kan kun bestå av heltall.'
+        trigger: 'blur',
+        container: '.info-message',
+        validators: {
+          callback: idValidator
         }
       }
     }
@@ -1478,7 +1475,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="personOpplysninger" class="stepPanel" style=" margin: 50px 0 50px 0;">
+<section id="personOpplysninger" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Personopplysninger</h2>
