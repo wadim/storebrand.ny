@@ -94,12 +94,10 @@
   }
 
   form .has-feedback.checkbox i.glyphicon-ok{
-    left: 200px;
     top: 0;
   }
 
   form .has-feedback.checkbox i.glyphicon-remove{
-    left: 200px;
     top: 40%;
   }
   .select select{
@@ -107,7 +105,7 @@
   }
 
   .input-group.date{
-    width: 20%;
+    width: 50%;
   }
 
   div.square{
@@ -171,6 +169,7 @@
     background-size: 100px;
     background-position: 0 18px;
   }
+
 
 </style>
 <script type="text/javascript">
@@ -259,6 +258,12 @@ $(document).ready(function(){
     }else{
       $('#insurancePayment').slideUp();
     }
+
+    if($('input:radio[name=itemRepairable]:checked').val()=="Yes"){
+      $('#repairItem').slideDown();
+    }else{
+      $('#repairItem').slideUp();
+    }
     //if($('#leisure:checked').val()=='Yes')
 
   });
@@ -285,17 +290,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden stjålet, mistet eller skadet!'
-        }
-      }
-    },
-    itemLost: {
-      trigger: 'blur',
-      container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Hvorfor du vil utelukke at gjenstanden er mistet!',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Hvorfor du vil utelukke at gjenstanden er mistet!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden stjålet eller skadet!'
         }
       }
     },
@@ -307,22 +302,23 @@ $(document).ready(function(){
         callback: dateValidator
       }
     },
-    lostWhere:{
+    lostCountry:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvilket land skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvor skaden inntraff!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvilket land skaden inntraff!'
         }
       }
     },
-    lossCar: {
-      threshold: 3,
+    lostPlace:{
+      trigger: 'blur',
       container: '.info-message',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvilket sted skaden inntraff!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppi om tapet gjelder tyveri fra bilen!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvilket sted skaden inntraff!'
         }
       }
     },
@@ -376,26 +372,6 @@ $(document).ready(function(){
         }
       }
     },
-    itemSecurity:{
-      trigger: 'blur',
-      container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvordan du sikret passet!',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvordan du sikret passet!'
-        }
-      }
-    },
-    lostTime:{
-      trigger: 'blur',
-      container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi når skaden inntraff!',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi når skaden inntraff!'
-        }
-      }
-    },
     otherInfo:{
       trigger: 'blur',
       container: '.info-message',
@@ -406,17 +382,7 @@ $(document).ready(function(){
         }
       }
     },
-    policeInfo:{
-      trigger: 'blur',
-      container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!'
-        }
-      }
-    },
-   };
+  };
   var taptGjenstandFields = {
     lostItemType: {
       trigger: 'blur',
@@ -438,8 +404,8 @@ $(document).ready(function(){
     },
     purchasedWhere: {
       trigger: 'blur',
-        container: '.info-message',
-        validators: {
+      container: '.info-message',
+      validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi hvor gjenstanden ble kjøpt!'
         }
@@ -462,19 +428,8 @@ $(document).ready(function(){
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden kan repareres'
         }
       }
-    },
-    itemExpences:{
-      trigger: 'blur',
-      container: '.info-message',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hva det vil koste å kjøpe ny / reparere gjenstanden'
-        },
-        integer:{
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Summen du skrev inn må være et heltall.'
-        }
-      }
     }
+
   }
   var omReisenFields = {
 
@@ -499,16 +454,6 @@ $(document).ready(function(){
         }
       }
     },
-    destination: {
-      trigger: 'blur',
-      container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi reisemål og hotell!!',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi reisemål og hotell!'
-        }
-      }
-    },
     organizator: {
       trigger: 'blur',
       container: '.info-message',
@@ -516,15 +461,6 @@ $(document).ready(function(){
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!'
-        }
-      }
-    },
-    insurance:{
-      threshold: 3,
-      container: '.info-message',
-      validators: {
-        notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om du har avbestillingsforsikring i et annet selskap!'
         }
       }
     },
@@ -714,7 +650,19 @@ $(document).ready(function(){
     }
   };
 
-  var validationFields = $.extend({}, omTapetFields, taptGjenstandFields, omReisenFields, personOpplysningerFields);
+  var oppsummeringFields ={
+    confirm:{
+      threshold: 3,
+      container: '.info-message',
+      validators: {
+        notEmpty: {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må godkjenne for å kunne sende inn sjema'
+        }
+      }
+    }
+  }
+
+  var validationFields = $.extend({}, omTapetFields, taptGjenstandFields, omReisenFields, personOpplysningerFields, oppsummeringFields);
 
   $('#skademelding').bootstrapValidator({
     message: 'This value is not valid',
@@ -771,12 +719,20 @@ $(document).ready(function(){
   });
 
   $('#addItemLostButton').click(function(event){
-     showAddItemLost();
+    addTableRow('#taptGjenstand');
   });
 
 
 
 });
+
+function clearInput(selector){
+  $(':input',selector)
+          .not(':button, :submit, :reset, :hidden')
+          .val('')
+          .removeAttr('checked')
+          .removeAttr('selected');
+}
 
 function fillOutPerson(){
   var birthNumber = $('input[name=birthNumber]').val();
@@ -794,36 +750,30 @@ function cancelSubmitForm(){
 }
 
 function validateForm(event){
- event.preventDefault();
- var bsValidator = $('#skademelding').data('bootstrapValidator');
- bsValidator.validate();
- if(bsValidator.isValid()){
-   if($("#nextButton").hasClass("leggTil")){
-     showItemOverview()
-     addTableRow('lostItemTable');
-   }else{
-     var panelSubmitted = $('.stepPanel.active');
-     stepPanel(panelSubmitted).addClass('completed').removeClass('current');
-     var nextPanel = panelSubmitted.next('section.stepPanel');
-     stepPanel(nextPanel).addClass('current');
-     setActive(nextPanel);
-   }
+  event.preventDefault();
+  var panelSubmitted = $('.stepPanel.active');
+  if(panelSubmitted.attr('id')=='taptGjenstand'){
+    if($('#taptGjenstand tr').length > 0){
+      stepPanel(panelSubmitted).addClass('completed').removeClass('current');
+      var nextPanel = panelSubmitted.next('section.stepPanel');
+      stepPanel(nextPanel).addClass('current');
+      setActive(nextPanel);
+    }
   }else{
-    $('html, body').animate({
-      scrollTop: $('div.has-error:first').offset().top-100
-    }, 1000);
-  }
-}
-function showItemOverview(){
-  $("#leggTilGjenstand").hide();
-  $("#nextButton").text('Neste').removeClass("leggTil disabled");
-  $("#gjenstandOversikt").show();
-}
+    var bsValidator = $('#skademelding').data('bootstrapValidator');
+    bsValidator.validate();
+    if(bsValidator.isValid()){
 
-function showAddItemLost(){
-  $("#gjenstandOversikt").hide();
-  $("#leggTilGjenstand").show();
-  $("#nextButton").text("Legg til").removeClass("disabled").addClass("leggTil");
+      stepPanel(panelSubmitted).addClass('completed').removeClass('current');
+      var nextPanel = panelSubmitted.next('section.stepPanel');
+      stepPanel(nextPanel).addClass('current');
+      setActive(nextPanel);
+    }else{
+      $('html, body').animate({
+        scrollTop: $('div.has-error:first').offset().top-100
+      }, 1000);
+    }
+  }
 }
 
 function showMore(selector,hideIndex){
@@ -873,14 +823,8 @@ function setActive(nextActive){
       $("#nextButton").text("Send inn");
     }else if(nextActive.is("#kvittering")){
       $("#navigationButtons").hide();
-    }else if(nextActive.is("#taptGjenstand")){
-      if(!$('#lostItemTable > tbody > tr').length){
-        showAddItemLost();
-      }else{
-        showItemOverview();
-      }
     }else{
-      $("#nextButton").text('Neste').removeClass("leggTil disabled");
+      $("#nextButton").text('Neste').removeClass("disabled");
     }
 
     if(nextActive.is('#omTapet')){
@@ -931,8 +875,11 @@ function populateSummary(){
 
 }
 
-//Function for adding row to table
-function addTableRow(tableId){
+//Function for adding row to table. Needs to be refactored/removed when implementing in Angular
+function addTableRow(selector){
+
+  var tableId = $(selector).find("table").attr('id');
+
   if(tableId == "familyTable"){
     var birthNumb = $('#birthNumberTable').val();
     var firstName = $('#firstNameTable').val();
@@ -945,14 +892,16 @@ function addTableRow(tableId){
       var td4 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
       var td5 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
       $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+td5+'</tr>');
+      clearInput(selector)
     }
   }else if(tableId == "lostItemTable"){
     var td1 = '<td>'+ $('#lostItemType').val();+'</td>';
-    var td2 = '<td class="text-right">Kvittering på gjenstand.pdf</td>';
+    var td2 = '<td class="text-right">kvittering.pdf</td>';
     var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
     var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
-
     $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
+    clearInput(selector);
+    $('#skademelding').data('bootstrapValidator').resetForm();
   }else{
     var damDescr = $('#damageDescription').val();
     var insComp = $('#insuranceCompany').val();
@@ -962,6 +911,7 @@ function addTableRow(tableId){
       var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
       var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
       $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
+      clearInput(selector);
     }
   }
 
@@ -1056,71 +1006,71 @@ $(window).scroll(function(event){
 </div>
 
 <div class="container">
-    <div class="row"style="margin-top: 50px;">
-      <h1>Skademelding for reisegods</h1>
-    </div>
-    <div class="progressBar hidden-xs hidden-sm" style="margin-left: 5%; margin-right: 5%;">
-      <div id="stepFigures" class="row" style="margin-top: 50px;">
-        <div class="col-md-2">
-          <div id="step-omTapet" class="square active" onclick="navigateTo($('#omTapet'))" style="cursor: pointer;"><img></div>
-        </div>
-        <div class="col-md-2">
-          <div id="step-taptGjenstand" class="square" onclick="navigateTo($('#taptGjenstand'))" style="cursor: pointer;margin-left: 10px;"><img></div>
-        </div>
-        <div class="col-md-2">
-          <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="cursor: pointer;margin-left: 20px;"><img></div>
-        </div>
-        <div class="col-md-2">
-          <div id="step-personOpplysninger" class="square" onclick="navigateTo($('#personOpplysninger'))" style="cursor: pointer;margin-left: 28px;"><img></div>
-        </div>
-        <div class="col-md-2">
-          <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="cursor: pointer;margin-left: 37px;"><img></div>
-        </div>
-        <div class="col-md-2">
-          <div id="step-kvittering" class="square" style="cursor: pointer;margin-left: 46px;"><img></div>
-        </div>
+  <div class="row"style="margin-top: 50px;">
+    <h1>Skademelding for reisegods</h1>
+  </div>
+  <div class="progressBar hidden-xs hidden-sm" style="margin-left: 5%; margin-right: 5%;">
+    <div id="stepFigures" class="row" style="margin-top: 50px;">
+      <div class="col-md-2">
+        <div id="step-omTapet" class="square active " onclick="navigateTo($('#omTapet'))" style="cursor: pointer;"><img></div>
       </div>
-      <div id="stepNumbers" class="row" style="margin-top: 5px;">
-        <div class="col-md-2">
-          <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;">1</span>
-        </div>
-        <div class="col-md-2">
-          <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-taptGjenstand" style="cursor: pointer;margin-left: 36px;">2</span>
-        </div>
-        <div class="col-md-2">
-          <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="cursor: pointer;margin-left: 45px;">3</span>
-        </div>
-        <div class="col-md-2">
-          <span class="number" onclick="navigateTo($('#personOpplysninger'))" name="step-personOpplysninger" style=" cursor: pointer; margin-left: 53px;">4</span>
-        </div>
-        <div class="col-md-2">
-          <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="cursor: pointer;margin-left: 63px;">5</span>
-        </div>
-        <div class="col-md-2">
-          <span class="number" name="step-kvittering" style="cursor: pointer;margin-left: 72px;">6</span>
-        </div>
+      <div class="col-md-2">
+        <div id="step-taptGjenstand" class="square" onclick="navigateTo($('#taptGjenstand'))" style="cursor: pointer;margin-left: 10px;"><img></div>
       </div>
-      <div id="stepLabels" class="row" style="margin-top: 8%;">
-        <div class="col-md-2">
-          <h4 style="margin-left: -15%;">Om Tapet/Skaden</h4>
-        </div>
-        <div class="col-md-2">
-          <h4 style="margin-left: -3%;">Tapt Gjenstand</h4>
-        </div>
-        <div class="col-md-2">
-          <h4 style="margin-left: 15%;">Om Reisen</h4>
-        </div>
-        <div class="col-md-2">
-          <h4 style="margin-left: -1%;">Personopplysninger</h4>
-        </div>
-        <div class="col-md-2">
-          <h4 style="margin-left: 15%;">Oppsummering</h4>
-        </div>
-        <div class="col-md-2">
-          <h4 style="margin-left: 37%;">Kvittering</h4>
-        </div>
+      <div class="col-md-2">
+        <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="cursor: pointer;margin-left: 20px;"><img></div>
+      </div>
+      <div class="col-md-2">
+        <div id="step-personOpplysninger" class="square" onclick="navigateTo($('#personOpplysninger'))" style="cursor: pointer;margin-left: 28px;"><img></div>
+      </div>
+      <div class="col-md-2">
+        <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="cursor: pointer;margin-left: 37px;"><img></div>
+      </div>
+      <div class="col-md-2">
+        <div id="step-kvittering" class="square" style="cursor: pointer;margin-left: 46px;"><img></div>
       </div>
     </div>
+    <div id="stepNumbers" class="row" style="margin-top: 5px;">
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;">1</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-taptGjenstand" style="cursor: pointer;margin-left: 36px;">2</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="cursor: pointer;margin-left: 45px;">3</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#personOpplysninger'))" name="step-personOpplysninger" style=" cursor: pointer; margin-left: 53px;">4</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="cursor: pointer;margin-left: 63px;">5</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" name="step-kvittering" style="cursor: pointer;margin-left: 72px;">6</span>
+      </div>
+    </div>
+    <div id="stepLabels" class="row" style="margin-top: 8%;">
+      <div class="col-md-2">
+        <h4>Om Skaden</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: -3%;">Tapt Gjenstand</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: 15%;">Om Reisen</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: -1%;">Personopplysninger</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: 15%;">Oppsummering</h4>
+      </div>
+      <div class="col-md-2">
+        <h4 style="margin-left: 37%;">Kvittering</h4>
+      </div>
+    </div>
+  </div>
 
 </div>
 
@@ -1129,25 +1079,19 @@ $(window).scroll(function(event){
 <form id="skademelding" class="validateForm" role="form">
 <section id="omTapet" class="stepPanel active" style="margin: 50px 0 50px 0;">
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-6 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
       <hr>
       <h3>Hva har skjedd?</h3>
 
-      <p>Er gjenstanden stjålet, mistet eller skadet?</p>
+      <p>Hva har skjedd med gjenstanden(e)</p>
       <div class="stb-form-group al checkbox">
         <span class="help-block info-message"></span>
-        <input type="radio" name="loss" id="lossYes" value="Yes" class="stb-radio"><label class="stb-custom-input" for="lossYes">Ja</label>
-        <input type="radio" name="loss" id="lossNo" value="No" class="stb-radio" ><label class="stb-custom-input" for="lossNo">Nei</label>
+        <input type="radio" name="loss" id="lossYes" value="Stjålet" class="stb-radio"><label class="stb-custom-input" for="lossYes">Stjålet</label>
+        <input type="radio" name="loss" id="lossNo" value="Skader" class="stb-radio" ><label class="stb-custom-input" for="lossNo">Skadet</label>
       </div>
 
-      <p>Vil du utelukke at gjenstanden er mistet. Hvis ja, hvorfor det?</p>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
-        <textarea cols="40" rows="4" class="form-control" name="itemLost"></textarea>
-      </div>
-
-      <p>Når inntraff skaden?</p>
+      <p>Når ble gjenstanden(e) skadet?</p>
       <div class="stb-form-group al">
         <span class="help-block info-message"></span>
         <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
@@ -1156,17 +1100,16 @@ $(window).scroll(function(event){
         </div>
       </div>
 
-      <p>Hvor inntraff tapet/skaden?</p>
+      <p>I hvilket land skjedde skaden?</p>
       <div class="stb-form-group al text-area">
         <span class="help-block info-message"></span>
-        <textarea cols="40" rows="4" class="form-control" name="lostWhere"></textarea>
+        <textarea cols="40" rows="1" class="form-control" name="lostCountry"></textarea>
       </div>
 
-      <p>Gjelder tapet tyveri fra bilen?</p>
-      <div class="stb-form-group al checkbox">
+      <p>På hvilket sted skjedde skaden?</p>
+      <div class="stb-form-group al text-area">
         <span class="help-block info-message"></span>
-        <input type="radio" name="lossCar" id="lossCarYes" value="Yes" class="stb-radio"><label for="lossCarYes" class="stb-custom-input">Ja</label>
-        <input type="radio" name="lossCar" id="lossCarNo" value="No" class="stb-radio" ><label for="lossCarNo" class="stb-custom-input">Nei</label>
+        <textarea cols="40" rows="1" class="form-control" name="lostPlace"></textarea>
       </div>
 
       <hr>
@@ -1200,24 +1143,13 @@ $(window).scroll(function(event){
 
       <hr>
 
-      <h3>Annet?</h3>
-      <p>Hvor lenge var gjenstanden oppbevart?</p>
+      <h3>Annet</h3>
+      <p>Hvor og hvordan var gjenstanden(e) oppbevart?</p>
       <div class="stb-form-group al text-area">
         <span class="help-block info-message"></span>
         <textarea cols="40" rows="4" class="form-control" name="safeKeeping"></textarea>
       </div>
 
-      <p>Hvordan sikret/passet du på gjenstanden i denne perioden?</p>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
-        <textarea cols="40" rows="4" class="form-control" name="itemSecurity"></textarea>
-      </div>
-
-      <p>Hvor lang tid gikk det før du oppdaget at gjenstanden var borte?</p>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
-        <textarea cols="40" rows="4" class="form-control" name="lostTime"></textarea>
-      </div>
 
       <p>Anbdre opplysninger om skaden?</p>
       <div class="stb-form-group al text-area">
@@ -1225,32 +1157,18 @@ $(window).scroll(function(event){
         <textarea cols="40" rows="4" class="form-control" name="otherInfo"></textarea>
       </div>
 
-      <p>Ved hvilken politistasjon er tapet/skaden meldt?</p>
-
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
-        <textarea cols="40" rows="1" class="form-control" name="policeInfo"></textarea>
-      </div>
-
-      <p>Bekreftelse fra politiet</p>
-      <p class="petit">Last opp bekreftelsen du fikk fra politiet da du meldte tapet/skaden til politiet</p>
-      <div class="list-group">
-        <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Bekreftelse fra politiet <span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
-      </div>
-      <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
     </div>
   </div>
 </section>
 <section id="taptGjenstand" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
-  <section id="leggTilGjenstand"  >
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h2>Legg til tapte og skadede gjenstander</h2>
+    <div class="col-md-6 col-md-offset-1">
+      <h2>Skadet gjenstand</h2>
       <hr>
-      <h3>Hva har skjedd?</h3>
+      <h3>Legg til gjenstanden(e)</h3>
 
       <p>Type gjenstand</p>
-      <div class="stb-form-group al input-group" style="width: 40%;">
+      <div class="stb-form-group al input-group" style="width: 100%;">
         <span class="help-block info-message"></span>
         <input id="lostItemType" type='text' class="form-control" name="lostItemType" placeholder="Merke og modell" />
       </div>
@@ -1297,12 +1215,12 @@ $(window).scroll(function(event){
         <input type="radio" name="itemRepairable" id="itemRepairableYes" value="Yes" class="stb-radio"><label class="stb-custom-input" for="itemRepairableYes">Ja</label>
         <input type="radio" name="itemRepairable" id="itemRepairableNo" value="No" class="stb-radio" ><label class="stb-custom-input" for="itemRepairableNo">Nei</label>
       </div>
-
-      <p>Hva vil det koste å kjøpe gjenstanden på nytt idag? / Hva vil det koste å reparere gjenstanden?</p>
-      <div class="stb-form-group al">
-        <span class="help-block info-message"></span>
-        <div class="input-group" style="width: 30%;">
-          <input type='text' class="form-control" name="itemExpences"><span class="input-group-addon">Kr</span>
+      <div id="repairItem" class="well" style="display: none;">
+        <p style="margin-top: 20px;">Kvittering</p>
+        <p class="petit">Last opp bevis som inneholder informasjon om gjenstanden kan repareres eller ikke,
+          og evt. reparasjonskonstnad. Fåes der du kjøpte varen, eller av de som skal reparere skaden.</p>
+        <div class="list-group">
+          <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Takseringsrapport.pdf<span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
         </div>
       </div>
 
@@ -1312,33 +1230,30 @@ $(window).scroll(function(event){
         <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Kvittering på gjenstanden.pdf<span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
       </div>
       <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
-
+      <br>
+      <a id="addItemLostButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
     </div>
   </div>
-  </section>
-  <section id="gjenstandOversikt" style="display:none;">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <h2>Tapte og skadede gjenstander</h2>
-        <hr>
 
-        <table id="lostItemTable" class="stb-table [hoverable]" style="margin-top: 10px;">
-          <thead>
-          <tr>
-            <th>Gjenstand</th>
-            <th class="text-right">Vedlagt dokument</th>
-            <th class="text-right"></th>
-            <th class="text-right"></th>
-          </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-        <a id="addItemLostButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1" style="margin-top: 50px;">
+      <h3>Gjenstander lagt til</h3>
+      <hr>
 
-      </div>
+      <table id="lostItemTable" class="stb-table [hoverable]" style="margin-top: 10px;">
+        <thead>
+        <tr>
+          <th>Gjenstand</th>
+          <th class="text-right">Vedlagt dokument</th>
+          <th class="text-right"></th>
+          <th class="text-right"></th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
     </div>
-  </section>
+  </div>
 </section>
 <section id="omReisen" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
   <div class="row">
@@ -1348,7 +1263,7 @@ $(window).scroll(function(event){
       <h3>Detaljer om reisen</h3>
 
       <div class="stb-form-group">
-        <p>Detaljer om reisen</p>
+        <p>Hva er hensikten med reisen?</p>
         <input type="radio" name="travel" id="travelLeisure" value="Leisure" class="stb-radio travel" checked="checked"><label for="travelLeisure" class="stb-custom-input">Fritidsreise</label>
         <input type="radio" name="travel" id="travelBusiness" value="Business" class="stb-radio travel"><label for="travelBusiness" class="stb-custom-input">Forretningsreise</label>
       </div>
@@ -1356,7 +1271,7 @@ $(window).scroll(function(event){
       <div id="travelBusinessForm" style="display:none;">
         <div class="well" style="margin-top: 20px;">
           <p>Bekreftelse fra arbeidsgiver</p>
-          <p class="petit">Last opp bekreftelsen fra arbeidsgiver om reisen</p>
+          <p class="petit">Har du bekreftelse fra arbeidsgiver? Last den opp her.</p>
           <div class="list-group">
             <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Bekreftelse fra Storebrand ASA <span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
           </div>
@@ -1364,7 +1279,7 @@ $(window).scroll(function(event){
         </div>
       </div>
 
-      <p>Utreisedato fra fast bopel?</p>
+      <p>Utreisedato fra fast bostedsadresse</p>
       <div class="stb-form-group al">
         <span class="help-block info-message"></span>
         <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
@@ -1373,18 +1288,13 @@ $(window).scroll(function(event){
         </div>
       </div>
 
-      <p>Hjemreisedato fra fast bopel?</p>
+      <p>Hjemreisedato til fast bostedsadresse?</p>
       <div class="stb-form-group al">
         <span class="help-block info-message"></span>
         <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
           <input type='text' class="form-control" name="dateTravelFrom"/>
           <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
         </div>
-      </div>
-      <p>Reisemål og hotell</p>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
-        <textarea cols="40" rows="4" class="form-control" name="destination"></textarea>
       </div>
 
       <p>Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap</p>
@@ -1393,14 +1303,6 @@ $(window).scroll(function(event){
         <textarea cols="40" rows="1" class="form-control" name="organizator"></textarea>
       </div>
       <hr>
-
-      <h3>Forsikring</h3>
-      <p>Har du avbestillingsforsikring i et annet selskap?</p>
-      <div class="stb-form-group al checkbox">
-        <span class="help-block info-message"></span>
-        <input type="radio" name="insurance" id="insuranceYes" value="Yes" class="stb-radio"><label for="insuranceYes" class="stb-custom-input">Ja</label>
-        <input type="radio" name="insurance" id="insuranceNo" value="No" class="stb-radio" ><label for="insuranceNo" class="stb-custom-input">Nei</label>
-      </div>
 
       <p>Har du betalt reisen med et kort som inkluderer reiseforsikring?</p>
       <div class="stb-form-group al checkbox">
@@ -1411,7 +1313,7 @@ $(window).scroll(function(event){
 
       <div id="creditInsuranceInfo" class="well" style="display: none;">
 
-        <p>Reisemål og hotell</p>
+        <p>Kortholderens navn</p>
         <div class="stb-form-group al input-group">
           <span class="help-block info-message"></span>
           <input type='text' class="form-control" name="cardOwner" placeholder="Fornavn og etternavn" />
@@ -1420,11 +1322,10 @@ $(window).scroll(function(event){
         <p>Kortnummer</p>
         <div class="stb-form-group al input-group">
           <span class="help-block info-message"></span>
-          <input type='text' class="form-control" name="cardNumber"/>
+          <input type='text' class="form-control" name="cardNumber" placeholder="16 siffer"/>
         </div>
 
-
-        <p>Er skaden meldt dit? </p>
+        <p>Er skaden meldt til dette selskapet? </p>
         <div class="stb-form-group al checkbox">
           <span class="help-block info-message"></span>
           <input type="radio" name="damageReport" id="damageReportYes" value="Yes" class="stb-radio"><label for="damageReportYes" class="stb-custom-input">Ja</label>
@@ -1460,7 +1361,7 @@ $(window).scroll(function(event){
           <textarea id="insuranceCompany"  cols="40" rows="1" class="form-control" name="insuranceCompany"></textarea>
         </div>
 
-        <a id="addButton" class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('insuranceTable')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+        <a id="addButton" class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#insurancePayment')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
 
         <table id="insuranceTable" class="stb-table [hoverable]" style="margin-top: 10px;">
           <thead>
@@ -1527,26 +1428,23 @@ $(window).scroll(function(event){
         <input type='text' class="form-control" name="bankAccount" placeholder="11 siffer" />
       </div>
 
-      <p>Polisenummer</p>
+      <p>Polisenummer<span class="petit"> (valgfritt)</span></p>
       <div class="stb-form-group al input-group">
         <span class="help-block info-message"></span>
-        <input type='text' class="form-control" name="poliseNumber" placeholder="7 siffer" />
+        <input type='text' class="form-control" placeholder="7 siffer" />
       </div>
 
       <hr>
       <h3>Hvem var utstatt for hendelsen?</h3>
 
-      <p>Legg til de personene som tapte eller fikk skaden en gjenstand</p>
+      <p>Oppgi de som opplevde å få gjenstanden(e) skadet</p>
+      <div class="stb-form-group al checkbox">
+        <span class="help-block info-message"></span>
+        <input type="radio" id="yourself" value="Yourself" name="stb-a" onclick="fillOutPerson()" class="stb-radio"><label for="yourself" class="stb-custom-input">Du som melder fra om tyveriet</label>
+        <input type="radio" id="andre" value="Andre" name="stb-a" class="stb-radio" ><label for="andre" class="stb-custom-input">Andre</label>
+      </div>
 
-      <div class="well">
-
-        <div class="stb-form-group al checkbox">
-          <span class="help-block info-message"></span>
-          <input type="radio" id="yourself" value="Yourself" name="stb-a" onclick="fillOutPerson()" class="stb-radio"><label for="yourself" class="stb-custom-input">Du som melder tapet/skaden</label>
-          <input type="radio" id="partner" value="Partner" name="stb-a" class="stb-radio"><label for="partner" class="stb-custom-input">Ektefeller/samboer/partner</label>
-          <input type="radio" id="barn" value="Barn" name="stb-a" class="stb-radio"><label for="barn" class="stb-custom-input">Barn</label>
-          <input type="radio" id="andre" value="Andre" name="stb-a" class="stb-radio" ><label for="andre" class="stb-custom-input">Andre</label>
-        </div>
+      <div id="affectedPersons" class="well">
 
         <p>Fødselsnummer</p>
         <div class="stb-form-group al input-group">
@@ -1566,8 +1464,15 @@ $(window).scroll(function(event){
           <input id="lastNameTable" type='text' class="form-control" name="lastNameTable"/>
         </div>
 
+        <p>Hvem er dette?</p>
+        <div class="stb-form-group al checkbox">
+          <span class="help-block info-message"></span>
+          <input type="radio" id="partner" value="Partner" name="stb-a" class="stb-radio"><label for="partner" class="stb-custom-input">Ektefeller/samboer/partner</label>
+          <input type="radio" id="barn" value="Barn" name="stb-a" class="stb-radio"><label for="barn" class="stb-custom-input">Barn</label>
+          <input type="radio" id="andre2" value="Andre" name="stb-a" class="stb-radio" ><label for="andre2" class="stb-custom-input">Andre</label>
+        </div>
 
-        <a class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('familyTable')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+        <a class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#affectedPersons')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
 
         <table id="familyTable" class="stb-table [hoverable]" style="margin-top: 10px;">
           <thead>
@@ -1621,7 +1526,7 @@ $(window).scroll(function(event){
 
   <div class="row">
     <div class="col-md-9 col-md-offset-1">
-      <h3>Om tapet/skaden</h3>
+      <h3>Om skaden</h3>
     </div>
     <div class="col-md-1" style="margin-top: 20px">
       <a style="cursor: pointer;" onclick="setActive($('#omTapet')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
@@ -1631,20 +1536,16 @@ $(window).scroll(function(event){
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <ul class="list-group omTapet">
-        <li class="list-group-item">Er gjenstanden stjålet mistet eller skadet? <span id="loss" class="pull-right"></span></li>
-        <li class="list-group-item">Vil du utelukke at gjenstanden er mistet. Hvis ja, hvorfor det? <span id="itemLost" class="pull-right"></span></li>
-        <li class="list-group-item">Når skjedde tapet/skaden? <span id="dateWhen" class="pull-right"></span></li>
-        <li class="list-group-item">Hvor skjedde skaden? <span id="lostWhere" class="pull-right"></span></li>
-        <li class="list-group-item">Gjelder tapet tyveri fra bilen? <span id="lossCar" class="pull-right"></span></li>
+        <li class="list-group-item">Hva har skjedd med gjenstanden(e)?<span id="loss" class="pull-right"></span></li>
+        <li class="list-group-item">Når ble gjenstanden(e) skadet? <span id="dateWhen" class="pull-right"></span></li>
+        <li class="list-group-item">I hvilket land skjedde skaden? <span id="lostCountry" class="pull-right"></span></li>
+        <li class="list-group-item">På hvilket sted skjedde skaden? <span id="lostPlace" class="pull-right"></span></li>
         <li class="list-group-item">På hvilken måte tror du tapet kan ha skjedd? <span id="lostHow" class="pull-right"></span></li>
         <li class="list-group-item">Hvor oppholdt du deg da tapet skjedde? Og hvilke aktiviteter ble utført? <span id="lostActivities" class="pull-right"></span></li>
         <li class="list-group-item">La du merke til en spesiell hendelse som kan ha noe med tapet å gjøre? <span id="lostEvents" class="pull-right"></span></li>
         <li class="list-group-item">Var det utenforstående vitne(r) til hendelsen? <span id="lossWitness" class="pull-right"></span></li>
-        <li class="list-group-item">Hvor lenge var gjenstanden oppbevart?<span id="safeKeeping" class="pull-right"></span></li>
-        <li class="list-group-item">Hvordan sikret/passet du på gjenstanden i denne perioden? <span id="itemSecurity" class="pull-right"></span></li>
-        <li class="list-group-item">Hvor lang tid gikk det før du oppdaget at gjenstanden var borte? <span id="lostTime" class="pull-right"></span></li>
+        <li class="list-group-item">Hvor og hvordan var gjenstanden(e) oppbevart?<span id="safeKeeping" class="pull-right"></span></li>
         <li class="list-group-item">Anbdre opplysninger om skaden?<span id="otherInfo" class="pull-right"></span></li>
-        <li class="list-group-item">Ved hvilken politistasjon er tapet/skaden meldt? <span id="policeInfo" class="pull-right"></span></li>
         <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
       </ul>
       <hr>
@@ -1663,7 +1564,6 @@ $(window).scroll(function(event){
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <ul id="summaryTaptGjenstand" class="list-group">
-
       </ul>
       <hr>
     </div>
@@ -1681,33 +1581,49 @@ $(window).scroll(function(event){
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <ul class="list-group">
-        <li class="list-group-item">Utreisedato fra fast bopel? <span id="dateTravelTo" class="pull-right"></span></li>
-        <li class="list-group-item">Hjemreisedato fra fast bopel? <span id="dateTravelFrom" class="pull-right"></span></li>
-        <li class="list-group-item">Reisemål og hotell <span id="destination" class="pull-right"></span></li>
+        <li class="list-group-item">Utreisedato fra fast bostedsadresse? <span id="dateTravelTo" class="pull-right"></span></li>
+        <li class="list-group-item">Hjemreisedato fra fast bostedsadresse? <span id="dateTravelFrom" class="pull-right"></span></li>
         <li class="list-group-item">Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap <span id="organizator" class="pull-right"></span></li>
-        <li class="list-group-item">Har du avbestillingsforsikring i et annet selskap? <span id="insurance" class="pull-right"></span></li>
         <li class="list-group-item">Har du betalt reisen med et kort som inkluderer reiseforsikring?<span id="creditInsurance" class="pull-right"></span></li>
         <li class="list-group-item">Har du tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling?<span id="damagesLately" class="pull-right"></span></li>
         <li class="list-group-item">Hvor gammel er gjenstanden?<span id="howOld" class="pull-right"></span></li>
         <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
       </ul>
+
+      <div class="stb-form-group al checkbox">
+        <span class="help-block info-message"></span>
+        <input class="stb-checkbox" id="confirmInfo" type="checkbox" />
+        <label class="stb-custom-input" for="confirmInfo">&nbsp Jeg bekrefter at alle opplysningene jeg har oppgitt er korrekte.</label><br>
+        <p class="petit" style="margin-right: 400px;margin-top: -1px;">
+          Den som bevisst gir uriktige eller ufullstendige opplysninger i forbindelse med skadeoppgjør, kan tape enhver rett etter forsikringsavtalen.
+          Skaden vil bli meldt til Forsikringsselskapenes sentrale skaderegister.
+        </p>
+      </div>
+      <div class="stb-form-group al checkbox">
+        <input class="stb-checkbox" id="acceptEmail" type="checkbox" />
+        <label for="acceptEmail">&nbsp Jeg godtar at e-postadressen jeg har oppgitt benyttes i videre dialog rundt skademeldingen.</label><br>
+      </div>
     </div>
   </div>
 
+
+
 </section>
-<section id="kvittering" class="stepPanel" style="display:none;  margin: 50px 0 50px 0;">
+<section id="kvittering" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Kvittering</h2>
       <hr>
       <div class="well">
-       <p style="color: #6C8524;font-size: 20px;"><span class="stb-sprite-32 circle-check" style="margin-bottom: -1%;"></span> Skademeldingen er motatt.</p>
+        <p style="color: #6C8524;font-size: 20px;"><span class="stb-sprite-32 circle-check" style="margin-bottom: -1%;"></span> Skademeldingen er motatt.</p>
         <h3>Hva skjer videre?</h3>
         <ul class="stb">
           <li>En bekreftelse av skademeldingen vil bli sendt til <span id="confirmEmail" style="color: #6C8524;"></span></li>
           <li>En av våre konsulenter går igjennom skademeldingen. Vi vil kontakte deg hvis det
-              er behov for ytterlige opplysninger. Du vil deretter motta nærmere informasjon i
-              posten.
+            er behov for ytterlige opplysninger.
+          </li>
+          <li>Du vil høre fra oss når saken er ferdig behandlet. Behandlingstiden er ca. 2 uker.
+            Noe lengre tid ved høysesong.
           </li>
           <li>Eventuell erstatning vil bli utbetalt når skaden er ferdig vurdert.</li>
         </ul>
@@ -1720,7 +1636,7 @@ $(window).scroll(function(event){
             Referansenummer - SKA-54321
           </div>
           <div class="col-md-4">
-           <a class="pull-right"><span class="glyphicon glyphicon-search"></span> Skriv ut</a>
+            <a class="pull-right"><span class="glyphicon glyphicon-search"></span> Skriv ut</a>
           </div>
         </div>
         <hr style="margin-top: 10px">
@@ -1733,10 +1649,12 @@ $(window).scroll(function(event){
 <div id="navigationButtons" class="row" style="margin-bottom: 50px;">
   <div class="col-md-10 col-md-offset-1">
     <div class="stb-form-group al" >
-      <hr>
-      <button id="nextButton" type="submit" class="stb-btn stb-btn-lg pull-right submitButton navButton">Neste</button>
-      <a class="stb-btn stb-btn-lg secondary pull-right" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;">Avbryt</a>
       <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
+      <button id="nextButton" type="submit" class="stb-btn stb-btn-lg submitButton navButton">Neste</button>
+      <hr>
+      <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+      <a class="stb-btn stb-btn-lg secondary pull-right" onclick="" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
+
     </div>
   </div>
 </div>
