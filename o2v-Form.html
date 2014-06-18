@@ -170,6 +170,12 @@
     background-position: 0 18px;
   }
 
+  .hiddenfile {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
+
 
 </style>
 <script type="text/javascript">
@@ -381,7 +387,7 @@ $(document).ready(function(){
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!'
         }
       }
-    },
+    }
   };
   var taptGjenstandFields = {
     lostItemType: {
@@ -722,10 +728,32 @@ $(document).ready(function(){
     addTableRow('#taptGjenstand');
   });
 
+  registerUploadHandlers();
 
 
 });
 
+
+function registerUploadHandlers(){
+  $('#taptGjenstand').on('change','#receiptFile' , uploadHandler);
+  $('#taptGjenstand').on('change','#repairFile' , uploadHandler);
+  $('#omReisen').on('change','#confirmWorkFile' , uploadHandler);
+}
+
+function uploadHandler(event){
+  var listString = '<span class="list-group-item" href="#"><a>'+event.target.files[0].name+'</a><a onclick="$(this).parent().remove();" class="glyphicon glyphicon-remove pull-right"> Fjern</span></a></span>';
+  switch(event.target.getAttribute('id')){
+    case 'receiptFile':
+      $('#receiptItemUpload').append(listString);
+      break;
+    case 'repairFile':
+      $('#repairItemUpload').append(listString);
+      break;
+    case 'confirmWorkFile':
+      $('#confirmWorkUpload').append(listString);
+      break;
+  }
+}
 function clearInput(selector){
   $(':input',selector)
           .not(':button, :submit, :reset, :hidden')
@@ -892,11 +920,11 @@ function addTableRow(selector){
       var td4 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
       var td5 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
       $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+td5+'</tr>');
-      clearInput(selector)
+      clearInput(selector);
     }
   }else if(tableId == "lostItemTable"){
     var td1 = '<td>'+ $('#lostItemType').val();+'</td>';
-    var td2 = '<td class="text-right">kvittering.pdf</td>';
+    var td2 = '<td class="text-right">'+$('#receiptItemUpload a:first').text()+'</td>';
     var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
     var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
     $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
@@ -1077,7 +1105,7 @@ $(window).scroll(function(event){
 <div class="container stbcolor-secondary sixth">
 
 <form id="skademelding" class="validateForm" role="form">
-<section id="omTapet" class="stepPanel active" style="margin: 50px 0 50px 0;">
+<section id="omTapet" class="stepPanel active" style="margin: 48px 0 48px 0;">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -1160,7 +1188,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="taptGjenstand" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+<section id="taptGjenstand" class="stepPanel" style="display: none; margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Skadet gjenstand</h2>
@@ -1216,20 +1244,25 @@ $(window).scroll(function(event){
         <input type="radio" name="itemRepairable" id="itemRepairableNo" value="No" class="stb-radio" ><label class="stb-custom-input" for="itemRepairableNo">Nei</label>
       </div>
       <div id="repairItem" class="well" style="display: none;">
-        <p style="margin-top: 20px;">Kvittering</p>
         <p class="petit">Last opp bevis som inneholder informasjon om gjenstanden kan repareres eller ikke,
           og evt. reparasjonskonstnad. Fåes der du kjøpte varen, eller av de som skal reparere skaden.</p>
-        <div class="list-group">
-          <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Takseringsrapport.pdf<span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
+        <div id="repairItemUpload"  class="list-group">
+
         </div>
+        <div class="hiddenfile">
+          <input name="upload" type="file" id="repairFile"/>hello
+        </div>
+        <a class="stb-btn secondary" onclick="$('#repairFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;" ></span> Last opp</a>
       </div>
 
       <p style="margin-top: 20px;">Kvittering</p>
       <p class="petit">Har du kvittering på gjenstanden, eller annet bevis på kjøpet (avbetaligngskontrakt, garanti e.l.)?</p>
-      <div class="list-group">
-        <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Kvittering på gjenstanden.pdf<span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
+      <div id="receiptItemUpload" class="list-group">
       </div>
-      <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
+      <div class="hiddenfile">
+        <input name="upload" type="file" id="receiptFile"/>hello
+      </div>
+      <a class="stb-btn secondary" onclick="$('#receiptFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;"></span> Last opp</a>
       <br>
       <a id="addItemLostButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
     </div>
@@ -1255,7 +1288,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="omReisen" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+<section id="omReisen" class="stepPanel" style="display: none; margin: 50px 0 50px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om reisen</h2>
@@ -1272,10 +1305,13 @@ $(window).scroll(function(event){
         <div class="well" style="margin-top: 20px;">
           <p>Bekreftelse fra arbeidsgiver</p>
           <p class="petit">Har du bekreftelse fra arbeidsgiver? Last den opp her.</p>
-          <div class="list-group">
-            <a class="list-group-item" href="#"><img src="http://www.storebrand.no/site/stb.nsf/Pdf.gif"> Bekreftelse fra Storebrand ASA <span class="glyphicon glyphicon-remove pull-right"> Fjern</span></a>
+          <div id="confirmWorkUpload" class="list-group">
+
           </div>
-          <button class="stb-btn secondary" onclick="alert('File upload')"><span class="glyphicon glyphicon-plus"></span> Last opp</button>
+          <div class="hiddenfile">
+            <input name="upload" type="file" id="confirmWorkFile"/>hello
+          </div>
+          <a class="stb-btn secondary" onclick="$('#confirmWorkFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;"></span> Last opp</a>
         </div>
       </div>
 
@@ -1491,7 +1527,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="oppsummering" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+<section id="oppsummering" class="stepPanel" style="display:none; margin: 48px 0 48px 0;">
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
@@ -1609,7 +1645,7 @@ $(window).scroll(function(event){
 
 
 </section>
-<section id="kvittering" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+<section id="kvittering" class="stepPanel" style="display:none; margin: 48px 0 48px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Kvittering</h2>
@@ -1653,13 +1689,34 @@ $(window).scroll(function(event){
       <button id="nextButton" type="submit" class="stb-btn stb-btn-lg submitButton navButton">Neste</button>
       <hr>
       <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-      <a class="stb-btn stb-btn-lg secondary pull-right" onclick="" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
-
+      <a class="stb-btn stb-btn-lg secondary pull-right" onclick="$('#fullfillLater').slideDown(); $('html, body').animate({ scrollTop: $(document).height() }, 1000);" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
     </div>
   </div>
 </div>
 
 </form>
+</div>
+</div>
+<div id="fullfillLater" class="container stbcolor-secondary fifth" style="display: none;">
+  <div class="row" style="margin-top: 48px;">
+    <div class="col-md-1 col-md-offset-10">
+        <a onclick="$('#fullfillLater').slideUp()" ><span class="glyphicon glyphicon-remove"></span> Lukk</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      <p>Lagre nå og fullfør senere. Send lenke til skjemaet i en e-post til deg selv.</p>
+
+      <label>E-post</label>
+      <div class="stb-form-group al input-group" style="width: 50%;">
+        <span class="help-block info-message"></span>
+        <input type='text' class="form-control" name="firstNamePerson"/>
+      </div>
+      <br>
+      <a id="sendLink" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; margin-bottom: 48px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Lagre og send lenke</a>
+    </div>
+  </div>
+
 </div>
 
 
