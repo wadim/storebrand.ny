@@ -55,7 +55,7 @@
   }
 
   .bv-form .help-block {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     font-size: 15px;
   }
 
@@ -121,11 +121,12 @@
 
   div.square.completed{
     background: #6C8524;
+    cursor: pointer;
   }
 
-  div.square:hover{
+  div.square.completed:hover, div.square.current:hover {
     transform:rotate(90deg);
-    -ms-transform:rotate(90deg); /* IE 9 */
+    -ms-transform:rotate(90deg);
     -webkit-transform:rotate(90deg);
   }
 
@@ -136,7 +137,12 @@
     background: #6C8524;
   }
 
-  div.square.hovered{
+  div.square.current{
+    background: #FAA61A;
+    cursor: pointer;
+  }
+
+  div.square.completed.hovered, div.square.current.hovered{
     transform:rotate(90deg);
     -ms-transform:rotate(90deg); /* IE 9 */
     -webkit-transform:rotate(90deg);
@@ -147,6 +153,7 @@
     font-size: 50px;
     color: white;
     margin-left: 25px;
+    cursor: pointer;
   }
 
   span.imgSqr{
@@ -156,7 +163,7 @@
   }
 
   p{
-    margin-top: 5px;
+    margin-top: 6px;
   }
 
   a{
@@ -1054,47 +1061,47 @@ $(window).scroll(function(event){
     <h1>Skademelding for reisegods</h1>
   </div>
   <div class="progressBar hidden-xs hidden-sm" style="margin-left: 5%; margin-right: 5%;">
-    <div id="stepFigures" class="row" style="margin-top: 50px;">
+    <div id="stepFigures" class="row" style="margin-top: 48px;">
       <div class="col-md-2">
-        <div id="step-omTapet" class="square active " onclick="navigateTo($('#omTapet'))" style="cursor: pointer;"><img></div>
+        <div id="step-omTapet" class="square active current " onclick="navigateTo($('#omTapet'))" ><img></div>
       </div>
       <div class="col-md-2">
-        <div id="step-taptGjenstand" class="square" onclick="navigateTo($('#taptGjenstand'))" style="cursor: pointer;margin-left: 10px;"><img></div>
+        <div id="step-taptGjenstand" class="square" onclick="navigateTo($('#taptGjenstand'))" style="margin-left: 10px;"><img></div>
       </div>
       <div class="col-md-2">
-        <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="cursor: pointer;margin-left: 20px;"><img></div>
+        <div id="step-omReisen" class="square" onclick="navigateTo($('#omReisen'))" style="margin-left: 20px;"><img></div>
       </div>
       <div class="col-md-2">
-        <div id="step-personOpplysninger" class="square" onclick="navigateTo($('#personOpplysninger'))" style="cursor: pointer;margin-left: 28px;"><img></div>
+        <div id="step-personOpplysninger" class="square" onclick="navigateTo($('#personOpplysninger'))" style="margin-left: 28px;"><img></div>
       </div>
       <div class="col-md-2">
-        <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="cursor: pointer;margin-left: 37px;"><img></div>
+        <div id="step-oppsummering" class="square" onclick="navigateTo($('#oppsummering'))" style="margin-left: 37px;"><img></div>
       </div>
       <div class="col-md-2">
-        <div id="step-kvittering" class="square" style="cursor: pointer;margin-left: 46px;"><img></div>
-      </div>
-    </div>
-    <div id="stepNumbers" class="row" style="margin-top: 5px;">
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="cursor: pointer;">1</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-taptGjenstand" style="cursor: pointer;margin-left: 36px;">2</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="cursor: pointer;margin-left: 45px;">3</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#personOpplysninger'))" name="step-personOpplysninger" style=" cursor: pointer; margin-left: 53px;">4</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="cursor: pointer;margin-left: 63px;">5</span>
-      </div>
-      <div class="col-md-2">
-        <span class="number" name="step-kvittering" style="cursor: pointer;margin-left: 72px;">6</span>
+        <div id="step-kvittering" class="square" style="margin-left: 46px;"><img></div>
       </div>
     </div>
-    <div id="stepLabels" class="row" style="margin-top: 8%;">
+    <div id="stepNumbers" class="row" style="margin-top: 6px;">
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#omTapet'))" name="step-omTapet" style="">1</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#taptGjenstand'))" name="step-taptGjenstand" style="margin-left: 36px;">2</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#omReisen'))" name="step-omReisen" style="margin-left: 45px;">3</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#personOpplysninger'))" name="step-personOpplysninger" style="margin-left: 53px;">4</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" onclick="navigateTo($('#oppsummering'))" name="step-oppsummering" style="margin-left: 63px;">5</span>
+      </div>
+      <div class="col-md-2">
+        <span class="number" name="step-kvittering" style="margin-left: 72px;">6</span>
+      </div>
+    </div>
+    <div id="stepLabels" class="row" style="margin-top: 96px;">
       <div class="col-md-2">
         <h4>Om Skaden</h4>
       </div>
@@ -1204,7 +1211,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="taptGjenstand" class="stepPanel" style="display: none; margin: 50px 0 50px 0;">
+<section id="taptGjenstand" class="stepPanel" style="display: none; margin: 48px 0 48px 0;">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Skadet gjenstand</h2>
@@ -1280,16 +1287,16 @@ $(window).scroll(function(event){
       </div>
       <a class="stb-btn secondary" onclick="$('#receiptFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;"></span> Last opp</a>
       <br>
-      <a id="addItemLostButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+      <a id="addItemLostButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin: 12px 0 12px 0; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-10 col-md-offset-1" style="margin-top: 50px;">
+    <div class="col-md-10 col-md-offset-1" style="margin-top: 48px;">
       <h3>Gjenstander lagt til</h3>
       <hr>
 
-      <table id="lostItemTable" class="stb-table [hoverable]" style="margin-top: 10px;">
+      <table id="lostItemTable" class="stb-table [hoverable]" style="margin-top: 12px;">
         <thead>
         <tr>
           <th>Gjenstand</th>
@@ -1304,7 +1311,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="omReisen" class="stepPanel" style="display: none; margin: 50px 0 50px 0;">
+<section id="omReisen" class="stepPanel" style="display: none; margin: 48px 0 48px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om reisen</h2>
@@ -1318,7 +1325,7 @@ $(window).scroll(function(event){
       </div>
 
       <div id="travelBusinessForm" style="display:none;">
-        <div class="well" style="margin-top: 20px;">
+        <div class="well" style="margin-top: 24px;">
           <label>Bekreftelse fra arbeidsgiver</label>
           <p class="petit">Har du bekreftelse fra arbeidsgiver? Last den opp her.</p>
           <div id="confirmWorkUpload" class="list-group">
@@ -1413,9 +1420,9 @@ $(window).scroll(function(event){
           <textarea id="insuranceCompany"  cols="40" rows="1" class="form-control" name="insuranceCompany"></textarea>
         </div>
 
-        <a id="addButton" class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#insurancePayment')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+        <a id="addButton" class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#insurancePayment')" style="margin: 12px 0 12px 0; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
 
-        <table id="insuranceTable" class="stb-table [hoverable]" style="margin-top: 10px;">
+        <table id="insuranceTable" class="stb-table [hoverable]" style="margin-top: 12px;">
           <thead>
           <tr>
             <th>Tidligere skade</th>
@@ -1431,7 +1438,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="personOpplysninger" class="stepPanel" style="display:none; margin: 50px 0 50px 0;">
+<section id="personOpplysninger" class="stepPanel" style="display:none; margin: 48px 0 48px 0;">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Personopplysninger</h2>
@@ -1524,9 +1531,9 @@ $(window).scroll(function(event){
           <input type="radio" id="andre2" value="Andre" name="stb-a" class="stb-radio" ><label for="andre2" class="stb-custom-input">Andre</label>
         </div>
 
-        <a class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#affectedPersons')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+        <a class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#affectedPersons')" style="margin: 12px 0 12px 0; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
 
-        <table id="familyTable" class="stb-table [hoverable]" style="margin-top: 10px;">
+        <table id="familyTable" class="stb-table [hoverable]" style="margin-top: 12px;">
           <thead>
           <tr>
             <th>Navn</th>
@@ -1556,7 +1563,7 @@ $(window).scroll(function(event){
     <div class="col-md-9 col-md-offset-1">
       <h3>Personopplysninger</h3>
     </div>
-    <div class="col-md-1" style="margin-top: 20px">
+    <div class="col-md-1" style="margin-top: 24px">
       <a style="cursor: pointer;" onclick="setActive($('#personOpplysninger'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
     </div>
   </div>
@@ -1580,7 +1587,7 @@ $(window).scroll(function(event){
     <div class="col-md-9 col-md-offset-1">
       <h3>Om skaden</h3>
     </div>
-    <div class="col-md-1" style="margin-top: 20px">
+    <div class="col-md-1" style="margin-top: 24px">
       <a style="cursor: pointer;" onclick="setActive($('#omTapet')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
     </div>
   </div>
@@ -1608,7 +1615,7 @@ $(window).scroll(function(event){
     <div class="col-md-9 col-md-offset-1">
       <h3>Tapt gjenstand</h3>
     </div>
-    <div class="col-md-1" style="margin-top: 20px">
+    <div class="col-md-1" style="margin-top: 24px">
       <a style="cursor: pointer;" onclick="setActive($('#taptGjenstand')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
     </div>
   </div>
@@ -1625,7 +1632,7 @@ $(window).scroll(function(event){
     <div class="col-md-9 col-md-offset-1">
       <h3>Om reisen</h3>
     </div>
-    <div class="col-md-1" style="margin-top: 20px">
+    <div class="col-md-1" style="margin-top: 24px">
       <a style="cursor: pointer;" onclick="setActive($('#omReisen'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
     </div>
   </div>
@@ -1669,7 +1676,7 @@ $(window).scroll(function(event){
       <h2>Kvittering</h2>
       <hr>
       <div class="well">
-        <p style="color: #6C8524;font-size: 20px;"><span class="stb-sprite-32 circle-check" style="margin-bottom: -1%;"></span> Skademeldingen er motatt.</p>
+        <p class="stb-color-secondary third intro"><span class="stb-sprite-32 circle-check" style="margin-bottom: -1%;"></span> Skademeldingen er motatt.</p>
         <h3>Hva skjer videre?</h3>
         <ul class="stb">
           <li>En bekreftelse av skademeldingen vil bli sendt til <span id="confirmEmail" style="color: #6C8524;"></span></li>
@@ -1681,7 +1688,7 @@ $(window).scroll(function(event){
           </li>
           <li>Eventuell erstatning vil bli utbetalt når skaden er ferdig vurdert.</li>
         </ul>
-        <hr style="margin-bottom: 10px;">
+        <hr style="margin-bottom: 12px;">
         <div class="row">
           <div class="col-md-4" style="font-size: 16px; font-weight: bolder;">
             Reisegods
@@ -1693,21 +1700,21 @@ $(window).scroll(function(event){
             <a class="pull-right"><span class="glyphicon glyphicon-search"></span> Skriv ut</a>
           </div>
         </div>
-        <hr style="margin-top: 10px">
+        <hr style="margin-top: 12px">
       </div>
 
     </div>
   </div>
 </section>
 
-<div id="navigationButtons" class="row" style="margin-bottom: 50px;">
+<div id="navigationButtons" class="row" style="margin-bottom: 48px;">
   <div class="col-md-10 col-md-offset-1">
     <div class="stb-form-group al" >
-      <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
+      <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Tilbake</a>
       <button id="nextButton" type="submit" class="stb-btn stb-btn-lg submitButton navButton">Neste</button>
       <hr>
-      <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-      <a class="stb-btn stb-btn-lg secondary pull-right" onclick="$('#fullfillLater').slideDown(); $('html, body').animate({ scrollTop: $(document).height() }, 1000);" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
+      <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+      <a class="stb-btn stb-btn-lg secondary pull-right" onclick="$('#fullfillLater').slideDown(); $('html, body').animate({ scrollTop: $(document).height() }, 1000);" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
     </div>
   </div>
 </div>
@@ -1731,7 +1738,7 @@ $(window).scroll(function(event){
         <input type='text' class="form-control" name="firstNamePerson"/>
       </div>
       <br>
-      <a id="sendLink" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:50px; margin-bottom: 48px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Lagre og send lenke</a>
+      <a id="sendLink" class="stb-btn stb-btn-lg secondary pull-left" style="margin-right:48px; margin-bottom: 48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;" onclick=" ">Lagre og send lenke</a>
     </div>
   </div>
 

@@ -55,7 +55,7 @@
   }
 
   .bv-form .help-block {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     font-size: 15px;
   }
 
@@ -108,55 +108,9 @@
     width: 50%;
   }
 
-  div.square{
-    position:absolute;
-    width: 80px;
-    height: 80px;
-    background: #808080;
-    transform:rotate(45deg);
-    -ms-transform:rotate(45deg); /* IE 9 */
-    -webkit-transform:rotate(45deg);
-
-  }
-
-  div.square.completed{
-    background: #6C8524;
-  }
-
-  div.square:hover{
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg); /* IE 9 */
-    -webkit-transform:rotate(90deg);
-  }
-
-  div.square.active{
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg); /* IE 9 */
-    -webkit-transform:rotate(90deg);
-    background: #6C8524;
-  }
-
-  div.square.hovered{
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg); /* IE 9 */
-    -webkit-transform:rotate(90deg);
-  }
-
-  span.number{
-    position: absolute;
-    font-size: 50px;
-    color: white;
-    margin-left: 25px;
-  }
-
-  span.imgSqr{
-    background-image:url('/images/stripes.png');
-    background-size:80px 60px;
-    background-repeat:no-repeat;
-  }
 
   p{
-    margin-top: 5px;
+    margin-top: 6px;
   }
 
   a{
@@ -1020,7 +974,7 @@ $(window).scroll(function(event){
 </div>
 
 <div id="mobile" class="container">
-<div class="row" style="margin-top: 50px;">
+<div class="row" style="margin-top: 48px;">
   <h1>Skademelding for reisegods</h1>
 </div>
 <form id="skademelding" class="validateForm" role="form">
@@ -1118,13 +1072,13 @@ $(window).scroll(function(event){
 
           </div>
         </div>
-        <div class="row" style="margin-bottom: 50px;">
+        <div class="row" style="margin-bottom: 48px;">
           <div class="col-md-10 col-md-offset-1">
             <div class="stb-form-group al" >
               <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
               <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
+              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right: 48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
             </div>
           </div>
         </div>
@@ -1142,7 +1096,7 @@ $(window).scroll(function(event){
   </div>
   <div id="taptGjenstand" class="panel-collapse collapse">
     <div class="panel-body">
-      <section style=" margin: 50px 0 50px 0;">
+      <section style=" margin: 48px 0 48px 0;">
         <div class="row">
           <div class="col-md-6 col-md-offset-1">
             <h2>Skadet gjenstand</h2>
@@ -1209,7 +1163,7 @@ $(window).scroll(function(event){
               <a class="stb-btn secondary" onclick="$('#repairFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;" ></span> Last opp</a>
             </div>
 
-            <p style="margin-top: 20px;">Kvittering</p>
+            <p style="margin-top: 24px;">Kvittering</p>
             <p class="petit">Har du kvittering på gjenstanden, eller annet bevis på kjøpet (avbetaligngskontrakt, garanti e.l.)?</p>
             <div id="receiptItemUpload" class="list-group">
             </div>
@@ -1218,16 +1172,16 @@ $(window).scroll(function(event){
             </div>
             <a class="stb-btn secondary" onclick="$('#receiptFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;"></span> Last opp</a>
             <br>
-            <a id="addItemLostButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+            <a id="addItemLostButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin: 12px 0 12px 0; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-10 col-md-offset-1" style="margin-top: 50px;">
+          <div class="col-md-10 col-md-offset-1" style="margin-top: 48px;">
             <h3>Gjenstander lagt til</h3>
             <hr>
 
-            <table id="lostItemTable" class="stb-table [hoverable]" style="margin-top: 10px;">
+            <table id="lostItemTable" class="stb-table [hoverable]" style="margin-top: 12px;">
               <thead>
               <tr>
                 <th>Gjenstand</th>
@@ -1241,14 +1195,14 @@ $(window).scroll(function(event){
             </table>
           </div>
         </div>
-        <div class="row" style="margin-bottom: 50px;">
+        <div class="row" style="margin-bottom: 48px;">
           <div class="col-md-10 col-md-offset-1">
             <div class="stb-form-group al" >
-              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Tilbake</a>
+              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Tilbake</a>
               <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
               <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
+              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
             </div>
           </div>
         </div>
@@ -1266,7 +1220,7 @@ $(window).scroll(function(event){
   </div>
   <div id="omReisen" class="panel-collapse collapse">
     <div class="panel-body">
-      <section style=" margin: 50px 0 50px 0;">
+      <section style=" margin: 48px 0 48px 0;">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <h2>Om reisen</h2>
@@ -1280,7 +1234,7 @@ $(window).scroll(function(event){
             </div>
 
             <div id="travelBusinessForm" style="display:none;">
-              <div class="well" style="margin-top: 20px;">
+              <div class="well" style="margin-top: 24px;">
                 <label>Bekreftelse fra arbeidsgiver</label>
                 <p class="petit">Har du bekreftelse fra arbeidsgiver? Last den opp her.</p>
                 <div id="confirmWorkUpload" class="list-group">
@@ -1375,9 +1329,9 @@ $(window).scroll(function(event){
                 <textarea id="insuranceCompany"  cols="40" rows="1" class="form-control" name="insuranceCompany"></textarea>
               </div>
 
-              <a id="addButton" class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#insurancePayment')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+              <a id="addButton" class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#insurancePayment')" style="margin: 12px 0 12px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
 
-              <table id="insuranceTable" class="stb-table [hoverable]" style="margin-top: 10px;">
+              <table id="insuranceTable" class="stb-table [hoverable]" style="margin-top: 12px;">
                 <thead>
                 <tr>
                   <th>Tidligere skade</th>
@@ -1392,14 +1346,14 @@ $(window).scroll(function(event){
             </div>
           </div>
         </div>
-        <div class="row" style="margin-bottom: 50px;">
+        <div class="row" style="margin-bottom: 48px;">
           <div class="col-md-10 col-md-offset-1">
             <div class="stb-form-group al" >
-              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" >Tilbake</a>
+              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;" >Tilbake</a>
               <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
               <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
+              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right: 48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
             </div>
           </div>
         </div>
@@ -1417,7 +1371,7 @@ $(window).scroll(function(event){
   </div>
   <div id="personOpplysninger" class="panel-collapse collapse">
     <div class="panel-body">
-      <section style="margin: 50px 0 50px 0;">
+      <section style="margin: 48px 0 48px 0;">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <h2>Personopplysninger</h2>
@@ -1510,7 +1464,7 @@ $(window).scroll(function(event){
                 <input type="radio" id="andre2" value="Andre" name="stb-a" class="stb-radio" ><label for="andre2" class="stb-custom-input">Andre</label>
               </div>
 
-              <a class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#affectedPersons')" style="margin: 10px 0 10px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
+              <a class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#affectedPersons')" style="margin: 12px 0 12px 0; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
 
               <table id="familyTable" class="stb-table [hoverable]" style="margin-top: 10px;">
                 <thead>
@@ -1528,14 +1482,14 @@ $(window).scroll(function(event){
             </div>
           </div>
         </div>
-        <div class="row" style="margin-bottom: 50px;">
+        <div class="row" style="margin-bottom: 48px;">
           <div class="col-md-10 col-md-offset-1">
             <div class="stb-form-group al" >
-              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" >Tilbake</a>
+              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;" >Tilbake</a>
               <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
               <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
+              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
             </div>
           </div>
         </div>
@@ -1566,7 +1520,7 @@ $(window).scroll(function(event){
           <div class="col-md-9 col-md-offset-1">
             <h3>Personopplysninger</h3>
           </div>
-          <div class="col-md-1" style="margin-top: 20px">
+          <div class="col-md-1" style="margin-top: 24px">
             <a style="cursor: pointer;" onclick="setActive($('#personOpplysninger'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
           </div>
         </div>
@@ -1590,7 +1544,7 @@ $(window).scroll(function(event){
           <div class="col-md-9 col-md-offset-1">
             <h3>Om skaden</h3>
           </div>
-          <div class="col-md-1" style="margin-top: 20px">
+          <div class="col-md-1" style="margin-top: 24px">
             <a style="cursor: pointer;" onclick="setActive($('#omTapet')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
           </div>
         </div>
@@ -1618,7 +1572,7 @@ $(window).scroll(function(event){
           <div class="col-md-9 col-md-offset-1">
             <h3>Tapt gjenstand</h3>
           </div>
-          <div class="col-md-1" style="margin-top: 20px">
+          <div class="col-md-1" style="margin-top: 24px">
             <a style="cursor: pointer;" onclick="setActive($('#taptGjenstand')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
           </div>
         </div>
@@ -1635,7 +1589,7 @@ $(window).scroll(function(event){
           <div class="col-md-9 col-md-offset-1">
             <h3>Om reisen</h3>
           </div>
-          <div class="col-md-1" style="margin-top: 20px">
+          <div class="col-md-1" style="margin-top: 24px">
             <a style="cursor: pointer;" onclick="setActive($('#omReisen'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
           </div>
         </div>
@@ -1669,14 +1623,14 @@ $(window).scroll(function(event){
             </div>
           </div>
         </div>
-        <div class="row" style="margin-bottom: 50px;">
+        <div class="row" style="margin-bottom: 48px;">
           <div class="col-md-10 col-md-offset-1">
             <div class="stb-form-group al" >
-              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:50px; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;" >Tilbake</a>
+              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;" >Tilbake</a>
               <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
               <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:50px; margin-top: 10px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
+              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right: 48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
             </div>
           </div>
         </div>
@@ -1713,7 +1667,7 @@ $(window).scroll(function(event){
                 </li>
                 <li>Eventuell erstatning vil bli utbetalt når skaden er ferdig vurdert.</li>
               </ul>
-              <hr style="margin-bottom: 10px;">
+              <hr style="margin-bottom: 12px;">
               <div class="row">
                 <div class="col-md-4" style="font-size: 16px; font-weight: bolder;">
                   Reisegods
@@ -1725,7 +1679,7 @@ $(window).scroll(function(event){
                   <a class="pull-right"><span class="glyphicon glyphicon-search"></span> Skriv ut</a>
                 </div>
               </div>
-              <hr style="margin-top: 10px">
+              <hr style="margin-top: 12px">
             </div>
 
           </div>
