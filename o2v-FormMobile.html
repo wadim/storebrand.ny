@@ -19,123 +19,178 @@
 
 <!-- Opplegg for sticky toppmeny -->
 <style>
-    /* Bootstrap 3 helpers */
-  .navbar-form input, .form-inline input {
-    width:auto;
-  }
+  /* Bootstrap 3 helpers */
+.navbar-form input, .form-inline input {
+  width:auto;
+}
 
-  header {
-    height:50px;
-  }
+header {
+  height:50px;
+}
 
-  #nav.affix {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index:999;
-  }
+#nav.affix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:999;
+}
 
-  .stb-form-group.alarm input,
-  .stb-form-group.alarm textarea{
-    background-color: #FFF0F0;
-    border-color: #FFB3B3;
-    color: #000000;
-  }
+.stb-form-group.alarm input,
+.stb-form-group.alarm textarea{
+  background-color: #FFF0F0;
+  border-color: #FFB3B3;
+  color: #000000;
+}
 
-  .stb-form-group.valid input,
-  .stb-form-group.valid textarea{
-    background-color: #ECF2C2;
-    border-color: #819F2B;
-    color: #000000;
-  }
+.stb-form-group.valid input,
+.stb-form-group.valid textarea{
+  background-color: #ECF2C2;
+  border-color: #819F2B;
+  color: #000000;
+}
 
-  .errorMsg{
-    display:none;
-    color:#DA291C;
-  }
+.errorMsg{
+  display:none;
+  color:#DA291C;
+}
 
-  .bv-form .help-block {
-    margin-bottom: 6px;
-    font-size: 15px;
-  }
+.bv-form .help-block {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
 
-  .nav-tabs li.bv-tab-success > a {
-    color: #3c763d;
-  }
-  .nav-tabs li.bv-tab-error > a {
-    color: #a94442;
-  }
+.nav-tabs li.bv-tab-success > a {
+  color: #3c763d;
+}
+.nav-tabs li.bv-tab-error > a {
+  color: #a94442;
+}
 
-    /* Override feedback icon position */
-  form .has-feedback .input-group .form-control-feedback {
-    top: 0;
-    right: -30px;
-  }
+  /* Override feedback icon position */
+form .has-feedback .input-group .form-control-feedback {
+  top: 0;
+  right: -30px;
+}
 
-  form .has-feedback.input-group i.glyphicon-remove  {
-    top: 25px !important;
-    right: -30px;
-  }
-  form .has-feedback.input-group i.glyphicon-ok {
-    top: 5px !important;
-    right: -30px;
-  }
+form .has-feedback.input-group i.glyphicon-remove  {
+  top: 25px !important;
+  right: -30px;
+}
+form .has-feedback.input-group i.glyphicon-ok {
+  top: 5px !important;
+  right: -30px;
+}
 
-  form .has-feedback.text-area i.glyphicon-remove {
-    top: 20px !important;
-  }
+form .has-feedback.text-area i.glyphicon-remove {
+  top: 20px !important;
+}
 
-  form .has-feedback.select i.glyphicon-remove{
-    top: 40% !important;
-    left: 32%;
-  }
-  form .has-feedback.select i.glyphicon-ok{
-    left: 32%;
-  }
+form .has-feedback.select i.glyphicon-remove{
+  top: 40% !important;
+  left: 32%;
+}
+form .has-feedback.select i.glyphicon-ok{
+  left: 32%;
+}
 
-  form .has-feedback.checkbox i.glyphicon-ok{
-    top: 0;
-  }
+form .has-feedback.checkbox i.glyphicon-ok{
+  top: 0;
+}
 
-  form .has-feedback.checkbox i.glyphicon-remove{
-    top: 40%;
-  }
-  .select select{
-    width: 30%;
-  }
+form .has-feedback.checkbox i.glyphicon-remove{
+  top: 40%;
+}
+.select select{
+  width: 30%;
+}
 
-  .input-group.date{
-    width: 50%;
-  }
+.input-group.date{
+  width: 70%;
+}
+
+p{
+  margin-top: 6px;
+}
+
+a{
+  cursor: pointer;
+}
 
 
-  p{
-    margin-top: 6px;
-  }
+.hiddenfile {
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
 
-  a{
-    cursor: pointer;
-  }
+label{
+  margin-bottom: 6px;
+}
+.stb-form-group{
+  margin-bottom: 24px !important;
+}
 
-  .progressBar{
-    background-image:url('images/stripes.png');
-    background-repeat: repeat-x;
-    background-size: 100px;
-    background-position: 0 18px;
-  }
+.stepPanel{
+  margin: 48px 0 48px 0;
+  display:none;
+}
+.stepPanel.active{
+  display:block;
+}
 
-  .hiddenfile {
-    width: 0px;
-    height: 0px;
-    overflow: hidden;
-  }
+.stb-input-group-lg{
+  width: 90%;
+}
+.stb-input-group-md{
+  width: 80%;
+}
+.stb-input-group-sm{
+  width: 50%;
+}
 
-  label{
-    margin-bottom: 6px;
-  }
-  .stb-form-group{
-    margin-bottom: 24px !important;
-  }
+.addButton{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-top: 6px !important;
+  background: transparent !important;
+  border-style:solid;
+  border-width:1px;
+  color: #000000;
+}
+.transparent-btn{
+  margin-right:48px;
+  padding-top: 6px !important;
+  background: transparent !important;
+  border-style:solid;
+  border-width:1px;
+  color: #000000;
+}
+
+.cancelButton{
+  margin-right:48px;
+  background: transparent !important;
+  color: #000000;
+}
+
+.summary{
+  margin-top: 24px;
+}
+
+table.stb-table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+h4.panel-title{
+ color: #BF1D19;
+}
+.panel-heading{
+  background-color: white !important;
+}
+.panel-body{
+  background-color: #EFE8DF;
+}
+
 </style>
 <script type="text/javascript">
 
@@ -255,7 +310,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden stjålet eller skadet!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om stjålet eller skadet!'
         }
       }
     },
@@ -330,10 +385,10 @@ $(document).ready(function(){
     safeKeeping:{
       trigger: 'blur',
       container: '.info-message',
-      message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvor lenge gjenstanden var oppbevart!',
+      message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi varighet av oppbevaring!',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvor lenge gjenstanden var oppbevart!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi varighet av oppbevaring!'
         }
       }
     },
@@ -539,7 +594,7 @@ $(document).ready(function(){
           message: 'Dette er ikke en gyldig email adresse'
         },
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  gjenta email!'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Gjenta email!'
         },
         identical: {
           field: 'emailPerson',
@@ -621,7 +676,7 @@ $(document).ready(function(){
       container: '.info-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må godkjenne for å kunne sende inn sjema'
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må bekrefte for å kunne sende inn sjema.'
         }
       }
     },
@@ -663,21 +718,10 @@ $(document).ready(function(){
                     .validateField(name);
           });
 
-  $('.backButton').click(function(){
-    var currentActive = $('.panel-collapse.collapse.in');
-    var nextActive = $(currentActive).parent().prev().find('div.panel-collapse');
-    setActiveMobile(currentActive, nextActive);
-  })
 
-
-  $('a.accordion').click(function(){
-    var currentActive = $('.panel-collapse.collapse.in');
-    var nextActive = $(this).closest('div').next();
-    if(nextActive.hasClass('completed') || nextActive.hasClass('current')){
-      setActiveMobile(currentActive, nextActive);
-    }
-
-  });
+  if($('#omTapet').hasClass('active')){
+    $('#backButton').hide();
+  }
 
   $('#oppsummering ul').each(function(index){
     $(this).find('li:gt(2)').hide();
@@ -695,15 +739,46 @@ $(document).ready(function(){
           }
   );
 
+  $('.addButton').click(function(event){
+    addTableRow(this);
+  });
+
   $(".nextButton").click(function(event){
     validateFormMobile(event);
   });
 
-  $('#addItemLostButton').click(function(event){
-    addTableRow('#taptGjenstand');
+  $('.backButton').click(function(){
+    var currentActive = $('.panel-collapse.collapse.in');
+    var nextActive = $(currentActive).parent().prev().find('div.panel-collapse');
+    setActiveMobile(currentActive, nextActive);
+  })
+
+
+  $('a.accordion').click(function(){
+    var currentActive = $('.panel-collapse.collapse.in');
+    var nextActive = $(this).closest('div').next();
+    if(nextActive.hasClass('completed') || nextActive.hasClass('current')){
+      setActiveMobile(currentActive, nextActive);
+    }
+
+    if($(this).closest('div').next().attr('id') == "omTapet"){
+      $(this).closest('div').next().collapse('toggle');
+
+    }
+
   });
 
+  $('#accordion').on('show.bs.collapse', function (event) {
+    $(event.target).prev().find('span:first').next().toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
+  });
+
+  $('#accordion').on('hide.bs.collapse', function () {
+    $('.panel-collapse.collapse.in').prev().find('span:first').next().toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
+  });
+
+
   registerUploadHandlers();
+
 
 });
 
@@ -745,11 +820,23 @@ function fillOutPerson(){
   $('#lastNameTable').val(lastName);
 }
 
-function cancelSubmitForm(){
-  if($('.stepPanel.active').is("#taptGjenstand")){
-    showItemOverview();
-  }
+
+function showMore(selector,hideIndex){
+
+  var showMore = $(selector).find('.showMore');
+
+  showMore.click(function() {
+    if(showMore.hasClass('open')){
+      $(selector).find('li:gt('+hideIndex+')').hide();
+      showMore.show();
+    }else{
+      $(selector).find('li:gt('+hideIndex+')').show();
+    }
+    showMore.toggleClass('open');
+  });
 }
+
+
 
 function setActiveMobile(currentActive, nextActive){
   if(currentActive.attr('id') != nextActive.attr('id')){
@@ -758,7 +845,10 @@ function setActiveMobile(currentActive, nextActive){
     if(nextActive.attr('id') == 'oppsummering'){
       nextActive.find('.submitButton').text('Send inn');
     }
-
+   // nextActive.prev().find('span:first').next().toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+  }else{
+    $(currentActive).collapse('toggle');
+    //nextActive.prev().find('span:first').next().toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
   }
 }
 
@@ -790,21 +880,6 @@ function navigateToNext(currentActive, nextActive){
   setActiveMobile(currentActive, nextActive);
 }
 
-function showMore(selector,hideIndex){
-
-  var showMore = $(selector).find('.showMore');
-
-  showMore.click(function() {
-    if(showMore.hasClass('open')){
-      $(selector).find('li:gt('+hideIndex+')').hide();
-      showMore.show();
-    }else{
-      $(selector).find('li:gt('+hideIndex+')').show();
-    }
-    showMore.toggleClass('open');
-  });
-}
-
 function populateSummary(){
 
   var inputs = $('#skademelding :input');
@@ -833,7 +908,7 @@ function populateSummary(){
       lostItemListMarkup += '<li class="list-group-item">Type Gjenstand <span class="pull-right">'+$(items[0]).text()+'</span></li>';
       lostItemListMarkup += '<li class="list-group-item"><ul><li class="list-group-item">'+$(items[1]).text()+'</li></ul></li>';
     });
-    lostItemListMarkup += '<li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>';
+    lostItemListMarkup += '<li class="list-group-item showMore stbcolor-gray third"><a><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>';
     lostItemNode.append(lostItemListMarkup);
     lostItemNode.find('li:gt(2)').hide();
     lostItemNode.find('.showMore').show();
@@ -846,7 +921,7 @@ function populateSummary(){
 //Function for adding row to table. Needs to be refactored/removed when implementing in Angular
 function addTableRow(selector){
 
-  var tableId = $(selector).find("table").attr('id');
+  var tableId = $(selector).siblings("table:first").attr('id');
 
   if(tableId == "familyTable"){
     var birthNumb = $('#birthNumberTable').val();
@@ -857,16 +932,16 @@ function addTableRow(selector){
       var td1 ='<td>'+firstName+' '+lastName+'</td>';
       var td2 = '<td class="text-right">'+who+'</td>';
       var td3 = '<td class="text-right">'+birthNumb+'</td>';
-      var td4 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-      var td5 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
+      var td4 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span></a></td>';
+      var td5 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span></a></td>;'
       $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+td5+'</tr>');
       clearInput(selector);
     }
   }else if(tableId == "lostItemTable"){
     var td1 = '<td>'+ $('#lostItemType').val();+'</td>';
     var td2 = '<td class="text-right">'+$('#receiptItemUpload a:first').text()+'</td>';
-    var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-    var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
+    var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span></a></td>';
+    var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span></a></td>;'
     $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
     clearInput(selector);
     $('#skademelding').data('bootstrapValidator').resetForm();
@@ -876,8 +951,8 @@ function addTableRow(selector){
     if(damDescr && insComp){
       var td1 ='<td>'+damDescr+'</td>';
       var td2 = '<td class="text-right">'+insComp+'</td>';
-      var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-      var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
+      var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span></a></td>';
+      var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span></a></td>;'
       $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
       clearInput(selector);
     }
@@ -922,6 +997,12 @@ $(window).scroll(function(event){
   }
   lastScrollTop = st;
 });
+
+</script>
+
+<script>
+
+
 
 </script>
 <!-- /Slutt på opplegg for sticky toppmeny -->
@@ -974,8 +1055,7 @@ $(window).scroll(function(event){
 </div>
 
 <div id="mobile" class="container">
-<div class="row" style="margin-top: 48px;">
-  <h1>Skademelding for reisegods</h1>
+<div class="row" style="margin-top: 96px;">
 </div>
 <form id="skademelding" class="validateForm" role="form">
 
@@ -985,16 +1065,16 @@ $(window).scroll(function(event){
     <h4 class="panel-title">
       <a class="accordion" data-toggle="collapse" data-parent="#accordion">
         <span class="stb-sprite-16 circle-check" style="display: none;"></span> 1. Om skaden
+        <span class="glyphicon glyphicon-chevron-up pull-right"></span>
       </a>
+
     </h4>
   </div>
   <div id="omTapet" class="panel-collapse collapse in">
     <div class="panel-body">
-      <section style="margin: 48px 0 48px 0;">
+      <section>
         <div class="row">
-          <div class="col-md-6 col-md-offset-1">
-            <h2>Om tapet/skaden</h2>
-            <hr>
+          <div class="col-xs-12">
             <h3>Hva har skjedd?</h3>
 
             <label>Hva har skjedd med gjenstanden(e)</label>
@@ -1007,7 +1087,7 @@ $(window).scroll(function(event){
             <label>Når ble gjenstanden(e) skadet?</label>
             <div class="stb-form-group al">
               <span class="help-block info-message"></span>
-              <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
+              <div class='input-group date datePicker stb-input-group-lg' data-date-format="DD.MM.YYYY">
                 <input type='text' class="form-control" name="dateWhen"/>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
               </div>
@@ -1072,16 +1152,13 @@ $(window).scroll(function(event){
 
           </div>
         </div>
-        <div class="row" style="margin-bottom: 48px;">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="stb-form-group al" >
-              <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
-              <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right: 48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
-            </div>
+        <div class="row" style="margin-bottom: 12px;">
+          <div class="col-xs-5">
+            <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
           </div>
         </div>
+        <a class="stb-btn stb-btn-lg secondary cancelButton" onclick="cancelSubmitForm()"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+        <a class="stb-btn stb-btn-lg secondary cancelButton"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
       </section>
     </div>
   </div>
@@ -1091,20 +1168,19 @@ $(window).scroll(function(event){
     <h4 class="panel-title">
       <a class="accordion" data-toggle="collapse" data-parent="#accordion">
         <span class="stb-sprite-16 circle-check" style="display: none;"></span> 2. Tapt Gjenstand
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h4>
   </div>
   <div id="taptGjenstand" class="panel-collapse collapse">
     <div class="panel-body">
-      <section style=" margin: 48px 0 48px 0;">
+      <section>
         <div class="row">
-          <div class="col-md-6 col-md-offset-1">
-            <h2>Skadet gjenstand</h2>
-            <hr>
+          <div class="col-xs-12">
             <h3>Legg til gjenstanden(e)</h3>
 
             <label>Type gjenstand</label>
-            <div class="stb-form-group al input-group" style="width: 100%;">
+            <div class="stb-form-group al input-group stb-input-group-lg">
               <span class="help-block info-message"></span>
               <input id="lostItemType" type='text' class="form-control" name="lostItemType" placeholder="Merke og modell" />
             </div>
@@ -1163,29 +1239,25 @@ $(window).scroll(function(event){
               <a class="stb-btn secondary" onclick="$('#repairFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;" ></span> Last opp</a>
             </div>
 
-            <p style="margin-top: 24px;">Kvittering</p>
+            <label>Kvittering</label>
             <p class="petit">Har du kvittering på gjenstanden, eller annet bevis på kjøpet (avbetaligngskontrakt, garanti e.l.)?</p>
             <div id="receiptItemUpload" class="list-group">
             </div>
             <div class="hiddenfile">
-              <input name="upload" type="file" id="receiptFile"/>hello
+              <input name="upload" type="file" id="receiptFile"/>
             </div>
             <a class="stb-btn secondary" onclick="$('#receiptFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;"></span> Last opp</a>
             <br>
-            <a id="addItemLostButton" class="stb-btn stb-btn-lg secondary pull-left" style="margin: 12px 0 12px 0; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1" style="margin-top: 48px;">
+            <a id="taptGjenstandButton" class="stb-btn stb-btn-lg secondary addButton">Legg til</a>
+
             <h3>Gjenstander lagt til</h3>
             <hr>
-
-            <table id="lostItemTable" class="stb-table [hoverable]" style="margin-top: 12px;">
+            <table id="lostItemTable" class="stb-table [hoverable]">
               <thead>
               <tr>
-                <th>Gjenstand</th>
-                <th class="text-right">Vedlagt dokument</th>
+                <th style="width: 30%">Gjenstand</th>
+                <th style="width: 50%" class="text-right">Vedlagt dokument</th>
                 <th class="text-right"></th>
                 <th class="text-right"></th>
               </tr>
@@ -1195,17 +1267,17 @@ $(window).scroll(function(event){
             </table>
           </div>
         </div>
-        <div class="row" style="margin-bottom: 48px;">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="stb-form-group al" >
-              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Tilbake</a>
-              <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
-              <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
-            </div>
+        <div class="row" style="margin-bottom: 12px;">
+          <div class="col-xs-5">
+            <a class="stb-btn stb-btn-lg secondary pull-left backButton transparent-btn">Tilbake</a>
           </div>
+          <div class="col-xs-5 col-xs-offset-1">
+            <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
+          </div>
+
         </div>
+        <a class="stb-btn stb-btn-lg secondary cancelButton" onclick="cancelSubmitForm()"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+        <a class="stb-btn stb-btn-lg secondary cancelButton"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
       </section>
     </div>
   </div>
@@ -1215,26 +1287,25 @@ $(window).scroll(function(event){
     <h4 class="panel-title">
       <a class="accordion" data-toggle="collapse" data-parent="#accordion">
         <span class="stb-sprite-16 circle-check" style="display: none;"></span> 3. Om reisen
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h4>
   </div>
   <div id="omReisen" class="panel-collapse collapse">
     <div class="panel-body">
-      <section style=" margin: 48px 0 48px 0;">
+      <section>
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <h2>Om reisen</h2>
-            <hr>
+          <div class="col-xs-12">
             <h3>Detaljer om reisen</h3>
 
             <div class="stb-form-group">
-              <label>Hva er hensikten med reisen?</label>
-              <input type="radio" name="travel" id="travelLeisure" value="Leisure" class="stb-radio travel" checked="checked"><label for="travelLeisure" class="stb-custom-input">Fritidsreise</label>
-              <input type="radio" name="travel" id="travelBusiness" value="Business" class="stb-radio travel"><label for="travelBusiness" class="stb-custom-input">Forretningsreise</label>
+              <label>Hva er hensikten med reisen?</label><br>
+              <input type="radio" name="travel" id="travelLeisure" value="Leisure" class="stb-radio travel" checked="checked"><label for="travelLeisure" class="stb-custom-input">Fritid</label>
+              <input type="radio" name="travel" id="travelBusiness" value="Business" class="stb-radio travel"><label for="travelBusiness" class="stb-custom-input">Forretning</label>
             </div>
 
             <div id="travelBusinessForm" style="display:none;">
-              <div class="well" style="margin-top: 24px;">
+              <div class="well">
                 <label>Bekreftelse fra arbeidsgiver</label>
                 <p class="petit">Har du bekreftelse fra arbeidsgiver? Last den opp her.</p>
                 <div id="confirmWorkUpload" class="list-group">
@@ -1329,13 +1400,12 @@ $(window).scroll(function(event){
                 <textarea id="insuranceCompany"  cols="40" rows="1" class="form-control" name="insuranceCompany"></textarea>
               </div>
 
-              <a id="addButton" class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#insurancePayment')" style="margin: 12px 0 12px 0; padding-top: 5px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
-
-              <table id="insuranceTable" class="stb-table [hoverable]" style="margin-top: 12px;">
+              <a id="insurancePaymentButton" class="stb-btn stb-btn-lg secondary pull-left addButton" style="">Legg til</a>
+              <table id="insuranceTable" class="stb-table [hoverable]">
                 <thead>
                 <tr>
-                  <th>Tidligere skade</th>
-                  <th class="text-right">Forsikringsselskap</th>
+                  <th style="width: 40%">T. skade</th>
+                  <th style="width: 40%" class="text-right">F.Selskap</th>
                   <th class="text-right"></th>
                   <th class="text-right"></th>
                 </tr>
@@ -1346,17 +1416,17 @@ $(window).scroll(function(event){
             </div>
           </div>
         </div>
-        <div class="row" style="margin-bottom: 48px;">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="stb-form-group al" >
-              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;" >Tilbake</a>
-              <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
-              <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right: 48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
-            </div>
+        <div class="row" style="margin-bottom: 12px;">
+          <div class="col-xs-5">
+            <a class="stb-btn stb-btn-lg secondary pull-left backButton transparent-btn">Tilbake</a>
           </div>
+          <div class="col-xs-5 col-xs-offset-1">
+            <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
+          </div>
+
         </div>
+        <a class="stb-btn stb-btn-lg secondary cancelButton" onclick="cancelSubmitForm()"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+        <a class="stb-btn stb-btn-lg secondary cancelButton"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
       </section>
     </div>
   </div>
@@ -1366,16 +1436,15 @@ $(window).scroll(function(event){
     <h4 class="panel-title">
       <a class="accordion" data-toggle="collapse" data-parent="#accordion">
         <span class="stb-sprite-16 circle-check" style="display: none;"></span> 4. Personopplysninger
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h4>
   </div>
   <div id="personOpplysninger" class="panel-collapse collapse">
     <div class="panel-body">
-      <section style="margin: 48px 0 48px 0;">
+      <section>
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <h2>Personopplysninger</h2>
-            <hr>
+          <div class="col-xs-12">
             <h3>Hvem står forikringen på?</h3>
 
             <label>Fødselsnummer</label>
@@ -1385,37 +1454,37 @@ $(window).scroll(function(event){
             </div>
 
             <label>Fornavn</label>
-            <div class="stb-form-group al input-group" style="width: 50%;">
+            <div class="stb-form-group al input-group stb-input-group-md">
               <span class="help-block info-message"></span>
               <input type='text' class="form-control" name="firstNamePerson"/>
             </div>
 
             <label>Etternavn</label>
-            <div class="stb-form-group al input-group" style="width: 50%;">
+            <div class="stb-form-group al input-group stb-input-group-md">
               <span class="help-block info-message"></span>
               <input type='text' class="form-control" name="lastNamePerson"/>
             </div>
 
             <label>E-post</label>
-            <div class="stb-form-group al input-group" style="width: 50%;">
+            <div class="stb-form-group al input-group stb-input-group-md">
               <span class="help-block info-message"></span>
               <input type='email' class="form-control" name="emailPerson"/>
             </div>
 
             <label>Gjenta e-post</label>
-            <div class="stb-form-group al input-group" style="width: 50%;">
+            <div class="stb-form-group al input-group stb-input-group-md">
               <span class="help-block info-message"></span>
               <input type='email' class="form-control" name="reEmailPerson" />
             </div>
 
             <label>Telefon</label>
-            <div class="stb-form-group al input-group">
+            <div class="stb-form-group al input-group stb-input-group-md">
               <span class="help-block info-message"></span>
               <input type='text' class="form-control" name="telephonePerson" />
             </div>
 
             <label>Kontonummer</label>
-            <div class="stb-form-group al input-group">
+            <div class="stb-form-group al input-group stb-input-group-md">
               <span class="help-block info-message"></span>
               <input type='text' class="form-control" name="bankAccount" placeholder="11 siffer" />
             </div>
@@ -1432,10 +1501,14 @@ $(window).scroll(function(event){
             <label>Oppgi de som opplevde å få gjenstanden(e) skadet</label>
             <div class="stb-form-group al checkbox">
               <span class="help-block info-message"></span>
-              <input type="radio" id="yourself" value="Yourself" name="stb-a" onclick="fillOutPerson()" class="stb-radio"><label for="yourself" class="stb-custom-input">Du som melder fra om tyveriet</label>
+              <input type="radio" id="yourself" value="Yourself" name="stb-a" onclick="fillOutPerson()" class="stb-radio"><label for="yourself" class="stb-custom-input">Deg selv</label>
               <input type="radio" id="andre" value="Andre" name="stb-a" class="stb-radio" ><label for="andre" class="stb-custom-input">Andre</label>
             </div>
+          </div>
+        </div>
 
+        <div class="row">
+          <div class="col-xs-12">
             <div id="affectedPersons" class="well">
 
               <label>Fødselsnummer</label>
@@ -1445,13 +1518,13 @@ $(window).scroll(function(event){
               </div>
 
               <label>Fornavn</label>
-              <div class="stb-form-group al input-group" style="width: 50%;">
+              <div class="stb-form-group al input-group stb-input-group-sm">
                 <span class="help-block info-message"></span>
                 <input id="firstNameTable" type='text' class="form-control" name="firstNameTable"/>
               </div>
 
               <label>Etternavn</label>
-              <div class="stb-form-group al input-group" style="width: 50%;">
+              <div class="stb-form-group al input-group stb-input-group-sm">
                 <span class="help-block info-message"></span>
                 <input id="lastNameTable" type='text' class="form-control" name="lastNameTable"/>
               </div>
@@ -1464,14 +1537,13 @@ $(window).scroll(function(event){
                 <input type="radio" id="andre2" value="Andre" name="stb-a" class="stb-radio" ><label for="andre2" class="stb-custom-input">Andre</label>
               </div>
 
-              <a class="stb-btn stb-btn-lg secondary pull-left" onclick="addTableRow('#affectedPersons')" style="margin: 12px 0 12px 0; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;">Legg til</a>
-
-              <table id="familyTable" class="stb-table [hoverable]" style="margin-top: 10px;">
+              <a id="affectedPersonsButton" class="stb-btn stb-btn-lg secondary pull-left addButton">Legg til</a>
+              <table id="familyTable" class="stb-table [hoverable]">
                 <thead>
                 <tr>
-                  <th>Navn</th>
-                  <th class="text-right">Hvem?</th>
-                  <th class="text-right">Personnummer</th>
+                  <th style="width: 30%">Navn</th>
+                  <th style="width: 30%" class="text-right">Hvem</th>
+                  <th style="width: 20%" class="text-right">P.nr</th>
                   <th class="text-right"></th>
                   <th class="text-right"></th>
                 </tr>
@@ -1482,17 +1554,17 @@ $(window).scroll(function(event){
             </div>
           </div>
         </div>
-        <div class="row" style="margin-bottom: 48px;">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="stb-form-group al" >
-              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;" >Tilbake</a>
-              <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
-              <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
-            </div>
+        <div class="row" style="margin-bottom: 12px;">
+          <div class="col-xs-5">
+            <a class="stb-btn stb-btn-lg secondary pull-left backButton transparent-btn">Tilbake</a>
           </div>
+          <div class="col-xs-5 col-xs-offset-1">
+            <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
+          </div>
+
         </div>
+        <a class="stb-btn stb-btn-lg secondary cancelButton" onclick="cancelSubmitForm()"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+        <a class="stb-btn stb-btn-lg secondary cancelButton"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
       </section>
     </div>
   </div>
@@ -1502,31 +1574,32 @@ $(window).scroll(function(event){
     <h4 class="panel-title">
       <a class="accordion" data-toggle="collapse" data-parent="#accordion">
         <span class="stb-sprite-16 circle-check" style="display: none;"></span> 5. Oppsummering
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h4>
   </div>
   <div id="oppsummering" class="panel-collapse collapse">
     <div class="panel-body">
-      <section style="margin: 48px 0 48px 0;">
+      <section>
 
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
+          <div class="col-xs-12">
             <h2>Oppsummering</h2>
             <hr>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-9 col-md-offset-1">
+          <div class="col-xs-9">
             <h3>Personopplysninger</h3>
           </div>
-          <div class="col-md-1" style="margin-top: 24px">
-            <a style="cursor: pointer;" onclick="setActive($('#personOpplysninger'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
+          <div class="col-xs-3 summary">
+            <a  onclick="setActive($('#personOpplysninger'))"><span class="stb-sprite-16 pencil"></span>Endre</a>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
+          <div class="col-xs-12">
             <ul class="list-group">
               <li class="list-group-item">Fødselsnummer <span id="birthNumber" class="pull-right"></span></li>
               <li class="list-group-item">Fornavn <span id="firstNamePerson" class="pull-right"></span></li>
@@ -1535,22 +1608,22 @@ $(window).scroll(function(event){
               <li class="list-group-item">Telefon <span id="telephonePerson" class="pull-right"></span></li>
               <li class="list-group-item">Kontonummer<span id="bankAccount" class="pull-right"></span></li>
               <li class="list-group-item">Polisenummer<span id="poliseNumber" class="pull-right"></span></li>
-              <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
+              <li class="list-group-item showMore stbcolor-gray third"><a><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
             </ul>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-9 col-md-offset-1">
+          <div class="col-xs-9">
             <h3>Om skaden</h3>
           </div>
-          <div class="col-md-1" style="margin-top: 24px">
-            <a style="cursor: pointer;" onclick="setActive($('#omTapet')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
+          <div class="col-xs-3 summary">
+            <a onclick="setActive($('#omTapet')) "><span class="stb-sprite-16 pencil"></span>Endre</a>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
+          <div class="col-xs-12">
             <ul class="list-group omTapet">
               <li class="list-group-item">Hva har skjedd med gjenstanden(e)?<span id="loss" class="pull-right"></span></li>
               <li class="list-group-item">Når ble gjenstanden(e) skadet? <span id="dateWhen" class="pull-right"></span></li>
@@ -1562,23 +1635,23 @@ $(window).scroll(function(event){
               <li class="list-group-item">Var det utenforstående vitne(r) til hendelsen? <span id="lossWitness" class="pull-right"></span></li>
               <li class="list-group-item">Hvor og hvordan var gjenstanden(e) oppbevart?<span id="safeKeeping" class="pull-right"></span></li>
               <li class="list-group-item">Anbdre opplysninger om skaden?<span id="otherInfo" class="pull-right"></span></li>
-              <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
+              <li class="list-group-item showMore stbcolor-gray third"><a><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
             </ul>
             <hr>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-9 col-md-offset-1">
+          <div class="col-xs-9">
             <h3>Tapt gjenstand</h3>
           </div>
-          <div class="col-md-1" style="margin-top: 24px">
-            <a style="cursor: pointer;" onclick="setActive($('#taptGjenstand')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
+          <div class="col-xs-3 summary">
+            <a onclick="setActive($('#taptGjenstand')) "><span class="stb-sprite-16 pencil"></span>Endre</a>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
+          <div class="col-xs-12">
             <ul id="summaryTaptGjenstand" class="list-group">
             </ul>
             <hr>
@@ -1586,16 +1659,16 @@ $(window).scroll(function(event){
         </div>
 
         <div class="row">
-          <div class="col-md-9 col-md-offset-1">
+          <div class="col-xs-9">
             <h3>Om reisen</h3>
           </div>
-          <div class="col-md-1" style="margin-top: 24px">
-            <a style="cursor: pointer;" onclick="setActive($('#omReisen'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
+          <div class="col-xs-3">
+            <a onclick="setActive($('#omReisen'))"><span class="stb-sprite-16 pencil"></span>Endre</a>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
+          <div class="col-xs-12">
             <ul class="list-group">
               <li class="list-group-item">Utreisedato fra fast bostedsadresse? <span id="dateTravelTo" class="pull-right"></span></li>
               <li class="list-group-item">Hjemreisedato fra fast bostedsadresse? <span id="dateTravelFrom" class="pull-right"></span></li>
@@ -1603,37 +1676,39 @@ $(window).scroll(function(event){
               <li class="list-group-item">Har du betalt reisen med et kort som inkluderer reiseforsikring?<span id="creditInsurance" class="pull-right"></span></li>
               <li class="list-group-item">Har du tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling?<span id="damagesLately" class="pull-right"></span></li>
               <li class="list-group-item">Hvor gammel er gjenstanden?<span id="howOld" class="pull-right"></span></li>
-              <li class="list-group-item showMore" style="background: gainsboro"><a style="cursor: pointer;"><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
+              <li class="list-group-item showMore stbcolor-gray third"><a><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
             </ul>
 
             <div class="stb-form-group al checkbox">
+              <p>Jeg bekrefter at alle opplysningene</p>
               <span class="help-block info-message"></span>
               <input class="stb-checkbox" id="confirmInfo" name="confirm" type="checkbox" />
-              <label class="stb-custom-input" for="confirmInfo"> Jeg bekrefter at alle opplysningene jeg har oppgitt er korrekte.</label><br>
-              <p class="petit" style="margin-right: 400px;margin-top: -1px;">
+              <label class="stb-custom-input" for="confirmInfo"> jeg har oppgitt er korrekte.</label><br>
+              <p class="petit">
                 Den som bevisst gir uriktige eller ufullstendige opplysninger i forbindelse med skadeoppgjør, kan tape enhver rett etter forsikringsavtalen.
                 Skaden vil bli meldt til Forsikringsselskapenes sentrale skaderegister.
               </p>
             </div>
 
             <div class="stb-form-group al checkbox">
+              <p>Jeg godtar at e-postadressen jeg har oppgitt benyttes</p>
               <span class="help-block info-message"></span>
               <input class="stb-checkbox" id="acceptEmail" name="acceptEmail" type="checkbox"  />
-              <label for="acceptEmail"> Jeg godtar at e-postadressen jeg har oppgitt benyttes i videre dialog rundt skademeldingen.</label><br>
+              <label for="acceptEmail">i videre dialog rundt skademeldingen.</label><br>
             </div>
           </div>
         </div>
-        <div class="row" style="margin-bottom: 48px;">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="stb-form-group al" >
-              <a class="stb-btn stb-btn-lg secondary pull-left backButton" style="margin-right:48px; padding-top: 6px; background: transparent; border-style:solid; border-width:1px; color: #000000;" >Tilbake</a>
-              <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Neste</button>
-              <hr>
-              <a class="stb-btn stb-btn-lg secondary" onclick="cancelSubmitForm()" style="margin-right:48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
-              <a class="stb-btn stb-btn-lg secondary pull-right" style="margin-right: 48px; margin-top: 12px; background: transparent; color: #000000;"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
-            </div>
+        <div class="row" style="margin-bottom: 12px;">
+          <div class="col-xs-5">
+            <a class="stb-btn stb-btn-lg secondary pull-left backButton transparent-btn">Tilbake</a>
           </div>
+          <div class="col-xs-5 col-xs-offset-1">
+            <button type="submit" class="stb-btn stb-btn-lg submitButton navButton nextButton">Send inn!</button>
+          </div>
+
         </div>
+        <a class="stb-btn stb-btn-lg secondary cancelButton" onclick="cancelSubmitForm()"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>
+        <a class="stb-btn stb-btn-lg secondary cancelButton"><span class="glyphicon glyphicon-repeat"></span > Fullfør skjema seinere?</a>
       </section>
     </div>
   </div>
@@ -1643,22 +1718,23 @@ $(window).scroll(function(event){
     <h4 class="panel-title">
       <a class="accordion" data-toggle="collapse" data-parent="#accordion">
         6. Kvittering
+      <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h4>
   </div>
 
   <div id="kvittering"  class="panel-collapse collapse">
     <div class="panel-body">
-      <section style="margin: 48px 0 48px 0;">
+      <section>
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
+          <div class="col-xs-12">
             <h2>Kvittering</h2>
             <hr>
             <div class="well">
-              <p style="color: #6C8524;font-size: 20px;"><span class="stb-sprite-32 circle-check" style="margin-bottom: -1%;"></span> Skademeldingen er motatt.</p>
+              <p class="stb-color-secondary third intro"><span class="stb-sprite-32 circle-check"></span> Skademeldingen er motatt.</p>
               <h3>Hva skjer videre?</h3>
               <ul class="stb">
-                <li>En bekreftelse av skademeldingen vil bli sendt til <span id="confirmEmail" style="color: #6C8524;"></span></li>
+                <li>En bekreftelse av skademeldingen vil bli sendt til <span id="confirmEmail" class="stbcolor-secondary third"></span></li>
                 <li>En av våre konsulenter går igjennom skademeldingen. Vi vil kontakte deg hvis det
                   er behov for ytterlige opplysninger.
                 </li>
@@ -1669,21 +1745,20 @@ $(window).scroll(function(event){
               </ul>
               <hr style="margin-bottom: 12px;">
               <div class="row">
-                <div class="col-md-4" style="font-size: 16px; font-weight: bolder;">
-                  Reisegods
+                <div class="col-xs-4">
+                  <strong> Reisegods </strong>
                 </div>
-                <div class="col-md-4">
-                  Referansenummer - SKA-54321
+                <div class="col-xs-8">
+                  Referansenummer: <br> - SKA-54321
                 </div>
-                <div class="col-md-4">
-                  <a class="pull-right"><span class="glyphicon glyphicon-search"></span> Skriv ut</a>
-                </div>
+
               </div>
               <hr style="margin-top: 12px">
             </div>
 
           </div>
         </div>
+
       </section>
     </div>
   </div>
@@ -1696,7 +1771,7 @@ $(window).scroll(function(event){
 <div class="stbcolor-primary third navbar hidden-xs hidden-sm" style="border-top:solid; border-color:#DA291C;">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-xs-12">
         <ul class="nav navbar-nav">
           <li><a href="#">Om siden og personopplysninger</a></li>
           <li><a href="#">In english</a></li>
@@ -1741,7 +1816,7 @@ $(window).scroll(function(event){
 <div class="stbcolor-primary third navbar-fixed-bottom visible-xs visible-sm" style="border-top:solid; border-color:#DA291C;">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-xs-12">
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#"><b class="glyphicon glyphicon-align-justify"></b></a>
