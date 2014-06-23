@@ -148,15 +148,16 @@ label{
   width: 50%;
 }
 
-.addButton{
-  margin-top: 12px;
-  margin-bottom: 12px;
-  padding-top: 6px !important;
-  background: transparent !important;
-  border-style:solid;
-  border-width:1px;
-  color: #000000;
+.addButton, .updateButton{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-top: 6px !important;
+    background: transparent !important;
+    border-style:solid;
+    border-width:1px;
+    color: #000000;
 }
+
 .transparent-btn{
   margin-right:48px;
   padding-top: 6px !important;
@@ -920,46 +921,91 @@ function populateSummary(){
 
 }
 
-//Function for adding row to table. Needs to be refactored/removed when implementing in Angular
+//Adding row to table. Needs to be refactored/removed when implementing in Angular
 function addTableRow(selector){
 
-  var tableId = $(selector).siblings("table:first").attr('id');
+  var tableNode =  $(selector).siblings("table:first");
+  if(!tableNode.attr('id')){
+    tableNode = $(selector).parent().siblings("table:first");
+  }
+  var tableId = tableNode.attr('id');
+  var rowId = $(selector).attr('rowid');
+  var rowContent;
 
   if(tableId == "familyTable"){
     var birthNumb = $('#birthNumberTable').val();
     var firstName = $('#firstNameTable').val();
     var lastName = $('#lastNameTable').val();
-    var who = $('input[name=stb-a]:checked').next('label').text();
+    var who = $('input[name=who]:checked').next('label').text();
     if(birthNumb && firstName && lastName && who){
-      var td1 ='<td>'+firstName+' '+lastName+'</td>';
-      var td2 = '<td class="text-right">'+who+'</td>';
-      var td3 = '<td class="text-right">'+birthNumb+'</td>';
-      var td4 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span></a></td>';
-      var td5 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span></a></td>;'
-      $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+td5+'</tr>');
-      clearInput(selector);
+      var td1 ='<td cellId="lastNameTable">'+lastName+'</td>';
+      var td2 ='<td cellId="firstNameTable">'+firstName+'</td>';
+      var td3 = '<td cellId="who" class="text-right">'+who+'</td>';
+      var td4 = '<td cellId="birthNumberTable" class="text-right">'+birthNumb+'</td>';
+      var td5 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+      var td6 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
+      rowContent = td1+td2+td3+td4+td5+td6;
+      clearInput('#affectedPersons');
     }
   }else if(tableId == "lostItemTable"){
-    var td1 = '<td>'+ $('#lostItemType').val();+'</td>';
-    var td2 = '<td class="text-right">'+$('#receiptItemUpload a:first').text()+'</td>';
-    var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span></a></td>';
-    var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span></a></td>;'
-    $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
-    clearInput(selector);
+    var td1 = '<td cellId="lostItemType">'+ $('#lostItemType').val();+'</td>';
+    var td2 = '<td cellId="receiptItemUpload" class="text-right">'+$('#receiptItemUpload a:first').text()+'</td>';
+    var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+    var td4 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>;';
+    var td5 = '<td cellId="lostItemAge"  class="text-right" style="display: none;">'+$('#lostItemAge').val()+'</td>;';
+    var td6 =  '<td cellId="purchasedWhere" class="text-right" style="display: none;">'+$('#purchasedWhere').val()+'</td>;';
+    var td7 =  '<td cellId="itemNew" class="text-right" style="display: none;">'+$('input[name=itemNew]:checked').val()+'</td>;';
+    var td8 =  '<td cellId="itemRepairable" class="text-right" style="display: none;">'+$('input[name=itemRepairable]:checked').val()+'</td>;';
+    rowContent = td1+td2+td3+td4+td5+td6+td7+td8;
+
+    clearInput('#taptGjenstand');
     $('#skademelding').data('bootstrapValidator').resetForm();
   }else{
     var damDescr = $('#damageDescription').val();
     var insComp = $('#insuranceCompany').val();
     if(damDescr && insComp){
-      var td1 ='<td>'+damDescr+'</td>';
-      var td2 = '<td class="text-right">'+insComp+'</td>';
-      var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span></a></td>';
-      var td4 = '<td class="text-right"><a><span class="stb-sprite-16 pencil"></span></a></td>;'
-      $('#'+tableId + ' > tbody:last').append('<tr>'+td1+td2+td3+td4+'</tr>');
-      clearInput(selector);
+      var td1 ='<td cellId="damageDescription">'+damDescr+'</td>';
+      var td2 = '<td cellId="insuranceCompany" class="text-right">'+insComp+'</td>';
+      var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+      var td4 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>;';
+      rowContent = td1+td2+td3+td4;
+      clearInput('#insurancePayment');
     }
   }
 
+  //Adding or updating row
+  if(!rowId){
+    rowId = $('#'+tableId+' tbody tr').length + 1;
+    $('#'+tableId + ' > tbody:last').append('<tr rowId='+rowId+'>'+rowContent+'</tr>');
+  }else{
+    tableNode.find('tr[rowId="'+rowId+'"]').html(rowContent);
+    hideUpdateContainer(tableNode.siblings('div.updateContainer'));
+  }
+}
+
+
+function updateFields(row){
+  $(row).closest('tr').find('td').each(function(index){
+    var cell = $(this).attr('cellId')
+    if(cell){
+      var cellValue = $(this).text();
+      $('#'+cell).val(cellValue);
+      $('input[name="'+cell+'"][value="'+cellValue+'"]').prop('checked', true);
+    }
+  });
+  var updateContainer = $(row).closest('table').siblings('div.updateContainer');
+  updateContainer.find('a.updateButton').attr('rowid', $(row).closest('tr').attr('rowId'));
+  showUpdateContainer(updateContainer)
+}
+
+function showUpdateContainer(updateContainer){
+  updateContainer.show();
+  updateContainer.siblings('a.addButton').hide();
+}
+
+function hideUpdateContainer(updateContainer){
+  updateContainer.hide();
+  updateContainer.siblings('a.addButton').show();
 }
 
 /*
@@ -1252,7 +1298,10 @@ $(window).scroll(function(event){
             <br>
 
             <a id="taptGjenstandButton" class="stb-btn stb-btn-lg secondary addButton">Legg til</a>
-
+            <div class="updateContainer" style="display: none">
+              <a class="stb-btn stb-btn-lg secondary updateButton" rowid="x" >Oppdater</a>
+              <a class="stb-btn stb-btn-lg secondary cancelButton" onclick="hideUpdateContainer($(this).parent()); clearInput('#taptGjenstand');"><span class="glyphicon glyphicon-remove"></span> Avbryt</a>
+            </div>
             <h3>Gjenstander lagt til</h3>
             <hr>
             <table id="lostItemTable" class="stb-table [hoverable]">
@@ -1403,6 +1452,10 @@ $(window).scroll(function(event){
               </div>
 
               <a id="insurancePaymentButton" class="stb-btn stb-btn-lg secondary pull-left addButton" style="">Legg til</a>
+              <div class="updateContainer" style="display: none" >
+                <a class="stb-btn stb-btn-lg secondary updateButton" rowid="x" >Oppdater</a>
+                <a class="stb-btn stb-btn-lg secondary cancelButton" onclick="hideUpdateContainer($(this).parent()); clearInput('#insurancePayment');"><span class="glyphicon glyphicon-remove"></span> Avbryt</a>
+              </div>
               <table id="insuranceTable" class="stb-table [hoverable]">
                 <thead>
                 <tr>
@@ -1540,6 +1593,10 @@ $(window).scroll(function(event){
               </div>
 
               <a id="affectedPersonsButton" class="stb-btn stb-btn-lg secondary pull-left addButton">Legg til</a>
+              <div class="updateContainer" style="display: none" >
+                <a class="stb-btn stb-btn-lg secondary updateButton" rowid="x" >Oppdater</a>
+                <a class="stb-btn stb-btn-lg secondary cancelButton" onclick="hideUpdateContainer($(this).parent()); clearInput('#affectedPersons');"><span class="glyphicon glyphicon-remove"></span> Avbryt</a>
+              </div>
               <table id="familyTable" class="stb-table [hoverable]">
                 <thead>
                 <tr>
