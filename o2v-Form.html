@@ -1219,7 +1219,7 @@ $(window).scroll(function(event){
 <div class="container stbcolor-secondary sixth">
 
 <form id="skademelding" class="validateForm" role="form">
-<section id="omTapet" class="stepPanel active">
+<section id="omTapet" class="stepPanel active ">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -1245,13 +1245,13 @@ $(window).scroll(function(event){
       <label>I hvilket land skjedde skaden?</label>
       <div class="stb-form-group al text-area">
         <span class="help-block info-message"></span>
-        <textarea cols="40" rows="1" class="form-control" name="lostCountry"></textarea>
+        <input class="form-control" name="lostCountry">
       </div>
 
       <label>På hvilket sted skjedde skaden?</label>
       <div class="stb-form-group al text-area">
         <span class="help-block info-message"></span>
-        <textarea cols="40" rows="1" class="form-control" name="lostPlace"></textarea>
+        <input class="form-control" name="lostPlace">
       </div>
 
       <hr>
@@ -1310,7 +1310,7 @@ $(window).scroll(function(event){
       <h3>Legg til gjenstanden(e)</h3>
 
       <label>Type gjenstand</label>
-      <div class="stb-form-group al input-group stb-input-group-lrg">
+      <div class="stb-form-group al text-area stb-input-group-lrg">
         <span class="help-block info-message"></span>
         <input id="lostItemType" type='text' class="form-control" name="lostItemType" placeholder="Merke og modell" />
       </div>
@@ -1450,7 +1450,7 @@ $(window).scroll(function(event){
       <label>Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap</label>
       <div class="stb-form-group al text-area">
         <span class="help-block info-message"></span>
-        <textarea cols="40" rows="1" class="form-control" name="organizator"></textarea>
+        <input class="form-control" name="organizator">
       </div>
       <hr>
 
@@ -1533,7 +1533,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="personOpplysninger" class="stepPanel ">
+<section id="personOpplysninger" class="stepPanel">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Personopplysninger</h2>
@@ -1541,49 +1541,49 @@ $(window).scroll(function(event){
       <h3>Hvem står forikringen på?</h3>
 
       <label>Fødselsnummer</label>
-      <div class="stb-form-group al input-group">
+      <div class="stb-form-group al text-area">
         <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="birthNumber" placeholder="11 siffer" />
       </div>
 
       <label>Fornavn</label>
-      <div class="stb-form-group al input-group stb-input-group-md">
+      <div class="stb-form-group al text-area stb-input-group-md">
         <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="firstNamePerson"/>
       </div>
 
       <label>Etternavn</label>
-      <div class="stb-form-group al input-group stb-input-group-md">
+      <div class="stb-form-group al text-area stb-input-group-md">
         <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="lastNamePerson"/>
       </div>
 
       <label>E-post</label>
-      <div class="stb-form-group al input-group stb-input-group-md">
+      <div class="stb-form-group al text-area stb-input-group-md">
         <span class="help-block info-message"></span>
         <input type='email' class="form-control" name="emailPerson"/>
       </div>
 
       <label>Gjenta e-post</label>
-      <div class="stb-form-group al input-group stb-input-group-md">
+      <div class="stb-form-group al text-area stb-input-group-md">
         <span class="help-block info-message"></span>
         <input type='email' class="form-control" name="reEmailPerson" />
       </div>
 
       <label>Telefon</label>
-      <div class="stb-form-group al input-group stb-input-group-md">
+      <div class="stb-form-group al text-area stb-input-group-md">
         <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="telephonePerson" />
       </div>
 
       <label>Kontonummer</label>
-      <div class="stb-form-group al input-group stb-input-group-md">
+      <div class="stb-form-group al text-area stb-input-group-md">
         <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="bankAccount" placeholder="11 siffer" />
       </div>
 
       <label>Polisenummer<span class="petit"> (valgfritt)</span></label>
-      <div class="stb-form-group al input-group">
+      <div class="stb-form-group al text-area">
         <span class="help-block info-message"></span>
         <input type='text' class="form-control" placeholder="7 siffer" />
       </div>
@@ -1838,7 +1838,7 @@ $(window).scroll(function(event){
       <label>E-post</label>
       <div class="stb-form-group al input-group stb-input-group-sm">
         <span class="help-block info-message"></span>
-        <input type='text' class="form-control" name="firstNamePerson"/>
+        <input type='text' class="form-control"/>
       </div>
       <br>
       <a id="sendLink" class="stb-btn stb-btn-lg secondary pull-left transparent-btn" style=" margin-bottom: 48px;" onclick=" ">Lagre og send lenke</a>
