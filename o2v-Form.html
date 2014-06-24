@@ -995,7 +995,7 @@ function addTableRow(selector){
       var td3 = '<td cellId="who" class="text-right">'+who+'</td>';
       var td4 = '<td cellId="birthNumberTable" class="text-right">'+birthNumb+'</td>';
       var td5 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-      var td6 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>;'
+      var td6 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>'
       rowContent = td1+td2+td3+td4+td5+td6;
       clearInput('#affectedPersons');
     }
@@ -1003,11 +1003,11 @@ function addTableRow(selector){
     var td1 = '<td cellId="lostItemType">'+ $('#lostItemType').val();+'</td>';
     var td2 = '<td cellId="receiptItemUpload" class="text-right">'+$('#receiptItemUpload a:first').text()+'</td>';
     var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-    var td4 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>;';
-    var td5 = '<td cellId="lostItemAge"  class="text-right" style="display: none;">'+$('#lostItemAge').val()+'</td>;';
-    var td6 =  '<td cellId="purchasedWhere" class="text-right" style="display: none;">'+$('#purchasedWhere').val()+'</td>;';
-    var td7 =  '<td cellId="itemNew" class="text-right" style="display: none;">'+$('input[name=itemNew]:checked').val()+'</td>;';
-    var td8 =  '<td cellId="itemRepairable" class="text-right" style="display: none;">'+$('input[name=itemRepairable]:checked').val()+'</td>;';
+    var td4 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
+    var td5 = '<td cellId="lostItemAge"  class="text-right" style="display: none;">'+$('#lostItemAge').val()+'</td>';
+    var td6 =  '<td cellId="purchasedWhere" class="text-right" style="display: none;">'+$('#purchasedWhere').val()+'</td>';
+    var td7 =  '<td cellId="itemNew" class="text-right" style="display: none;">'+$('input[name=itemNew]:checked').val()+'</td>';
+    var td8 =  '<td cellId="itemRepairable" class="text-right" style="display: none;">'+$('input[name=itemRepairable]:checked').val()+'</td>';
     rowContent = td1+td2+td3+td4+td5+td6+td7+td8;
 
     clearInput('#taptGjenstand');
@@ -1019,8 +1019,9 @@ function addTableRow(selector){
       var td1 ='<td cellId="damageDescription">'+damDescr+'</td>';
       var td2 = '<td cellId="insuranceCompany" class="text-right">'+insComp+'</td>';
       var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-      var td4 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>;';
+      var td4 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
       rowContent = td1+td2+td3+td4;
+      console.log(rowContent);
       clearInput('#insurancePayment');
     }
   }
@@ -1219,7 +1220,7 @@ $(window).scroll(function(event){
 <div class="container stbcolor-secondary sixth">
 
 <form id="skademelding" class="validateForm" role="form">
-<section id="omTapet" class="stepPanel active ">
+<section id="omTapet" class="stepPanel active">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
