@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+<head>
+    <title>Grids - storebrand.no</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+     <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
+    <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+    
+    <script>
+    $(window).load(function() {
+    	$(".row .column").matchHeight(true);
+    	
+    		$("div").each(function(i) {
+    			className = $(this).attr('class');
+    			if( className.indexOf("row")) {
+    				col = className.indexOf("column")>0?"col":"";
+                	$(this).append("<span class='code "+col+"'>"+$(this).prop("tagName")+" "+className+"</span>");
+            	}
+    		});
+    		
+    	
+    	
+    });
+
+
+    $(window).resize(function() {
+    	$(".row .column").matchHeight(true);
+    });
+
+    </script>
+    <style type="text/css">
+    	.code.col {
+    		background: #d1dd77;
+    	}
+    	.show {
+    		display:block;
+    	}
+    	.code {
+    		display:none;
+    		float:right;
+    		background-color:#f3ff99;
+    		font-family: monospace
+    	}
+    	.codeHelp {
+    		display:none;
+    		font-family: monospace;
+    		background-color:#A3FF9B;
+    		margin-top:3em;
+    	}
+    	.codeButton {
+    		position: fixed;
+    		top: 0;
+    		right: 0;
+    		z-index: 2;
+       	}
+    	
+	    .row .column {
+	    	margin-bottom:20px;
+	    }
+	    
+		.row .stb-box {
+			margin-bottom:0px;
+		}
+	 
+	   
+        .six, .four, .three, .nine, .twelve {
+            height: 100%;
+        }
+                
+        .twelve{
+            background-color: #D3D3D3;
+        }
+        
+        .six{
+            background-color: #EFE8DF;
+        }
+        
+        .four{
+            background-color: #F2F2F2;
+        }
+        
+        .nine{
+            background-color: #ECF2C2;
+        }
+        .three{
+            background-color: #FFF0F0;
+        }
+        
+		.banner {
+			background-color: #fff;
+		}
+		.banner .text {
+			float: left;
+			margin-top: 50px;
+			width: 48%;
+		}
+		.banner .image {
+			float: right;
+			width: 48%;
+			height: 250px;
+			background-image: url("images/bilforsikring.png");
+			background-repeat: no-repeat;
+			background-position: top right;
+		}
+		
+		.banner .image.noBg {
+			float: right;
+			width: 48%;
+			height: 250px;
+			background-image: none;
+		}
+
+		.banner .image.noBg img {
+			display: block;
+			margin: 0 0 0 auto;
+		}
+
+		.banner .image.noBg img.mobile {
+			display: none;
+		}
+		
+		
+		@media screen and (max-width: 750px) {
+			.banner .text {
+				float: none;
+				margin-top: 0px;
+				width: 100%;
+			}
+			.banner .image, .banner .image.noBg {
+				float: none;
+				width: 100%;
+				background-position: top center;
+			}
+			
+			.banner .image.noBg img {
+				display: block;
+				margin: 0 auto;
+				max-width: 100%;
+			}
+		}
+		@media screen and (max-width: 480px) {
+			.banner .image {
+				background-image: url("images/bilforsikring-mobil.png");	
+			}
+			.banner .image, .banner .image.noBg {
+				height: 150px;
+			}
+				
+			.banner .image.noBg img.mobile {
+				display: block;
+			}
+			
+			.banner .image.noBg img.screen {
+				display: none;
+			}
+		}
+		
+		.navba ul li{	
+			float: left;
+			list-style: none;
+			background-color:#BF1D19;
+			height: 80px;
+		}
+	
+		.navba ul li:hover{
+			background-color: #DA291C;
+		}
+		.navba ul li a{
+			color: #fff;
+			font-size: 16px;
+			letter-spacing: 0px;
+			font-weight: bold;
+			display: inline-block;
+			height: 100%;
+			padding: 30px 65px;
+			text-decoration: none;
+		}
+		
+		.navba li.search{
+			padding: 20px 30px;
+		}
+		
+		.navba li.search:hover{
+			background:none;
+		}
+		.navba input{
+			width: 70px;
+			background-color: #DA291C;
+			padding: 5px;
+			border: none;
+			height: 40px;
+			float: left;
+		}
+		
+		.navba  button{
+			height: 40px;
+			width: 40px;
+			border: none;
+			background: #DA291C url("images/search.png") left 3px no-repeat;
+			
+		}
+		
+		.header .navba{
+			background-color: #BF1D19;
+			padding: 0;
+		}
+		
+		.header .navba div{
+			padding: 0;
+		}
+		.header .logo img{
+			float: right;
+			margin-right: 10%;
+			margin-top: 20px;
+		}
+		
+		.navba .private{
+			background: url("images/private1.png") 15% 50% no-repeat;
+		}
+		
+		.navba .login{
+			background: url("images/login1.png") 15% 50% no-repeat;
+		}
+		
+		.navba li.current{
+			background-color: #DA291C;	
+		}
+		
+	
+		.navba li.current a{
+			// background: url("images/current.png") 65px  bottom no-repeat;
+		
+		}
+    </style>
+</head>
+ 
+<body>
+	<!-- <span class="codeButton"><button onclick="$('.code, .codeHelp').toggleClass('show'); $(this).toggleClass('pressed')">?</button></span> -->
+	
+	
+  <div class="header">
+  
+  	<div class="col-md-5 logo">	
+  		<img src="images/logo.png" title="storebrand logo"/>
+  	</div>
+  	
+  	<div class="col-md-7 navba">
+	   	<div class="col-md-8">
+	   		<ul>
+	   			<li class="private current"><a href="#">Privat</a></li>
+	   			<li><a href="#">Bedrift</a></li>
+	   			<li class="login"><a href="#">Logg inn</a></li>
+	   			<li class="search">
+	   				<input type="text" />
+	   				<button type="submit" ></button>
+	   			</li>
+	   		</ul>
+	   	</div>
+  	</div>
+
+  </div>
+         
+    
+  
+  <div class="container">    
+      <div class="row">
+          <div class="col-md-12 column">
+              <div class="stb-box banner twelve">
+                  <div class="text">
+                      <h2>Bilforsikring</h2>
+                      <p>Vi har konkurransedyktige priser. Her kan du forsikre en eller flere av dine biler, eller overføre bonus til din nye bil.</p>
+                  </div>
+                  <div class="image">
+                  	<!--  
+                  	<img src="images/bilforsikring.png" alt="bilforsikringimage" title="bilforsikringimage" class="">
+              		-->
+              	</div>
+              </div>
+          </div>
+      </div>
+              
+      <div class="row">
+          <div class="col-md-6 column">
+              <div class="stb-box six">
+                  Some text goes in here
+              </div>
+          </div>
+          <div class="col-md-6 column">
+              <div class="stb-box six">
+                  Some text goes in here
+              </div>
+          </div>
+      </div>
+        
+        <div class="row">
+            <div class="col-md-4 column">
+                <div class="stb-box four">
+                    Some text goes in here
+                </div>
+            </div>
+            <div class="col-md-4 column">
+                <div class="stb-box four">
+                    Some text goes in here
+                </div>
+            </div>
+            <div class="col-md-4 column">
+                <div class="stb-box four">
+                    Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. 
+                </div>
+            </div>
+        </div>
+        </div>
+        
+   
+
+  
+       
+       <div class="container">
+        <div class="row">
+            <div class="col-md-12 column">
+                <div class="stb-box banner twelve">
+                    <div class="text">
+                        <h2>Uforeforsikring</h2>
+                        <p>Vi har konkurransedyktige priser. Her kan du forsikre en eller flere av dine biler, eller overføre bonus til din nye bil.</p>
+                    </div>
+                    <div class="image noBg">
+                    	<img src="images/uforeforsikring.png" alt="bilforsikringimage" title="bilforsikringimage" class="screen">
+                    	<img src="images/uforeforsikring-mobil.png" alt="bilforsikringimage" title="bilforsikringimage" class="mobile">
+                	</div>
+                </div>
+            </div>
+        </div>
+       
+        
+        <div class="row">
+            <div class="col-md-3 column">
+                <div class="stb-box three">
+                    Some text goes in here
+                </div>
+            </div>
+            <div class="col-md-9 column">
+                <div class="stb-box nine">
+                    Some text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in here
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-3 column">
+                <div class="stb-box three">
+                    Some text goes in here
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 column">
+                <div class="stb-box three">
+                    Some text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in here
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 column">
+                <div class="stb-box three">
+                    Some text goes in heress
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 column">
+                <div class="stb-box three">
+                    Some text goes in here
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 column">
+                <div class="stb-box six">
+                    Some text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in here
+                </div>
+            </div>
+            <div class="col-md-6 column">
+                <div class="stb-box six">
+                    Some text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in hereSome text goes in here
+                </div>
+            </div>
+            <div class="col-md-6 column">
+                <div class="stb-box six">
+                    Some text goes in here
+                </div>
+            </div>
+            <div class="col-md-6 column">
+                <div class="stb-box six">
+                    Some text goes in here
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
