@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+     <link rel="stylesheet" type="text/css" href="css/yamm.css">
     <script type="text/javascript" src="js/dist/jquery.min.js"></script>
      <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
     <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
@@ -20,8 +21,8 @@
                 	$(this).append("<span class='code "+col+"'>"+$(this).prop("tagName")+" "+className+"</span>");
             	}
     		});
-    		
-    	
+    
+    		  
     	
     });
 
@@ -29,7 +30,8 @@
     $(window).resize(function() {
     	$(".row .column").matchHeight(true);
     });
-
+    
+  
     </script>
     <style type="text/css">
     	.code.col {
@@ -158,30 +160,38 @@
 			}
 		}
 		
-		.nav li{	
-			float: left;
+		.nav >li{	
+			
 			list-style: none;
 			background-color:#BF1D19;
 			height: 80px;
 			
 		}
 		
-		.nav li:hover{
+		.nav >li:hover, .nav >li:focus, .nav >li a:active{
 			background-color: #DA291C;
 		}
 		
-		.nav li a:hover{
+		.nav >li a:hover,.nav >li a:active {
 			background: none;
 		}
 		
-		.nav li a{
+		.navbar-default .navbar-nav .open > a, .navbar-default .navbar-nav .open > a:hover, .navbar-default .navbar-nav .open > a:focus{
+			background: none;
+		}
+		
+		.navbar .nav>li>.dropdown-menu::before, .navbar .nav>li>.dropdown-menu::after{
+			display: none;
+		}
+		
+		.navbar .nav >li a{
 			color: #fff;
 			font-size: 16px;
 			letter-spacing: 1px;
 			font-weight: bold;
 			display: inline-block;
 			height: 100%;
-			padding: 30px 65px;
+			padding: 30px 56px;
 			text-decoration: none;
 		}
 		
@@ -190,7 +200,7 @@
 		}
 		
 		.nav li.search:hover{
-			background:none;
+			background: #BF1D19;
 		}
 		
 		.nav input{
@@ -210,64 +220,224 @@
 			
 		}
 		
-		.header .navbar{
+		
+		#navbar-collapse{
 			background-color: #BF1D19;
 			border-radius: 0px;
 			padding: 0;
+			width: auto;
+			
 		}
 	
-		.header .logo img{
+		.navbar .logo{
 			float: right;
 			margin-right: 10%;
 			margin-top: 20px;
 		}
 		
 		.nav .private{
-			background: url("images/private1.png") 15% 50% no-repeat;
+			background: #BF1D19 url("images/private1.png") 15% 50% no-repeat;
 		}
 		
 		.nav .login{
-			background: url("images/login1.png") 15% 50% no-repeat;
+			background: #BF1D19 url("images/login1.png") 15% 50% no-repeat;
 		}
 		
-		.nav li.active{
+		.nav li.current{
 			background-color: #DA291C;	
 		}
 		.nav li.active a{
-			background: url("images/current.png") 65px  bottom no-repeat;
+			//background: url("images/current.png") 65px  bottom no-repeat;
+		}
 		
+		.navbar .dropdown-menu{
+			padding: 0 20%;
+			background-color: #fff;	
+			padding-top: 50px;
+			height: 550px;
+			box-shadow: 0px 14px 12px rgba(0, 0, 0, 0.176);
+		}
+		
+		.navbar .dropdown-menu li{
+			background: none;
+			list-style-type: none;	
+		}
+		
+		.navbar .dropdown-menu li a {
+			color: #000;
+			padding: 0;
+			color: #4D4D4D;
+			margin-bottom: 15px;
+		}
+		.dropdown-menu > li{
+			float: left;
+			display: block;
+			margin-right: 5%
+		}
+		
+		.dropdown-menu > li ul{
+			padding: 0; margin: 0;
+		}
+		.dropdown-menu>li ul li{
+			padding: 0;
+			margin: 0;
+		}
+	
+		.navbar .dropdown-menu>li ul li a{
+			font-size: 14px;
+			color: #4D4D4D ;
+			font-weight: normal;
+		}
+		
+		.extraLinks{
+			display: inline-block;
+			clear: both;
+			width: 100%;
+			margin-top: 50px;
+		}
+		
+		.dropdown-menu .extraLinks li{
+			float: left;
+			display:block;
+			padding: 10px 8px 0px 40px;
+			margin-right: 10%;
+		}
+		
+		.navbar .dropdown-menu >li.extraLinks ul li a, .dropdown-menu>li h4{
+			font-weight: bold;
+			color: #404040;
+			font-size: 16px;
+			display: block;	
+		
+		}
+		
+		.dropdown-menu .extraLinks .veiHelp{
+			background: url("images/veihelp.png") left top no-repeat;
+		}
+		.dropdown-menu .extraLinks .damageHelp{
+			background: url("images/damagehelp.png") left top no-repeat;
+		}
+		.dropdown-menu .extraLinks .benefits{
+			background: url("images/benefits.png") left 5px no-repeat;
+		}
+		.dropdown-menu .extraLinks .contact{
+			background: url("images/contact.png") left 5px no-repeat;
 		}
     </style>
 </head>
  
 <body>
 	<!-- <span class="codeButton"><button onclick="$('.code, .codeHelp').toggleClass('show'); $(this).toggleClass('pressed')">?</button></span> -->
-	
 
-  <div class="header">
+<div class="navbar navbar-default yamm">
+          <div class="navbar-header col-md-5">
+            <img src="images/logo.png" title="logo image" class="logo">
+          </div>
+          <div id="navbar-collapse-grid" class="navbar-collapse collapse col-md-7">
+            <ul class="nav navbar-nav">
+
+              <li class="dropdown private yamm-fw current"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Privat</a>
+                <ul class="dropdown-menu">
+                		<li>
+                			<h4>Forsikring</h4>
+                			<ul>
+                				<li><a href="#">Bilforsikring</a></li>
+                				<li><a href="#">Motorsykkelforsikring</a></li>
+                				<li><a href="#">Bil & kjøretøy</a></li>
+                				<li><a href="#">Innboforsikring</a></li>
+                				<li><a href="#">Husforsikring</a></li>
+                				<li><a href="#">Reiseforsikring</a></li>
+                				<li><a href="#">Båtforsikring</a></li>
+                				<li><a href="#">Liv & helse</a></li>
+                				<li><a href="#">Barneforsikring</a></li>
+                			</ul>
+                		</li>
+							<li>
+								<h4>Bank og lån</h4>
+	                			<ul>
+	                				<li><a href="#">Bil bankkunde</a></li>
+	                				<li><a href="#">boliglån</a></li>
+	                				<li><a href="#">Boligkreditt</a></li>
+	                				<li><a href="#">Boliglån for unge</a></li>
+	                				<li><a href="#">Konto and kort</a></li>
+	                				<li><a href="#">Ungdomskonto</a></li>
+	                				<li><a href="#">Nettbank</a></li>
+	                				<li><a href="#">VISA kort</a></li>
+	                				<li><a href="#">kreditt kort</a></li>
+	                				<li><a href="#">Ungdomskonto</a></li>
+	                			</ul>
+                			</li>
+                			<li>
+                				<h4>Pensjon</h4>
+	                			<ul>
+	                				<li><a href="#">Egensparing til pensjon</a></li>
+	                				<li><a href="#">Ekstrapensjon</a></li>
+	                				<li><a href="#">IPS</a></li>
+	                				<li><a href="#">Pensjon fra arbeidsgiver</a></li>
+	                				<li><a href="#">Pensjonkapitalbevis</a></li>
+	                				<li><a href="#">Fripolise</a></li>
+	                				<li><a href="#">Fripolise med investeringsvalg</a></li>
+	     
+	                			</ul>
+                			</li>
+                			<li>
+                				<h4>Sapring</h4>
+                				<ul>
+	                				<li><a href="#">Bilforsikring</a></li>
+	                				<li><a href="#">Motorsykkelforsikring</a></li>
+	                				<li><a href="#">Bil & kjøretøy</a></li>
+	                				<li><a href="#">Innboforsikring</a></li>
+	                				<li><a href="#">Husforsikring</a></li>
+	                				<li><a href="#">Reiseforsikring</a></li>
+	                				<li><a href="#">Båtforsikring</a></li>
+	                				<li><a href="#">Liv & helse</a></li>
+	                				<li><a href="#">Barneforsikring</a></li>
+	                			</ul>
+                			</li>
+                			<li>
+                				<h4>Kalkulatorer & verktoy</h4>
+	                			<ul>
+	                				<li><a href="#">Bilforsikring</a></li>
+	                				<li><a href="#">Motorsykkelforsikring</a></li>
+	                				<li><a href="#">Bil & kjøretøy</a></li>
+	                				<li><a href="#">Innboforsikring</a></li>
+	                				<li><a href="#">Husforsikring</a></li>
+	                				<li><a href="#">Reiseforsikring</a></li>
+	                				<li><a href="#">Båtforsikring</a></li>
+	                				<li><a href="#">Liv & helse</a></li>
+	                				<li><a href="#">Barneforsikring</a></li>
+	                			</ul>
+                		</li>
+                		
+                		<li class="extraLinks">
+	                			<ul>
+	                				<li class="veiHelp"><a href="#">Veihjelp</a></li>
+	                				<li class="damageHelp"><a href="#">Meld skade</a></li>
+	                				<li class="benefits"><a href="#">Få fordeler</a></li>
+	                				<li class="contact"><a href="#">Kontakt oss</a></li>
+	                			</ul>
+                		</li>
+					
+                </ul>
+              </li>
+            
+              <li class="dropdown company yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a>
+              
+              </li>
+            
+              <li class="dropdown login yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logginn</a>
+               
+              </li>
+            
+	  			<li class="search">
+					<input type="text"/>
+					<button type="submit"></button>
+				</li>
+            </ul>
+          </div>
+ </div>
+
   
-  	<div class="col-md-5 logo">	
-  		<img src="images/logo.png" title="storebrand logo"/>
-  	</div>	
-  	<div class="col-md-7 navbar">
-		<ul class="nav navbar-nav">
-			<li class="private active">
-				<a href="#">Privat</a>
-			</li>
-			<li class="company">
-				<a href="#">Bedrift</a>
-			</li>
-			<li class="login">
-				<a href="#">Loggin</a>
-			</li>
-			<li class="search">
-				<input type="text"/>
-				<button type="submit"></button>
-			</li>
-		</ul>
-	</div>
-
-  </div>
          
     
   
