@@ -158,20 +158,26 @@
 			}
 		}
 		
-		.navba ul li{	
+		.nav li{	
 			float: left;
 			list-style: none;
 			background-color:#BF1D19;
 			height: 80px;
+			
 		}
-	
-		.navba ul li:hover{
+		
+		.nav li:hover{
 			background-color: #DA291C;
 		}
-		.navba ul li a{
+		
+		.nav li a:hover{
+			background: none;
+		}
+		
+		.nav li a{
 			color: #fff;
 			font-size: 16px;
-			letter-spacing: 0px;
+			letter-spacing: 1px;
 			font-weight: bold;
 			display: inline-block;
 			height: 100%;
@@ -179,14 +185,15 @@
 			text-decoration: none;
 		}
 		
-		.navba li.search{
+		.nav li.search{
 			padding: 20px 30px;
 		}
 		
-		.navba li.search:hover{
+		.nav li.search:hover{
 			background:none;
 		}
-		.navba input{
+		
+		.nav input{
 			width: 70px;
 			background-color: #DA291C;
 			padding: 5px;
@@ -195,7 +202,7 @@
 			float: left;
 		}
 		
-		.navba  button{
+		.nav  button{
 			height: 40px;
 			width: 40px;
 			border: none;
@@ -203,35 +210,31 @@
 			
 		}
 		
-		.header .navba{
+		.header .navbar{
 			background-color: #BF1D19;
+			border-radius: 0px;
 			padding: 0;
 		}
-		
-		.header .navba div{
-			padding: 0;
-		}
+	
 		.header .logo img{
 			float: right;
 			margin-right: 10%;
 			margin-top: 20px;
 		}
 		
-		.navba .private{
+		.nav .private{
 			background: url("images/private1.png") 15% 50% no-repeat;
 		}
 		
-		.navba .login{
+		.nav .login{
 			background: url("images/login1.png") 15% 50% no-repeat;
 		}
 		
-		.navba li.current{
+		.nav li.active{
 			background-color: #DA291C;	
 		}
-		
-	
-		.navba li.current a{
-			// background: url("images/current.png") 65px  bottom no-repeat;
+		.nav li.active a{
+			background: url("images/current.png") 65px  bottom no-repeat;
 		
 		}
     </style>
@@ -240,26 +243,29 @@
 <body>
 	<!-- <span class="codeButton"><button onclick="$('.code, .codeHelp').toggleClass('show'); $(this).toggleClass('pressed')">?</button></span> -->
 	
-	
+
   <div class="header">
   
   	<div class="col-md-5 logo">	
   		<img src="images/logo.png" title="storebrand logo"/>
-  	</div>
-  	
-  	<div class="col-md-7 navba">
-	   	<div class="col-md-8">
-	   		<ul>
-	   			<li class="private current"><a href="#">Privat</a></li>
-	   			<li><a href="#">Bedrift</a></li>
-	   			<li class="login"><a href="#">Logg inn</a></li>
-	   			<li class="search">
-	   				<input type="text" />
-	   				<button type="submit" ></button>
-	   			</li>
-	   		</ul>
-	   	</div>
-  	</div>
+  	</div>	
+  	<div class="col-md-7 navbar">
+		<ul class="nav navbar-nav">
+			<li class="private active">
+				<a href="#">Privat</a>
+			</li>
+			<li class="company">
+				<a href="#">Bedrift</a>
+			</li>
+			<li class="login">
+				<a href="#">Loggin</a>
+			</li>
+			<li class="search">
+				<input type="text"/>
+				<button type="submit"></button>
+			</li>
+		</ul>
+	</div>
 
   </div>
          
