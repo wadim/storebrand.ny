@@ -237,6 +237,10 @@
     margin-top: 24px;
   }
 
+  .has-feedback .form-control{
+    padding-right: 6px;
+  }
+
 
 </style>
 <script type="text/javascript">
@@ -995,7 +999,7 @@ function addTableRow(selector){
       var td3 = '<td cellId="who" class="text-right">'+who+'</td>';
       var td4 = '<td cellId="birthNumberTable" class="text-right">'+birthNumb+'</td>';
       var td5 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-      var td6 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>'
+      var td6 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
       rowContent = td1+td2+td3+td4+td5+td6;
       clearInput('#affectedPersons');
     }
@@ -1021,7 +1025,6 @@ function addTableRow(selector){
       var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
       var td4 = '<td class="text-right"><a onclick="updateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
       rowContent = td1+td2+td3+td4;
-      console.log(rowContent);
       clearInput('#insurancePayment');
     }
   }
