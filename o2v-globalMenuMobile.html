@@ -6,6 +6,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/stb-main.css">
 <link href="fonts/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/yamm.css">
 <script type="text/javascript" src="js/dist/jquery.min.js"></script>
 <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
 <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
@@ -21,18 +22,30 @@
         $(this).append("<span class='code "+col+"'>"+$(this).prop("tagName")+" "+className+"</span>");
       }
     });
-
-    $('.accordion').on('show.bs.collapse', function (event) {
-      $(event.target).prev().find('span:first').next().toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
-    });
-
-    $('.accordion').on('hide.bs.collapse', function () {
-      $('.panel-collapse.collapse.in').prev().find('span:first').next().toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
-    });
-
-
   });
 
+
+  $(document).ready(function(){
+
+    $('.panel-group').on('show.bs.collapse', function (event) {
+      $(event.target).prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right')
+    });
+
+
+    $('.panel-group').on('hide.bs.collapse', function () {
+      $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right')
+    });
+
+    $('.dropdown-menu a').click(function(e) {
+      //e.stopPropagation();
+      // console.log(e);
+
+    });
+
+  });
+  $(document).on('click', '.yamm .dropdown-menu', function(e) {
+    e.stopPropagation()
+  });
 
   $(window).resize(function() {
     $(".row .column").matchHeight(true);
@@ -173,24 +186,6 @@
 
 }
 
-.nav.navbar  li:hover{
-  background-color: #DA291C;
-}
-
-.nav.navbar  li a:hover{
-  background: none;
-}
-
-.nav.navbar li a{
-  color: #fff;
-  font-size: 16px;
-  letter-spacing: 1px;
-  font-weight: bold;
-  display: inline-block;
-  height: 100%;
-  text-decoration: none;
-}
-
 .nav li.search{
   padding: 20px 30px;
 }
@@ -213,7 +208,6 @@
   width: 40px;
   border: none;
   background: #DA291C url("images/search.png") left 3px no-repeat;
-
 }
 
 .header .navbar{
@@ -237,38 +231,44 @@
   background: url("images/login1.png") 15% 50% no-repeat;
 }
 
-.nav.navbar li.active{
-  background-color: #DA291C;
-}
-.nav.navbar li.active a{
-  background: url("images/current.png") 65px  bottom no-repeat;
-}
+
 body { padding-top: 70px; }
 
-.nav-tabs {
+
+.dropdown-menu .nav-tabs {
   border-bottom: 1px solid #BF1D19;
   padding-left: 48px;
 }
-.nav-tabs>li{
-  width: 30%;
+
+.dropdown-menu .nav-tabs>li{
+  width: 33%;
 }
 
-.nav-tabs>li>a {
-   color: #BF1D19;
+.dropdown-menu .nav-tabs>li>a {
+  color: #BF1D19;
+  text-align: center;
+}
+.dropdown-menu .nav-tabs>li>a:hover,.dropdown-menu .nav-tabs>li.active>a:hover{
+  color: white;
+  background: #BF1D19;
+}
+
+.nav >li:hover, .nav >li:focus, .nav >li a:active{
+  background-color: #DA291C;
+}
+
+.nav >li a:hover,.nav >li a:active {
+  background: none;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+  background: none;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
   color: #BF1D19;
   border: 1px solid #BF1D19;
   border-bottom-color: transparent;
-}
-
-#subMenu{
-  display: none;
-}
-
-#subMenu.active{
-  display: block;
 }
 
 .panel-heading{
@@ -284,6 +284,53 @@ body { padding-top: 70px; }
   border-color: transparent;
 }
 
+#subMenuMobile.dropdown-menu .transparent-btn{
+  width: 164px !important;
+  margin-right:48px;
+  padding-top: 6px !important;
+  margin-top: 6px;
+  background: transparent !important;
+  border-style:solid;
+  border-width:1px;
+  color: #000000;
+}
+#subMenuMobile.dropdown-menu .transparent-btn:hover{
+  background: #BF1D19 !important;
+
+}
+.navbar .dropdown-menu li{
+  background: none;
+  list-style-type: none;
+}
+
+.navbar .dropdown-menu .panel-group li{
+  float: none !important;
+}
+
+#subMenuMobile{
+  box-shadow: 0px 14px 12px rgba(0, 0, 0, 0.176);
+  background: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-left: 0;
+}
+
+#subMenuMobile.active{
+  display: block;
+}
+
+li span.marker.active {
+  position: absolute;
+  top: 42px;
+  left: 16px;
+  display: inline-block;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #cccccc;
+  border-left: 12px solid transparent;
+  border-bottom-color: rgba(255, 255, 255, 1);
+  content: '';
+}
+
 </style>
 </head>
 
@@ -293,70 +340,180 @@ body { padding-top: 70px; }
 
 <div class="header">
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
-        <div class="row"  style="background: white;">
-          <div class="col-xs-5 logo">
-            <img class="img-responsive" src="images/logo.storebrand.172x21.png" title="storebrand logo"/>
-          </div>
-          <div class="col-xs-6 navbar col-xs-offset-1">
-            <ul class="nav navbar">
-              <li><a href="#" onclick="$('#subMenu').toggleClass('active');"><i class="fa fa-bars" style="font-size: 32px; color: white;"></i></a>
-              </li>
-              <li><a href="#"><i class="fa fa-search" style="font-size: 32px; color: white;"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+  <nav class="navbar yamm navbar-default navbar-fixed-top" role="navigation">
 
-        <div id="subMenu" class="row" style="background: white; padding-top: 12px;">
-          <div class="col-xs-12">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab-privat" data-toggle="tab">Privat</a></li>
-              <li><a href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
-              <li><a href="#tab-innlogging" data-toggle="tab">Logg inn</a></li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane fade in active" id="tab-privat">
+    <div class="row"  style="background: white;">
 
-                <div class="panel-group" id="accordion-privat"  style="background: white;">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#forsikring">
-                          <span class="glyphicon glyphicon-chevron-right"></span> Forsikring
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="forsikring" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        Forsikring blablabla
+      <div class="navbar-header col-xs-5 logo">
+        <img class="img-responsive" src="images/logo.storebrand.172x21.png" title="storebrand logo"/>
+      </div>
+      <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6 col-xs-offset-1">
+        <ul class="nav navbar">
+          <li class="dropdown yamm-fw">
+            <a href="#" onclick="//$(this).next().toggleClass('active');" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars" style="font-size: 32px; color: white;"></i><span class="marker active"></span></a>
+            <ul id="subMenuMobile" class="dropdown-menu">
+              <div class="yamm-content">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#tab-privat" data-toggle="tab">Privat</a></li>
+                      <li><a href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
+                      <li><a href="#tab-innlogging" data-toggle="tab">Logg inn</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane fade in active" id="tab-privat">
+
+                        <div class="panel-group" id="accordion-privat"  style="background: white;">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#forsikring">
+                                  <span class="glyphicon glyphicon-chevron-right"></span> Forsikring
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="forsikring" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <ul class="stb">
+                                  <li><a href="#">Bilforsikring</a></li>
+                                  <li><a href="#">Motorsykkelforsikring</a></li>
+                                  <li><a href="#">Bil &amp; kjøretøy</a></li>
+                                  <li><a href="#">Innboforsikring</a></li>
+                                  <li><a href="#">Husforsikring</a></li>
+                                  <li><a href="#">Reiseforsikring</a></li>
+                                  <li><a href="#">Båtforsikring</a></li>
+                                  <li><a href="#">Liv &amp; helse</a></li>
+                                  <li><a href="#">Barneforsikring</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#bank">
+                                  <span class="glyphicon glyphicon-chevron-right"></span> Bank & lån
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="bank" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <ul class="stb">
+                                  <li><a href="#">Bil bankkunde</a></li>
+                                  <li><a href="#">boliglån</a></li>
+                                  <li><a href="#">Boligkreditt</a></li>
+                                  <li><a href="#">Boliglån for unge</a></li>
+                                  <li><a href="#">Konto and kort</a></li>
+                                  <li><a href="#">Ungdomskonto</a></li>
+                                  <li><a href="#">Nettbank</a></li>
+                                  <li><a href="#">VISA kort</a></li>
+                                  <li><a href="#">kreditt kort</a></li>
+                                  <li><a href="#">Ungdomskonto</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#pensjon">
+                                  <span class="glyphicon glyphicon-chevron-right"></span> Pensjon
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="pensjon" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <ul class="stb">
+                                  <li><a href="#">Egensparing til pensjon</a></li>
+                                  <li><a href="#">Ekstrapensjon</a></li>
+                                  <li><a href="#">IPS</a></li>
+                                  <li><a href="#">Pensjon fra arbeidsgiver</a></li>
+                                  <li><a href="#">Pensjonkapitalbevis</a></li>
+                                  <li><a href="#">Fripolise</a></li>
+                                  <li><a href="#">Fripolise med investeringsvalg</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#sparing">
+                                  <span class="glyphicon glyphicon-chevron-right"></span> Sparing
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="sparing" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <ul class="stb">
+                                  <li><a href="#">Bilforsikring</a></li>
+                                  <li><a href="#">Motorsykkelforsikring</a></li>
+                                  <li><a href="#">Bil &amp; kjøretøy</a></li>
+                                  <li><a href="#">Innboforsikring</a></li>
+                                  <li><a href="#">Husforsikring</a></li>
+                                  <li><a href="#">Reiseforsikring</a></li>
+                                  <li><a href="#">Båtforsikring</a></li>
+                                  <li><a href="#">Liv &amp; helse</a></li>
+                                  <li><a href="#">Barneforsikring</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#kalkulator">
+                                  <span class="glyphicon glyphicon-chevron-right"></span> <i class="fa fa-building-o"></i> Kalkulatorer & verktøy
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="kalkulator" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <ul class="stb">
+                                  <li><a href="#">Bilforsikring</a></li>
+                                  <li><a href="#">Motorsykkelforsikring</a></li>
+                                  <li><a href="#">Bil &amp; kjøretøy</a></li>
+                                  <li><a href="#">Innboforsikring</a></li>
+                                  <li><a href="#">Husforsikring</a></li>
+                                  <li><a href="#">Reiseforsikring</a></li>
+                                  <li><a href="#">Båtforsikring</a></li>
+                                  <li><a href="#">Liv &amp; helse</a></li>
+                                  <li><a href="#">Barneforsikring</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#bank">
-                          <span class="glyphicon glyphicon-chevron-right"></span> Bank & lån
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="bank" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        Bank & Lån blablablabla
-                      </div>
+                      <div class="tab-pane fade" id="tab-bedrift">Bedrift</div>
+                      <div class="tab-pane fade" id="tab-innlogging">Logg inn</div>
                     </div>
                   </div>
                 </div>
-
+                <div class="row">
+                  <div class="col-xs-6">
+                    <a class="stb-btn stb-btn-lg secondary transparent-btn"><i class="fa fa-wrench"></i> Veihjelp</a>
+                    <a class="stb-btn stb-btn-lg secondary transparent-btn"><i class="fa fa-plus-circle"></i> Få fordeler</a>
+                  </div>
+                  <div class="col-xs-6">
+                    <a class="stb-btn stb-btn-lg secondary transparent-btn"><i class="fa fa-file-text-o"></i> Meld skade</a>
+                    <a class="stb-btn stb-btn-lg secondary transparent-btn"><i class="fa fa-comment-o"></i> Kontakt oss</a>
+                  </div>
+                </div>
               </div>
-              <div class="tab-pane fade" id="tab-bedrift">Bedrift</div>
-              <div class="tab-pane fade" id="tab-innlogging">Logg inn</div>
-            </div>
-          </div>
-        </div>
+            </ul>
+          </li>
+          <li><a href="#" onclick="$(this).next().toggleClass('active');"><i class="fa fa-search" style="font-size: 32px; color: white;"></i><span class="marker"></span></a>
+
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
+
+</div>
+
 </div>
 
 
