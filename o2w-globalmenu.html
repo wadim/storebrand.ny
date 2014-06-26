@@ -9,439 +9,477 @@
     <script type="text/javascript" src="js/dist/jquery.min.js"></script>
      <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
     <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
-    
+   
     <script>
     $(window).load(function() {
-    	$(".row .column").matchHeight(true);
-    	
-    		$("div").each(function(i) {
-    			className = $(this).attr('class');
-    			if( className.indexOf("row")) {
-    				col = className.indexOf("column")>0?"col":"";
-                	$(this).append("<span class='code "+col+"'>"+$(this).prop("tagName")+" "+className+"</span>");
-            	}
-    		});
-    
-    		  
-    	
+        $(".row .column").matchHeight(true);
+       
+            $("div").each(function(i) {
+                className = $(this).attr('class');
+                if( className.indexOf("row")) {
+                    col = className.indexOf("column")>0?"col":"";
+                    $(this).append("<span class='code "+col+"'>"+$(this).prop("tagName")+" "+className+"</span>");
+                }
+            });
+   
+             
+       
     });
 
 
     $(window).resize(function() {
-    	$(".row .column").matchHeight(true);
+        $(".row .column").matchHeight(true);
     });
-    
-  
+   
+ 
     </script>
     <style type="text/css">
-    	.code.col {
-    		background: #d1dd77;
-    	}
-    	.show {
-    		display:block;
-    	}
-    	.code {
-    		display:none;
-    		float:right;
-    		background-color:#f3ff99;
-    		font-family: monospace
-    	}
-    	.codeHelp {
-    		display:none;
-    		font-family: monospace;
-    		background-color:#A3FF9B;
-    		margin-top:3em;
-    	}
-    	.codeButton {
-    		position: fixed;
-    		top: 0;
-    		right: 0;
-    		z-index: 2;
-       	}
-    	
-	    .row .column {
-	    	margin-bottom:20px;
-	    }
-	    
-		.row .stb-box {
-			margin-bottom:0px;
-		}
-	 
-	   
+        .code.col {
+            background: #d1dd77;
+        }
+        .show {
+            display:block;
+        }
+        .code {
+            display:none;
+            float:right;
+            background-color:#f3ff99;
+            font-family: monospace
+        }
+        .codeHelp {
+            display:none;
+            font-family: monospace;
+            background-color:#A3FF9B;
+            margin-top:3em;
+        }
+        .codeButton {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 2;
+           }
+       
+        .row .column {
+            margin-bottom:20px;
+        }
+       
+        .row .stb-box {
+            margin-bottom:0px;
+        }
+     
+      
         .six, .four, .three, .nine, .twelve {
             height: 100%;
         }
-                
+               
         .twelve{
             background-color: #D3D3D3;
         }
-        
+       
         .six{
             background-color: #EFE8DF;
         }
-        
+       
         .four{
             background-color: #F2F2F2;
         }
-        
+       
         .nine{
             background-color: #ECF2C2;
         }
         .three{
             background-color: #FFF0F0;
         }
+       
+        .banner {
+            background-color: #fff;
+        }
+        .banner .text {
+            float: left;
+            margin-top: 50px;
+            width: 48%;
+        }
+        .banner .image {
+            float: right;
+            width: 48%;
+            height: 250px;
+            background-image: url("images/bilforsikring.png");
+            background-repeat: no-repeat;
+            background-position: top right;
+        }
+       
+        .banner .image.noBg {
+            float: right;
+            width: 48%;
+            height: 250px;
+            background-image: none;
+        }
+
+        .banner .image.noBg img {
+            display: block;
+            margin: 0 0 0 auto;
+        }
+
+        .banner .image.noBg img.mobile {
+            display: none;
+        }
+       
+       
+        @media screen and (max-width: 750px) {
+            .banner .text {
+                float: none;
+                margin-top: 0px;
+                width: 100%;
+            }
+            .banner .image, .banner .image.noBg {
+                float: none;
+                width: 100%;
+                background-position: top center;
+            }
+           
+            .banner .image.noBg img {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .banner .image {
+                background-image: url("images/bilforsikring-mobil.png");   
+            }
+            .banner .image, .banner .image.noBg {
+                height: 150px;
+            }
+               
+            .banner .image.noBg img.mobile {
+                display: block;
+            }
+           
+            .banner .image.noBg img.screen {
+                display: none;
+            }
+        }
+       
+       
+        .navbar  {
+            background-color: #BF1D19;
+            border-radius: 0px;
+            padding: 0px;
+        }
+       
+        .navbar-header{
+            background-color: #fff;
+            height: 80px;
+        }
         
-		.banner {
-			background-color: #fff;
-		}
-		.banner .text {
-			float: left;
-			margin-top: 50px;
-			width: 48%;
-		}
-		.banner .image {
-			float: right;
-			width: 48%;
-			height: 250px;
-			background-image: url("images/bilforsikring.png");
-			background-repeat: no-repeat;
-			background-position: top right;
-		}
-		
-		.banner .image.noBg {
-			float: right;
-			width: 48%;
-			height: 250px;
-			background-image: none;
-		}
+       	.navbar-header .logo{
+            float: right;
+            margin-right: 10%;
+            margin-top: 20px;
+        }
+   
+        .nav >li{
+            list-style: none;
+            background-color:#BF1D19;   
+            height: 80px;
+            padding: 0px;
+        }
+       
+        .navbar .navbar-nav>li:hover, .navbar .navbar-nav >li:focus, .navbar .navbar-nav >li a:active{
+            background-color: #DA291C;
+            color: #fff;
+        }
+       
+        .nav >li a:hover,.nav >li a:active {
+            background: none;
+        }
+       
+        .navbar-default .navbar-nav .open > a, .navbar-default .navbar-nav .open > a:hover, .navbar-default .navbar-nav .open > a:focus, .navbar .navbar-nav >li >a:focus {
+            background: none;
+            color: #fff !important;
+          
+        }
+       
+        .navbar .nav>li>.dropdown-menu::before, .navbar .nav>li>.dropdown-menu::after{
+            display: none;
+        }
+       
+        .navbar .nav >li>a {
+            color: #fff;
+            font-size: 16px;
+            letter-spacing: 1px;
+            line-height: 50px;
+            font-weight: bold;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            width:100%;
+            height:100%;
+        }
+       
+        .nav li.search{
+            padding-top: 20px;
+         	padding-left: 4%;
+         
+          
+        }
+       
+        .nav li.search:hover{
+            background: #BF1D19;
+        }
+       
+        .nav li.search input{
+            width: 50%;
+            background-color: #DA291C;
+            padding: 5px;
+            border: none;
+            height: 40px;
+            float: left;
+            display: inline-block;
+        
+        }
+       
+        .nav li.search button{
+            height: 40px;
+            width: 25%;
+            border: none;
+            background: #DA291C url("images/search.png") left 3px no-repeat;
+        }
+       
+        .navbar-collapse {
+            padding: 0;
+            width: auto;
+        }
+   
+   
+        .private, .search, .login, .company {
+            width: 25%;
+        }
+       
+        .nav .private{
+            background: #BF1D19 url("images/private1.png") 12% 50% no-repeat;
+            
+        }
+       
+        .nav .login{
+            background: #BF1D19 url("images/login1.png") 0% 50% no-repeat;
+        }
+       
+       	 .nav .login a{
+       	 	padding-right: 15%;
+       	 }
+        .nav li.current{
+            background-color: #DA291C;   
+        }
+       
+        .nav li.active a{
+            //background: url("images/current.png") 65px  bottom no-repeat;
+        }
+       
+        .navbar .dropdown-menu {
+            padding: 50px 20%;
+            margin: 0;
+            background-color: #fff;   
+           
+            box-shadow: 0px 14px 12px rgba(0, 0, 0, 0.176);
+        }
+       
+        .navbar .dropdown-menu li{
+            background: none;
+            list-style-type: none;   
+        }
+       
+        .navbar .dropdown-menu li a {
+            color: #000;
+            padding: 0;
+            color: #4D4D4D;
+            line-height: 30px;
+                       
+        }
 
-		.banner .image.noBg img {
-			display: block;
-			margin: 0 0 0 auto;
-		}
-
-		.banner .image.noBg img.mobile {
-			display: none;
-		}
-		
-		
-		@media screen and (max-width: 750px) {
-			.banner .text {
-				float: none;
-				margin-top: 0px;
-				width: 100%;
-			}
-			.banner .image, .banner .image.noBg {
-				float: none;
-				width: 100%;
-				background-position: top center;
-			}
-			
-			.banner .image.noBg img {
-				display: block;
-				margin: 0 auto;
-				max-width: 100%;
-			}
-		}
-		@media screen and (max-width: 480px) {
-			.banner .image {
-				background-image: url("images/bilforsikring-mobil.png");	
-			}
-			.banner .image, .banner .image.noBg {
-				height: 150px;
-			}
-				
-			.banner .image.noBg img.mobile {
-				display: block;
-			}
-			
-			.banner .image.noBg img.screen {
-				display: none;
-			}
-		}
-		
-		.nav >li{	
-			
-			list-style: none;
-			background-color:#BF1D19;
-			height: 80px;
-			
-		}
-		
-		.nav >li:hover, .nav >li:focus, .nav >li a:active{
-			background-color: #DA291C;
-		}
-		
-		.nav >li a:hover,.nav >li a:active {
-			background: none;
-		}
-		
-		.navbar-default .navbar-nav .open > a, .navbar-default .navbar-nav .open > a:hover, .navbar-default .navbar-nav .open > a:focus{
-			background: none;
-		}
-		
-		.navbar .nav>li>.dropdown-menu::before, .navbar .nav>li>.dropdown-menu::after{
-			display: none;
-		}
-		
-		.navbar .nav >li a{
-			color: #fff;
-			font-size: 16px;
-			letter-spacing: 1px;
-			font-weight: bold;
-			display: inline-block;
-			height: 100%;
-			padding: 30px 56px;
-			text-decoration: none;
-		}
-		
-		.nav li.search{
-			padding: 20px 30px;
-		}
-		
-		.nav li.search:hover{
-			background: #BF1D19;
-		}
-		
-		.nav input{
-			width: 70px;
-			background-color: #DA291C;
-			padding: 5px;
-			border: none;
-			height: 40px;
-			float: left;
-		}
-		
-		.nav  button{
-			height: 40px;
-			width: 40px;
-			border: none;
-			background: #DA291C url("images/search.png") left 3px no-repeat;
-			
-		}
-		
-		
-		#navbar-collapse{
-			background-color: #BF1D19;
-			border-radius: 0px;
-			padding: 0;
-			width: auto;
-			
-		}
-	
-		.navbar .logo{
-			float: right;
-			margin-right: 10%;
-			margin-top: 20px;
-		}
-		
-		.nav .private{
-			background: #BF1D19 url("images/private1.png") 15% 50% no-repeat;
-		}
-		
-		.nav .login{
-			background: #BF1D19 url("images/login1.png") 15% 50% no-repeat;
-		}
-		
-		.nav li.current{
-			background-color: #DA291C;	
-		}
-		.nav li.active a{
-			//background: url("images/current.png") 65px  bottom no-repeat;
-		}
-		
-		.navbar .dropdown-menu{
-			padding: 0 20%;
-			background-color: #fff;	
-			padding-top: 50px;
-			height: 550px;
-			box-shadow: 0px 14px 12px rgba(0, 0, 0, 0.176);
-		}
-		
-		.navbar .dropdown-menu li{
-			background: none;
-			list-style-type: none;	
-		}
-		
-		.navbar .dropdown-menu li a {
-			color: #000;
-			padding: 0;
-			color: #4D4D4D;
-			margin-bottom: 15px;
-		}
-		.dropdown-menu > li{
-			float: left;
-			display: block;
-			margin-right: 5%
-		}
-		
-		.dropdown-menu > li ul{
-			padding: 0; margin: 0;
-		}
-		.dropdown-menu>li ul li{
-			padding: 0;
-			margin: 0;
-		}
-	
-		.navbar .dropdown-menu>li ul li a{
-			font-size: 14px;
-			color: #4D4D4D ;
-			font-weight: normal;
-		}
-		
-		.extraLinks{
-			display: inline-block;
-			clear: both;
-			width: 100%;
-			margin-top: 50px;
-		}
-		
-		.dropdown-menu .extraLinks li{
-			float: left;
-			display:block;
-			padding: 10px 8px 0px 40px;
-			margin-right: 10%;
-		}
-		
-		.navbar .dropdown-menu >li.extraLinks ul li a, .dropdown-menu>li h4{
-			font-weight: bold;
-			color: #404040;
-			font-size: 16px;
-			display: block;	
-		
-		}
-		
-		.dropdown-menu .extraLinks .veiHelp{
-			background: url("images/veihelp.png") left top no-repeat;
-		}
-		.dropdown-menu .extraLinks .damageHelp{
-			background: url("images/damagehelp.png") left top no-repeat;
-		}
-		.dropdown-menu .extraLinks .benefits{
-			background: url("images/benefits.png") left 5px no-repeat;
-		}
-		.dropdown-menu .extraLinks .contact{
-			background: url("images/contact.png") left 5px no-repeat;
-		}
+        .dropdown-menu > li{
+            margin-right: 3%;
+        }
+        .dropdown-menu > li ul{
+            padding: 0; margin: 0;
+        }
+        .dropdown-menu>li ul li{
+            padding: 0;
+            margin: 0;
+        }
+   
+        .navbar .dropdown-menu>li ul li a{
+            font-size: 14px;
+            color: #4D4D4D ;
+            font-weight: normal;
+        }
+       
+        .extraLinks{
+            display: inline-block;
+            clear: both;
+            width: 100%;
+            margin-top: 50px;
+        }
+       
+        .dropdown-menu .extraLinks li{
+            float: left;
+            display:block;
+            padding: 10px 8px 0px 40px;
+            margin-right: 10%;
+        }
+       
+       .dropdown-menu>li h4{
+       		height:70px;
+       }
+       
+        .dropdown-menu>li.calc h4{
+        	padding-left: 12%;
+        }
+        .navbar .dropdown-menu >li.extraLinks ul li a, .dropdown-menu>li h4{
+            font-weight: bold;
+            color: #404040;
+            font-size: 16px;
+            display: block;   
+        }
+        
+        .dropdown-menu>li.calc{
+        	background: url("images/calc.png") left top no-repeat;
+        }
+        .dropdown-menu .extraLinks .veiHelp{
+            background: url("images/veihelp.png") left bottom no-repeat;
+        }
+        .dropdown-menu .extraLinks .damageHelp{
+            background: url("images/damagehelp.png") left bottom no-repeat;
+        }
+        .dropdown-menu .extraLinks .benefits{
+            background: url("images/benefits.png") left bottom no-repeat;
+        }
+        .dropdown-menu .extraLinks .contact{
+            background: url("images/contact.png") left bottom no-repeat;
+        }
     </style>
 </head>
  
 <body>
-	<!-- <span class="codeButton"><button onclick="$('.code, .codeHelp').toggleClass('show'); $(this).toggleClass('pressed')">?</button></span> -->
+    <!-- <span class="codeButton"><button onclick="$('.code, .codeHelp').toggleClass('show'); $(this).toggleClass('pressed')">?</button></span> -->
+
+
 
 <div class="navbar navbar-default yamm">
           <div class="navbar-header col-md-5">
             <img src="images/logo.png" title="logo image" class="logo">
           </div>
-          <div id="navbar-collapse-grid" class="navbar-collapse collapse col-md-7">
-            <ul class="nav navbar-nav">
+          <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav col-md-5">
 
               <li class="dropdown private yamm-fw current"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Privat</a>
                 <ul class="dropdown-menu">
-                		<li>
-                			<h4>Forsikring</h4>
-                			<ul>
-                				<li><a href="#">Bilforsikring</a></li>
-                				<li><a href="#">Motorsykkelforsikring</a></li>
-                				<li><a href="#">Bil & kjøretøy</a></li>
-                				<li><a href="#">Innboforsikring</a></li>
-                				<li><a href="#">Husforsikring</a></li>
-                				<li><a href="#">Reiseforsikring</a></li>
-                				<li><a href="#">Båtforsikring</a></li>
-                				<li><a href="#">Liv & helse</a></li>
-                				<li><a href="#">Barneforsikring</a></li>
-                			</ul>
-                		</li>
-							<li>
-								<h4>Bank og lån</h4>
-	                			<ul>
-	                				<li><a href="#">Bil bankkunde</a></li>
-	                				<li><a href="#">boliglån</a></li>
-	                				<li><a href="#">Boligkreditt</a></li>
-	                				<li><a href="#">Boliglån for unge</a></li>
-	                				<li><a href="#">Konto and kort</a></li>
-	                				<li><a href="#">Ungdomskonto</a></li>
-	                				<li><a href="#">Nettbank</a></li>
-	                				<li><a href="#">VISA kort</a></li>
-	                				<li><a href="#">kreditt kort</a></li>
-	                				<li><a href="#">Ungdomskonto</a></li>
-	                			</ul>
-                			</li>
-                			<li>
-                				<h4>Pensjon</h4>
-	                			<ul>
-	                				<li><a href="#">Egensparing til pensjon</a></li>
-	                				<li><a href="#">Ekstrapensjon</a></li>
-	                				<li><a href="#">IPS</a></li>
-	                				<li><a href="#">Pensjon fra arbeidsgiver</a></li>
-	                				<li><a href="#">Pensjonkapitalbevis</a></li>
-	                				<li><a href="#">Fripolise</a></li>
-	                				<li><a href="#">Fripolise med investeringsvalg</a></li>
-	     
-	                			</ul>
-                			</li>
-                			<li>
-                				<h4>Sapring</h4>
-                				<ul>
-	                				<li><a href="#">Bilforsikring</a></li>
-	                				<li><a href="#">Motorsykkelforsikring</a></li>
-	                				<li><a href="#">Bil & kjøretøy</a></li>
-	                				<li><a href="#">Innboforsikring</a></li>
-	                				<li><a href="#">Husforsikring</a></li>
-	                				<li><a href="#">Reiseforsikring</a></li>
-	                				<li><a href="#">Båtforsikring</a></li>
-	                				<li><a href="#">Liv & helse</a></li>
-	                				<li><a href="#">Barneforsikring</a></li>
-	                			</ul>
-                			</li>
-                			<li>
-                				<h4>Kalkulatorer & verktoy</h4>
-	                			<ul>
-	                				<li><a href="#">Bilforsikring</a></li>
-	                				<li><a href="#">Motorsykkelforsikring</a></li>
-	                				<li><a href="#">Bil & kjøretøy</a></li>
-	                				<li><a href="#">Innboforsikring</a></li>
-	                				<li><a href="#">Husforsikring</a></li>
-	                				<li><a href="#">Reiseforsikring</a></li>
-	                				<li><a href="#">Båtforsikring</a></li>
-	                				<li><a href="#">Liv & helse</a></li>
-	                				<li><a href="#">Barneforsikring</a></li>
-	                			</ul>
-                		</li>
-                		
-                		<li class="extraLinks">
-	                			<ul>
-	                				<li class="veiHelp"><a href="#">Veihjelp</a></li>
-	                				<li class="damageHelp"><a href="#">Meld skade</a></li>
-	                				<li class="benefits"><a href="#">Få fordeler</a></li>
-	                				<li class="contact"><a href="#">Kontakt oss</a></li>
-	                			</ul>
-                		</li>
-					
+                       
+                        <li class="col-md-2">
+                            <h4>Forsikring</h4>
+                            <ul>
+                                <li><a href="#">Bilforsikring</a></li>
+                                <li><a href="#">Motorsykkelforsikring</a></li>
+                                <li><a href="#">Bil & kjøretøy</a></li>
+                                <li><a href="#">Innboforsikring</a></li>
+                                <li><a href="#">Husforsikring</a></li>
+                                <li><a href="#">Reiseforsikring</a></li>
+                                <li><a href="#">Båtforsikring</a></li>
+                                <li><a href="#">Liv & helse</a></li>
+                                <li><a href="#">Barneforsikring</a></li>
+                            </ul>
+                        </li>
+                            <li class="col-md-2">
+                                <h4>Bank og lån</h4>
+                                <ul>
+                                    <li><a href="#">Bil bankkunde</a></li>
+                                    <li><a href="#">boliglån</a></li>
+                                    <li><a href="#">Boligkreditt</a></li>
+                                    <li><a href="#">Boliglån for unge</a></li>
+                                    <li><a href="#">Konto and kort</a></li>
+                                    <li><a href="#">Ungdomskonto</a></li>
+                                    <li><a href="#">Nettbank</a></li>
+                                    <li><a href="#">VISA kort</a></li>
+                                    <li><a href="#">kreditt kort</a></li>
+                                    <li><a href="#">Ungdomskonto</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="col-md-2">
+                                <h4>Pensjon</h4>
+                                <ul>
+                                    <li><a href="#">Egensparing til pensjon</a></li>
+                                    <li><a href="#">Ekstrapensjon</a></li>
+                                    <li><a href="#">IPS</a></li>
+                                    <li><a href="#">Pensjon fra arbeidsgiver</a></li>
+                                    <li><a href="#">Pensjonkapitalbevis</a></li>
+                                    <li><a href="#">Fripolise</a></li>
+                                    <li><a href="#">Fripolise med investeringsvalg</a></li>
+        
+                                </ul>
+                            </li>
+                            <li class="col-md-2">
+                                <h4>Sapring</h4>
+                                <ul>
+                                    <li><a href="#">Bilforsikring</a></li>
+                                    <li><a href="#">Motorsykkelforsikring</a></li>
+                                    <li><a href="#">Bil & kjøretøy</a></li>
+                                    <li><a href="#">Innboforsikring</a></li>
+                                    <li><a href="#">Husforsikring</a></li>
+                                    <li><a href="#">Reiseforsikring</a></li>
+                                    <li><a href="#">Båtforsikring</a></li>
+                                    <li><a href="#">Liv & helse</a></li>
+                                    <li><a href="#">Barneforsikring</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-md-2 calc">
+                                <h4>Kalkulatorer & verktoy</h4>
+                                <ul>
+                                    <li><a href="#">Bilforsikring</a></li>
+                                    <li><a href="#">Motorsykkelforsikring</a></li>
+                                    <li><a href="#">Bil & kjøretøy</a></li>
+                                    <li><a href="#">Innboforsikring</a></li>
+                                    <li><a href="#">Husforsikring</a></li>
+                                    <li><a href="#">Reiseforsikring</a></li>
+                                    <li><a href="#">Båtforsikring</a></li>
+                                    <li><a href="#">Liv & helse</a></li>
+                                    <li><a href="#">Barneforsikring</a></li>
+                                </ul>
+                        </li>
+                   
+                        <li class="extraLinks">
+                                <ul>
+                                    <li class="veiHelp"><a href="#">Veihjelp</a></li>
+                                    <li class="damageHelp"><a href="#">Meld skade</a></li>
+                                    <li class="benefits"><a href="#">Få fordeler</a></li>
+                                    <li class="contact"><a href="#">Kontakt oss</a></li>
+                                </ul>
+                        </li>
+                   
                 </ul>
               </li>
-            
+           
               <li class="dropdown company yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a>
+             
+              </li>
+           
+              <li class="dropdown login yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logginn</a>
               
               </li>
-            
-              <li class="dropdown login yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logginn</a>
-               
-              </li>
-            
-	  			<li class="search">
-					<input type="text"/>
-					<button type="submit"></button>
-				</li>
+           
+              <li class="search">
+                 <input type="text"/>
+                 <button type="submit"></button>
+             </li>
             </ul>
           </div>
  </div>
 
-  
-         
-    
-  
-  <div class="container">    
+ 
+        
+   
+ 
+  <div class="container">   
       <div class="row">
           <div class="col-md-12 column">
               <div class="stb-box banner twelve">
@@ -450,14 +488,14 @@
                       <p>Vi har konkurransedyktige priser. Her kan du forsikre en eller flere av dine biler, eller overføre bonus til din nye bil.</p>
                   </div>
                   <div class="image">
-                  	<!--  
-                  	<img src="images/bilforsikring.png" alt="bilforsikringimage" title="bilforsikringimage" class="">
-              		-->
-              	</div>
+                      <!-- 
+                      <img src="images/bilforsikring.png" alt="bilforsikringimage" title="bilforsikringimage" class="">
+                      -->
+                  </div>
               </div>
           </div>
       </div>
-              
+             
       <div class="row">
           <div class="col-md-6 column">
               <div class="stb-box six">
@@ -470,7 +508,7 @@
               </div>
           </div>
       </div>
-        
+       
         <div class="row">
             <div class="col-md-4 column">
                 <div class="stb-box four">
@@ -484,16 +522,16 @@
             </div>
             <div class="col-md-4 column">
                 <div class="stb-box four">
-                    Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. 
+                    Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more. Some text goes in here. And some more.
                 </div>
             </div>
         </div>
         </div>
-        
-   
-
-  
        
+  
+
+ 
+      
        <div class="container">
         <div class="row">
             <div class="col-md-12 column">
@@ -503,14 +541,14 @@
                         <p>Vi har konkurransedyktige priser. Her kan du forsikre en eller flere av dine biler, eller overføre bonus til din nye bil.</p>
                     </div>
                     <div class="image noBg">
-                    	<img src="images/uforeforsikring.png" alt="bilforsikringimage" title="bilforsikringimage" class="screen">
-                    	<img src="images/uforeforsikring-mobil.png" alt="bilforsikringimage" title="bilforsikringimage" class="mobile">
-                	</div>
+                        <img src="images/uforeforsikring.png" alt="bilforsikringimage" title="bilforsikringimage" class="screen">
+                        <img src="images/uforeforsikring-mobil.png" alt="bilforsikringimage" title="bilforsikringimage" class="mobile">
+                    </div>
                 </div>
             </div>
         </div>
+      
        
-        
         <div class="row">
             <div class="col-md-3 column">
                 <div class="stb-box three">
@@ -523,7 +561,7 @@
                 </div>
             </div>
         </div>
-        
+       
         <div class="row">
             <div class="col-md-6 col-lg-3 column">
                 <div class="stb-box three">
@@ -546,7 +584,7 @@
                 </div>
             </div>
         </div>
-        
+       
         <div class="row">
             <div class="col-md-6 column">
                 <div class="stb-box six">
