@@ -33,14 +33,16 @@
 
 
     $('.panel-group').on('hide.bs.collapse', function () {
-      $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right')
+      $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right');
     });
 
     $(".dropdown").on("hide.bs.dropdown", function(){
+      $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
       $(this).find('span.marker').toggleClass('active');
     });
 
     $(".dropdown").on("show.bs.dropdown", function(){
+      $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
       $(this).find('span.marker').toggleClass('active');
     });
 
@@ -48,6 +50,20 @@
 
   $(document).on('click', '.yamm .dropdown-menu', function(e) {
     e.stopPropagation();
+  });
+
+  // Hiding/showing menubar depending on last scroll activity
+  var lastScrollTop = 0;
+  $(window).scroll(function(event){
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop & st > 150){
+      //removing .navfixed when user scroll down
+      $('#nav').fadeOut(200);
+    } else {
+      //adding .navfixed when user scroll down
+      $('#nav').fadeIn(200);
+    }
+    lastScrollTop = st;
   });
 
   $(window).resize(function() {
@@ -127,11 +143,11 @@ body { padding-top: 70px; }
 
 .dropdown-menu .nav-tabs {
   border-bottom: 1px solid #BF1D19;
-  padding-left: 48px;
+  padding-left: 12px;
 }
 
 .dropdown-menu .nav-tabs>li{
-  width: 33%;
+  width: 32%;
 }
 
 .dropdown-menu .nav-tabs>li>a {
@@ -174,9 +190,12 @@ body { padding-top: 70px; }
   border-color: transparent;
 }
 
+#subMenuMobile.dropdown-menu{
+  margin: 0 0 0 0;
+}
+
 #subMenuMobile.dropdown-menu .transparent-btn{
-  width: 164px !important;
-  margin-right:48px;
+  width: 120px !important;
   padding-top: 6px !important;
   margin-top: 6px;
   background: transparent !important;
@@ -230,7 +249,7 @@ li span.marker.active {
 
 <div class="header">
 
-  <nav class="navbar yamm navbar-default navbar-fixed-top" role="navigation">
+  <nav id="nav" class="navbar yamm navbar-default navbar-fixed-top" role="navigation">
 
     <div class="row"  style="background: white;">
 
@@ -248,7 +267,7 @@ li span.marker.active {
                     <ul class="nav nav-tabs">
                       <li class="active"><a href="#tab-privat" data-toggle="tab">Privat</a></li>
                       <li><a href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
-                      <li><a href="#tab-innlogging" data-toggle="tab">Logg inn</a></li>
+                      <li><a href="#tab-innlogging" data-toggle="tab">Login</a></li>
                     </ul>
                     <div class="tab-content">
                       <div class="tab-pane fade in active" id="tab-privat">
@@ -257,7 +276,7 @@ li span.marker.active {
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#forsikring">
+                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#forsikring">
                                   <span class="glyphicon glyphicon-chevron-right"></span> Forsikring
                                 </a>
                               </h4>
@@ -281,7 +300,7 @@ li span.marker.active {
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#bank">
+                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#bank">
                                   <span class="glyphicon glyphicon-chevron-right"></span> Bank & lån
                                 </a>
                               </h4>
@@ -306,7 +325,7 @@ li span.marker.active {
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#pensjon">
+                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#pensjon">
                                   <span class="glyphicon glyphicon-chevron-right"></span> Pensjon
                                 </a>
                               </h4>
@@ -328,7 +347,7 @@ li span.marker.active {
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#sparing">
+                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#sparing">
                                   <span class="glyphicon glyphicon-chevron-right"></span> Sparing
                                 </a>
                               </h4>
@@ -352,7 +371,7 @@ li span.marker.active {
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="accordion-privat" href="#kalkulator">
+                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#kalkulator">
                                   <span class="glyphicon glyphicon-chevron-right"></span> <i class="fa fa-building-o"></i> Kalkulatorer & verktøy
                                 </a>
                               </h4>
@@ -383,12 +402,12 @@ li span.marker.active {
                 </div>
                 <div class="row">
                   <div class="col-xs-6">
-                    <a class="stb-btn stb-btn-lg secondary transparent-btn"><i class="fa fa-wrench"></i> Veihjelp</a>
-                    <a class="stb-btn stb-btn-lg secondary transparent-btn"><i class="fa fa-plus-circle"></i> Få fordeler</a>
+                    <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-wrench"></i> Veihjelp</a>
+                    <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-plus-circle"></i> Få Fordeler</a>
                   </div>
                   <div class="col-xs-6">
-                    <a class="stb-btn stb-btn-lg secondary transparent-btn"><i class="fa fa-file-text-o"></i> Meld skade</a>
-                    <a class="stb-btn stb-btn-lg secondary transparent-btn"><i class="fa fa-comment-o"></i> Kontakt oss</a>
+                    <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-file-text-o"></i> Meld skade</a>
+                    <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-comment-o"></i> Kontakt oss</a>
                   </div>
                 </div>
               </div>
