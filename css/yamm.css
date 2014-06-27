@@ -7,7 +7,8 @@
 .yamm .nav,
 .yamm .collapse,
 .yamm .dropup,
-.yamm .dropdown {
+.yamm .dropdown,
+.yamm .fullwidth{
   position: static;
 }
 .yamm .container {
