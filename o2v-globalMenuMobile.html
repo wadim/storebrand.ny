@@ -36,9 +36,18 @@
       $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right')
     });
 
+    $(".dropdown").on("hide.bs.dropdown", function(){
+      $(this).find('span.marker').toggleClass('active');
+    });
+
+    $(".dropdown").on("show.bs.dropdown", function(){
+      $(this).find('span.marker').toggleClass('active');
+    });
+
   });
+
   $(document).on('click', '.yamm .dropdown-menu', function(e) {
-    e.stopPropagation()
+    e.stopPropagation();
   });
 
   $(window).resize(function() {
@@ -58,119 +67,6 @@
   float:right;
   background-color:#f3ff99;
   font-family: monospace
-}
-.codeHelp {
-  display:none;
-  font-family: monospace;
-  background-color:#A3FF9B;
-  margin-top:3em;
-}
-.codeButton {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 2;
-}
-
-.row .column {
-  margin-bottom:20px;
-}
-
-.row .stb-box {
-  margin-bottom:0px;
-}
-
-
-.six, .four, .three, .nine, .twelve {
-  height: 100%;
-}
-
-.twelve{
-  background-color: #D3D3D3;
-}
-
-.six{
-  background-color: #EFE8DF;
-}
-
-.four{
-  background-color: #F2F2F2;
-}
-
-.nine{
-  background-color: #ECF2C2;
-}
-.three{
-  background-color: #FFF0F0;
-}
-
-.banner {
-  background-color: #fff;
-}
-.banner .text {
-  float: left;
-  margin-top: 50px;
-  width: 48%;
-}
-.banner .image {
-  float: right;
-  width: 48%;
-  height: 250px;
-  background-image: url("images/bilforsikring.png");
-  background-repeat: no-repeat;
-  background-position: top right;
-}
-
-.banner .image.noBg {
-  float: right;
-  width: 48%;
-  height: 250px;
-  background-image: none;
-}
-
-.banner .image.noBg img {
-  display: block;
-  margin: 0 0 0 auto;
-}
-
-.banner .image.noBg img.mobile {
-  display: none;
-}
-
-
-@media screen and (max-width: 750px) {
-  .banner .text {
-    float: none;
-    margin-top: 0px;
-    width: 100%;
-  }
-  .banner .image, .banner .image.noBg {
-    float: none;
-    width: 100%;
-    background-position: top center;
-  }
-
-  .banner .image.noBg img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .banner .image {
-    background-image: url("images/bilforsikring-mobil.png");
-  }
-  .banner .image, .banner .image.noBg {
-    height: 150px;
-  }
-
-  .banner .image.noBg img.mobile {
-    display: block;
-  }
-
-  .banner .image.noBg img.screen {
-    display: none;
-  }
 }
 
 .nav.navbar li{
@@ -344,7 +240,7 @@ li span.marker.active {
       <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6 col-xs-offset-1">
         <ul class="nav navbar">
           <li class="dropdown yamm-fw">
-            <a href="#" onclick="$(this).find('span.marker').toggleClass('active');" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars" style="font-size: 32px; color: white;"></i><span class="marker"></span></a>
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars" style="font-size: 32px; color: white;"></i><span class="marker"></span></a>
             <ul id="subMenuMobile" class="dropdown-menu">
               <div class="yamm-content">
                 <div class="row">
@@ -357,7 +253,7 @@ li span.marker.active {
                     <div class="tab-content">
                       <div class="tab-pane fade in active" id="tab-privat">
 
-                        <div class="panel-group" id="accordion-privat"  style="background: white;">
+                        <div class="panel-group" id="accordion-privat">
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h4 class="panel-title">
@@ -498,7 +394,7 @@ li span.marker.active {
               </div>
             </ul>
           </li>
-          <li><a href="#" onclick="$(this).next().toggleClass('active');"><i class="fa fa-search" style="font-size: 32px; color: white;"></i><span class="marker"></span></a>
+          <li class="dropdown yamm-fw"><a href="#"><i class="fa fa-search" style="font-size: 32px; color: white;"></i><span class="marker"></span></a>
 
           </li>
         </ul>
