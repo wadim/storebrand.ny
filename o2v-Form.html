@@ -19,236 +19,236 @@
 
 <!-- Opplegg for sticky toppmeny -->
 <style>
-    /* Bootstrap 3 helpers */
-  .navbar-form input, .form-inline input {
-    width:auto;
-  }
+  /* Bootstrap 3 helpers */
+.navbar-form input, .form-inline input {
+  width:auto;
+}
 
-  header {
-    height:50px;
-  }
+header {
+  height:50px;
+}
 
-  #nav.affix {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index:999;
-  }
+#nav.affix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:999;
+}
 
-  .stb-form-group.alarm input,
-  .stb-form-group.alarm textarea{
-    background-color: #FFF0F0;
-    border-color: #FFB3B3;
-    color: #000000;
-  }
+.stb-form-group.alarm input,
+.stb-form-group.alarm textarea{
+  background-color: #FFF0F0;
+  border-color: #FFB3B3;
+  color: #000000;
+}
 
-  .stb-form-group.valid input,
-  .stb-form-group.valid textarea{
-    background-color: #ECF2C2;
-    border-color: #819F2B;
-    color: #000000;
-  }
+.stb-form-group.valid input,
+.stb-form-group.valid textarea{
+  background-color: #ECF2C2;
+  border-color: #819F2B;
+  color: #000000;
+}
 
-  .errorMsg{
-    display:none;
-    color:#DA291C;
-  }
+.errorMsg{
+  display:none;
+  color:#DA291C;
+}
 
-  .bv-form .help-block {
-    margin-bottom: 6px;
-    font-size: 15px;
-  }
+.bv-form .help-block {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
 
-  .nav-tabs li.bv-tab-success > a {
-    color: #3c763d;
-  }
-  .nav-tabs li.bv-tab-error > a {
-    color: #a94442;
-  }
+.nav-tabs li.bv-tab-success > a {
+  color: #3c763d;
+}
+.nav-tabs li.bv-tab-error > a {
+  color: #a94442;
+}
 
-    /* Override feedback icon position */
-  form .has-feedback .input-group .form-control-feedback {
-    top: 0;
-    right: -30px;
-  }
+  /* Override feedback icon position */
+form .has-feedback .input-group .form-control-feedback {
+  top: 0;
+  right: -30px;
+}
 
-  form .has-feedback.input-group i.glyphicon-remove  {
-    top: 25px !important;
-    right: -30px;
-  }
-  form .has-feedback.input-group i.glyphicon-ok {
-    top: 5px !important;
-    right: -30px;
-  }
+form .has-feedback.input-group i.glyphicon-remove  {
+  top: 25px !important;
+  right: -30px;
+}
+form .has-feedback.input-group i.glyphicon-ok {
+  top: 5px !important;
+  right: -30px;
+}
 
-  form .has-feedback.text-area i.glyphicon-remove {
-    top: 20px !important;
-  }
+form .has-feedback.text-area i.glyphicon-remove {
+  top: 20px !important;
+}
 
-  form .has-feedback.select i.glyphicon-remove{
-    top: 40% !important;
-    left: 32%;
-  }
-  form .has-feedback.select i.glyphicon-ok{
-    left: 32%;
-  }
+form .has-feedback.select i.glyphicon-remove{
+  top: 40% !important;
+  left: 32%;
+}
+form .has-feedback.select i.glyphicon-ok{
+  left: 32%;
+}
 
-  form .has-feedback.checkbox i.glyphicon-ok{
-    top: 0;
-  }
+form .has-feedback.checkbox i.glyphicon-ok{
+  top: 0;
+}
 
-  form .has-feedback.checkbox i.glyphicon-remove{
-    top: 40%;
-  }
-  .select select{
-    width: 30%;
-  }
+form .has-feedback.checkbox i.glyphicon-remove{
+  top: 40%;
+}
+.select select{
+  width: 30%;
+}
 
-  .input-group.date{
-    width: 50%;
-  }
+.input-group.date{
+  width: 50%;
+}
 
-  div.square{
-    position:absolute;
-    width: 80px;
-    height: 80px;
-    background: #808080;
-    transform:rotate(45deg);
-    -ms-transform:rotate(45deg); /* IE 9 */
-    -webkit-transform:rotate(45deg);
+div.square{
+  position:absolute;
+  width: 80px;
+  height: 80px;
+  background: #808080;
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg); /* IE 9 */
+  -webkit-transform:rotate(45deg);
 
-  }
+}
 
-  div.square.completed{
-    background: #6C8524;
-    cursor: pointer;
-  }
+div.square.completed{
+  background: #6C8524;
+  cursor: pointer;
+}
 
-  div.square.completed:hover, div.square.current:hover {
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg);
-    -webkit-transform:rotate(90deg);
-  }
+div.square.completed:hover, div.square.current:hover {
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+}
 
-  div.square.active{
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg); /* IE 9 */
-    -webkit-transform:rotate(90deg);
-    background: #6C8524;
-  }
+div.square.active{
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg); /* IE 9 */
+  -webkit-transform:rotate(90deg);
+  background: #6C8524;
+}
 
-  div.square.current{
-    background: #FAA61A;
-    cursor: pointer;
-  }
+div.square.current{
+  background: #FAA61A;
+  cursor: pointer;
+}
 
-  div.square.completed.hovered, div.square.current.hovered{
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg); /* IE 9 */
-    -webkit-transform:rotate(90deg);
-  }
+div.square.completed.hovered, div.square.current.hovered{
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg); /* IE 9 */
+  -webkit-transform:rotate(90deg);
+}
 
-  span.number{
-    position: absolute;
-    font-size: 50px;
-    color: white;
-    margin-left: 25px;
-    cursor: pointer;
-  }
+span.number{
+  position: absolute;
+  font-size: 50px;
+  color: white;
+  margin-left: 25px;
+  cursor: pointer;
+}
 
-  p{
-    margin-top: 6px;
-  }
+p{
+  margin-top: 6px;
+}
 
-  a{
-    cursor: pointer;
-  }
+a{
+  cursor: pointer;
+}
 
-  .progressBar{
-    background-image:url('images/stripes.png');
-    background-repeat: repeat-x;
-    background-size: 100px;
-    background-position: 0 18px;
-  }
+.progressBar{
+  background-image:url('images/stripes.png');
+  background-repeat: repeat-x;
+  background-size: 100px;
+  background-position: 0 18px;
+}
 
-  .hiddenfile {
-    width: 0px;
-    height: 0px;
-    overflow: hidden;
-  }
+.hiddenfile {
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
 
-  label{
-    margin-bottom: 6px;
-  }
-  .stb-form-group{
-    margin-bottom: 24px !important;
-  }
+label{
+  margin-bottom: 6px;
+}
+.stb-form-group{
+  margin-bottom: 24px !important;
+}
 
-  .stepPanel{
-    margin: 48px 0 48px 0;
-    display:none;
-  }
-  .stepPanel.active{
-    display:block;
-  }
+.stepPanel{
+  margin: 48px 0 48px 0;
+  display:none;
+}
+.stepPanel.active{
+  display:block;
+}
 
-  .stb-input-group-lrg{
-    width: 100%;
-  }
-  .stb-input-group-md{
-    width: 80%;
-  }
-  .stb-input-group-sm{
-    width: 50%;
-  }
+.stb-input-group-lrg{
+  width: 100%;
+}
+.stb-input-group-md{
+  width: 80%;
+}
+.stb-input-group-sm{
+  width: 50%;
+}
 
-  #skademelding .add-btn,#skademelding .update-btn{
-    margin-top: 12px;
-    margin-bottom: 12px;
-    padding-top: 6px ;
-    background: transparent;
-    border-style:solid;
-    border-width:1px;
-    color: #000000;
-  }
-  .transparent-btn{
-    margin-right: 48px;
-    padding-top: 6px !important;
-    background: transparent !important;
-    border-style:solid;
-    border-width:1px;
-    color: #000000;
-  }
+#skademelding .add-btn,#skademelding .update-btn{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-top: 6px ;
+  background: transparent;
+  border-style:solid;
+  border-width:1px;
+  color: #000000;
+}
+.transparent-btn{
+  margin-right: 48px;
+  padding-top: 6px !important;
+  background: transparent !important;
+  border-style:solid;
+  border-width:1px;
+  color: #000000;
+}
 
-   .transparent-btn:hover{
-    background: #000000 !important;
-    color: white !important;
-  }
+.transparent-btn:hover{
+  background: #000000 !important;
+  color: white !important;
+}
 
-  #skademelding .add-btn:hover{
-    background: #000000;
-    color: white;
-  }
+#skademelding .add-btn:hover{
+  background: #000000;
+  color: white;
+}
 
 
-  #skademelding .cancel-btn{
-    margin-right:48px;
-    margin-top: 12px;
-    background: transparent;
-    color: #000000;
-  }
+#skademelding .cancel-btn{
+  margin-right:48px;
+  margin-top: 12px;
+  background: transparent;
+  color: #000000;
+}
 
-  #skademelding .cancel-btn:hover{
-    color: #DA291C;
-  }
+#skademelding .cancel-btn:hover{
+  color: #DA291C;
+}
 
-  .summary{
-    margin-top: 24px;
-  }
+.summary{
+  margin-top: 24px;
+}
 
-  .has-feedback .form-control{
-    padding-right: 6px;
-  }
+.has-feedback .form-control{
+  padding-right: 6px;
+}
 
 
 </style>
@@ -906,14 +906,14 @@ function navigateTo(next){
   if(stepPanel(next).hasClass('completed') || stepPanel(next).hasClass('current')){
     var currentActive = $('.stepPanel.active');
     if(stepPanel(currentActive).hasClass('completed')){
-     if(validateForm($('#skademelding'))){
-       setActive(next);
-     }else{
-         $('html, body').animate({
-           scrollTop: $('div.has-error:first').offset().top-100
-         }, 1000);
-       }
-     }else{
+      if(validateForm($('#skademelding'))){
+        setActive(next);
+      }else{
+        $('html, body').animate({
+          scrollTop: $('div.has-error:first').offset().top-100
+        }, 1000);
+      }
+    }else{
       setActive(next);
     }
   }
@@ -1072,6 +1072,10 @@ function populateFields(row){
   var updateContainer = $(row).closest('table').siblings('div.updateContainer');
   updateContainer.find('a.update-btn').attr('rowid', $(row).closest('tr').attr('rowId'));
   showUpdateContainer(updateContainer)
+
+  $('html, body').animate({
+    scrollTop: $(row).parents('div').offset().top-100
+  }, 1000);
 }
 
 function showUpdateContainer(updateContainer){
@@ -1327,7 +1331,6 @@ $(window).scroll(function(event){
       <h2>Skadet gjenstand</h2>
       <hr>
       <h3>Legg til gjenstanden(e)</h3>
-
       <label>Type gjenstand</label>
       <div class="stb-form-group al text-area stb-input-group-lrg">
         <span class="help-block info-message"></span>
@@ -1387,7 +1390,7 @@ $(window).scroll(function(event){
         </div>
         <a class="stb-btn secondary" onclick="$('#repairFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;" ></span> Last opp</a>
       </div>
-                                                                                                                                                                                                                   s
+      s
       <label>Kvittering</label>
       <p class="petit">Har du kvittering på gjenstanden, eller annet bevis på kjøpet (avbetaligngskontrakt, garanti e.l.)?</p>
       <div id="receiptItemUpload" class="list-group">
@@ -1397,7 +1400,6 @@ $(window).scroll(function(event){
       </div>
       <a class="stb-btn secondary" onclick="$('#receiptFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;"></span> Last opp</a>
       <br>
-
       <a id="addTaptGjenstandButton" class="stb-btn stb-btn-lg secondary add-btn">Legg til</a>
       <div class="updateContainer" style="display: none" >
         <a class="stb-btn stb-btn-lg secondary update-btn" rowid="x" >Oppdater</a>
@@ -1768,7 +1770,7 @@ $(window).scroll(function(event){
         <li class="list-group-item">Har du betalt reisen med et kort som inkluderer reiseforsikring?<span id="creditInsurance" class="pull-right"></span></li>
         <li class="list-group-item">Har du tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling?<span id="damagesLately" class="pull-right"></span></li>
         <li class="list-group-item">Hvor gammel er gjenstanden?<span id="howOld" class="pull-right"></span></li>
-          <li class="list-group-item showMore stbcolor-gray third"><a><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
+        <li class="list-group-item showMore stbcolor-gray third"><a><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
       </ul>
 
       <div class="stb-form-group al checkbox">
@@ -1813,7 +1815,7 @@ $(window).scroll(function(event){
         <hr style="margin-bottom: 12px;">
         <div class="row">
           <div class="col-md-4">
-          <strong> Reisegods </strong>
+            <strong> Reisegods </strong>
           </div>
           <div class="col-md-4">
             Referansenummer - SKA-54321
@@ -1847,7 +1849,7 @@ $(window).scroll(function(event){
 <div id="fullfillLater" class="container stbcolor-secondary fifth" style="display: none;">
   <div class="row" style="margin-top: 48px;">
     <div class="col-md-1 col-md-offset-10">
-        <a onclick="$('#fullfillLater').slideUp()" ><span class="glyphicon glyphicon-remove"></span> Lukk</a>
+      <a onclick="$('#fullfillLater').slideUp()" ><span class="glyphicon glyphicon-remove"></span> Lukk</a>
     </div>
   </div>
   <div class="row">
