@@ -240,6 +240,11 @@ li span.marker.active {
   content: '';
 }
 
+input.search{
+  background-color: transparent;
+  width: 100%;
+}
+
 </style>
 </head>
 
@@ -413,8 +418,16 @@ li span.marker.active {
               </div>
             </ul>
           </li>
-          <li class="dropdown yamm-fw"><a href="#"><i class="fa fa-search" style="font-size: 32px; color: white;"></i><span class="marker"></span></a>
-
+          <li class="dropdown yamm-fw" ><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-search" style="font-size: 32px; color: white;"></i><span class="marker"></span></a>
+            <ul class="dropdown-menu" style="background: white">
+              <div class="yamm-content">
+                <div class="row">
+                  <div class="col-xs-12">
+                      <input type="text" class="form-control search" placeholder="Søk i sidene" style="">
+                  </div>
+                </div>
+              </div>
+            </ul>
           </li>
         </ul>
       </div>
