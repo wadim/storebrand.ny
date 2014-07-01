@@ -1006,7 +1006,7 @@ function addTableRow(selector){
   }
   var tableId = tableNode.attr('id');
   var rowId = $(selector).attr('rowid');
-  var rowContent;
+  var rowContent = "";
 
   if(tableId == "familyTable"){
     var birthNumb = $('#birthNumberTable').val();
@@ -1014,37 +1014,33 @@ function addTableRow(selector){
     var lastName = $('#lastNameTable').val();
     var who = $('input[name=who]:checked').next('label').text();
     if(birthNumb && firstName && lastName && who){
-      var td1 ='<td cellId="lastNameTable">'+lastName+'</td>';
-      var td2 ='<td cellId="firstNameTable">'+firstName+'</td>';
-      var td3 = '<td cellId="who" class="text-right">'+who+'</td>';
-      var td4 = '<td cellId="birthNumberTable" class="text-right">'+birthNumb+'</td>';
-      var td5 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-      var td6 = '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
-      rowContent = td1+td2+td3+td4+td5+td6;
+      rowContent +='<td cellId="lastNameTable">'+lastName+'</td>';
+      rowContent +='<td cellId="firstNameTable">'+firstName+'</td>';
+      rowContent += '<td cellId="who" class="text-right">'+who+'</td>';
+      rowContent += '<td cellId="birthNumberTable" class="text-right">'+birthNumb+'</td>';
+      rowContent +=  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+      rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
       clearInput('#affectedPersons');
     }
   }else if(tableId == "lostItemTable"){
-    var td1 = '<td cellId="lostItemType">'+ $('#lostItemType').val();+'</td>';
-    var td2 = '<td cellId="receiptItemUpload" class="text-right">'+$('#receiptItemUpload a:first').text()+'</td>';
-    var td3 = '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-    var td4 = '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
-    var td5 = '<td cellId="lostItemAge"  class="text-right" style="display: none;">'+$('#lostItemAge').val()+'</td>';
-    var td6 =  '<td cellId="purchasedWhere" class="text-right" style="display: none;">'+$('#purchasedWhere').val()+'</td>';
-    var td7 =  '<td cellId="itemNew" class="text-right" style="display: none;">'+$('input[name=itemNew]:checked').val()+'</td>';
-    var td8 =  '<td cellId="itemRepairable" class="text-right" style="display: none;">'+$('input[name=itemRepairable]:checked').val()+'</td>';
-    rowContent = td1+td2+td3+td4+td5+td6+td7+td8;
-
+    rowContent += '<td cellId="lostItemType">'+ $('#lostItemType').val();+'</td>';
+    rowContent += '<td cellId="receiptItemUpload" class="text-right">'+$('#receiptItemUpload a:first').text()+'</td>';
+    rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+    rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
+    rowContent += '<td cellId="lostItemAge"  class="text-right" style="display: none;">'+$('#lostItemAge').val()+'</td>';
+    rowContent +=  '<td cellId="purchasedWhere" class="text-right" style="display: none;">'+$('#purchasedWhere').val()+'</td>';
+    rowContent +=  '<td cellId="itemNew" class="text-right" style="display: none;">'+$('input[name=itemNew]:checked').val()+'</td>';
+    rowContent +=  '<td cellId="itemRepairable" class="text-right" style="display: none;">'+$('input[name=itemRepairable]:checked').val()+'</td>';
     clearInput('#taptGjenstand');
     $('#skademelding').data('bootstrapValidator').resetForm();
   }else{
     var damDescr = $('#damageDescription').val();
     var insComp = $('#insuranceCompany').val();
     if(damDescr && insComp){
-      var td1 ='<td cellId="damageDescription">'+damDescr+'</td>';
-      var td2 = '<td cellId="insuranceCompany" class="text-right">'+insComp+'</td>';
-      var td3 =  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-      var td4 = '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
-      rowContent = td1+td2+td3+td4;
+      rowContent +='<td cellId="damageDescription">'+damDescr+'</td>';
+      rowContent += '<td cellId="insuranceCompany" class="text-right">'+insComp+'</td>';
+      rowContent +=  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+      rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
       clearInput('#insurancePayment');
     }
   }
