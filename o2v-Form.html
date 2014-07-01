@@ -1014,11 +1014,11 @@ function addTableRow(selector){
     var lastName = $('#lastNameTable').val();
     var who = $('input[name=who]:checked').next('label').text();
     if(birthNumb && firstName && lastName && who){
-      rowContent +='<td cellId="lastNameTable">'+lastName+'</td>';
-      rowContent +='<td cellId="firstNameTable">'+firstName+'</td>';
+      rowContent += '<td cellId="lastNameTable">'+lastName+'</td>';
+      rowContent += '<td cellId="firstNameTable">'+firstName+'</td>';
       rowContent += '<td cellId="who" class="text-right">'+who+'</td>';
       rowContent += '<td cellId="birthNumberTable" class="text-right">'+birthNumb+'</td>';
-      rowContent +=  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+      rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
       rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
       clearInput('#affectedPersons');
     }
@@ -1028,18 +1028,18 @@ function addTableRow(selector){
     rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
     rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
     rowContent += '<td cellId="lostItemAge"  class="text-right" style="display: none;">'+$('#lostItemAge').val()+'</td>';
-    rowContent +=  '<td cellId="purchasedWhere" class="text-right" style="display: none;">'+$('#purchasedWhere').val()+'</td>';
-    rowContent +=  '<td cellId="itemNew" class="text-right" style="display: none;">'+$('input[name=itemNew]:checked').val()+'</td>';
-    rowContent +=  '<td cellId="itemRepairable" class="text-right" style="display: none;">'+$('input[name=itemRepairable]:checked').val()+'</td>';
+    rowContent += '<td cellId="purchasedWhere" class="text-right" style="display: none;">'+$('#purchasedWhere').val()+'</td>';
+    rowContent += '<td cellId="itemNew" class="text-right" style="display: none;">'+$('input[name=itemNew]:checked').val()+'</td>';
+    rowContent += '<td cellId="itemRepairable" class="text-right" style="display: none;">'+$('input[name=itemRepairable]:checked').val()+'</td>';
     clearInput('#taptGjenstand');
     $('#skademelding').data('bootstrapValidator').resetForm();
   }else{
     var damDescr = $('#damageDescription').val();
     var insComp = $('#insuranceCompany').val();
     if(damDescr && insComp){
-      rowContent +='<td cellId="damageDescription">'+damDescr+'</td>';
+      rowContent += '<td cellId="damageDescription">'+damDescr+'</td>';
       rowContent += '<td cellId="insuranceCompany" class="text-right">'+insComp+'</td>';
-      rowContent +=  '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
+      rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
       rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
       clearInput('#insurancePayment');
     }
