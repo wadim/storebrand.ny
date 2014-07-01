@@ -149,6 +149,8 @@
 
 })( window );
 
+
+
 (function() {
 
     var docElem = window.document.documentElement, didScroll, scrollPosition;
@@ -237,5 +239,37 @@
             }
         });
     });
+
+
+  $('.morph-button-3').each(function(index, el){
+
+    new UIMorphingButton( el, {
+      closeEl : '.close',
+      onBeforeOpen : function() {
+        // don't allow to scroll
+        noScroll();
+      },
+      onAfterOpen : function() {
+        // can scroll again
+        canScroll();
+        // add class "noscroll" to body
+        $(document.body).addClass('noscroll');
+        // add scroll class to main el
+        $(el).addClass('scroll');
+      },
+      onBeforeClose : function() {
+        // remove class "noscroll" to body
+        $(document.body).removeClass('noscroll');
+        // remove scroll class from main el
+        $(el).removeClass('scroll');
+        // don't allow to scroll
+        noScroll();
+      },
+      onAfterClose : function() {
+        // can scroll again
+        canScroll();
+      }
+    });
+  });
 
 })();
