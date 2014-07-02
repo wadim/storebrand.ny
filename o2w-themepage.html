@@ -13,7 +13,6 @@
     <script>
     $(window).load(function() {
         $(".row .column").matchHeight(true);
-       
             $("div").each(function(i) {
                 className = $(this).attr('class');
                 if( className.indexOf("row")) {
@@ -26,7 +25,6 @@
        
     });
 
-
     $(window).resize(function() {
         $(".row .column").matchHeight(true);
     });
@@ -34,6 +32,13 @@
  
     </script>
     <style type="text/css">
+    
+    	.theme.container {
+			 
+			  max-width: 1280px !important; /* or 950px */
+
+		}
+  
         .code.col {
             background: #d1dd77;
         }
@@ -95,7 +100,7 @@
         .banner >.text {
             float: left;
             margin-top: 50px;
-            width: 40%;
+            width: 75%;
         }
         
         .banner .image {
@@ -108,12 +113,14 @@
             background-position: top right;
         }
         
+        
         .topbanner{
         	margin:0;
         	margin-bottom: 50px;
-        	background: url("images/themebanner.png") right top no-repeat;
+        	width: 100%;
+        	background: url("images/1280x720test4.jpg") left top no-repeat;
         }
-       
+      
         .pensionfigure .banner .image{
         	  background-image: url("images/pensionfigure.png");
         	  background-position: 100% top;
@@ -192,17 +199,19 @@
         }
         
        	.navbar-header .logo{
-            float: right;
+            float: left;
             margin-right: 10%;
             margin-top: 20px;
         }
    
+   		.navbar-nav{
+   			padding: 0;
+   		}
         .nav >li{
             list-style: none;
             background-color:#BF1D19;   
             height: 80px;
             padding: 0px;
-            width: 25%;
         }
        
         .navbar .navbar-nav>li:hover, .navbar .navbar-nav >li:focus, .navbar .navbar-nav >li a:active{
@@ -417,11 +426,16 @@
        		font-size: 24px;
        		margin: 0;
        }
+       
        .pensionfigure h3{
        		color: #fff;
        		font-weight: bold;
        		font-size: 30px;
        		margin-bottom: 5%;
+       }
+       
+       .pensionfigure .text{
+       		width: 40%;
        }
        .pensionfigure button{
        		border: 1px solid #fff ;
@@ -429,18 +443,13 @@
        		padding: 5px 12%; 
        		margin-top: 5%;
        }
-       
        .themeback{
-       		border: 1px solid #000;
        		background: url("images/themeback.png") left top repeat-x;
        		height: 582px;
-       		border: 1px solid #000;
        		margin: 0;
        }
-       
        .themeback .imageunder{
        		background:url("images/handandcup.png") right top no-repeat;
-       		border: 1px solid green;
        		height: 582px;
        }
        .themeback h3{
@@ -453,6 +462,7 @@
        .themeback .text{
        		color: #000;
        		font-size: 24px;
+       		width: 40%;
        }
     </style>
 </head>
@@ -461,15 +471,16 @@
     <!-- <span class="codeButton"><button onclick="$('.code, .codeHelp').toggleClass('show'); $(this).toggleClass('pressed')">?</button></span> -->
 
 
+<div class="theme container" style="padding: 0;">
 
 <div class="navbar navbar-default yamm">
-          <div class="navbar-header col-md-5">
+          <div class="navbar-header col-md-4">
             <img src="images/logo.png" title="logo image" class="logo">
           </div>
           <div id="navbar-collapse-grid" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav col-md-5">
+            <ul class="nav navbar-nav col-md-8">
 
-              <li class="dropdown private yamm-fw current"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Privat</a>
+              <li class="dropdown private yamm-fw current col-md-3"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Privat</a>
                 <ul class="dropdown-menu">
                        
                         <li class="col-md-2">
@@ -556,37 +567,39 @@
                 </ul>
               </li>
            
-              <li class="dropdown company yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a>
+              <li class="dropdown company yamm-fw col-md-3"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a>
              
               </li>
            
-              <li class="dropdown login yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logginn</a>
+              <li class="dropdown login yamm-fw col-md-3"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logginn</a>
               
               </li>
            
-              <li class="search">
+              <li class="search col-md-3">
                  <input type="text"/>
                  <button type="submit"></button>
              </li>
             </ul>
           </div>
  </div>
+ </div>
 
- <div class="row topbanner">
-  <div class="container">   
-      <div class="row">
-          <div class="col-md-12 column">
+<div class="theme container">
+ <div class="row">
+          <div class="col-md-6 column" >
               <div class="stb-box banner">
                   <div class="text">
                       <h2>Utsikten du skal ha hver morgen etter du slutter å jobbe</h2>
                       <p>Alle har et bilde av hvordan  tilværelsen som pensjonist skal bli. Gjør bildet til virkelighet.</p>
                   </div>
-                 
               </div>
           </div>
-      </div>
+           <div class="col-md-6 column" style="padding:0; position: absolute; top: 80px; right:0; width: 50%">
+           		<img src="images/1280x720test4.jpg" title="bannerimage" height="405" width="100%"/>
+          </div>
 </div>
 </div>
+
 
 <div class="container">
       <div class="row stages">
@@ -616,26 +629,30 @@
               </div>
           </div>
       </div>
-   </div>
+</div>
    
-      <div class="row pensionfigure">
-      	<div class="container">
-          <div class="col-md-12 column">
-              <div class="stb-box banner">
-                  <div class="text">
-                       <h3>Ditt pensjonstall</h3>
-                  		<div class="text">Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist</div>
-                  		<button>Finn ditt pensjonstall</button>
-                  </div>
-                  <div class="image">
-                      <!-- 
-                      <img src="images/bilforsikring.png" alt="bilforsikringimage" title="bilforsikringimage" class="">
-                      -->
-                  </div>
-              </div>
-          </div>
-          </div>
-      </div>
+<div class="row pensionfigure">
+	<div class="container">
+    <div class="col-md-12 column">
+        <div class="stb-box banner">
+            <div class="text">
+                 <h3>Ditt pensjonstall</h3>
+            		<div>Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist</div>
+            		<button>Finn ditt pensjonstall</button>
+            </div>
+            <div class="image">
+                <!-- 
+                <img src="images/bilforsikring.png" alt="bilforsikringimage" title="bilforsikringimage" class="">
+                -->
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+ <div class="col-md-6 column" style="padding-right: 0px; padding-left: 0px; position: absolute; top: 0px; right: 0px; width: 50%; height: 80px; background-color:#BF1D19; z-index:-10">
+
+ </div>
       
          <div class="row themeback">
          	<div class="imageunder">
@@ -644,7 +661,7 @@
 		              <div class="stb-box banner">
 		                  <div class="text">
 		                       <h3>Egen sparing til pensjon tar deg 3  minutter å starte</h3>
-		                  		<div class="text">Det er omtrent så lenge det tar  deg å drikke en halv kopp kaffe. Ta deg derfor tid til en kaffe- og å komme igang med sparing</div>
+		                  		<div>Det er omtrent så lenge det tar  deg å drikke en halv kopp kaffe. Ta deg derfor tid til en kaffe- og å komme igang med sparing</div>
 		                  	
 		                  </div>
 		                
@@ -755,6 +772,6 @@
             </div>
         </div>
     </div>
-    </div>
+    
 </body>
 </html>
