@@ -1012,7 +1012,7 @@ function addTableRow(selector){
     var birthNumb = $('#birthNumberTable').val();
     var firstName = $('#firstNameTable').val();
     var lastName = $('#lastNameTable').val();
-    var who = $('input[name=who]:checked').next('label').text();
+    var who = $('input[name=personAffected]:checked').val() == "Andre" ? $('input[name=who]:checked').next('label').text() : "Anmelder";
     if(birthNumb && firstName && lastName && who){
       rowContent += '<td cellId="lastNameTable">'+lastName+'</td>';
       rowContent += '<td cellId="firstNameTable">'+firstName+'</td>';
@@ -1238,7 +1238,7 @@ $(window).scroll(function(event){
 <div class="container stbcolor-secondary sixth">
 
 <form id="skademelding" class="validateForm" role="form">
-<section id="omTapet" class="stepPanel active">
+<section id="omTapet" class="stepPanel">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -1550,7 +1550,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="personOpplysninger" class="stepPanel">
+<section id="personOpplysninger" class="stepPanel active">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Personopplysninger</h2>
@@ -1611,8 +1611,8 @@ $(window).scroll(function(event){
       <label>Oppgi de som opplevde å få gjenstanden(e) skadet</label>
       <div class="stb-form-group al checkbox">
         <span class="help-block info-message"></span>
-        <input type="radio" id="yourself" value="Yourself" name="stb-a" onclick="fillOutPerson()" class="stb-radio"><label for="yourself" class="stb-custom-input">Du som melder fra om tyveriet</label>
-        <input type="radio" id="andre" value="Andre" name="stb-a" class="stb-radio" ><label for="andre" class="stb-custom-input">Andre</label>
+        <input type="radio" id="yourself" value="Yourself" name="personAffected" onclick="fillOutPerson();$('#affectedPerson').hide();" class="stb-radio"><label for="yourself" class="stb-custom-input">Du som melder fra om tyveriet</label>
+        <input type="radio" id="andre" value="Andre" name="personAffected" onclick="$('#affectedPerson').show();" checked="checked" class="stb-radio" ><label for="andre" class="stb-custom-input">Andre</label>
       </div>
     </div>
   </div>
@@ -1639,14 +1639,15 @@ $(window).scroll(function(event){
           <input id="lastNameTable" type='text' class="form-control" name="lastNameTable"/>
         </div>
 
-        <label>Hvem er dette?</label>
-        <div class="stb-form-group al checkbox">
-          <span class="help-block info-message"></span>
-          <input type="radio" id="partner" value="Ektefeller/samboer/partner" name="who" class="stb-radio"><label for="partner" class="stb-custom-input">Ektefeller/samboer/partner</label>
-          <input type="radio" id="barn" value="Barn" name="who" class="stb-radio"><label for="barn" class="stb-custom-input">Barn</label>
-          <input type="radio" id="andre2" value="Andre" name="who" class="stb-radio" ><label for="andre2" class="stb-custom-input">Andre</label>
+        <div id="affectedPerson" >
+          <label>Hvem er dette?</label>
+          <div class="stb-form-group al checkbox">
+            <span class="help-block info-message"></span>
+            <input type="radio" id="partner" value="Ektefeller/samboer/partner" name="who" class="stb-radio"><label for="partner" class="stb-custom-input">Ektefeller/samboer/partner</label>
+            <input type="radio" id="barn" value="Barn" name="who" class="stb-radio"><label for="barn" class="stb-custom-input">Barn</label>
+            <input type="radio" id="andre2" value="Andre" name="who" class="stb-radio" ><label for="andre2" class="stb-custom-input">Andre</label>
+          </div>
         </div>
-
         <a id="affectedPersonsButton" class="stb-btn stb-btn-lg secondary pull-left add-btn">Legg til</a>
         <div class="updateContainer" style="display: none" >
           <a class="stb-btn stb-btn-lg secondary update-btn" rowid="x" >Oppdater</a>
