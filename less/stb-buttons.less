@@ -35,7 +35,7 @@
   
   &.disabled {
     background-color: @stb-gray-third;
-    color: @stb-gray-first;
+    color: @stb-primary-black;
     cursor: not-allowed;
     
     &:hover, &:active, &:focus {
@@ -50,7 +50,7 @@
       .stbcolor-gray.fifth;
     }
   }
-  
+
   &.alarm {
     .stbcolor-primary .first;
     .box-shadow(none);
@@ -59,6 +59,29 @@
       .stbcolor-primary.first .darker;
     }
   }
+
+  &.transparent{
+    background: transparent;
+    border-style: solid;
+    border-width: 1px;
+
+    &.light{
+      color: @stb-primary-black;
+      &:hover, &:focus, &:active {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &.dark{
+      color: @stb-primary-white;
+      &:hover, &:focus, &:active {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+  }
+
+
 
   &.link-icon {
     font-weight: normal;
@@ -81,5 +104,7 @@
     min-width: 50px;
     max-width: 150px;
   }
+
+
 
 }
