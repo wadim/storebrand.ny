@@ -34,9 +34,7 @@
     <style type="text/css">
     
     	.theme.container {
-			 
 			  max-width: 1280px !important; /* or 950px */
-
 		}
   
         .code.col {
@@ -113,6 +111,36 @@
             background-position: top right;
         }
         
+        .heroimage{
+        	padding: 0;
+        	position: absolute;
+        	top: 80px;
+        	right: 0;
+        	width: 50%;
+        	min-height: 405px;
+        }
+        
+        .heroimage div{
+        	width: 100%;
+        	height: 100%;
+        	background-repeat: no-repeat;
+        	
+        }
+        
+        .heroimage-wide{
+        	background-image: url("images/1280x720test4.jpg");
+        	background-size:cover; /* this makes the image crop and fit automatically */
+        	background-position:center center;
+        	
+        }
+        
+        .heroimage-square {
+	        background-image:url(images/handandcup.png);
+	        background-size:405px 405px; /* for fixed sized background images */
+	        background-position:left center;
+	        /* This background color should be a color that closely matches the fixed size hero image.  */
+	        background-color:#f6d29e;   
+		}
         
         .topbanner{
         	margin:0;
@@ -148,7 +176,6 @@
                 float: none;
                 margin-top: 0px;
                 width: 100%;
-                border: 10px solid green;
             }
             .banner .image, .banner .image.noBg {
                 float: none;
@@ -183,7 +210,7 @@
           @media screen and (max-width: 1000px) {
           	
           		body{
-          			border: 10px solid;
+          			
           		}
           }
        
@@ -472,6 +499,9 @@
        		width: 40%;
        }
        
+       .rightimages{
+       		padding-bottom: 65px;
+       }
        .rightimages .images{
        		padding-top: 14px;
        }
@@ -646,8 +676,15 @@
                   </div>
               </div>
           </div>
+          <!-- 
            <div class="col-md-6 column" style="padding:0; position: absolute; top: 80px; right:0; width: 50%">
            		<img src="images/1280x720test4.jpg" title="bannerimage" height="405" width="100%"/>
+          </div>
+           -->
+           
+          <div class="col-md-6 column heroimage">
+          	<div class="heroimage-wide">
+          	</div>
           </div>
 </div>
 </div>
