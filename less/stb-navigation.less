@@ -1,10 +1,11 @@
-// Navigation on top of page
+// Navigation at the top of page
 
 .navbar {
   background-color: @stb-primary-color-darker;
   border-radius: 0px;
   padding: 0px;
   height: 80px;
+  border: 0px;
 }
 
 .navbar-header {
@@ -13,7 +14,152 @@
 }
 
 .navbar-header .logo {
-  float: right;
-  margin-right: 10%;
   margin-top: 20px;
+}
+
+.nav >li {
+  list-style: none;
+  background-color: @stb-primary-color-darker;   
+  height: 80px;
+  padding: 0px;
+  width: 25%;
+}
+
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus, 
+.navbar-default .navbar-nav >li >a:focus {
+  background: none;
+  color: @stb-primary-white;
+}
+    
+.navbar .nav >li>a {
+  color: @stb-primary-white;
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 50px;
+  font-weight: bold;
+  display: inline-block;
+  text-decoration: none;
+  padding-left: 38%;
+  width:100%;
+  height:100%;
+}
+
+.nav li.search {
+  padding-top: 20px;
+  padding-left: 4%;
+}
+
+.nav li.search input {
+  width: 40%;
+  background-color: @stb-primary-color;
+  padding: 5px;
+  border: none;
+  height: 40px;
+  float: left;
+  display: inline-block;
+}
+
+.nav li.search button {
+  height: 40px;
+  width: 35%;
+  border: none;
+  background: @stb-primary-color url("../images/search.png") center 8px no-repeat;
+}
+
+.nav .private {
+  background: @stb-primary-color-darker url("../images/private.png") 20% 50% no-repeat;
+}
+
+.nav .login {
+  background: @stb-primary-color-darker url("../images/login.png") 12% 48% no-repeat;
+}
+
+.nav li.current {
+  background-color: @stb-primary-color;   
+}
+
+.navbar .dropdown-menu {
+  padding-top: 48px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 16px;
+  margin: 0;
+  background-color: #fff;   
+  box-shadow: 0px 14px 12px rgba(0, 0, 0, 0.176);
+}
+
+.navbar .dropdown-menu li {
+  background: none;
+  list-style-type: none;   
+}
+
+.navbar .dropdown-menu li a {
+  color: #000;
+  padding: 0;
+  color: @stb-secondary-charcoal;
+  line-height: 18px;
+}
+
+.dropdown-menu > li ul {
+  padding: 0; margin: 0;
+}
+
+.dropdown-menu>li ul li {
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.navbar .dropdown-menu>li ul li a {
+  font-size: 14px;
+  color: @stb-secondary-charcoal ;
+  font-weight: normal;
+}
+
+.extraLinks {
+  display: inline-block;
+  clear: both;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.dropdown-menu .extraLinks li {
+  float: left;
+  display:block;
+  padding: 10px 8px 0px 40px;
+  margin-right: 8%;
+}
+
+.dropdown-menu>li h4 {
+  height: 42px;
+  padding: 0px;
+}
+
+.navbar .dropdown-menu > li.extraLinks ul li a, .dropdown-menu > li h4 {
+  font-weight: bold;
+  color: @stb-secondary-charcoal;
+  font-size: 16px;
+  display: block;   
+}
+
+.dropdown-menu > li > h4.calc {
+  padding-left: 30px;
+  background: url("../images/calc.png") -6px -5px no-repeat;
+}
+
+.dropdown-menu .extraLinks .veiHelp {
+  background: url("../images/veihelp.png") left bottom no-repeat;
+}
+
+.dropdown-menu .extraLinks .damageHelp {
+  background: url("../images/damagehelp.png") left bottom no-repeat;
+}
+
+.dropdown-menu .extraLinks .benefits {
+  background: url("../images/benefits.png") left bottom no-repeat;
+}
+
+.dropdown-menu .extraLinks .contact {
+  background: url("../images/contact.png") left bottom no-repeat;
 }
