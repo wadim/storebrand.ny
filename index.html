@@ -601,14 +601,33 @@
             <div class="row">
                 <div class="col-md-6">
                      <p>Clickable list-group with anchortags. In this case it sets the item to "active" but could open a page or really anything we want.</p>
+                     
                      <div class="stb-list-group">
                             <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">1822,44</span>Delphi Global</a>
                             <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">3445,64</span>Delphi Europe</a>
                             <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">2245,65</span>Delphi Nordic</a>
-                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">7766,09</span>Delphi Norge</a>
+                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">7766,09</span>Delphi Norge (Moss)</a>
                             <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">6543,54</span>Delphi Kombinasjon</a>
                             <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">2345,56</span>Delphi Emerging</a>
                       </div>
+                      <p>Click on button to change hover color:</p>
+                    <div class="btn-group">
+                     <button type="button" class="btn" onclick="
+                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude');
+                     $('.stb-list-group .list-group-item').addClass('forest'); return false">Forest</button>
+                     <button type="button" class="btn" onclick="
+                     $('.stb-list-group .list-group-item').addClass('forest sand dust moss nude');
+                     $('.stb-list-group .list-group-item').toggleClass('sand');return false">Sand</button>
+                     <button type="button" class="btn" onclick="
+                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude'); 
+                     $('.stb-list-group .list-group-item').addClass('dust');return false">Dust</button>
+                     <button type="button" class="btn" onclick="
+                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude');
+                     $('.stb-list-group .list-group-item').addClass('moss');return false">Moss</button>
+                     <button type="button" class="btn" onclick="
+                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude');
+                     $('.stb-list-group .list-group-item').addClass('nude');return false">Nude</button>
+                   </div>
                 </div>  
                 <div class="col-md-6">
                     <p>ul list-group with badges for visual purposes. We are able to wrap an anchor around it, but then a plain list-group is preferrable</p>
@@ -634,7 +653,7 @@
                     <pre class="prettyprint">
                          &lt;div class="stb-list-group"&gt;
                             &lt;a href="#" class="list-group-item"&gt;Content 1&lt;/a&gt;
-                            &lt;a href="#" class="list-group-item"&gt;Content 2&lt;/a&gt;
+                            &lt;a href="#" class="list-group-item forest"&gt;Content 2&lt;/a&gt;
                          &lt;/div&gt;  
 
                          &lt;ul class="stb-list-group"&gt;
@@ -1576,67 +1595,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <hr class="airgap" />
 
-      <div class="row"> <!-- Progress bar row -->
-        <div class="col-md-3">
-          <h2>Progress row</h2>
-          (Done-ish)
-        </div>
-        <div class="col-md-9">
-          <h3>Step-by-step breadcrumbs</h3>
-          <p>
-            "Progress bar"-like breadcrumb elements. Use below header and above main content to track progress in a multi-step sequence. There are two versions, grey-scale and color.
-          </p>
-          <p>The bar is made up of ul-lists with :after-selectors for the arrow-like graphic.</p>
-          <h4>Light version</h4>
-          <ul class="stb-progressrow">
-            <li class="stb-progress-item light"></li>
-            <li class="stb-progress-item light"></li>
-            <li class="stb-progress-item light switch-to-grey"></li>
-            <li class="stb-progress-item light disabled"></li>
-            <li class="stb-progress-item light disabled"></li>
-          </ul>
-          <pre class="prettyprint">&lt;!-- Note: This example only shows markup for given states --&gt;
-&lt;ul class=&quot;stb-progressrow&quot;&gt;
-  &lt;li class=&quot;stb-progress-item light&quot;&gt;&lt;/li&gt;
-  &lt;li class=&quot;stb-progress-item light switch-to-grey&quot;&gt;&lt;/li&gt;
-  &lt;li class=&quot;stb-progress-item light disabled&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre>
-          <h4>Dark version</h4>
-          <ul class="stb-progressrow">
-            <li class="stb-progress-item dark"></li>
-            <li class="stb-progress-item dark"></li>
-            <li class="stb-progress-item dark switch-to-grey"></li>
-            <li class="stb-progress-item disabled"></li>
-            <li class="stb-progress-item disabled"></li>
-          </ul>
-          <pre class="prettyprint">
-&lt;ul class=&quot;stb-progressrow&quot;&gt;
-  &lt;li class=&quot;stb-progress-item dark&quot;&gt;&lt;/li&gt;
-  &lt;li class=&quot;stb-progress-item dark switch-to-grey&quot;&gt;&lt;/li&gt;
-  &lt;li class=&quot;stb-progress-item disabled&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre>
-
-          <hr />
-          <p>
-            You can also add text inside each step of a taller version of the progress row;
-          </p>
-          <ul class="stb-progressrow">
-            <li class="one-third stb-progress-item lg light">You were here</li>
-            <li class="one-third stb-progress-item lg light switch-to-grey">You are here</li>
-            <li class="one-third stb-progress-item lg disabled">You will be here</li>
-          </ul>
-          <ul class="stb-progressrow">
-            <li class="one-third stb-progress-item lg dark">You were here</li>
-            <li class="one-third stb-progress-item lg dark switch-to-grey">You are here</li>
-            <li class="one-third stb-progress-item lg disabled">You will be here</li>
-          </ul>
-          <pre class="prettyprint">// Code: Simply add class .lg for large rows and add text inside the li elements.</pre>
-        </div>
-
-      </div> <!-- /Progress row row (Hehe!) -->
-      
-      <hr class="airgap" />
-      
+     
       <div class="row"> <!-- Progress bar row -->
         <div class="col-md-3">
           <h2>Progress bar</h2>
