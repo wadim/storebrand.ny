@@ -1,143 +1,94 @@
-// Progressbar-like breadcrumbs
+/****************************
+*      Progress-Diamonds       *
+*****************************/
 
-@progrow-separator-width: 104%;
-
-ul.stb-progressrow {
-
-  list-style-type: none;
-
-  // base setup
-  li {
-    display: inline-block;
-    height: 20px;
-    min-width: 125px;
-    color: @stb-primary-black;
-    padding: 0;
-    margin: 0;
-    .text-center();
-
-    // larger version:
-    &.lg {
-      height: 30px;
-      min-width: 140px;
-      vertical-align: middle;
-      line-height: 30px;
-
-    }
-  }
-
-  // define light-grey version
-  // we use a few psuedo-selectors to make the "arrow" separators work
-  li.light {
-    background-color: @stb-gray-first;
-
-    // define the "arrow" separator:
-    &:after {
-      content: "";
-      height: 20px;
-      width: @progrow-separator-width;
-      display: inline-block;
-      background-image: url(../images/progressrow-sm/progrow-light-to-light.png);
-      background-repeat: no-repeat;
-      background-position: right;
-    }
-
-    // arrow switches from light to grey
-    &.switch-to-grey:after {
-      content: "";
-      height: 20px;
-      width: @progrow-separator-width;
-      display: inline-block;
-      background-image: url(../images/progressrow-sm/progrow-light-to-gray.png);
-      background-repeat: no-repeat;
-      background-position: right;
-    }
-
-    // last-child should not have arrow
-    &:last-child:after {
-      display: none;
-    }
-
-    // Large variant: uses larger bg-image
-
-    // add the "arrow" between li's
-    &.lg:after {
-      height: 30px;
-      position: relative;
-      top: -30px;
-      width: @progrow-separator-width;
-      background-image: url(../images/progressrow-lg/progrow-light-to-light.png);
-    }
-
-    // arrow switches from light to grey
-    &.lg.switch-to-grey:after {
-      height: 30px;
-      background-image: url(../images/progressrow-lg/progrow-light-to-gray.png);
-    }
-
-  }
-
-  // 'dark' version: currently blue.
-  li.dark {
-    background-color: @stb-secondary-forest;
-    color: @stb-primary-white;
-
-    &:after {
-      content: "";
-      height: 20px;
-      width: @progrow-separator-width;
-      display: inline-block;
-      background-image: url(../images/progressrow-sm/progrow-forest-to-forest.png);
-      background-repeat: no-repeat;
-      background-position: right;
-    }
-
-    &.switch-to-grey:after {
-      content: "";
-      height: 20px;
-      width: @progrow-separator-width;
-      display: inline-block;
-      background-image: url(../images/progressrow-sm/progrow-forest-to-gray.png);
-      background-repeat: no-repeat;
-      background-position: right;
-    }
-
-    // todo: last-child
-
-    // Large variant: uses larger bg-image
-
-    // add the "arrow" between li's
-    &.lg:after {
-      height: 30px;
-      position: relative;
-      top: -30px;
-      width: @progrow-separator-width;
-      background-image: url(../images/progressrow-lg/progrow-forest-to-forest.png);
-    }
-
-    // arrow switches from light to grey
-    &.lg.switch-to-grey:after {
-      height: 30px;
-      background-image: url(../images/progressrow-lg/progrow-forest-to-gray.png);
-    }
-  }
-  // disabled state used to indicate steps yet to be reached
-  li.disabled {
-    background-color: @stb-gray-third;
-    &:after {
-      content: "";
-      height: 20px;
-      width: @progrow-separator-width;
-      display: inline-block;
-      background-image: url(../images/progressrow-sm/progrow-gray-to-gray.png);
-      background-repeat: no-repeat;
-      background-position: right;
-    }
-    &:last-child:after {
-      display: none;
-    }
-  }
+ @darkredcolor:#D9291C;
+ 
+ 
+.progressBar{
+  background-image:url('../images/stripes.png');
+  background-repeat: repeat-x;
+  background-size: 100px;
+  background-position: 0 18px;
+  margin: 0 5%;
+  
+ #stepFigures{
+ 	margin-top: 48px;
+ }
+ 
+ #stepNumbers{
+ 	margin-top: 6px;	
+ }
+ 
+ #stepLabels{
+ 	margin-top: 96px;
+ }
+ 
+ div.square{
+  position:absolute;
+  width: 80px;
+  height: 80px;
+  background: #808080;
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg); /* IE 9 */
+  -webkit-transform:rotate(45deg);
 }
+
+&.noWizard div.square{
+	background: @darkredcolor;
+	width: 65px;
+	height: 65px;
+}
+
+&.noWizard #stepLabels{
+	text-align: center;
+}
+&.noWizard #stepNumbers .number{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+div.square.completed{
+  background: #6C8524;
+  cursor: pointer;
+}
+
+div.square.completed:hover, div.square.current:hover {
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+}
+
+div.square.active{
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg); /* IE 9 */
+  -webkit-transform:rotate(90deg);
+  background: #6C8524;
+}
+
+div.square.current{
+  background: #FAA61A;
+  cursor: pointer;
+}
+
+div.square.completed.hovered, div.square.current.hovered{
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg); /* IE 9 */
+  -webkit-transform:rotate(90deg);
+}
+
+span.number{
+  position: absolute;
+  font-size: 50px;
+  color: white;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+
+}
+
+
 
 /****************************
 *      Progress-bars        *
