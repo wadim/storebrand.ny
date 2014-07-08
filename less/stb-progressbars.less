@@ -1,6 +1,10 @@
 /****************************
 *      Progress-Diamonds       *
 *****************************/
+
+ @darkredcolor:#D9291C;
+ 
+ 
 .progressBar{
   background-image:url('../images/stripes.png');
   background-repeat: repeat-x;
@@ -28,6 +32,20 @@
   transform:rotate(45deg);
   -ms-transform:rotate(45deg); /* IE 9 */
   -webkit-transform:rotate(45deg);
+}
+
+&.noWizard div.square{
+	background: @darkredcolor;
+	width: 65px;
+	height: 65px;
+}
+
+&.noWizard #stepLabels{
+	text-align: center;
+}
+&.noWizard #stepNumbers .number{
+	font-size: 24px;
+	font-weight: bold;
 }
 
 div.square.completed{
