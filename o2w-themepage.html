@@ -1,862 +1,422 @@
 <!doctype html>
 <html>
 <head>
-    <title>Grids - storebrand.no</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/stb-main.css">
-     <link rel="stylesheet" type="text/css" href="css/yamm.css">
-    <script type="text/javascript" src="js/dist/jquery.min.js"></script>
-     <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
-    <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
-   
-    <script>
-    $(window).load(function() {
-        $(".row .column").matchHeight(true);
-            $("div").each(function(i) {
-                className = $(this).attr('class');
-                if( className.indexOf("row")) {
-                    col = className.indexOf("column")>0?"col":"";
-                    $(this).append("<span class='code "+col+"'>"+$(this).prop("tagName")+" "+className+"</span>");
-                }
-            });
-   
-             
-       
-    });
+<title>Grids - storebrand.no</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/stb-main.css">
+<link rel="stylesheet" type="text/css" href="css/yamm.css">
+<link rel="stylesheet" type="text/css" href="css/topmenu.css">
+<link rel="stylesheet" type="text/css" href="css/themepage.css">
+<script type="text/javascript" src="js/dist/jquery.min.js"></script>
+<script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
+<script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
 
-    $(window).resize(function() {
-        $(".row .column").matchHeight(true);
-    });
-   
- 
-    </script>
-    <style type="text/css">
-    
-    	.theme.container {
-			  max-width: 1280px !important; /* or 950px */
-		}
-  
-        .code.col {
-            background: #d1dd77;
-        }
-        .show {
-            display:block;
-        }
-        .code {
-            display:none;
-            float:right;
-            background-color:#f3ff99;
-            font-family: monospace
-        }
-        .codeHelp {
-            display:none;
-            font-family: monospace;
-            background-color:#A3FF9B;
-            margin-top:3em;
-        }
-        .codeButton {
-            position: fixed;
-            top: 0;
-            right: 0;
-            z-index: 2;
-           }
-       
-        .row .column {
-            margin-bottom:20px;
-        }
-       
-        .row .stb-box {
-            margin-bottom:0px;
-        }
-     
-      
-        .six, .four, .three, .nine, .twelve {
-            height: 100%;
-        }
-               
-        .twelve{
-            background-color: #D3D3D3;
-        }
-       
-        .six{
-            background-color: #EFE8DF;
-        }
-       
-        .four{
-            background-color: #F2F2F2;
-        }
-       
-        .nine{
-            background-color: #ECF2C2;
-        }
-        .three{
-            background-color: #FFF0F0;
-        }
-       
-      
-        .banner >.text {
-            float: left;
-            margin-top: 50px;
-            width: 75%;
-        }
-        
-        .banner .image {
-            float: right;
-            width: 60%;
-            height: 403px;
-            background-image: url("images/themebanner.png");
-            //background-image: url("images/bilforsikring.png");
-            background-repeat: no-repeat;
-            background-position: top right;
-        }
-        
-        .heroimage{
-        	padding: 0;
-        	position: absolute;
-        	top: 80px;
-        	right: 0;
-        	width: 50%;
-        	min-height: 405px;
-        }
-        
-        .heroimage div{
-        	width: 100%;
-        	height: 100%;
-        	background-repeat: no-repeat;
-        	
-        }
-        
-        .heroimage-wide{
-        	background-image: url("images/1280x720test4.jpg");
-        	background-size:cover; /* this makes the image crop and fit automatically */
-        	background-position:center center;
-        	
-        }
-        
-        .heroimage-square {
-	        background-image:url(images/handandcup.png);
-	        background-size:405px 405px; /* for fixed sized background images */
-	        background-position:left center;
-	        /* This background color should be a color that closely matches the fixed size hero image.  */
-	        background-color:#f6d29e;   
-		}
-        
-        .topbanner{
-        	margin:0;
-        	margin-bottom: 50px;
-        	width: 100%;
-        	background: url("images/1280x720test4.jpg") left top no-repeat;
-        }
-      
-        .pensionfigure .banner .image{
-        	  background-image: url("images/pensionfigure.png");
-        	  background-position: 100% top;
-        }
-       
-        .banner .image.noBg {
-            float: right;
-            width: 48%;
-            height: 250px;
-            background-image: none;
-        }
+<script>
+	$(window).load(
+			function() {
+				$(".row .column").matchHeight(true);
+				$("div").each(
+						function(i) {
+							className = $(this).attr('class');
+							if (className.indexOf("row")) {
+								col = className.indexOf("column") > 0 ? "col"
+										: "";
+								$(this).append(
+										"<span class='code "+col+"'>"
+												+ $(this).prop("tagName") + " "
+												+ className + "</span>");
+							}
+						});
 
-        .banner .image.noBg img {
-            display: block;
-            margin: 0 0 0 auto;
-        }
-      
-        .banner .image.noBg img.mobile {
-            display: none;
-        }
-       
-       
-        @media screen and (max-width: 750px) {
-            .banner .text {
-                float: none;
-                margin-top: 0px;
-                width: 100%;
-            }
-            .banner .image, .banner .image.noBg {
-                float: none;
-                width: 100%;
-                background-position: top center;
-            }
-           
-            .banner .image.noBg img {
-                display: block;
-                margin: 0 auto;
-                max-width: 100%;
-            }
-        }
-        
-        @media screen and (max-width: 480px) {
-            .banner .image {
-                background-image: url("images/bilforsikring-mobil.png");   
-            }
-            .banner .image, .banner .image.noBg {
-                height: 150px;
-            }
-               
-            .banner .image.noBg img.mobile {
-                display: block;
-            }
-           
-            .banner .image.noBg img.screen {
-                display: none;
-            }
-        }
-        
-          @media screen and (max-width: 1000px) {
-          	
-          		body{
-          			
-          		}
-          }
-       
-        .navbar  {
-            border-radius: 0px;
-            padding: 0px;
-            border: none;
-            height: 80px;
-        }
-       
-        .navbar-header{
-            background-color: #fff;
-            height: 100%;
-        }
-        
-       	.navbar-header .logo{
-            float: left;
-            margin-right: 10%;
-            margin-top: 20px;
-        }
-   
-   		.navbar-nav{
-   			padding: 0;
-   		}
-        .nav >li{
-            list-style: none;
-            background-color:#BF1D19;   
-            height: 80px;
-            padding: 0px;
-        }
-       
-        .navbar .navbar-nav>li:hover, .navbar .navbar-nav >li:focus, .navbar .navbar-nav >li a:active{
-            background-color: #DA291C;
-            color: #fff;
-        }
-       
-        .nav >li a:hover,.nav >li a:active {
-            background: none;
-        }
-       
-        .navbar-default .navbar-nav .open > a, .navbar-default .navbar-nav .open > a:hover, .navbar-default .navbar-nav .open > a:focus, .navbar .navbar-nav >li >a:focus {
-            background: none;
-            color: #fff !important;
-          
-        }
-       
-        .navbar .nav>li>.dropdown-menu::before, .navbar .nav>li>.dropdown-menu::after{
-            display: none;
-        }
-       
-        .navbar .nav >li>a {
-            color: #fff;
-            font-size: 15px;
-            letter-spacing: 1px;
-            line-height: 50px;
-            font-weight: bold;
-            display: inline-block;
-            text-decoration: none;
-            padding-left: 38%;
-            width:100%;
-            height:100%;
-        }
-       
-        .nav li.search{
-            padding-top: 20px;
-         	padding-left: 4%;
-         
-          
-        }
-       
-        .nav li.search:hover{
-            background: #BF1D19;
-        }
-       
-        .nav li.search input{
-            width: 40%;
-            background-color: #DA291C;
-            padding: 5px;
-            border: none;
-            height: 40px;
-            float: left;
-            display: inline-block;
-        
-        }
-       
-        .nav li.search button{
-            height: 40px;
-            width: 35%;
-            border: none;
-            background: #DA291C url("images/search.png") center 8px no-repeat;
-           
-        }
-       
-        .navbar-collapse {
-            padding: 0;
-            width: auto;
-        }
-        .nav .private{
-            background: #BF1D19 url("images/private.png") 12% 50% no-repeat;
-            
-        }
-       
-        .nav .login{
-            background: #BF1D19 url("images/login.png") 12% 48% no-repeat;
-        }
-       
-       	 .nav .login a{
-       	 	padding-right: 15%;
-       	 }
-        .nav li.current{
-            background-color: #DA291C;   
-        }
-       
-        .nav li.active a{
-            //background: url("images/current.png") 65px  bottom no-repeat;
-        }
-       
-        .navbar .dropdown-menu {
-            padding: 50px 10%;
-            margin: 0;
-            background-color: #fff;   
-            border: none;
-            box-shadow: 0px 14px 12px rgba(0, 0, 0, 0.176);
-        }
-       
-        .navbar .dropdown-menu li{
-            background: none;
-            list-style-type: none;   
-        }
-       
-        .navbar .dropdown-menu li a {
-            color: #000;
-            padding: 0;
-            color: #4D4D4D;
-            line-height: 30px;
-                       
-        }
+			});
 
-        .dropdown-menu > li{
-            margin-right: 3%;
-        }
-        .dropdown-menu > li ul{
-            padding: 0; margin: 0;
-        }
-        .dropdown-menu>li ul li{
-            padding: 0;
-            margin: 0;
-        }
-   
-        .navbar .dropdown-menu>li ul li a{
-            font-size: 14px;
-            color: #4D4D4D ;
-            font-weight: normal;
-        }
-       
-        .extraLinks{
-            display: inline-block;
-            clear: both;
-            width: 100%;
-            margin-top: 50px;
-        }
-       
-        .dropdown-menu .extraLinks li{
-            float: left;
-            display:block;
-            padding: 10px 8px 0px 40px;
-            margin-right: 8%;
-        }
-       
-       .dropdown-menu>li h4{
-       		height:70px;
-       }
-       
-        .dropdown-menu>li.calc h4{
-        	padding-left: 14%;
-        }
-        .navbar .dropdown-menu >li.extraLinks ul li a, .dropdown-menu>li h4{
-            font-weight: bold;
-            color: #404040;
-            font-size: 16px;
-            display: block;   
-        }
-        
-        .dropdown-menu>li.calc{
-        	background: url("images/calc.png") left top no-repeat;
-        }
-        .dropdown-menu .extraLinks .veiHelp{
-            background: url("images/veihelp.png") left bottom no-repeat;
-        }
-        .dropdown-menu .extraLinks .damageHelp{
-            background: url("images/damagehelp.png") left bottom no-repeat;
-        }
-        .dropdown-menu .extraLinks .benefits{
-            background: url("images/benefits.png") left bottom no-repeat;
-        }
-        .dropdown-menu .extraLinks .contact{
-            background: url("images/contact.png") left bottom no-repeat;
-        }
-        
-        
-        .bannertheme{
-        	height: 405px;
-        }
-        .stages h2{
-        	text-align: center;
-        }
-        
-        .stages .column, .theme .stages .column .stb-box{
-        	text-align: center;
-        }
-        
-        .stages .square{
-        	width: 65px;
-        	height: 65px;
-        	background: none repeat scroll 0% 0% red;
-        	transform: rotate(45deg);
-        	-webkit-transform: rotate(45deg);
-        	margin-left: 35%;
-        	padding-top: 5%;
-        }	
-        
-        .stages .square p {
-        	transform: rotate(-45deg);
-        	-webkit-transform: rotate(-45deg);
-        	color: #fff;
-        	font-weight: bold;
-        	
-       }
-       
-       .stages h3{
-       		font-weight: bold;
-       		margin-top: 5%;
-       }
-       
-       .stages .column div.text{
-       		padding: 0px 13%;
-       }
-       .stages .column a{
-       		display: inline-block;
-       		margin-top: 5%;
-       }
-       
-       .pensionfigure{
-       		background-color: #D9291C;
-       		padding: 50px 0px;
-       		color: #fff;
-       		font-size: 24px;
-       		margin: 0;
-       }
-       
-       .pensionfigure h3{
-       		color: #fff;
-       		font-weight: bold;
-       		font-size: 30px;
-       		margin-bottom: 5%;
-       }
-       
-       .pensionfigure .text{
-       		width: 40%;
-       }
-       .pensionfigure button{
-       		border: 1px solid #fff ;
-       		background-color: #D9291C;
-       		padding: 5px 12%; 
-       		margin-top: 5%;
-       }
-       .themeback{
-       		background: url("images/themeback.png") left top repeat-x;
-       		height: 582px;
-       		margin: 0;
-       }
-       .themeback .imageunder{
-       		background:url("images/handandcup.png") right top no-repeat;
-       		height: 582px;
-       }
-       .themeback h3{
-       		color: #D9291C;
-       		font-weight: bold;
-       		font-size: 30px;
-       		line-height: 40px;
-       }
-       
-       .themeback .text{
-       		color: #000;
-       		font-size: 24px;
-       		width: 40%;
-       }
-       
-       .rightimages{
-       		padding-bottom: 65px;
-       }
-       .rightimages .images{
-       		padding-top: 14px;
-       }
-       
-       .rightimages .images img:first-child{
-       		margin-bottom: 45px;
-       }
-       
-       .rightimages h3{
-       		font-weight: bold;
-       }
-       footer.stb-footer a.stb-footer-link{
-    		text-decoration: none;
-    	}
+	$(window).resize(function() {
+		$(".row .column").matchHeight(true);
+	});
+</script>
 
-    	footer.stb-footer ul.stb{
-     		margin: 0px 0px 0px 0px;
-    	}
-
-    	footer h4{
-       		color: #FFFFFF;
-       		padding: 12px 10px 10px 0;
-     	}
-     	
-     	footer h4{
-	        color: #FFFFFF;
-	        padding: 24px 10px 10px 0;
-	      }
-	    }
-	
-	    @media (min-width: 767px) {
-	      .border-left{
-	        border-left: medium solid #BF1D19;
-	        margin-left: 20%;
-	        padding-left: 30%;
-	        height: 100%;
-	      }
-	
-	      .border-right{
-	        border-right: medium solid #BF1D19;
-	        margin-right: 10%;
-	        height: 100%;
-	      }
-	    }
-    </style>
 </head>
- 
+
 <body>
-    <!-- <span class="codeButton"><button onclick="$('.code, .codeHelp').toggleClass('show'); $(this).toggleClass('pressed')">?</button></span> -->
 
-<div>
 
-<div class="navbar">
-	<div class="theme container yamm" style="padding: 0;">
-	          <div class="navbar-header col-md-4">
-	            <img src="images/logo.png" title="logo image" class="logo">
-	          </div>
-	          <div id="navbar-collapse-grid" class="navbar-collapse collapse">
-	            <ul class="nav navbar-nav col-md-8">
-	
-	              <li class="dropdown private yamm-fw current col-md-3"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Privat</a>
-	                <ul class="dropdown-menu">
-	                       
-	                        <li class="col-md-2">
-	                            <h4>Forsikring</h4>
-	                            <ul>
-	                                <li><a href="#">Bilforsikring</a></li>
-	                                <li><a href="#">Motorsykkelforsikring</a></li>
-	                                <li><a href="#">Bil & kjøretøy</a></li>
-	                                <li><a href="#">Innboforsikring</a></li>
-	                                <li><a href="#">Husforsikring</a></li>
-	                                <li><a href="#">Reiseforsikring</a></li>
-	                                <li><a href="#">Båtforsikring</a></li>
-	                                <li><a href="#">Liv & helse</a></li>
-	                                <li><a href="#">Barneforsikring</a></li>
-	                            </ul>
-	                        </li>
-	                            <li class="col-md-2">
-	                                <h4>Bank og lån</h4>
-	                                <ul>
-	                                    <li><a href="#">Bil bankkunde</a></li>
-	                                    <li><a href="#">boliglån</a></li>
-	                                    <li><a href="#">Boligkreditt</a></li>
-	                                    <li><a href="#">Boliglån for unge</a></li>
-	                                    <li><a href="#">Konto and kort</a></li>
-	                                    <li><a href="#">Ungdomskonto</a></li>
-	                                    <li><a href="#">Nettbank</a></li>
-	                                    <li><a href="#">VISA kort</a></li>
-	                                    <li><a href="#">kreditt kort</a></li>
-	                                    <li><a href="#">Ungdomskonto</a></li>
-	                                    
-	                                </ul>
-	                            </li>
-	                            <li class="col-md-2">
-	                                <h4>Pensjon</h4>
-	                                <ul>
-	                                    <li><a href="#">Egensparing til pensjon</a></li>
-	                                    <li><a href="#">Ekstrapensjon</a></li>
-	                                    <li><a href="#">IPS</a></li>
-	                                    <li><a href="#">Pensjon fra arbeidsgiver</a></li>
-	                                    <li><a href="#">Pensjonkapitalbevis</a></li>
-	                                    <li><a href="#">Fripolise</a></li>
-	                                    <li><a href="#">Fripolise med investeringsvalg</a></li>
-	        
-	                                </ul>
-	                            </li>
-	                            <li class="col-md-2">
-	                                <h4>Sapring</h4>
-	                                <ul>
-	                                    <li><a href="#">Bilforsikring</a></li>
-	                                    <li><a href="#">Motorsykkelforsikring</a></li>
-	                                    <li><a href="#">Bil & kjøretøy</a></li>
-	                                    <li><a href="#">Innboforsikring</a></li>
-	                                    <li><a href="#">Husforsikring</a></li>
-	                                    <li><a href="#">Reiseforsikring</a></li>
-	                                    <li><a href="#">Båtforsikring</a></li>
-	                                    <li><a href="#">Liv & helse</a></li>
-	                                    <li><a href="#">Barneforsikring</a></li>
-	                                </ul>
-	                            </li>
-	                            <li class="col-md-2 calc">
-	                                <h4>Kalkulatorer & verktoy</h4>
-	                                <ul>
-	                                    <li><a href="#">Bilforsikring</a></li>
-	                                    <li><a href="#">Motorsykkelforsikring</a></li>
-	                                    <li><a href="#">Bil & kjøretøy</a></li>
-	                                    <li><a href="#">Innboforsikring</a></li>
-	                                    <li><a href="#">Husforsikring</a></li>
-	                                    <li><a href="#">Reiseforsikring</a></li>
-	                                    <li><a href="#">Båtforsikring</a></li>
-	                                    <li><a href="#">Liv & helse</a></li>
-	                                    <li><a href="#">Barneforsikring</a></li>
-	                                </ul>
-	                        </li>
-	                   
-	                        <li class="extraLinks">
-	                                <ul>
-	                                    <li class="veiHelp"><a href="#">Veihjelp</a></li>
-	                                    <li class="damageHelp"><a href="#">Meld skade</a></li>
-	                                    <li class="benefits"><a href="#">Få fordeler</a></li>
-	                                    <li class="contact"><a href="#">Kontakt oss</a></li>
-	                                </ul>
-	                        </li>
-	                   
-	                </ul>
-	              </li>
-	           
-	              <li class="dropdown company yamm-fw col-md-3"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a>
-	             
-	              </li>
-	           
-	              <li class="dropdown login yamm-fw col-md-3"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logginn</a>
-	              
-	              </li>
-	           
-	              <li class="search col-md-3">
-	                 <input type="text"/>
-	                 <button type="submit"></button>
-	             </li>
-	            </ul>
-	          </div>
-	 </div>
- </div>
+	<div>
+		<div class="navbar">
+			<div class="theme container yamm" style="padding: 0;">
+				<div class="navbar-header col-md-4">
+					<img src="images/logo.png" title="logo image" class="logo">
+				</div>
+				<div id="navbar-collapse-grid" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav col-md-8">
 
-<div class="bannertheme container">
- <div class="row">
-          <div class="col-md-6 column" >
-              <div class="stb-box banner">
-                  <div class="text">
-                      <h2>Utsikten du skal ha hver morgen etter du slutter å jobbe</h2>
-                      <p>Alle har et bilde av hvordan  tilværelsen som pensjonist skal bli. Gjør bildet til virkelighet.</p>
-                  </div>
-              </div>
-          </div>
-          <!-- 
+						<li class="dropdown private yamm-fw current col-md-3"><a
+							href="#" data-toggle="dropdown" class="dropdown-toggle">Privat</a>
+							<ul class="dropdown-menu">
+
+								<li class="col-md-2">
+									<h4>Forsikring</h4>
+									<ul>
+										<li><a href="#">Bilforsikring</a></li>
+										<li><a href="#">Motorsykkelforsikring</a></li>
+										<li><a href="#">Bil & kjøretøy</a></li>
+										<li><a href="#">Innboforsikring</a></li>
+										<li><a href="#">Husforsikring</a></li>
+										<li><a href="#">Reiseforsikring</a></li>
+										<li><a href="#">Båtforsikring</a></li>
+										<li><a href="#">Liv & helse</a></li>
+										<li><a href="#">Barneforsikring</a></li>
+									</ul>
+								</li>
+								<li class="col-md-2">
+									<h4>Bank og lån</h4>
+									<ul>
+										<li><a href="#">Bil bankkunde</a></li>
+										<li><a href="#">boliglån</a></li>
+										<li><a href="#">Boligkreditt</a></li>
+										<li><a href="#">Boliglån for unge</a></li>
+										<li><a href="#">Konto and kort</a></li>
+										<li><a href="#">Ungdomskonto</a></li>
+										<li><a href="#">Nettbank</a></li>
+										<li><a href="#">VISA kort</a></li>
+										<li><a href="#">kreditt kort</a></li>
+										<li><a href="#">Ungdomskonto</a></li>
+
+									</ul>
+								</li>
+								<li class="col-md-2">
+									<h4>Pensjon</h4>
+									<ul>
+										<li><a href="#">Egensparing til pensjon</a></li>
+										<li><a href="#">Ekstrapensjon</a></li>
+										<li><a href="#">IPS</a></li>
+										<li><a href="#">Pensjon fra arbeidsgiver</a></li>
+										<li><a href="#">Pensjonkapitalbevis</a></li>
+										<li><a href="#">Fripolise</a></li>
+										<li><a href="#">Fripolise med investeringsvalg</a></li>
+
+									</ul>
+								</li>
+								<li class="col-md-2">
+									<h4>Sapring</h4>
+									<ul>
+										<li><a href="#">Bilforsikring</a></li>
+										<li><a href="#">Motorsykkelforsikring</a></li>
+										<li><a href="#">Bil & kjøretøy</a></li>
+										<li><a href="#">Innboforsikring</a></li>
+										<li><a href="#">Husforsikring</a></li>
+										<li><a href="#">Reiseforsikring</a></li>
+										<li><a href="#">Båtforsikring</a></li>
+										<li><a href="#">Liv & helse</a></li>
+										<li><a href="#">Barneforsikring</a></li>
+									</ul>
+								</li>
+								<li class="col-md-2 calc">
+									<h4>Kalkulatorer & verktoy</h4>
+									<ul>
+										<li><a href="#">Bilforsikring</a></li>
+										<li><a href="#">Motorsykkelforsikring</a></li>
+										<li><a href="#">Bil & kjøretøy</a></li>
+										<li><a href="#">Innboforsikring</a></li>
+										<li><a href="#">Husforsikring</a></li>
+										<li><a href="#">Reiseforsikring</a></li>
+										<li><a href="#">Båtforsikring</a></li>
+										<li><a href="#">Liv & helse</a></li>
+										<li><a href="#">Barneforsikring</a></li>
+									</ul>
+								</li>
+
+								<li class="extraLinks">
+									<ul>
+										<li class="veiHelp"><a href="#">Veihjelp</a></li>
+										<li class="damageHelp"><a href="#">Meld skade</a></li>
+										<li class="benefits"><a href="#">Få fordeler</a></li>
+										<li class="contact"><a href="#">Kontakt oss</a></li>
+									</ul>
+								</li>
+
+							</ul></li>
+
+						<li class="dropdown company yamm-fw col-md-3"><a href="#"
+							data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+
+						<li class="dropdown login yamm-fw col-md-3"><a href="#"
+							data-toggle="dropdown" class="dropdown-toggle">Logginn</a></li>
+
+						<li class="search col-md-3"><input type="text" />
+							<button type="submit"></button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 column" style="padding-right: 0px; padding-left: 0px; position: absolute; top: 0px; right: 0px; width: 50%; height: 80px; background-color: #BF1D19; z-index: -10">
+		</div>
+		
+		<div class="bannertheme container">
+			<div class="row">
+				<div class="col-md-6 column">
+					<div class="stb-box leftText">
+						<div class="text">
+							<h2>Utsikten du skal ha hver morgen etter du slutter å jobbe</h2>
+							<p>Alle har et bilde av hvordan tilværelsen som pensjonist
+								skal bli. Gjør bildet til virkelighet.</p>
+						</div>
+					</div>
+				</div>
+				<!-- 
            <div class="col-md-6 column" style="padding:0; position: absolute; top: 80px; right:0; width: 50%">
            		<img src="images/1280x720test4.jpg" title="bannerimage" height="405" width="100%"/>
           </div>
            -->
-           
-          <div class="col-md-6 column heroimage">
-          	<div class="heroimage-wide">
-          	</div>
-          </div>
-</div>
-</div>
+
+				<div class="col-md-6 column heroimage">
+					<div class="heroimage-wide"></div>
+				</div>
+			</div>
+		</div>
 
 
-<div class="container">
-      <div class="row stages">
-      	<h2> Tre steder å starte</h2>
-          <div class="col-md-4 column">
-              <div class="stb-box">
-              	  <div class="square"><p>1</p></div>
-                  <h3>Finne ditt pensjonstall</h3>
-                  <div class="text">Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist</div>
-                  <a href="#">Hopp til <p>&lt;&lt;Finne ditt Pensjonstall&gt;&gt;</p></a>
-              </div>
-          </div>
-          <div class="col-md-4 column">
-              <div class="stb-box">
-              		  <div class="square"><p>2</p></div>
-                  <h3>Finne ditt pensjonstall</h3>
-                  <div class="text">Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist</div>
-                  <a href="#">Hopp til <p>&lt;&lt;Finne ditt Pensjonstall&gt;&gt;</p></a>
-              </div>
-          </div>
-          <div class="col-md-4 column">
-              <div class="stb-box">
-                <div class="square"><p>3</p></div>
-                   <h3>Finne ditt pensjonstall</h3>
-                  <div class="text">Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist</div>
-                  <a href="#">Hopp til <p>&lt;&lt;Finne ditt Pensjonstall&gt;&gt;</p></a>
-              </div>
-          </div>
-      </div>
-</div>
-   
-<div class="row pensionfigure">
-	<div class="container">
-    <div class="col-md-12 column">
-        <div class="stb-box banner">
-            <div class="text">
-                 <h3>Ditt pensjonstall</h3>
-            		<div>Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist</div>
-            		<button>Finn ditt pensjonstall</button>
-            </div>
-            <div class="image">
-                <!-- 
+		<div class="container">
+			<div class="row stages">
+				<h2>Tre steder å starte</h2>
+				<div class="col-md-4 column">
+					<div class="stb-box">
+						<div class="square">
+							<p>1</p>
+						</div>
+						<h3>Finne ditt pensjonstall</h3>
+						<div class="text">Pensjonstallet er summen av folketrygden,
+							tjenestepensjon og egen sparing. Dette er det du skal leve av som
+							pensjonist</div>
+						<a href="#">Hopp til
+							<p>&lt;&lt;Finne ditt Pensjonstall&gt;&gt;</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 column">
+					<div class="stb-box">
+						<div class="square">
+							<p>2</p>
+						</div>
+						<h3>Finne ditt pensjonstall</h3>
+						<div class="text">Pensjonstallet er summen av folketrygden,
+							tjenestepensjon og egen sparing. Dette er det du skal leve av som
+							pensjonist</div>
+						<a href="#">Hopp til
+							<p>&lt;&lt;Finne ditt Pensjonstall&gt;&gt;</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 column">
+					<div class="stb-box">
+						<div class="square">
+							<p>3</p>
+						</div>
+						<h3>Finne ditt pensjonstall</h3>
+						<div class="text">Pensjonstallet er summen av folketrygden,
+							tjenestepensjon og egen sparing. Dette er det du skal leve av som
+							pensjonist</div>
+						<a href="#">Hopp til
+							<p>&lt;&lt;Finne ditt Pensjonstall&gt;&gt;</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row pensionfigure">
+			<div class="container">
+				<div class="col-md-6 column">
+					<div class="stb-box leftText">
+						<div class="text">
+							<h3>Ditt pensjonstall</h3>
+							<div>Pensjonstallet er summen av folketrygden,
+								tjenestepensjon og egen sparing. Dette er det du skal leve av
+								som pensjonist</div>
+							<button>Finn ditt pensjonstall</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-6 column">
+						<div class="image"></div>
+				</div>
+				
+				<!-- 
                 <img src="images/bilforsikring.png" alt="bilforsikringimage" title="bilforsikringimage" class="">
                 -->
-            </div>
-        </div>
-    </div>
-    </div>
-</div>
-
- <div class="col-md-6 column" style="padding-right: 0px; padding-left: 0px; position: absolute; top: 0px; right: 0px; width: 50%; height: 80px; background-color:#BF1D19; z-index:-10">
-
- </div>
-      
- <div class="row themeback">
- 	<div class="imageunder">
-		<div class="container">
-		    <div class="col-md-12 column">
-		        <div class="stb-box banner">
-		            <div class="text">
-		                 <h3>Egen sparing til pensjon tar deg 3  minutter å starte</h3>
-		            		<div>Det er omtrent så lenge det tar  deg å drikke en halv kopp kaffe. Ta deg derfor tid til en kaffe- og å komme igang med sparing</div>
-		            </div>
-		        </div>
-		    </div>
-	    </div>
-  </div>
-  </div>
- 
-   <div class="rightimages container">
-       
-     <div class="row">
-     	<div class="col-md-8">
-     		<div class="stb-box">
-     			<h1> En eller annen tittle som innleder et artikkelstykke</h1>
-     			<h3>Eitam At Risus Et</h3>
-     			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-     			<h3>Mauris laculis Porttitor Posuere</h3>
-     			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum</p>	
-     		</div>
-     	</div>
-		
-			
-		<div class="images col-md-4">
-			<div class="stb-box">
-				<img src="images/271x271.png" title="" width="271" height="271"/>
-				<img src="images/271x271_2.png" title="" width="271" height="271"/>
+						
 			</div>
-    	 </div>
-   </div>
-  </div>
-  
-  
-  <footer class="stbcolor-primary first stb-footer">
-  <div class="row" style="margin-right: 0">
-    <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker">
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 1000);" class="stb-footer-link hidden-xs" style="line-height: 32px">Til toppen <span class="glyphicon glyphicon-arrow-up"></span> </a>
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 1000);" class="stb-footer-link visible-xs pull-right" style="line-height: 32px">Til toppen <span class="glyphicon glyphicon-arrow-up"></span> </a>
-    </div>
-  </div>
-  <div class="container">
+		</div>
+		
+		<div class="row themeback">
+			<div class="imageunder">
+				<div class="container">
+					<div class="col-md-6 column">
+						<div class="stb-box leftText">
+							<div class="text">
+								<h3>Egen sparing til pensjon tar deg 3 minutter å starte</h3>
+								<div>Det er omtrent så lenge det tar deg å drikke en halv
+									kopp kaffe. Ta deg derfor tid til en kaffe- og å komme igang
+									med sparing</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-  <div class="row" style="margin-top: 24px; padding-bottom: 24px;">
-    <div class="col-sm-3 column">
-       <div class="border-right">
-        <ul class="stb" style="padding-top: 12px;">
-          <li><span class="glyphicon glyphicon-globe"></span> <a class="stb-footer-link petit" href="#">Information in English</a></li>
-          <li><span class="glyphicon glyphicon-search"></span> <a class="stb-footer-link petit" href="#"> Søk</a></li>
-          <li><span class="glyphicon glyphicon-lock"></span> <a class="stb-footer-link petit" href="#">Logg inn</a></li>
-        </ul>
+		<div class="rightimages container">
 
-        <h4>Alt innhold</h4>
-        <p class="petit"><a class="stb-footer-link" href="#">A til Å / Kategorisert</a></p>
-       </div>
-    </div>
-    <div class="col-sm-3 column">
-      <h4>Lurer du på noe?</h4>
-        <div class="row">
-          <div class="col-xs-6">
-            <p class="petit">Vi er tilgjengelige:</p>
-            <p class="petit">Mandag-fredag<br>08:00-16:00<br>Bank: til 20.00</p>
-            <p class="petit">Lørdag (kun bank) <br>09:00-15:00</p>
-          </div>
-          <div class="col-xs-6">
-            <span class="glyphicon glyphicon-earphone pull-left" style="color:white;"></span>
-            <div style="padding-left: 18px;"><p class="petit">
-              <span class="pull-left">Ring: </span> <a class="stb-footer-link hidden-xs" href="tel:08880"><span>08880</span></a>
-              <a class="visible-xs" href="tel:08880"><span class="stbcolor-primary first darker badge">08880</span></a>
-              <br class="hidden-xs">Fra utlandet:<br>
-              <a class="stb-footer-link hidden-xs" href="tel:+4791508880"><span>+47 915 08880</span></a>
-              <a class="visible-xs" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47 915 08880</span></a>
-            </p>
-            </div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="stb-box">
+						<h1>En eller annen tittle som innleder et artikkelstykke</h1>
+						<h3>Eitam At Risus Et</h3>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+							sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+							aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+							exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+							commodo consequat.</p>
+						<h3>Mauris laculis Porttitor Posuere</h3>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+							sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+							aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+							exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+							commodo consequat. Duis autem vel eum iriure dolor in hendrerit
+							in vulputate velit esse molestie consequat, vel illum dolore eu
+							feugiat nulla facilisis at vero eros et accumsan et iusto odio
+							dignissim qui blandit praesent luptatum zzril delenit augue duis
+							dolore te feugait nulla facilisi. Nam liber tempor cum soluta
+							nobis eleifend option congue nihil imperdiet doming id quod mazim
+							placerat facer possim assum. Typi non habent claritatem insitam;
+							est usus legentis in iis qui facit eorum claritatem.
+							Investigationes demonstraverunt lectores legere me lius quod ii
+							legunt saepius. Claritas est etiam processus dynamicus, qui
+							sequitur mutationem consuetudium lectorum</p>
+					</div>
+				</div>
 
-            <ul class="stb" style="padding-top: 6px;">
-              <li><span class="glyphicon glyphicon-envelope"></span><a class="stb-footer-link petit"  href="#"> Send e-post</a></li>
-              <li><i class="fa fa-weixin"></i><a class="stb-footer-link petit"  href="#"> Chat med oss</a></li>
-            </ul>
-          </div>
-        </div>
-    </div>
 
-    <div class="col-sm-3 col-xs-6 column">
-      <div class="border-left">
-      <h4>Sosiale medier</h4>
-        <ul class="stb">
-          <li><i class="fa fa-facebook-square"></i><a class="stb-footer-link petit" href="#"> Facebook</a></li>
-          <li><i class="fa fa-twitter"></i><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
-          <li><i class="fa fa-youtube-play"></i><a class="stb-footer-link petit"  href="#"> Youtube</a></li>
-          <li><span class="glyphicon glyphicon-user"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-sm-3 col-xs-6 column">
-      <div class="border-left">
-        <h4>Mer Storebrand</h4>
-        <ul class="stb">
-          <li><a class="stb-footer-link petit"  href="#"> Om storebrand </a></li>
-          <li><a class="stb-footer-link petit"  href="#"> Eiendom</a></li>
-          <li><a class="stb-footer-link petit"  href="#"> Asset Management</a></li>
-          <li><a class="stb-footer-link petit"  href="#"> Personopplysninger</a></li>
-        </ul>
-      </div>
-    </div>
-    </div>
-  </div>
-</footer>
-</div>
-  
+				<div class="images col-md-4">
+					<div class="stb-box">
+						<img src="images/271x271.png" title="" width="271" height="271" />
+						<img src="images/271x271_2.png" title="" width="271" height="271" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<footer class="stbcolor-primary first stb-footer">
+			<div class="row" style="margin-right: 0">
+				<div
+					class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker">
+					<a href="#"
+						onclick="$('html, body').animate({ scrollTop: 0}, 1000);"
+						class="stb-footer-link hidden-xs" style="line-height: 32px">Til
+						toppen <span class="glyphicon glyphicon-arrow-up"></span>
+					</a> <a href="#"
+						onclick="$('html, body').animate({ scrollTop: 0}, 1000);"
+						class="stb-footer-link visible-xs pull-right"
+						style="line-height: 32px">Til toppen <span
+						class="glyphicon glyphicon-arrow-up"></span>
+					</a>
+				</div>
+			</div>
+			<div class="container">
+
+				<div class="row" style="margin-top: 24px; padding-bottom: 24px;">
+					<div class="col-sm-3 column">
+						<div class="border-right">
+							<ul class="stb" style="padding-top: 12px;">
+								<li><span class="glyphicon glyphicon-globe"></span> <a
+									class="stb-footer-link petit" href="#">Information in
+										English</a></li>
+								<li><span class="glyphicon glyphicon-search"></span> <a
+									class="stb-footer-link petit" href="#"> Søk</a></li>
+								<li><span class="glyphicon glyphicon-lock"></span> <a
+									class="stb-footer-link petit" href="#">Logg inn</a></li>
+							</ul>
+
+							<h4>Alt innhold</h4>
+							<p class="petit">
+								<a class="stb-footer-link" href="#">A til Å / Kategorisert</a>
+							</p>
+						</div>
+					</div>
+					<div class="col-sm-3 column">
+						<h4>Lurer du på noe?</h4>
+						<div class="row">
+							<div class="col-xs-6">
+								<p class="petit">Vi er tilgjengelige:</p>
+								<p class="petit">
+									Mandag-fredag<br>08:00-16:00<br>Bank: til 20.00
+								</p>
+								<p class="petit">
+									Lørdag (kun bank) <br>09:00-15:00
+								</p>
+							</div>
+							<div class="col-xs-6">
+								<span class="glyphicon glyphicon-earphone pull-left"
+									style="color: white;"></span>
+								<div style="padding-left: 18px;">
+									<p class="petit">
+										<span class="pull-left">Ring: </span> <a
+											class="stb-footer-link hidden-xs" href="tel:08880"><span>08880</span></a>
+										<a class="visible-xs" href="tel:08880"><span
+											class="stbcolor-primary first darker badge">08880</span></a> <br
+											class="hidden-xs">Fra utlandet:<br> <a
+											class="stb-footer-link hidden-xs" href="tel:+4791508880"><span>+47
+												915 08880</span></a> <a class="visible-xs" href="tel:+4791508880"><span
+											class="stbcolor-primary first darker badge ">+47 915
+												08880</span></a>
+									</p>
+								</div>
+
+								<ul class="stb" style="padding-top: 6px;">
+									<li><span class="glyphicon glyphicon-envelope"></span><a
+										class="stb-footer-link petit" href="#"> Send e-post</a></li>
+									<li><i class="fa fa-weixin"></i><a
+										class="stb-footer-link petit" href="#"> Chat med oss</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3 col-xs-6 column">
+						<div class="border-left">
+							<h4>Sosiale medier</h4>
+							<ul class="stb">
+								<li><i class="fa fa-facebook-square"></i><a
+									class="stb-footer-link petit" href="#"> Facebook</a></li>
+								<li><i class="fa fa-twitter"></i><a
+									class="stb-footer-link petit" href="#"> Twitter</a></li>
+								<li><i class="fa fa-youtube-play"></i><a
+									class="stb-footer-link petit" href="#"> Youtube</a></li>
+								<li><span class="glyphicon glyphicon-user"></span><a
+									class="stb-footer-link petit" href="#"> Blogg</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6 column">
+						<div class="border-left">
+							<h4>Mer Storebrand</h4>
+							<ul class="stb">
+								<li><a class="stb-footer-link petit" href="#"> Om
+										storebrand </a></li>
+								<li><a class="stb-footer-link petit" href="#"> Eiendom</a></li>
+								<li><a class="stb-footer-link petit" href="#"> Asset
+										Management</a></li>
+								<li><a class="stb-footer-link petit" href="#">
+										Personopplysninger</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
 </body>
 </html>
