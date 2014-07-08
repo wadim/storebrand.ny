@@ -1,7 +1,7 @@
  // CSS for the global top menu
 		
-		@redcolor: #BF1D19;
-		@darkredcolor:#D9291C;
+		@darkredcolor: #BF1D19;
+		@redcolor:#D9291C;
 		
 		.navbar  {
             border-radius: 0px;
@@ -26,13 +26,13 @@
    		}
         .nav >li{
             list-style: none;
-            background-color:@redcolor;   
+            background-color:@darkredcolor;   
             height: 80px;
             padding: 0px;
         }
        
         .navbar .navbar-nav>li:hover, .navbar .navbar-nav >li:focus, .navbar .navbar-nav >li a:active{
-            background-color: @darkredcolor;
+            background-color: @redcolor;
             color: #fff;
         }
        
@@ -74,7 +74,7 @@
        
         .nav li.search input{
             width: 40%;
-            background-color: @darkredcolor;
+            background-color: @redcolor;
             padding: 5px;
             border: none;
             height: 40px;
@@ -86,7 +86,7 @@
             height: 40px;
             width: 35%;
             border: none;
-            background: @darkredcolor url("../images/search.png") center 8px no-repeat;   
+            background: @redcolor url("../images/search.png") center 8px no-repeat;   
         }
        
         .navbar-collapse {
@@ -94,18 +94,18 @@
             width: auto;
         }
         .nav .private{
-            background: @redcolor url("../images/private.png") 12% 50% no-repeat;
+            background: @darkredcolor url("../images/private.png") 12% 50% no-repeat;
         }
        
         .nav .login{
-            background: @redcolor url("../images/login.png") 12% 48% no-repeat;
+            background: @darkredcolor url("../images/login.png") 12% 48% no-repeat;
         }
        
        	 .nav .login a{
        	 	padding-right: 15%;
        	 }
         .nav li.current{
-            background-color: @darkredcolor;   
+            background-color: @redcolor;   
         }
        
         .nav li.active a{
