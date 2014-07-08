@@ -108,67 +108,12 @@ form .has-feedback.checkbox i.glyphicon-remove{
   width: 50%;
 }
 
-div.square{
-  position:absolute;
-  width: 80px;
-  height: 80px;
-  background: #808080;
-  transform:rotate(45deg);
-  -ms-transform:rotate(45deg); /* IE 9 */
-  -webkit-transform:rotate(45deg);
-
-}
-
-div.square.completed{
-  background: #6C8524;
-  cursor: pointer;
-}
-
-div.square.completed:hover, div.square.current:hover {
-  transform:rotate(90deg);
-  -ms-transform:rotate(90deg);
-  -webkit-transform:rotate(90deg);
-}
-
-div.square.active{
-  transform:rotate(90deg);
-  -ms-transform:rotate(90deg); /* IE 9 */
-  -webkit-transform:rotate(90deg);
-  background: #6C8524;
-}
-
-div.square.current{
-  background: #FAA61A;
-  cursor: pointer;
-}
-
-div.square.completed.hovered, div.square.current.hovered{
-  transform:rotate(90deg);
-  -ms-transform:rotate(90deg); /* IE 9 */
-  -webkit-transform:rotate(90deg);
-}
-
-span.number{
-  position: absolute;
-  font-size: 50px;
-  color: white;
-  margin-left: 25px;
-  cursor: pointer;
-}
-
 p{
   margin-top: 6px;
 }
 
 a{
   cursor: pointer;
-}
-
-.progressBar{
-  background-image:url('images/stripes.png');
-  background-repeat: repeat-x;
-  background-size: 100px;
-  background-position: 0 18px;
 }
 
 .hiddenfile {
@@ -1170,8 +1115,8 @@ $(window).scroll(function(event){
   <div class="row"style="margin-top: 50px;">
     <h1>Skademelding for reisegods</h1>
   </div>
-  <div class="progressBar hidden-xs hidden-sm" style="margin-left: 5%; margin-right: 5%;">
-    <div id="stepFigures" class="row" style="margin-top: 48px;">
+  <div class="progressBar hidden-xs hidden-sm">
+    <div id="stepFigures" class="row">
       <div class="col-md-2">
         <div id="step-omTapet" class="square active current" name="step-omTapet"></div>
       </div>
@@ -1191,7 +1136,7 @@ $(window).scroll(function(event){
         <div id="step-kvittering" class="square" name="step-kvittering" style="margin-left: 46px;"></div>
       </div>
     </div>
-    <div id="stepNumbers" class="row" style="margin-top: 6px;">
+    <div id="stepNumbers" class="row">
       <div class="col-md-2">
         <span class="number" name="step-omTapet" style="">1</span>
       </div>
@@ -1211,7 +1156,7 @@ $(window).scroll(function(event){
         <span class="number" name="step-kvittering" style="margin-left: 72px;">6</span>
       </div>
     </div>
-    <div id="stepLabels" class="row" style="margin-top: 96px;">
+    <div id="stepLabels" class="row">
       <div class="col-md-2">
         <h4>Om Skaden</h4>
       </div>

@@ -1,3 +1,75 @@
+/****************************
+*      Progress-Diamonds       *
+*****************************/
+.progressBar{
+  background-image:url('../images/stripes.png');
+  background-repeat: repeat-x;
+  background-size: 100px;
+  background-position: 0 18px;
+  margin: 0 5%;
+  
+ #stepFigures{
+ 	margin-top: 48px;
+ }
+ 
+ #stepNumbers{
+ 	margin-top: 6px;	
+ }
+ 
+ #stepLabels{
+ 	margin-top: 96px;
+ }
+ 
+ div.square{
+  position:absolute;
+  width: 80px;
+  height: 80px;
+  background: #808080;
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg); /* IE 9 */
+  -webkit-transform:rotate(45deg);
+}
+
+div.square.completed{
+  background: #6C8524;
+  cursor: pointer;
+}
+
+div.square.completed:hover, div.square.current:hover {
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+}
+
+div.square.active{
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg); /* IE 9 */
+  -webkit-transform:rotate(90deg);
+  background: #6C8524;
+}
+
+div.square.current{
+  background: #FAA61A;
+  cursor: pointer;
+}
+
+div.square.completed.hovered, div.square.current.hovered{
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg); /* IE 9 */
+  -webkit-transform:rotate(90deg);
+}
+
+span.number{
+  position: absolute;
+  font-size: 50px;
+  color: white;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+
+}
+
 
 
 /****************************
