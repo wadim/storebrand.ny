@@ -12,14 +12,7 @@
    
   <script>
     $(window).load(function() {
-      $(".row .column").matchHeight(true);
-      $("div").each(function(i) {
-        className = $(this).attr('class');
-        if( className.indexOf("row")) {
-          col = className.indexOf("column")>0?"col":"";
-          $(this).append("<span class='code "+col+"'>"+$(this).prop("tagName")+" "+className+"</span>");
-        }
-      });          
+      $(".row .column").matchHeight(true);       
     });
 
     $(window).resize(function() {
@@ -28,157 +21,8 @@
   </script>
 
   <style type="text/css">
-    .code.col {
-      background: #d1dd77;
-    }
+    
 
-    .show {
-      display:block;
-    }
-
-    .code {
-      display:none;
-      float:right;
-      background-color:#f3ff99;
-      font-family: monospace
-    }
-
-    .codeHelp {
-      display:none;
-      font-family: monospace;
-      background-color:#A3FF9B;
-      margin-top:3em;
-    }
-    
-    .codeButton {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 2;
-    }
-    
-    .row .column {
-      margin-bottom:20px;
-    }
-       
-    .row .stb-box {
-      margin-bottom:0px;
-    }
-    
-    .six, .four, .three, .nine, .twelve {
-      height: 100%;
-    }
-    
-    .twelve {
-      background-color: #D3D3D3;
-    }
-    
-    .six {
-      background-color: #EFE8DF;
-    }
-    
-    .four {
-      background-color: #F2F2F2;
-    }
-
-    .nine {
-      background-color: #ECF2C2;
-    }
-    
-    .three {
-      background-color: #FFF0F0;
-    }
-
-    .banner {
-      background-color: #fff;
-    }
-    
-    .banner .text {
-      float: left;
-      margin-top: 50px;
-      width: 48%;
-    }
-    
-    .banner .image {
-      float: right;
-      width: 48%;
-      height: 250px;
-      background-image: url("images/bilforsikring.png");
-      background-repeat: no-repeat;
-      background-position: top right;
-    }
-    
-    .banner .image.noBg {
-      float: right;
-      width: 48%;
-      height: 250px;
-      background-image: none;
-    }
-
-    .banner .image.noBg img {
-      display: block;
-      margin: 0 0 0 auto;
-    }
-
-    .banner .image.noBg img.mobile {
-      display: none;
-    }
-    
-    @media screen and (max-width: 750px) {
-      .banner .text {
-        float: none;
-        margin-top: 0px;
-        width: 100%;
-        border: 10px solid green;
-      }
-      
-      .banner .image, .banner .image.noBg {
-        float: none;
-        width: 100%;
-        background-position: top center;
-      }
-
-      .banner .image.noBg img {
-        display: block;
-        margin: 0 auto;
-        max-width: 100%;
-      }
-    }
-    
-    @media screen and (max-width: 480px) {
-      .banner .image {
-        background-image: url("images/bilforsikring-mobil.png");   
-      }
-      
-      .banner .image, .banner .image.noBg {
-        height: 150px;
-      }
-
-      .banner .image.noBg img.mobile {
-        display: block;
-      }
-      
-      .banner .image.noBg img.screen {
-        display: none;
-      }
-    }
-       
-    .navbar {
-      background-color: #BF1D19;
-      border-radius: 0px;
-      padding: 0px;
-    }
-    
-    .navbar-header{
-      background-color: #fff;
-      height: 80px;
-    }
-    
-    .navbar-header .logo {
-      float: right;
-      margin-right: 10%;
-      margin-top: 20px;
-    }
     
     .nav >li {
       list-style: none;
@@ -250,18 +94,14 @@
       width: auto;
     }
     
-    .private, .search, .login, .company {
-      // NO USE!
-    }
-       
     .nav .private {
       background: #BF1D19 url("images/private.png") 12% 50% no-repeat;
     }
-       
+
     .nav .login {
       background: #BF1D19 url("images/login.png") 12% 48% no-repeat;
     }
-       
+    
     .nav .login a {
       padding-right: 15%;
     }
@@ -269,19 +109,14 @@
     .nav li.current {
       background-color: #DA291C;   
     }
-
-    .nav li.active a {
-      // NO USE!
-      //background: url("images/current.png") 65px  bottom no-repeat;
-    }
-       
+    
     .navbar .dropdown-menu {
       padding: 50px 10%;
       margin: 0;
       background-color: #fff;   
       box-shadow: 0px 14px 12px rgba(0, 0, 0, 0.176);
     }
-       
+    
     .navbar .dropdown-menu li {
       background: none;
       list-style-type: none;   
@@ -341,19 +176,19 @@
       font-size: 16px;
       display: block;   
     }
-        
+    
     .dropdown-menu>li.calc {
       background: url("images/calc.png") left top no-repeat;
     }
-     
+    
     .dropdown-menu .extraLinks .veiHelp {
       background: url("images/veihelp.png") left bottom no-repeat;
     }
-     
+    
     .dropdown-menu .extraLinks .damageHelp {
       background: url("images/damagehelp.png") left bottom no-repeat;
     }
-     
+    
     .dropdown-menu .extraLinks .benefits {
       background: url("images/benefits.png") left bottom no-repeat;
     }
@@ -365,7 +200,6 @@
 </head>
  
 <body>
-  <!-- <span class="codeButton"><button onclick="$('.code, .codeHelp').toggleClass('show'); $(this).toggleClass('pressed')">?</button></span> -->
   <div class="navbar navbar-default yamm">
     <div class="navbar-header col-md-5">
       <img src="images/logo.png" title="logo image" class="logo" />
@@ -506,7 +340,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row airgap">
       <div class="col-md-4 column">
         <div class="stb-box four">
           Some text goes in here
