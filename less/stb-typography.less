@@ -120,6 +120,14 @@ h6 {
   font-family: @font-family-sans-serif;
 }
 
+h1.link,
+h2.link,
+h3.link,
+h4.link,
+h5.link {
+  text-decoration:underline;
+}
+
 p {
   font-size: 16px;
   line-height: 22px;
@@ -158,6 +166,11 @@ blockquote {
   border-left: 5px solid @stb-primary-color;
 }
 
+p a,
+div a{
+  text-decoration: underline;
+}
+
 a, a:hover {
   color: @stb-secondary-charcoal;
   font-weight: bold;
@@ -180,8 +193,17 @@ a.help, a.help:hover, a.help:visited {
 }
 
 // Styling of ordered and unordered lists
-ul {
+ul, ol {
   padding-left: 0;
+
+}
+
+//Bold numbers in ordered lists
+ol.bold{
+  font-weight:bold;
+}
+ol li span.light {
+font-weight:normal;
 }
 
 // padding for sub-lists:
@@ -241,11 +263,6 @@ ul.stb,ol.stb {
     line-height: 22px;
   }  
 
-  h3 {
-    font-size: 14px;
-    line-height: 18px;
-  }   
-  
   p {
     font-size: 14px;
     line-height: 18px;
