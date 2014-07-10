@@ -1,16 +1,20 @@
 // Navigation at the top of page
 
-.navbar {
-  background-color: @stb-primary-color-darker;
-  border-radius: 0px;
+.navbar.navbar-default {
+  background: none;
   padding: 0px;
   height: 80px;
   border: 0px;
 }
 
+.navbar .container{
+	padding: 0;
+}
+
 .navbar-header {
   background-color: @stb-primary-white;
   height: 100%;
+  text-align: center;
 }
 
 .navbar-header .logo {
@@ -25,10 +29,17 @@
   width: 25%;
 }
 
+.navbar-default .navbar-nav>li:hover, 
+.navbar-default .navbar-nav >li:focus, 
+.navbar-default .navbar-nav >li a:active, 
+.navbar-default .navbar-nav >li a:hover {
+   color: #fff;
+ }
+
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus, 
-.navbar-default .navbar-nav >li >a:focus {
+.navbar-default .navbar-nav >li >a:focus, .navbar-default .navbar-nav >li >a:active {
   background: none;
   color: @stb-primary-white;
 }
@@ -81,22 +92,19 @@
 }
 
 .navbar .dropdown-menu {
-  padding-top: 48px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-bottom: 16px;
   margin: 0;
   background-color: #fff;   
   box-shadow: 0px 14px 12px rgba(0, 0, 0, 0.176);
+  border: none;
+  padding: 50px 0 50px 15%;
 }
 
 .navbar .dropdown-menu li {
   background: none;
-  list-style-type: none;   
+  list-style-type: none; 
 }
 
-.navbar .dropdown-menu li a {
-  color: #000;
+.navbar-default .navbar-nav .dropdown-menu li a {
   padding: 0;
   color: @stb-secondary-charcoal;
   line-height: 18px;
@@ -117,6 +125,16 @@
   font-weight: normal;
 }
 
+.dropdown-menu>li h4 {
+  height: 42px;
+  padding: 0px;
+}
+
+.dropdown-menu > li > h4.calc {
+  padding-left: 30px;
+  background: url("../images/calc.png") -6px -5px no-repeat;
+}
+
 .extraLinks {
   display: inline-block;
   clear: both;
@@ -127,25 +145,17 @@
 .dropdown-menu .extraLinks li {
   float: left;
   display:block;
-  padding: 10px 8px 0px 40px;
+  height: 30px;
+  padding: 6px 0px 0px 40px;
   margin-right: 8%;
 }
 
-.dropdown-menu>li h4 {
-  height: 42px;
-  padding: 0px;
-}
-
-.navbar .dropdown-menu > li.extraLinks ul li a, .dropdown-menu > li h4 {
+.navbar .dropdown-menu > li.extraLinks ul li a, 
+.dropdown-menu > li h4 {
   font-weight: bold;
   color: @stb-secondary-charcoal;
   font-size: 16px;
   display: block;   
-}
-
-.dropdown-menu > li > h4.calc {
-  padding-left: 30px;
-  background: url("../images/calc.png") -6px -5px no-repeat;
 }
 
 .dropdown-menu .extraLinks .veiHelp {
