@@ -344,6 +344,25 @@
             Tables are not to be used as a way to space out contents, but in some cases it is a good way to present lists of information. We have a version with hover-effect on rows, but keep in mind that this isn't too useful on touch devices.
           </p>
           <h4>Standard table</h4>
+           <p>Click on button to change header color:
+                    <div class="btn-group">
+                     <button type="button" class="btn" onclick="
+                     $('.stb-table').removeClass('forest sand dust moss nude');
+                     $('.stb-table').addClass('forest'); return false">Forest</button>
+                     <button type="button" class="btn" onclick="
+                     $('.stb-table').addClass('forest sand dust moss nude');
+                     $('.stb-table').addClass('sand');return false">Sand</button>
+                     <button type="button" class="btn" onclick="
+                     $('.stb-table').removeClass('forest sand dust moss nude'); 
+                     $('.stb-table').addClass('dust');return false">Dust</button>
+                     <button type="button" class="btn" onclick="
+                     $('.stb-table').removeClass('forest sand dust moss nude');
+                     $('.stb-table').addClass('moss');return false">Moss</button>
+                     <button type="button" class="btn" onclick="
+                     $('.stb-table').removeClass('forest sand dust moss nude');
+                     $('.stb-table').addClass('nude');return false">Nude</button>
+                   </div>
+              </p>
           <table class="stb-table">
             <thead>
               <tr>
@@ -387,7 +406,8 @@
           </table>
           
           <h4>Table with hover effect</h4>
-                    <table class="stb-table hoverable">
+
+          <table class="stb-table hoverable">
             <thead>
               <tr>
                 <th>Aksjefond</th>
@@ -616,8 +636,8 @@
                      $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude');
                      $('.stb-list-group .list-group-item').addClass('forest'); return false">Forest</button>
                      <button type="button" class="btn" onclick="
-                     $('.stb-list-group .list-group-item').addClass('forest sand dust moss nude');
-                     $('.stb-list-group .list-group-item').toggleClass('sand');return false">Sand</button>
+                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude');
+                     $('.stb-list-group .list-group-item').addClass('sand');return false">Sand</button>
                      <button type="button" class="btn" onclick="
                      $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude'); 
                      $('.stb-list-group .list-group-item').addClass('dust');return false">Dust</button>
