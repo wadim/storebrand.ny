@@ -1,5 +1,6 @@
 // Navigation at the top of page
 
+// Beginning desktop styling
 .navbar.navbar-default {
   background: none;
   padding: 0px;
@@ -21,7 +22,7 @@
   margin-top: 20px;
 }
 
-.nav >li {
+.nav > li {
   list-style: none;
   background-color: @stb-primary-color-darker;   
   height: 80px;
@@ -44,7 +45,7 @@
   color: @stb-primary-white;
 }
     
-.navbar .nav >li>a {
+.navbar .nav > li > a {
   color: @stb-primary-white;
   font-size: 15px;
   letter-spacing: 1px;
@@ -173,3 +174,151 @@
 .dropdown-menu .extraLinks .contact {
   background: url("../images/contact.png") left bottom no-repeat;
 }
+
+// Ending desktop styling
+
+// Beginning mobile styling
+@media screen and (max-width: 991px) {
+  body { 
+    padding-top: 82px; 
+  }
+
+  .navbar {
+    border: 0px;
+    min-height: 80px;
+  }
+  
+  .stb-logo-mobile {
+    padding-top: 20px;
+  }
+
+  .nav.navbar li {
+    float: left;
+  }
+
+  .header .navbar {
+    background-color: @stb-primary-color-darker;
+    border-radius: 0px;
+  }
+
+  .header .logo img {
+    float: right;
+    margin-top: 20px;
+  }
+
+  .dropdown-menu .nav-tabs > li > a {
+    color: @stb-primary-color-darker;
+    text-align: center;
+  }
+  
+  .dropdown-menu .nav-tabs > li > a:hover,
+  .dropdown-menu .nav-tabs > li.active > a:hover {
+    color: @stb-primary-white;
+    background: @stb-primary-color-darker;
+  }
+
+  .nav > li a:hover,
+  .nav > li a:active {
+    background: none;
+  }
+
+  .nav .open > a, .nav .open > a:hover, 
+  .nav .open > a:focus {
+    background: none;
+  }
+
+  .nav-tabs > li.active > a, 
+  .nav-tabs > li.active > a:hover, 
+  .nav-tabs > li.active > a:focus {
+    color: @stb-primary-color-darker;
+    border: 1px solid @stb-primary-color-darker;
+    border-bottom-color: transparent;
+  }
+
+  .panel-default > .panel-heading {
+    background-color: white;
+    padding: 1px 15px;
+  }
+
+  .panel-group .panel+.panel {
+    margin-top: 0;
+  }
+
+  .panel-default {
+    border-color: transparent;
+  }
+
+  #subMenu.dropdown-menu .transparent-btn {
+    width: 120px;
+    padding-top: 6px;
+    margin-top: 6px;
+    background: transparent;
+    border-style: solid;
+    border-width: 1px;
+    color: #000;
+  }
+  
+  #subMenu.dropdown-menu .transparent-btn:hover {
+    background: @stb-primary-color-darker;
+  }
+
+  li span.marker.active {
+    position: absolute;
+    top: 52px;
+    left: 10px;
+    display: inline-block;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #ccc;
+    border-left: 12px solid transparent;
+    border-bottom-color: rgba(255, 255, 255, 1);
+    content: '';
+  }
+
+  .navbar .dropdown-menu {
+    width: 95%;
+    box-shadow: 0 9px 12px rgba(0,0,0,0.175);
+    -webkit-box-shadow: 0 7px 12px rgba(0,0,0,0.175);
+    padding: 2px;
+  }
+
+  .navbar .nav > li > a {
+    position: relative;
+    border-radius: 0px;
+    display: block;
+    padding-left: 10px;
+  }
+  
+  #tabheader-privat,
+  #tabheader-bedrift {
+    padding: 0px 10px;
+  }
+    
+  .navbar .dropdown-menu .panel-group li {
+    float: none;
+  }
+  
+  .nav > li {
+    height: 80px;
+  }
+  
+  .nav > li.tab-box {
+    height: 45px;
+  }
+  
+  .nav > li.tab-box > a {
+    line-height: 40px;
+  }
+  
+  .nav >li:hover,
+  .nav >li:focus,
+  .nav >li a:active {
+    background-color: @stb-primary-color;
+  }
+  
+  .dropdown-menu .nav-tabs {
+    border-bottom: 1px solid @stb-primary-color-darker;
+    padding-left: 12px;
+  }
+
+}
+// Ending mobile styling
