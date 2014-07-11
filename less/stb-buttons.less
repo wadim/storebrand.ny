@@ -43,23 +43,6 @@
     }
   }
   
-  &.secondary {
-    .stbcolor-gray.fourth;
-    
-    &:hover, &:focus, &:active {
-      .stbcolor-gray.fifth;
-    }
-  }
-
-  &.alarm {
-    .stbcolor-primary .first;
-    .box-shadow(none);
-    
-    &:hover, &:focus, &:active {
-      .stbcolor-primary.first .darker;
-    }
-  }
-
   &.transparent{
     background: transparent;
     border-style: solid;
@@ -78,8 +61,18 @@
         background-color: rgba(0, 0, 0, 0.2);
       }
     }
-
+    
   }
+  
+  &.alarm {
+    .stbcolor-primary .first;
+    .box-shadow(none);
+    
+    &:hover, &:focus, &:active {
+      .stbcolor-primary.first .darker;
+    }
+    
+  }  
 
   &.link-icon {
     font-weight: normal;
