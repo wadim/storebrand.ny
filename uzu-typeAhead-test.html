@@ -1,50 +1,36 @@
 <!doctype html>
 <html>
   <head>
-    <title>Storebrand.ny typeahead</title>
+    <title>Storebrand.ny type-ahead example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/stb-main.css">
-        
-    
-  
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/stb-main.css"> 
     <script type="text/javascript" src="js/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="js/dist/tooltip.js"></script>
-    <script type="text/javascript" src="js/dist/affix.js"></script>    
-    <script type="text/javascript" src="js/dist/popover.js"></script>
-    <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
     <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
     <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
     <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
-    <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
-    <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
     <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>
 
- <style>
-
-
+<style>
 .tt-dropdown-menu,
 .gist {
   text-align: left;
 }
-
-
+      
 .table-of-contents li {
   display: inline-block;
   *display: inline;
   zoom: 1;
 }
-
+    
 .table-of-contents li a {
   font-size: 16px;
   color: #999;
 }
 
-
 /* site theme */
 /* ---------- */
-
 
 .typeahead,
 .tt-query,
@@ -55,8 +41,8 @@
   line-height: 30px;
   border: 2px solid #ccc;
   -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
   outline: none;
 }
 
@@ -70,8 +56,8 @@
 
 .tt-query {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .tt-hint {
@@ -87,11 +73,11 @@
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
   -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
 .tt-suggestion {
@@ -103,7 +89,6 @@
 .tt-suggestion.tt-cursor {
   color: #fff;
   background-color: #F2F2F2;
-
 }
 
 #multiple-datasets .league-name {
@@ -115,183 +100,166 @@
 .headline-search{
   padding-left: 10px;
   background-color: #CCCCCC;
-  border-radius:5px;
- 
+  border-radius:5px; 
 }
 
 #searchHit{
-width:100px;
-
+  width:100px;
 }
 
- </style>
-
-
+</style>
 
 <script>
-
 $(document).ready(function() {
-
-// the basics
-// ----------
-
-var substringMatcher = function(strs) {
-  return function findMatches(q, cb) {
-    var matches, substringRegex;
-
-    // an array that will be populated with substring matches
-    matches = [];
-
-    // regex used to determine if a string contains the substring `q`
-    substrRegex = new RegExp(q, 'i');
-
-    // iterate through the pool of strings and for any string that
-    // contains the substring `q`, add it to the `matches` array
-    $.each(strs, function(i, str) {
-      if (substrRegex.test(str)) {
-        // the typeahead jQuery plugin expects suggestions to a
-        // JavaScript object, refer to typeahead docs for more info
-        matches.push({ value: str });
-      }
-    });
-
-    cb(matches);
+  // the basics
+  // ----------
+  var substringMatcher = function(strs) {
+    return function findMatches(q, cb) {
+      var matches, substringRegex;
+      // an array that will be populated with substring matches
+      matches = [];
+      // regex used to determine if a string contains the substring `q`
+      substrRegex = new RegExp(q, 'i');
+      // iterate through the pool of strings and for any string that
+      // contains the substring `q`, add it to the `matches` array
+      $.each(strs, function(i, str) {
+        if (substrRegex.test(str)) {
+          // the typeahead jQuery plugin expects suggestions to a
+          // JavaScript object, refer to typeahead docs for more info
+          matches.push({ value: str });
+        }
+      });
+      cb(matches);
+    };
   };
-};
 
-var fond = ['Fond', 'Fondslister', 'Lær mer om fondsparing', '<span class="glyphicon glyphicon-picture"></span> Bærekraft', 'Kjøp fond',
+  var fond = ['Fond', 'Fondslister', 'Lær mer om fondsparing', '<span class="glyphicon glyphicon-picture"></span> Bærekraft', 'Kjøp fond',
               'Våre anbefalte fond', 'Delphi', 'Storebrandfondene', 'Kontakt fond', 'Start fondsparing', 'Chat om fond'
-];
+  ];
 
-var pensjon = ['<span class="glyphicon glyphicon-info-sign"></span> Lær om pensjon', 'Pensjonskalkulator', 'Kjøp pensjonssparing', 'Hva er pensjonssparing', 'Ditt pensjonstall',
+  var pensjon = ['<span class="glyphicon glyphicon-info-sign"></span> Lær om pensjon', 'Pensjonskalkulator', 'Kjøp pensjonssparing', 'Hva er pensjonssparing', 'Ditt pensjonstall',
               'Fripolise', 'Pensjosnsskolen', 'Folketrygden', 'Tjenestepensjon', 'Kontakt pensjon', 'Start pensjonssparing', 'Chat om pensjon', 'Spar til din pensjon',
               'Mitt pensjonstall', 'Tips til pensjon'
-];
+  ];
 
-var bank = ['Banksparing', 'Kort og kreditt', 'Mistet kort', 'Sperr kort', 'Visakort', 'Kredittkort',
+  var bank = ['Banksparing', 'Kort og kreditt', 'Mistet kort', 'Sperr kort', 'Visakort', 'Kredittkort',
               'Bli kunde', 'Kontakt banken', 'Priser og vilkær', 'Dagens renter', 'Søk boliglån', 'Start Banksparing', 'Chat om bank'
-];
+  ];
 
-var forsikring = ['<span class="glyphicon glyphicon-wrench"></span> Meld skade','Bilforsikring', 'Helesforsikring', 'Hytteforsikring', 'Tips om forsikring', 'Mine behov',
+  var forsikring = ['<span class="glyphicon glyphicon-wrench"></span> Meld skade','Bilforsikring', 'Helesforsikring', 'Hytteforsikring', 'Tips om forsikring', 'Mine behov',
               'Alt til bilen', 'Alt til barnet', 'Alt til huset', 'Kontakt forsikring', 'Chat om forsikring', 'Motorsykkelforsikring', 'Tilhengerforsikring', 'Uføreforsikring'
-];
+  ];
 
-var minside = ['Betal regning', 'Min oversikt', 'Mitt forbruk', 'Efaktura', 'Kort og kreditt', 'Anders Losvik', 'Bjørn Christian Tørrissen',
+  var minside = ['Betal regning', 'Min oversikt', 'Mitt forbruk', 'Efaktura', 'Kort og kreditt', 'Anders Losvik', 'Bjørn Christian Tørrissen',
               'Renter og vilkår', 'Mine kontoer', 'Mine innstillinger', 'Søk lån', 'Banksparing', 'Nettbank', '<span class="glyphicon glyphicon-lock"></span> Sikker chat - logg inn'
-];
+  ];
 
-
-
-
-$('#the-basics .typeahead').typeahead({
-hint: true,
-highlight: true,
-minLength: 3,
-limit: 10
-},
-
-{
-name: 'fond',
-displayKey: 'value',
-source: substringMatcher(fond),
-templates: {
-    header: '<h3 class="headline-search"><span class="glyphicon glyphicon-stats"></span> Fond</h3>'
-  }
-},
-
-{
-name: 'pensjon',
-displayKey: 'value',
-source: substringMatcher(pensjon),
-templates: {
-    header: '<h3 class="headline-search"><span class="glyphicon glyphicon-home"></span> Pensjon</h3>'
-  }
-},
+  $('#the-basics .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 3,
+    limit: 10
+  },
 
   {
-name: 'bank',
-displayKey: 'value',
-source: substringMatcher(bank),
-templates: {
-    header: '<h3 class="headline-search"><span class="glyphicon glyphicon-credit-card"></span> Bank</h3>'
-  }
-},
+    name: 'fond',
+    displayKey: 'value',
+    source: substringMatcher(fond),
+    templates: {
+      header: '<h3 class="headline-search"><span class="glyphicon glyphicon-stats"></span> Fond</h3>'
+    }
+  },
 
   {
-name: 'forsikring',
-displayKey: 'value',
-source: substringMatcher(forsikring),
-templates: {
-    header: '<h3 class="headline-search"><span class="glyphicon glyphicon-picture"></span> Forsikring</h3>'
-  }
-},
+    name: 'pensjon',
+    displayKey: 'value',
+    source: substringMatcher(pensjon),
+    templates: {
+      header: '<h3 class="headline-search"><span class="glyphicon glyphicon-home"></span> Pensjon</h3>'
+    }
+  },
 
   {
-name: 'minside',
-displayKey: 'value',
-source: substringMatcher(minside),
-templates: {
-    header: '<h3 class="headline-search"><span class="glyphicon glyphicon-user"></span> Min side</h3>'
-  }
-   
-});
+    name: 'bank',
+    displayKey: 'value',
+    source: substringMatcher(bank),
+    templates: {
+      header: '<h3 class="headline-search"><span class="glyphicon glyphicon-credit-card"></span> Bank</h3>'
+    }
+  },
 
+  {
+    name: 'forsikring',
+    displayKey: 'value',
+    source: substringMatcher(forsikring),
+    templates: {
+      header: '<h3 class="headline-search"><span class="glyphicon glyphicon-picture"></span> Forsikring</h3>'
+    }
+  },
 
+  {
+    name: 'minside',
+    displayKey: 'value',
+    source: substringMatcher(minside),
+    templates: {
+      header: '<h3 class="headline-search"><span class="glyphicon glyphicon-user"></span> Min side</h3>'
+    } 
+  });
 
-$('#the-basics .typeahead').bind('typeahead:selected', function() {   
-
- 
-  $('#showTrailer').html('<h3>Her viser vi dette over treffene for ' + $('#searchHit').val() + '</h3>');
-
-});
-
-
-$("#searchHit" ).bind({
+  $('#the-basics .typeahead').bind('typeahead:selected', function() {
+    $('#showTrailer').html('<h3>Her kan vi vise noe spesielt for valget ' + stripSpan($('#searchHit').val()) + '</h3>Og så kan vi vise Google-treffene under der igjen.');
+  });
+  
+  $("#searchHit" ).bind({
     click: function() {
       $(this).css('width','300px');
-     },
-     blur: function() {
+    },
+    blur: function() {
       $(this).css('width','100px');
       $(this).val("");
-     }
-});
+    }
+  });
 
 });
+
+function stripSpan(selectedTypeahead) {
+  if (selectedTypeahead.indexOf("<span") > 0) {
+    var startSpan = selectedTypeahead.indexOf("<span");
+    var endSpan = selectedTypeahead.indexOf("</span>");
+    return selectedTypeahead.substring(endSpan + 6, selectedTypeahead.length);
+  } else {
+    return selectedTypeahead;
+  }
+}
 
 </script>
-
 
 </head>
 
 <body>
-<br>
-<hr>
-<br>
 
-
-   <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                  <h1>Typeahead simple</h1>
-                  <div id="the-basics" class="pull-right">
-                    <input class="typeahead" id="searchHit" type="text" placeholder="Søk">
-                  </div>
-             </div>
-        </div>   
-        <div class="row">
-            <div class="col-md-12">       
-              <div id="showTrailer"></div>
-              <br>
-              <hr>
-              <br>
-              <p>Ikoner fungerer ikke på treff. Må i tilfellet kun åpne url direkte</p>
-            </div>
-   </div>  
-
-
-
-     
-
-
-  </body>
+  <br />
+  <hr>
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Typeahead simple</h1>
+        <div id="the-basics" class="pull-right">
+          <input class="typeahead" id="searchHit" type="text" placeholder="Søk">
+        </div>
+      </div>
+    </div>   
+    <div class="row">
+      <div class="col-md-12">       
+        <div id="showTrailer"></div>
+        <br />
+        <hr>
+        <br />
+        <p>
+          Ikoner fungerer ikke på treff. Må i så fall kun åpne url direkte</p>
+      </div>
+    </div>  
+  </div>    
+</body>
 </html>
