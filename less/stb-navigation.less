@@ -181,11 +181,11 @@
   display: block;   
 }
 
-.dropdown-menu .extraLinks .roadassistance {
+.dropdown-menu .extraLinks .roadAssistance {
   background: url("../images/roadassistance.png") left bottom no-repeat;
 }
 
-.dropdown-menu .extraLinks .damageHelp {
+.dropdown-menu .extraLinks .damageReport {
   background: url("../images/damagehelp.png") left bottom no-repeat;
 }
 
@@ -217,6 +217,10 @@
 
   .nav.navbar li {
     float: left;
+  }
+  
+  .nav > li > a:focus {
+    background-color: @stb-primary-color-darker;    
   }
 
   .header .navbar {
