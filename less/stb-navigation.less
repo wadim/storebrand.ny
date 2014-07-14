@@ -61,16 +61,19 @@
 .nav li.search {
   padding-top: 20px;
   padding-left: 4%;
+  text-align: right;
+  float: right;
 }
 
 .nav li.search input {
-  width: 40%;
+  width: 100%;
   background-color: @stb-primary-color;
   padding: 5px;
   border: none;
   height: 40px;
   float: left;
   display: inline-block;
+  outline: none;
 }
 
 .nav li.search button {
@@ -78,6 +81,9 @@
   width: 35%;
   border: none;
   background: @stb-primary-color url("../images/search.png") center 8px no-repeat;
+  position:relative;
+  top:-40px; 
+  right:0;
 }
 
 .nav .private {

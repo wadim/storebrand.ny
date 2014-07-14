@@ -10,6 +10,7 @@
   <script type="text/javascript" src="js/dist/jquery.min.js"></script>
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/extendedsearch.js"></script>
    
   <script>
     $(document).ready(function(){
@@ -51,7 +52,7 @@
 			<div id="navbar-collapse-grid" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav col-md-8">
 
-					<li class="dropdown private yamm-fw current col-md-3" id="menuheader-private">
+					<li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
 						<ul class="dropdown-menu" id="dropdown-private">
 							<li class="col-md-2">
@@ -133,14 +134,16 @@
 						</ul>
           </li>
 
-					<li class="dropdown company yamm-fw col-md-3"><a href="#"	data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+					<li class="dropdown company yamm-fw col-md-3 group"><a href="#"	data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-					<li class="dropdown login yamm-fw col-md-3"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+					<li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+				
 
-					<li class="search col-md-3"><input type="text" /> <button type="submit"></button></li>
+					<li class="search col-md-3"><input type="text" class="typeahead" /> <button type="submit"></button></li>
 				</ul>
 			</div>
 		</div>
+		<div class="col-md-6 column" style="padding-right: 0px; padding-left: 0px; position: absolute; top: 0px; right: 0px; width: 50%; height: 80px; background-color: #BF1D19; z-index: -10"></div>
   </div>
   <!-- End desktop menu -->
   
