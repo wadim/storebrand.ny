@@ -1,39 +1,36 @@
- 
- $(document).ready(function(){
-     $('.typeahead').focus(function()
-    			{
-    				//animation speed
-    				animSpeed = 800;
+$(document).ready(function(){
+	  $('.typeahead').focus(function()
+				{
+					//animation speed
+					animSpeed = 800;
 
-    		        //store the current width
-    				searchParentWidth = ($('.navbar-nav > li.search').css('width'));		
-    				
-    				//hide the menu
-    		      	$('.navbar-nav > li.group').toggle();
+			        //store the current width
+					searchParentWidth = $('.navbar-nav > li.search').css('width');		
+					
+					//since the width is given in pixels instead of percentage, we need to calculate it ourselves
+					searchParentWidthPercent = Math.ceil(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
+					
+					//give the text element a fixed size first
+					$('.typeahead').css('width',searchParentWidth);
+					
+					//hide the menu
+			      	$('.navbar-nav > li.group').toggle();
 
-    				//animate the typeahead's parent LI to the full available width
-    				$('.navbar-nav > li.search').animate({width:'100%'},animSpeed);
-    				
-    			}).blur(function()
-    			{
-    				searchParentWidth = parseInt(searchParentWidth) - 0.1;
+					//expand the search parent to take 100% of the available width
+					$('.navbar-nav > li.search').css('width','100%');
+					
+					//animate the textbox
+					$('.typeahead').animate({width:'100%'},animSpeed);
+					
+				}).blur(function()
+				{	
+					//reset the searchParent to the original width. The text box will fit on its own as its width is 100%.
+					$('.navbar-nav > li.search').animate({width:searchParentWidthPercent+'%'},animSpeed);			
+				
+				    //show the menu after the animation completes
+					setTimeout(function(){	
+						$('.navbar-nav > li.group').toggle();
+						}, animSpeed);
 
-    				//reset to the original widths
-    				$('.navbar-nav > li.search').animate({width:searchParentWidth},animSpeed);
-    			
-    				
-    			    //show the menu after the animation completes
-    				setTimeout(function(){	
-    					$('.navbar-nav > li.group').toggle();
-    					}, animSpeed);
-    			    	buttonWidthPercentage
-
-    					//$('.navbar-nav > li.group').css('display','block');
-    		      	//$('.navbar-nav > li.search').css('width',width);
-    			    /* lookup the original width */
-    		 		//var w = $(this).parent().attr('data-default');
-    			    //$(this).parent().  alert("lkjlø");
-    				//$('.navbar-nav li').css("background-color","red");
-    			});
-
+				});
 });
