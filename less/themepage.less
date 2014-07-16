@@ -1,9 +1,7 @@
 
     // CSS for the themepage
-     
-       @redcolor:#D9291C;
-       
-       
+		@import "stb-colors.less";
+		          
         .row .column {
             margin-bottom:20px;
         }
@@ -18,6 +16,7 @@
             width: 75%;
         }
         
+      
         .bannertheme{
         	height: 405px;
         }
@@ -28,13 +27,13 @@
         	right: 0;
         	width: 50%;
         	min-height: 405px;
+        	
         }
         
         .heroimage div{
         	width: 100%;
         	height: 100%;
         	background-repeat: no-repeat;
-        	
         }
         
         .heroimage-wide{
@@ -54,7 +53,7 @@
         
     
     	.pensionfigure{
-       		background-color: @redcolor;
+       		background-color: @stb-primary-color;
        		padding: 50px 0px;
        		color: #fff;
        		font-size: 24px;
@@ -77,13 +76,13 @@
        
        .pensionfigure button{
        		border: 1px solid #fff ;
-       		background-color: @redcolor;
+       		background-color: @stb-primary-color;
        		padding: 5px 12%; 
        		margin-top: 5%;
        }
         
       
-        .stages h2{
+        .stages h1{
         	text-align: center;
         	margin-bottom: 40px;
         }
@@ -94,7 +93,7 @@
         	padding-bottom: 80px;
         }
         
-        .stages .column, .theme .stages .column .stb-box{
+        .stages > div{
         	text-align: center;
         }
         
@@ -139,7 +138,7 @@
        		height: 582px;
        }
        .themeback h3{
-       		color: @redcolor;
+       		color: @stb-primary-color;
        		font-weight: bold;
        		font-size: 30px;
        		line-height: 40px;
@@ -153,51 +152,151 @@
        .rightimages{
        		padding-bottom: 65px;
        }
-       .rightimages .images{
-       		padding-top: 14px;
-       }
-       
-       .rightimages .images img:first-child{
-       		margin-bottom: 45px;
+       .rightimages p{
+       		margin-bottom: 14px;
+       		margin-top: 5px;
        }
        
        .rightimages h3{
        		font-weight: bold;
        }
        
-       footer.stb-footer a.stb-footer-link{
-    		text-decoration: none;
-    	}
+       
+      rightimages .images div:first-child{
+      		margin-bottom:45px;
+      }
 
-    	footer.stb-footer ul.stb{
-     		margin: 0px 0px 0px 0px;
-    	}
+	 .rightimages .image-caption {
+	 		display:block; 
+	 		margin:5px 0;
+	  }
 
-    	footer h4{
-       		color: #FFFFFF;
-       		padding: 12px 10px 10px 0;
-     	}
-     	
-     	footer h4{
-	        color: #FFFFFF;
-	        padding: 24px 10px 10px 0;
-	      }
-	    
+	 body a {
+	 		text-decoration:none;
+	  }
+
+	 .stages h3{
+	 		font-weight:700;
+	  }
+
+	 .num .bg {
+  			display:block;
+	  	background:#d9291c;
+	  	width:65px;
+	  	height:65px;
+	  	transform:rotate(45deg);-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);
+	  	margin:0 auto;
+	 }
 	
-	    @media (min-width: 767px) {
-	      .border-left{
-	        border-left: medium solid #BF1D19;
-	        margin-left: 20%;
-	        padding-left: 30%;
-	        height: 100%;
-	      }
+	.num .count {
+		color:#fff;
+		font-size:24px;
+		font-weight:700;
+		text-align:center;
+		display:block;
+		position:relative;
+		top:-50px;
+	 }
+       
+      @media screen and (max-width:992px){
+
+		.bannertheme {
+				width:100%;
+		}
+		
+		.bannertheme .heading {
+				min-height: 0px;
+		}
+		
+		.bannertheme .leftText .text{
+			margin-top: 0;
+		}
+		
+		.bannertheme h2 {
+				color:#de463a;
+		}
+		
+		.bannertheme .leftText .text{
+				width:100%;
+		}
+		
+		.heroimage{
+			clear:both;
+			position:static;
+			width:100%;
+			min-height:200px;
+		}
 	
-	      .border-right{
-	        border-right: medium solid #BF1D19;
-	        margin-right: 10%;
-	        height: 100%;
-	      }
-	    }
+		.pensionfigure .container, .pensionfigure .column { 
+			width:100%;
+			float:left; 
+		}
+		
+		.pensionfigure{
+			padding:0px 0 50px 0;
+		}
+		
+		.pensionfigure .leftText .text{
+			width:100%;
+		}
+		
+		.pensionfigure .image{ 
+			height: 350px; 
+			clear:both;
+			background-position:bottom center;
+		 }
+		 
+		.pensionfigure button{
+			width:100%;
+		}
+		
+		.themeback {
+			height:auto; 
+			padding-bottom:50px;
+		}
+		
+		.themeback .container {
+			width:100%;
+		}
+		
+		.themeback .leftText .text {
+			width:100%;
+		}
+		
+		.themeback .imageunder {
+			background-size:contain; 
+			height:200px;
+		}
+		
+		.themeback h3 {
+			margin-top: 150px;
+		}
+			
+		.rightimages .images div {
+			float:left;
+		}
+		
+		.rightimages .images img {
+			float:left; 
+			margin-right:5px;
+		}
+		
+		.stages a { 
+			border:1px solid; 
+			display: block; 
+			padding:10px 0;
+			font-weight:bold;
+		}
+		
+		.stages a p { 
+			display:inline; 
+			padding-left:5px;
+		}
+		
+		.stages .num { 
+			margin-top:30px;
+		}
+
+}
 	    
-	      
-     
+    
