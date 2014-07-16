@@ -11,35 +11,7 @@
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/extendedsearch.js"></script>
-   
-  <script>
-    $(document).ready(function(){
-    
-      $('.panel-group').on('show.bs.collapse', function (event) {
-        $(event.target).prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right')
-      });
-
-      $('.panel-group').on('hide.bs.collapse', function () {
-        $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right');
-      });
-
-      $(".dropdown").on("hide.bs.dropdown", function(){
-        $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-        $(this).find('span.marker').toggleClass('active');
-      });
-
-      $(".dropdown").on("show.bs.dropdown", function(){
-        $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-        $(this).find('span.marker').toggleClass('active');
-      });
-
-    });  
-
-    $(document).on('click', '.yamm .dropdown-menu', function(e) {
-      e.stopPropagation();
-    });
-</script>  
-
+  <script type="text/javascript" src="js/dist/stb-page-padding.js"></script> 
 </head>
  
 <body>
