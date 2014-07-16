@@ -175,10 +175,31 @@
   
 }
 
+// Various top and bottom gaps for all screen widths
 .width-75 {
   width: 75%;
 }
 
 .width-50 {
   width: 50%;
+}
+
+// Various top and bottom gaps for full width only
+
+.width-75-mdlg {
+  width: 75%;
+}
+
+.width-50-mdlg {
+  width: 50%;
+}
+
+@media screen and (max-width:992px) {
+  .width-75-mdlg {
+    width: 100%;
+  }
+
+  .width-50-mdlg {
+    width: 100%;
+  }
 }
