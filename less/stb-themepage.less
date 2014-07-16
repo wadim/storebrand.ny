@@ -1,0 +1,71 @@
+// CSS for the themepage template
+
+.theme-image {
+  padding: 0;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 50%;
+}
+
+.theme-image div {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.theme-image-wide {
+  background-size: cover; // This makes the image crop and fit automatically
+  background-position: center center;
+}
+
+.captioned-image {
+  margin: 0 12px;
+}
+
+.captioned-image .image-caption {
+  display: block; 
+	margin: 5px 0;
+  width: inherit;
+}
+
+
+@media screen and (max-width:992px) {
+  
+  .container .theme-banner {
+    width: 100%;
+  }
+  
+  .theme-banner .heading {
+    min-height: 0px;
+  }
+
+	.theme-banner .text {
+    margin-top: 0;
+  }
+  
+  .theme-banner h2 {
+    color: #de463a;
+  }
+  
+  .theme-banner .text {
+    width: 100%;
+  }
+  
+  .theme-image{
+    clear: both;
+    position: static;
+    width: 100%;
+    min-height: 200px;
+  }
+    
+  .captioned-image {
+    float: left;
+  }
+  
+  .captioned-image {
+    float: left; 
+    margin-right: 5px;
+  }
+
+}

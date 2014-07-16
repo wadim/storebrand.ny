@@ -1,38 +1,58 @@
 <!doctype html>
 <html>
 <head>
-<title>Grids - storebrand.no</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/stb-main.css">
-<link rel="stylesheet" type="text/css" href="css/yamm.css">
-<link rel="stylesheet" type="text/css" href="css/themepage.css">
-<link href="fonts/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<script type="text/javascript" src="js/dist/jquery.min.js"></script>
-<script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
-<script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/extendedsearch.js"></script>
-<script type="text/javascript" src="js/dist/stb-page-padding.js"></script> 
+  <title>Example - Theme template - Inngang til Ditt pensjonstall</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+  <link rel="stylesheet" type="text/css" href="css/yamm.css">
+  <link rel="stylesheet" type="text/css" href="css/themepage.css">
+  <link href="fonts/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/extendedsearch.js"></script>
+  <script type="text/javascript" src="js/dist/stb-page-padding.js"></script> 
 
-<script>
-	$(window).load(
-			function() {
-				$(".row .column").matchHeight(true);
-			
-			});
+  <!-- Start JavaScript for this page only -->
+  <script>
+    $("document").ready(function(){
+      $(".row .column").matchHeight(true);
+    })
+    
+    $(window).resize(function() {
+	    $(".row .column").matchHeight(true);
+    });
+  </script>
+  <!-- End of JavaScript for this page only -->
+  
+  <!-- Start CSS for this page only -->
+  <style>
+  .theme-image-wide {
+    background-image: url("images/1280x720test4.jpg");
+  }
+  
+  .container .theme-banner {
+    height: 405px;
+  }
+  
+  .theme-image {
+    min-height: 405px;
+  }
 
-	$(window).resize(function() {
-		$(".row .column").matchHeight(true);
-	});
-</script>
+  @media screen and (min-width:992px) {
+    .background > .image-beneath {
+      background: url("images/handandcup.png") right top no-repeat;
+      height: 581px;
+    }
+  }
+    
+  </style>
+  <!-- End of CSS for this page only --> 
 
 </head>
 
 <body>
-
-	<div>
-		<!-- Start top of page -->
-  
   <!-- Start desktop menu -->
 	<div class="navbar navbar-default hidden-xs hidden-sm desktop">
 		<div class="container yamm">
@@ -326,259 +346,253 @@
   </nav>  
   
   <!-- End mobile menu -->
-  <!-- End top of page -->
-		
-		<div class="bannertheme container">
-			<div class="row">
-				<div class="col-md-6 column heading">
-					<div class="stb-box leftText">
-						<div class="text">
-							<h1>Utsikten du skal ha hver morgen etter du slutter å jobbe</h1>
-							<p>Alle har et bilde av hvordan tilværelsen som pensjonist
-								skal bli. Gjør bildet til virkelighet.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 column heroimage">
-					<div class="heroimage-wide"></div>
-				</div>
-			</div>
-		</div>
 
+  <!-- Start of page contents -->
+  <div class="container theme-banner">
+	  <div class="row">
+		  <div class="col-md-6 column heading">
+			  <div class="stb-box width-75-mdlg top-gap-50-mdlg bottom-gap-50-mdlg">
+					  <h1>Utsikten du skal ha hver morgen etter at du slutter å jobbe.</h1>
+						<p>
+              Alle har et bilde av hvordan tilværelsen som pensjonist skal bli. Gjør bildet til virkelighet.
+              <br />
+            </p>
+        </div>
+      </div>
+      <div class="col-md-6 column theme-image">
+        <div class="theme-image-wide"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container top-gap-50-mdlg bottom-gap-20-mdlg">
+    <div class="row stages text-center bottom-gap-10">
+      <h2 class="top-gap-10 bottom-gap-30">Tre steder å starte</h2>
+      <div class="col-md-4">	  
+        <div class="numeric-diamond">
+          <span class="bg"></span>
+          <span class="count">1</span>
+        </div>        
+        <h3>Finn ditt pensjonstall</h3>
+        <p>Pensjonstallet er summen av folketrygden, pensjon fra arbeidsgiver og det du har spart selv. Det skal du leve av som pensjonist.</p>
+        <p>
+          <button class="stb-btn transparent light">Finn ditt pensjonstall</button>
+        </p>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="numeric-diamond">
+          <span class="bg"></span>
+          <span class="count">2</span>
+        </div>
+        <h3>Finn ditt pensjonstall</h3>
+        <p>Pensjonstallet er summen av folketrygden, pensjon fra arbeidsgiver og det du har spart selv. Det skal du leve av som pensjonist.</p>
+        <p>
+          <button class="stb-btn transparent light">Finn ditt pensjonstall</button>
+        </p>
+      </div>
 
-		<div class="container">
-			<div class="row stages">
-				<h1>Tre steder å starte</h1>
-			
-				      <div class="col-md-4">
-					  
-					    <div class="num">
-							<span class="bg"></span>
-							<span class="count">1</span>
-				        </div>
-						
-						<h3>Finne ditt pensjonstall</h3>
-				        <p>Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist</p>
-				        <a href="#">Hopp til<p>&laquo;Finne ditt Pensjonstall&raquo;</p></a>
-				      </div>
-				      <div class="col-md-4">
+      <div class="col-md-4">
+        <div class="numeric-diamond">
+          <span class="bg"></span>
+          <span class="count">3</span>
+        </div>
+        <h3>Finne ditt pensjonstall</h3>
+        <p>Pensjonstallet er summen av folketrygden, pensjon fra arbeidsgiver og det du har spart selv. Det skal du leve av som pensjonist.</p>
+        <p>
+          <button class="stb-btn transparent light">Finn ditt pensjonstall</button>
+        </p>
+      </div>    
+    </div>
+  </div>
 
-					  <div class="num">
-							<span class="bg"></span>
-							<span class="count">2</span>
-				        </div>
+  <div class="row stbcolor-primary first">
+    <div class="container top-gap-50-mdlg bottom-gap-50" >
+      <div class="col-md-6 column">
+        <div class="stb-box sixth width-75">
+          <div>
+            <h3>Ditt pensjonstall</h3>
+            <p>
+              Pensjonstallet er summen av folketrygden, pensjon fra arbeidsgiver og det du har spart selv. Det skal du leve av som pensjonist.
+            </p>
+            <button class="stb-btn transparent dark pull-right">Finn ditt pensjonstall</button>
+				  </div>
+        </div>
+      </div>
 
-						<h3>Finne ditt pensjonstall</h3>
-				         <p>Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist</p>
-				         <a href="#">Hopp til<p>&laquo;Finne ditt Pensjonstall&raquo;</p></a>
-				      </div>
-				      <div class="col-md-4">
-					  <div class="num">
-							<span class="bg"></span>
-							<span class="count">3</span>
-				        </div>
+      <div class="col-md-6 column">
+        <div>
+          <img class="img-responsive" src="images/pensionfigure.png" />
+        </div>
+      </div>
+    </div>
+  </div>
 
-					  <h3>Finne ditt pensjonstall</h3>
-				         <p>Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist</p>
-				         <a href="#">Hopp til<p>&laquo;Finne ditt Pensjonstall&raquo;</p></a>
-				      </div>
-			    
-  					</div>
-				
-			
-			</div>
-		</div>
+  <div class="row background wood" style="height: 581px;">
+    <div class="image-beneath">
+      <div class="container">
+        <div class="col-md-6 column">
+          <img class="hidden-md hidden-lg pull-right clear-fix" style="height: 300px;" src="images/handandcup.png" />
+          <div class="stb-box first  top-gap-50-mdlg">
+            <h3>Du bruker bare tre minutter på å begynne egen sparing til pensjon.</h3>
+            <p>Å drikke en halv kopp kaffe tar omtrent like lang tid.</p>
+            <p>Ta deg derfor tid til en kaffe &ndash; og til å komme igang med sparingen.</p>
+          </div>
+        </div>
+      </div>     
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="stb-box">
+          <h2>En eller annen tittel</h2>
+          <p class="intro">Vestibulum ante ipsum primis in faucibus orci luctus et ltrices posuere cubilia; Proin vel ante a orci tempus eleifend ut et magna.</p>
+          <h3>Eitam At Risus Et</h3>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+          aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+          exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+          commodo consequat.</p>
+        </div>
+      </div>
+      <div class="pull-right col-md-4">
+        <div>
+          <figure class="stb-figure">
+            <img src="images/271x271.png" alt="En tekst som beskriver bildet" class="img-responsive" title="Bilde med bildetekst oppå. Verre å plassere akkurat som man vil enn bilder med bildetekst under." />
+            <figcaption class="stb-caption">
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices poseuere.
+            </figcaption>
+          </figure> 
+        </div>
+      </div>
+    </div> 
 
-		<div class="row pensionfigure">
-			<div class="container">
-				<div class="col-md-6 column">
-					<div class="stb-box leftText">
-						<div class="text">
-							<h3>Ditt pensjonstall</h3>
-							<div>Pensjonstallet er summen av folketrygden,
-								tjenestepensjon og egen sparing. Dette er det du skal leve av
-								som pensjonist</div>
-							<button>Finn ditt pensjonstall</button>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-6 column">
-						<div class="image"></div>
-				</div>
-						
-			</div>
-		</div>
-		
-		<div class="row themeback">
-			<div class="imageunder">
-				<div class="container">
-					<div class="col-md-6 column">
-						<div class="stb-box leftText">
-							<div class="text">
-								<h3>Egen sparing til pensjon tar deg 3 minutter å starte</h3>
-								<div>Det er omtrent så lenge det tar deg å drikke en halv
-									kopp kaffe. Ta deg derfor tid til en kaffe- og å komme igang
-									med sparing</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="stb-box">    
+          <h3>Mauris laculis Porttitor Posuere</h3>
 
-		<div class="rightimages container">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+          aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+          exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+          commodo consequat. Duis autem vel eum iriure dolor in hendrerit
+          in vulputate velit esse molestie consequat, vel illum dolore eu
+          feugiat nulla facilisis at vero eros et accumsan et iusto odio
+          dignissim qui blandit praesent luptatum zzril delenit augue duis
+          dolore te feugait nulla facilisi.
+          <div class="captioned-image pull-left">
+            <img src="images/271x271_2.png" alt="Bilde med bildetekst under. Lett å fikse." />
+            <div class="image-caption">
+              Vestibulum ante ipsum primis in faucibus<br /> orci luctus et ultrices poseuere.
+            </div>
+          </div>
+          Nam liber tempor cum soluta
+          nobis eleifend option congue nihil imperdiet doming id quod mazim
+          placerat facer possim assum. Typi non habent claritatem insitam;
+          est usus legentis in iis qui facit eorum claritatem.
+          Investigationes demonstraverunt lectores legere me lius quod ii
+          legunt saepius. Claritas est etiam processus dynamicus, qui
+          sequitur mutationem consuetudium lectorum</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stb-box">
+          <div class="pull-right">
+            <img src="images/271x271_2.png" class="img-responsive" title="Det er viktig å skrive hva det er bilde av." width="271" height="271" /><span class="image-caption">
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices poseuere.</span>
+          </div>
+        </div>
+      </div>     
 
-			<div class="row">
-				<div class="col-md-8">
-					<div class="stb-box">
-						<h1>En eller annen tittle som innleder et artikkelstykke</h1>
-						<h3>Vestibulum ante ipsum primis in faucibus orci luctus et ltrices posuere cubilia; Proin vel ante a orci tempus eleifend ut et magna.</h3>
-						<h4>Eitam At Risus Et</h4>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-							sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-							aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-							exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
-							commodo consequat.</p>
-						<h4>Mauris laculis Porttitor Posuere</h4>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-							sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-							aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-							exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
-							commodo consequat. Duis autem vel eum iriure dolor in hendrerit
-							in vulputate velit esse molestie consequat, vel illum dolore eu
-							feugiat nulla facilisis at vero eros et accumsan et iusto odio
-							dignissim qui blandit praesent luptatum zzril delenit augue duis
-							dolore te feugait nulla facilisi. Nam liber tempor cum soluta
-							nobis eleifend option congue nihil imperdiet doming id quod mazim
-							placerat facer possim assum. Typi non habent claritatem insitam;
-							est usus legentis in iis qui facit eorum claritatem.
-							Investigationes demonstraverunt lectores legere me lius quod ii
-							legunt saepius. Claritas est etiam processus dynamicus, qui
-							sequitur mutationem consuetudium lectorum</p>
-					</div>
-				</div>
+     
 
+    </div>
+  </div>
+  <!-- End of page contents -->
 
-				<div class="images col-md-4">
-					<div class="stb-box">
-						<div><img src="images/271x271.png" title="" width="271" height="271" /><span class="image-caption">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices poseuere.</span></div>
-						<div><img src="images/271x271_2.png" title="" width="271" height="271" /><span class="image-caption">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices poseuere.</span></div>
-					</div>
-				</div>
-			</div>
-		</div>
+  <!-- Start footer -->  
+  <footer class="stbcolor-primary first stb-footer">
+    <div class="row toTop">
+      <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker">
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" style="line-height: 32px">Til toppen <span class="glyphicon glyphicon-arrow-up"></span> </a>
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" style="line-height: 32px">Til toppen <span class="glyphicon glyphicon-arrow-up"></span> </a>
+      </div>
+    </div>
+  
+    <div class="container">
 
+      <div class="row content">
+        <div class="col-sm-3 column info">
+          <div class="border-right">
+            <ul class="stb">
+              <li><span class="glyphicon glyphicon-globe"></span> <a class="stb-footer-link petit" href="#">Information in English</a></li>
+              <li><span class="glyphicon glyphicon-search"></span> <a class="stb-footer-link petit" href="#"> Søk</a></li>
+              <li><span class="glyphicon glyphicon-lock"></span> <a class="stb-footer-link petit" href="#">Logg inn</a></li>
+            </ul>
+            <h4>Alt innhold</h4>
+            <p class="petit">
+              <a class="stb-footer-link" href="#">A til Å / Kategorisert</a>
+            </p>
+          </div>
+        </div>
+    
+        <div class="col-sm-3 column contact">
+          <h4>Lurer du på noe?</h4>
+          <div class="row">
+            <div class="col-xs-6">
+              <p class="petit">Vi er tilgjengelige:</p>
+              <p class="petit">Mandag-fredag<br />08-16, bank til 20</p>
+              <p class="petit">Lørdag (kun bank)<br />09-15</p>
+            </div>
+            <div class="col-xs-6">
+              <span class="glyphicon glyphicon-earphone pull-left earphone"></span>
+              <div class="ring">
+                <p class="petit">
+                  <span class="pull-left">Ring: </span> <a class="stb-footer-link hidden-xs" href="tel:08880"><span>08880</span></a>
+                  <a class="visible-xs" href="tel:08880"><span class="stbcolor-primary first darker badge">08880</span></a>
+                  <br class="hidden-xs">Fra utlandet:<br />
+                  <a class="stb-footer-link hidden-xs" href="tel:+4791508880"><span>+47 915 08880</span></a>
+                  <a class="visible-xs" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47 915 08880</span></a>
+                </p>
+              </div>
+              <ul class="stb">
+                <li><span class="glyphicon glyphicon-envelope"></span><a class="stb-footer-link petit"  href="#"> Send e-post</a></li>
+                <li><i class="fa fa-weixin"></i><a class="stb-footer-link petit"  href="#"> Chat med oss</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-		<footer class="stbcolor-primary first stb-footer">
-			<div class="row" style="margin-right: 0">
-				<div
-					class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker">
-					<a href="#"
-						onclick="$('html, body').animate({ scrollTop: 0}, 1000);"
-						class="stb-footer-link hidden-xs" style="line-height: 32px">Til
-						toppen <span class="glyphicon glyphicon-arrow-up"></span>
-					</a> <a href="#"
-						onclick="$('html, body').animate({ scrollTop: 0}, 1000);"
-						class="stb-footer-link visible-xs pull-right"
-						style="line-height: 32px">Til toppen <span
-						class="glyphicon glyphicon-arrow-up"></span>
-					</a>
-				</div>
-			</div>
-			<div class="container">
-
-				<div class="row" style="margin-top: 24px; padding-bottom: 24px;">
-					<div class="col-sm-3 column">
-						<div class="border-right">
-							<ul class="stb" style="padding-top: 12px;">
-								<li><span class="glyphicon glyphicon-globe"></span> <a
-									class="stb-footer-link petit" href="#">Information in
-										English</a></li>
-								<li><span class="glyphicon glyphicon-search"></span> <a
-									class="stb-footer-link petit" href="#"> Søk</a></li>
-								<li><span class="glyphicon glyphicon-lock"></span> <a
-									class="stb-footer-link petit" href="#">Logg inn</a></li>
-							</ul>
-
-							<h4>Alt innhold</h4>
-							<p class="petit">
-								<a class="stb-footer-link" href="#">A til Å / Kategorisert</a>
-							</p>
-						</div>
-					</div>
-					<div class="col-sm-3 column">
-						<h4>Lurer du på noe?</h4>
-						<div class="row">
-							<div class="col-xs-6">
-								<p class="petit">Vi er tilgjengelige:</p>
-								<p class="petit">
-									Mandag-fredag<br>08:00-16:00<br>Bank: til 20.00
-								</p>
-								<p class="petit">
-									Lørdag (kun bank) <br>09:00-15:00
-								</p>
-							</div>
-							<div class="col-xs-6">
-								<span class="glyphicon glyphicon-earphone pull-left"
-									style="color: white;"></span>
-								<div style="padding-left: 18px;">
-									<p class="petit">
-										<span class="pull-left">Ring: </span> <a
-											class="stb-footer-link hidden-xs" href="tel:08880"><span>08880</span></a>
-										<a class="visible-xs" href="tel:08880"><span
-											class="stbcolor-primary first darker badge">08880</span></a> <br
-											class="hidden-xs">Fra utlandet:<br> <a
-											class="stb-footer-link hidden-xs" href="tel:+4791508880"><span>+47
-												915 08880</span></a> <a class="visible-xs" href="tel:+4791508880"><span
-											class="stbcolor-primary first darker badge ">+47 915
-												08880</span></a>
-									</p>
-								</div>
-
-								<ul class="stb" style="padding-top: 6px;">
-									<li><span class="glyphicon glyphicon-envelope"></span><a
-										class="stb-footer-link petit" href="#"> Send e-post</a></li>
-									<li><i class="fa fa-weixin"></i><a
-										class="stb-footer-link petit" href="#"> Chat med oss</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 col-xs-6 column">
-						<div class="border-left">
-							<h4>Sosiale medier</h4>
-							<ul class="stb">
-								<li><i class="fa fa-facebook-square"></i><a
-									class="stb-footer-link petit" href="#"> Facebook</a></li>
-								<li><i class="fa fa-twitter"></i><a
-									class="stb-footer-link petit" href="#"> Twitter</a></li>
-								<li><i class="fa fa-youtube-play"></i><a
-									class="stb-footer-link petit" href="#"> Youtube</a></li>
-								<li><span class="glyphicon glyphicon-user"></span><a
-									class="stb-footer-link petit" href="#"> Blogg</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3 col-xs-6 column">
-						<div class="border-left">
-							<h4>Mer Storebrand</h4>
-							<ul class="stb">
-								<li><a class="stb-footer-link petit" href="#"> Om
-										storebrand </a></li>
-								<li><a class="stb-footer-link petit" href="#"> Eiendom</a></li>
-								<li><a class="stb-footer-link petit" href="#"> Asset
-										Management</a></li>
-								<li><a class="stb-footer-link petit" href="#">
-										Personopplysninger</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</div>
+        <div class="col-sm-3 col-xs-6 column social">
+          <div class="border-left">
+          <h4>Sosiale medier</h4>
+            <ul class="stb">
+              <li><i class="fa fa-facebook-square"></i><a class="stb-footer-link petit" href="#"> Facebook</a></li>
+              <li><i class="fa fa-twitter"></i><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
+              <li><i class="fa fa-youtube-play"></i><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
+              <li><span class="glyphicon glyphicon-user"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-6 column more">
+          <div class="border-left">
+            <h4>Mer Storebrand</h4>
+            <ul class="stb">
+              <li><a class="stb-footer-link petit"  href="#"> Om Storebrand </a></li>
+              <li><a class="stb-footer-link petit"  href="#"> Eiendom</a></li>
+              <li><a class="stb-footer-link petit"  href="#"> Asset Management</a></li>
+              <li><a class="stb-footer-link petit"  href="#"> Personvern og cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </footer>
+  <!-- End of footer -->  
 
 </body>
 </html>

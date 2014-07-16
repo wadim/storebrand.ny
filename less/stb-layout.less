@@ -37,7 +37,32 @@
     .stbcolor-background .second;
   }   
 
- }    
+ }
+
+// Start of (slightly experimental) on-image caption with 2-3 lines of text
+figure.stb-figure {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 271px;
+  webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+figure.stb-figure > figcaption.stb-caption {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  font-size: 14px;
+  color: @stb-primary-white;
+  background-color: rgba(0,0,0,0.6);
+}
+// End of on-image caption
  
 //Adding top padding for wide color
   .top-pad {
