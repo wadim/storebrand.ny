@@ -199,7 +199,6 @@ a.help, a.help:hover, a.help:visited {
 // Styling of ordered and unordered lists
 ul, ol {
   padding-left: 0;
-
 }
 
 //Bold numbers in ordered lists
@@ -247,10 +246,9 @@ ul.stb,ol.stb {
 
 // End of styling of ordered and unordered lists
 
-//Mediaquery for typography
+// Media queries for typography
 
-
-//Small devices 
+// Small devices 
 @media (max-width: @screen-sm-min) {
   h1 {
     font-size: 24px;
@@ -288,3 +286,33 @@ ul.stb,ol.stb {
     }
   }
 }
+
+// Start styling of diamonds
+.numeric-diamond .bg {
+  display: block;
+  background: @stb-primary-color;
+  width: 65px;
+  height: 65px;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin: 0 auto;
+}
+
+.numeric-diamond .count {
+  color: @stb-primary-white;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  position: relative;
+  top: -50px;
+}
+
+@media screen and (max-width:992px) {
+  .numeric-diamond {
+    margin-top: 30px;
+	}
+}
+
+// End styling of diamonds
