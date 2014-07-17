@@ -6,7 +6,6 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/stb-main.css">
   <link rel="stylesheet" type="text/css" href="css/yamm.css">
-  <link rel="stylesheet" type="text/css" href="css/themepage.css">
   <link href="fonts/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script type="text/javascript" src="js/dist/jquery.min.js"></script>
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
@@ -36,7 +35,8 @@
     height: 405px;
   }
   
-  .theme-image {
+  .theme-banner,
+  .theme-image  {
     min-height: 405px;
   }
 
@@ -46,7 +46,6 @@
       height: 581px;
     }
   }
-    
   </style>
   <!-- End of CSS for this page only --> 
 
@@ -54,20 +53,19 @@
 
 <body>
   <!-- Start desktop menu -->
-	<div class="navbar navbar-default hidden-xs hidden-sm desktop">
-		<div class="container yamm">
-		  <div class="navbar-header col-md-4">
-				<img src="images/logo.png" title="logo image" class="logo">
-			</div>
-			<div id="navbar-collapse-grid" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav col-md-8">
-
-					<li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
+  <div class="navbar navbar-default hidden-xs hidden-sm desktop">
+    <div class="container yamm">
+      <div class="navbar-header col-md-4">
+        <img src="images/logo.png" title="logo image" class="logo">
+      </div>
+      <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav col-md-8">
+          <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
-						<ul class="dropdown-menu" id="dropdown-private">
-							<li class="col-md-2">
-							  <h4>Forsikring</h4>
-								<ul>
+            <ul class="dropdown-menu" id="dropdown-private">
+              <li class="col-md-2">
+                <h4>Forsikring</h4>
+                <ul>
                   <li><a href="#">Bilforsikring</a></li>
                   <li><a href="#">Husforsikring</a></li>
                   <li><a href="#">Innboforsikring</a></li>
@@ -77,10 +75,10 @@
                   <li><a href="#">Liv og helse</a></li>
                   <li><a href="#">Barneforsikring</a></li>
                 </ul>
-							</li>
-							<li class="col-md-2">
-							  <h4>Bank og lån</h4>
-								<ul>                    
+              </li>
+              <li class="col-md-2">
+                <h4>Bank og lån</h4>
+                <ul>                    
                   <li><a href="#">Bli bankkunde</a></li>
                   <li><a href="#">Konto og kort</a></li>
                   <li><a href="#">Ungdomskonto</a></li>
@@ -90,11 +88,11 @@
                   <li><a href="#">Boligkreditt</a></li>
                   <li><a href="#">Boliglån for unge</a></li>
                   <li><a href="#">Nettbank</a></li>
-								</ul>
-							</li>
-							<li class="col-md-2">
-								<h4>Pensjon</h4>
-								<ul>                  
+                </ul>
+              </li>
+              <li class="col-md-2">
+                <h4>Pensjon</h4>
+                <ul>                  
                   <li><a href="#">Egensparing til pensjon</a></li>
                   <li><a href="#">Ekstrapensjon</a></li>
                   <li><a href="#">IPS</a></li>
@@ -102,11 +100,11 @@
                   <li><a href="#">Pensjonskapitalbevis</a></li>
                   <li><a href="#">Fripolise</a></li>
                   <li><a href="#">Fripolise med investeringsvalg</a></li>
-							  </ul>
-							</li>
-							<li class="col-md-2">
-							  <h4>Sparing</h4>
-								<ul>
+                </ul>
+              </li>
+              <li class="col-md-2">
+                <h4>Sparing</h4>
+                <ul>
                   <li><a href="#">Spar i fond</a></li>
                   <li><a href="#">Spar i bank</a></li>
                   <li><a href="#">Spar til pensjon</a></li>
@@ -117,11 +115,11 @@
                   <li><a href="#">Fondspakker</a></li>
                   <li><a href="#">BSU-sparing</a></li>
                   <li><a href="#">Junior-sparing</a></li>
-							  </ul>
-							</li>
-							<li class="col-md-2">
-							  <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
-								<ul>
+                </ul>
+              </li>
+              <li class="col-md-2">
+                <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
+		  					<ul>
                   <li><a href="#">Lånekalkulator</a></li>
                   <li><a href="#">Ditt pensjonstall</a></li>
                   <li><a href="#">Pensjonsskolen</a></li>
@@ -129,31 +127,30 @@
                   <li><a href="#">Priser og vilkår</a></li>
                   <li><a href="#">Renter og priser</a></li>
                   <li><a href="#">Sperre kort</a></li>
-                  <li><a href="#">Nyheter og rapporter</a></li>									
-							  </ul>
-							</li>
-              
+                  <li><a href="#">Nyheter og rapporter</a></li>
+                </ul>
+              </li>
               <li class="extraLinks">
-							  <ul>
-								  <li class="roadAssistance"><a href="#">Veihjelp</a></li>
-									<li class="damageReport"><a href="#">Meld skade</a></li>
-									<li class="benefits"><a href="#">Få fordeler</a></li>
-									<li class="contact"><a href="#">Kontakt oss</a></li>
-								</ul>
-							</li>
-						</ul>
+                <ul>
+                  <li class="roadAssistance"><a href="#">Veihjelp</a></li>
+                  <li class="damageReport"><a href="#">Meld skade</a></li>
+                  <li class="benefits"><a href="#">Få fordeler</a></li>
+                  <li class="contact"><a href="#">Kontakt oss</a></li>
+                </ul>
+              </li>
+            </ul>
           </li>
-
-					<li class="dropdown company yamm-fw col-md-3 group"><a href="#"	data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
-
-					<li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
-				
-
-					<li class="search col-md-3"><input type="text" class="typeahead" /> <button type="submit"></button></li>
-				</ul>
-			</div>
-		</div>
-		<div class="col-md-6 column rightColor"></div>
+          
+          <li class="dropdown company yamm-fw col-md-3 group"><a href="#"	data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+        
+          <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        
+          <li class="search col-md-3"><input type="text" class="typeahead" /> <button type="submit"></button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 column rightColor">
+    </div>
   </div>
   <!-- End desktop menu -->
   
@@ -349,14 +346,14 @@
 
   <!-- Start of page contents -->
   <div class="container theme-banner">
-	  <div class="row">
-		  <div class="col-md-6 column heading">
-			  <div class="stb-box width-75-mdlg top-gap-50-mdlg">
-					  <h1>Utsikten du skal ha hver morgen etter at du slutter å jobbe.</h1>
-						<p>
-              Alle har et bilde av hvordan tilværelsen som pensjonist skal bli. Gjør bildet til virkelighet.
-              <br />
-            </p>
+    <div class="row">
+      <div class="col-md-6 column heading">
+        <div class="stb-box width-75-mdlg top-gap-50-mdlg">
+          <h1>Utsikten du skal ha hver morgen etter at du slutter å jobbe.</h1>
+          <p>
+            Alle har et bilde av hvordan tilværelsen som pensjonist skal bli. Gjør bildet til virkelighet.
+            <br />
+          </p>
         </div>
       </div>
       <div class="col-md-6 column theme-image">
@@ -365,7 +362,7 @@
     </div>
   </div>
   
-  <div class="container top-gap-70-mdlg bottom-gap-20-mdlg">
+  <div class="container bottom-gap-20-mdlg">
     <div class="row stages text-center bottom-gap-10">
       <h2 class="bottom-gap-30">Tre steder å starte</h2>
       <div class="col-md-4">	  
@@ -408,7 +405,7 @@
 
   <div class="stbcolor-primary first">
     <div class="container">
-      <div class="col-md-6 column">
+      <div class="col-md-6 top-gap-30">
         <div class="stb-box sixth width-75">
           <div>
             <h3>Ditt pensjonstall</h3>
@@ -416,11 +413,11 @@
               Pensjonstallet er summen av folketrygden, pensjon fra arbeidsgiver og det du har spart selv. Det skal du leve av som pensjonist.
             </p>
             <button class="stb-btn transparent dark">Finn ditt pensjonstall</button>
-				  </div>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-6 column bottom-gap-50">
+      <div class="col-md-6 top-gap-30 bottom-gap-50">
         <div>
           <img class="img-responsive" src="images/pensionfigure.png" />
         </div>
@@ -440,7 +437,7 @@
           </div>
         </div>
         <div class="col-sm-4 col-xs-4">
-          <img class="img-responsive hidden-md hidden-lg" style="width:100%;" src="images/handandcup.png" />
+          <img class="img-responsive hidden-md hidden-lg" src="images/handandcup.png" />
         </div>
       </div>     
     </div>
