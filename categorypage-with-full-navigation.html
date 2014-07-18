@@ -1,12 +1,11 @@
 <!doctype html>
 <html>
 <head>
-  <title>Category page with full navigation - storebrand.no</title>
+  <title>Example - Category template - Pension</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/stb-main.css">
   <link rel="stylesheet" type="text/css" href="css/yamm.css">
-  <link rel="stylesheet" type="text/css" href="css/stb-category.css">
   <link href="fonts/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script type="text/javascript" src="js/dist/jquery.min.js"></script> 
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
@@ -15,18 +14,35 @@
   <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
   <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
   <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
- 
+
+  <!-- Start JavaScript for this page only -->
+  <script>
+    $("document").ready(function(){
+      $(".row .column").matchHeight(true);
+    })
+    
+    $(window).resize(function() {
+	    $(".row .column").matchHeight(true);
+    });
+  </script>
+  <!-- End of JavaScript for this page only -->
+  
+  <!-- Start CSS for this page only -->
+  <style>
+    .category-banner .image {
+	    background: transparent url("images/chalkdust1.png") left top no-repeat;
+    }
+    
+    .righticon {
+      position: absolute;
+      top: 50%;
+      right:20%;
+    }
+  </style>
+  <!-- End of CSS for this page only -->   
+
 </head>
  
-   <script>
-	    $("document").ready(function(){
-	      $(".row .column").matchHeight(true);
-	    })
-	    
-	    $(window).resize(function() {
-		    $(".row .column").matchHeight(true);
-	    });
-  </script>
 <body>
   <!-- Start top of page -->
   
@@ -328,127 +344,151 @@
   <!-- Start actual page contents -->
   
 <div class="category-banner stbcolor-secondary first">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 top-margin-50-mdlg">
-				<h1>Pensjon</h1>
-				<p class="intro">Fremtidens pensjonister får mindre fra staten og arbeidsgiver. Derfor du må de fleste spare mer på egenhand. Her kan du starte pensjonsparing , beregne ditt pensjonstall og få gode råd om hvordan du får bedre pensjon- helt enkelt</p>
-			</div>
-			<div class="col-md-6 image">
-				<img class="img-responsive" src="images/categorybannerimage.png" alt="category banner image" title="category bannner image"/>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 top-margin-50-mdlg">
+        <div class="stb-box dark">
+        <h1>Pensjon</h1>
+        <p class="intro">
+          Fremtidens pensjonister får mindre fra staten og arbeidsgiver. Derfor må de fleste spare mer selv. Her kan du starte pensjonsparing, beregne ditt pensjonstall og få gode råd om hvordan du får bedre pensjon &ndash; helt enkelt
+        </p>
+        </div>
+      </div>
+      <div class="col-md-6 image">
+        <img class="img-responsive" src="images/categorybannerimage.png" alt="category banner image" title="category bannner image"/>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="container savepension top-padding-40-mdlg bottom-padding-40">
-	<div class="row">
-		<div class="col-md-12 bottom-margin-20">
-			<h2> Start pensjonsparing</h2>
-			<p class="width-50 intro">Jo tidligere du kommer i gang, jo mer har du  å hente på sparingen . Her kan du enkelt finne den spareformen som er mest effektiv for deg </p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 top-margin-20" >
-			<hr>
-			<div class="row">
-			 	<div class="col-xs-10 column">
-			 		<h3>Ekstrapensjon</h3>
-					<ul class="stb">
-						<li> Ingen binding, ta ut pengene når du vil </li>
-						<li> Tilgang til våre beste fond </li>
-						<li> Har din arbeidsgiver pensjonsavtale i Storebrand, får du vår beste pris gjennom Storebrand fordel </li>
-					</ul>
-			 	</div>
-			 	<div class="col-xs-2 column">
-			 		<span class="glyphicon glyphicon-arrow-right righticon"></span>
-			 	</div>
-				
-			</div>
-				
-			<hr>
-		</div>
-		<div class="col-md-6 top-margin-20">
-			<hr class="hidden-xs hidden-sm">
-			<div class="row">
-				<div class="col-xs-10 column">
-					<h3>Individuell Pensjonssparing (IPS)</h3>
-					<ul class="stb">
-						<li> Spar til pensjon og samtidig få skattefordeler </li>
-						<li> Du får 4050 kroner i redusert skatt om du sparer  15000 kroner per år </li>
-						<li> Pengene er bundet til pensjon , og beskattes som inntekt </li>
-					</ul>
-				</div>
-				<div class="col-xs-2 column">
-		 			<span class="glyphicon glyphicon-arrow-right righticon"></span>
-		 		</div>
-			</div>
-			
-			<hr>
-		</div>
-	</div>
+<div class="container top-padding-40-mdlg bottom-padding-40">
+  <div class="row">
+    <div class="col-md-12 bottom-margin-20">
+      <h2 class="stb-font">Start pensjonsparing</h2>
+      <p class="width-75-mdlg intro">
+        Jo tidligere du kommer i gang, jo mer rekker du å spare. Her kan du enkelt finne den spareformen som er mest effektiv for deg.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 top-margin-20" >
+      <hr class="fat" />
+      <div class="row">
+        <div class="col-xs-10 column">
+          <h3>Ekstrapensjon</h3>
+          <ul class="stb">
+            <li>Ingen binding &ndash; ta ut pengene når du vil</li>
+            <li>Tilgang til våre beste fond</li>
+            <li>Du får vår beste betingelser gjennom Storebrand Fordel, hvis din arbeidsgiver har pensjonsavtale i Storebrand.</li>
+          </ul>
+        </div>
+        <div class="col-xs-2 column">
+          <span class="glyphicon glyphicon-arrow-right righticon"></span>
+        </div>
+      </div>
+      <hr class="fat" />
+    </div>
+    <div class="col-md-6 top-margin-20">
+      <hr class="fat hidden-xs hidden-sm" />
+      <div class="row">
+        <div class="col-xs-10 column">
+          <h3>Individuell pensjonssparing</h3>
+          <ul class="stb">
+            <li>Du får skattefordeler ved å spare til pensjon.</li>
+            <li>Du får årlig 4&nbsp;050 kroner i redusert skatt ved å spare 15&nbsp;000 kroner.</li>
+            <li>Pengene er bundet til pensjon og beskattes som inntekt.</li>
+          </ul>
+        </div>
+        <div class="col-xs-2 column">
+          <span class="glyphicon glyphicon-arrow-right righticon"></span>
+        </div>
+      </div>
+      <hr class="fat" />
+    </div>
+  </div>
 </div>
 
-<div class="pensionfigure stbcolor-gray second top-padding-50-mdlg bottom-padding-50">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<h2>Hva er ditt pensjonstall?</h2>
-				<p class="intro">Vet du hva du kan forvente å få i pensjon og hvor lenge du må stå  i arbeid? Her kan du beregne ditt pensjonstall og se hvilken effekt et lite sparebløp  kan ha</p>
-				
-			</div>
-			<div class="col-md-6">
-				<h3>Når vil du gå av med pensjon?</h3>
-				<div>
-					Placeholder
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="stbcolor-secondary sixth top-padding-50-mdlg bottom-padding-50">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="stb-font">Hva er ditt pensjonstall?</h2>
+        <p class="intro">
+          Vet du hva du kan forvente å få i pensjon når du planlegger å pensjonere deg? Her kan du beregne ditt pensjonstall og se hvilken effekt selv bare et lite sparebeløp kan gi.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h3>Når vil du gå av med pensjon?</h3>
+        <div>
+          <p>
+            Her kunne det vært et par skyvedingser og en liten kalkulator, hvis vi hadde hatt en sånn.
+          </p>
+          <p>
+            <button class="stb-btn top-margin-20-mdlg">Gå videre og beregn</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container top-padding-40-mdlg bottom-padding-50">
-	<div class="row">
-			<div class="col-md-6">
-				<h2>6 gode  råd til bedre pensjon</h2>
-				<p class="intro">Det er flere enkle grep du kan gjøre for å få  en bedre pensjon. Vi har samlet det du bør tenke på å gjøre i dag.</p>
-				<ol class="stb top-padding-20 bottom-padding-20">
-					<li>Finn ditt pensjonstall</li>
-					<li>endre din spareprofil</li>
-					<li>Samle pensjonakapitalbevis på et sted</li>
-					<li>Start en forsiktig spareavtale</li>
-					<li>Bytt til Fripolise med Investerinsvalg(FMI)</li>
-					<li>Har du sjekket kundefordelene dine?</li>
-				</ol>
-				<div class="stb-box third top-margin-50 border gray fat">
-					<div class="row">
-						<div class="col-xs-4">
-							<img class="col-4 img-responsive" alt="contactus image" title="contactus image" src="images/contactus.png"/>
-						</div>
-						<div class="col-xs-8">
-							<p class="intro">kontakt oss for en gjerne ta en prat</p>
-							<p>Ring <strong>08880</strong></p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				 <h2>Har du hatt flere arbeidsgivere?</h2>
-		         <p> Du har flere fripoliser eller pensjonskapitalbevis(PKB). Detter er dine penger - det er dine oppsparte pensjonsmidler fra en tidligere arbeidsgiver- og du bør vite hvor de ligger og hva de består av.</p>
-		         <p> Innen 2014 kan mange også  bytte sine vanlige fripoliser til fripolise med investeringsvalg. Du får større råderett over pengene dine og mulighet til å øke din pensjon</p>  
-		         <div class="stb-box top-margin-50 border red fat">
-		         	<img class="img-responsive" src="images/helpimage.png" alt="helpimage" title="helpimage"/>
-		         	<h3>Skal du bare?</h3>
-		         	<p class="intro"> vi hjelper deg  med å lofte hodet og tenke fremover</p>
-		         	<p>Alt vi gjør handler om p sikre oss selv og våre nærmeste. Når du investerer i bolig, forsikrer deg mot alvorlige sykdommer eller starter en lansiktig spareavtale , hendeler det egentlig om at du vil gå en forutsigbar og trygg fremtid i møte. Vi hjelper deg med å få overblikk over i dag , og å lofte hodet og tenke fremovee </p>
-		         </div>
-			</div>
-		</div>
+  <div class="row">
+  
+    <div class="col-md-6">
+      <h2 class="stb-font">6 gode råd som gir bedre pensjon</h2>
+      <p class="intro">
+        Du kan selv gjøre mye for å få en bedre pensjon. Her er det du bør gjøre i dag:
+      </p>
+      <ol class="stb top-padding-20 bottom-padding-20">
+        <li>Finn ditt pensjonstall.</li>
+        <li>Velg riktig spareprofil for deg.</li>
+        <li>Hvis du har opptjent pensjon fra flere arbeidsgivere; samle pensjonen din ett sted.</li>
+        <li>Start en forsiktig spareavtale.</li>
+        <li>Bytt til fripolise med investeringsvalg.</li>
+        <li>Sjekk hvilke kundefordeler du har.</li>
+      </ol>
+      <div class="stb-box third top-margin-50 border gray fat">
+        <div class="row">
+          <div class="col-xs-4">
+            <img class="col-4 img-responsive" alt="Bilde av kundebehandler og kunde" title="Kontakt oss!" src="images/contactus.png" />
+          </div>
+          <div class="col-xs-8">
+            <p class="intro">
+              Kontakt oss gjerne for å ta en prat.
+            </p>
+            <p>
+              Ring <strong>08880</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <h2 class="stb-font">Har du hatt flere arbeidsgivere?</h2>
+      <p>
+        Du kan ha flere fripoliser eller pensjonskapitalbevis (PKB). Det er dine penger, dine oppsparte pensjonsmidler fra forskjellige jobber du har hatt, og du bør vite hvor du har dem og hva de består av.
+      </p>
+      <p>
+        Fra høsten 2014 av kan mange også bytte ut sine gamle fripoliser med noe som heter fripolise med investeringsvalg. Det gir deg større råderett over pengene dine. Du kan velge å si nei takk til en forholdsvis lav garantert årlig avkastning, og i stedet plassere pengene dine sånn at du ved å ta litt mer risiko får mulighet til å få en høyere pensjon.
+      </p>
+      <div class="stb-box fat red border top-margin-40">
+        <img class="img-responsive" src="images/helpimage.png" alt="Bilde av økt avkastning" title="Trenger du en time på pensjonsskolen?"/>
+        <h3>Skal du bare?</h3>
+        <p class="intro">
+          Vi hjelper deg med å løfte hodet og å tenke fremover
+        </p>
+        <p>
+          Alt du gjør handler om å sikre deg selv og dine nærmeste. Du kjøper kanskje en bolig, du forsikrer deg mot sykdom eller du starter en langsiktig spareavtale. Alt handler om at du vil gå en forutsigbar og trygg fremtid i møte. Alt dette, og mer, kan vi hjelpe deg med.
+        </p>
+      </div>
+	  </div>
+  </div>
 </div>
 
- 
   <!-- End actual page contents -->  
-  
+
   <!-- Start responsive footer -->
   <footer class="stbcolor-primary first stb-footer">
     <div class="row toTop">
