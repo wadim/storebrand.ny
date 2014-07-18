@@ -28,7 +28,7 @@ table.stb-table {
   // Extra padding-right at right end of table
   tr td:last-child, thead tr th:last-child {
     padding-right: 12px;
-  }   
+  }  
 }
 
 .hoverable {
@@ -46,57 +46,41 @@ table.stb-table {
   } 
  }
 
-//White background
- .white-bg{
-     tr{
+// White background
+ .white-bg {
+     tr {
       background-color: @stb-primary-white;
     }
 } 
 
-//Colors of tableheader
-.forest th{
-      background-color: @stb-secondary-forest;
-      color: @stb-primary-white;
-      border: solid;
-      border-color: @stb-secondary-forest;
+// Color themes for table header
+
+table.forest > thead > tr {
+  border: none;
+  background-color: @stb-secondary-forest;
+  color: @stb-primary-white;
 }
 
-.moss th{
-      background-color: @stb-secondary-moss;
-      color: @stb-primary-white;
-      border: solid;
-      border-color: @stb-secondary-moss;
+table.sand > thead > tr {
+  border: none;
+  background-color: @stb-secondary-sand;
+  color: @stb-primary-black; 
 }
 
-.nude th{
-      background-color: @stb-secondary-nude;
-      color: @stb-primary-white;
-      border: solid;
-      border-color: @stb-secondary-nude;
+table.dust > thead > tr {
+  border: none;
+  background-color: @stb-secondary-dust;
+  color: @stb-primary-white;
 }
 
-.dust th{
-      background-color: @stb-secondary-dust;
-      color: @stb-primary-white;
-      border: solid;
-      border-color: @stb-secondary-dust;
+table.moss > thead > tr {
+  border: none;
+  background-color: @stb-secondary-moss;
+  color: @stb-primary-white;  
 }
 
-.sand th{
-      background-color: @stb-secondary-sand;
-      color: @stb-primary-black;
-      border: solid;
-      border-color: @stb-secondary-sand;
+table.nude > thead > tr {
+  border: none;
+  background-color: @stb-secondary-nude;
+  color: @stb-primary-white;
 }
-
-.red th{
-      background-color: @stb-primary-color;
-      color: @stb-primary-white;
-      border: solid;
-      border-color: @stb-primary-color;
-}
-
-
-
-
-  

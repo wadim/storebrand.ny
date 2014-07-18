@@ -184,11 +184,12 @@
       </div> <!-- /Colors Row -->
 
       <hr class="airgap" />
+      
      
       <div class="row"> <!-- Typography Headers row-->
         <div class="col-md-3">
           <h2>Typography / Headers</h2>
-          (Done-ish)
+          (Done)
         </div>
         <div class="col-md-9">
           <p><strong>Open Sans</strong> is the standard font on storebrand.no. Arial is the preferred fallback.</p>
@@ -213,11 +214,12 @@
       </div> <!-- /Typography / Headers row -->
 
       <hr class="airgap" />
+      
 
       <div class="row">
         <div class="col-md-3">
           <h2>Typography / Text</h2>
-          (Done-ish)
+          (Done)
         </div>
         <div class="col-md-9">
           <h3>Lead paragraph</h3>
@@ -240,25 +242,37 @@
           <code>font-size: 12px; line-height: 16px;</code>
           <br />
           <br />
+          <h3>Blockquote</h3>
+          <p>
+            A blockquote is used to quote someone, and is shown with a solid 5px bar in Storebrand red to its left.
+          </p>
           <blockquote>
-            And here's a standard blockquote.<br />
+            <p>And here's a standard blockquote.</p>
             <small>Yours truly</small>
-          </blockquote>          
+          </blockquote>
+          <strong>Code:</strong><br />
+          <pre class="prettyprint">
+&lt;blockquote&gt;
+  &lt;p&gt;And here's a standard blockquote.&lt;/p&gt;
+  &lt;small&gt;Yours truly&lt/small&gt;
+&lt;/blockquote&gt;
+          </pre>
         </div>
       </div> <!-- /Typography / Text row -->
 
-      <hr class="airgap" />      
+      <hr class="airgap" />     
+      
       
       <div class="row">
         <div class="col-md-3">
           <h2>Typography / Links</h2>
-          (Done-ish)
+          (Done-ish, only plain text links are defined.)
         </div>
         <div class="col-md-9">
           <div class="row">
             <div class="col-md-12">
               <p>
-                <strong>In-line text link</strong> example ("invest" and "long run"):<br />
+                Here's an <strong>in-line text link</strong> example ("invest" and "long run"):<br />
               </p>
               <p>
                 «Storebrand will usually <a href="#3">invest</a> in ways that benefit the planet in the <a href="#3">long run</a>.»
@@ -274,9 +288,10 @@
                 <a href="#3" style="color: #776654;">http://www.storebrand.no/</a> (dust)
               </p>
               <p>
-                <strong>Code:</strong> <code>&lt;a href="..."&gt;...&lt;/a&gt;</code>
+                <strong>Code:</strong> No special tagging, just <code>&lt;a href="..."&gt;...&lt;/a&gt;</code>
               </p>
-              <p>More examples:</p>
+              <hr />
+              <p>The following examples are not updated with the new design:</p>
             </div>
           </div>
           <div class="row">
@@ -316,56 +331,96 @@
       <div class="row">
         <div class="col-md-3">
           <h2>Typography / Lists</h2>
-          (Done-ish)
+          (Done)
         </div>
         <div class="col-md-9">
+          <p>We don't do much with lists, only adjusting the font sizing somewhat to improve responsive readability.</p>
           <ul class="stb">
             <li>See what a list looks like.
-            <li>font-size: 16px; line-height: 22px;
+            <li>CSS: font-size: 16px; line-height: 22px;
               <ol class="stb">
                 <li>Sub/child-lists, ordered or unordered, can also be used.</li>
-                <li>font-size: 16px; line-height: 22px;</li>
+                <li>CSS: font-size: 16px; line-height: 22px;</li>
               </ol>
             </li>
             <li>This concludes what you need to know about unordered lists.</li>
           </ul>
-          Note: Always use classname <code>stb</code> on normal lists (<code>ul/ol</code>), to avoid crashing with menu-items and other custom lists. <br />
+          
+          <p>Note: Always use classname <code>stb</code> on normal lists (<code>ul/ol</code>), to avoid clashing with menu-items and other custom lists: </p>
           <strong>Code:</strong> <code>&lt;ul class="stb"&gt;...&lt;/ul&gt;</code>
 
         </div>
       </div> <!-- /Typography / Lists row -->
 
       <hr class="airgap"/>
+      
+      <div class="row"><!-- Spacing row -->
+        <div class="col-md-3">
+          <h2>Layout / Spacing</h2>
+          (Done)
+        </div>
+        <div class="col-md-9">      
+          <p>We have a number of classes that can be used on any element to provide some spacing in different ways.</p>
+          <p>They give 10, 20, 30, 40 or 50 pixels and are used this way:</p>
+          <p>
+            <strong>class="top-margin-20"</strong> => There's a margin-top of 20 pixels added to the element.<br />
+            <strong>class="top-margin-30-mdlg"</strong> => A margin-top of 30 pixels is added, but only on md and lg width devices. Devices with xs or sm width gets no margin-top.<br />
+          </p>
+          <p>
+            The same goes for <strong>bottom-margin-10</strong> through <strong>bottom-margin-50</strong>.
+          </p>
+          <p>
+            You can use the same pattern for padding, e.g. <strong>class="top-padding-50"</strong> gives padding-top of 50 to that element, and you can use the <strong>-mdlg</strong> extension to make it valid only for md and lg width devices.
+          </p>
+          <p>
+            There are also classes for setting the width of an element that otherwise would inherit the full width from its parent element. They were introduced in order to prevent clashes between background graphics pulled to the right when contents pulled to the left needs to be responsive.
+          </p>
+          <p>
+            There are only two of these classes; <strong>class="width-50"</strong> and <strong>class="width-75"</strong>, giving widths of 50% and 75%, and you can add the <strong>-mdlg</strong> extension to let the rule only be valid for md and lg width devices. Devices with sm and xs widths will then keep their original width, usually 100%.
+          </p>
+          
+        </div>
+      </div> <!-- / Spacing row -->
+      
+      <hr />
+      
 
       <div class="row"><!-- Tables row -->
         <div class="col-md-3">
           <h2>Tables</h2>
-          (Done-ish)
+          (Done)
         </div>
         <div class="col-md-9">
           <p>
-            Tables are not to be used as a way to space out contents, but in some cases it is a good way to present lists of information. We have a version with hover-effect on rows, but keep in mind that this isn't too useful on touch devices.
+            Tables shall not be used to space out contents, but in some cases it is a good way to present a list. Although we can use a hovereffect on rows, remember that this doesn't work on touch devices.
           </p>
-          <h4>Standard table</h4>
-           <p>Click on button to change header color:
-                    <div class="btn-group">
-                     <button type="button" class="btn" onclick="
-                     $('.stb-table').removeClass('forest sand dust moss nude');
-                     $('.stb-table').addClass('forest'); return false">Forest</button>
-                     <button type="button" class="btn" onclick="
-                     $('.stb-table').addClass('forest sand dust moss nude');
-                     $('.stb-table').addClass('sand');return false">Sand</button>
-                     <button type="button" class="btn" onclick="
-                     $('.stb-table').removeClass('forest sand dust moss nude'); 
-                     $('.stb-table').addClass('dust');return false">Dust</button>
-                     <button type="button" class="btn" onclick="
-                     $('.stb-table').removeClass('forest sand dust moss nude');
-                     $('.stb-table').addClass('moss');return false">Moss</button>
-                     <button type="button" class="btn" onclick="
-                     $('.stb-table').removeClass('forest sand dust moss nude');
-                     $('.stb-table').addClass('nude');return false">Nude</button>
-                   </div>
-              </p>
+          <p>
+            For a wide table to be responsive, you may have to create two tables with different visibility and different content for wide and narrow screens, or you can show/hide columns in a wide table.
+          </p>
+          <p>Use the buttons below to change the example tables header color:<br />
+             <button class="stb-btn" onclick="$('.stb-table').removeClass('forest sand dust moss nude');
+                                              $('.stb-table').addClass('forest'); return false">
+               Forest
+             </button>
+             <button class="stb-btn" onclick="$('.stb-table').addClass('forest sand dust moss nude');
+                                              $('.stb-table').addClass('sand');return false">
+               Sand
+             </button>
+             <button class="stb-btn" onclick="$('.stb-table').removeClass('forest sand dust moss nude');
+                                              $('.stb-table').addClass('dust');return false">
+               Dust
+             </button>
+             <button class="stb-btn" onclick="$('.stb-table').removeClass('forest sand dust moss nude');
+                                              $('.stb-table').addClass('moss');return false">
+               Moss
+             </button>
+             <button class="stb-btn" onclick="$('.stb-table').removeClass('forest sand dust moss nude');
+                                              $('.stb-table').addClass('nude');return false">
+               Nude
+             </button>
+           </p>
+           
+          <h3>Standard table</h3>           
           <table class="stb-table">
             <thead>
               <tr>
@@ -408,8 +463,7 @@
             </tbody>
           </table>
           
-          <h4>Table with hover effect</h4>
-
+          <h3>Table with hover effect in rows</h3>
           <table class="stb-table hoverable">
             <thead>
               <tr>
@@ -452,143 +506,6 @@
             </tbody>
           </table>
 
-           <div class="hidden-xs">
-                      <h4>Table with hover effect multiple colums responsive hidden-xs</h4>
-                      <p>This table is hidden from small devices. On small devices three tables with two colums will be visible.</p>
-                      <!-- Hidden for small devices -->
-                        <table class="stb-table hoverabl">
-                        <thead>
-                          <tr>
-                            <th>Fond</th>
-                            <th class="text-right">Dato</th>
-                            <th class="text-right">Kurs</th>
-                            <th class="text-right">Hittil i år</th>
-                            <th class="text-right">12 mnd</th>
-                            <th class="text-right">5 år årlig</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Storebrand Barnespar</td>
-                            <td class="text-right">12.05</td>
-                            <td class="text-right">145.67</td>
-                            <td class="text-right">-0.67%</td>
-                            <td class="text-right">23.45%</td>
-                            <td class="text-right">13.67%</td>
-                          </tr>
-                           <tr>
-                            <td>Delphi Norge</td>
-                            <td class="text-right">16.75</td>
-                            <td class="text-right">195.45</td>
-                            <td class="text-right">-6.87%</td>
-                            <td class="text-right">23.88%</td>
-                            <td class="text-right">7.97%</td>
-                          </tr>
-                           <tr>
-                            <td>Storebrand Global</td>
-                            <td class="text-right">42.05</td>
-                            <td class="text-right">445.57</td>
-                            <td class="text-right">-0.78%</td>
-                            <td class="text-right">54.45%</td>
-                            <td class="text-right">16.09%</td>
-                          </tr>
-                        </table>
-          </div>
-            <!-- Vivible for small devices -->
-           <div class="visible-xs">
-                          <h4>Table condensed responsive visible-xs</h4>
-                          <p>These three tables are visible for small devices. The tables has only two colums and multiple rows in order to be phone-friendly.</p>
-                          <table class="table table-condensed">
-                          <thead>
-                            <tr>
-                              <th>Storebrand Barnespar </th>
-                              <th class="text-right">&nbsp;</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Dato</td>
-                              <td class="text-right">12.05</td>
-                            </tr>
-                            <tr>  
-                              <td> Kurs</td>
-                              <td class="text-right">145.67</td>
-                            </tr>
-                            <tr>
-                              <td>Hittil i år</td>
-                              <td class="text-right">-0.67%</td>
-                            </tr>
-                            <tr>  
-                              <td>12 mnd</td>
-                              <td class="text-right">23.45%</td>
-                            </tr>
-                            <tr>  
-                              <td>5 år årlig</td>
-                              <td class="text-right">13.67%</td>
-                            </tr>
-                           </table>
-                            
-                          <table class="table table-condensed">
-                          <thead>
-                            <tr>
-                              <th>Delphi Norge </th>
-                              <th >&nbsp;</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Dato</td>
-                              <td class="text-right">12.05</td>
-                            </tr>
-                            <tr>  
-                              <td>Kurs</td>
-                              <td class="text-right">145.67</td>
-                            </tr>
-                            <tr>
-                              <td>Hittil i år</td>
-                              <td class="text-right">-0.67%</td>
-                            </tr>
-                            <tr>  
-                              <td>12 mnd</td>
-                              <td class="text-right">23.45%</td>
-                            </tr>
-                            <tr>  
-                              <td>5 år årlig</td>
-                              <td class="text-right">13.67%</td>
-                            </tr>
-                           </table>
-
-                            <table class="table table-condensed">
-                          <thead>
-                            <tr>
-                              <th>Storebrand Global </th>
-                              <th >&nbsp;</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Dato</th>
-                              <td class="text-right"> 12.05</td>
-                            </tr>
-                            <tr>  
-                              <td>Kurs</td>
-                              <td class="text-right">145.67</td>
-                            </tr>
-                            <tr>
-                              <td>Hittil i år</td>
-                              <td class="text-right">-0.67%</td>
-                            </tr>
-                            <tr>  
-                              <td>12 mnd</td>
-                              <td class="text-right">23.45%</td>
-                            </tr>
-                            <tr>  
-                              <td>5 år årlig</td>
-                              <td class="text-right">13.67%</td>
-                            </tr>
-                           </table>
-           </div>
-
           <strong>Code:</strong> <br />
           <pre class="prettyprint">
 &lt;table class=&quot;stb-table [hoverable]&quot;&gt;
@@ -613,98 +530,72 @@
 
       <hr class="airgap" />
 
-
-       <div class="row">
-          <div class="col-md-3">
-              <h2>List group</h2>
-          </div>
-         <div class="col-md-9">
-            <p>List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content.</p>
-
-            <div class="row">
-                <div class="col-md-6">
-                     <p>Clickable list-group with anchortags. In this case it sets the item to "active" but could open a page or really anything we want.</p>
-                     
-                     <div class="stb-list-group">
-                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">1822,44</span>Delphi Global</a>
-                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">3445,64</span>Delphi Europe</a>
-                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">2245,65</span>Delphi Nordic</a>
-                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">7766,09</span>Delphi Norge (Moss)</a>
-                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">6543,54</span>Delphi Kombinasjon</a>
-                            <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">2345,56</span>Delphi Emerging</a>
-                      </div>
-                      <p>Click on button to change hover color:</p>
-                    <div class="btn-group">
-                     <button type="button" class="btn" onclick="
-                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude');
-                     $('.stb-list-group .list-group-item').addClass('forest'); return false">Forest</button>
-                     <button type="button" class="btn" onclick="
-                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude');
-                     $('.stb-list-group .list-group-item').addClass('sand');return false">Sand</button>
-                     <button type="button" class="btn" onclick="
-                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude'); 
-                     $('.stb-list-group .list-group-item').addClass('dust');return false">Dust</button>
-                     <button type="button" class="btn" onclick="
-                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude');
-                     $('.stb-list-group .list-group-item').addClass('moss');return false">Moss</button>
-                     <button type="button" class="btn" onclick="
-                     $('.stb-list-group .list-group-item').removeClass('forest sand dust moss nude');
-                     $('.stb-list-group .list-group-item').addClass('nude');return false">Nude</button>
-                   </div>
-                </div>  
-                <div class="col-md-6">
-                    <p>ul list-group with badges for visual purposes. We are able to wrap an anchor around it, but then a plain list-group is preferrable</p>
-                    <ul class="stb-list-group">
-                            <li class="list-group-item"><span class="badge">1822,44</span>Delphi Global</li>
-                            <li class="list-group-item"><span class="badge">3445,64</span>Delphi Europe</li>
-                            <li class="list-group-item"><span class="badge">2245,65</span>Delphi Nordic</li>
-                            <li class="list-group-item active"><span class="badge">7766,09</span>Delphi Norge</li>
-                            <li class="list-group-item"><span class="badge">6543,54</span>Delphi Kombinasjon</li>
-                            <li class="list-group-item"><span class="badge">2345,56</span>Delphi Emerging</li>
-                    </ul>
-                </div>
-            </div>    
-         </div>
-       </div>   
-
-       <div class="row">
+  
+      <div class="row">
         <div class="col-md-3">
-              &nbsp;
+          <h2>List group</h2>
+          (Done)
+        </div>
+        <div class="col-md-9">
+          <p>
+            A list groups is a bit like a one-column table, a flexible component for displaying both simple lists of elements and complex lists with custom content.
+          </p>
+
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                A plain list-group containing badges:<br /><br />
+              </p>
+              <ul class="stb-list-group">
+                <li class="list-group-item"><span class="badge">1822,44</span>Delphi Global</li>
+                <li class="list-group-item"><span class="badge">3445,64</span>Delphi Europe</li>
+                <li class="list-group-item active"><span class="badge">7766,09</span>Delphi Norge</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <p>
+                A clickable list-group example. Clicking just toggles the item class to "active", we could trigger anything, really.
+              </p>
+              <div class="stb-list-group">
+                <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">1822,44</span>Delphi Global</a>
+                <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">3445,64</span>Delphi Europe</a>
+                <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">2245,65</span>Delphi Nordic</a>
+              </div>
+            </div>
           </div>
-          <div class="col-md-9">
-            <strong>Code:</strong> <br />
-                    <pre class="prettyprint">
-                         &lt;div class="stb-list-group"&gt;
-                            &lt;a href="#" class="list-group-item"&gt;Content 1&lt;/a&gt;
-                            &lt;a href="#" class="list-group-item forest"&gt;Content 2&lt;/a&gt;
-                         &lt;/div&gt;  
+          <strong>Code:</strong> <br />
+          <pre class="prettyprint">
+&lt;div class="stb-list-group"&gt;
+  &lt;a href="#" class="list-group-item"&gt;Content 1&lt;/a&gt;
+  &lt;a href="#" class="list-group-item forest"&gt;Content 2&lt;/a&gt;
+&lt;/div&gt;  
 
-                         &lt;ul class="stb-list-group"&gt;
-                            &lt;li class="list-group-item"&gt;Content 1&lt;/li&gt;
-                            &lt;li class="list-group-item"&gt;Content 2&lt;/li&gt;
-                         &lt;/ul&gt;
+&lt;ul class="stb-list-group"&gt;
+  &lt;li class="list-group-item"&gt;Content 1&lt;/li&gt;
+  &lt;li class="list-group-item"&gt;Content 2&lt;/li&gt;
+&lt;/ul&gt;
 
-                         &lt;span class="badge"&gt;1822,44&lt;/span&gt;
-                    </pre> 
-          </div>
-       </div>                         
+&lt;span class="badge"&gt;1822,44&lt;/span&gt;
+          </pre>           
+        </div>
+      </div>
 
+      <hr class="airgap" />
 
- <hr class="airgap" />
-
+ 
       <div class="row"> <!-- Boxes row -->
         <div class="col-md-3">
           <h2>Boxes</h2>
-          (Done-ish)
+          (Done)
         </div>
         <div class="col-md-9">
           <div class="row">
             <div class="col-md-12">
               <p>
-                Boxes are established using divs with class stb-box + version class (e.g. "stb-box first"). They come with predefined background, text and link colors, plus some padding/margin. The width of the box scales to its parent element.
+                Boxes are established using div-s with class stb-box + version class (e.g. "stb-box first") and styling class (e.g. "fat gray").
               </p>
               <p>
-                If you need to center something inside a box, e.g. a button, place it inside a div with class center-me.
+                The boxes come with a predefined background, text and link colors, plus some padding/margin. The width of the box scales to its parent element.
               </p>
             </div>
           </div>
@@ -716,9 +607,8 @@
             <div class="col-md-4 stbcolor-secondary sixth">
               <p>class="first" on nude</p>
               <div class="stb-box first">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>
             </div>  
             <div class="col-md-1">
@@ -727,9 +617,8 @@
             <div class="col-md-4">
               <p>class="second" on white</p>
               <div class="stb-box second">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>
             </div>
           </div>
@@ -740,9 +629,8 @@
             <div class="col-md-4 stbcolor-secondary sixth">
               <p>class="third" on nude</p>
               <div class="stb-box third">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>
             </div>
             <div class="col-md-1">
@@ -751,9 +639,8 @@
             <div class="col-md-4">
               <p>class="third" on white</p>
               <div class="stb-box third">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>
             </div>
           </div> 
@@ -764,9 +651,8 @@
             <div class="col-md-4 stbcolor-secondary sixth">
               <p>class="fourth" on nude</p>
               <div class="stb-box fourth">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn alarm">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-center" style=""><button class="stb-btn alarm">Samle avtaler</button></div>
               </div>            
             </div>
             <div class="col-md-1">
@@ -775,9 +661,8 @@
             <div class="col-md-4">
               <p>class="fourth" on white</p>
               <div class="stb-box fourth">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn alarm">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-right" style=""><button class="stb-btn alarm">Samle avtaler</button></div>
               </div>
             </div>
           </div>
@@ -788,9 +673,8 @@
             <div class="col-md-4 stbcolor-secondary sixth">
               <p>class="fifth" on nude</p>
               <div class="stb-box fifth">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>            
             </div>
             <div class="col-md-1">
@@ -799,9 +683,8 @@
             <div class="col-md-4">
               <p>class="fifth" on white</p>
               <div class="stb-box fifth">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>
             </div>
           </div>
@@ -812,9 +695,8 @@
             <div class="col-md-4 stbcolor-secondary sixth">
               <p>class="sixth" on nude</p>
               <div class="stb-box sixth">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>            
             </div>
             <div class="col-md-1">
@@ -823,9 +705,8 @@
             <div class="col-md-4">
               <p>class="sixth" on white</p>
               <div class="stb-box sixth">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>
             </div>
           </div>
@@ -837,9 +718,8 @@
               <p>Any box can force a dotted border:</p>
               <p>class="fifth dottedborder" on nude</p>
               <div class="stb-box fifth dottedborder">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>            
             </div>
             <div class="col-md-1">
@@ -849,20 +729,43 @@
               <p>Any box can force a solid border:</p>
               <p>class="second border" on white</p>
               <div class="stb-box second border">
-                <p>Før du går i gang bør du gjøre jobben med å samle sammen alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="center-me" style=""><button class="stb-btn">Samle avtaler</button></div>
-                <p><br /><a href="#stb-box1">Nei takk, jeg er ferdig <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
               </div>
             </div>
-          </div>          
+          </div>
+
+          <hr />          
           
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-4 stbcolor-secondary sixth">
+              <p>Any box can force a fat solid border:<br /><br /></p>
+              <p>class="fifth fat border" on nude</p>
+              <div class="stb-box fifth fat border">
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
+              </div>            
+            </div>
+            <div class="col-md-1">
+              &nbsp;
+            </div>
+            <div class="col-md-4">
+              <p>Any box can force border color to charcoal, gray or red:</p>
+              <p>class="second border red" on white</p>
+              <div class="stb-box second border red">
+                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
+                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
+              </div>
+            </div>
+          </div>            
+          
+          <div class="row">
+            <div class="col-md-10">
           <h4>Code:</h4>
           <pre class="prettyprint">
-&lt;div class="stb-box first / second / third + solid / dotted"&gt;
+&lt;div class="stb-box first / second / third + solid / dotted + fat / [nothing] + gray / charcoal / red"&gt;
   ... Box html contents ...
-  &lt;div class="center-me"&gt;... Centered box html contents&lt;/div&gt;
+  &lt;div class="text-center / text-right"&gt;... Centered/right-adjusted box html contents&lt;/div&gt;
 &lt;/div&gt;</pre>      
             </div>
            
@@ -878,13 +781,14 @@
       <div class="row"> <!-- Notification row -->
         <div class="col-md-3">
           <h2>Notification</h2>
+          (Done-ish, icon use is not established.)
         </div>
         <div class="col-md-9">
           <p>
             "Small boxes" for use when just a quick notice is needed:
           </p>
-          <div class="stb-alert stb-alert-success col-md-7 clearfix"><span class="icon-info"></span>Document saved, press any key to continue.</div>
-          <div class="stb-alert stb-alert-alarm col-md-7 clearfix"><span class="icon-alarm"></span>The server made a boo-boo.</div>
+          <div class="stb-alert stb-alert-success col-md-8"><span class="icon-info"></span>Document saved, press any key to continue.</div>
+          <div class="stb-alert stb-alert-alarm col-md-8"><span class="icon-alarm"></span>The server made a boo-boo.</div>
         </div>
       </div>
       <div class="row">
@@ -907,12 +811,12 @@
       <div class="row"> <!-- FAQ row -->
         <div class="col-md-3">
           <h2>FAQ</h2>
-          (Done-ish)
+          (Done-ish, lacking the actual icons for expand/collapse)
         </div>
         <div class="col-md-9">
-          <h4>Frequently Asked Questions ("Accordion")</h4>
+          <h3>Frequently Asked Questions ("Accordion")</h3>
           <p>          
-            "The accordion" can be used to initially hide contents on pages that would otherwise seem overwhelming at first glance.
+            The FAQ "accordion" can be used to initially hide substantial contents on pages that might otherwise seem overwhelming at first glance. (For use only in cases where it's really not possible to reduce the amount of text, of course.)
           </p>
           <p>
             Example:
@@ -954,12 +858,8 @@
 
           <br />
           <p>
-            The FAQ is contained in a normal ul list:
+            The FAQ is contained in a normal ul list, but needs a data-widget attribute set to "stbFaq":
           </p>
-          <p>
-            <strong>Note</strong> Using the FAQ requires the <a href="js/src/stb-ui-faq.js">stb-ui-faq.js</a> jQuery plugin.
-          </p>
-          <br />
           <pre class="prettyprint">
 &lt;ul class="accordion" data-widget="stbFaq"&gt;
   &lt;li&gt;
@@ -987,7 +887,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row">
         <div class="col-md-3">
           <h2>Buttons</h2>
-          (Done, almost!)
+          (Done-ish, needs specification regarding buttons on top of background graphics.)
         </div>
         <div class="col-md-9">
           <div class="row">
@@ -1181,7 +1081,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row"> <!-- / General input fields row -->
         <div class="col-md-3">
           <h2>Text input fields</h2>
-          (Done-ish)
+          (Not done! Form elements are still in the making...)
         </div>
         <div class="col-md-9">
           <p>
@@ -1333,7 +1233,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row">
         <div class="col-md-3">
           <h2>Radio button and checkbox</h2>
-          (Done-ish)
+          (Done-ish, needs some graphical elements still)
         </div>
         
         <div class="col-md-9">
@@ -1527,7 +1427,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row"><!-- Datepicker row -->
         <div class="col-md-3">
           <h2>Datepicker</h2>
-          (Done-ish)
+          (Not done! Likely to change to more or less standard Bootstrap!)
         </div>      
         <div class="col-md-9">
           <div class="row">
@@ -1620,6 +1520,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <hr class="airgap" />  
       
+      
       <div class="row"> <!-- Image row -->
         <div class="col-md-3">
           <h2>Image with caption</h2>
@@ -1627,9 +1528,20 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div>
         <div class="col-md-9">
           <p>
-            By adding the class img-responsive to an image tag, the image will behave responsively.
+            Bootstrap has a standard thumbnail image with caption thing. There's no reason not to use it, really:
           </p>
+            <div style="width: 333px;">
+              <div class="thumbnail">
+                <img src="images/271x271_2.png" alt="Fint bilde" data-src="holder.js/300x200" style="">
+                <div class="caption">
+                  <h3>Optional title</h3>
+                  <p>Optional additional text/caption.</p>          
+                </div>
+              </div>
+            </div>
+
           <p>
+            If that's too tame, you can always play with styling that fits your image to create a caption put straight onto the image. 
             Size, color, positioning and other details regarding image and caption must most likely be locally defined per use case. See source code on this page for an example of how it can be done.
           </p>
           <figure class="snowpic">
@@ -1678,10 +1590,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
             
       <hr class="airgap" />  
 
+      
       <div class="row">
         <div class="col-md-3">
           <h2>Popover</h2>
-          (Done-ish)
+          (Done)
         </div>
         <div class="col-md-9">
           <p>
@@ -1712,9 +1625,8 @@ $('ul[data-widget=stbFaq]').stbFaq();
             </a>
           </p>
           <p>
-            Popover requires Bootstrap's popover.js + tooltip.js. Also, note that standard Bootstrap offers tooltip, which is just a simpler version of popover. We have deliberately not included tooltip in our web manual, because popover probably covers our needs. 
-          </p>
-          <p>
+            Popover requires Bootstrap's popover.js + tooltip.js. Also, note that standard Bootstrap offers tooltip, which is just a simpler version of popover. We have deliberately not included tooltip in our web manual, because popover probably covers our needs.
+            <br />
             <strong class="airgap-top">Code:</strong>
           </p>
           <pre class="prettyprint">
@@ -1735,9 +1647,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
       
       <hr class="airgap" />
 
+      
       <div class="row"> <!-- Standard icons row -->
         <div class="col-md-3">
           <h2>Standard icons</h2>
+          (Totally misleading, we will have new icons for everything!)
         </div>
         <div class="col-md-4">
           <p>
@@ -1768,86 +1682,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
       <hr class="airgap" />
 
-      <div class="row"> <!-- Icon size row -->
-        <div class="col-md-3">
-          <h2>Icon sizes</h2>
-          (Done-ish)
-        </div>
-        <div class="col-md-9">
-          <div class="row">
-            <p>
-              <strong>Standard sizes</strong> for current icons (pre-storebrand.ny) are shown below.<br />
-              We may well change this into SVG or font-based icons in due course...
-            </p>
-            <table style="text-align:center;">
-              <thead>
-                <tr>
-                  <th style="width: 30%">
-                  <th style="width: 20%">
-                  <th style="width: 20%">
-                  <th style="width: 15%">
-                  <th style="width: 10%">
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear">&nbsp;</span><br />130px</td>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear">&nbsp;</span><br />72px</td>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear">&nbsp;</span><br />32px</td>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear">&nbsp;</span><br />24px</td>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear">&nbsp;</span><br />16px</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <hr />
-          
-          <div class="row">
-            <strong>Neutral icons:</strong> (There is no hover action on these.)<br />
-            <table style="text-align:center;">
-              <thead>
-                <tr>
-                  <th style="width: 30%">
-                  <th style="width: 20%">
-                  <th style="width: 20%">
-                  <th style="width: 15%">
-                  <th style="width: 10%">
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-130 teddybear neutral">&nbsp;</span><br />130px</td>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-72 teddybear neutral">&nbsp;</span><br />72px</td>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-32 teddybear neutral">&nbsp;</span><br />32px</td>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-24 teddybear neutral">&nbsp;</span><br />24px</td>
-                  <td style="vertical-align:bottom;"><span class="stb-sprite-16 teddybear neutral">&nbsp;</span><br />16px</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <hr />
-          
-          <div class="row">
-            <div class="col-md-12">
-              <strong class="">Usage:</strong><br><code> &lt;span class="stb-sprite-130/72/32/24/16 teddybear [neutral]"&gt;&lt;span&gt; </code>
-              <br />
-              <p>
-                See the <strong>old and outdated </strong><a href="stb-icons.html">icon overview</a> (currently slightly buggy) for list of available icons. We might go for vector-based graphics from now on. Watch this space!
-              </p>
-            </div>
-          </div>   
-        </div> 
-        
-      </div> <!-- /Icon size row -->
-
-      <hr class="airgap">
-
+      
       <div class="row"> <!-- Navigation icons row -->
         <div class="col-md-3">
           <h2>Navigation icons</h2>
-          (Done-ish)
+          (Not done, this section will change. A lot.)
         </div>
         <div class="col-md-9">
           <p>
@@ -1904,69 +1743,50 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div> <!-- /col-md-9 -->
       </div> <!-- / Navigation icons row -->      
 
+      <hr class="airgap">
 
-       <hr class="airgap">
 
-      <div class="row"> <!-- Navigation icons row -->
-          <div class="col-md-3">
-              <h2>Title Tag</h2>
-              <p>(Up for debate)</p>
-              <p>BZT: This does not belong here, and will be moved to usability wiki. This design manual is for describing technical markup.</p>
-          </div>
-          <div class="col-md-9">
-            <p>Title tags—technically called title elements—define the title of a document. Title tags are often used on search engine results pages (SERPs) to display preview snippets for a given page, and are important both for SEO and social sharing.</p>
-
-            <p>The title element of a web page is meant to be an accurate and concise description of a page's content. This element is critical to both user experience and search engine optimization. It creates value in three specific areas: relevancy, browsing, and in the search engine results pages.</p>
-               <p><strong>Optimal Format</strong></p>
-               <p>Primary Keyword - Secondary Keyword | Brand Name</p>
-               <p><strong>Code sample:</strong></p>
-                  <pre class="prettyprint">
-                      &lt;head&gt;
-                          &lt;title&gt;Pensjon - Ekstrapensjon | storebrand.no&lt;/title&gt;
-                      &lt;/head&gt;
-                  </pre>
-               <p><strong>Optimal Length for Search Engines</strong>
-               <p>Google typically displays the first 50-60 characters of a title tag, or as many characters as will fit into a 512-pixel display. If you keep your titles under 55 characters, you can expect at least 95% of your titles to display properly. Keep in mind that search engines may choose to display a different title than what you provide in your HTML. Titles in search results may be rewritten to match your brand, the user query, or other considerations.  </p>
-               </p>   
-               <p>A title tag is the main text that describes an online document. Title elements have long been considered one of the most important on-page SEO elements (the most important being overall content), and appear in three key places: browsers, search engine results pages, and external websites.</p>
-               <p>Title tags often show up in both the top of a browser's chrome and in tabs.</p>
-               <p><strong>Links</strong></p>
-               <p>Many external websites—especially social media sites—will use the title tag of a web page as its link anchor text.</p>
-               <p>Example: <br> The page title is <u>"Pensjon - Egen sparing til pensjon | storebrand.no"</u> and the &lt;h1&gt; on the page is <u>"Egen sparing til pensjon"</u> links to this page should be the same</p>
-                <pre class="prettyprint">
-                      &lt;head&gt;
-                          &lt;title&gt;Pensjon - Egen sparing til pensjon | storebrand.no&lt;/title&gt;
-                      &lt;/head&gt;
-
-                      &lt;h1&gt;Egen sparing til pensjon&lt;/h1&gt;
-
-                      &lt;a href="pensjon_privatpensjonssparing.html"&gt;Egen sparing til pensjon&lt;/a&gt;
-                  </pre>               
-
-               
-          </div>
-      </div>      
-
-      <hr class="airgap" />
-
-      <div class="row"> <!-- Backgrounds section row -->
+      <div class="row bottom-margin-50"> <!-- Backgrounds section row -->
         <div class="col-md-3">
           <h2>Background playground</h2>
           (Done-ish)
         </div>
         <div class="col-md-9">
           <p>
-            The palette colors can be used to add a colored background in the entire width of the page or just the width of any given element.
+            The palette colors can be used to add a colored background in the entire width of the page or just the width of any given element. Additionally, we have a number of graphical backgrounds that also can be stretched across the entire width of a section of the page.
           </p>
           <p>
-            Below is a selection of examples of combinations. 
+            Below are some examples of backgrounds and combinations of what can be put on top of them. 
           </p>
         </div>
       </div> <!-- /Backgrounds section row -->      
       
     </div> <!-- /container -->
     
-    <!-- testing: -->
+    <!-- Full width backgrounds: -->
+    
+    <p>Example of "wooden" background:
+    </p>
+    <div class="background wood">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 top-padding-20">
+            <div class="stb-box first">
+              <h3>You can put text in a box here</h3>
+              <p>It may make sense for readability.</p>
+              <p>The contrast can be difficult to measure against universal design requirements when the background isn't uniform.</p>
+            </div>
+          </div>
+          <div class="col-md-6 top-padding-20">
+            <div class="stb-box fat red border">
+              <h3>This is straight onto the background</h3>
+              <p>Can you see it well enough?</p>
+              <p>Maybe. Maybe not.<br /><br /></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="stbcolor-secondary sixth">
       <p>

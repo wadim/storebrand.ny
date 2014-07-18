@@ -32,33 +32,30 @@
     .stbcolor-background .third;
   } 
 
- 
-  
-  // Centering contents (primarily buttons) inside boxes
-  div.center-me {
-    text-align: center;
-  }
-
   // Forcing solid border
   &.border {
     border: 1px solid;
-    &.charcoal{
+    
+    // Adding border color themes
+    
+    &.charcoal {
     	border-color: @stb-secondary-charcoal;
     }
-    &.red{
+    
+    &.red {
     	border-color: @stb-primary-color;
     }
-	&.gray{
-	border-color: @stb-gray-second;
-	
-	}
-	
-	
+    
+	  &.gray {
+	    border-color: @stb-gray-second;
+    }
   }
 	
+  // Adding possibility of thicker border
   &.fat{
 		border: 2px solid;
 	}
+
   // Forcing dotted border
   &.dottedborder {
     border: 1px dotted;
@@ -69,4 +66,3 @@
   }
   
 }
-
