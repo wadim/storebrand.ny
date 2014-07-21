@@ -3,16 +3,14 @@ $(document).ready(function(){
 				{
 					//animation speed
 					animSpeed = 800;
-
 			        //store the current width
 					searchParentWidth = $('.navbar-nav > li.search').css('width');		
-					
+					backgroundcolor = $('.typeahead').css('background-color');
 					//since the width is given in pixels instead of percentage, we need to calculate it ourselves
 					searchParentWidthPercent = Math.ceil(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 					
 					//give the text element a fixed size first
 					$('.typeahead').css('width',searchParentWidth);
-					
 					//hide the menu
 			      	$('.navbar-nav > li.group').toggle();
 
@@ -20,8 +18,10 @@ $(document).ready(function(){
 					$('.navbar-nav > li.search').css('width','100%');
 					
 					//animate the textbox
+					//$('.typeahead').animate({backgroundColor: '#FFF'}, 'slow');
 					$('.typeahead').animate({width:'100%'},animSpeed);
-					
+					$('.typeahead').css('background-color','#fff');
+					$('.typeahead').css('color','#000');
 				}).blur(function()
 				{	
 					//reset the searchParent to the original width. The text box will fit on its own as its width is 100%.
@@ -30,6 +30,8 @@ $(document).ready(function(){
 				    //show the menu after the animation completes
 					setTimeout(function(){	
 						$('.navbar-nav > li.group').toggle();
+						$('.typeahead').css('background-color',backgroundcolor);
+						$('.typeahead').css('color','#fff');
 						}, animSpeed);
 
 				});
