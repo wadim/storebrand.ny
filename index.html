@@ -354,14 +354,86 @@
 
       <hr class="airgap"/>
       
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Typography / Diamonds</h2>
+          (Done)
+        </div>
+        <div class="col-md-9">
+          <p>
+            Purely a design thing, meant used in gods know what situation, are the diamond lists. Incidentally, these might possibly not last forever. They are different from the progress bars / step indicators in forms, but certainly share a bit of design with them.
+          </p>
+          <div class="row top-margin-20">
+          
+            <div class="col-md-2">
+              <div class="numeric-diamond">
+                <span class="bg"></span>
+                <span class="count">Hello</span>
+              </div>
+            </div>
+ 
+            <div class="col-md-2">
+              <div class="numeric-diamond">
+                <span class="bg"></span>
+                <span class="count">World</span>
+              </div>
+            </div> 
+
+            <div class="col-md-2">
+          
+            </div>
+            
+            <div class="col-md-2">
+              <div class="numeric-diamond">
+                <span class="bg"></span>
+                <span class="count">1</span>
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="numeric-diamond">
+                <span class="bg"></span>
+                <span class="count">2</span>
+              </div>
+            </div>
+            
+            <div class="col-md-2">
+              <div class="numeric-diamond">
+                <span class="bg"></span>
+                <span class="count">3</span>
+              </div>
+            </div>
+            
+          </div>
+          
+          <p>
+            We'll hopefully add some instructions eventually about how these are to be used. For now, try using only numbers inside the diamonds.
+          </p>
+          <strong>Code:</strong><br />
+          <pre class="prettyprint">
+&lt;div class="numeric-diamond"&gt;
+  &lt;span class="bg"&gt;&lt;/span&gt;
+  &lt;span class="count"&gt;x&lt/span&gt;
+&lt;/span&gt;</pre>
+        </div>
+      </div> <!-- /Typography / Diamonds row -->
+
+      <hr class="airgap"/>      
+      
       <div class="row"><!-- Spacing row -->
         <div class="col-md-3">
           <h2>Layout / Spacing</h2>
           (Done)
         </div>
         <div class="col-md-9">      
-          <p>We have a number of classes that can be used on any element to provide some spacing in different ways.</p>
-          <p>They give 10, 20, 30, 40 or 50 pixels and are used this way:</p>
+          <p>
+            We have a number of classes that can be used on any element to provide some spacing in different ways. Depending on your situation, you might of course want to just use straight CSS styling instead, but these classes come in handy when we want to let our non-IT Web editors use our CMS to work on contents and space things out.
+          </p>
+
+          <h3>Vertical spacing</h3>
+          <p>
+            The classes give 10, 20, 30, 40 or 50 pixels and are used this way:
+          </p>
           <p>
             <strong>class="top-margin-20"</strong> => There's a margin-top of 20 pixels added to the element.<br />
             <strong>class="top-margin-30-mdlg"</strong> => A margin-top of 30 pixels is added, but only on md and lg width devices. Devices with xs or sm width gets no margin-top.<br />
@@ -372,6 +444,7 @@
           <p>
             You can use the same pattern for padding, e.g. <strong>class="top-padding-50"</strong> gives padding-top of 50 to that element, and you can use the <strong>-mdlg</strong> extension to make it valid only for md and lg width devices.
           </p>
+          <h3>Usage of width</h3>
           <p>
             There are also classes for setting the width of an element that otherwise would inherit the full width from its parent element. They were introduced in order to prevent clashes between background graphics pulled to the right when contents pulled to the left needs to be responsive.
           </p>
