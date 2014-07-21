@@ -5,7 +5,7 @@ $(document).ready(function(){
 					animSpeed = 800;
 			        //store the current width
 					searchParentWidth = $('.navbar-nav > li.search').css('width');		
-					backgroundcolor = $('.typeahead').css('background-color');
+					backgroundColor = $('.typeahead').css('background-color');
 					//since the width is given in pixels instead of percentage, we need to calculate it ourselves
 					searchParentWidthPercent = Math.ceil(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 					
@@ -18,20 +18,17 @@ $(document).ready(function(){
 					$('.navbar-nav > li.search').css('width','100%');
 					
 					//animate the textbox
-					//$('.typeahead').animate({backgroundColor: '#FFF'}, 'slow');
-					$('.typeahead').animate({width:'100%'},animSpeed);
-					$('.typeahead').css('background-color','#fff');
-					$('.typeahead').css('color','#000');
+				
+					$('.typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
+				
 				}).blur(function()
 				{	
 					//reset the searchParent to the original width. The text box will fit on its own as its width is 100%.
 					$('.navbar-nav > li.search').animate({width:searchParentWidthPercent+'%'},animSpeed);			
-				
+					$('.typeahead').animate({backgroundColor:backgroundColor,color:"#fff"},animSpeed);
 				    //show the menu after the animation completes
 					setTimeout(function(){	
 						$('.navbar-nav > li.group').toggle();
-						$('.typeahead').css('background-color',backgroundcolor);
-						$('.typeahead').css('color','#fff');
 						}, animSpeed);
 
 				});
