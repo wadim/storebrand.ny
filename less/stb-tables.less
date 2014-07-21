@@ -25,33 +25,52 @@ table.stb-table {
      }
   }
   
+  &.hoverable {
+    tbody {
+      > tr:hover {
+        background-color: @stb-chart-peach;
+      }    
+    }
+  
+    tbody > tr:nth-child(even):hover {
+      > td,
+      > th {
+        background-color: @stb-chart-peach;
+      }
+    }   
+  
+  }
+  
+  &.no-alt {
+    border: 0px;
+    
+    tbody > tr > td {
+      background-color: @stb-primary-white;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-bottom-color: @stb-secondary-charcoal;
+    }
+    
+    &.hoverable {
+      tbody > tr:hover,
+      tbody > tr:hover > td {
+        background-color: @stb-chart-peach;
+      }  
+    }
+    
+    &.nude > tbody > tr > td {
+      border-bottom-color: @stb-secondary-nude;
+    } 
+    
+  }
+
+  
   // Extra padding-right at right end of table
   tr td:last-child, thead tr th:last-child {
     padding-right: 12px;
   }  
 }
 
-.hoverable {
-  tbody {
-    > tr:hover {
-      background-color: @stb-chart-peach;
-    }    
-  }
-  
-   tbody > tr:nth-child(even):hover {
-    > td,
-    > th {
-      background-color: @stb-chart-peach;
-    }
-  } 
- }
-
-// White background
- .white-bg {
-     tr {
-      background-color: @stb-primary-white;
-    }
-} 
 
 // Color themes for table header
 
@@ -59,28 +78,33 @@ table.forest > thead > tr {
   border: none;
   background-color: @stb-secondary-forest;
   color: @stb-primary-white;
+  border-bottom-color: @stb-secondary-forest;
 }
 
 table.sand > thead > tr {
   border: none;
   background-color: @stb-secondary-sand;
-  color: @stb-primary-black; 
+  color: @stb-primary-black;
+  border-bottom-color: @stb-secondary-sand;
 }
 
 table.dust > thead > tr {
   border: none;
   background-color: @stb-secondary-dust;
   color: @stb-primary-white;
+  border-bottom-color: @stb-secondary-dust;
 }
 
 table.moss > thead > tr {
   border: none;
   background-color: @stb-secondary-moss;
   color: @stb-primary-white;  
+  border-bottom-color: @stb-secondary-moss; 
 }
 
 table.nude > thead > tr {
   border: none;
   background-color: @stb-secondary-nude;
   color: @stb-primary-white;
+  border-bottom-color: @stb-secondary-nude;
 }
