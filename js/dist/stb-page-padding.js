@@ -50,4 +50,15 @@ function (a) {
 }(jQuery);
 // End twister effect on accordion/FAQ
 
+// Start adding triggers for showing additional info 
+// Looks for trigger points with class "hidy-ho", and toggles visibility for the element refered to by rel attribute.
+$("document").ready(function(){
+  $(".hidy-ho").click(function() {
+    var toggler = "#" + $(this).attr('rel');
+    $(toggler).slideToggle("fast");
+  });
+})
+  
+    // End adding triggers for showing additional info
+
 // End content padding
