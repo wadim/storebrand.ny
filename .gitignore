@@ -3,8 +3,11 @@ bower_components/bootstrap3.0
 node_modules
 .DS_Store
 patsy.json
-
+.settings
+.project
+.gitignore
 
 assets/jquery-custom-select-menu/
 css/stb-main.css
 indexgammel.html
+css*
