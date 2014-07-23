@@ -84,23 +84,30 @@
 
 .nav li.search input {
  	outline: none;
-	width:100%;
+ 	width: 100%;
 	background-color:@stb-primary-color;
 	padding:5px;
 	border:0;
 	height:40px;
 }
 
-.nav li.search button {
+.nav li.search .search-icon {
 	position:absolute; 
 	top: 25%; 
 	right:0; 
 	height:40px;
 	width:100%;
 	max-width:30px;
-	border:0;background:@stb-primary-color url(../images/search.png) center 8px no-repeat;
+	border:0;
+	background-color: @stb-primary-color;
+	//background:@stb-primary-color url(../images/search.png) center 8px no-repeat;
 }
 
+.nav li.search .search-icon .search{
+	display: block;
+	position: absolute;
+	top: 25%;
+}
 .nav .private {
   background: @stb-primary-color-darker url("../images/private.png") 20% 50% no-repeat;
 }
