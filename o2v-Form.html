@@ -1413,13 +1413,13 @@ $(window).scroll(function(event){
     </div>
     <div id="stepLabels" class="row">
       <div class="col-md-2">
-        <h4>Om Skaden</h4>
+        <h4>Om skaden</h4>
       </div>
       <div class="col-md-2">
-        <h4 style="margin-left: -3%;">Tapt Gjenstand</h4>
+        <h4 style="margin-left: -3%;">Tapt gjenstand</h4>
       </div>
       <div class="col-md-2">
-        <h4 style="margin-left: 15%;">Om Reisen</h4>
+        <h4 style="margin-left: 15%;">Om reisen</h4>
       </div>
       <div class="col-md-2">
         <h4 style="margin-left: -1%;">Personopplysninger</h4>
@@ -1476,7 +1476,7 @@ $(window).scroll(function(event){
       <hr>
 
       <h3>Hvordan skjedde det?</h3>
-      <label>På hvilken måte tror du tapet kan ha skjedd?</label>
+      <label>På hvilken måte tror du at tapet kan ha skjedd?</label>
       <div class="stb-form-group al text-area">
         <span class="help-block info-message"></span>
         <textarea cols="40" rows="4" class="form-control" name="lostHow"></textarea>
@@ -1582,13 +1582,13 @@ $(window).scroll(function(event){
 
         </div>
         <div class="hiddenfile">
-          <input name="upload" type="file" id="repairFile"/>hello
+          <input name="upload" type="file" id="repairFile"/>Hello?
         </div>
         <a class="stb-btn secondary" onclick="$('#repairFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;" ></span> Last opp</a>
       </div>
       s
       <label>Kvittering</label>
-      <p class="petit">Har du kvittering på gjenstanden, eller annet bevis på kjøpet (avbetaligngskontrakt, garanti e.l.)?</p>
+      <p class="petit">Har du kvittering for gjenstanden eller annet bevis på kjøpet (avbetalingskontrakt, garanti e.l.)?</p>
       <div id="receiptItemUpload" class="list-group">
       </div>
       <div class="hiddenfile">
@@ -1627,7 +1627,7 @@ $(window).scroll(function(event){
       <h3>Detaljer om reisen</h3>
 
       <div class="stb-form-group">
-        <label>Hva er hensikten med reisen?</label><br>
+        <label>Hva var hensikten med reisen?</label><br>
         <input type="radio" name="travel" id="travelLeisure" value="Leisure" class="stb-radio travel" checked="checked"><label for="travelLeisure" class="stb-custom-input">Fritidsreise</label>
         <input type="radio" name="travel" id="travelBusiness" value="Business" class="stb-radio travel"><label for="travelBusiness" class="stb-custom-input">Forretningsreise</label>
       </div>
@@ -1680,7 +1680,7 @@ $(window).scroll(function(event){
 
       <div id="creditInsuranceInfo" class="well" style="display: none;">
 
-        <label>Kortholderens navn</label>
+        <label>Korteierens navn</label>
         <div class="stb-form-group al input-group">
           <span class="help-block info-message"></span>
           <input type='text' class="form-control" name="cardOwner" placeholder="Fornavn og etternavn" />
@@ -1699,7 +1699,7 @@ $(window).scroll(function(event){
           <input type="radio" name="damageReport" id="damageReportNo" value="No" class="stb-radio" ><label for="damageReportNo" class="stb-custom-input">Nei</label>
         </div>
 
-        <label>Har du motatt erstatning? Hvor mye?</label>
+        <label>Har du mottatt erstatning? Hvor mye?</label>
         <div class="stb-form-group al text-area">
           <span class="help-block info-message"></span>
           <textarea cols="40" rows="4" class="form-control" name="refund"></textarea>
@@ -1707,7 +1707,7 @@ $(window).scroll(function(event){
 
       </div>
 
-      <label>Har du tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling?</label>
+      <label>Har du i løpet av siste 3 år hatt skader som har medført forsikringsutbetaling?</label>
       <div class="stb-form-group al checkbox">
         <span class="help-block info-message"></span>
         <input type="radio" name="damagesLately" id="damagesLatelyYes" value="Yes" class="stb-radio"><label for="damagesLatelyYes" class="stb-custom-input">Ja</label>
@@ -1755,7 +1755,7 @@ $(window).scroll(function(event){
     <div class="col-md-6 col-md-offset-1">
       <h2>Personopplysninger</h2>
       <hr>
-      <h3>Hvem står forikringen på?</h3>
+      <h3>Hvem står forsikringen på?</h3>
 
       <label>Fødselsnummer</label>
       <div class="stb-form-group al text-area">
@@ -1806,7 +1806,7 @@ $(window).scroll(function(event){
       </div>
 
       <hr>
-      <h3>Hvem var utstatt for hendelsen?</h3>
+      <h3>Hvem var utsatt for hendelsen?</h3>
 
       <label>Oppgi de som opplevde å få gjenstanden(e) skadet</label>
       <div class="stb-form-group al checkbox">
@@ -1920,12 +1920,12 @@ $(window).scroll(function(event){
         <li class="list-group-item">Når ble gjenstanden(e) skadet? <span id="dateWhen" class="pull-right"></span></li>
         <li class="list-group-item">I hvilket land skjedde skaden? <span id="lostCountry" class="pull-right"></span></li>
         <li class="list-group-item">På hvilket sted skjedde skaden? <span id="lostPlace" class="pull-right"></span></li>
-        <li class="list-group-item">På hvilken måte tror du tapet kan ha skjedd? <span id="lostHow" class="pull-right"></span></li>
+        <li class="list-group-item">På hvilken måte tror du at tapet kan ha skjedd? <span id="lostHow" class="pull-right"></span></li>
         <li class="list-group-item">Hvor oppholdt du deg da tapet skjedde? Og hvilke aktiviteter ble utført? <span id="lostActivities" class="pull-right"></span></li>
         <li class="list-group-item">La du merke til en spesiell hendelse som kan ha noe med tapet å gjøre? <span id="lostEvents" class="pull-right"></span></li>
         <li class="list-group-item">Var det utenforstående vitne(r) til hendelsen? <span id="lossWitness" class="pull-right"></span></li>
         <li class="list-group-item">Hvor og hvordan var gjenstanden(e) oppbevart?<span id="safeKeeping" class="pull-right"></span></li>
-        <li class="list-group-item">Anbdre opplysninger om skaden?<span id="otherInfo" class="pull-right"></span></li>
+        <li class="list-group-item">Andre opplysninger om skaden?<span id="otherInfo" class="pull-right"></span></li>
         <li class="list-group-item showMore stbcolor-gray third"><a><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
       </ul>
       <hr>
@@ -2001,11 +2001,8 @@ $(window).scroll(function(event){
         <h3>Hva skjer videre?</h3>
         <ul class="stb">
           <li>En bekreftelse av skademeldingen vil bli sendt til <span id="confirmEmail" class="stbcolor-secondary third"></span></li>
-          <li>En av våre konsulenter går igjennom skademeldingen. Vi vil kontakte deg hvis det
-            er behov for ytterlige opplysninger.
-          </li>
-          <li>Du vil høre fra oss når saken er ferdig behandlet. Behandlingstiden er ca. 2 uker.
-            Noe lengre tid ved høysesong.
+          <li>En av våre konsulenter går igjennom skademeldingen. Vi vil kontakte deg hvis det er behov for ytterlige opplysninger.</li>
+          <li>Du vil høre fra oss når saken er ferdig behandlet. Behandlingstiden er cirka to uker, noe lenger i høysesong.
           </li>
           <li>Eventuell erstatning vil bli utbetalt når skaden er ferdig vurdert.</li>
         </ul>
