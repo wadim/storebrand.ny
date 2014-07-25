@@ -15,78 +15,58 @@
   <script type="text/javascript" src="js/dist/stb-page-padding.js"></script> 
   
   <script>
- 
-  $(document).ready(function(){  	
-    // hide and show the categories in tablets and mobile
-    $('h4.search').click(function(e) {
-      //if the media screen width is large and the form is visible already, then don't do anything
-      if( $( window ).width() > 991 && $('.search-categories form').css('display')=="block") return false;
-		  //the following will then only apply for mobile view
-	    $('.search-categories form').slideToggle();
-        $('h4.search span').toggleClass('chevron-up chevron-down');        
-    });
-  });
-   
+    $(document).ready(function(){  	
+      // hide and show the refine items in categories in tablets and mobile
+      $('.search-categories form p').click(function(e) {
+    	  $(this).next().slideToggle();
+    	  $(this).toggleClass("darker");
+    	  $(this).children("span").toggleClass('chevron-down chevron-up');
+      });
+    });   
   </script>
   
   <style>
-  
-  .search-categories label {
-    width:280px;
-  }
-  .search-categories ul li {
-    list-style-type: none;
-  }
-  
-  .hitlink {
-    text-decoration: none;
-  }
-  
-  .hover-gray {
-    padding: 5px;
-    border-radius: 5px;
-  }
-  
-  @media screen and (min-width: 991px) {
-  
-    /** Special case requirement for using "!important". JS will hide this element in mobile view. 
-    If the screen width is changed back to Desktop view by the user the element will remain hidden, 
-    which shouldn't happen, hence using "!important" instead of programming the responsiveness in javascript.
-    */
-
-    .search-categories form {
-      display: block !important;
-    }  
-  }
-  
-  h4.search span {
-    display: none;
-  }
-  
-  @media screen and (max-width: 991px) {
     .search-categories label {
-      width: 100%;
+      width:280px;
     }
-  
-    h4.search {
-      height: 40px;
-      cursor: pointer;
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #000;
+    
+    .search-categories ul li {
+      list-style-type: none;
+    }  
+    
+    @media screen and (min-width: 991px) {
+      /** Special case requirement for using "!important". JS will hide this element in mobile view. 
+      If the screen width is changed back to Desktop view by the user the element will remain hidden, 
+      which shouldn't happen, hence using "!important" instead of programming the responsiveness in javascript.
+      */
+      .search-categories form .refineitems {
+        display: block !important;
+	    }
     }
+    
+    @media screen and (max-width: 991px) {
+      .search-categories label {
+        width: 100%;
+      }
 
-    .search-categories form {
-      display: none;
-	  }
-  
-    h4.search span {
-      display: block;
+      h4.search {
+        height: 40px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+      }
+
+      .search-categories form .refineitems {
+        display: none;
+      }
+      
+      .search-categories form p {
+        padding: 15px;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+      }
     }
-  
-    h4.search .icon-chevron-down {
-      display: block;
-    }
-  }
   </style>
  
 </head>
@@ -422,51 +402,53 @@
   
     <div class="row">
       <div class="col-md-4 column search-categories bottom-margin-30">
-        <h4 class="search">
-          Søkefilter <span class="stb-sprite-16 chevron-down pull-right"></span>
-        </h4>
+        <h4 class="search visible-md visible-lg">Søkefilter</h4>
         <form>
           <ul>
             <li>
-        	    <p class="top-margin-20">
-                Vis treff fra produktområdene
-              </p>
-              <input class="stb-checkbox" id="loan" type="checkbox" />
-              <label for="loan">Lån</label>
-              <input class="stb-checkbox" id="insurance" type="checkbox" />
-              <label for="insurance">Forsikringer</label>
-              <input class="stb-checkbox" id="savingplans" type="checkbox"/>
-              <label for="savingplans">Spareavtaler</label>
+              <p class="top-margin-20 visible-md visible-lg">Produkter</p>
+              <p class="top-margin-20 stbcolor-secondary fourth visible-xs visible-sm">Filtrer etter produkter<span class="stb-sprite-16 chevron-down white" style="margin-left: 10px"></span></p>
+              <div class="refineitems">
+                <input class="stb-checkbox" id="loan" type="checkbox" />
+                <label for="loan">Lån</label>
+                <input class="stb-checkbox" id="insurance" type="checkbox" />
+                <label for="insurance">Forsikringer</label>
+                <input class="stb-checkbox" id="savingplans" type="checkbox"/>
+                <label for="savingplans">spareavtaler</label>
+              </div>     
             </li>
-  		      <li>
-        	    <p class="top-margin-20">
-                Vis temasider angående
-              </p>
-              <input class="stb-checkbox" id="pension" type="checkbox" />
-              <label for="pension">Pensjon</label>
-              <input class="stb-checkbox" id="investment" type="checkbox" />
-              <label for="investment">Sparing og investing</label>
-              <input class="stb-checkbox" id="bankloan" type="checkbox" />
-              <label for="bankloan">Bank og lån</label>
-              <input class="stb-checkbox" id="themeinsurance" type="checkbox"/>
-              <label for="themeinsurance">Forsikring</label>
+            <li>
+              <p class="top-margin-40 visible-md visible-lg">Tema</p>
+              <p class="top-margin-40 stbcolor-secondary fourth visible-xs visible-sm">Filtrer etter tema<span class="stb-sprite-16 chevron-down white" style="margin-left: 10px"></span></p>
+              <div class="refineitems">
+                <input class="stb-checkbox" id="pension" type="checkbox" />
+                <label for="pension">Pensjon</label>
+                <input class="stb-checkbox" id="investment" type="checkbox" />
+                <label for="investment">Sparing og investing</label>
+                <input class="stb-checkbox" id="bankloan" type="checkbox" />
+                <label for="bankloan">Bank og lån</label>
+                <input class="stb-checkbox" id="themeinsurance" type="checkbox"/>
+                <label for="themeinsurance">Forsikring</label>
+              </div>     
             </li>
-            <li> 
-        	    <p class="top-margin-20">
-                Annen filtrering
-              </p>
-              <input class="stb-checkbox" id="calculator" type="checkbox" />
-		          <label for="calculator">Vis bare relaterte verktøy</label>
-              <input class="stb-checkbox" id="pdf" type="checkbox" />
-              <label for="pdf">Vis bare PDF-filer</label>
-              <input class="stb-checkbox" id="nopdf" type="checkbox" />
-              <label for="nopdf">Skjul alle PDF-filer</label>            
+            <li class="bottom-margin-40"> 
+              <p class="top-margin-40 visible-md visible-lg">Annen filtrering</p>
+              <p class="top-margin-40 stbcolor-secondary fourth visible-xs visible-sm">Annen filtrering<span class="stb-sprite-16 chevron-down white" style="margin-left: 10px"></span></p>
+              <div class="refineitems">
+                <input class="stb-checkbox" id="calculator" type="checkbox" />
+		            <label for="calculator">Vis bare relaterte verktøy</label>
+                <input class="stb-checkbox" id="pdf" type="checkbox" />
+                <label for="pdf">Vis bare PDF-filer</label>
+                <input class="stb-checkbox" id="nopdf" type="checkbox" />
+                <label for="nopdf">Skjul alle PDF-filer</label>     	      
+              </div>
             </li>
           </ul>
           <button class="stb-btn visible-xs visible-sm">Oppdater trefflisten</button>         
         </form>
-      </div>
-      
+      </div>    
+    
+    
       <div class="col-md-8 column">
         <div class="stb-box fifth bottom-margin-30">
           <h4><a href="#">ANBEFALT: Børstraktorforsikring</a></h4>
