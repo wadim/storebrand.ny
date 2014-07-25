@@ -17,12 +17,51 @@
   <script type="text/javascript"src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
   <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
   
+  <script>
+    $(document).ready(function(){ 
+    	
+      // hide and show articles list 
+      $('.articlelist p').click(function() {
+    	  
+    	  // if the media screen width is large, then don't do anything
+    	  if( $( window ).width() > 992) return false;
+    	  
+    	  // the following will apply for mobile view
+    	  $('.articlelist .items').slideToggle();
+    	  $('.articlelist p span').toggleClass(" red chevron-down chevron-up");
+      });
+    });
+  </script>
+  
+  
   <!-- Styling for the articles -->
   <style>
     .articlelist {
-    	border-top: 1px solid;
-    	border-bottom: 1px solid;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
     }
+   
+  
+  @media screen and (min-width: 992px) {
+  
+   /** Special case requirment to use !important. JS will hide this element in mobile view. 
+  If the screen width is changed back to Desktop view by the user the element will remain hidden, 
+  which shouldn't happen, hence using !important instead of programming the responsiveness in javascript.
+  */
+    .articlelist .items {
+      display: block !important;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    .articlelist .items {
+      display: none;
+  }
+  
+  .articlelist p {
+    cursor: pointer;
+  }
+  }
   </style>
 </head>
 
@@ -341,8 +380,8 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-md-12 articlelist top-margin-20">
-			  <p class="intro stb-font">Gå direkte til</p>
+			<div class="col-md-12 articlelist top-margin-20 top-padding-10">
+			  <p class="intro stb-font">Gå direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down charcoal pull-right"></span></p>
 			  <ul class="items"></ul>
 			  
 			</div>
