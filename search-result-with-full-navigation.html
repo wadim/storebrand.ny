@@ -16,45 +16,49 @@
   
   <script>
  
-    $(document).ready(function(){
-    	
-      // hide and show the categories in tablets and mobile
-      $('h4.mobilevisible').click(function() {
-        $('.search-categories form').slideToggle();
-      });
-      
-     // hiding and showing categories on window resize
-      $(window).resize(function() {
-          mobileMenu = $(window).width();
-          if(mobileMenu >= 991) {  // show the categories in desktop and above
-        	  $('.search-categories form').css("display","block")
-          }
-		 if(mobileMenu < 991) { // hide the categories in tablets and below
-        	  $('.search-categories form').css("display","none")
-          }
-        });
+  $(document).ready(function(){  	
+    // hide and show the categories in tablets and mobile
+    $('h4.search').click(function(e) {
+      //if the media screen width is large and the form is visible already, then don't do anything
+      if( $( window ).width() > 991 && $('.search-categories form').css('display')=="block") return false;
+		//the following will then only apply for mobile view
+	    $('.search-categories form').slideToggle();
+        $('h4.search span').toggleClass('red chevron-up chevron-down');        
     });
+  });
    
   </script>
   
   <style>
   
   .search-categories label {
-    width: 280px;
+    width:280px;
   }
   .search-categories ul li {
     list-style-type: none;
   }  
-
-  @media screen and (max-width: 991px) {
   
+  @media screen and (min-width: 991px) {
+  
+  /** Special case requirment to use !important. JS will hide this element in mobile view. 
+  If the screen width is changed back to Desktop view by the user the element will remain hidden, 
+  which shouldn't happen, hence using !important instead of programming the responsiveness in javascript.
+  */
+    .search-categories form {
+	  display: block !important; 
+	}  
+  }
+  
+  	h4.search span {
+	  display: none;
+	}
+  
+  @media screen and (max-width: 991px) {
     .search-categories label {
       width: 100%;
     }
   
-    h4.mobilevisible {
-	  width: 100%;
-	  display: inline-block;
+    h4.search {
 	  height: 40px;
 	  cursor: pointer;
 	  border-top: 1px solid #000;
@@ -64,8 +68,12 @@
 	.search-categories form {
 	  display: none;
 	}
+
+  	h4.search span {
+	  display: block;
+	}
 	
-	.icon-chevron-down {
+	h4.search .icon-chevron-down {
 	  display: block;
 	}
 
@@ -403,9 +411,9 @@
   
   <div class="container">
     <div class="row">
-      <div class="col-md-4 column search-categories bottom-margin-30">
-       <h4 class="visible-md visible-lg">Avgrens søkeresultatetss</h4>
-       <h4 class="mobilevisible visible-xs visible-sm">Avgrens søkeresultatet<span class="stb-sprite-16 chevron-down charcoal pull-right"></span></h4>
+	<div class="col-md-4 column search-categories bottom-margin-30">
+       <h4 class="search">Avgrens søkeresultatetss <span class="stb-sprite-16 chevron-down charcoal pull-right"></span></h4>
+       <!--h4 class="mobilevisible visible-xs visible-sm">Avgrens søkeresultatet<span class="stb-sprite-16 chevron-right charcoal pull-right"></span></h4-->
         <form>
           <ul>
             <li>
