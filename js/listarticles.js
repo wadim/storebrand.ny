@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    	
+    	var i = 0;
+    	var j = 0;
     	// find all the major articles 
 	 	var articles= $('.articles');
 	 	for(i=0; i<articles.length; i++) {
@@ -12,7 +13,7 @@ $(document).ready(function() {
 	 		$('.articlelist .items').append('<li><a href="#'+h3id+'">'+h3text+'</a></li>');
 	 		
 	 		// find all subarticles(h4) inside each article
-	 		var allh4= $(articles[i]).find('h4')
+	 		var allh4= $(articles[i]).find('h4');
 	 	
 	 		// make a list of all subarticles in each article
 	 		var h4list = '<ul style="margin-left: 50px">';
