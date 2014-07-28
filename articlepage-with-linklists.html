@@ -12,78 +12,57 @@
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/extendedsearch.js"></script>
-  <script type="text/javascript" src="js/listarticles.js"></script>
-  <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
-  <script type="text/javascript"src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+  <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
   <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
   <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
+    
   
-  <script>
-    $(document).ready(function(){ 
-      // hide and show articles list 
-      $('.articlelist p').click(function() {
-    	  // if the media screen width is large, then don't do anything
-    	  if( $( window ).width() > 992) return false;
-    	  // the following will apply for mobile view
-    	  $('.articlelist .items').slideToggle();
-    	  $('.articlelist p span').toggleClass(" red chevron-down chevron-up");
-      });
-    });
-  </script>
-  
-  
-  <!-- Styling for the articles -->
+  <!-- Styling for the toc list -->
   <style>
-    .articlelist {
+    .toc-list {
     	border-top: 1px solid;
     	border-bottom: 1px solid;
-      border-top: 1px solid;
-      border-bottom: 1px solid;
     }
-   
-  
-  @media screen and (min-width: 992px) {
-  
-   /** Special case requirment to use !important. JS will hide this element in mobile view. 
-  If the screen width is changed back to Desktop view by the user the element will remain hidden, 
-  which shouldn't happen, hence using !important instead of programming the responsiveness in javascript.
-  */
-    .articlelist .items {
-      display: block !important;
+      
+    @media screen and (min-width: 992px) {
+      /* Special case requirement to use !important. JS will hide this element in mobile view. 
+      If the screen width is changed back to full desktop by the user ,the element will remain hidden.
+      */
+      .toc-list .items {
+        display: block !important;
+      }
     }
-  }
-  
-  @media screen and (max-width: 991px) {
-    .articlelist .items {
-      display: none;
-  }
-  
-  .articlelist p {
-    cursor: pointer;
-  }
-  }
+    
+    @media screen and (max-width: 991px) {
+      .toc-list .items {
+        display: none;
+      }
+    
+      .toc-list p {
+        cursor: pointer;
+      }
+    }
   </style>
   
 </head>
 
 <body>
-	<!-- Start top of page -->
+  <!-- Start top of page -->
   <!-- Start desktop menu -->
-    <div class="navbar navbar-default hidden-xs hidden-sm desktop">
-		<div class="container yamm">
-		  <div class="navbar-header col-md-4">
-				<img src="images/logo.png" title="logo image" class="logo">
-			</div>
-			<div id="navbar-collapse-grid" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav col-md-8">
-
-					<li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
+  <div class="navbar navbar-default hidden-xs hidden-sm desktop">
+    <div class="container yamm">
+      <div class="navbar-header col-md-4">
+        <img src="images/logo.png" title="logo image" class="logo">
+      </div>
+      <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav col-md-8">
+          <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
-						<ul class="dropdown-menu" id="dropdown-private">
-							<li class="col-md-2">
-							  <h4>Forsikring</h4>
-								<ul>
+            <ul class="dropdown-menu" id="dropdown-private">
+              <li class="col-md-2">
+                <h4>Forsikring</h4>
+                <ul>
                   <li><a href="#">Bilforsikring</a></li>
                   <li><a href="#">Husforsikring</a></li>
                   <li><a href="#">Innboforsikring</a></li>
@@ -93,10 +72,10 @@
                   <li><a href="#">Liv og helse</a></li>
                   <li><a href="#">Barneforsikring</a></li>
                 </ul>
-							</li>
-							<li class="col-md-2">
-							  <h4>Bank og lån</h4>
-								<ul>                    
+              </li>
+              <li class="col-md-2">
+                <h4>Bank og lån</h4>
+                <ul>                    
                   <li><a href="#">Bli bankkunde</a></li>
                   <li><a href="#">Konto og kort</a></li>
                   <li><a href="#">Ungdomskonto</a></li>
@@ -106,11 +85,11 @@
                   <li><a href="#">Boligkreditt</a></li>
                   <li><a href="#">Boliglån for unge</a></li>
                   <li><a href="#">Nettbank</a></li>
-								</ul>
-							</li>
-							<li class="col-md-2">
-								<h4>Pensjon</h4>
-								<ul>                  
+                </ul>
+              </li>
+              <li class="col-md-2">
+                <h4>Pensjon</h4>
+                <ul>                  
                   <li><a href="#">Egensparing til pensjon</a></li>
                   <li><a href="#">Ekstrapensjon</a></li>
                   <li><a href="#">IPS</a></li>
@@ -118,11 +97,11 @@
                   <li><a href="#">Pensjonskapitalbevis</a></li>
                   <li><a href="#">Fripolise</a></li>
                   <li><a href="#">Fripolise med investeringsvalg</a></li>
-							  </ul>
-							</li>
-							<li class="col-md-2">
-							  <h4>Sparing</h4>
-								<ul>
+                </ul>
+              </li>
+              <li class="col-md-2">
+                <h4>Sparing</h4>
+                <ul>
                   <li><a href="#">Spar i fond</a></li>
                   <li><a href="#">Spar i bank</a></li>
                   <li><a href="#">Spar til pensjon</a></li>
@@ -133,11 +112,11 @@
                   <li><a href="#">Fondspakker</a></li>
                   <li><a href="#">BSU-sparing</a></li>
                   <li><a href="#">Junior-sparing</a></li>
-							  </ul>
-							</li>
-							<li class="col-md-2">
-							  <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
-								<ul>
+                </ul>
+              </li>
+              <li class="col-md-2">
+                <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
+		  					<ul>
                   <li><a href="#">Lånekalkulator</a></li>
                   <li><a href="#">Ditt pensjonstall</a></li>
                   <li><a href="#">Pensjonsskolen</a></li>
@@ -145,36 +124,35 @@
                   <li><a href="#">Priser og vilkår</a></li>
                   <li><a href="#">Renter og priser</a></li>
                   <li><a href="#">Sperre kort</a></li>
-                  <li><a href="#">Nyheter og rapporter</a></li>									
-							  </ul>
-							</li>
-              
+                  <li><a href="#">Nyheter og rapporter</a></li>
+                </ul>
+              </li>
               <li class="extraLinks">
-							  <ul>
-								  <li class="roadAssistance"><a href="#">Veihjelp</a></li>
-									<li class="damageReport"><a href="#">Meld skade</a></li>
-									<li class="benefits"><a href="#">Få fordeler</a></li>
-									<li class="contact"><a href="#">Kontakt oss</a></li>
-								</ul>
-							</li>
-						</ul>
+                <ul>
+                  <li class="roadAssistance"><a href="#">Veihjelp</a></li>
+                  <li class="damageReport"><a href="#">Meld skade</a></li>
+                  <li class="benefits"><a href="#">Få fordeler</a></li>
+                  <li class="contact"><a href="#">Kontakt oss</a></li>
+                </ul>
+              </li>
+            </ul>
           </li>
-
-					<li class="dropdown company yamm-fw col-md-3 group"><a href="#"	data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
-
-					<li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
-				
-
-					<li class="search col-md-3">
-			          	  <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
-				          <label style="width: 95%">
-				          	<input type="text" class="typeahead" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
-				          </label>
-          			</li>
-				</ul>
-			</div>
-		</div>
-		<div class="col-md-6 column rightColor"></div>
+          
+          <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+        
+          <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        
+          <li class="search col-md-3">
+          	  <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
+	          <label style="width: 95%">
+	          	<input type="text" class="typeahead" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+	          </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 column rightColor">
+    </div>
   </div>
   <!-- End desktop menu -->
   
@@ -366,31 +344,29 @@
     </div>
   </nav>  
   
-  <!-- End mobile menu -->
-	<!-- End top of page -->
-
+  <!-- End mobile menu -->  
+  <!-- End top of page -->
+  
 	<!-- Start actual page contents -->
 
 	<div class="container top-padding-40-mdlg bottom-padding-20">
 		<div class="row">
 			<div class="col-md-12 width-75-mdlg">
-			  <h1 class="stb-font">Hva bilforsikringen dekker</h1>
+				<h1 class="stb-font">Hva bilforsikringen dekker</h1>
 				<p class="intro">
           Hva du er forsikret mot bestemmes av hvilken bilforsikring du har. Det er viktig at du vet hva du kan eller ikke kan få erstatning for.
         </p>
 			</div>
 		</div>
-		
-		<div class="row">
-			<div class="col-md-12 articlelist top-margin-20 top-padding-10">
-			  <p class="intro stb-font">Gå direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down charcoal pull-right"></span></p>
+    
+    <div class="row">
+      <div class="col-md-12 toc-list top-margin-20 top-padding-10">
+        <p class="intro stb-font">Gå direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down charcoal pull-right"></span></p>
 			  <ul class="items"></ul>
-			  
-			</div>
-		</div>
-		
-		
-		<div class="row top-padding-40 articles">
+      </div>
+		</div>    
+    
+		<div class="row top-padding-40 toc-header">
 			<div class="col-md-8">
 				<div>
 					<h3 class="stb-font" id="cover-car">Dekket av bilforsikringen</h3>
@@ -456,7 +432,7 @@
 						<li>Skade på bagasje inntil 5&nbsp;000&nbsp;kroner.</li>
 					</ul>
 
-					<h4 id="kasko-rentcar">Kasko med leiebil</h4>
+					<h4 id="kasko-med-leiebil">Kasko med leiebil</h4>
 					<ul class="stb">
             <li>Alt som er dekket av kasko.</li>
             <li>Leiebil i inntil 30 dager.</li>
@@ -492,7 +468,7 @@
       </div>
     </div>
 
-    <div class="row articles">
+    <div class="row toc-header">
       <div class="col-md-8">
         <h3 class="stb-font" id="nocover-car">Ikke dekket av bilforsikringen</h3>
         <p>
@@ -503,12 +479,12 @@
           <li>Tapt arbeidsfortjeneste forårsaket av problemer med bilen.</li>
         </ul>
         
-        <h4 id="nocover-liabilityinsurance">Ansvarsforsikring dekker ikke</h4>
+        <h4 id="make">Ansvarsforsikring dekker ikke</h4>
         <ul class="stb">
           <li>Skade på eget kjøretøy</li>
         </ul>
         
-        <h4 id="nocover-delkasko">Delkasko dekker ikke</h4>
+        <h4 id="this">Delkasko dekker ikke</h4>
         <ul class="stb">
           <li>Skade på eget kjøretøy ved utforkjøring, velt, kollisjon eller hærverk.</li>
           <li>Annen skade som skyldes en tilfeldig, plutselig og ytre	påvirkning.</li>
@@ -518,7 +494,7 @@
           <li>Skadet eller tapt bagasje.</li>
         </ul>
 
-        <h4 id="nocover-rentcar-withoutkasko">Kasko uten leiebil dekker ikke</h4>
+        <h4 id="dynamic">Kasko uten leiebil dekker ikke</h4>
         <ul class="stb">
           <li>Leiebilkostnad uten avtale på forhånd.</li>
         </ul>
@@ -538,7 +514,8 @@
 
   </div>
 
-	<!-- End actual page contents -->
+	<!-- End actual page contents -->  
+
 
   <!-- Start responsive footer -->
   <footer class="stbcolor-primary first stb-footer">
