@@ -59,6 +59,22 @@ $("document").ready(function(){
   });
 })
   
-    // End adding triggers for showing additional info
-
+    // End adding triggers for showing additional info    
+    
 // End content padding
+
+// Adding hotkeys based on Resig
+$("document").ready(function(){
+  //Hotkey for search
+  if($(".typeahead")[0]){
+    $(document).bind('keydown', 'shift+s', function(){$('.typeahead').click();});
+  }
+  //Hotkey for top
+  $(document).bind('keydown', 'shift+t', function(){$('html, body').animate({ scrollTop: 0}, 500);});
+  //Hotkey for bottom
+  $(document).bind('keydown', 'shift+b', function(){$('html, body').animate({ scrollTop: $('footer').offset().top}, 500);});
+  //Hotkey for login
+  if($("li.login > a")) {
+    $(document).bind('keydown', 'shift+l', function(){$('li.login > a').click();});
+  }
+})

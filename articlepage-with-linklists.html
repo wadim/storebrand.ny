@@ -16,16 +16,15 @@
   <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
   <script type="text/javascript"src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
   <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
   
   <script>
     $(document).ready(function(){ 
-    	
       // hide and show articles list 
       $('.articlelist p').click(function() {
-    	  
     	  // if the media screen width is large, then don't do anything
     	  if( $( window ).width() > 992) return false;
-    	  
     	  // the following will apply for mobile view
     	  $('.articlelist .items').slideToggle();
     	  $('.articlelist p span').toggleClass(" red chevron-down chevron-up");
@@ -33,17 +32,16 @@
     });
   </script>
   
+  
   <!-- Styling for the articles -->
   <style>
-  
     .articlelist {
+    	border-top: 1px solid;
+    	border-bottom: 1px solid;
       border-top: 1px solid;
       border-bottom: 1px solid;
     }
    
-    .articlelist .items {
-      margin-left: 20px;
-    }
   
   @media screen and (min-width: 992px) {
   
@@ -57,9 +55,8 @@
   }
   
   @media screen and (max-width: 991px) {
-
-  .articlelist .items {
-    display: none;
+    .articlelist .items {
+      display: none;
   }
   
   .articlelist p {
