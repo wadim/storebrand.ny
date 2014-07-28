@@ -35,10 +35,22 @@ $(document).ready(function() {
 	 		      var target = $(this.hash);
 	 		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 	 		      if (target.length) {
+					scrollToPosition = target.offset().top;
+					
+					// Checking if the navigation header is fixed. If yes, set the scrollto position by subtracting the height of the fixed header
+					if($('.navbar-fixed-top').css("display") == "block") { //
+						scrollToPosition -= $('.navbar-fixed-top').height(); 
+					}
 	 		        $('html,body').animate({
-	 		          scrollTop: target.offset().top
+	 		          
+	 		          scrollTop: scrollToPosition
 	 		        }, 1000);
+	 		        
+	 		        // Highlighting the clicked heading for a brief period. This is to prevent the user from dis-orientation
+	 		        $(target).animate({backgroundColor:"yellow"},1000);
+		 		    $(target).animate({backgroundColor:"white"},1000);
 	 		        return false;
+	 		      
 	 		      }
 	 		    }
 	 		  });
