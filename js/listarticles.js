@@ -16,7 +16,7 @@ $(document).ready(function() {
 	 		var allh4= $(articles[i]).find('h4');
 	 	
 	 		// make a list of all subarticles in each article
-	 		var h4list = '<ul style="margin-left: 50px">';
+	 		var h4list = '<ul style="margin-left: 20px">';
 	 		for( j=0; j<allh4.length;j++) {
 	 			var h4text= $(allh4[j]).html();
 	 			var h4id= $(allh4[j]).attr("id");
