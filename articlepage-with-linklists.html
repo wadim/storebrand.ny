@@ -12,79 +12,44 @@
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/extendedsearch.js"></script>
-  <script type="text/javascript" src="js/listarticles.js"></script>
-  <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
-  <script type="text/javascript"src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+  <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
   <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
+    
   
-  <script>
-    $(document).ready(function(){ 
-    	
-      // hide and show articles list 
-      $('.articlelist p').click(function() {
-    	  
-    	  // if the media screen width is large, then don't do anything
-    	  if( $( window ).width() > 992) return false;
-    	  
-    	  // the following will apply for mobile view
-    	  $('.articlelist .items').slideToggle();
-    	  $('.articlelist p span').toggleClass(" red chevron-down chevron-up");
-      });
-    });
-  </script>
-  
-  
-  <!-- Styling for the articles -->
-  <style>
-    .articlelist {
-    	border-top: 1px solid;
-    	border-bottom: 1px solid;
-      border-top: 1px solid;
-      border-bottom: 1px solid;
+  <!-- Styling for the toc list -->
+  <style> 
+    @media screen and (max-width: 991px) {
+      .toc-list .items {
+        display: none;
+      }
     }
-   
-  
-  @media screen and (min-width: 992px) {
-  
-   /** Special case requirment to use !important. JS will hide this element in mobile view. 
-  If the screen width is changed back to Desktop view by the user the element will remain hidden, 
-  which shouldn't happen, hence using !important instead of programming the responsiveness in javascript.
-  */
-    .articlelist .items {
-      display: block !important;
+    
+    .toc-list ul.items > li {
+      list-style-type: none;
+      margin-top: 10px; 
     }
-  }
-  
-  @media screen and (max-width: 991px) {
-    .articlelist .items {
-      display: none;
-  }
-  
-  .articlelist p {
-    cursor: pointer;
-  }
-  }
   </style>
   
 </head>
 
 <body>
-	<!-- Start top of page -->
+  <!-- Start top of page -->
   <!-- Start desktop menu -->
-    <div class="navbar navbar-default hidden-xs hidden-sm desktop">
-		<div class="container yamm">
-		  <div class="navbar-header col-md-4">
-				<img src="images/logo.png" title="logo image" class="logo">
-			</div>
-			<div id="navbar-collapse-grid" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav col-md-8">
-
-					<li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
+  <div class="navbar navbar-default hidden-xs hidden-sm desktop">
+    <div class="container yamm">
+      <div class="navbar-header col-md-4">
+        <img src="images/logo.png" title="logo image" class="logo">
+      </div>
+      <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav col-md-8">
+          <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
-						<ul class="dropdown-menu" id="dropdown-private">
-							<li class="col-md-2">
-							  <h4>Forsikring</h4>
-								<ul>
+            <ul class="dropdown-menu" id="dropdown-private">
+              <li class="col-md-2">
+                <h4>Forsikring</h4>
+                <ul>
                   <li><a href="#">Bilforsikring</a></li>
                   <li><a href="#">Husforsikring</a></li>
                   <li><a href="#">Innboforsikring</a></li>
@@ -94,10 +59,10 @@
                   <li><a href="#">Liv og helse</a></li>
                   <li><a href="#">Barneforsikring</a></li>
                 </ul>
-							</li>
-							<li class="col-md-2">
-							  <h4>Bank og lån</h4>
-								<ul>                    
+              </li>
+              <li class="col-md-2">
+                <h4>Bank og lån</h4>
+                <ul>                    
                   <li><a href="#">Bli bankkunde</a></li>
                   <li><a href="#">Konto og kort</a></li>
                   <li><a href="#">Ungdomskonto</a></li>
@@ -107,11 +72,11 @@
                   <li><a href="#">Boligkreditt</a></li>
                   <li><a href="#">Boliglån for unge</a></li>
                   <li><a href="#">Nettbank</a></li>
-								</ul>
-							</li>
-							<li class="col-md-2">
-								<h4>Pensjon</h4>
-								<ul>                  
+                </ul>
+              </li>
+              <li class="col-md-2">
+                <h4>Pensjon</h4>
+                <ul>                  
                   <li><a href="#">Egensparing til pensjon</a></li>
                   <li><a href="#">Ekstrapensjon</a></li>
                   <li><a href="#">IPS</a></li>
@@ -119,11 +84,11 @@
                   <li><a href="#">Pensjonskapitalbevis</a></li>
                   <li><a href="#">Fripolise</a></li>
                   <li><a href="#">Fripolise med investeringsvalg</a></li>
-							  </ul>
-							</li>
-							<li class="col-md-2">
-							  <h4>Sparing</h4>
-								<ul>
+                </ul>
+              </li>
+              <li class="col-md-2">
+                <h4>Sparing</h4>
+                <ul>
                   <li><a href="#">Spar i fond</a></li>
                   <li><a href="#">Spar i bank</a></li>
                   <li><a href="#">Spar til pensjon</a></li>
@@ -134,11 +99,11 @@
                   <li><a href="#">Fondspakker</a></li>
                   <li><a href="#">BSU-sparing</a></li>
                   <li><a href="#">Junior-sparing</a></li>
-							  </ul>
-							</li>
-							<li class="col-md-2">
-							  <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
-								<ul>
+                </ul>
+              </li>
+              <li class="col-md-2">
+                <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
+		  					<ul>
                   <li><a href="#">Lånekalkulator</a></li>
                   <li><a href="#">Ditt pensjonstall</a></li>
                   <li><a href="#">Pensjonsskolen</a></li>
@@ -146,36 +111,35 @@
                   <li><a href="#">Priser og vilkår</a></li>
                   <li><a href="#">Renter og priser</a></li>
                   <li><a href="#">Sperre kort</a></li>
-                  <li><a href="#">Nyheter og rapporter</a></li>									
-							  </ul>
-							</li>
-              
+                  <li><a href="#">Nyheter og rapporter</a></li>
+                </ul>
+              </li>
               <li class="extraLinks">
-							  <ul>
-								  <li class="roadAssistance"><a href="#">Veihjelp</a></li>
-									<li class="damageReport"><a href="#">Meld skade</a></li>
-									<li class="benefits"><a href="#">Få fordeler</a></li>
-									<li class="contact"><a href="#">Kontakt oss</a></li>
-								</ul>
-							</li>
-						</ul>
+                <ul>
+                  <li class="roadAssistance"><a href="#">Veihjelp</a></li>
+                  <li class="damageReport"><a href="#">Meld skade</a></li>
+                  <li class="benefits"><a href="#">Få fordeler</a></li>
+                  <li class="contact"><a href="#">Kontakt oss</a></li>
+                </ul>
+              </li>
+            </ul>
           </li>
-
-					<li class="dropdown company yamm-fw col-md-3 group"><a href="#"	data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
-
-					<li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
-				
-
-					<li class="search col-md-3">
-			          	  <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
-				          <label style="width: 95%">
-				          	<input type="text" class="typeahead" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
-				          </label>
-          			</li>
-				</ul>
-			</div>
-		</div>
-		<div class="col-md-6 column rightColor"></div>
+          
+          <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+        
+          <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        
+          <li class="search col-md-3">
+          	  <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
+	          <label style="width: 95%">
+	          	<input type="text" class="typeahead" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+	          </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 column rightColor">
+    </div>
   </div>
   <!-- End desktop menu -->
   
@@ -367,120 +331,106 @@
     </div>
   </nav>  
   
-  <!-- End mobile menu -->
-	<!-- End top of page -->
+  <!-- End mobile menu -->  
+  <!-- End top of page -->
+  
+  <!-- Start actual page contents -->
 
-	<!-- Start actual page contents -->
-
-	<div class="container top-padding-40-mdlg bottom-padding-20">
-		<div class="row">
-			<div class="col-md-12 width-75-mdlg">
-			  <h1 class="stb-font">Hva bilforsikringen dekker</h1>
-				<p class="intro">
-          Hva du er forsikret mot bestemmes av hvilken bilforsikring du har. Det er viktig at du vet hva du kan eller ikke kan få erstatning for.
-        </p>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-12 articlelist top-margin-20 top-padding-10">
-			  <p class="intro stb-font">Gå direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down charcoal pull-right"></span></p>
-			  <ul class="items"></ul>
-			  
-			</div>
-		</div>
-		
-		
-		<div class="row top-padding-40 articles">
-			<div class="col-md-8">
-				<div>
-					<h3 class="stb-font" id="cover-car">Dekket av bilforsikringen</h3>
-					<p>
+  <div class="container top-padding-40-mdlg bottom-padding-20">
+    <div class="row">
+	  <div class="col-md-12 width-75-mdlg">
+	    <h1 class="stb-font">Hva bilforsikringen dekker</h1>
+		<p class="intro">Hva du er forsikret mot bestemmes av hvilken bilforsikring du har. Det er viktig at du vet hva du kan eller ikke kan få erstatning for.</p>
+	  </div>
+    </div>
+      
+    <div class="row top-padding-40">
+	  <div class="col-md-8">
+	    <h3 class="stb-font toc-header">Dekket av bilforsikringen</h3>
+		<p>
             Dette sammendraget viser i hovedtrekk hva din forsikring kan
 						omfatte og noen av de begrensningene som finnes. Vær oppmerksom på
 						at det alltid er de fullstendige vilkårene som gjelder.
-          </p>
-          <p>
+        </p>
+        <p>
             Følgende er å anse som dekket som del av bilen du forsikrer:
-          </p>
-					<ul class="stb">
-						<li>Bilen med den modellbetegnelsen og registreringsnummeret som er beskrevet i forsikringsdokumentet.</li>
-						<li>Dekk og felger, for ett sett sommerhjul og ett sett vinterhjul.</li>
-						<li>Musikkanlegget bilen ble levert med.</li>
-						<li>Sikkerhetsutrustning(barneste, varseltrekant, førstehjelpspute, brannslukningsapparat og høyt monterte bremselys.</li>
-						<li>Fastmontert mobiltelefon.</li>
-						<li>Annet fastmontert tilleggsutstyr, dekor og spesiell lakk inntil kr 10&nbsp;000.</li>
-					</ul>
+        </p>
+		<ul class="stb">
+		  <li>Bilen med den modellbetegnelsen og registreringsnummeret som er beskrevet i forsikringsdokumentet.</li>
+		  <li>Dekk og felger, for ett sett sommerhjul og ett sett vinterhjul.</li>
+		  <li>Musikkanlegget bilen ble levert med.</li>
+		  <li>Sikkerhetsutrustning(barneste, varseltrekant, førstehjelpspute, brannslukningsapparat og høyt monterte bremselys.</li>
+		  <li>Fastmontert mobiltelefon.</li>
+		  <li>Annet fastmontert tilleggsutstyr, dekor og spesiell lakk inntil kr 10&nbsp;000.</li>
+		</ul>
 
-          <h4 id="liability-insurance">Ansvarsforsikring</h4>
-          <p>
+        <h4>Ansvarsforsikring</h4>
+        <p>
             Alle bilforsikringer inkluderer også ansvarsforsikring. 
             I utgangspunktet er du dekket for erstatningsansvar etter bilansvarsloven. 
             For skade på personer er det ingen begrensning på beløp, mens for skade 
             på ting er du dekket opp til 10 millioner kroner.
-          </p>
-          <p>Følgende er dekket:</p>
-          <ul class="stb">
-            <li>Skade på fører og passasjerer</li>
-            <li>Skade på personer utenfor kjøretøyet</li>
-            <li>Skade påført bygninger og andre gjenstander</li>
-            <li>Skade påført andre kjøretøy</li>
-            <li>Fastmontert mobiltelefon</li>
-          </ul>
+        </p>
+        <p>Følgende er dekket:</p>
+        <ul class="stb">
+          <li>Skade på fører og passasjerer</li>
+          <li>Skade på personer utenfor kjøretøyet</li>
+          <li>Skade påført bygninger og andre gjenstander</li>
+          <li>Skade påført andre kjøretøy</li>
+          <li>Fastmontert mobiltelefon</li>
+        </ul>
           
-          <h4 id="driver">Fører- og passasjerulykke</h4>
-          <p>
+        <h4>Fører- og passasjerulykke</h4>
+        <p>
             Det er spesifikke betingelser for skade på fører og passasjerer.
-          </p>
-          <ul class="stb">
-            <li>Ulykke kan føre til varierende grader av personskade, se punkt 10 i vilkårene.</li>
-            <li>For dødsfall er erstatningen begrenset til 100&nbsp;000&nbsp;kroner.</li>
-            <li>Livsvarig invaliditet erstattes med inntil 200&nbsp;000&nbsp;kroner.</li>
-          </ul>
+        </p>
+        <ul class="stb">
+          <li>Ulykke kan føre til varierende grader av personskade, se punkt 10 i vilkårene.</li>
+          <li>For dødsfall er erstatningen begrenset til 100&nbsp;000&nbsp;kroner.</li>
+          <li>Livsvarig invaliditet erstattes med inntil 200&nbsp;000&nbsp;kroner.</li>
+        </ul>
             
-					<h4 id="delkasko">Delkasko</h4>
-					<ul class="stb">
-            <li>Skade etter brann eller eksplosjon, og smelteskade på elektrisk anlegg etter kortslutning.</li>
-						<li>Tyveri av kjøretøyet og tyveri av fastmontert utstyr fra kjøretøyet.</li>
-						<li>Skade på kjøretøyet i forbindelse med innbrudd eller tyveri.</li>
-						<li>Glassruteskade, knusing og sprekker.</li>
-						<li>Veihjelp i Norden ved driftsstopp, utelåsing, sykdom eller visse uhell/skader under ferge- eller togtransport.</li>
-					</ul>
+		<h4>Delkasko</h4>
+		<ul class="stb">
+          <li>Skade etter brann eller eksplosjon, og smelteskade på elektrisk anlegg etter kortslutning.</li>
+		  <li>Tyveri av kjøretøyet og tyveri av fastmontert utstyr fra kjøretøyet.</li>
+		  <li>Skade på kjøretøyet i forbindelse med innbrudd eller tyveri.</li>
+		  <li>Glassruteskade, knusing og sprekker.</li>
+		  <li>Veihjelp i Norden ved driftsstopp, utelåsing, sykdom eller visse uhell/skader under ferge- eller togtransport.</li>
+		</ul>
 
-          <h4 id="kasko">Kasko</h4>
-					<ul class="stb">
-						<li>Alt som er dekket av delkasko.</li>
-						<li>Skade på eget kjøretøy ved utforkjøring, velt, kollisjon eller hærverk.</li>
-            <li>Annen skade som skyldes en tilfeldig, plutselig og ytre påvirkning.</li>
-            <li>Utgifter til veihjelp/assistanse i Europa ved driftsstopp, utelåsing, sykdom eller ulykke.</li>
-						<li>Bilhjelp i nærområdet ditt hjemme.</li>
-						<li>Skade på bagasje inntil 5&nbsp;000&nbsp;kroner.</li>
-					</ul>
+        <h4>Kasko</h4>
+		<ul class="stb">
+		  <li>Alt som er dekket av delkasko.</li>
+		  <li>Skade på eget kjøretøy ved utforkjøring, velt, kollisjon eller hærverk.</li>
+          <li>Annen skade som skyldes en tilfeldig, plutselig og ytre påvirkning.</li>
+          <li>Utgifter til veihjelp/assistanse i Europa ved driftsstopp, utelåsing, sykdom eller ulykke.</li>
+		  <li>Bilhjelp i nærområdet ditt hjemme.</li>
+		  <li>Skade på bagasje inntil 5&nbsp;000&nbsp;kroner.</li>
+		</ul>
 
-					<h4 id="kasko-rentcar">Kasko med leiebil</h4>
-					<ul class="stb">
-            <li>Alt som er dekket av kasko.</li>
-            <li>Leiebil i inntil 30 dager.</li>
-            <li>Hvis du ikke ønsker leiebil kan du i stedet motta 150&nbsp;kroner per dag i	inntil 30 dager.</li>
-            <li>Ved totalskadet kjøretøy har du krav på leiebil fra skaden ble meldt og frem til
+        <h4>Kasko med leiebil</h4>
+		<ul class="stb">
+          <li>Alt som er dekket av kasko.</li>
+          <li>Leiebil i inntil 30 dager.</li>
+          <li>Hvis du ikke ønsker leiebil kan du i stedet motta 150&nbsp;kroner per dag i	inntil 30 dager.</li>
+          <li>Ved totalskadet kjøretøy har du krav på leiebil fra skaden ble meldt og frem til
                 10 dager etter at Storebrand har tatt stilling til erstatningsspørsmålet.</li>
-            <li>Ønsker du ikke leiebil når eget kjøretøy må kondemneres, får du 150 kroner per dag i inntil 10 dager.</li>
-          </ul>
+          <li>Ønsker du ikke leiebil når eget kjøretøy må kondemneres, får du 150 kroner per dag i inntil 10 dager.</li>
+        </ul>
 
-          <h4 id="super">Super</h4>
-					<p>
+        <h4>Super</h4>
+		<p>
             Superforsikring kan bare tegnes på biler som på tegningstidspunktet er	inntil 7 år gamle.
-          </p>
-          <ul class="stb">
-            <li>Alt som er dekket av kasko med leiebil.</li>
-            <li>Vesentlig bedre erstatning hvis bilen din blir totalskadet. Du kan få fabrikkny bil hvis bilen din er 
-                under tre år gammel og har gått under 60&nbsp;000 kilometer. Ellers økes erstatningsbeløpet med inntil 15&nbsp;% av gjenanskaffelsespris.</li>
-            <li>Skader på motor og girkasse.</li>
-            <li>Utvidet leiebil av samme klasse som egen bil dekkes med inntil 500&nbsp;kroner per dag i inntil 45 dager. Leiebilerstatning gis også ved motor-/girkasseskader.</li>
-          </ul>
-        </div>
+        </p>
+        <ul class="stb">
+          <li>Alt som er dekket av kasko med leiebil.</li>
+          <li>Vesentlig bedre erstatning hvis bilen din blir totalskadet. Du kan få fabrikkny bil hvis bilen din er 
+              under tre år gammel og har gått under 60&nbsp;000 kilometer. Ellers økes erstatningsbeløpet med inntil 15&nbsp;% av gjenanskaffelsespris.</li>
+          <li>Skader på motor og girkasse.</li>
+          <li>Utvidet leiebil av samme klasse som egen bil dekkes med inntil 500&nbsp;kroner per dag i inntil 45 dager. Leiebilerstatning gis også ved motor-/girkasseskader.</li>
+        </ul>
       </div>      
-      
       <div class="col-md-4">
         <div class="pull-right bottom-margin-20">
           <figure class="stb-figure">
@@ -493,9 +443,9 @@
       </div>
     </div>
 
-    <div class="row articles">
+    <div class="row">
       <div class="col-md-8">
-        <h3 class="stb-font" id="nocover-car">Ikke dekket av bilforsikringen</h3>
+        <h3 class="stb-font toc-header">Ikke dekket av bilforsikringen</h3>
         <p>
           Følgende dekkes <strong>ikke</strong> av de forskjellige bilforsikringene du kan velge:
         </p>
@@ -503,13 +453,11 @@
           <li>Gods som fraktes med kjøretøyet eller tilhenger.</li>
           <li>Tapt arbeidsfortjeneste forårsaket av problemer med bilen.</li>
         </ul>
-        
-        <h4 id="nocover-liabilityinsurance">Ansvarsforsikring dekker ikke</h4>
+        <h4>Ansvarsforsikring dekker ikke</h4>
         <ul class="stb">
           <li>Skade på eget kjøretøy</li>
         </ul>
-        
-        <h4 id="nocover-delkasko">Delkasko dekker ikke</h4>
+        <h4>Delkasko dekker ikke</h4>
         <ul class="stb">
           <li>Skade på eget kjøretøy ved utforkjøring, velt, kollisjon eller hærverk.</li>
           <li>Annen skade som skyldes en tilfeldig, plutselig og ytre	påvirkning.</li>
@@ -519,7 +467,7 @@
           <li>Skadet eller tapt bagasje.</li>
         </ul>
 
-        <h4 id="nocover-rentcar-withoutkasko">Kasko uten leiebil dekker ikke</h4>
+        <h4>Kasko uten leiebil dekker ikke</h4>
         <ul class="stb">
           <li>Leiebilkostnad uten avtale på forhånd.</li>
         </ul>
@@ -536,10 +484,10 @@
         </div>
       </div>
     </div>
-
   </div>
 
-	<!-- End actual page contents -->
+	<!-- End actual page contents -->  
+
 
   <!-- Start responsive footer -->
   <footer class="stbcolor-primary first stb-footer">
