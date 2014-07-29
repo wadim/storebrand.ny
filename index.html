@@ -23,6 +23,7 @@
     <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
     <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
     <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
+    <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
   </head>
   <body>
 
@@ -550,7 +551,9 @@
             </tbody>
           </table>
           
+
           <h3>Table without alternating rows</h3>
+          <p>This table also contains clickable rows that jumps to the color section of this page.</p>
           <table class="stb-table no-alt hoverable nude">
             <thead>
               <tr>
@@ -560,32 +563,32 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="clickableRow" href="#index-nav">
                 <td>Storebrand Barnespar</td>
                 <td class="text-right">1,50%</td>
                 <td class="text-right">0</td>
               </tr>
-              <tr>
+              <tr class="clickableRow" href="#index-nav">
                 <td>Storebrand Aksjespar</td>
                 <td class="text-right">1,50%</td>
                 <td class="text-right">0</td>
               </tr>
-              <tr>
+              <tr class="clickableRow" href="#index-nav">
                 <td>Storebrand Global</td>
                 <td class="text-right">2,00%</td>
                 <td class="text-right">0</td>
               </tr>
-              <tr>
+              <tr class="clickableRow" href="#index-nav">
                 <td>Storebrand Norge</td>
                 <td class="text-right">2,00%</td>
                 <td class="text-right">0</td>
               </tr>
-              <tr>
+              <tr class="clickableRow" href="#index-nav">
                 <td>Storebrand WGA Healthcare</td>
                 <td class="text-right">1,75%</td>
                 <td class="text-right">0</td>
               </tr>
-              <tr>
+              <tr class="clickableRow" href="#index-nav">
                 <td>Storebrand Vekst</td>
                 <td class="text-right">0,40%</td>
                 <td class="text-right">0</td>
@@ -597,14 +600,14 @@
           <pre class="prettyprint">
 &lt;table class=&quot;stb-table [hoverable]&quot;&gt;
   &lt;thead&gt;
-    &lt;tr&gt;
+    &lt;tr class="clickableRow" href="#index-nav"&gt;
       &lt;th&gt;Aksjefond&lt;/th&gt;
       &lt;th class=&quot;text-right&quot;&gt;Forvaltningshonorar&lt;/th&gt;
       &lt;th class=&quot;text-right&quot;&gt;Andre gebyrer&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
-    &lt;tr&gt;
+    &lt;tr class="clickableRow" href="#index-nav"&gt;
       &lt;td&gt;Storebrand Barnespar&lt;/td&gt;
       &lt;td class=&quot;text-right&quot;&gt;1,50%&lt;/td&gt;
       &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
