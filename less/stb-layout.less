@@ -68,10 +68,30 @@ figure.stb-figure > figcaption.stb-caption {
   display: none; 
 } 
   
-//Gives no gap between rows - needs to be modified
+// Gives no gap between rows - needs to be modified
 // (Deprecated, there's by default no gap between rows, instead add margin/padding using top-margin-xx/bottom-padding-xx classes.
 .nogap{
   margin-bottom:0px;
+}
+
+// Styling for toc lists on article pages 
+@media screen and (max-width: 991px) {
+  .toc-list .items {
+    display: none;
+  }
+}
+    
+.toc-list ul.items > li {
+  list-style-type: none;
+  margin-top: 10px; 
+}
+// End of styling for toc lists on article pages 
+
+
+// Adds visual border at top and bottom of element
+.border-top-and-bottom {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 
 // Various top and bottom gaps for all screen widths
