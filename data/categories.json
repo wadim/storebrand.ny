@@ -1,0 +1,83 @@
+{
+  "Fond" :
+      [
+       {"name": "Fond","url" : "Url"},
+       {"name": "Fondslister","url":"Url"},
+       {"name": "Lær mer om fondsparing","url":"Url"},
+       {"name": "<span class='glyphicon glyphicon-picture'></span> Bærekraft","url":"Url"},
+       {"name": "Kjøp fond","url":"Url"},
+       {"name": "Våre anbefalte fond","url":"Url"},
+       {"name": "Delphi","url":"Url"},
+       {"name": "Storebrandfondene","url":"Url"},
+       {"name": "Kontakt fond","url":"Url"},
+       {"name": "Start fondsparing","url":"Url"},
+       {"name": "Chat om fond","url":"Url"}
+      ],
+  "Pensjon" :
+      [
+        {"name": "<span class='glyphicon glyphicon-info-sign'></span> Lær om pensjon","url" : "Url"},
+        {"name": "Pensjonskalkulator","url":"Url"},
+        {"name": "Kjøp pensjonssparing","url":"Url"},
+        {"name": "Hva er pensjonssparing","url":"Url"},
+        {"name": "Ditt pensjonstall","url":"Url"},
+        {"name": "Fripolise","url":"Url"},
+        {"name": "Pensjonsskolen","url":"Url"},
+        {"name": "Folketrygden","url":"Url"},
+        {"name": "Tjenestepensjon","url":"Url"},
+        {"name": "Kontakt pensjon","url":"Url"},
+        {"name": "Start pensjonssparing","url":"Url"},
+        {"name": "Chat om pensjon","url":"Url"},
+        {"name": "Spar til din pensjon","url":"Url"},
+        {"name": "Mitt pensjonstall","url":"Url"},
+        {"name": "Tips til pensjon","url":"Url"}
+      ],
+  "Bank" :
+      [
+        {"name": "Banksparing","url" : "Url"},
+        {"name": "Kort og kreditt","url":"Url"},
+        {"name": "Mistet kort","url":"Url"},
+        {"name": "Sperr kort","url":"Url"},
+        {"name": "Visakort","url":"Url"},
+        {"name": "Kredittkort","url":"Url"},
+        {"name": "Bli kunde","url":"Url"},
+        {"name": "Kontakt banken","url":"Url"},
+        {"name": "Priser og vilkår","url":"Url"},
+        {"name": "Dagens renter","url":"Url"},
+        {"name": "Søk boliglån","url":"Url"},
+        {"name": "Start Banksparing","url":"Url"},
+        {"name": "Chat om bank","url":"Url"}
+      ],
+  "Forsikring" :
+      [
+        {"name": "<span class='glyphicon glyphicon-wrench'></span> Meld skade","url" : "Url"},
+        {"name": "Bilforsikring","url":"Url"},
+        {"name": "Helseforsikring","url":"Url"},
+        {"name": "Hytteforsikring","url":"Url"},
+        {"name": "Tips om forsikring","url":"Url"},
+        {"name": "Mine behov","url":"Url"},
+        {"name": "Alt til bilen","url":"Url"},
+        {"name": "Alt til barnet","url":"Url"},
+        {"name": "Alt til huset","url":"Url"},
+        {"name": "Kontakt forsikring","url":"Url"},
+        {"name": "Chat om forsikring","url":"Url"},
+        {"name": "Motorsykkelforsikring","url":"Url"},
+        {"name": "Tilhengerforsikring","url":"Url"},
+        {"name": "Uføreforsikring","url":"Url"}
+      ],
+  "Minside" :
+      [
+        {"name": "Betal regning","url" : "Url"},
+        {"name": "Min oversikt","url":"Url"},
+        {"name": "Mitt forbruk","url":"Url"},
+        {"name": "Efaktura","url":"Url"},
+        {"name": "Kort og kreditt","url":"Url"},
+        {"name": "Anders Losvik","url":"Url"},
+        {"name": "Bjørn Christian Tørrissen'","url":"Url"},
+        {"name": "Mine kontoer","url":"Url"},
+        {"name": "Mine innstillinger","url":"Url"},
+        {"name": "Søk lån","url":"Url"},
+        {"name": "Banksparing","url":"Url"},
+        {"name": "Nettbank","url":"Url"},
+        {"name": "<span class='glyphicon glyphicon-lock'></span> Sikker chat - logg inn","url":"Url"}
+      ]
+}
