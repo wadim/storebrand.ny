@@ -77,35 +77,44 @@ $("document").ready(function(){
   if($("li.login > a")) {
     $(document).bind('keydown', 'shift+l', function(){$('li.login > a').click();});
   }
-})
+});
 
 // Handling automatically generated toc lists for article pages
 $(document).ready(function() {
-  var i = 0;
-  var j = 0;
-  // find all the major articles 
-  var tocHeaders= $('.toc-header');
-  for(i=0; i<tocHeaders.length; i++) {
-    //retrieve heading(h3) content and id for each heading to be included in toc
-    var h3text = $(tocHeaders[i]).find('h3').html();
-    var h3id = $(tocHeaders[i]).find('h3').attr("id");
+
+  // prepare the row that contains the table of contents
+  var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10"><p class="intro stb-font">G&aring; direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down charcoal pull-right"></span></p><ul class="items"></ul></div></div>';
+  
+  // Place the table of content above the first H3.toc-header
+  $(toclist).insertBefore( $('h3.toc-header:first').closest("div.row") );
+  
+  // find all the top level toc headings (H3)
+  var tocHeaders= $('h3.toc-header');
+  
+  // iterate through all the top level headings (h3)
+  for(var i=0; i<tocHeaders.length; i++) {
+	var h3tag = tocHeaders[i];
     
-    // append article heading text as links in the toc-header list
-    $('.toc-list .items').append('<li><a href="#'+h3id+'">'+h3text+'</a></li>');
+	// appending heading text to table to contents
+    $('.toc-list .items').append( prepareTocLink(h3tag) );
     
-    // find all sub-headers inside each toc-header
-    var allh4= $(tocHeaders[i]).find('h4');
+    // find all sub-headings(h4) inside each heading(h3)
+    var allh4 = $(h3tag).nextUntil('h3','h4');
     
-    // make a list of all sub-headers for each toc-header
+    // check if there are any h4 elements. If there are none, we should not run the code below.
+    if(allh4.length == 0) continue; 
+    // prepare a list mark up of all sub-headings in the table of content
     var h4list = '<ul style="margin-left: 20px">';
-    for( j=0; j<allh4.length;j++) {
-      var h4text= $(allh4[j]).html();
-      var h4id= $(allh4[j]).attr("id");
-      h4list=h4list+'<li><a href="#'+h4id+'">'+h4text+'</a></li>';
-    }
     
+    // iterate through these sub headings
+    for( var j=0; j<allh4.length;j++) {
+	  var h4tag = allh4[j];
+      // adding the sub headings to the subheading list
+      h4list = h4list + prepareTocLink(h4tag);
+    }
     h4list = h4list+'</ul>';
-    //append these sub-headers to the toc-header list
+    
+    //append sub-heading list the the table of contents
     $('.toc-list .items').append(h4list);
   }
 	 	
@@ -130,6 +139,21 @@ $(document).ready(function() {
       }
     });
   });
+  
+  
+  //Prepares the TOC link for a given header tag
+  function prepareTocLink(headerTag) {
+	
+	//take the header text
+    var headerText = $(headerTag).text();
+    
+	//prepare the header ID from its text
+	$(headerTag).attr("id",headerText.replace(/ /g,"-").toLowerCase()); // generating id for the h3
+    var headerId = $(headerTag).attr("id"); // set the id
+    
+	//create the link and return it
+    return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
+  }
   
 });
 
