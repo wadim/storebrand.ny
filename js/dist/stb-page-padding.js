@@ -148,11 +148,17 @@ $(document).ready(function(){
 
 // End of automatic generation of toc lists on article pages
 
-// Opens the href to an clickableRow in a table
+// Opens the href in the relattribute to the clickable class
 $(document).ready(function($) {
-  $(".clickable").click(function() {
+    $(".clickable").click(function() {
     window.document.location = $(this).attr("rel");
   });
+});
+
+//Appending arrow after link for clickable links
+$(document).ready(function() {
+    var arrowCode ='<span class="stb-sprite-16 arrow-right pull-right"></span>';
+    $('.list-group-item.links').append(arrowCode);
 });
 
 // End content padding
