@@ -148,6 +148,13 @@ $(document).ready(function(){
 
 // End of automatic generation of toc lists on article pages
 
+// Opens the href to an clickableRow in a table
+$(document).ready(function($) {
+  $(".clickable").click(function() {
+    window.document.location = $(this).attr("href");
+  });
+});
+
 // End content padding
 
 // Adding hotkeys based on Resig
@@ -165,3 +172,5 @@ $("document").ready(function(){
     $(document).bind('keydown', 'shift+l', function(){$('li.login > a').click();});
   }
 });
+
+
