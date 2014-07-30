@@ -43,6 +43,47 @@
 
 <script>
 
+  var urlCategoryJSON = {
+    urls:
+    {
+      "storebrand.no/pensjon" : "pension",
+      "storebrand.no/site/stb.nsf/pages/offentligpensjon.html" : "pension",
+      "storebrand.no/site/stb.nsf/pages/pensjon_privatpensjonssparing.html" : "pension",
+      "storebrand.no/site/stb.nsf/pages/pensjon_fra_arbeidsgiver.html" : "pension",
+      "storebrand.no/site/stb.nsf/Pages/pensjon_fra_folketrygden.html" : "loan",
+      "storebrand.no/site/stb.nsf/pages/pensjon_fra_storebrand.html" : "pension",
+      "storebrand.no/site/stb.nsf/pages/ekstrapensjon_bedrift.html" : "pension",
+      "storebrand.no/site/stb.nsf/pages/pensjon_i_praksis.html" : "calculator"
+    },
+    labels:
+    {
+      "pension" : "Pensjon",
+      "bankloan" : "Bank & Lån",
+      "themeinsurance" : "Forsikring",
+      "loan" : "Lån",
+      "insurance" : "Forsikring",
+      "savingplans" : "Spareplan",
+      "calculator" : "Kalkulator",
+      "pdf" : "Vis alle pdf-filer",
+      "nopdf" : "Skjul alle pdf-filer"
+    },
+    filters:
+    {
+      "pension" : ["themeFilter"],
+      "investment" : "themeFilter",
+      "bankloan" : "themeFilter",
+      "themeinsurance" : "themeFilter",
+      "loan" : "productFilter",
+      "insurance" : "productFilter",
+      "savingplans" : "productFilter",
+      "calculator" : "otherFilter",
+      "pdf" : "otherFilter",
+      "nopdf" : "otherFilter"
+    }
+  };
+
+  var categoryJson = {};
+
   $(document).ready(function(){
     // hide and show the categories in tablets and mobile
     $('h4.search').click(function(e) {
@@ -62,44 +103,7 @@
      });
      */
 
-    var urlCategoryJSON = {
-      urls:
-      {
-        "storebrand.no/pensjon" : "pension",
-        "storebrand.no/site/stb.nsf/pages/offentligpensjon.html" : "pension",
-        "storebrand.no/site/stb.nsf/pages/pensjon_privatpensjonssparing.html" : "bankloan",
-        "storebrand.no/site/stb.nsf/pages/pensjon_fra_arbeidsgiver.html" : "pension",
-        "storebrand.no/site/stb.nsf/Pages/pensjon_fra_folketrygden.html" : "loan",
-        "storebrand.no/site/stb.nsf/pages/pensjon_fra_storebrand.html" : "pension",
-        "storebrand.no/site/stb.nsf/pages/ekstrapensjon_bedrift.html" : "pension",
-        "storebrand.no/site/stb.nsf/pages/pensjon_i_praksis.html" : "calculator"
-      },
-      labels:
-      {
-        "pension" : "Pensjon",
-        "bankloan" : "Bank & Lån",
-        "themeinsurance" : "Forsikring",
-        "loan" : "Lån",
-        "insurance" : "Forsikring",
-        "savingplans" : "Spareplan",
-        "calculator" : "Kalkulator",
-        "pdf" : "Vis alle pdf-filer",
-        "nopdf" : "Skjul alle pdf-filer"
-      },
-      filters:
-      {
-        "pension" : ["themeFilter"],
-        "investment" : "themeFilter",
-        "bankloan" : "themeFilter",
-        "themeinsurance" : "themeFilter",
-        "loan" : "productFilter",
-        "insurance" : "productFilter",
-        "savingplans" : "productFilter",
-        "calculator" : "otherFilter",
-        "pdf" : "otherFilter",
-        "nopdf" : "otherFilter"
-      }
-    };
+
 
     xmlParser($.parseXML($("#searchxml").text()));
 
@@ -190,32 +194,65 @@
             var shortenedU = strippedU;
           }
 
-          //TODO: Populate search filter here
-          var category = urlCategoryJSON['urls'][shortenedU];
-          if(category){
-            var filter = urlCategoryJSON['filters'][category]
-            if(filter){
-              if($('#'+category).length == 0){
-                var checkBoxMarkup = '<input class="stb-checkbox" id="'+category+'" type="checkbox" /><label for="'+category+'">'+urlCategoryJSON["labels"][category]+'</label>';
-                $('#'+filter).show().append(checkBoxMarkup);
-              }
-            }
-          }
+          populateSearchFilter(shortenedU);
+
           var linkDecoration = "";
           if (strippedU.indexOf(".pdf") > 0) {
             linkDecoration = ' class="pdf document" ';
           }
+
+          var resultMarkup = "";
+
           if (strippedS.indexOf("reutzer") > 0) {
-            $(".main").append('<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>');
+            resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
+            $(".main").append(resultMarkup);
           } else {
-            $(".main").append('<div class="top-margin-40' + '"><h4 class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>');
+            resultMarkup = '<div class="top-margin-40' + '"><h4 class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
+            $(".main").append(resultMarkup);
           }
+
+          populateCategoryJson(shortenedU, resultMarkup);
         }
       });
       // Til slutt kan vi vise frem resultatet.
       $(".lookatwhatifound").fadeIn(1000);
     }
+
+    $('.stb-checkbox').change(function() {
+      $('.main').empty();
+      $('.stb-checkbox').each(function(){
+         if($(this).is(':checked')){
+           $.each(categoryJson[this.id], function(index, value){
+             $('.main').append(value);
+           });
+         }
+      });
+
+    });
   });
+
+  function populateSearchFilter(shortenedU){
+    var category = urlCategoryJSON['urls'][shortenedU];
+    if(category){
+      var filter = urlCategoryJSON['filters'][category];
+      if(filter){
+        if($('#'+category).length == 0){
+          var checkBoxMarkup = '<input class="stb-checkbox" id="'+category+'" checked="checked" type="checkbox" /><label for="'+category+'">'+urlCategoryJSON["labels"][category]+'</label>';
+          $('#'+filter).show().append(checkBoxMarkup);
+        }
+      }
+    }
+  }
+
+  function populateCategoryJson(shortenedU, resultMarkup){
+    var category = urlCategoryJSON['urls'][shortenedU];
+    if(categoryJson[category]){
+      categoryJson[category].push(resultMarkup);
+    }else{
+      categoryJson[category] = new Array();
+      categoryJson[category].push(resultMarkup);
+    }
+  }
 
 </script>
 
