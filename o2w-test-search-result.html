@@ -53,7 +53,10 @@
       "storebrand.no/site/stb.nsf/Pages/pensjon_fra_folketrygden.html" : "loan",
       "storebrand.no/site/stb.nsf/pages/pensjon_fra_storebrand.html" : "pension",
       "storebrand.no/site/stb.nsf/pages/ekstrapensjon_bedrift.html" : "pension",
-      "storebrand.no/site/stb.nsf/pages/pensjon_i_praksis.html" : "calculator"
+      "storebrand.no/site/stb.nsf/pages/pensjon_i_praksis.html" : "calculator",
+      "storebrand.no/" : "pension",
+      "storebrand.no/site/stb.nsf/Pages/anbefaltpensjon.html" : "pension"
+
     },
     labels:
     {
@@ -220,13 +223,26 @@
 
     $('.stb-checkbox').change(function() {
       $('.main').empty();
+      var nonChecked = true;
       $('.stb-checkbox').each(function(){
          if($(this).is(':checked')){
            $.each(categoryJson[this.id], function(index, value){
              $('.main').append(value);
            });
+           nonChecked = false;
          }
       });
+
+      if(nonChecked){
+        $('.searchresults').empty();
+        xmlParser($.parseXML($("#searchxml").text()));
+       /* for(var cat in categoryJson){
+          $.each(categoryJson[cat], function(index, value){
+            $('.main').append(value);
+          });
+        }
+        */
+      }
 
     });
   });
@@ -237,7 +253,7 @@
       var filter = urlCategoryJSON['filters'][category];
       if(filter){
         if($('#'+category).length == 0){
-          var checkBoxMarkup = '<input class="stb-checkbox" id="'+category+'" checked="checked" type="checkbox" /><label for="'+category+'">'+urlCategoryJSON["labels"][category]+'</label>';
+          var checkBoxMarkup = '<input class="stb-checkbox" id="'+category+'" type="checkbox" /><label for="'+category+'">'+urlCategoryJSON["labels"][category]+'</label>';
           $('#'+filter).show().append(checkBoxMarkup);
         }
       }
