@@ -16,14 +16,14 @@
   <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
   <!-- Start JavaScript for this page only -->
   <script>
-    //Hotkey for search               S
-    $(document).bind('keydown', 'ctrl+s', function(){$('input.typeahead').click();});
+    //Hotkey for search
+    $(document).bind('keydown','shift+s', function(event){event.preventDefault(); $('input.typeahead').click();});
     //Hotkey for top
-    $(document).bind('keydown', 'ctrl+t', function(){$('html, body').animate({ scrollTop: 0}, 500);});
+    $(document).bind('keydown', 'shift+t', function(){$('html, body').animate({ scrollTop: 0}, 500);});
     //Hotkey for bottom
-    $(document).bind('keydown', 'ctrl+b', function(){$('html, body').animate({ scrollTop: $('footer').offset().top}, 500);});
+    $(document).bind('keydown', 'shift+b', function(){$('html, body').animate({ scrollTop: $('footer').offset().top}, 500);});
     //Hotkey for login
-    $(document).bind('keydown', 'ctrl+l', function(){$('li.login > a').click();});
+    $(document).bind('keydown', 'shift+l', function(){$('li.login > a').click();});
   </script>
   <!-- End of JavaScript for this page only -->
   
