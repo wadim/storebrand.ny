@@ -12,6 +12,7 @@
 <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
 <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/extendedsearch.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
 <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
 <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
 
@@ -426,9 +427,11 @@ function populateCategoryJson(shortenedU, resultMarkup){
 
         <li class="search col-md-3">
           <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
-          <label style="width: 95%">
-            <input type="text" class="typeahead" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
-          </label>
+          <form>
+            <label style="width: 95%">
+              <input type="text" class="typeahead" onkeypress="if(event.keyCode==13) {checkSearch(this); return false;}" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+            </label>
+          </form>
         </li>
       </ul>
     </div>
@@ -638,7 +641,7 @@ function populateCategoryJson(shortenedU, resultMarkup){
     <div class="col-md-12">
       <form class="stb-form-inline" role="form">
         <div class="stb-form-group">
-          <input type="text" class="has-submit" placeholder="Hva vil du søke etter?" style="width: 200px;" />
+          <input type="text" class="has-submit" placeholder="Hva vil du søke etter?" style="width: 200px;" onkeypress="if(event.keyCode==13) {checkSearch(this); return false;}"/>
           <button type="submit" class="stb-btn stb-form is-submit"><span class="stb-sprite-16 white search"></span></button>
         </div>
       </form>

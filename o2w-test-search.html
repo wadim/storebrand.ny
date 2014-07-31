@@ -12,6 +12,7 @@
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/extendedsearch.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript"src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
   <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
   <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
@@ -154,25 +155,6 @@
 
   }
 
-
-  function checkSearch(){
-    //Gjør søkefeltet smart. Kommer det inn 11 tall antar vi at bruker vil logge inn ---
-    //Inneholder bokstaver - søker direkte
-    searchGoogleBootstrap();
-
-  }
-
-  function searchGoogleBootstrap(temp) {
-    var sterm =document.getElementById("searchterm").value;
-    var reg1 = new RegExp("\"","g");
-    var reg2 = new RegExp("'", "g");
-    var reg3 = new RegExp("<", "g");
-    sterm = sterm.replace(reg1, "");
-    sterm = sterm.replace(reg2, "");
-    sterm = sterm.replace(reg3, "");
-    window.location = "o2w-test-search-result.html?q="+sterm;
-  }
-
 </script>
 
 <body>
@@ -275,9 +257,9 @@
 
         <li class="search col-md-3">
           <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
-          <form  onkeypress="if(event.keyCode==13) {checkSearch(); return false;}">
+          <form>
             <label style="width: 95%">
-              <input type="text" class="typeahead" id="searchterm"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+              <input type="text" class="typeahead" onkeypress="if(event.keyCode==13) {checkSearch(this); return false;}"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
             </label>
           </form>
         </li>
