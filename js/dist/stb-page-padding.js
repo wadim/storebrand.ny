@@ -57,12 +57,16 @@ $("document").ready(function(){
     var toggler = "#" + $(this).attr('rel');
     $(toggler).slideToggle("fast");
   });
-})
+});
   
 // End adding triggers for showing additional info    
     
-// Handling automatical generation of toc lists on article pages
+// Handling automatic generation of toc lists on article pages
 $(document).ready(function() {
+  
+
+ 
+  
   // Prepare the row that contains the table of contents
   var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">G&aring; direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down charcoal pull-right"></span></p><ul class="items"></ul></div></div>';
   
@@ -74,10 +78,11 @@ $(document).ready(function() {
   
   // Iterate through all the top level headings (h3)
   for(var i=0; i<tocHeaders.length; i++) {
+	listMade = false;
 	var h3tag = tocHeaders[i];
     
 	// Appending heading text to table to contents
-    $('.toc-list .items').append( prepareTocLink(h3tag) );
+    $('.toc-list .items').append( prepareTocLink(h3tag, "") );
     
     // Find all sub-headings(h4) inside each heading(h3)
     var allh4 = $(h3tag).nextUntil('h3','h4');
@@ -91,42 +96,59 @@ $(document).ready(function() {
     for( var j=0; j<allh4.length;j++) {
 	  var h4tag = allh4[j];
       // adding the sub headings to the subheading list
-      h4list = h4list + prepareTocLink(h4tag);
+      h4list = h4list + prepareTocLink(h4tag, $(h3tag).text());
     }
     h4list = h4list+'</ul>';
     
     //append sub-heading list to the table of contents
     $('.toc-list .items').append(h4list);
+    
+    
   }
-	 	
+ 
+  //check if URL already has a hash and scroll to the correct heading 
+  if(window.location.hash.length > 0) {
+	
+    var hashId = window.location.hash;
+	//if a matching h3 or h4 has the hash ID, then scroll to it.
+	if($("h3"+hashId).length > 0 || $("h4"+hashId).length > 0) {
+      scrollToHash( hashId );
+	}
+  }
+  
+  
   // Perform a smooth page scroll to an anchor on the same page.
   $(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
+	  $('.toc-list .items a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          scrollToPosition = target.offset().top;					
-					// Checking if the navigation header is fixed. If yes, set the scrollto position by subtracting the height of the fixed header
-					if($('.navbar-fixed-top').css("display") == "block") { 
-            scrollToPosition -= $('.navbar-fixed-top').height(); 
-          }
-          $('html,body').animate({ scrollTop: scrollToPosition }, 1000);
-          // Highlighting the clicked heading for a brief period to make it easier to see what just happened.
-          $(target).animate({backgroundColor:"yellow"},1000);
-          $(target).animate({backgroundColor:"white"},1000);
-          return false;
-	 		  }
+        scrollToHash( this.hash );
       }
     });
   });
+
+  //takes a hash as input and smooth scrolls to the related target element
+  function scrollToHash(hash) {
+    var target = $(hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	if (target.length) {
+      scrollToPosition = target.offset().top;					
+	  // Checking if the navigation header is fixed. If yes, set the scrollto position by subtracting the height of the fixed header
+	  if($('.navbar-fixed-top').css("display") == "block") { 
+        scrollToPosition -= $('.navbar-fixed-top').height(); 
+      }
+      $('html,body').animate({ scrollTop: scrollToPosition }, 1000);
+      // Highlighting the clicked heading for a brief period to make it easier to see what just happened.
+      $(target).animate({backgroundColor:"yellow"},1000);
+      $(target).animate({backgroundColor:"white"},1000);
+    }
+  }
   
   //Prepares the TOC link for a given header tag
-  function prepareTocLink(headerTag) {
+  function prepareTocLink(headerTag, prefix) {
     //take the header text
     var headerText = $(headerTag).text();
     //prepare the header ID from its text
-    $(headerTag).attr("id",headerText.replace(/ /g,"-").toLowerCase()); // generating id for the h3
+    $(headerTag).attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/ /g,"-").toLowerCase()); // generating id for the h3
     var headerId = $(headerTag).attr("id"); // set the id
     //create the link and return it
     return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
