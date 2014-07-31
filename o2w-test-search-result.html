@@ -17,251 +17,252 @@
 
 <script>
 
-  var urlCategoryJSON = {
-    urls:
-    {
-      "storebrand.no/pensjon" : "pension",
-      "storebrand.no/site/stb.nsf/pages/offentligpensjon.html" : "pension",
-      "storebrand.no/site/stb.nsf/pages/pensjon_privatpensjonssparing.html" : "pension",
-      "storebrand.no/site/stb.nsf/pages/pensjon_fra_arbeidsgiver.html" : "pension",
-      "storebrand.no/site/stb.nsf/Pages/pensjon_fra_folketrygden.html" : "loan",
-      "storebrand.no/site/stb.nsf/pages/pensjon_fra_storebrand.html" : "pension",
-      "storebrand.no/site/stb.nsf/pages/ekstrapensjon_bedrift.html" : "pension",
-      "storebrand.no/site/stb.nsf/pages/pensjon_i_praksis.html" : "calculator",
-      "storebrand.no/" : "pension",
-      "storebrand.no/site/stb.nsf/Pages/anbefaltpensjon.html" : "pension"
+var urlCategoryJSON = {
+  urls:
+  {
+    "storebrand.no/pensjon" : "pension",
+    "storebrand.no/bank/" : "bankloan",
+    "storebrand.no/site/stb.nsf/pages/offentligpensjon.html" : "pension",
+    "storebrand.no/site/stb.nsf/pages/pensjon_privatpensjonssparing.html" : "pension",
+    "storebrand.no/site/stb.nsf/pages/pensjon_fra_arbeidsgiver.html" : "pension",
+    "storebrand.no/site/stb.nsf/pages/boliglaan.html" : "loan",
+    "storebrand.no/site/stb.nsf/pages/forsidebrukskonto.html" : "pension",
+    "storebrand.no/site/stb.nsf/pages/ekstrapensjon_bedrift.html" : "pension",
+    "storebrand.no/site/stb.nsf/pages/pensjon_i_praksis.html" : "calculator",
+    "storebrand.no/site/stb.nsf/Pages/anbefaltpensjon.html" : "pension",
+    "storebrand.no/site/stb.nsf/pages/forsidebankbedrift.html" : "bankloan"
+  },
+  labels:
+  {
+    "pension" : "Pensjon",
+    "bankloan" : "Bank & Lån",
+    "themeinsurance" : "Forsikring",
+    "loan" : "Lån",
+    "insurance" : "Forsikring",
+    "savingplans" : "Spareplan",
+    "calculator" : "Kalkulator",
+    "pdf" : "Vis alle pdf-filer",
+    "nopdf" : "Skjul alle pdf-filer"
+  },
+  filters:
+  {
+    "pension" : ["themeFilter"],
+    "investment" : "themeFilter",
+    "bankloan" : "themeFilter",
+    "themeinsurance" : "themeFilter",
+    "loan" : "productFilter",
+    "insurance" : "productFilter",
+    "savingplans" : "productFilter",
+    "calculator" : "otherFilter",
+    "pdf" : "otherFilter",
+    "nopdf" : "otherFilter"
+  }
+};
 
-    },
-    labels:
-    {
-      "pension" : "Pensjon",
-      "bankloan" : "Bank & Lån",
-      "themeinsurance" : "Forsikring",
-      "loan" : "Lån",
-      "insurance" : "Forsikring",
-      "savingplans" : "Spareplan",
-      "calculator" : "Kalkulator",
-      "pdf" : "Vis alle pdf-filer",
-      "nopdf" : "Skjul alle pdf-filer"
-    },
-    filters:
-    {
-      "pension" : ["themeFilter"],
-      "investment" : "themeFilter",
-      "bankloan" : "themeFilter",
-      "themeinsurance" : "themeFilter",
-      "loan" : "productFilter",
-      "insurance" : "productFilter",
-      "savingplans" : "productFilter",
-      "calculator" : "otherFilter",
-      "pdf" : "otherFilter",
-      "nopdf" : "otherFilter"
-    }
-  };
+var categoryJson = {};
 
-  var categoryJson = {};
-
-  $(document).ready(function(){
-    // hide and show the categories in tablets and mobile
-    $('h4.search').click(function(e) {
-      //if the media screen width is large and the form is visible already, then don't do anything
-      if( $( window ).width() > 991 && $('.search-categories form').css('display')=="block") return false;
-      //the following will then only apply for mobile view
-      $('.search-categories form').slideToggle();
-      $('h4.search span').toggleClass('chevron-up chevron-down');
-    });
-    
-	//get the query from the location URL
-    var get = [];
-    location.search.replace('?', '').split('&').forEach(function (val) {
-    split = val.split("=", 2);
-    get[split[0]] = split[1];
-   });
-
- var start=0;
-
- //if start is defined, get the number
- if(get['start']!=undefined && get['start'].length>0 ) {
-  start = get['start'];
- }
- 
-   //if the query exists, then perform the search 
-   if (get['q']!=undefined && get['q'].length > 0 ) {
-     searchQuery(get['q']);
-   }
-   
-  
- //search ajax call
-   function searchQuery( query ) {
-   $.ajax({
-  type: "GET",
-  url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D10%26output%3Dxml_no_dtd%26ie%3Dlatin1%26oe%3Dlatin1%26q%3D"+query+"'&diagnostics=false",
-  dataType: "xml",
-  success: xmlParser
-    });
-   }
- 
- //xmlParser($.parseXML($("#searchxml").text()));
-
-
-    function xmlParser(xml) {
-
-      // Forslag til annen stavemåte
-      $(xml).find("Spelling").each(function() {
-        var suggestedSpelling = $(this).find("Suggestion").attr("q");
-        $(".searchresults").append('<div id="suggestion"' + '>Vi har få eller ingen treff på det søkeordet, men prøv <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
-      });
-      // Hvis vi ikke finner noe som helst må vi jo si ifra om det først:
-      if ($(xml).find("R").length == 0 && $(xml).find("Spelling").length== 0 ) {
-        $(".searchresults").append('<div class="nogo"' + '>Fant ingen treff ved søk etter <' + 'strong>pensjon<' + '/strong>.<' + '/div>');
-      }
-      // Men hvis vi finner noe, så kan vi vise treff
-      // Først antall treff, og så kan vi også legge på lenke til neste/forrige gjeng sider, hvis vi vil.
-      var hitcounter = parseInt($(xml).find("M").text());
-
-      if (hitcounter > 10) {
-        $(".searchresults").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-        $(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-        var statpos = 0;
-        var urlNow = window.location.href;
-        if ($(xml).find("PU").length > 0) {
-          var nextCounter = parseInt($(xml).find("RES").attr("SN")) - 11;
-          statpos = urlNow.indexOf("&start=");
-          var urlNewPrev = urlNow;
-          if (statpos != -1) {
-            urlNewPrev = window.location.href.substring(0,statpos)
-          }
-          $(".searchresults").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 10<' + '/a> - ');
-          $(".searchFooter").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 10<' + '/a> - ');
-        }
-        if ($(xml).find("NU").length > 0) {
-          var nextCounter = parseInt($(xml).find("RES").attr("SN")) + 9;
-          statpos = urlNow.indexOf("&start=");
-          var urlNewNext = urlNow;
-          if (statpos != -1) {
-            urlNewNext = window.location.href.substring(0,statpos)
-          }
-          $(".searchresults").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 10<' + '/a><br' + '/>');
-          $(".searchFooter").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 10<' + '/a><br' + '/>');
-        }
-      }
-      else if (hitcounter > 2) {
-        $(".searchresults").append('Viser alle ' + hitcounter + ' treff for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-        $(".searchFooter").append('Viser alle ' + hitcounter + ' treff for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-      }
-      else if (hitcounter == 2) {
-        $(".searchresults").append('Viser de to treffene vi fant for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-        $(".searchFooter").append('Viser de to treffene vi fant for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-      }
-      else if (hitcounter == 1) {
-        $(".searchresults").append('Viser det enslige treffet vi fant for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-        $(".searchFooter").append('Viser det enslige treffet vi fant for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-      }
-      else {
-        $(".searchresults").append('');
-        $(".searchFooter").append('');
-      }
-      // Så er det på tide å legge på selve treffene.
-      $(xml).find("R").each(function () {
-        // Vi behandler "promotions" spesielt, og resten på en annen måte
-        // Først promotions, som alltid kommer først hvis de kommer
-        if ($(this).find("SL_MAIN").length > 0) {
-          // Vise promotion
-          var promoURL = $(this).find("IMAGE_SOURCE").text();
-          var promoPic = "";
-          if (promoURL!="" && promoURL!= null) {
-            promoPic = "<img src='" + promoURL + "' />";
-          }
-          $(".main").append('<div class="lookatwhatifound' + '"><div class="promotering"' + '>' + promoPic + '<div class="title"' + '><a href="'  + $(this).find("SL_MAIN").find("U").text() + '">' +  $(this).find("BLOCK").find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + $(this).find("S").text() + '<' + '/div><' + '/div><'+ '/div>');
-        } else {
-          // Så ikke-promotions (som vanligvis er det som kommer)
-          var strippedS = $(this).find("S").text();
-          var stripRE = new RegExp("<br>", "g");
-          strippedS = strippedS.replace(stripRE, "");
-          var showU = $(this).find("U").text();
-          var strippedU = showU;
-          var stripU = new RegExp("http://www.", "g");
-          strippedU = strippedU.replace(stripU, "");
-          stripU = new RegExp("https://www.", "g");
-          strippedU = strippedU.replace(stripU, "");
-          if(strippedU.length > 85) {
-            var shortenedU =  strippedU.substring(0,35) + "..." + strippedU.substring(strippedU.length-40, strippedU.length);
-          } else {
-            var shortenedU = strippedU;
-          }
-
-          populateSearchFilter(shortenedU);
-
-          var linkDecoration = "";
-          if (strippedU.indexOf(".pdf") > 0) {
-            linkDecoration = ' class="pdf document" ';
-          }
-
-          var resultMarkup = "";
-
-          if (strippedS.indexOf("reutzer") > 0) {
-            resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
-            $(".main").append(resultMarkup);
-          } else {
-            resultMarkup = '<div class="top-margin-40' + '"><h4 class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
-            $(".main").append(resultMarkup);
-          }
-
-          populateCategoryJson(shortenedU, resultMarkup);
-        }
-      });
-      // Til slutt kan vi vise frem resultatet.
-      $(".lookatwhatifound").fadeIn(1000);
-    }
-
-    $('.stb-checkbox').change(function() {
-      $('.main').empty();
-      var nonChecked = true;
-      $('.stb-checkbox').each(function(){
-         if($(this).is(':checked')){
-           $.each(categoryJson[this.id], function(index, value){
-             $('.main').append(value);
-           });
-           nonChecked = false;
-         }
-      });
-
-      if(nonChecked){
-        $('.searchresults').empty();
-        xmlParser($.parseXML($("#searchxml").text()));
-       /* for(var cat in categoryJson){
-          $.each(categoryJson[cat], function(index, value){
-            $('.main').append(value);
-          });
-        }
-        */
-      }
-
-    });
+$(document).ready(function(){
+  // hide and show the categories in tablets and mobile
+  $('h4.search').click(function(e) {
+    //if the media screen width is large and the form is visible already, then don't do anything
+    if( $( window ).width() > 991 && $('.search-categories form').css('display')=="block") return false;
+    //the following will then only apply for mobile view
+    $('.search-categories form').slideToggle();
+    $('h4.search span').toggleClass('chevron-up chevron-down');
   });
 
-  function populateSearchFilter(shortenedU){
-    var category = urlCategoryJSON['urls'][shortenedU];
-    if(category){
-      var filter = urlCategoryJSON['filters'][category];
-      if(filter){
-        if($('#'+category).length == 0){
-          var checkBoxMarkup = '<input class="stb-checkbox" id="'+category+'" type="checkbox" /><label for="'+category+'">'+urlCategoryJSON["labels"][category]+'</label>';
-          $('#'+filter).show().append(checkBoxMarkup);
-        }
-      }
+  //get the query from the location URL
+  var get = getQuery();
+
+  var start=0;
+
+  //if start is defined, get the number
+  if(get['start']!=undefined && get['start'].length>0 ) {
+    start = get['start'];
+  }
+
+  //if the query exists, then perform the search
+  if (get['q']!=undefined && get['q'].length > 0 ) {
+    searchQuery(get['q'], start);
+  }
+
+});
+
+$(document).on('change','.stb-checkbox',function() {
+  $('.main').empty();
+  var nonChecked = true;
+  $('.stb-checkbox').each(function(){
+    if($(this).is(':checked')){
+      $.each(categoryJson[this.id], function(index, value){
+        $('.main').append(value);
+      });
+      nonChecked = false;
+    }
+  });
+
+  if(nonChecked){
+    for(var cat in categoryJson){
+      $.each(categoryJson[cat], function(index, value){
+        $('.main').append(value);
+      });
     }
   }
 
-  function populateCategoryJson(shortenedU, resultMarkup){
-    var category = urlCategoryJSON['urls'][shortenedU];
-    if(categoryJson[category]){
-      categoryJson[category].push(resultMarkup);
-    }else{
-      categoryJson[category] = new Array();
-      categoryJson[category].push(resultMarkup);
+});
+
+function getQuery(){
+  //get the query from the location URL
+  var get = [];
+  location.search.replace('?', '').split('&').forEach(function (val) {
+    split = val.split("=", 2);
+    get[split[0]] = split[1];
+  });
+
+  return get;
+}
+
+//search ajax call
+function searchQuery( query, start ) {
+  $.ajax({
+    type: "GET",
+    url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D10%26output%3Dxml_no_dtd%26ie%3Dlatin1%26oe%3Dlatin1%26q%3D"+query+"'&diagnostics=false",
+    dataType: "xml",
+    success: xmlParser
+  });
+}
+
+function xmlParser(xml) {
+
+  // Forslag til annen stavemåte
+  $(xml).find("Spelling").each(function() {
+    var suggestedSpelling = $(this).find("Suggestion").attr("q");
+    $(".searchresults").append('<div id="suggestion"' + '>Vi har få eller ingen treff på det søkeordet, men prøv <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+  });
+  // Hvis vi ikke finner noe som helst må vi jo si ifra om det først:
+  if ($(xml).find("R").length == 0 && $(xml).find("Spelling").length== 0 ) {
+    $(".searchresults").append('<div class="nogo"' + '>Fant ingen treff ved søk etter <' + 'strong>pensjon<' + '/strong>.<' + '/div>');
+  }
+  // Men hvis vi finner noe, så kan vi vise treff
+  // Først antall treff, og så kan vi også legge på lenke til neste/forrige gjeng sider, hvis vi vil.
+  var hitcounter = parseInt($(xml).find("M").text());
+
+  if (hitcounter > 10) {
+    $(".searchresults").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+    $(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+    var statpos = 0;
+    var urlNow = window.location.href;
+    if ($(xml).find("PU").length > 0) {
+      var nextCounter = parseInt($(xml).find("RES").attr("SN")) - 11;
+      statpos = urlNow.indexOf("&start=");
+      var urlNewPrev = urlNow;
+      if (statpos != -1) {
+        urlNewPrev = window.location.href.substring(0,statpos)
+      }
+      $(".searchresults").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 10<' + '/a> - ');
+      $(".searchFooter").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 10<' + '/a> - ');
+    }
+    if ($(xml).find("NU").length > 0) {
+      var nextCounter = parseInt($(xml).find("RES").attr("SN")) + 9;
+      statpos = urlNow.indexOf("&start=");
+      var urlNewNext = urlNow;
+      if (statpos != -1) {
+        urlNewNext = window.location.href.substring(0,statpos)
+      }
+      $(".searchresults").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 10<' + '/a><br' + '/>');
+      $(".searchFooter").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 10<' + '/a><br' + '/>');
     }
   }
+  else if (hitcounter > 2) {
+    $(".searchresults").append('Viser alle ' + hitcounter + ' treff for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+    $(".searchFooter").append('Viser alle ' + hitcounter + ' treff for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+  }
+  else if (hitcounter == 2) {
+    $(".searchresults").append('Viser de to treffene vi fant for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+    $(".searchFooter").append('Viser de to treffene vi fant for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+  }
+  else if (hitcounter == 1) {
+    $(".searchresults").append('Viser det enslige treffet vi fant for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+    $(".searchFooter").append('Viser det enslige treffet vi fant for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+  }
+  else {
+    $(".searchresults").append('');
+    $(".searchFooter").append('');
+  }
+  // Så er det på tide å legge på selve treffene.
+  $(xml).find("R").each(function () {
+    // Vi behandler "promotions" spesielt, og resten på en annen måte
+    // Først promotions, som alltid kommer først hvis de kommer
+    if ($(this).find("SL_MAIN").length > 0) {
+      // Vise promotion
+      var promoURL = $(this).find("IMAGE_SOURCE").text();
+      var promoPic = "";
+      if (promoURL!="" && promoURL!= null) {
+        promoPic = "<img src='" + promoURL + "' />";
+      }
+      $(".main").append('<div class="lookatwhatifound' + '"><div class="promotering"' + '>' + promoPic + '<div class="title"' + '><a href="'  + $(this).find("SL_MAIN").find("U").text() + '">' +  $(this).find("BLOCK").find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + $(this).find("S").text() + '<' + '/div><' + '/div><'+ '/div>');
+    } else {
+      // Så ikke-promotions (som vanligvis er det som kommer)
+      var strippedS = $(this).find("S").text();
+      var stripRE = new RegExp("<br>", "g");
+      strippedS = strippedS.replace(stripRE, "");
+      var showU = $(this).find("U").text();
+      var strippedU = showU;
+      var stripU = new RegExp("http://www.", "g");
+      strippedU = strippedU.replace(stripU, "");
+      stripU = new RegExp("https://www.", "g");
+      strippedU = strippedU.replace(stripU, "");
+      if(strippedU.length > 85) {
+        var shortenedU =  strippedU.substring(0,35) + "..." + strippedU.substring(strippedU.length-40, strippedU.length);
+      } else {
+        var shortenedU = strippedU;
+      }
+
+      populateSearchFilter(shortenedU);
+
+      var linkDecoration = "";
+      if (strippedU.indexOf(".pdf") > 0) {
+        linkDecoration = ' class="pdf document" ';
+      }
+
+      var resultMarkup = "";
+
+      if (strippedS.indexOf("reutzer") > 0) {
+        resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
+        $(".main").append(resultMarkup);
+      } else {
+        resultMarkup = '<div class="top-margin-40' + '"><h4 class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
+        $(".main").append(resultMarkup);
+      }
+
+      populateCategoryJson(shortenedU, resultMarkup);
+    }
+  });
+  // Til slutt kan vi vise frem resultatet.
+  $(".lookatwhatifound").fadeIn(1000);
+}
+
+function populateSearchFilter(shortenedU){
+  var category = urlCategoryJSON['urls'][shortenedU];
+  if(category){
+    var filter = urlCategoryJSON['filters'][category];
+    if(filter){
+      if($('#'+category).length == 0){
+        var checkBoxMarkup = '<input class="stb-checkbox" id="'+category+'" type="checkbox" /><label for="'+category+'">'+urlCategoryJSON["labels"][category]+'</label>';
+        $('#'+filter).show().append(checkBoxMarkup);
+      }
+    }
+  }
+}
+
+function populateCategoryJson(shortenedU, resultMarkup){
+  var category = urlCategoryJSON['urls'][shortenedU];
+  if(categoryJson[category]){
+    categoryJson[category].push(resultMarkup);
+  }else{
+    categoryJson[category] = new Array();
+    categoryJson[category].push(resultMarkup);
+  }
+}
 
 </script>
 
