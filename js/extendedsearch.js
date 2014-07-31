@@ -36,6 +36,7 @@ $(document).ready(function(){
 	
 	function maximizeSearch()
 	{
+
 		maximized = true;
 
 		//save the animating state, and reset it once the animations complete
@@ -59,7 +60,9 @@ $(document).ready(function(){
 		//expand the search parent to take 100% of the available width
 		$('.navbar-nav > li.search').css('width','100%');
 
-		//fadeOut the white search icon in 1/4th speed of the animation time
+
+
+    //fadeOut the white search icon in 1/4th speed of the animation time
 		$('.search-icon .search').fadeOut(animSpeed/4);
 		
 		//after the fadeOut animation time has passed, fadeIn with the class name changed to charcoal
@@ -68,15 +71,17 @@ $(document).ready(function(){
 			}, animSpeed/4);
 	
 		$('.search-icon').animate({backgroundColor:'"fff'},animSpeed);
-		
-		//animate the textbox				
-		$('.typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
+
+    //animate span parent container to 100 %
+    $('.typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
+		//animate the textbox
+    $('.twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
+
 		
 		// show the remove icon
 		setTimeout(function(){	
 			$('li.search .remove').toggle();
 		},animSpeed);
-		
 	}
 
 			
@@ -95,8 +100,7 @@ $(document).ready(function(){
 		//reset the searchParent to the original width. The text box will fit on its own as its width is 100%.
 		$('.navbar-nav > li.search').animate({width:searchParentWidthPercent+'%'},animSpeed);			
 		$('.typeahead').animate({backgroundColor:backgroundColor,color:"#fff"},animSpeed);
-		
-		
+
 		//fadeOut the white search icon in 1/4th speed of the animation time
 		$('.search-icon .search').fadeOut(animSpeed/4);
 		
@@ -118,7 +122,10 @@ $(document).ready(function(){
 			
 			//save the new state
 			maximized = false;
-		}, animSpeed);
+
+      //Reseting the span container to initial value
+      $('.twitter-typeahead').css('width','initial');
+    }, animSpeed);
 		
 	}
 });
