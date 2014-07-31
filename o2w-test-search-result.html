@@ -71,7 +71,6 @@ $(document).ready(function(){
     $('.search-categories form').slideToggle();
     $('h4.search span').toggleClass('chevron-up chevron-down');
   });
-
   //get the query from the location URL
   var get = getQuery();
 
@@ -84,6 +83,8 @@ $(document).ready(function(){
 
   //if the query exists, then perform the search
   if (get['q']!=undefined && get['q'].length > 0 ) {
+	$("form.stb-form-inline input.searchbox").val(get['q']);
+	 $('.currentsearch .searchterm').text(get['q']);
     searchQuery(get['q'], start);
   }
 
@@ -150,6 +151,7 @@ function xmlParser(xml) {
   if (hitcounter > 10) {
     $(".searchresults").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
     $(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+    $('.currentsearch .number').text(hitcounter);
     var statpos = 0;
     var urlNow = window.location.href;
     if ($(xml).find("PU").length > 0) {
@@ -284,6 +286,21 @@ function populateCategoryJson(shortenedU, resultMarkup){
     padding: 5px;
     border-radius: 5px;
   }
+  
+  .stb-form-inline .searchbox {
+    height: 72px;
+    line-height: 72px;
+    font-size: 24px;
+    float: left;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .stb-form-inline button.is-submit {
+    height: 72px;
+    top: 0;
+  }
+ 
 
   @media screen and (min-width: 991px) {
 
@@ -429,7 +446,7 @@ function populateCategoryJson(shortenedU, resultMarkup){
           <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
             <label style="width: 95%">
-              <input type="text" class="typeahead" onkeypress="if(event.keyCode==13) {checkSearch(this); return false;}" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+              <input type="text" class="typeahead searchbox"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
             </label>
           </form>
         </li>
@@ -641,8 +658,8 @@ function populateCategoryJson(shortenedU, resultMarkup){
     <div class="col-md-12">
       <form class="stb-form-inline" role="form">
         <div class="stb-form-group">
-          <input type="text" class="has-submit" placeholder="Hva vil du søke etter?" style="width: 200px;" onkeypress="if(event.keyCode==13) {checkSearch(this); return false;}"/>
-          <button type="submit" class="stb-btn stb-form is-submit"><span class="stb-sprite-16 white search"></span></button>
+          <input type="text" class="has-submit searchbox" placeholder="Hva vil du søke etter?" style="width: 600px;"/>
+          <button type="submit" class="stb-btn stb-form is-submit"><span class="stb-sprite-48 white search"></span></button>
         </div>
       </form>
     </div>
@@ -650,8 +667,8 @@ function populateCategoryJson(shortenedU, resultMarkup){
 
   <div class="row bottom-margin-30">
     <div class="col-sm-12">
-      <p>
-        Ditt søk på "børstraktor" gav 221 treff.
+      <p class="currentsearch">
+        Ditt søk på <strong><span class="searchterm"></span></strong> gav <strong><span class="number"></span></strong> treff.
       </p>
     </div>
   </div>
@@ -693,90 +710,7 @@ function populateCategoryJson(shortenedU, resultMarkup){
   <div class="col-md-8 column">
     <div class="searchresults"></div>
     <div class="main" style="margin-bottom: 70px;"></div>
-    <!--
-      <div class="stb-box fifth bottom-margin-30">
-        <h4><a href="#">ANBEFALT: Børstraktorforsikring</a></h4>
-        <p>
-          Det kan fort bli dyrt å bulke med en skikkelig børstraktor. Men vi har løsningen som lar deg kjøre både rått og uvørent i allslags vær og kollektivfelt.
-        </p>
-        <p>
-          <span class="stb-sprite-16 arrow-right"></span> <a href="#" class="hitlink">storebrand.no/forsikring/bil</a>
-        </p>
-      </div>
-      <div class="bottom-margin-30 hover-gray">
-        <h4><a href="#">Helseforsikring</a></h4>
-        <p>
-          Mange som kjører børstraktor har høyt blodtrykk og stor mage. Vi sier ikke at du er en tjukkas bare fordi du kjører dyr bil, men det <strong>kan</strong> være lurt å være økonomisk forberedt på både akutt og alvorlig sykdom.
-        </p>
-        <p>
-          <span class="stb-sprite-16 arrow-right"></span> <a href="#" class="hitlink">storebrand.no/forsikring/helse</a>
-        </p>
-      </div>
-      <div class="bottom-margin-30 hover-gray">
-        <h4><a href="#">Deg og dine</a></h4>
-        <p>
-          Fortell oss hvem du er og hva du eier (for eksempel en børstraktor), og vi forteller deg hva du må tenke på for å sikre deg og familien din.
-        </p>
-        <p>
-          <span class="stb-sprite-16 arrow-right"></span> <a href="#" class="hitlink">storebrand.no/degogdine</a>
-        </p>
-      </div>
-      <div class="bottom-margin-30 hover-gray">
-        <h4><a href="#">Husforsikring</a></h4>
-        <p>
-          Lorem ipsum dolor sit amnet, consectetur adipiscing elit. Aenean euismod bibendum loreet.
-        </p>
-        <p>
-          <span class="stb-sprite-16 arrow-right"></span> <a href="#" class="hitlink">storebrand.no/forsikring/hus</a>
-        </p>
-      </div>
-      <div class="bottom-margin-30 hover-gray">
-        <h4><a href="#">Lånekalkulator</a></h4>
-        <p>
-          Lorem ipsum dolor sit amnet, consectetur adipiscing elit. Aenean euismod bibendum loreet.
-        </p>
-        <p>
-          <span class="stb-sprite-16 arrow-right"></span> <a href="#" class="hitlink">storebrand.no/bank/lån</a>
-        </p>
-      </div>
-      <div class="bottom-margin-30 hover-gray">
-        <h4><a href="#">Boligkreditt</a></h4>
-        <p>
-          Lorem ipsum dolor sit amnet, consectetur adipiscing elit. Aenean euismod bibendum loreet.
-        </p>
-        <p>
-          <span class="stb-sprite-16 arrow-right"></span> <a href="#" class="hitlink">storebrand.no/bank/boligkreditt</a>
-        </p>
-      </div>
-      <div class="bottom-margin-30 hover-gray">
-        <h4><a href="#">Bank og lån</a></h4>
-        <p>
-          Lorem ipsum dolor sit amnet, consectetur adipiscing elit. Aenean euismod bibendum loreet.
-        </p>
-        <p>
-          <span class="stb-sprite-16 arrow-right"></span> <a href="#" class="hitlink">storebrand.no/bank/bank-og-lån</a>
-        </p>
-      </div>
-      <div class="bottom-margin-30 hover-gray">
-        <h4><a href="#">Forsikring</a></h4>
-        <p>
-          Lorem ipsum dolor sit amnet, consectetur adipiscing elit. Aenean euismod bibendum loreet.
-        </p>
-        <p>
-          <span class="stb-sprite-16 arrow-right"></span> <a href="#" class="hitlink">storebrand.no/forsikring/forside</a>
-        </p>
-      </div>
-      <div class="bottom-margin-30 hover-gray">
-        <h4><a href="#">Gode råd om forsikringer</a></h4>
-        <p>
-          Lorem ipsum dolor sit amnet, consectetur adipiscing elit. Aenean euismod bibendum loreet.
-        </p>
-        <p>
-          <span class="stb-sprite-16 arrow-right"></span> <a href="#" class="hitlink">storebrand.no/tema/forsikring/gode-råd</a>
-        </p>
-      </div>
-
-      -->
+   
   </div>
 </div>
 <!-- End actual page contents -->
