@@ -3,7 +3,7 @@
 // Start mobile top menu decoration
 $(document).ready(function(){
   $('.panel-group').on('show.bs.collapse', function (event) {
-    $(event.target).prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right')
+    $(event.target).prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right');
   });
   
   $('.panel-group').on('hide.bs.collapse', function () {
@@ -35,7 +35,7 @@ $(document).on('click', '.yamm .dropdown-menu', function(e) {
 
 // Start Adding twister effect to accordion/FAQ
 $(document).ready(function () {
-  $("ul[data-widget=stbFaq]").stbFaq()
+  $("ul[data-widget=stbFaq]").stbFaq();
 }),
 function (a) {
   a.fn.stbFaq = function () {
@@ -43,10 +43,10 @@ function (a) {
       if (a(this).hasClass("twister")) {
         b.preventDefault();
         var c = a(this).siblings("ul.accordion li .answer");
-        a(this).hasClass("open") ? (a(this).removeClass("open"), c.slideUp(200)) : (a(this).addClass("open"), c.slideDown(200))
+        a(this).hasClass("open") ? (a(this).removeClass("open"), c.slideUp(200)) : (a(this).addClass("open"), c.slideDown(200));
       }
-    })
-  }
+    });
+  };
 }(jQuery);
 // End twister effect on accordion/FAQ
 
