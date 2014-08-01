@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 	
 	//if the search icon or the input element itself gets clicked, do not pass the click event to the document
-	$(".typeahead, .search-icon").click(function(e) {
+	$(".typeahead.tt-desktop, .search-icon").click(function(e) {
 		//give it focus
 		$('.typeahead').focus();
 		

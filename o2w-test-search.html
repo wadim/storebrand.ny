@@ -140,7 +140,7 @@
 
       category.initialize();
 
-      var header = '<h3 class="headline-search"><span class="glyphicon glyphicon-log-in"></span> '+index+'<span style="font-size: 16px;"> - Gå direkte til side</span></h3>';
+      var header = '<h3 class="headline-search"><span class="glyphicon glyphicon-log-in"></span> '+index+'<span style="font-size: 16px;"> - Gå direkte</span></h3>';
 
       if(index == "Anbefalte"){
         header = '<h3 class="headline-search"><span class="glyphicon glyphicon-stats"></span> Anbefalte søkeord </h3>';
@@ -168,8 +168,9 @@
       //$('#showTrailer').html('<h3>Her kan vi vise noe spesielt for valget ' + stripSpan($('#searchHit').val()) + '</h3>Og så kan vi vise Google-treffene under der igjen.');
     });
 
-    $('.search .typeahead').bind('typeahead:closed', function(event,data) {
-      console.log('closed');
+    $('.tt-mobile .search').click(function(){
+      //console.log($('.tt-mobile .typeahead').typeahead('hint'));
+      //$('.tt-mobile .typeahead').typeahead('val');
     });
 
   }
@@ -278,7 +279,7 @@
           <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
             <label style="width: 95%">
-              <input type="text" class="typeahead searchbox"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+              <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
             </label>
           </form>
         </li>
@@ -455,7 +456,11 @@
             <div class="yamm-content">
               <div class="row">
                 <div class="col-xs-12">
-                  <input type="text" class="form-control search" placeholder="Søk i sidene" style="">
+                  <form class="search tt-mobile">
+                    <label style="width: 95%">
+                      <input type="text" class="typeahead searchbox" placeholder="Søk i sidene"/><span class="search-icon" style="display: block; position: absolute; top: 25%; left: 75%;"><span class="stb-sprite-24 search"></span></span>
+                    </label>
+                  </form>
                 </div>
               </div>
             </div>
