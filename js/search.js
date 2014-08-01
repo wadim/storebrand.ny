@@ -1,21 +1,27 @@
 
 
-// This Javascript file containes functions required for search
+// This Javascript file contains functions required for search
 // Later this can be merged with the other search JS files like extendedsearch.js
 
 
 $( document ).ready(function() {
+	
+ // Call checksearch on hitting enter in the input area
   $("input.searchbox").keydown(function(event){
     if(event.which == 13){
       checkSearch( this.value );
       return false;
     }
   });
+  
+ // Call cheksearch on clicking the submit button
+  $(".stb-form-inline .stb-btn").click(function(event){
+      checkSearch($(this).siblings("input.searchbox").val());
+      return false;
+  });
 });
 
 function checkSearch(query){
-  //Gjør søkefeltet smart. Kommer det inn 11 tall antar vi at bruker vil logge inn ---
-  //Inneholder bokstaver - søker direkte
   searchGoogleBootstrap(query);
 }
 

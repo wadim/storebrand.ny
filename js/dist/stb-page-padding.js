@@ -119,9 +119,10 @@ $(document).ready(function() {
   
   // Perform a smooth page scroll to an anchor on the same page.
   $(function() {
-	  $('.toc-list .items a[href*=#]:not([href=#])').click(function() {
+	  $('.toc-list .items a[href*=#]:not([href=#])').click(function(event) {
+      event.preventDefault();
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        scrollToHash( this.hash );
+        scrollToHash( this.hash);
       }
     });
   });
