@@ -13,9 +13,17 @@ $(document).ready(function(){
 	$(document).click(function() {
 		//if the search field is in focus, and not animating
 		if(maximized == true && animating==false) {
-			minimizeSearch();
+
+      //Don´t minimize if there is text in the search field
+      if(!$('.typeahead.tt-input').val()){
+        minimizeSearch();
+      }
 		}
 	});
+
+  $('.search .remove').click(function(){
+    minimizeSearch();
+  });
 
 	
 	//if the search icon or the input element itself gets clicked, do not pass the click event to the document

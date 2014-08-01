@@ -30,6 +30,13 @@
   function initTypeAhead(){
     //Categorized json object
     var categoryData = {
+      "Anbefalte" :
+              [
+                {"name": "Fond"},
+                {"name": "Bank"},
+                {"name": "Forsikring"},
+                {"name": "Pensjon"}
+              ],
       "Fond" :
               [
                 {"name": "Fond","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
@@ -133,12 +140,17 @@
 
       category.initialize();
 
+      var header = '<h3 class="headline-search"><span class="glyphicon glyphicon-log-in"></span> '+index+'<span style="font-size: 16px;"> - Gå direkte til side</span></h3>';
+
+      if(index == "Anbefalte"){
+        header = '<h3 class="headline-search"><span class="glyphicon glyphicon-stats"></span> Anbefalte søkeord </h3>';
+      }
       var catObj = {
         name : index,
         displayKey: 'name',
         source: category.ttAdapter(),
         templates: {
-          header: '<h3 class="headline-search"><span class="glyphicon glyphicon-stats"></span>'+index+'</h3>'
+          header: header
         }
       }
       categoryConfig.push(catObj);
@@ -149,8 +161,15 @@
     //$('#the-basics .typeahead').typeahead(categoryConfig[0], categoryConfig[1]);
 
     $('.search .typeahead').bind('typeahead:selected', function(event,data) {
-      window.location.href = data.url
+      if(data.url){
+        window.location.href = data.url
+      }
+      $('.typeahead').typeahead('close');
       //$('#showTrailer').html('<h3>Her kan vi vise noe spesielt for valget ' + stripSpan($('#searchHit').val()) + '</h3>Og så kan vi vise Google-treffene under der igjen.');
+    });
+
+    $('.search .typeahead').bind('typeahead:closed', function(event,data) {
+      console.log('closed');
     });
 
   }
