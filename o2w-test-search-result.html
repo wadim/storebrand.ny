@@ -84,7 +84,7 @@ $(document).ready(function(){
   //if the query exists, then perform the search
   if (get['q']!=undefined && get['q'].length > 0 ) {
 	$("form.stb-form-inline input.searchbox").val(get['q']);
-	 $('.currentsearch .searchterm').text(get['q']);
+	 //$('.currentsearch .searchterm').text(get['q']);
     searchQuery(get['q'], start);
   }
 
@@ -127,31 +127,40 @@ function getQuery(){
 function searchQuery( query, start ) {
   $.ajax({
     type: "GET",
-    url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D10%26output%3Dxml_no_dtd%26ie%3Dlatin1%26oe%3Dlatin1%26q%3D"+query+"'&diagnostics=false",
+    url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dlatin1%26oe%3Dlatin1%26q%3D"+query+"'&diagnostics=false",
     dataType: "xml",
     success: xmlParser
   });
 }
 
 function xmlParser(xml) {
-
+  noresult= false;
+  
+  // prepare the resultsummary for populating the status of the search result ( found or not)
+  resultSummary = '<div class="resultsummary row bottom-margin-30"><div class="col-sm-12"></div></div>';
+  $(resultSummary).insertAfter($('.stb-form-inline .searchbox').closest('form').parent().parent());
+  
+  
   // Forslag til annen stavemåte
   $(xml).find("Spelling").each(function() {
     var suggestedSpelling = $(this).find("Suggestion").attr("q");
-    $(".searchresults").append('<div id="suggestion"' + '>Vi har få eller ingen treff på det søkeordet, men prøv <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+    //$(".searchresults").append('<div id="suggestion"' + '>Vi har få eller ingen treff på det søkeordet, men prøv <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+    $(".resultsummary div").append('<div id="suggestion"' + '>Vi har få eller ingen treff på det søkeordet, men prøv <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+    noresult= true;
   });
   // Hvis vi ikke finner noe som helst må vi jo si ifra om det først:
   if ($(xml).find("R").length == 0 && $(xml).find("Spelling").length== 0 ) {
-    $(".searchresults").append('<div class="nogo"' + '>Fant ingen treff ved søk etter <' + 'strong>pensjon<' + '/strong>.<' + '/div>');
+    $(".resultsummary div").append('<div class="nogo"' + '>Fant ingen treff ved søk etter <' + 'strong>'+ $(xml).find("Q").text()+'<' + '/strong>.<' + '/div>');
+	  noresult=true;
   }
   // Men hvis vi finner noe, så kan vi vise treff
   // Først antall treff, og så kan vi også legge på lenke til neste/forrige gjeng sider, hvis vi vil.
   var hitcounter = parseInt($(xml).find("M").text());
 
   if (hitcounter > 10) {
-    $(".searchresults").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+   $(".searchresults").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
     $(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-    $('.currentsearch .number').text(hitcounter);
+    //$('.currentsearch .number').text(hitcounter);
     var statpos = 0;
     var urlNow = window.location.href;
     if ($(xml).find("PU").length > 0) {
@@ -161,8 +170,8 @@ function xmlParser(xml) {
       if (statpos != -1) {
         urlNewPrev = window.location.href.substring(0,statpos)
       }
-      $(".searchresults").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 10<' + '/a> - ');
-      $(".searchFooter").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 10<' + '/a> - ');
+      $(".searchresults").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 20<' + '/a> - ');
+      $(".searchFooter").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 20<' + '/a> - ');
     }
     if ($(xml).find("NU").length > 0) {
       var nextCounter = parseInt($(xml).find("RES").attr("SN")) + 9;
@@ -171,8 +180,8 @@ function xmlParser(xml) {
       if (statpos != -1) {
         urlNewNext = window.location.href.substring(0,statpos)
       }
-      $(".searchresults").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 10<' + '/a><br' + '/>');
-      $(".searchFooter").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 10<' + '/a><br' + '/>');
+      $(".searchresults").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 20<' + '/a><br' + '/>');
+      $(".searchFooter").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 20<' + '/a><br' + '/>');
     }
   }
   else if (hitcounter > 2) {
@@ -242,6 +251,13 @@ function xmlParser(xml) {
   });
   // Til slutt kan vi vise frem resultatet.
   $(".lookatwhatifound").fadeIn(1000);
+  
+  // populate the resultsummary for the search result ( search term and total number of results)
+  if (noresult==false) {
+    foundresult= '<p>Ditt søk på "<strong>'+$(xml).find("Q").text()+'</strong>" gav <strong>'+hitcounter+'</strong> treff.</p>';
+	//$('.stb-form-inline .searchbox').closest('form').parent().parent().insertAfter(resultSummary);
+	$(".resultsummary div").append(foundresult);  
+  }
 }
 
 function populateSearchFilter(shortenedU){
@@ -662,14 +678,6 @@ function populateCategoryJson(shortenedU, resultMarkup){
           <button type="submit" class="stb-btn stb-form is-submit"><span class="stb-sprite-48 white search"></span></button>
         </div>
       </form>
-    </div>
-  </div>
-
-  <div class="row bottom-margin-30">
-    <div class="col-sm-12">
-      <p class="currentsearch">
-        Ditt søk på <strong><span class="searchterm"></span></strong> gav <strong><span class="number"></span></strong> treff.
-      </p>
     </div>
   </div>
 
