@@ -3,11 +3,11 @@
 // Start mobile top menu decoration
 $(document).ready(function(){
   $('.panel-group').on('show.bs.collapse', function (event) {
-    $(event.target).prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right');
+    $(event.target).prev().find('span:first').toggleClass('chevron-down chevron-right');
   });
   
   $('.panel-group').on('hide.bs.collapse', function () {
-    $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('glyphicon-chevron-down glyphicon-chevron-right');
+    $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('chevron-down chevron-right');
   });
 
   $(".dropdown").on("hide.bs.dropdown", function(){
@@ -68,7 +68,7 @@ $(document).ready(function() {
  
   
   // Prepare the row that contains the table of contents
-  var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">G&aring; direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down charcoal pull-right"></span></p><ul class="items"></ul></div></div>';
+  var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">G&aring; direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down pull-right"></span></p><ul class="items"></ul></div></div>';
   
   // Place the table of content above the first h3.toc-header
   $(toclist).insertBefore( $('h3.toc-header:first').closest("div.row") );
