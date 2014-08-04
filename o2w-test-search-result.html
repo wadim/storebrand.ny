@@ -82,7 +82,7 @@ $(document).ready(function(){
   }
 
   //if the query exists, then perform the search
-  if (get['q']!=undefined && get['q'].length > 0 ) {
+  if (get['q']!=undefined && get['q'].length > 0 ) {	
 	$("form.stb-form-inline input.searchbox").val(get['q']);
 	 //$('.currentsearch .searchterm').text(get['q']);
     searchQuery(get['q'], start);
@@ -115,7 +115,8 @@ $(document).on('change','.stb-checkbox',function() {
 function getQuery(){
   //get the query from the location URL
   var get = [];
-  location.search.replace('?', '').split('&').forEach(function (val) {
+  decodeurl = decodeURI(location.search);
+  decodeurl.replace('?', '').split('&').forEach(function (val) {
     split = val.split("=", 2);
     get[split[0]] = split[1];
   });
@@ -125,9 +126,10 @@ function getQuery(){
 
 //search ajax call
 function searchQuery( query, start ) {
+  query = encodeURI( encodeURI( query ) ); // used becauase of the yahoo api. Can be removed later
   $.ajax({
     type: "GET",
-    url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dlatin1%26oe%3Dlatin1%26q%3D"+query+"'&diagnostics=false",
+    url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dutf-8%26oe%3Dutf-8%26q%3D"+query+"'&diagnostics=false",
     dataType: "xml",
     success: xmlParser
   });
@@ -158,8 +160,8 @@ function xmlParser(xml) {
   var hitcounter = parseInt($(xml).find("M").text());
 
   if (hitcounter > 10) {
-   $(".searchresults").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-    $(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+    //$(".searchresults").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+    //$(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
     //$('.currentsearch .number').text(hitcounter);
     var statpos = 0;
     var urlNow = window.location.href;
@@ -242,7 +244,7 @@ function xmlParser(xml) {
         resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
         $(".main").append(resultMarkup);
       } else {
-        resultMarkup = '<div class="top-margin-40' + '"><h4 class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
+        resultMarkup = '<div class="top-margin-40' + '"><h4 class=" "' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
         $(".main").append(resultMarkup);
       }
 

@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+<head>
+  <title>Menu and Footer Template - storebrand.no</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <link href="bower_components\bootstrap3.2.0\dist\css\bootstrap.min.css" rel="stylesheet">
+
+  <!--link rel="stylesheet" type="text/css" href="css/stb-main.css"-->
+  <!--link rel="stylesheet" type="text/css" href="css/yamm.css"-->
+  <link href="fonts/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.color-2.1.2.min.js"></script>
+  <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/extendedsearch.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var arrowDown ='<i class="glyphicon glyphicon-chevron-down pull-right"></i>';
+    var arrowRight ='<i class="glyphicon glyphicon-arrow-right pull-right"></i>';
+    var back = '<i class="glyphicon glyphicon-step-backward"></i>'
+    var top = '<i class="glyphicon glyphicon-fast-backward"></i>';
+    $('.arrowDown').prepend(arrowDown);
+    $('.arrowRight').prepend(arrowRight);
+    $('.menu-back').prepend(back);
+    $('.menu-back-top').prepend(top);
+});
+
+function menuhandler(closeThis,openThis){
+  $(closeThis).closest('ul').slideUp();
+  $(openThis).slideDown();
+}
+
+</script>
+
+<style>
+
+#stb-menu a {
+color:#FFF;
+}
+
+#stb-menu li {
+background-color:#DA291C;
+border-bottom:solid; 
+border-color: #FFF;
+} 
+ 
+</style>
+
+  
+
+
+</head>
+ 
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" style="background-color:#DA291C;color:#FFF">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#stb-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="color:#FFF;">Storebrand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="stb-menu">
+      <ul class="nav navbar-nav" id="stb-menu-topp">
+        <!--li class="active"><a href="#">Logg inn bank</a></li-->
+        <li><a style="color:#FFF;" class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-pension');">Pensjon</a></li>
+        <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-bank');">Bank</a></li>
+        <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">Forsikring</a></li>
+        <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-fund');">Fond</a></li>
+        <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-morestb');">Mer Storebrand</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-pension" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="themepage-with-full-navigation.html"><b>Alt om pensjon</b></a></li>
+        <li><a class="arrowRight" href="#">Ditt pensjonstall</a></li>
+        <li><a class="arrowRight" href="#">Pensjonsskolen</a></li>
+        <li><a class="arrowRight" href="#">Ekstrapensjon</a></li>
+        <li><a class="arrowRight" href="#">Lær om pensjon</a></li>
+        <li><a class="arrowRight" href="#">Rådgiving om pensjon</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-bank" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');" >&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="#"><b>Alt om bank</b></a></li>
+        <li><a class="arrowRight" href="#">Sperr kort</a></li>
+        <li><a class="arrowRight" href="#">Bli kunde</a></li>
+        <li><a class="arrowDown" href="#"  onclick="menuhandler($(this),'#stb-menu-banksaving');">Banksparing</a></li>
+        <li><a class="arrowRight" href="#">BSU</a></li>
+        <li><a class="arrowRight" href="#">Kontakt banken</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-insuranse" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="#"><b>Alt om forsikring</b></a></li>
+        <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-car');">Bil og kjøretøy</a></li>
+        <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-home');">Hus og hjem</a></li>
+        <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-holidayleisure');">Ferie og fritid</a></li>
+        <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-health');">Liv og helse</a></li>
+        <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-fund" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="#"><b>Alt om fond</b></a></li>
+        <li><a class="arrowRight" href="#">Spar i fond</a></li>
+        <li><a class="arrowRight" href="#">Anbefalte fond</a></li>
+        <li><a class="arrowRight" href="#">Fond i gave</a></li>
+        <li><a class="arrowRight" href="#">Priser og vilkår</a></li>
+        <li><a class="arrowRight" href="#">Kjøp fond</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-car" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back-top pull-right"> Topp</b></a></li>
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="#"><b>Bil og kjøretøy</b></a></li>
+        <li><a class="arrowRight" href="productpage-with-full-navigation.html">Bilforsikring</a></li>
+        <li><a class="arrowRight" href="#">Veteranbilforsikring</a></li>
+        <li><a class="arrowRight" href="#">Tilhengerforsikring</a></li>
+        <li><a class="arrowRight" href="#">Mopedforsikring</a></li>
+        <li><a class="arrowRight" href="#">Traktorforsikring</a></li>
+        <li><a class="arrowRight" href="#">Bestill grøntkort</a></li>
+        <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-home" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="#"><b>Hus og hjem</b></a></li>
+        <li><a class="arrowRight" href="#">Husforsikring</a></li>
+        <li><a class="arrowRight" href="#">Innboforsikring</a></li>
+        <li><a class="arrowRight" href="#">Campingforsikring</a></li>
+        <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-holidayleisure" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="#"><b>Ferie og fritid</b></a></li>
+        <li><a class="arrowRight" href="#">Reiseforsikring</a></li>
+        <li><a class="arrowRight" href="#">Hytteforsikring</a></li>
+        <li><a class="arrowRight" href="#">Båtforsikring</a></li>
+        <li><a class="arrowRight" href="#">Campingforsikring</a></li>
+        <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-health" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="#"><b>Liv og helse</b></a></li>
+        <li><a class="arrowRight" href="#">Helseforsikring</a></li>
+        <li><a class="arrowRight" href="#">Uføreforsikring</a></li>
+        <li><a class="arrowRight" href="#">Dødsfall</a></li>
+        <li><a class="arrowRight" href="#">Kritisk sykdom</a></li>
+        <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-morestb" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="#"><b>Mer Storebrand</b></a></li>
+        <li><a class="arrowRight" href="#">Investor relations</a></li>
+        <li><a class="arrowRight" href="#">Eiendom</a></li>
+        <li><a class="arrowRight" href="#">Om Storebrand</a></li>
+        <li><a class="arrowRight" href="#">Asset Management</a></li>
+        <li><a class="arrowRight" href="#">Bærekraft</a></li>
+       </ul>
+
+       <ul class="nav navbar-nav" id="stb-menu-banksaving" style="display:none;">
+        <li><a href="#" onclick="menuhandler($(this),'#stb-menu-bank');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+        <li><a class="arrowRight" href="#"<b>Banksparing</b></a></li>
+        <li><a class="arrowRight" href="#">Konto og kort</a></li>
+        <li><a class="arrowRight" href="#">Sparekonto</a></li>
+        <li><a class="arrowRight" href="#">Plasseringskonto</a></li>
+        <li><a class="arrowRight" href="#">USB-konto</a></li>
+        <li><a class="arrowRight" href="#">Storebrand Junior</a></li>
+       </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+  <!-- Start actual page contents -->
+  <div class="container">   
+    <div class="row">
+      <div class="col-md-12 column">
+        <div class="stb-box banner">
+          <div class="text">
+            <h1> Storebrand.no</h1>
+            <p>Her er selve innholdet på denne siden og det er det samme hva det står her.</p>
+            <p>Og det er flere linjer</p>
+            <img class="responsive" src="http://www.storebrand.no/site/stb.nsf/Get/get569a207408b072d757cf9e9e96313e44/$FILE/Privatbilde42-300x170.png"></img>
+            <hr>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- End actual page contents -->  
+  
+  <!-- Start responsive footer -->
+  <!--footer class="stbcolor-primary first stb-footer">
+    <div class="row toTop">
+      <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" >Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right">Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
+      </div>
+    </div>
+  
+    <div class="container">
+
+      <div class="row content">
+        <div class="col-sm-3 column info">
+          <div class="border-right">
+            <ul class="stb">
+              <li><span class="stb-sprite-24 white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
+              <li><span class="stb-sprite-24 white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
+              <li><span class="stb-sprite-24 white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
+            </ul>
+            <h4>Alt innhold</h4>
+            <p class="petit">
+              <a class="stb-footer-link" href="#">A til Å / Kategorisert</a>
+            </p>
+          </div>
+        </div>
+    
+        <div class="col-sm-3 column contact">
+          <h4>Lurer du på noe?</h4>
+          <div class="row">
+            <div class="col-xs-6">
+              <p class="petit">Vi er tilgjengelige:</p>
+              <p class="petit">Mandag-fredag<br />08-16, bank til 20</p>
+              <p class="petit">Lørdag (kun bank)<br />09-15</p>
+            </div>
+            <div class="col-xs-6">
+              <p class="petit">
+                <span class="stb-sprite-16 white phone"></span>
+                &nbsp;Ring:&nbsp;<a class="stb-footer-link hidden-xs hidden-sm" href="tel:08880"><span>08880</span></a>
+                <a class="visible-xs visible-sm" style="display: inline-block!important;" href="tel:08880"><span class="visible-xs visible-sm stbcolor-primary first darker badge">08880</span></a>
+                <br/>
+                Fra&nbsp;utlandet:<br />
+                <a class="stb-footer-link hidden-xs hidden-sm" href="tel:+4791508880"><span>+47&nbsp;915&nbsp;08880</span></a>
+                <a class="visible-xs visible-sm" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47&nbsp;915&nbsp;08880</span></a>
+              </p>              
+              <ul class="stb">
+                <li><span class="stb-sprite-16 white envelope"></span><a class="stb-footer-link petit" href="#">&nbsp;E-post</a></li>
+                <li><span class="stb-sprite-16 white chat"></span><a class="stb-footer-link petit"  href="#">&nbsp;Chat</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-xs-6 column social">
+          <div class="border-left">
+          <h4>Sosiale&nbsp;medier</h4>
+            <ul class="stb">
+              <li><span class="stb-sprite-24 white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
+              <li><span class="stb-sprite-24 white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
+              <li><span class="stb-sprite-24 white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
+              <li><span class="stb-sprite-24 white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-6 column more">
+          <div class="border-left">
+            <h4>Mer&nbsp;Storebrand</h4>
+            <ul class="stb">
+              <li><a class="stb-footer-link petit"  href="#"> Om Storebrand </a></li>
+              <li><a class="stb-footer-link petit"  href="#"> Eiendom</a></li>
+              <li><a class="stb-footer-link petit"  href="#"> Asset Management</a></li>
+              <li><a class="stb-footer-link petit"  href="#"> Personvern og cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </footer-->  
+  <!-- End responsive footer -->
+
+</body>
+</html>
