@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Article page example - Car insurance coverage</title>
+  <title>Search page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/stb-main.css">
@@ -11,7 +11,6 @@
   <script type="text/javascript" src="js/dist/jquery.color-2.1.2.min.js"></script>
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/extendedsearch.js"></script>
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript"src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
   <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
@@ -21,166 +20,10 @@
 
 </head>
 
-<script>
-
-  $(document).ready(function(){
-    initTypeAhead();
-  });
-
-  function initTypeAhead(){
-    //Categorized json object
-    var categoryData = {
-      "Anbefalte" :
-              [
-                {"name": "Fond"},
-                {"name": "Bank"},
-                {"name": "Forsikring"},
-                {"name": "Pensjon"}
-              ],
-      "Fond" :
-              [
-                {"name": "Fond","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Fondslister","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Lær mer om fondsparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Bærekraft","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Kjøp fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Våre anbefalte fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Delphi","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Storebrandfondene","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Kontakt fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Start fondsparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Chat om fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-              ],
-      "Pensjon" :
-              [
-                {"name": "Lær om pensjon","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Pensjonskalkulator","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Kjøp pensjonssparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Hva er pensjonssparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Ditt pensjonstall","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Fripolise","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Pensjonsskolen","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Folketrygden","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Tjenestepensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Kontakt pensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Start pensjonssparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Chat om pensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Spar til din pensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Mitt pensjonstall","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Tips til pensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-              ],
-      "Bank" :
-              [
-                {"name": "Banksparing","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Kort og kreditt","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Mistet kort","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Sperr kort","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Visakort","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Kredittkort","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Bli kunde","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Kontakt banken","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Priser og vilkår","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Dagens renter","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Søk boliglån","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Start Banksparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Chat om bank","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-              ],
-      "Forsikring" :
-              [
-                {"name": "Meld skade","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Bilforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Helseforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Hytteforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Tips om forsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Mine behov","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Alt til bilen","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Alt til barnet","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Alt til huset","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Kontakt forsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Chat om forsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Motorsykkelforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Tilhengerforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Uføreforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-              ],
-      "Minside" :
-              [
-                {"name": "Betal regning","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Min oversikt","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Mitt forbruk","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Efaktura","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Kort og kreditt","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Anders Losvik","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Bjørn Christian Tørrissen'","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Mine kontoer","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Mine innstillinger","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Søk lån","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Banksparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Nettbank","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-                {"name": "Sikker chat - logg inn","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-              ]
-    };
-
-    //The category config object. The first object set some general parameters, such as limit.
-    var categoryConfig = [{
-      hint: true,
-      highlight: true,
-      minLength: 3,
-      limit: 10
-    }];
-
-    //Loops through the category data and creates multiple datasets(per category) and puts it in the category config.
-    $.each(categoryData, function(index) {
-
-      //Make use of the Bloodhound suggestion engine in order to use json objects
-      var category =  new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: categoryData[index]
-      });
-
-      category.initialize();
-
-      var header = '<h3 class="headline-search"><span class="glyphicon glyphicon-log-in"></span> '+index+'<span style="font-size: 16px;"> - Gå direkte</span></h3>';
-
-      if(index == "Anbefalte"){
-        header = '<h3 class="headline-search"><span class="glyphicon glyphicon-stats"></span> Anbefalte søkeord </h3>';
-      }
-      var catObj = {
-        name : index,
-        displayKey: 'name',
-        source: category.ttAdapter(),
-        templates: {
-          header: header
-        }
-      }
-      categoryConfig.push(catObj);
-    });
-
-    $.fn.typeahead.apply($('.search .typeahead'), categoryConfig);
-    //Calls the typeahead with the category config
-    //$('#the-basics .typeahead').typeahead(categoryConfig[0], categoryConfig[1]);
-
-    $('.search .typeahead').bind('typeahead:selected', function(event,data) {
-      if(data.url){
-        window.location.href = data.url
-      }
-      $('.typeahead').typeahead('close');
-      //$('#showTrailer').html('<h3>Her kan vi vise noe spesielt for valget ' + stripSpan($('#searchHit').val()) + '</h3>Og så kan vi vise Google-treffene under der igjen.');
-    });
-
-    $('.tt-mobile .search').click(function(){
-      //console.log($('.tt-mobile .typeahead').typeahead('hint'));
-      //$('.tt-mobile .typeahead').typeahead('val');
-    });
-
-  }
-
-</script>
-
 <body>
 <!-- Start top of page -->
 <!-- Start desktop menu -->
-<div class="navbar navbar-default hidden-xs hidden-sm desktop">
+<div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
   <div class="container yamm">
     <div class="navbar-header col-md-4">
       <img src="images/logo.png" title="logo image" class="logo">
@@ -274,15 +117,6 @@
 
         <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
 
-
-        <li class="search col-md-3">
-          <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
-          <form>
-            <label style="width: 95%">
-              <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
-            </label>
-          </form>
-        </li>
       </ul>
     </div>
   </div>
@@ -726,6 +560,5 @@
 
 </footer>
 <!-- End responsive footer -->
-
 </body>
 </html>
