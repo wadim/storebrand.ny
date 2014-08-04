@@ -1,5 +1,4 @@
 
-
 // This Javascript file contains functions required for search
 // Later this can be merged with the other search JS files like extendedsearch.js
 $(document).ready(function(){
@@ -10,7 +9,10 @@ $(document).ready(function(){
 function activateSearch(){
   var searchDesktopMarkup = '<li class="search col-md-3"><div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div><form><label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span></label></form></li>'
   $('#desktop-menu ul.nav').append(searchDesktopMarkup);
-  initExtendedSearch();
+
+  if($(window).width() > 970){
+    initExtendedSearch();
+  }
   initTypeAhead();
 }
 
@@ -141,10 +143,10 @@ function initTypeAhead(){
 
     category.initialize();
 
-    var header = '<h3 class="headline-search"><span class="glyphicon glyphicon-log-in"></span> '+index+'<span style="font-size: 16px;"> - Gå direkte</span></h3>';
+    var header = '<h3 class="headline-search"><span class="glyphicon glyphicon-log-in"></span> '+index+'<span style="font-size: 16px;"> - Direkte</span></h3>';
 
     if(index == "Anbefalte"){
-      header = '<h3 class="headline-search"><span class="glyphicon glyphicon-stats"></span> Anbefalte søkeord </h3>';
+      header = '<h3 class="headline-search"><span class="glyphicon glyphicon-stats"></span> Anbefalt </h3>';
     }
     var catObj = {
       name : index,
@@ -172,9 +174,8 @@ function initTypeAhead(){
     //$('#showTrailer').html('<h3>Her kan vi vise noe spesielt for valget ' + stripSpan($('#searchHit').val()) + '</h3>Og så kan vi vise Google-treffene under der igjen.');
   });
 
-  $('.tt-mobile .search').click(function(){
-    //console.log($('.tt-mobile .typeahead').typeahead('hint'));
-    //  $('.tt-mobile .typeahead').typeahead('val');
+  $('.tt-mobile .search-icon').click(function(){
+    window.location = "o2w-test-search-result.html?q="+$('.tt-mobile .typeahead.tt-input').typeahead('val');
   });
 
   // Call checksearch on hitting enter in the input area
