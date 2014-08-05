@@ -1,6 +1,6 @@
-
 // This Javascript file contains functions required for search
-// Later this can be merged with the other search JS files like extendedsearch.js
+// The search.js is dependent on the typeahead.bundle.min.js script in order to work
+
 $(document).ready(function(){
   activateSearch();
 });
@@ -10,6 +10,7 @@ function activateSearch(){
 
   $('#desktop-menu ul.nav li.search').show();
 
+  //If desktop the search field is extendable
   if($(window).width() > 970){
     initExtendedSearch();
   }
@@ -134,10 +135,13 @@ function initTypeAhead(){
   //Loops through the category data and creates multiple datasets(per category) and puts it in the category config.
   $.each(categoryData, function(index) {
 
-    //Make use of the Bloodhound suggestion engine in order to use json objects
+    //Make use of the Bloodhound suggestion engine in order to use an array of datums(js objects)
     var category =  new Bloodhound({
+      // A function with the signature (datum) that transforms a datum into an array of string tokens.
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+      // A function with the signature (query) that transforms a query into an array of string tokens.
       queryTokenizer: Bloodhound.tokenizers.whitespace,
+      // An array of datums
       local: categoryData[index]
     });
 
@@ -159,19 +163,21 @@ function initTypeAhead(){
     categoryConfig.push(catObj);
   });
 
-  $.fn.typeahead.apply($('.search .typeahead'), categoryConfig);
   //Calls the typeahead with the category config
-  //$('#the-basics .typeahead').typeahead(categoryConfig[0], categoryConfig[1]);
+  $.fn.typeahead.apply($('.search .typeahead'), categoryConfig);
 
   $('.search .typeahead').bind('typeahead:selected', function(event,data) {
-    ga('send', 'event', 'search', 'selected', 'Søkeord: '+data.name);
+
+    //Checks if Google analytics is initialized and sends data regarding the search
+    if(typeof(ga) === 'function'){
+      ga('send', 'event', 'search', 'selected', 'Søkeord: '+data.name);
+    }
 
     if(data.url){
       window.location.href = data.url
     }
 
     $('.typeahead').typeahead('close');
-    //$('#showTrailer').html('<h3>Her kan vi vise noe spesielt for valget ' + stripSpan($('#searchHit').val()) + '</h3>Og så kan vi vise Google-treffene under der igjen.');
   });
 
   $('.tt-mobile .search-icon').click(function(){
