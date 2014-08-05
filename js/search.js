@@ -7,8 +7,8 @@ $(document).ready(function(){
 
 //Activates and displays the search field on the menu bar.
 function activateSearch(){
-  var searchDesktopMarkup = '<li class="search col-md-3"><div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div><form><label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span></label></form></li>'
-  $('#desktop-menu ul.nav').append(searchDesktopMarkup);
+
+  $('#desktop-menu ul.nav li.search').show();
 
   if($(window).width() > 970){
     initExtendedSearch();
