@@ -242,7 +242,7 @@ function initExtendedSearch(){
     e.stopPropagation();
     return false;
   });
-
+  
 
   function maximizeSearch()
   {
@@ -339,3 +339,4 @@ function initExtendedSearch(){
 
   }
 };
+
