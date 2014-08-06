@@ -3,6 +3,25 @@
 
 $(document).ready(function(){
   activateSearch();
+  
+  // perform search only for search result page
+  
+  if(window.location.href.indexOf("action=search")!=-1){
+	  //get the query from the location URL
+    var get = getQuery();
+    var start=0;
+    //if start is defined, get the number
+	if(get['start']!=undefined && get['start'].length>0 ) {
+	  start = get['start'];
+	}
+	
+	//if the query exists, then perform the search
+	if (get['q']!=undefined && get['q'].length > 0 ) {	
+      $("form.stb-form-inline input.searchbox").val(get['q']);
+	  //$('.currentsearch .searchterm').text(get['q']);
+	  searchQuery(get['q'], start);
+    };
+  }
 });
 
 //Activates and displays the search field on the menu bar.
@@ -28,7 +47,7 @@ function searchGoogleBootstrap(sterm) {
   sterm = sterm.replace(reg1, "");
   sterm = sterm.replace(reg2, "");
   sterm = sterm.replace(reg3, "");
-  window.location = "o2w-test-search-result.html?q="+sterm;
+  window.location = "o2w-test-search-result.html?action=search&q="+sterm;
 }
 
 function initTypeAhead(){
@@ -159,7 +178,7 @@ function initTypeAhead(){
       templates: {
         header: header
       }
-    }
+    };
     categoryConfig.push(catObj);
   });
 
@@ -174,7 +193,7 @@ function initTypeAhead(){
     }
 
     if(data.url){
-      window.location.href = data.url
+      window.location.href = data.url;
     }
 
     $('.typeahead').typeahead('close');
@@ -242,7 +261,7 @@ function initExtendedSearch(){
     e.stopPropagation();
     return false;
   });
-
+  
 
   function maximizeSearch()
   {
@@ -339,3 +358,149 @@ function initExtendedSearch(){
 
   }
 };
+
+
+function getQuery(){
+	  //get the query from the location URL
+	  var get = [];
+	  decodeurl = decodeURI(location.search);
+	  decodeurl.replace('?', '').split('&').forEach(function (val) {
+	    split = val.split("=", 2);
+	    get[split[0]] = split[1];
+	  });
+
+	  return get;
+	}
+
+	//search ajax call
+	function searchQuery( query, start ) {
+	  query = encodeURI( encodeURI( query ) ); // used becauase of the yahoo api. Can be removed later
+	  $.ajax({
+	    type: "GET",
+	    url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dutf-8%26oe%3Dutf-8%26q%3D"+query+"'&diagnostics=false",
+	    dataType: "xml",
+	    success: xmlParser
+	  });
+	}
+
+	function xmlParser(xml) {
+	  noresult= false;
+	  
+	  // prepare the resultsummary for populating the status of the search result ( found or not)
+	  resultSummary = '<div class="resultsummary row bottom-margin-30"><div class="col-sm-12"></div></div>';
+	  $(resultSummary).insertAfter($('.stb-form-inline .searchbox').closest('form').parent().parent());
+	  
+	  
+	  // Forslag til annen stavemåte
+	  $(xml).find("Spelling").each(function() {
+	    var suggestedSpelling = $(this).find("Suggestion").attr("q");
+	    //$(".searchresults").append('<div id="suggestion"' + '>Vi har få eller ingen treff på det søkeordet, men prøv <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+	    $(".resultsummary div").append('<div id="suggestion"' + '>Vi har f&aring; eller ingen treff p&aring; det s&oslash;keordet, men pr&oslash;v <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+	    noresult= true;
+	  });
+	  // Hvis vi ikke finner noe som helst må vi jo si ifra om det først:
+	  if ($(xml).find("R").length == 0 && $(xml).find("Spelling").length== 0 ) {
+	    $(".resultsummary div").append('<div class="nogo"' + '>Fant ingen treff ved s&oslash;k etter <' + 'strong>'+ $(xml).find("Q").text()+'<' + '/strong>.<' + '/div>');
+		  noresult=true;
+	  }
+	  // Men hvis vi finner noe, så kan vi vise treff
+	  // Først antall treff, og så kan vi også legge på lenke til neste/forrige gjeng sider, hvis vi vil.
+	  var hitcounter = parseInt($(xml).find("M").text());
+
+	  if (hitcounter > 10) {
+	    //$(".searchresults").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+	    //$(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+	    //$('.currentsearch .number').text(hitcounter);
+	    var statpos = 0;
+	    var urlNow = window.location.href;
+	    if ($(xml).find("PU").length > 0) {
+	      var nextCounter = parseInt($(xml).find("RES").attr("SN")) - 11;
+	      statpos = urlNow.indexOf("&start=");
+	      var urlNewPrev = urlNow;
+	      if (statpos != -1) {
+	        urlNewPrev = window.location.href.substring(0,statpos)
+	      }
+	      $(".searchresults").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 20<' + '/a> - ');
+	      $(".searchFooter").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 20<' + '/a> - ');
+	    }
+	    if ($(xml).find("NU").length > 0) {
+	      var nextCounter = parseInt($(xml).find("RES").attr("SN")) + 9;
+	      statpos = urlNow.indexOf("&start=");
+	      var urlNewNext = urlNow;
+	      if (statpos != -1) {
+	        urlNewNext = window.location.href.substring(0,statpos)
+	      }
+	      $(".searchresults").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 20<' + '/a><br' + '/>');
+	      $(".searchFooter").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 20<' + '/a><br' + '/>');
+	    }
+	  }
+	  else if (hitcounter > 2) {
+	    $(".searchresults").append('Viser alle ' + hitcounter + ' treff for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
+	    $(".searchFooter").append('Viser alle ' + hitcounter + ' treff for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
+	  }
+	  else if (hitcounter == 2) {
+	    $(".searchresults").append('Viser de to treffene vi fant for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
+	    $(".searchFooter").append('Viser de to treffene vi fant for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
+	  }
+	  else if (hitcounter == 1) {
+	    $(".searchresults").append('Viser det enslige treffet vi fant for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
+	    $(".searchFooter").append('Viser det enslige treffet vi fant for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
+	  }
+	  else {
+	    $(".searchresults").append('');
+	    $(".searchFooter").append('');
+	  }
+	  // Så er det på tide å legge på selve treffene.
+	  $(xml).find("R").each(function () {
+	    // Vi behandler "promotions" spesielt, og resten på en annen måte
+	    // Først promotions, som alltid kommer først hvis de kommer
+	    if ($(this).find("SL_MAIN").length > 0) {
+	      // Vise promotion
+	      var promoURL = $(this).find("IMAGE_SOURCE").text();
+	      var promoPic = "";
+	      if (promoURL!="" && promoURL!= null) {
+	        promoPic = "<img src='" + promoURL + "' />";
+	      }
+	      $(".main").append('<div class="lookatwhatifound' + '"><div class="promotering"' + '>' + promoPic + '<div class="title"' + '><a href="'  + $(this).find("SL_MAIN").find("U").text() + '">' +  $(this).find("BLOCK").find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + $(this).find("S").text() + '<' + '/div><' + '/div><'+ '/div>');
+	    } else {
+	      // Så ikke-promotions (som vanligvis er det som kommer)
+	      var strippedS = $(this).find("S").text();
+	      var stripRE = new RegExp("<br>", "g");
+	      strippedS = strippedS.replace(stripRE, "");
+	      var showU = $(this).find("U").text();
+	      var strippedU = showU;
+	      var stripU = new RegExp("http://www.", "g");
+	      strippedU = strippedU.replace(stripU, "");
+	      stripU = new RegExp("https://www.", "g");
+	      strippedU = strippedU.replace(stripU, "");
+	      if(strippedU.length > 85) {
+	        var shortenedU =  strippedU.substring(0,35) + "..." + strippedU.substring(strippedU.length-40, strippedU.length);
+	      } else {
+	        var shortenedU = strippedU;
+	      }
+	      var linkDecoration = "";
+	      if (strippedU.indexOf(".pdf") > 0) {
+	        linkDecoration = ' class="pdf document" ';
+	      }
+
+	      var resultMarkup = "";
+
+	      if (strippedS.indexOf("reutzer") > 0) {
+	        resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
+	        $(".main").append(resultMarkup);
+	      } else {
+	        resultMarkup = '<div class="top-margin-40' + '"><h4 class=" "' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
+	        $(".main").append(resultMarkup);
+	      }
+	    }
+	  });
+	  // Til slutt kan vi vise frem resultatet.
+	  $(".lookatwhatifound").fadeIn(1000);
+	  
+	  // populate the resultsummary for the search result ( search term and total number of results)
+	  if (noresult==false) {
+	    foundresult= '<p>Ditt s&oslash;k p&aring; "<strong>'+$(xml).find("Q").text()+'</strong>" gav <strong>'+hitcounter+'</strong> treff.</p>';
+		//$('.stb-form-inline .searchbox').closest('form').parent().parent().insertAfter(resultSummary);
+		$(".resultsummary div").append(foundresult);  
+	  }
+	}
