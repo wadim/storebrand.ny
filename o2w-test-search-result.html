@@ -16,15 +16,9 @@
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>  
   <style>
-
-    .hover-gray {
-      padding: 5px;
-      border-radius: 5px;
-    }
-    
     .stb-form-inline .searchbox {
-      height: 72px;
-      line-height: 72px;
+      height: 50px;
+      line-height: 50px;
       font-size: 24px;
       float: left;
       color: #000;
@@ -33,9 +27,22 @@
       margin-right: 10px;
     }
     
+    .stb-form-group {
+      width: 100%;
+    }
     .stb-form-inline button.is-submit {
-      height: 72px;
+      height: 50px;
       top: 0;
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+    
+    .searchresults a {
+       color: #000;
+    }
+    
+    .searchresults p a{
+      font-weight: normal;
     }
    
     @media screen and (max-width: 991px) {
@@ -48,11 +55,18 @@
       .stb-form-inline button.is-submit {
        min-width: 20%;
        height: 50px;
+       padding-left: 20px;
+       padding-right: 20px;
       }
      
     }
     
   </style>
+  
+  
+  <script>
+  
+  </script>
 
 </head>
 
@@ -389,8 +403,8 @@
 <div class="container bottom-margin-30">
   <div class="row">
     <div class="col-md-12 column">
-      <div class="searchresults"></div>
-      <div class="main" style="margin-bottom: 70px;"></div>
+      <div class="searchsummary"></div>
+      <div class="searchresults" style="margin-bottom: 70px;"></div>
      
     </div>
   </div>
