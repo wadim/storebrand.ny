@@ -16,51 +16,25 @@
   <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
   <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>
-  <script type="text/javascript" src="js/dist/stb-common.js"></script>
-  <style>
-    div.cookieFooter{
-      background-color: #333333;
-      height: auto;
-      opacity: 0.7;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 400;
-      color: white;
-    }
-    div.cookieFooter .contentinfo {
-      color: #FFFFFF;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 15px;
-      width: 60%;
-    }
-    * {
-      margin: 0;
-    }
-    html, body {
-      height: 100%;
-    }
-    .container {
-      min-height: 100%;
-      height: auto !important;
-      height: 100%;
-    }
-
-  </style>
-  <script>
-    $(document).ready(function(){
-      var accept = readCookie('acceptCookie');
-      if(accept=='Yes'){
-        jQuery('#cookieFooter').hide();
-      }
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var arrowDown ='<span class="stb-sprite-24 chevron-down pull-right" style="margin-top: 12px;"></span>';
+      var arrowRight ='<span class="stb-sprite-24 arrow-right pull-right" style="margin-top: 12px;"></span>';
+      var back = '<span class="stb-sprite-24 chevron-left pull-left" style="margin-top: 12px;"></span>'
+      var top = '<span class="stb-sprite-24 arrow-left pull-left" style="margin-top: 12px; margin-right: 6px;"></span>';
+      $('.arrowDown').append(arrowDown);
+      $('.arrowRight').prepend(arrowRight);
+      $('.menu-back').prepend(back);
+      $('.menu-back-top').prepend(top);
     });
-    function aksepterCookie(){
-      createCookie('acceptCookie','Yes','60');
-      jQuery('#cookieFooter').hide('slow');
+
+    function menuhandler(closeThis,openThis){
+      $(closeThis).closest('ul').slideUp();
+      $(openThis).slideDown();
     }
 
   </script>
+
 </head>
  
 <body>
@@ -74,7 +48,7 @@
           <img src="images/logo.png" title="logo image" class="logo">
         </div>
         <div id="navbar-collapse-grid" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav col-md-8">
+          <ul class="nav stb-nav navbar-nav stb-navbar-nav col-md-8">
             <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
               <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
               <ul class="dropdown-menu" id="dropdown-private">
@@ -178,165 +152,135 @@
     <!-- Start mobile menu -->
     <nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
       <div class="row stbcolor-primary third">
-        <div class="navbar-header col-xs-5 logo">
+        <div class="navbar-header col-xs-6 logo">
           <img class="stb-logo-mobile" src="images/logo.storebrand.172x21.png" title="storebrand logo"/>
         </div>
-        <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6 col-xs-offset-1" style="padding-left: 6px;">
-          <ul class="nav navbar">
-            <li class="dropdown yamm-fw" style="width: 25%;">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars" style="font-size: 24px; color: white;"></i><span class="marker"></span></a>
-              <ul id="subMenu" class="dropdown-menu">
+        <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-5 col-xs-offset-1" style="padding-left: 6px;">
+          <ul class="nav stb-nav navbar">
+            <li class="dropdown yamm-fw" style="width: 50%;">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-32 menu-bars white" style="margin-left: 12px; margin-top: 12px"></span><span class="marker"></span></a>
+              <ul id="subMenu" class="dropdown-menu scrollable-menu">
                 <div class="yamm-content">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <ul class="nav nav-tabs">
-                        <li class="active tab-box"><a id="tabheader-privat" href="#tab-privat" data-toggle="tab">Privat</a></li>
-                        <li class="tab-box"><a id="tabheader-bedrift" href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
-                      </ul>
-                      <div class="tab-content">
-                        <div class="tab-pane fade in active" id="tab-privat">
+                  <div id="stb-menu">
+                    <ul class="nav navbar-nav" id="stb-menu-topp">
+                      <!--li class="active"><a href="#">Logg inn bank</a></li-->
+                      <li><a href="#">Logg inn <span class="stb-sprite-24 user pull-right" style="margin-top: 8px;"></span></a></li>
+                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-pension');">Pensjon</a></li>
+                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-bank');">Bank</a></li>
+                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">Forsikring</a></li>
+                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-fund');">Fond</a></li>
+                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-morestb');">Mer Storebrand</a></li>
+                    </ul>
 
-                          <div class="panel-group" id="accordion-privat">
-                            <div class="panel panel-default">
-                              <div class="panel-heading">
-                                <h4 class="panel-title">
-                                  <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#forsikring">
-                                    <span class="stb-sprite-16 chevron-right"></span> Forsikring
-                                  </a>
-                                </h4>
-                              </div>
-                              <div id="forsikring" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                  <ul class="stb">
-                                    <li><a href="#">Bilforsikring</a></li>
-                                    <li><a href="#">Husforsikring</a></li>
-                                    <li><a href="#">Innboforsikring</a></li>
-                                    <li><a href="#">Reiseforsikring</a></li>
-                                    <li><a href="#">Motorsykkelforsikring</a></li>
-                                    <li><a href="#">Båtforsikring</a></li>
-                                    <li><a href="#">Liv og helse</a></li>
-                                    <li><a href="#">Barneforsikring</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="panel panel-default">
-                              <div class="panel-heading">
-                                <h4 class="panel-title">
-                                  <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#bank">
-                                    <span class="stb-sprite-16 chevron-right"></span> Bank og lån
-                                  </a>
-                                </h4>
-                              </div>
-                              <div id="bank" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                  <ul class="stb">
-                                    <li><a href="#">Bli bankkunde</a></li>
-                                    <li><a href="#">Konto og kort</a></li>
-                                    <li><a href="#">Ungdomskonto</a></li>
-                                    <li><a href="#">Visa-kort</a></li>
-                                    <li><a href="#">Kredittkort</a></li>
-                                    <li><a href="#">Boliglån</a></li>
-                                    <li><a href="#">Boligkreditt</a></li>
-                                    <li><a href="#">Boliglån for unge</a></li>
-                                    <li><a href="#">Nettbank</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="panel panel-default">
-                              <div class="panel-heading">
-                                <h4 class="panel-title">
-                                  <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#pensjon">
-                                    <span class="stb-sprite-16 chevron-right"></span> Pensjon
-                                  </a>
-                                </h4>
-                              </div>
-                              <div id="pensjon" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                  <ul class="stb">
-                                    <li><a href="#">Egensparing til pensjon</a></li>
-                                    <li><a href="#">Ekstrapensjon</a></li>
-                                    <li><a href="#">IPS</a></li>
-                                    <li><a href="#">Pensjon fra arbeidsgiver</a></li>
-                                    <li><a href="#">Pensjonskapitalbevis</a></li>
-                                    <li><a href="#">Fripolise</a></li>
-                                    <li><a href="#">Fripolise med investeringsvalg</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="panel panel-default">
-                              <div class="panel-heading">
-                                <h4 class="panel-title">
-                                  <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#sparing">
-                                    <span class="stb-sprite-16 chevron-right"></span> Sparing
-                                  </a>
-                                </h4>
-                              </div>
-                              <div id="sparing" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                  <ul class="stb">
-                                    <li><a href="#">Spar i fond</a></li>
-                                    <li><a href="#">Spar i bank</a></li>
-                                    <li><a href="#">Spar til pensjon</a></li>
-                                    <li><a href="#">Spareavtaler</a></li>
-                                    <li><a href="#">Gi fond i gave</a></li>
-                                    <li><a href="#">Flytte fond</a></li>
-                                    <li><a href="#">Sparekonto</a></li>
-                                    <li><a href="#">Fondspakker</a></li>
-                                    <li><a href="#">BSU-sparing</a></li>
-                                    <li><a href="#">Junior-sparing</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="panel panel-default">
-                              <div class="panel-heading">
-                                <h4 class="panel-title">
-                                  <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#kalkulator">
-                                    <span class="stb-sprite-16 chevron-right"></span><span class="tools"></span> Kalkulatorer & verktøy
-                                  </a>
-                                </h4>
-                              </div>
-                              <div id="kalkulator" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                  <ul class="stb">
-                                    <li><a href="#">Lånekalkulator</a></li>
-                                    <li><a href="#">Ditt pensjonstall</a></li>
-                                    <li><a href="#">Pensjonsskolen</a></li>
-                                    <li><a href="#">Demo av Mitt forbruk</a></li>
-                                    <li><a href="#">Priser og vilkår</a></li>
-                                    <li><a href="#">Renter og priser</a></li>
-                                    <li><a href="#">Sperre kort</a></li>
-                                    <li><a href="#">Nyheter og rapporter</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
+                    <ul class="nav navbar-nav" id="stb-menu-pension" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="themepage-with-full-navigation.html"><b>Alt om pensjon</b></a></li>
+                      <li><a class="arrowRight" href="#">Ditt pensjonstall</a></li>
+                      <li><a class="arrowRight" href="#">Pensjonsskolen</a></li>
+                      <li><a class="arrowRight" href="#">Ekstrapensjon</a></li>
+                      <li><a class="arrowRight" href="#">Lær om pensjon</a></li>
+                      <li><a class="arrowRight" href="#">Rådgiving om pensjon</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav" id="stb-menu-bank" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');" >&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#"><b>Alt om bank</b></a></li>
+                      <li><a class="arrowRight" href="#">Sperr kort</a></li>
+                      <li><a class="arrowRight" href="#">Bli kunde</a></li>
+                      <li><a class="arrowDown" href="#"  onclick="menuhandler($(this),'#stb-menu-banksaving');">Banksparing</a></li>
+                      <li><a class="arrowRight" href="#">BSU</a></li>
+                      <li><a class="arrowRight" href="#">Kontakt banken</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav" id="stb-menu-insuranse" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#"><b>Alt om forsikring</b></a></li>
+                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-car');">Bil og kjøretøy</a></li>
+                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-home');">Hus og hjem</a></li>
+                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-holidayleisure');">Ferie og fritid</a></li>
+                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-health');">Liv og helse</a></li>
+                      <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav" id="stb-menu-fund" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#"><b>Alt om fond</b></a></li>
+                      <li><a class="arrowRight" href="#">Spar i fond</a></li>
+                      <li><a class="arrowRight" href="#">Anbefalte fond</a></li>
+                      <li><a class="arrowRight" href="#">Fond i gave</a></li>
+                      <li><a class="arrowRight" href="#">Priser og vilkår</a></li>
+                      <li><a class="arrowRight" href="#">Kjøp fond</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav" id="stb-menu-car" style="display:none;">
+                      <li><div style="height: 60px;">
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px;">Tilbake</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp');"> <b class="menu-back-top pull-left"><span style="position: relative;top: 12px;">Til Start</span></b></a>
                           </div>
+                      </li>
+                      <li><a class="arrowRight" href="#"><b>Bil og kjøretøy</b></a></li>
+                      <li><a class="arrowRight" href="productpage-with-full-navigation.html">Bilforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Veteranbilforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Tilhengerforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Mopedforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Traktorforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Bestill grøntkort</a></li>
+                      <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+                    </ul>
 
-                          <div class="row">
-                            <div class="col-xs-6">
-                              <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-wrench"></i> Veihjelp</a>
-                              <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-plus-circle"></i> Få Fordeler</a>
-                            </div>
-                            <div class="col-xs-6">
-                              <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-file-text-o"></i> Meld skade</a>
-                              <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-comment-o"></i> Kontakt oss</a>
-                            </div>
-                          </div>
+                    <ul class="nav navbar-nav" id="stb-menu-home" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#"><b>Hus og hjem</b></a></li>
+                      <li><a class="arrowRight" href="#">Husforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Innboforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Campingforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+                    </ul>
 
-                        </div>
-                        <div class="tab-pane fade" id="tab-bedrift">Bedrift</div>
-                      </div>
-                    </div>
+                    <ul class="nav navbar-nav" id="stb-menu-holidayleisure" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#"><b>Ferie og fritid</b></a></li>
+                      <li><a class="arrowRight" href="#">Reiseforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Hytteforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Båtforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Campingforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav" id="stb-menu-health" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#"><b>Liv og helse</b></a></li>
+                      <li><a class="arrowRight" href="#">Helseforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Uføreforsikring</a></li>
+                      <li><a class="arrowRight" href="#">Dødsfall</a></li>
+                      <li><a class="arrowRight" href="#">Kritisk sykdom</a></li>
+                      <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav" id="stb-menu-morestb" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#"><b>Mer Storebrand</b></a></li>
+                      <li><a class="arrowRight" href="#">Investor relations</a></li>
+                      <li><a class="arrowRight" href="#">Eiendom</a></li>
+                      <li><a class="arrowRight" href="#">Om Storebrand</a></li>
+                      <li><a class="arrowRight" href="#">Asset Management</a></li>
+                      <li><a class="arrowRight" href="#">Bærekraft</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav" id="stb-menu-banksaving" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-bank');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#"<b>Banksparing</b></a></li>
+                      <li><a class="arrowRight" href="#">Konto og kort</a></li>
+                      <li><a class="arrowRight" href="#">Sparekonto</a></li>
+                      <li><a class="arrowRight" href="#">Plasseringskonto</a></li>
+                      <li><a class="arrowRight" href="#">USB-konto</a></li>
+                      <li><a class="arrowRight" href="#">Storebrand Junior</a></li>
+                    </ul>
                   </div>
-
                 </div>
               </ul>
             </li>
-            <li class="dropdown yamm-fw" style="width: 25%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-search" style="font-size: 24px; color: white;"></i><span class="marker"></span></a>
+            <li class="dropdown yamm-fw" style="width: 50%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-32 search white" style="margin-left: 12px; margin-top: 12px"></span><span class="marker"></span></a>
               <ul id="searchField" class="dropdown-menu" style="background: white">
                 <div class="yamm-content">
                   <div class="row">
@@ -351,16 +295,6 @@
                           </div>
                         </label>
                       </form>
-                    </div>
-                  </div>
-                </div>
-              </ul>
-            </li>
-            <li class="dropdown yamm-fw" style="width: 50%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn<span class="marker"></span></a>
-              <ul id="signIn" class="dropdown-menu" style="background: white">
-                <div class="yamm-content">
-                  <div class="row">
-                    <div class="col-xs-12">
                     </div>
                   </div>
                 </div>
@@ -383,22 +317,23 @@
           <div class="text">
             <h2>Basic top menu</h2>
             <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
-          </div>
-          <div class="text">
-            <h2>Basic top menu</h2>
-            <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
-          </div>
 
 
+          </div>
           <div class="image">
 
           </div>
+
+
         </div>
+
+      </div>
       </div>
     </div>
 
   </div>
-  <!-- End actual page contents -->
+  <!-- End actual page contents -->  
+  
   <!-- Start responsive footer -->
   <footer class="stbcolor-primary first stb-footer">
     <div class="row toTop">
@@ -475,20 +410,9 @@
         </div>
       </div>
     </div>
-  </footer>
+  
+  </footer>  
   <!-- End responsive footer -->
-
-  <div class="cookieFooter" id="cookieFooter">
-    <div style="float:right;margin-right:10%;margin-top:1%;">
-      <a style="color:white;font-weight:bold;" title="Lukk" href="#" onclick="aksepterCookie(); return false">Lukk</a>
-    </div>
-    <div class="contentinfo">
-      <div class="info">
-        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html" style="color:white;text-decoration:underline;">Her finner du mer informasjon om hvordan vi bruker cookies.</a>
-      </div>
-    </div>
-  </div>
-
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
