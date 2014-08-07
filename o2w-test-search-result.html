@@ -45,6 +45,8 @@
       font-weight: normal;
     }
    
+    .searchcontainer .twitter-typeahead { float:left }
+    
     @media screen and (max-width: 991px) {
     
       .stb-form-inline input.searchbox {
@@ -168,7 +170,7 @@
             <li class="search col-md-3" style="display: none;">
               <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
               <form>
-                <label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+                <label style="width: 95%"> <input type="text" class=" typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
                 </label>
               </form>
             </li>
@@ -387,11 +389,11 @@
 
   <h1>Søk</h1>
 
-  <div class="row top-margin-10">
+  <div class="row top-margin-10 searchcontainer">
     <div class="col-md-12">
       <form class="stb-form-inline" role="form">
         <div class="stb-form-group">
-          <input type="text" class="has-submit searchbox" placeholder="Hva vil du søke etter?"/>
+          <input type="text" class="has-submit searchbox typeahead" placeholder="Hva vil du søke etter?"/>
           <button type="submit" class="stb-btn stb-form is-submit">Søk</button>
         </div>
       </form>
@@ -402,7 +404,7 @@
 
 <div class="container bottom-margin-30">
   <div class="row">
-    <div class="col-md-12 column">
+    <div class="col-md-8 column">
       <div class="searchsummary"></div>
       <div class="searchresults" style="margin-bottom: 70px;"></div>
      

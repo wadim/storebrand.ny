@@ -1,6 +1,5 @@
 // This Javascript file contains functions required for search
 // The search.js is dependent on the typeahead.bundle.min.js script in order to work
-
 $(document).ready(function(){
   activateSearch();
   
@@ -52,6 +51,16 @@ function searchGoogleBootstrap(sterm) {
   window.location = "o2w-test-search-result.html?action=search&q="+sterm;
 }
 
+
+function initPromotion() {
+	searchTerm = {
+	  "bank" : {"header":"Vet du hva du får i pensjon","text": "Bruk Storebrand sin kalkulator for å beregne hva du får i pensjon , og hvoe mye du må spare for å få den pensjonen du ønsker deg.", "name":"Finn ditt pensjonstall", "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+	  "fond" : {"header":"Vet du hva du får i fond","text": "Write some ting here", "name":"write something here", "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+	  "bank and lån" : {"header":"Vet du hva du får i bank og lån","text": "Write something here", "name":"write something here", "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+	  "søk" : {"header":"Vet du hva du får i pensjon","text": "Write something here", "name":"write something here", "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
+	     
+	};
+};
 function initTypeAhead(){
   //Categorized json object
   var categoryData = {
@@ -185,7 +194,7 @@ function initTypeAhead(){
   });
 
   //Calls the typeahead with the category config
-  $.fn.typeahead.apply($('.search .typeahead'), categoryConfig);
+  $.fn.typeahead.apply($('.searchbox.typeahead'), categoryConfig);
 
   $('.search .typeahead').bind('typeahead:selected', function(event,data) {
 
@@ -238,21 +247,21 @@ function initExtendedSearch(){
     if(maximized == true && animating==false) {
 
       //Don´t minimize if there is text in the search field
-      if(!$('.typeahead.tt-input').val()){
+      if(!$('.navbar-nav .typeahead.tt-input').val()){
         minimizeSearch();
       }
     }
   });
 
-  $('.search .remove').click(function(){
+  $('.navbar-nav .search .remove').click(function(){
     minimizeSearch();
   });
 
 
   //if the search icon or the input element itself gets clicked, do not pass the click event to the document
-  $(".typeahead.tt-desktop, .search-icon").click(function(e) {
+  $(".navbar-nav .typeahead.tt-desktop, .search-icon").click(function(e) {
     //give it focus
-    $('.typeahead').focus();
+    $('.navbar-nav .typeahead').focus();
 
     //if its currently small and not animating, maximize it
     if(maximized == false && animating == false) {
@@ -278,13 +287,13 @@ function initExtendedSearch(){
 
     //store the current width
     searchParentWidth = $('.navbar-nav > li.search').css('width');
-    backgroundColor = $('.typeahead').css('background-color');
+    backgroundColor = $('.navbar-nav .typeahead').css('background-color');
     //since the width is given in pixels instead of percentage, we need to calculate it ourselves
     searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 
 
     //give the text element a fixed size first
-    $('.typeahead').css('width',searchParentWidth);
+    $('.navbar-nav .typeahead').css('width',searchParentWidth);
     //hide the menu
     $('.navbar-nav > li.group').toggle();
 
@@ -294,24 +303,24 @@ function initExtendedSearch(){
 
 
     //fadeOut the white search icon in 1/4th speed of the animation time
-    $('.search-icon .search').fadeOut(animSpeed/4);
+    $('.navbar-nav .search-icon .search').fadeOut(animSpeed/4);
 
     //after the fadeOut animation time has passed, fadeIn with the class name changed to charcoal
     setTimeout(function(){
-      $('.search-icon .search').removeClass("white").addClass("charcoal").fadeIn(animSpeed/2);
+      $('.navbar-nav .search-icon .search').removeClass("white").addClass("charcoal").fadeIn(animSpeed/2);
     }, animSpeed/4);
 
-    $('.search-icon').animate({backgroundColor:'"fff'},animSpeed);
+    $('.navbar-nav .search-icon').animate({backgroundColor:'"fff'},animSpeed);
 
     //animate span parent container to 100 %
-    $('.typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
+    $('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
     //animate the textbox
-    $('.twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
+    $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
 
 
     // show the remove icon
     setTimeout(function(){
-      $('li.search .remove').toggle();
+      $('.navbar-nav li.search .remove').toggle();
     },animSpeed);
   }
 
@@ -327,20 +336,20 @@ function initExtendedSearch(){
 
 
     // hide the remove icon
-    $('li.search .remove').toggle();
+    $('.navbar-nav li.search .remove').toggle();
     //reset the searchParent to the original width. The text box will fit on its own as its width is 100%.
     $('.navbar-nav > li.search').animate({width:searchParentWidthPercent+'%'},animSpeed);
-    $('.typeahead').animate({backgroundColor:backgroundColor,color:"#fff"},animSpeed);
+    $('.navbar-nav .typeahead').animate({backgroundColor:backgroundColor,color:"#fff"},animSpeed);
 
     //fadeOut the white search icon in 1/4th speed of the animation time
-    $('.search-icon .search').fadeOut(animSpeed/4);
+    $('.navbar-nav .search-icon .search').fadeOut(animSpeed/4);
 
     //after half the animation time has passed, fadeIn with the class name changed to white
     setTimeout(function(){
-      $('.search-icon .search').removeClass("charcoal").addClass("white").fadeIn(animSpeed/2);
+      $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn(animSpeed/2);
     }, animSpeed/4);
 
-    $('.search-icon').animate({backgroundColor:backgroundColor},animSpeed);
+    $('.navbar-nav .search-icon').animate({backgroundColor:backgroundColor},animSpeed);
 
 
     //reset all the states after the animations complete
@@ -349,13 +358,13 @@ function initExtendedSearch(){
       $('.navbar-nav > li.group').toggle();
 
       //remove the focus from the smaller search box in case the user clicked on it during the animation
-      $('.typeahead').blur();
+      $('.navbar-nav .typeahead').blur();
 
       //save the new state
       maximized = false;
 
       //Reseting the span container to initial value
-      $('.twitter-typeahead').css('width','initial');
+      $('.navbar-nav .twitter-typeahead').css('width','initial');
     }, animSpeed);
 
   }
@@ -391,6 +400,15 @@ function initExtendedSearch(){
 	}
 
 	function xmlParser(xml) {
+	 // populate the promotion area
+	  if (start == 0){
+	    initPromotion();
+	    $.each(searchTerm,function(value) {
+    	  if (value == get['q']){ 
+    	    $(".searchresults").append('<div class="top-margin-50 promotion stb-box third' + '"><h4>'+searchTerm[value].header + '<' + '/h1><' + 'p class="description">' + searchTerm[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + searchTerm[value].url + '">' + searchTerm[value].name + '<' + '/a><' + '/p><' + '/div>');
+    	  }
+       });
+	  }
 	  $("#loadingimage").remove();
 	  searchIsRunning = false;
 	  noresult = false;
