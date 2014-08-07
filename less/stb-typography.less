@@ -15,12 +15,14 @@
   src: url('../fonts/SignaWeb-Light.eot?iefix') format('eot'),
        url('../fonts/SignaWeb-Light.woff') format('woff');
 }
-@font-face {
-  font-family: 'SignaWeb-Bold';
-  src: url('../fonts/SignaWeb-Bold.eot');
-  src: url('../fonts/SignaWeb-Bold.eot?iefix') format('eot'),
-       url('../fonts/SignaWeb-Bold.woff') format('woff');
-}
+
+// BZT 2014-08-07: Removed SignaWeb-Bold, not in use as of now
+//@font-face {
+//  font-family: 'SignaWeb-Bold';
+//  src: url('../fonts/SignaWeb-Bold.eot');
+//  src: url('../fonts/SignaWeb-Bold.eot?iefix') format('eot'),
+//       url('../fonts/SignaWeb-Bold.woff') format('woff');
+//}
 
 // Open Sans files retrieved from http://www.google.com/fonts/#QuickUsePlace:quickUse/Family:Open+Sans
 @font-face {
@@ -40,16 +42,12 @@
 @font-family-monospace:       Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-sans-serif:      "Open Sans", Arial, ArialMT, sans-serif;
 @font-family-sans-serif-bold: "Open Sans Bold", Arial, ArialMT, sans-serif;
-@font-family-signa:           "SignaWeb-Book", Georgia, "Times New Roman", Times, serif;
-@font-family-signa-bold:      "SignaWeb-Bold", Georgia, "Times New Roman", Times, serif;
-@font-family-signa-light:     "SignaWeb-Light", Georgia, "Times New Roman", Times, serif;
+@font-family-signa-book:           "SignaWeb-Book", Arial, "Times New Roman", Times, serif;
+// 2014-08-07 BZT: Not in use currently @font-family-signa-bold:      "SignaWeb-Bold", Arial, "Times New Roman", Times, serif;
+@font-family-signa-light:     "SignaWeb-Light", Arial, "Times New Roman", Times, serif;
 
 .stb-font {
-  font-family: @font-family-signa;
-}
-
-.stb-font-bold {
-  font-family: @font-family-signa-bold;
+  font-family: @font-family-signa-book;
 }
 
 .stb-font-light {
@@ -70,10 +68,7 @@ h1 {
   margin: 0;
   padding: 14px 14px 14px 0;
   color: @stb-primary-color;
-  font-family: @font-family-sans-serif;
-  &.stbfont {
-    font-family: @font-family-signa;
-  }
+  font-family: @font-family-signa-light;
   &.dark {
     color: @stb-primary-white;
   }
@@ -84,10 +79,7 @@ h2 {
   margin: 0;
   padding: 12px 12px 12px 0;
   color: @stb-primary-black;
-  font-family: @font-family-sans-serif;
-  &.stbfont {
-    font-family: @font-family-signa;
-  }
+  font-family: @font-family-signa-light;
   &.dark {
     color: @stb-primary-white;
   }  
@@ -99,10 +91,7 @@ h3 {
   margin: 0;
   padding: 12px 12px 12px 0;
   color: @stb-primary-black;
-  font-family: @font-family-sans-serif;
-  &.stbfont {
-    font-family: @font-family-signa;
-  }
+  font-family: @font-family-signa-book;
   &.dark {
     color: @stb-primary-white;
   }
@@ -119,7 +108,7 @@ h4 {
   color: @stb-primary-black;
   font-family: @font-family-sans-serif;
   &.stbfont {
-    font-family: @font-family-signa;
+    font-family: @font-family-signa-book;
   }
   &.dark {
     color: @stb-primary-white;
@@ -160,13 +149,12 @@ h5.link {
 
 p {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: @stb-primary-black;
   font-family: @font-family-sans-serif;
   &.intro {
     font-size: 24px;
-    line-height: 30px;
-    //font-weight: bold;     
+    line-height: 30px;  
   }
 }
 
@@ -198,7 +186,22 @@ blockquote {
 
 p a,
 div a{
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px solid @stb-secondary-charcoal;
+  padding-bottom: 1px;
+  &.twister {
+    border: 0px;
+  }
+}
+
+p a:hover,
+div a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid @stb-primary-color;
+  padding-bottom: 1px;  
+  &.twister {
+    border: 0px;    
+  }
 }
 
 a, a:hover {

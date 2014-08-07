@@ -194,7 +194,7 @@
           (Done)
         </div>
         <div class="col-md-9">
-          <p><strong>Open Sans</strong> is the standard font on storebrand.no. Arial is the preferred fallback.</p>
+          <p><strong>Signa</strong> is the standard header font on storebrand.no for h1 (light), h2 (light) and h3 (book). For h4, h5 and h6 we use <strong>Open Sans</strong>. Arial is the preferred fallback in all cases.</p>
           <p><strong>Note:</strong> Italics across platforms is not the strongest quality of the Open Sans font family. Please avoid exposing this.</p>
           <h1>Header 1 <code>font-size 40px; line-height: 46px; padding: 14px;</code></h1>
           <h2>Header 2 <code>font-size 40px; line-height: 46px; padding: 12px;</code></h2>
@@ -204,14 +204,6 @@
           <h6>Header 6 <code>font-size 14px; line-height: 16px; padding: 10px; font-weight: bold;</code></h6>
           <strong>Code:</strong> <code>&lt;h1-h6&gt;</code>
 
-          <hr/>
-          <p><strong>Signa</strong> is only used in advertising, campaigns and for "special occasions".</p>
-          <p><strong>Note</strong>: Only H1-H4 are available in Signa, H5-H6 should always use Arial.</p>
-          <h1 class="stbfont">Header 1 <code>font-size 40px; line-height: 46px; padding: 14px;</code></h1>
-          <h2 class="stbfont">Header 2 <code>font-size 40px; line-height: 46px; padding: 12px;</code></h2>
-          <h3 class="stbfont">Header 3 <code>font-size 24px; line-height: 30px; padding: 12px;</code></h3>
-          <h4 class="stbfont">Header 4 <code>font-size 16px; line-height: 22px; padding: 10px; font-weight: bold;</code></h4>
-          <strong>Code:</strong> <code>&lt;h1-h6 class="stbfont"&gt;</code>
         </div>
       </div> <!-- /Typography / Headers row -->
 
@@ -231,9 +223,9 @@
           <br /><br />
           <h3>General paragraph</h3>
           <p>A paragraph is a <strong>passage</strong> in a section of text that is about a different subject from the preceding text section, marked by commencing on a new line.</p>
-          <p>And then the next paragraph follows. It's about something else.</p>
+          <p>And then the next paragraph follows. It's about <a href="#">something</a> else. The line-height may seem a bit excessive, but it's needed to create sufficient space below characters for the link indicator line, see above.</p>
           <strong>Code:</strong> <code>&lt;p&gt;...&lt;/p&gt;</code><br />
-          <code>font-size: 16px; line-height: 22px;</code>
+          <code>font-size: 16px; line-height: 24px;</code>
           <br /><br />
           <h3>Small print</h3>
           <p>
@@ -273,6 +265,9 @@
         <div class="col-md-9">
           <div class="row">
             <div class="col-md-12">
+              <p>
+                For links in text we use border rather than text-decoration, in order to be able to add vertical space between text and link indication. The link indication is red on hover. 
+              </p>
               <p>
                 Here's an <strong>in-line text link</strong> example ("invest" and "long run"):<br />
               </p>
