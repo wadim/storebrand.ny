@@ -439,28 +439,12 @@
           <p>
             For a wide table to be responsive, you may have to create two tables with different visibility and different content for wide and narrow screens, or you can show/hide columns in a wide table.
           </p>
-          <p>Use the buttons below to change the example tables header color:<br />
-             <button class="stb-btn" onclick="$('.stb-table').removeClass('forest sand dust moss nude');
-                                              $('.stb-table').addClass('forest'); return false">
-               Forest
-             </button>
-             <button class="stb-btn" onclick="$('.stb-table').addClass('forest sand dust moss nude');
-                                              $('.stb-table').addClass('sand');return false">
-               Sand
-             </button>
-             <button class="stb-btn" onclick="$('.stb-table').removeClass('forest sand dust moss nude');
-                                              $('.stb-table').addClass('dust');return false">
-               Dust
-             </button>
-             <button class="stb-btn" onclick="$('.stb-table').removeClass('forest sand dust moss nude');
-                                              $('.stb-table').addClass('moss');return false">
-               Moss
-             </button>
-             <button class="stb-btn" onclick="$('.stb-table').removeClass('forest sand dust moss nude');
-                                              $('.stb-table').addClass('nude');return false">
-               Nude
-             </button>
-           </p>
+          <p>
+            Tables have no color varieties, but will always follow the styles displayed below. 
+          </p>
+          <p>
+            Tables have no vertical borders anywhere.
+          </p>
            
           <h3>Standard table</h3>           
           <table class="stb-table">
@@ -506,6 +490,9 @@
           </table>
           
           <h3>Table with hover effect in rows</h3>
+          <p>
+            Add a hover effect on the table rows by adding the class "hoverable" to the table.
+          </p>
           <table class="stb-table hoverable">
             <thead>
               <tr>
@@ -550,6 +537,9 @@
           
 
           <h3>Table without alternating rows</h3>
+          <p>
+            Remove alternating rows by adding the class "noalt" to the table.
+          </p>          
           <table class="stb-table no-alt hoverable nude">
             <thead>
               <tr>
@@ -591,30 +581,11 @@
               </tr>
             </tbody>
           </table>          
-
-          <strong>Code:</strong> <br />
-          <pre class="prettyprint">
-&lt;table class=&quot;stb-table [hoverable]&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Aksjefond&lt;/th&gt;
-      &lt;th class=&quot;text-right&quot;&gt;Forvaltningshonorar&lt;/th&gt;
-      &lt;th class=&quot;text-right&quot;&gt;Andre gebyrer&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Storebrand Barnespar&lt;/td&gt;
-      &lt;td class=&quot;text-right&quot;&gt;1,50%&lt;/td&gt;
-      &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
-      ...
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</pre>
-      
-
+   
           <h3>Table with clickable rows</h3>
-          <p>Add to the tr tag the class "clickable" and attribute "rel" containing the URL you want the click to link to. The example below always jumps to the URL of the color section on this Web manual page.</p>
+          <p>
+            Make the rows clickable by adding the class "clickable" to the row tag. What happens upon a click is defined by what you add to the rel attribute of each particular row tag.
+          </p>
           <table class="stb-table no-alt hoverable nude">
             <thead>
               <tr>
@@ -655,11 +626,28 @@
                 <td class="text-right">0</td>
               </tr>
             </tbody>
-          </table>          
-
+            <tfoot>
+              <tr>
+                <th>And that's all of them</th>
+                <th class="text-right">Forvaltningshonorar</th>
+                <th class="text-right">Andre gebyrer</th>
+              </tr>
+            </tfoot>            
+          </table>   
+          
+          <h3>Summary table</h3>
+          <p>
+            In some cases, typically the confirmation step in a form, a table can be used to show a summary of all input information. Only the key values are shown initially, but all values can be shown by clicking on the table footer, to expand the table and show all rows.
+          </p>
+          
+          <p>
+            An example of this remains to be added here.
+          </p>
+          <hr />
+          
           <strong>Code:</strong> <br />
           <pre class="prettyprint">
-&lt;table class=&quot;stb-table [hoverable]&quot;&gt;
+&lt;table class=&quot;stb-table [hoverable] [clickable] [noalt]&quot;&gt;
   &lt;thead&gt;
     &lt;tr class="clickable" rel="#index-nav"&gt;
       &lt;th&gt;Aksjefond&lt;/th&gt;
