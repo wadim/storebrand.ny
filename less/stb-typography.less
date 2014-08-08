@@ -16,14 +16,6 @@
        url('../fonts/SignaWeb-Light.woff') format('woff');
 }
 
-// BZT 2014-08-07: Removed SignaWeb-Bold, not in use as of now
-//@font-face {
-//  font-family: 'SignaWeb-Bold';
-//  src: url('../fonts/SignaWeb-Bold.eot');
-//  src: url('../fonts/SignaWeb-Bold.eot?iefix') format('eot'),
-//       url('../fonts/SignaWeb-Bold.woff') format('woff');
-//}
-
 // Open Sans files retrieved from http://www.google.com/fonts/#QuickUsePlace:quickUse/Family:Open+Sans
 @font-face {
   font-family: 'Open Sans';
@@ -43,7 +35,6 @@
 @font-family-sans-serif:      "Open Sans", Arial, ArialMT, sans-serif;
 @font-family-sans-serif-bold: "Open Sans Bold", Arial, ArialMT, sans-serif;
 @font-family-signa-book:           "SignaWeb-Book", Arial, "Times New Roman", Times, serif;
-// 2014-08-07 BZT: Not in use currently @font-family-signa-bold:      "SignaWeb-Bold", Arial, "Times New Roman", Times, serif;
 @font-family-signa-light:     "SignaWeb-Light", Arial, "Times New Roman", Times, serif;
 
 .stb-font {
@@ -101,12 +92,11 @@ h3 {
 }
 h4 {
   font-size: 16px;
-  font-weight: bold;
   line-height: 22px;
   margin: 0;
   padding: 10px 10px 10px 0;
   color: @stb-primary-black;
-  font-family: @font-family-sans-serif;
+  font-family: @font-family-sans-serif-bold;
   &.stbfont {
     font-family: @font-family-signa-book;
   }
@@ -116,24 +106,22 @@ h4 {
 }
 h5 {
   font-size: 16px;
-  font-weight: bold;
   line-height: 18px;
   margin: 0;
   padding: 10px 10px 10px 0;
   color: @stb-primary-black;
-  font-family: @font-family-sans-serif;
+  font-family: @font-family-sans-serif-bold;
   &.dark {
     color: @stb-primary-white;
   }
 }
 h6 {
   font-size: 14px;
-  font-weight: bold;
   line-height: 16px;
   margin: 0;
   padding: 10px 10px 10px 0;
   color: @stb-primary-black;
-  font-family: @font-family-sans-serif;
+  font-family: @font-family-sans-serif-bold;
   &.dark {
     color: @stb-primary-white;
   }
