@@ -13,6 +13,7 @@
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
+  <script type="text/javascript" src="data/searchdata.js"></script>  
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>  
   <style>
@@ -393,13 +394,18 @@
     <div class="col-md-12">
       <form class="stb-form-inline" role="form">
         <div class="stb-form-group">
-          <input type="text" class="has-submit searchbox typeahead" placeholder="Hva vil du søke etter?"/>
+          <input type="text" id="main_search" class="has-submit searchbox typeahead" placeholder="Hva vil du søke etter?" autofocus />
           <button type="submit" class="stb-btn stb-form is-submit">Søk</button>
         </div>
       </form>
     </div>
   </div>
 
+  <script>
+  $("#main_search").focus();
+  $("#main_search").isActivated=true;
+  </script>
+  
 </div>
 
 <div class="container bottom-margin-30">
