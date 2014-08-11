@@ -18,11 +18,11 @@
   <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      var arrowDown ='<span class="stb-sprite-24 chevron-down pull-right" style="margin-top: 12px;"></span>';
+      var chevronExpand ='<span class="stb-sprite-24 chevron-right pull-right" style="margin-top: 12px;"></span>';
       var arrowRight ='<span class="stb-sprite-24 arrow-right pull-right" style="margin-top: 12px;"></span>';
       var back = '<span class="stb-sprite-24 chevron-left pull-left" style="margin-top: 12px;"></span>'
       var top = '<span class="stb-sprite-24 arrow-left pull-left" style="margin-top: 12px; margin-right: 6px;"></span>';
-      $('.arrowDown').append(arrowDown);
+      $('.chevronExpand').append(chevronExpand);
       $('.arrowRight').prepend(arrowRight);
       $('.menu-back').prepend(back);
       $('.menu-back-top').prepend(top);
@@ -165,11 +165,11 @@
                     <ul class="nav navbar-nav" id="stb-menu-topp">
                       <!--li class="active"><a href="#">Logg inn bank</a></li-->
                       <li><a href="#">Logg inn <span class="stb-sprite-24 user pull-right" style="margin-top: 8px;"></span></a></li>
-                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-pension');">Pensjon</a></li>
-                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-bank');">Bank</a></li>
-                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">Forsikring</a></li>
-                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-fund');">Fond</a></li>
-                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-morestb');">Mer Storebrand</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-pension');">Pensjon</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-bank');">Bank</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-insuranse');">Forsikring</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-fund');">Fond</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-morestb');">Mer Storebrand</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav" id="stb-menu-pension" style="display:none;">
@@ -187,7 +187,7 @@
                       <li><a class="arrowRight" href="#"><b>Alt om bank</b></a></li>
                       <li><a class="arrowRight" href="#">Sperr kort</a></li>
                       <li><a class="arrowRight" href="#">Bli kunde</a></li>
-                      <li><a class="arrowDown" href="#"  onclick="menuhandler($(this),'#stb-menu-banksaving');">Banksparing</a></li>
+                      <li><a class="chevronExpand" href="#"  onclick="menuhandler($(this),'#stb-menu-banksaving');">Banksparing</a></li>
                       <li><a class="arrowRight" href="#">BSU</a></li>
                       <li><a class="arrowRight" href="#">Kontakt banken</a></li>
                     </ul>
@@ -195,10 +195,10 @@
                     <ul class="nav navbar-nav" id="stb-menu-insuranse" style="display:none;">
                       <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp');">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
                       <li><a class="arrowRight" href="#"><b>Alt om forsikring</b></a></li>
-                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-car');">Bil og kjøretøy</a></li>
-                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-home');">Hus og hjem</a></li>
-                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-holidayleisure');">Ferie og fritid</a></li>
-                      <li><a class="arrowDown" href="#" onclick="menuhandler($(this),'#stb-menu-health');">Liv og helse</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-car');">Bil og kjøretøy</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-home');">Hus og hjem</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-holidayleisure');">Ferie og fritid</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-health');">Liv og helse</a></li>
                       <li><a class="arrowRight" href="#">Kalkulatorer</a></li>
                     </ul>
 
