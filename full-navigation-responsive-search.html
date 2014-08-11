@@ -35,6 +35,11 @@
       padding: 15px;
       width: 60%;
     }
+
+    div.cookieFooter.affix-bottom {
+      position: static;
+    }
+
     * {
       margin: 0;
     }
@@ -384,11 +389,6 @@
             <h2>Basic top menu</h2>
             <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
           </div>
-          <div class="text">
-            <h2>Basic top menu</h2>
-            <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
-          </div>
-
 
           <div class="image">
 
@@ -399,12 +399,23 @@
 
   </div>
   <!-- End actual page contents -->
+
+  <div data-spy="affix" data-offset-bottom="200" data-offset-top="200" class="cookieFooter visible-md visible-lg" id="cookieFooter">
+    <div style="float:right;margin-right:10%;margin-top:1%;">
+      <a style="color:white;font-weight:bold;" title="Lukk" href="#" onclick="aksepterCookie(); return false">Lukk</a>
+    </div>
+    <div class="contentinfo">
+      <div class="info">
+        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html" style="color:white;text-decoration:underline;">Her finner du mer informasjon om hvordan vi bruker cookies.</a>
+      </div>
+    </div>
+  </div>
   <!-- Start responsive footer -->
   <footer class="stbcolor-primary first stb-footer">
     <div class="row toTop">
       <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" >Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
-        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right">Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" style="line-height: 2;">Til toppen <span class="stb-sprite-24 white arrow-up" style="margin-bottom: -5px;"></span></a>
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" style="line-height: 2;">Til toppen <span class="stb-sprite-24 white arrow-up" style="margin-bottom: -5px;"></span></a>
       </div>
     </div>
   
@@ -477,17 +488,6 @@
     </div>
   </footer>
   <!-- End responsive footer -->
-
-  <div class="cookieFooter" id="cookieFooter">
-    <div style="float:right;margin-right:10%;margin-top:1%;">
-      <a style="color:white;font-weight:bold;" title="Lukk" href="#" onclick="aksepterCookie(); return false">Lukk</a>
-    </div>
-    <div class="contentinfo">
-      <div class="info">
-        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html" style="color:white;text-decoration:underline;">Her finner du mer informasjon om hvordan vi bruker cookies.</a>
-      </div>
-    </div>
-  </div>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
