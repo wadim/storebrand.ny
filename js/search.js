@@ -1,5 +1,6 @@
 // This Javascript file contains functions required for the site search function with type-ahead
 // The search.js needs typeahead.bundle.min.js to function.
+// It also needs some data to function. It is for now stored in data/searchdata.js as global variables.
 var start=0;
 
 $(document).ready(function(){
@@ -22,6 +23,7 @@ $(document).ready(function(){
     // If there is a search term to use, perform the search
     if ( get['q'] != undefined && get['q'].length > 0 ) {	
       $("form.stb-form-inline input.searchbox").val(get['q']);
+      getPromotions();
       searchQuery(get['q'], start);
     };
   }
@@ -36,7 +38,7 @@ function activateSearch() {
   initExtendedSearch();
 
   // Prepare for type-ahead  
-  initTypeAhead();
+  initTypeahead();
 }
 
 // Remove certain special characters from search, in order to not break the Google search URL
@@ -51,119 +53,13 @@ function checkSearch(query) {
 }
 
 function initPromotion() {
-  searchTerm = {
-    "bank" : {"header": "Vet du hva du får i pensjon",
-              "text": "Bruk Storebrands kalkulator for å beregne hva du får i pensjon , og hvoe mye du må spare for å få den pensjonen du ønsker deg.", 
-              "name": "Finn ditt pensjonstall", 
-              "url": "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
- 	  "fond" : {"header": "Vet du hva du får i fond",
-              "text": "Write something here", 
-              "name": "write something here", 
-              "url": "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-    "bank and lån" : {"header": "Vet du hva du får i bank og lån",
-                      "text": "Write something here", 
-                      "name": "Write something here", 
-                      "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-	  "søk" : {"header": "Vet du hva du får i pensjon",
-             "text": "Write something here", 
-             "name": "Write something here", 
-             "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}	     
-	};
+  // Data is available as global variable promotions in searchdata.js
 };
 
-function initTypeAhead(){
+function initTypeahead(){
   // Categorized JSON object. This will be served from CMS eventually. For now it is hardcoded.
-  var categoryData = {
-    "Anbefalte" :
-        [
-          {"name": "Fond"},
-          {"name": "Bank"},
-          {"name": "Forsikring"},
-          {"name": "Pensjon"}
-        ],
-    "Fond" :
-        [
-          {"name": "Fond","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Fondslister","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "L&aeligr mer om fondsparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "B&aeligrekraft","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Kj&oslashp fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "V&aring;re anbefalte fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Delphi","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Storebrandfondene","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Kontakt fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Start fondsparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Chat om fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-        ],
-    "Pensjon" :
-        [
-          {"name": "L&aelig;r om pensjon","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Pensjonskalkulator","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Kj&oslash;p pensjonssparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Hva er pensjonssparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Ditt pensjonstall","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Fripolise","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Pensjonsskolen","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Folketrygden","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Tjenestepensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Kontakt pensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Start pensjonssparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Chat om pensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Spar til din pensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Mitt pensjonstall","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Tips til pensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-        ],
-    "Bank" :
-        [
-          {"name": "Banksparing","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Kort og kreditt","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Mistet kort","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Sperr kort","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Visakort","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Kredittkort","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Bli kunde","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Kontakt banken","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Priser og vilk&aring;r","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Dagens renter","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "S&oslash;k boligl&aring;n","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Start Banksparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Chat om bank","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-        ],
-    "Forsikring" :
-        [
-          {"name": "Meld skade","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Bilforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Helseforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Hytteforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Tips om forsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Mine behov","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Alt til bilen","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Alt til barnet","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Alt til huset","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Kontakt forsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Chat om forsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Motorsykkelforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Tilhengerforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Uf&oslash;reforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-        ],
-    "Minside" :
-        [
-          {"name": "Betal regning","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Min oversikt","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Mitt forbruk","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Efaktura","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Kort og kreditt","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Anders Losvik","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Bj&oslash;rn Christian Tørrissen'","url":"http://bjornfree.com/"},
-          {"name": "Mine kontoer","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Mine innstillinger","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "S&oslash;k l&aring;n","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Banksparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Nettbank","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-          {"name": "Sikker chat - logg inn","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
-        ]
-  };
-
+  // Raw data is currently available as global variable typeaheads in searchdata.js, will be dynamically updated by CMS or other admin system later
+  
   // Set up the category config object. First set some general parameters, such as the limit for how many typeahead suggestions to show.
   var categoryConfig = [{
     hint: true,
@@ -173,7 +69,7 @@ function initTypeAhead(){
   }];
 
   // Loop through the category data, create multiple datasets (one per category), and add it to the category config.
-  $.each(categoryData, function(index) {
+  $.each(typeaheads, function(index) {
     // Make use of the Bloodhound suggestion engine in order to use an array of datums(js objects)
     var category =  new Bloodhound( {
       // A function with the signature (datum) that transforms a datum into an array of string tokens.
@@ -181,7 +77,7 @@ function initTypeAhead(){
       // A function with the signature (query) that transforms a query into an array of string tokens.
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       // An array of datums
-      local: categoryData[index]
+      local: typeaheads[index]
     });
 
     category.initialize();
@@ -214,6 +110,7 @@ function initTypeAhead(){
     }
 
     if (data.url) {
+      //Go to the defined URL for the current search keyword
       window.location.href = data.url;
     }
 
@@ -405,25 +302,27 @@ function searchQuery( query, start ) {
 	});
 }
 
-function xmlParser(xml) {
- // populate the promotion area
+function getPromotions() {
+  // Populate the promotion area
   if (start == 0){
     initPromotion();
-    $.each(searchTerm,function(value) {
-      if (value == get['q']){ 
-        $(".searchresults").append('<div class="top-margin-50 promotion stb-box third' + '"><h4>'+searchTerm[value].header + '<' + '/h1><' + 'p class="description">' + searchTerm[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + searchTerm[value].url + '">' + searchTerm[value].name + '<' + '/a><' + '/p><' + '/div>');
+    $.each(promotions,function(value) {
+      if (value.toLowerCase() == get['q'].toLowerCase()){ 
+        $(".searchresults").append('<div class="top-margin-20 bottom-margin-20 promotion stb-box third' + '"><h4>'+promotions[value].header + '<' + '/h1><' + 'p class="description">' + promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + promotions[value].url + '">' + promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
       }
      });
   }
+}
+
+function xmlParser(xml) { 
   $("#loadingimage").remove();
   searchIsRunning = false;
   noresult = false;
   
   if(start == 0){
-    // prepare the resultsummary for populating the status of the search result ( found or not)
-    resultSummary = '<div class="resultsummary row bottom-margin-30"><div class="col-sm-12"></div></div>';
+    // Prepare the result summary for populating the status of the search result ( found or not)
+    resultSummary = '<div class="resultsummary row"><div class="col-sm-12"></div></div>';
     $(resultSummary).insertAfter($('.stb-form-inline .searchbox').closest('form').parent().parent());
-    
     
     // Forslag til annen stavemåte
     $(xml).find("Spelling").each(function() {
@@ -491,9 +390,9 @@ function xmlParser(xml) {
   // Til slutt kan vi vise frem resultatet.
   //$(".lookatwhatifound").fadeIn(1000);
   
-  // populate the resultsummary for the search result ( search term and total number of results)
+  // Populate the result summary for the search result ( search term and total number of results)
   if (noresult==false && start==0) {
-    foundresult= '<p>Ditt s&oslash;k p&aring; &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+(hitcounter>100?" mer enn 100 " : hitcounter)+' treff.</p>';
+    foundresult= '<p>Ditt s&oslash;k etter &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+(hitcounter>100?" mer enn 100 " : hitcounter)+' treff.</p>';
   //$('.stb-form-inline .searchbox').closest('form').parent().parent().insertAfter(resultSummary);
   $(".resultsummary div").append(foundresult);  
   }
@@ -501,11 +400,10 @@ function xmlParser(xml) {
 }
 
 function displaySearchResult(xml) {
-
- // Så er det på tide å legge på selve treffene
+  // Nå skal vi vise selve treffene
   $(xml).find("R").each(function () {
-    // Vi behandler "promotions" spesielt, og resten på¡¥n annen mæµ¥
-    // Fð²³´ promotions, som alltid kommer fð²³´ hvis de kommer
+    // Vi behandler "promotions" spesielt, og resten på en annen måte
+    // Få inn promotions, som alltid kommer først, hvis de kommer i det hele tatt.
     if ($(this).find("SL_MAIN").length > 0) {
       // Vise promotion
       var promoURL = $(this).find("IMAGE_SOURCE").text();
@@ -557,9 +455,9 @@ $(document).scroll(function(e){
 
   // If the user has scrolled to the bottom of the page
   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-    // Show message after searching 100 items
-    if(start>=80) {
-      $(".searchresults").append("<row><div class='col-12 top-margin-30' style='text-align: center;'> <p class='intro'>Hvis du ennå ikke har funnet det du leter etter, så bør du kanskje prøve et <a href='#'> annet søkeord</a>?</p></div></div>");
+    // Show message after searching 100 items (now 40)
+    if(start>=40) {
+      $(".searchresults").append("<row><div class='col-12 top-margin-30' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");
       hitcounter = 0;
       return false;
     }
