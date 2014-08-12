@@ -3,6 +3,7 @@
 // It also needs some data to function. It is for now stored in data/searchdata.js as global variables.
 var start=0;
 var searchParentWidthPercent=0;
+var backgroundColor="";
 
 $(document).ready(function(){
   // Make search in menu header visible 
@@ -201,7 +202,7 @@ function initExtendedSearch(){
 
     // Store the current width
     var searchParentWidth = $('.navbar-nav > li.search').css('width');
-    var backgroundColor = $('.navbar-nav .typeahead').css('background-color');
+    backgroundColor = $('.navbar-nav .typeahead').css('background-color');
     // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
     searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 
