@@ -60,7 +60,11 @@
     UIMorphingButton.prototype._initEvents = function() {
         var self = this;
         // open
-        this.button.addEventListener( 'click', function() { self.toggle(); } );
+        this.button.addEventListener( 'click', function() {
+
+          self.toggle();
+          $('.stb-morph-button .morph-content').css('background',$(self.button).css('background-color'));
+        } );
         // close
         if( this.options.closeEl !== '' ) {
             var closeEl = this.el.querySelector( this.options.closeEl );
@@ -187,61 +191,8 @@
 
     scrollFn();
 
-    $('.morph-button').each(function(index, el){
-        var UIBtnn = new UIMorphingButton(el, {
-            closeEl : '.close',
-            onBeforeOpen : function() {
-                // don't allow to scroll
-                noScroll();
-            },
-            onAfterOpen : function() {
-                // can scroll again
-                canScroll();
-            },
-            onBeforeClose : function() {
-                // don't allow to scroll
-                noScroll();
-            },
-            onAfterClose : function() {
-                // can scroll again
-                canScroll();
-            }
-        });
-    });
 
-    $('.morph-button-2').each(function(index, el){
-
-        new UIMorphingButton( el, {
-            closeEl : '.close',
-            onBeforeOpen : function() {
-                // don't allow to scroll
-                noScroll();
-            },
-            onAfterOpen : function() {
-                // can scroll again
-                canScroll();
-                // add class "noscroll" to body
-                $(document.body).addClass('noscroll');
-                // add scroll class to main el
-                $(el).addClass('noscroll');
-            },
-            onBeforeClose : function() {
-                // remove class "noscroll" to body
-                $(document.body).removeClass('noscroll');
-                // remove scroll class from main el
-                $(el).removeClass('noscroll');
-                // don't allow to scroll
-                noScroll();
-            },
-            onAfterClose : function() {
-                // can scroll again
-                canScroll();
-            }
-        });
-    });
-
-
-  $('.morph-button-3').each(function(index, el){
+  $('.stb-morph-button').each(function(index, el){
 
     new UIMorphingButton( el, {
       closeEl : '.close',
