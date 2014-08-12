@@ -1,3 +1,5 @@
+@mobile-dropdown-color : @stb-primary-white;
+
 // Navigation at the top of page
 #top-menu-nav{
 
@@ -123,10 +125,11 @@
 
   .navbar .dropdown-menu {
     margin: 0;
-    background-color: @stb-gray-first;
+    background-color: @mobile-dropdown-color;
     box-shadow: 0px 14px 12px rgba(0, 0, 0, 0.176);
     border: none;
     padding: 50px 0 50px 15%;
+
   }
 
   .navbar .dropdown-menu li {
@@ -305,15 +308,19 @@
       border-right: 12px solid transparent;
       border-bottom: 12px solid #ccc;
       border-left: 12px solid transparent;
-      border-bottom-color: @stb-gray-first;
+      border-bottom-color: @mobile-dropdown-color;
       content: '';
     }
 
     .navbar .dropdown-menu {
       width: 95%;
-      box-shadow: 0 9px 12px rgba(0,0,0,0.175);
-      -webkit-box-shadow: 0 7px 12px rgba(0,0,0,0.175);
+      box-shadow: 0 9px 12px rgba(191, 29, 25,0.175);
+      -webkit-box-shadow: 0 7px 12px rgba(191, 29, 25,0.175);
       padding: 2px;
+      border-right-style: solid;
+      border-bottom-style: solid;
+      border-color: rgb(191, 29, 25);
+      border-width: 2px;
     }
 
     .navbar .nav > li > a {
@@ -369,13 +376,13 @@
   // Other navigation effects
 
   .hover-gray:hover {
-    background-color: @stb-gray-first;
+    background-color: @stb-primary-white;
   }
 
   .nav #stb-menu li {
     float: none;
     list-style: none;
-    background-color: @stb-gray-first;
+    background-color: @mobile-dropdown-color;
     height: 60px;
     padding: 0px;
     width: 100%;
@@ -387,9 +394,8 @@
       margin-top: 18px;
     }
     :hover{
-      background-color: @stb-gray-first;
+      background-color: @mobile-dropdown-color;
     }
-
 
   }
 
