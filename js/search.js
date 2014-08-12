@@ -2,6 +2,7 @@
 // The search.js needs typeahead.bundle.min.js to function.
 // It also needs some data to function. It is for now stored in data/searchdata.js as global variables.
 var start=0;
+var searchParentWidthPercent=0;
 
 $(document).ready(function(){
   // Make search in menu header visible 
@@ -202,7 +203,7 @@ function initExtendedSearch(){
     var searchParentWidth = $('.navbar-nav > li.search').css('width');
     var backgroundColor = $('.navbar-nav .typeahead').css('background-color');
     // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
-    var searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
+    searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 
     // Give the text element a fixed size
     $('.navbar-nav .typeahead').css('width',searchParentWidth);
