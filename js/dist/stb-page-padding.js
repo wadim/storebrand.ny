@@ -184,6 +184,12 @@ $(document).ready(function() {
     $('.list-group-item.links').append(arrowCode);
 });
 
+//Appending arrow after text in first column in every row for clickable tables
+$(document).ready(function() {
+    var arrowCode ='<span class="stb-sprite-16 arrow-right pull-right"></span>';
+    $('tr.clickable td:first-child').append(arrowCode);
+});
+
 // End content padding
 
 // Adding hotkeys based on Resig
