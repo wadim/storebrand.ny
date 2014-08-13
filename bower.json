@@ -1,6 +1,6 @@
 {
   "name": "stb-webmanual",
-  "version": "0.2",
+  "version": "0.31",
   "main": [
     "/dist/stb-main.css"
   ]
