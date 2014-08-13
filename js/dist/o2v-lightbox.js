@@ -48,7 +48,7 @@
 
     UIMorphingButton.prototype._init = function() {
         // the button
-        this.button = this.el.querySelector( 'button' );
+        this.button = this.el.querySelector( '.stb-modal-btn' );
         // state
         this.expanded = false;
         // content el
@@ -61,9 +61,7 @@
         var self = this;
         // open
         this.button.addEventListener( 'click', function() {
-
           self.toggle();
-          $('.stb-morph-button .morph-content').css('background',$(self.button).css('background-color'));
         } );
         // close
         if( this.options.closeEl !== '' ) {
@@ -192,7 +190,7 @@
     scrollFn();
 
 
-  $('.stb-morph-button').each(function(index, el){
+  $('.stb-modal-full').each(function(index, el){
 
     new UIMorphingButton( el, {
       closeEl : '.close',
