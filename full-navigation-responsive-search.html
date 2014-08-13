@@ -18,60 +18,13 @@
   <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
   <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>
   <script type="text/javascript" src="js/dist/stb-common.js"></script>
-  <style>
-    div.cookieNote {
-      display: hidden;
-      background-color: #333333;
-      height: auto;
-      opacity: 0.7;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 400;
-      color: white;
-    }
-    div.cookieNote .contentinfo {
-      color: #FFFFFF;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 15px;
-      width: 60%;
-    }
 
-    * {
-      margin: 0;
-    }
-    
-    html, body {
-      height: 100%;
-    }
-    
-    div.cookieNote.affix-bottom {
-      position: static;
-    }
-        
-    .container {
-      min-height: 100%;
-      height: auto !important;
-      height: 100%;
-    }
+  <style>
 
   </style>
-  <script>
-    $(document).ready(function(){
-      var acceptCookies = readCookie('acceptCookies');
-      if(acceptCookies!='Yes'){
-        $('#cookieNote').toggleClass('visible-md').toggleClass('visible-lg');
-        $('#cookieNote').show();
-      }
-    });
-    
-    function acceptCookies(){
-      createCookie('acceptCookies','Yes');
-      $('#cookieNote').toggleClass('visible-md').toggleClass('visible-lg');
-      $('#cookieNote').hide('slow');
-    }
 
+  <script>
+  
   </script>
 </head>
  
@@ -398,7 +351,7 @@
           </div>
 
           <div class="image">
-
+&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />Bare litt lett fyll på siden.&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />Fyller på, mer og mer.&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />Nå er det snart slutt.&nbsp;<br />&nbsp;
           </div>
         </div>
       </div>
@@ -407,13 +360,13 @@
   </div>
   <!-- End actual page contents -->
 
-  <div data-spy="affix" data-offset-bottom="200" data-offset-top="200" class="cookieNote" id="cookieNote">
-    <div style="float:right;margin-right:10%;margin-top:1%;">
-      <a style="color:white;font-weight:bold;" title="Lukk" href="#" onclick="acceptCookies(); return false">Lukk</a>
+  <div data-spy="affix" class="cookieNote" id="cookieNote">
+    <div class="cookieClose">
+      &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-16 white remove"></span><br />(Lukk)</a>
     </div>
-    <div class="contentinfo">
+    <div class="cookieInfo">
       <div class="info">
-        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html" style="color:white;text-decoration:underline;">Her finner du mer informasjon om hvordan vi bruker cookies.</a>
+        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
       </div>
     </div>
   </div>

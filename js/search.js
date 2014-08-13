@@ -8,6 +8,7 @@ var maximized;
 var animating;
 var animSpeed;
 var searchIsRunning=false;
+var hitcounter=0;
 
 $(document).ready(function(){
   // Make search in menu header visible 

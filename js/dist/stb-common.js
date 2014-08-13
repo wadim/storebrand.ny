@@ -133,7 +133,6 @@ function gup(name){
   }
 }
 
-
 /* ***** CREATE COOKIE ***** */
 function createCookie(n,value,days) {
   if (days) {

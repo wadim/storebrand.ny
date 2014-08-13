@@ -1,0 +1,38 @@
+/* Styling of cookie usage notification, mandatory on all pages */
+div.cookieNote {
+  display: hidden;
+  background-color: @stb-secondary-charcoal;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 400;
+  color: @stb-primary-white;
+}
+
+div.cookieNote .cookieInfo {
+  color: @stb-primary-white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  width: 65%;
+}
+
+div.cookieNote .cookieInfo a {
+  color: @stb-primary-white;
+}
+
+div.cookieNote .cookieClose, {
+  float: right;
+  width: 80px;
+  margin-right: 10%;
+  margin-top: 1%;
+  color: @stb-primary-white;
+}
+
+div.cookieNote .cookieClose a {
+  color: @stb-primary-white;
+  text-decoration: none;
+  border: 0;
+}
+/* End of cookie usage notification */

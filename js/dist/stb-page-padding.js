@@ -190,6 +190,21 @@ $(document).ready(function() {
     $('tr.clickable td:first-child').append(arrowCode);
 });
 
+// Handling cookie note
+$(document).ready(function(){
+  var acceptCookies = readCookie('acceptCookies');
+  if(acceptCookies!='Yes'){
+    $('#cookieNote').show();
+  }
+});
+
+function acceptCookies(){
+  createCookie('acceptCookies','Yes');
+  $('#cookieNote').hide('slow');
+}
+// End of handling cookie note
+
+
 // End content padding
 
 // Adding hotkeys based on Resig
