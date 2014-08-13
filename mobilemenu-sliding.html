@@ -171,9 +171,14 @@
                     <ul class="nav navbar-nav" id="stb-menu-topp">
                       <!--li class="active"><a href="#">Logg inn bank</a></li-->
                       <li><a href="#" onclick="menuhandler($(this),'#stb-menu-login');">Logg inn <span class="stb-sprite-24 user pull-right" style="margin-top: 8px;"></span></a></li>
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-tools');">
+                          Kjappe verktøy <span class="stb-sprite-24 calc pull-right" style="margin-top: 8px;"></span></a>
+                      </li>
                       <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-insurance');">Forsikring</a></li>
                       <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-bank');">Bank</a></li>
                       <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-pension');">Pensjon</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-long-term-savings');">Sparing</a></li>
+                      <li><a class="arrowRight" href="#">Til bedriftsmenyen</a></li>                      
                     </ul>
                     <ul class="nav navbar-nav" id="stb-menu-login" style="display: none;">
                       <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp',true);">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
@@ -187,17 +192,26 @@
                       </li>
                     </ul>
 
+                    <ul class="nav navbar-nav" id="stb-menu-tools" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp',true);">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#">Meld skade (forsikring)</a></li>
+                      <li><a class="arrowRight" href="#">Veihjelp (forsikring)</a></li>                      
+                      <li><a class="arrowRight" href="#">Sperre kort (bank)</a></li>                   
+                      <li><a class="arrowRight" href="#">Sjekk dine fordeler</a></li>                   
+                    </ul>                    
+                    
                     <ul class="nav navbar-nav" id="stb-menu-insurance" style="display:none;">
                       <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp',true);">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
                       <li><a class="arrowRight" href="#">Meld skade</a></li>
-                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-insurance-things');">Ting</a></li>
-                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-insurance-lifehealth');">Liv og Helse</a></li>
+                      <li><a class="arrowRight" href="#">Alt om forsikring</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-insurance-things');">Forsikre ting</a></li>
+                      <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-insurance-lifehealth');">Forsikre liv og helse</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav" id="stb-menu-insurance-things" style="display:none;">
                       <li><div style="height: 60px;">
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-insurance',true);"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px; font-size: 15px">Tilbake</span></b></a>
-                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til Start</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
                       </li>
                       <li><a class="arrowRight" href="themepage-with-full-navigation.html"><b>Bilforsikring</b></a></li>
@@ -209,7 +223,7 @@
                     <ul class="nav navbar-nav" id="stb-menu-insurance-things-other" style="display:none;">
                       <li><div style="height: 60px;">
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-insurance-things',true);"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px; font-size: 15px">Tilbake</span></b></a>
-                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til Start</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
                       </li>
                       <li><a class="arrowRight" href="#">Reiseforsikring</a></li>
@@ -220,7 +234,7 @@
                     <ul class="nav navbar-nav" id="stb-menu-insurance-lifehealth" style="display:none;">
                       <li><div style="height: 60px;">
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-insurance',true);"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px; font-size: 15px">Tilbake</span></b></a>
-                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til Start</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
                       </li>
                       <li><a class="arrowRight" href="#">Livsforsikring</a></li>
@@ -233,6 +247,7 @@
                       <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp',true);" >&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
                       <li><a class="arrowRight" href="#"><b>Bli bankkunde</b></a></li>
                       <li><a class="arrowRight" href="#">Sperre kort</a></li>
+                      <li><a class="arrowRight" href="#">Alt om bank</a></li>                      
                       <li><a class="chevronExpand" href="#"  onclick="menuhandler($(this),'#stb-menu-bank-loan');">Lån</a></li>
                       <li><a class="chevronExpand" href="#"  onclick="menuhandler($(this),'#stb-menu-bank-saving');">Sparing</a></li>
                       <li><a class="chevronExpand" href="#"  onclick="menuhandler($(this),'#stb-menu-bank-card');">Kort</a></li>
@@ -241,7 +256,7 @@
                     <ul class="nav navbar-nav" id="stb-menu-bank-loan" style="display:none;">
                       <li><div style="height: 60px;">
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-bank',true);"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px; font-size: 15px">Tilbake</span></b></a>
-                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til Start</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
                       </li>
                       <li><a class="chevronExpand" href="#"  onclick="menuhandler($(this),'#stb-menu-bank-loan-appartment');">Boliglån</a></li>
@@ -250,7 +265,7 @@
                     <ul class="nav navbar-nav" id="stb-menu-bank-loan-appartment" style="display:none;">
                       <li><div style="height: 60px;">
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-bank-loan',true);"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px; font-size: 15px">Tilbake</span></b></a>
-                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til Start</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
                       </li>
                       <li><a class="arrowRight" href="#">Boliglån for alle</a></li>
@@ -260,7 +275,7 @@
                     <ul class="nav navbar-nav" id="stb-menu-bank-loan-other" style="display:none;">
                       <li><div style="height: 60px;">
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-bank-loan',true);"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px; font-size: 15px">Tilbake</span></b></a>
-                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til Start</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
                       </li>
                       <li><a class="arrowRight" href="#">Boligkreditt</a></li>
@@ -269,7 +284,7 @@
                     <ul class="nav navbar-nav" id="stb-menu-bank-saving" style="display:none;">
                       <li><div style="height: 60px;">
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-bank',true);"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px; font-size: 15px">Tilbake</span></b></a>
-                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til Start</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
                       </li>
                       <li><a class="arrowRight" href="#">Lønnskonto</a></li>
@@ -280,7 +295,7 @@
                     <ul class="nav navbar-nav" id="stb-menu-bank-card" style="display:none;">
                       <li><div style="height: 60px;">
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-bank',true);"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px; font-size: 15px">Tilbake</span></b></a>
-                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til Start</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
                       </li>
                       <li><a class="arrowRight" href="#">Visa</a></li>
@@ -289,6 +304,7 @@
 
                     <ul class="nav navbar-nav" id="stb-menu-pension" style="display:none;">
                       <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp',true);">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#">Alt om pensjon</a></li>                         
                       <li><a class="arrowRight" href="#">Begynn sparing</a></li>
                       <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-pension-learn');">Lær om pensjon</a></li>
                     </ul>
@@ -296,15 +312,21 @@
                     <ul class="nav navbar-nav" id="stb-menu-pension-learn" style="display:none;">
                       <li><div style="height: 60px;">
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-pension',true);"><b class="menu-back pull-right" style="margin-left: 18px;"><span style="position: relative;top: 12px; font-size: 15px">Tilbake</span></b></a>
-                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til Start</span></b></a>
+                        <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
-                      </li>
+                      </li>                  
                       <li><a class="arrowRight" href="#">Hva får du?</a></li>
                       <li><a class="arrowRight" href="#">IPS</a></li>
                       <li><a class="arrowRight" href="#">Fripolise</a></li>
                       <li><a class="arrowRight" href="#">Pensjonskapitalbevis</a></li>
-
                     </ul>
+                    
+                    <ul class="nav navbar-nav" id="stb-menu-long-term-savings" style="display:none;">
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp',true);">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
+                      <li><a class="arrowRight" href="#">Alt om sparing</a></li>                      
+                      <li><a class="arrowRight" href="#">Spar mye</a></li>
+                      <li><a class="arrowRight" href="#">Spar litt</a></li>
+                    </ul>                    
                   </div>
                 </div>
               </ul>
@@ -344,20 +366,16 @@
       <div class="col-md-12 column">
         <div class="stb-box banner">
           <div class="text">
-            <h2>Basic top menu</h2>
-            <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
-            <h2>Basic top menu</h2>
-            <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
-            <h2>Basic top menu</h2>
-            <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
-            <h2>Basic top menu</h2>
-            <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
-            <h2>Basic top menu</h2>
-            <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
-            <h2>Basic top menu</h2>
-            <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
-            <h2>Basic top menu</h2>
-            <p>This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.</p>
+            <h2>Alternativ mobilmeny</h2>
+            <p>
+              På denne siden har vi lagt inn en annen variant av mobilmeny, sånn at vi kan se hvordan den virker. Eller ikke virker. Vi får se.
+            </p>
+            <p>
+              This page demonstrates and contains all elements needed to create the responsive top navigation functionality and footer.
+            </p>
+            <p>
+              Dette er bare et forslag som går på funksjonalitet. Designet er ikke på plass, og vil bare komme på plass hvis vi bestemmer oss for at det er noe vi bør brukerteste og/eller implementere med ordentlig design.
+            </p>            
           </div>
           <div class="image">
 
