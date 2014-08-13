@@ -7,6 +7,7 @@ var backgroundColor;
 var maximized;
 var animating;
 var animSpeed;
+var searchIsRunning=false;
 
 $(document).ready(function(){
   // Make search in menu header visible 
