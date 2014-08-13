@@ -1,27 +1,76 @@
 <!doctype html>
 <html>
 <head>
-  <title>storebrand.ny 0.31</title>
+  <title>Example -Login</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/stb-main.css">
   <link rel="stylesheet" type="text/css" href="css/yamm.css">
   <link href="fonts/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.min.js"></script> 
   <script type="text/javascript" src="js/dist/jquery.color-2.1.2.min.js"></script>
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>    
+  <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
   <script type="text/javascript" src="data/searchdata.js"></script>  
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>  
+
+  <!-- Start JavaScript for this page only -->
+  <script>
+    $("document").ready(function(){
+      $(".row .column").matchHeight(true);
+    })
+    
+    $(window).resize(function() {
+	    $(".row .column").matchHeight(true);
+    });
+  </script>
+  <!-- End of JavaScript for this page only -->
+ 
+ 
+ <style>
+ 
+   .login button.is-submit {
+     padding: 20px;
+     height: 60px !important;
+     top: 0;
+     left: 0;
+     width: 100%;
+     max-width: 100%;
+   }
+   
+   .login input {
+     height: 50px;
+     width: inherit;
+   }
+   
+   .login hr {
+     border-width: 4px;
+     margin: 0;
+   }
+  
+  /* This is just a temporary css . Needs to be rewritten*/
+   
+   .login .width-75 {
+     width: 75%;
+   }
+   
+   .login .width-40 {
+     width: 40%;
+   }
+   
+   .login .width-50 {
+     width: 50%;
+   }
+ </style>
 </head>
  
 <body>
-
-
   <!-- Start top of page -->
   
   <div id="top-menu-nav">
@@ -33,7 +82,7 @@
         </div>
         <div id="navbar-collapse-grid" class="navbar-collapse collapse">
           <ul class="nav navbar-nav col-md-8">
-            <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
+            <li class="dropdown private yamm-fw col-md-3 group" id="menuheader-private">
               <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
               <ul class="dropdown-menu" id="dropdown-private">
                 <li class="col-md-2">
@@ -116,7 +165,7 @@
 
             <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-            <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+            <li class="dropdown login yamm-fw current col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
             <li class="search col-md-3" style="display: none;">
               <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
               <form>
@@ -333,54 +382,59 @@
   </div>
   <!-- End top of page -->
 
-  <!-- Start actual page contents -->
-  <div class="container">   
+  <div class="container login top-margin-50-mdlg">
+    <h1>Logg inn</h1>
     <div class="row">
-      <div class="col-md-12 column">
-        <div class="stb-box banner">
-          <div class="text">
-            <h2>Storebrand.ny version 0.31</h2>
-            <p>
-              Examples and Web manual as of August 13 2014.
-            </p>           
-            <p>
-              This is some of the new stuff: 
-            </p>
-            <ul class="stb">
-              <li>web manual: new text decoration on links</li>
-              <li>a more functional search with typeahead</li>
-              <li>a new search results page, filters are removed and we use scroll instead of pagination</li>
-              <li>a new mobile menu suggestion</li>
-              <li style="background: #b0dfdb;">our brand new color, sky...</li>
-            </ul>
-            <p class="top-padding-20">
-              Example pages: 
-            </p>
-            <ul class="stb">
-              <li><a href="webmanual.html">Web manual</li>
-              <li><a href="categorypage-with-full-navigation.html">Category page</a></li>
-              <li><a href="productpage-with-full-navigation.html">Product page with matrix (Car insurance)</a></li>
-              <li><a href="productpage-without-matrix.html">Produkt page without matrix (Ekstrapensjon)</a></li>
-              <li><a href="themepage-with-full-navigation.html">Theme page</a></li>
-              <li><a href="articlepage-with-linklists.html">Article page</a></li>
-              <li><a href="search-results.html?action=search&q=Bank">Search results page</a></li>
-              <li><a href="mobilemenu-sliding.html">Alternative mobile menu (only shown on narrow screens)</a></li>
-              
-              <li>Pages served from CMS are incoming, early example <a href="http://client.stb.intra/cms/site/4/forside/produktside-eksempel">here</a>.</li>
-            </ul>           
-            <p class="top-padding-20">
-              Peace out.
-            </p>
+      <div class="col-md-4 bottom-margin-50">
+        <h3>BankID</h3>
+        <p> Benytt engangskode fra din kodebrikke </p>
+        <form class="stb-form-inline" role="form">
+		  <div class="stb-form-group">
+		    <h4>Engangskode</h4>
+  		    <input type="text" class="has-submit bottom-margin-30 width-40" placeholder="6 siffer">
+            <button type="submit" class="stb-btn stb-form is-submit">Logg inn med BankID</button>
           </div>
-          
-
-        </div>
+        </form>
+      </div>
+      
+      <hr class="visible-xs visible-sm"/>
+      
+      <div class="col-md-4 bottom-margin-50">
+        <h3>BankID på mobil</h3>
+        <p> Bruk mobilen din til å logge inn </p>
+        <h4>Mobilnummer</h4>
+         <form class="stb-form-inline" role="form">
+		  <div class="stb-form-group">
+  		    <input type="text" class="has-submit bottom-margin-30 width-50" placeholder="8 siffer">
+            <button type="submit" class="stb-btn stb-form is-submit">Logg inn med BankID på mobil</button>
+          </div>
+        </form>
+        <p> For å kunne benytte seg av BankID må du ha opprettet en avtale med din bank. Har du det ikke? Da kan du <a href="#"> bestille her</a></p>
+      </div>
+      
+      <hr class="visible-xs visible-sm"/>
+      
+      <div class="col-md-4 bottom-margin-50">
+        <h3>Engangspassord på SMS</h3>
+        <p> Bruk mobilen din til å logge inn </p>
+         <form class="stb-form-inline" role="form">
+		  <div class="stb-form-group">
+		    <h4>Mobilnummer</h4>
+  		    <input type="text" class="has-submit bottom-margin-30 width-50" placeholder="8 siffer">
+  		    <h4>Personlig passord</h4>
+  		    <input type="text" class="has-submit bottom-margin-30 width-75" placeholder="">
+            <button type="submit" class="stb-btn stb-form is-submit">Send meg engangspassord</button>
+          </div>
+        </form>
+        <p> For å kunne benytte seg av BankID må du ha opprettet en avtale med din bank. Har du det ikke? Da kan du <a href="#"> bestille her</a></p>
       </div>
     </div>
-
+    <hr/>
+   
+    
   </div>
-  <!-- End actual page contents -->  
   
+
   <!-- Start responsive footer -->
   <footer class="stbcolor-primary first stb-footer">
     <div class="row toTop">
@@ -471,7 +525,7 @@
 	  ga('set', 'anonymizeIp', true);
 	  ga('send', 'pageview');
   </script>   
-  <!-- / Google Analytics -->  
+  <!-- / Google Analytics -->
 
 </body>
 </html>
