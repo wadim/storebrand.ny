@@ -2,8 +2,11 @@
 // The search.js needs typeahead.bundle.min.js to function.
 // It also needs some data to function. It is for now stored in data/searchdata.js as global variables.
 var start=0;
-var searchParentWidthPercent=0;
-var backgroundColor="";
+var searchParentWidthPercent;
+var backgroundColor;
+var maximized;
+var animating;
+var animSpeed;
 
 $(document).ready(function(){
   // Make search in menu header visible 
@@ -142,13 +145,13 @@ function initTypeahead(){
 function initExtendedSearch(){
 
   // Save the state of the search box. The search box is not in focus by default.
-  var maximized=false;
+  maximized=false;
 
   // Save the animation state, whether the element is being animated or not.
-  var animating=false;
+  animating=false;
 
   // Animation speed
-  var animSpeed = 800;
+  animSpeed = 800;
 
   // Check when the document is clicked anywhere outside the search input field
   $(document).click(function() {
@@ -192,16 +195,16 @@ function initExtendedSearch(){
   
 
   function maximizeSearch() {
-    var maximized = true;
+    maximized = true;
 
     // Save the animation state, and reset it once the animations complete
-    var animating = true;
+    animating = true;
     setTimeout(function(){
       animating = false;
     },animSpeed);
 
     // Store the current width
-    var searchParentWidth = $('.navbar-nav > li.search').css('width');
+    searchParentWidth = $('.navbar-nav > li.search').css('width');
     backgroundColor = $('.navbar-nav .typeahead').css('background-color');
     // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
     searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
@@ -211,21 +214,22 @@ function initExtendedSearch(){
     // Hide the menu
     $('.navbar-nav > li.group').toggle();
 
-    // Expand the search parent to take 100 % of the available width
-    $('.navbar-nav > li.search').css('width','100%');
+    // Expand the search parent to take 95 % of the available width
+    $('.navbar-nav > li.search').css('width','95%');
 
     // Fade out the white search icon
     $('.navbar-nav .search-icon .search').fadeOut(animSpeed/4);
 
     // After fading out icon, fade in inverted (charcoal) icon with new background
     setTimeout(function(){
-      $('.navbar-nav .search-icon .search').removeClass("white").addClass("charcoal").fadeIn(animSpeed/2);
+      $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(animSpeed/2);
     }, animSpeed/4);
 
     $('.navbar-nav .search-icon').animate({backgroundColor:'"fff'},animSpeed);
 
     // Animate span parent container to 100 %
     $('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
+    
     // Animate the text box
     $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
 
@@ -235,10 +239,9 @@ function initExtendedSearch(){
     },animSpeed);
   }
 
-
   function minimizeSearch() {
     // Save the animating state, and reset it once the animations complete
-    var animating = true;
+    animating = true;
     setTimeout(function(){
       animating = false;
     },animSpeed);
@@ -247,8 +250,8 @@ function initExtendedSearch(){
     $('.navbar-nav li.search .remove').toggle();
 
     // Reset the searchParent to the original width. The text box will fit on its own as its width is 100 %.
-    $('.navbar-nav > li.search').animate({width:searchParentWidthPercent+'%'},animSpeed);
-    $('.navbar-nav .typeahead').animate({backgroundColor:backgroundColor,color:"#fff"},animSpeed);
+    $('.navbar-nav > li.search').animate({width:searchParentWidthPercent+'%'}, animSpeed);
+    $('.navbar-nav .typeahead').animate({backgroundColor:backgroundColor,color:"#fff"}, animSpeed);
 
     // Fade out the white search icon
     $('.navbar-nav .search-icon .search').fadeOut(animSpeed/4);
