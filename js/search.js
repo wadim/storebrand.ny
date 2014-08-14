@@ -109,13 +109,12 @@ function initTypeahead(){
   // Call  the typeahead with the category config
   $.fn.typeahead.apply( $('.searchbox.typeahead'), categoryConfig);
 
-  $('.search .typeahead').bind('typeahead:selected', function(event,data) {
-
+  $('input.searchbox').bind('typeahead:selected', function(event,data) {
     //Check whether Google Analytics is initialized, and if so, send event logging there
     if( typeof(ga) === 'function' ) {
       ga('send', 'event', 'search', 'selected', 'Search for: '+data.name);
     }
-
+    
     if (data.url) {
       //Go to the defined URL for the current search keyword
       window.location.href = data.url;
@@ -131,6 +130,7 @@ function initTypeahead(){
   // Call checkSearch when hitting Enter while in the input area
   $("input.searchbox").keydown(function(event){
     if(event.which == 13){
+    
       checkSearch( this.value );
       return false;
     }
@@ -332,25 +332,25 @@ function xmlParser(xml) {
     resultSummary = '<div class="resultsummary row"><div class="col-sm-12"></div></div>';
     $(resultSummary).insertAfter($('.stb-form-inline .searchbox').closest('form').parent().parent());
     
-    // Forslag til annen stavemåte
+    // Forslag til annen stavemï¿½te
     $(xml).find("Spelling").each(function() {
     var suggestedSpelling = $(this).find("Suggestion").attr("q");
-    //$(".searchsummary").append('<div id="suggestion"' + '>Vi har få eller ingen treff på det søkeordet, men prøv <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+    //$(".searchsummary").append('<div id="suggestion"' + '>Vi har fï¿½ eller ingen treff pï¿½ det sï¿½keordet, men prï¿½v <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
     $(".resultsummary div").append('<div id="suggestion"' + '>Vi har f&aring; eller ingen treff p&aring; det s&oslash;keordet, men pr&oslash;v <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
     noresult= true;
     });
-    // Hvis vi ikke finner noe som helst må vi jo si ifra om det først:
+    // Hvis vi ikke finner noe som helst mï¿½ vi jo si ifra om det fï¿½rst:
     if ($(xml).find("R").length == 0 && $(xml).find("Spelling").length== 0 ) {
     $(".resultsummary div").append('<div class="nogo"' + '>Fant ingen treff ved s&oslash;k etter <' + 'strong>'+ $(xml).find("Q").text()+'<' + '/strong>.<' + '/div>');
       noresult=true;
     }
-    // Men hvis vi finner noe, så kan vi vise treff
-    // Først antall treff, og så kan vi også legge på lenke til neste/forrige gjeng sider, hvis vi vil.
+    // Men hvis vi finner noe, sï¿½ kan vi vise treff
+    // Fï¿½rst antall treff, og sï¿½ kan vi ogsï¿½ legge pï¿½ lenke til neste/forrige gjeng sider, hvis vi vil.
     hitcounter = parseInt($(xml).find("M").text());
 
     if (hitcounter > 10) {
-    //$(".searchsummary").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
-    //$(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for søk på "' + $(xml).find("Q").text() + '".<' + 'br />');
+    //$(".searchsummary").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for sï¿½k pï¿½ "' + $(xml).find("Q").text() + '".<' + 'br />');
+    //$(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for sï¿½k pï¿½ "' + $(xml).find("Q").text() + '".<' + 'br />');
     //$('.currentsearch .number').text(hitcounter);
     var statpos = 0;
     var urlNow = window.location.href;
@@ -408,10 +408,10 @@ function xmlParser(xml) {
 }
 
 function displaySearchResult(xml) {
-  // Nå skal vi vise selve treffene
+  // Nï¿½ skal vi vise selve treffene
   $(xml).find("R").each(function () {
-    // Vi behandler "promotions" spesielt, og resten på en annen måte
-    // Få inn promotions, som alltid kommer først, hvis de kommer i det hele tatt.
+    // Vi behandler "promotions" spesielt, og resten pï¿½ en annen mï¿½te
+    // Fï¿½ inn promotions, som alltid kommer fï¿½rst, hvis de kommer i det hele tatt.
     if ($(this).find("SL_MAIN").length > 0) {
       // Vise promotion
       var promoURL = $(this).find("IMAGE_SOURCE").text();
@@ -421,7 +421,7 @@ function displaySearchResult(xml) {
       }
       $(".searchresults").append('<div class="lookatwhatifound' + '"><div class="promotering"' + '>' + promoPic + '<div class="title"' + '><a href="'  + $(this).find("SL_MAIN").find("U").text() + '">' +  $(this).find("BLOCK").find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + $(this).find("S").text() + '<' + '/div><' + '/div><'+ '/div>');
     } else {
-      // Søke-promotions (som vanligvis er det som kommer)
+      // Sï¿½ke-promotions (som vanligvis er det som kommer)
       var strippedS = $(this).find("S").text();
       var stripRE = new RegExp("<br>", "g");
       strippedS = strippedS.replace(stripRE, "");
