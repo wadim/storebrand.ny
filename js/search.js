@@ -114,12 +114,10 @@ function initTypeahead(){
     if( typeof(ga) === 'function' ) {
       ga('send', 'event', 'search', 'selected', 'Search for: '+data.name);
     }
-    
     if (data.url) {
       //Go to the defined URL for the current search keyword
       window.location.href = data.url;
     }
-
     $('.typeahead').typeahead('close');
   });
 
@@ -129,18 +127,20 @@ function initTypeahead(){
 
   // Call checkSearch when hitting Enter while in the input area
   $("input.searchbox").keydown(function(event){
-    if(event.which == 13){
-    
+	if(!data.url){
+    if(event.which == 13){   
       checkSearch( this.value );
       return false;
     }
+	}
   });
 
   // Call checkSearch when clicking the submit button
   $(".stb-form-inline button").click(function(event) {
-	alert($('input#main_search').val());
+	//alert($('input#main_search').val());
     checkSearch($('input#main_search').val());
     return false;
+	
   });
 }
 
