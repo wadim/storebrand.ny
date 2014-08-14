@@ -15,11 +15,11 @@
   <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
   <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
   <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
-  <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
+  <script type="text/javascript" src="js/stb-page-padding.js"></script>
   <script type="text/javascript" src="data/searchdata.js"></script>  
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>  
-
+ 
   <!-- Start JavaScript for this page only -->
   <script>
     $("document").ready(function(){
@@ -391,7 +391,7 @@
         <form class="stb-form-inline" role="form">
 		  <div class="stb-form-group">
 		    <h4>Engangskode</h4>
-  		    <input type="text" class="has-submit bottom-margin-30 width-40" placeholder="6 siffer">
+  		    <input maxlength="6" class="has-submit bottom-margin-30 width-40" placeholder="6 siffer" onKeyPress="return numbersonly(this,event)">
             <button type="submit" class="stb-btn stb-form is-submit">Logg inn med BankID</button>
           </div>
         </form>
@@ -405,7 +405,7 @@
         <h4>Mobilnummer</h4>
          <form class="stb-form-inline" role="form">
 		  <div class="stb-form-group">
-  		    <input type="text" class="has-submit bottom-margin-30 width-50" placeholder="8 siffer">
+  		    <input maxlength="8" class="has-submit bottom-margin-30 width-50" placeholder="8 siffer" onKeyPress="return numbersonly(this,event)">
             <button type="submit" class="stb-btn stb-form is-submit">Logg inn med BankID på mobil</button>
           </div>
         </form>
@@ -420,9 +420,9 @@
          <form class="stb-form-inline" role="form">
 		  <div class="stb-form-group">
 		    <h4>Mobilnummer</h4>
-  		    <input type="text" class="has-submit bottom-margin-30 width-50" placeholder="8 siffer">
+  		    <input maxlength="8" class="has-submit bottom-margin-30 width-50" placeholder="8 siffer" onKeyPress="return numbersonly(this,event)">
   		    <h4>Personlig passord</h4>
-  		    <input type="text" class="has-submit bottom-margin-30 width-75" placeholder="">
+  		    <input type="password" class="has-submit bottom-margin-30 width-75" placeholder="">
             <button type="submit" class="stb-btn stb-form is-submit">Send meg engangspassord</button>
           </div>
         </form>
