@@ -14,19 +14,20 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
+    <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
     <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>  
+    <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
     <script type="text/javascript" src="js/dist/tooltip.js"></script>
     <script type="text/javascript" src="js/dist/affix.js"></script>    
     <script type="text/javascript" src="js/dist/popover.js"></script>
     <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
-    <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
-    <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
-    <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
-    <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
-    <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
-    <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>        
+    <script type="text/javascript" src="js/dist/webmanual.core.js"></script>     
     <script type="text/javascript" src="js/stb-common.js"></script>  
     <script type="text/javascript" src="js/stb-page-padding.js"></script>    
+    <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>  
   </head>
   <body>
 
@@ -772,7 +773,7 @@
               <p>
                <br>This standard listgroup is an option to a simple table.</p>
                <p> Col-8 is the biggest gridsize for this element.</p>
-               <p> You can make a list clickable by adding "class="clickable" and a spesify the rel-attribute. Remember to mark it clickable with a link og button.</p>
+               <p> You can make a list clickable by adding "class="clickable" and a specify the rel-attribute. Remember to mark it clickable with a link og button.</p>
               </p>
             </div>
           </div>
@@ -1127,6 +1128,72 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div>
       </div>      
 
+      <hr class="top-margin-30" />
+
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Modals</h2>
+          (Slightly done-ish, needs variations.)
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <p>
+              This modal takes up the entire screen, to be used in cases where you really want to make sure that your user sees your message.
+            </p>
+            <p>
+              You need to include Modernizr and jQueryUI to use this, but if you want to help us rewrite it to make it independent of Modernizr, you're welcome to do so!
+            <p>
+            <p>
+              Click the icon below to see an example of how it can work. You will probably have to do a bit of styling and additional scripting to get exactly the behavior you need, but this should be a good base for most sitations:
+            </p>
+            <div class="stb-modal-full">
+              <span class="stb-color-sprite-48 ok-circle stb-modal-btn"></span>
+              <div class="morph-content stbcolor-background second">
+                <div>
+                  <div class="content-style-overlay">
+                    <span type="button" class="stb-sprite-32 remove close morph-close"></span>
+                    <h2>Boy, oh boy!</h2>
+                    <p>
+                      This little modal sure knows how to make a space for itself, huh?
+                    </p>
+                    <p>
+                      You can close it with style up in the corner there, or just submit the thing with the button below.
+                    </p>
+                    <form>
+                      <button class="stb-btn">Ok, let's move on</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>Code needed:</p>
+<pre class="prettyprint">
+&lt;div class="stb-modal-full"&gt;
+  &lt;span class="stb-color-sprite-48 ok-circle stb-modal-btn">&lt;/span&gt;
+  &lt;div class="morph-content stbcolor-background second"&gt;
+    &lt;div&gt;
+      &lt;div class="content-style-overlay"&gt;
+        &lt;span type="button" class="stb-sprite-32 remove close morph-close"&gt;&lt;/span&gt;
+        &lt;h2>Boy, oh boy!&lt;/h2&gt;
+        &lt;p&gt;
+          This little modal sure knows how to make a space for itself, huh?
+        &lt;/p&gt;
+        &lt;p&gt;
+          You can close it with style up in the corner there.
+        &lt;/p&gt;
+        &lt;form&gt;
+          &lt;button class="stb-btn"&gt;Ok, let's move on&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            
+          </div>
+        </div>
+      </div>      
+      
       <hr class="top-margin-30" />
       
       <div class="row">
