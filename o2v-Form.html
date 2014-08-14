@@ -2,200 +2,197 @@
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
 <title>Forsikring - storebrand.no</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/stb-main.css">
 
-  <script type="text/javascript" src="js/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="js/dist/moment.min.js"></script>
-  <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/dist/bootstrap-datetimepicker.min.js"></script>
-  <script type="text/javascript" src="js/dist/bootstrap-datetimepicker.nb.js"></script>
-  <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
-  <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
-  <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
-  <script type="text/javascript" src="js/dist/bootstrapValidator.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
-  <script type="text/javascript" src="js/dist/stb-page-padding.js"></script>
+<script type="text/javascript" src="js/dist/jquery.min.js"></script>
+<script type="text/javascript" src="js/dist/moment.min.js"></script>
+<script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/dist/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/dist/bootstrap-datetimepicker.nb.js"></script>
+<script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+<script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+<script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+<script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+<script type="text/javascript" src="js/dist/bootstrapValidator-0.5.0.js"></script>
+<script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="js/stb-common.js"></script>
+<script type="text/javascript" src="js/stb-page-padding.js"></script>
 
 <!-- Opplegg for sticky toppmeny -->
 <style>
-  /* Bootstrap 3 helpers */
-.navbar-form input, .form-inline input {
-  width:auto;
-}
+    /* Bootstrap 3 helpers */
+  .navbar-form input, .form-inline input {
+    width:auto;
+  }
 
-header {
-  height:50px;
-}
+  header {
+    height:50px;
+  }
 
-#nav.affix {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index:999;
-}
+  #nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:999;
+  }
 
-.stb-form-group.alarm input,
-.stb-form-group.alarm textarea{
-  background-color: #FFF0F0;
-  border-color: #FFB3B3;
-  color: #000000;
-}
+  .stb-form-group.alarm input,
+  .stb-form-group.alarm textarea{
+    background-color: #FFF0F0;
+    border-color: #FFB3B3;
+    color: #000000;
+  }
 
-.stb-form-group.valid input,
-.stb-form-group.valid textarea{
-  background-color: #ECF2C2;
-  border-color: #819F2B;
-  color: #000000;
-}
+  .stb-form-group.valid input,
+  .stb-form-group.valid textarea{
+    background-color: #ECF2C2;
+    border-color: #819F2B;
+    color: #000000;
+  }
 
-.errorMsg{
-  display:none;
-  color:#DA291C;
-}
+  .errorMsg{
+    display:none;
+    color:#DA291C;
+  }
 
-.bv-form .help-block {
-  margin-bottom: 6px;
-  font-size: 15px;
-}
+  .bv-form .help-block {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
 
-.nav-tabs li.bv-tab-success > a {
-  color: #3c763d;
-}
-.nav-tabs li.bv-tab-error > a {
-  color: #a94442;
-}
+  .nav-tabs li.bv-tab-success > a {
+    color: #3c763d;
+  }
+  .nav-tabs li.bv-tab-error > a {
+    color: #a94442;
+  }
 
-  /* Override feedback icon position */
-form .has-feedback .input-group .form-control-feedback {
-  top: 0;
-  right: -30px;
-}
+    /* Override feedback icon position */
+  form .has-feedback .input-group .form-control-feedback {
+    top: 0;
+    right: -30px;
+  }
 
-form .has-feedback.input-group i.glyphicon-remove  {
-  top: 25px !important;
-  right: -30px;
-}
-form .has-feedback.input-group i.glyphicon-ok {
-  top: 5px !important;
-  right: -30px;
-}
+  form .has-feedback.input-group i.glyphicon-remove  {
+    top: 25px !important;
+    right: -30px;
+  }
+  form .has-feedback.input-group i.glyphicon-ok {
+    top: 5px !important;
+    right: -30px;
+  }
 
-form .has-feedback.text-area i.glyphicon-remove {
-  top: 20px !important;
-}
+  form .has-feedback.select i.glyphicon-remove{
+    top: 40% !important;
+    left: 32%;
+  }
+  form .has-feedback.select i.glyphicon-ok{
+    left: 32%;
+  }
 
-form .has-feedback.select i.glyphicon-remove{
-  top: 40% !important;
-  left: 32%;
-}
-form .has-feedback.select i.glyphicon-ok{
-  left: 32%;
-}
+  form .has-feedback.checkbox i.glyphicon-ok{
+    top: 8px;
+  }
 
-form .has-feedback.checkbox i.glyphicon-ok{
-  top: 0;
-}
+  form .has-feedback.checkbox i.glyphicon-remove{
+    top: 8px;
+  }
+  .select select{
+    width: 30%;
+  }
 
-form .has-feedback.checkbox i.glyphicon-remove{
-  top: 40%;
-}
-.select select{
-  width: 30%;
-}
+  .input-group.date{
+    width: 50%;
+  }
 
-.input-group.date{
-  width: 50%;
-}
+  p{
+    margin-top: 6px;
+  }
 
-p{
-  margin-top: 6px;
-}
+  a{
+    cursor: pointer;
+  }
 
-a{
-  cursor: pointer;
-}
+  .hiddenfile {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
 
-.hiddenfile {
-  width: 0px;
-  height: 0px;
-  overflow: hidden;
-}
+  label{
+    margin-bottom: 6px;
+  }
+  .stb-form-group{
+    margin-bottom: 24px !important;
+  }
 
-label{
-  margin-bottom: 6px;
-}
-.stb-form-group{
-  margin-bottom: 24px !important;
-}
+  .stepPanel{
+    margin: 48px 0 48px 0;
+    display:none;
+  }
+  .stepPanel.active{
+    display:block;
+  }
 
-.stepPanel{
-  margin: 48px 0 48px 0;
-  display:none;
-}
-.stepPanel.active{
-  display:block;
-}
+  .stb-input-group-lrg{
+    width: 100%;
+  }
+  .stb-input-group-md{
+    width: 80%;
+  }
+  .stb-input-group-sm{
+    width: 50%;
+  }
 
-.stb-input-group-lrg{
-  width: 100%;
-}
-.stb-input-group-md{
-  width: 80%;
-}
-.stb-input-group-sm{
-  width: 50%;
-}
+  #skademelding .add-btn,#skademelding .update-btn{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-top: 6px ;
+    background: transparent;
+    border-style:solid;
+    border-width:1px;
+    color: #000000;
+  }
+  .transparent-btn{
+    margin-right: 48px;
+    padding-top: 6px !important;
+    background: transparent !important;
+    border-style:solid;
+    border-width:1px;
+    color: #000000;
+  }
 
-#skademelding .add-btn,#skademelding .update-btn{
-  margin-top: 12px;
-  margin-bottom: 12px;
-  padding-top: 6px ;
-  background: transparent;
-  border-style:solid;
-  border-width:1px;
-  color: #000000;
-}
-.transparent-btn{
-  margin-right: 48px;
-  padding-top: 6px !important;
-  background: transparent !important;
-  border-style:solid;
-  border-width:1px;
-  color: #000000;
-}
+  .transparent-btn:hover{
+    background: #000000 !important;
+    color: white !important;
+  }
 
-.transparent-btn:hover{
-  background: #000000 !important;
-  color: white !important;
-}
-
-#skademelding .add-btn:hover{
-  background: #000000;
-  color: white;
-}
+  #skademelding .add-btn:hover{
+    background: #000000;
+    color: white;
+  }
 
 
-#skademelding .cancel-btn{
-  margin-right:48px;
-  margin-top: 12px;
-  background: transparent;
-  color: #000000;
-}
+  #skademelding .cancel-btn{
+    margin-right:48px;
+    margin-top: 12px;
+    background: transparent;
+    color: #000000;
+  }
 
-#skademelding .cancel-btn:hover{
-  color: #DA291C;
-}
+  #skademelding .cancel-btn:hover{
+    color: #DA291C;
+  }
 
-.summary{
-  margin-top: 24px;
-}
+  .summary{
+    margin-top: 24px;
+  }
 
-.has-feedback .form-control{
-  padding-right: 6px;
-}
+  .has-feedback .form-control{
+    padding-right: 6px;
+  }
 
 
 </style>
@@ -298,8 +295,7 @@ $(document).ready(function(){
 
   var omTapetFields = {
     loss: {
-      threshold: 3,
-      container: '.info-message',
+      container: '#loss-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden stjålet eller skadet!'
@@ -308,7 +304,7 @@ $(document).ready(function(){
     },
     dateWhen: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#datewhen-message',
       message: 'Oppgi en dato for når skaden inntraff',
       validators: {
         callback: dateValidator
@@ -316,7 +312,7 @@ $(document).ready(function(){
     },
     lostCountry:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#lossCountry-message',
       message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvilket land skaden inntraff!',
       validators: {
         notEmpty: {
@@ -326,7 +322,7 @@ $(document).ready(function(){
     },
     lostPlace:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#lostPlace-message',
       message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvilket sted skaden inntraff!',
       validators: {
         notEmpty: {
@@ -336,7 +332,7 @@ $(document).ready(function(){
     },
     lostHow:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#lostHow-message',
       message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppi på hvilken måte tapet kan ha skjedd!',
       validators: {
         notEmpty: {
@@ -346,7 +342,7 @@ $(document).ready(function(){
     },
     lostActivities:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#lostActivities-message',
       message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppi sted når skaden skjedde og aktivitet!',
       validators: {
         notEmpty: {
@@ -357,7 +353,7 @@ $(document).ready(function(){
 
     lostEvents:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#lostEvents-message',
       message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Svar på dette eller legge inn Nei som svar!',
       validators: {
         notEmpty: {
@@ -367,7 +363,7 @@ $(document).ready(function(){
     },
     lossWitness: {
       threshold: 3,
-      container: '.info-message',
+      container: '#lostWitness-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om det var utenforstående vitne(r) til hendelsen!'
@@ -376,7 +372,7 @@ $(document).ready(function(){
     },
     safeKeeping:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#safeKeeping-message',
       message: '<span class="glyphicon glyphicon-exclamation-sign"></span>Oppgi hvor lenge gjenstanden var oppbevart!',
       validators: {
         notEmpty: {
@@ -386,7 +382,7 @@ $(document).ready(function(){
     },
     otherInfo:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#otherInfo-message',
       message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor skaden inntraff!',
       validators: {
         notEmpty: {
@@ -398,7 +394,7 @@ $(document).ready(function(){
   var taptGjenstandFields = {
     lostItemType: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#lostItemType-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi merke og modell!'
@@ -407,7 +403,7 @@ $(document).ready(function(){
 
     },
     howOld:{
-      container: '.info-message',
+      container: '#howOld-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi hvor gammel gjenstanden er!'
@@ -416,7 +412,7 @@ $(document).ready(function(){
     },
     purchasedWhere: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#purchasedWhere-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi hvor gjenstanden ble kjøpt!'
@@ -425,7 +421,7 @@ $(document).ready(function(){
     },
     itemNew:{
       threshold: 3,
-      container: '.info-message',
+      container: '#itemNew-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden var ny ved anskaffelse'
@@ -434,7 +430,7 @@ $(document).ready(function(){
     },
     itemRepairable:{
       threshold: 3,
-      container: '.info-message',
+      container: '#itemRepairable-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi om gjenstanden kan repareres'
@@ -447,7 +443,7 @@ $(document).ready(function(){
 
     dateTravelTo: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#dateTravelTo-message',
       validators: {
         callback: dateValidator,
         notEmpty: {
@@ -458,7 +454,7 @@ $(document).ready(function(){
     },
     dateTravelFrom: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#dateTravelFrom-message',
       validators: {
         callback: dateValidator,
         notEmpty: {
@@ -468,7 +464,7 @@ $(document).ready(function(){
     },
     organizator: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#organizator-message',
       message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap!',
       validators: {
         notEmpty: {
@@ -478,7 +474,7 @@ $(document).ready(function(){
     },
     creditInsurance:{
       threshold: 3,
-      container: '.info-message',
+      container: '#creditInsurance-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om du har betalt reisen med et kort som inkluderer reiseforsikring!'
@@ -488,7 +484,7 @@ $(document).ready(function(){
     },
     damagesLately:{
       threshold: 3,
-      container: '.info-message',
+      container: '#damagesLately-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om du har tidligere (siste 3 år) hatt skader som har medført forsikringsutbetaling!'
@@ -497,7 +493,7 @@ $(document).ready(function(){
     },
     cardOwner:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#cardOwner-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi kortholder!'
@@ -506,7 +502,7 @@ $(document).ready(function(){
     },
     cardNumber:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#cardNumber-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi kort nummer!'
@@ -518,7 +514,7 @@ $(document).ready(function(){
     },
     damageReport:{
       threshold: 3,
-      container: '.info-message',
+      container: '#damageReport-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om skaden er meldt dit!'
@@ -528,7 +524,7 @@ $(document).ready(function(){
 
     refund:{
       trigger: 'blur',
-      container: '.info-message',
+      container: '#refund-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi om du har motatt erstatning!'
@@ -661,7 +657,6 @@ $(document).ready(function(){
       }
     }
   };
-
   var oppsummeringFields ={
     confirm:{
       threshold: 3,
@@ -692,10 +687,18 @@ $(document).ready(function(){
       invalid: 'glyphicon glyphicon-remove',
       validating: 'glyphicon glyphicon-refresh'
     },
-    submitHandler: function(validator, form, submitButton) {
-    },
+    group: '.stb-form-group',
     fields: validationFields
-  });
+  }).on('error.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            var $form        = $(e.target),
+                    validator    = $form.data('bootstrapValidator'),
+                    submitButton = validator.getSubmitButton();
+
+            // Do whatever you want here ...
+    });
 
   $('.datePicker')
           .on('dp.change dp.show', function(e) {
@@ -1068,305 +1071,305 @@ $(window).scroll(function(event){
 
 </head>
 <body>
-  <!-- Start top of page -->
-  
-  <!-- Start desktop menu -->
-  <div class="navbar navbar-default hidden-xs hidden-sm desktop">
-    <div class="container yamm">
-      <div class="navbar-header col-md-4">
-        <img src="images/logo.png" title="logo image" class="logo">
-      </div>
-      <div id="navbar-collapse-grid" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav col-md-8">
-          <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
-            <ul class="dropdown-menu" id="dropdown-private">
-              <li class="col-md-2">
-                <h4>Forsikring</h4>
-                <ul>
-                  <li><a href="#">Bilforsikring</a></li>
-                  <li><a href="#">Husforsikring</a></li>
-                  <li><a href="#">Innboforsikring</a></li>
-                  <li><a href="#">Reiseforsikring</a></li>
-                  <li><a href="#">Motorsykkelforsikring</a></li>
-                  <li><a href="#">Båtforsikring</a></li>
-                  <li><a href="#">Liv og helse</a></li>
-                  <li><a href="#">Barneforsikring</a></li>
-                </ul>
-              </li>
-              <li class="col-md-2">
-                <h4>Bank og lån</h4>
-                <ul>                    
-                  <li><a href="#">Bli bankkunde</a></li>
-                  <li><a href="#">Konto og kort</a></li>
-                  <li><a href="#">Ungdomskonto</a></li>
-                  <li><a href="#">Visa-kort</a></li>
-                  <li><a href="#">Kredittkort</a></li>
-                  <li><a href="#">Boliglån</a></li>
-                  <li><a href="#">Boligkreditt</a></li>
-                  <li><a href="#">Boliglån for unge</a></li>
-                  <li><a href="#">Nettbank</a></li>
-                </ul>
-              </li>
-              <li class="col-md-2">
-                <h4>Pensjon</h4>
-                <ul>                  
-                  <li><a href="#">Egensparing til pensjon</a></li>
-                  <li><a href="#">Ekstrapensjon</a></li>
-                  <li><a href="#">IPS</a></li>
-                  <li><a href="#">Pensjon fra arbeidsgiver</a></li>
-                  <li><a href="#">Pensjonskapitalbevis</a></li>
-                  <li><a href="#">Fripolise</a></li>
-                  <li><a href="#">Fripolise med investeringsvalg</a></li>
-                </ul>
-              </li>
-              <li class="col-md-2">
-                <h4>Sparing</h4>
-                <ul>
-                  <li><a href="#">Spar i fond</a></li>
-                  <li><a href="#">Spar i bank</a></li>
-                  <li><a href="#">Spar til pensjon</a></li>
-                  <li><a href="#">Spareavtaler</a></li>
-                  <li><a href="#">Gi fond i gave</a></li>
-                  <li><a href="#">Flytte fond</a></li>
-                  <li><a href="#">Sparekonto</a></li>
-                  <li><a href="#">Fondspakker</a></li>
-                  <li><a href="#">BSU-sparing</a></li>
-                  <li><a href="#">Junior-sparing</a></li>
-                </ul>
-              </li>
-              <li class="col-md-2">
-                <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
-		  					<ul>
-                  <li><a href="#">Lånekalkulator</a></li>
-                  <li><a href="#">Ditt pensjonstall</a></li>
-                  <li><a href="#">Pensjonsskolen</a></li>
-                  <li><a href="#">Demo av Mitt forbruk</a></li>
-                  <li><a href="#">Priser og vilkår</a></li>
-                  <li><a href="#">Renter og priser</a></li>
-                  <li><a href="#">Sperre kort</a></li>
-                  <li><a href="#">Nyheter og rapporter</a></li>
-                </ul>
-              </li>
-              <li class="extraLinks">
-                <ul>
-                  <li class="roadAssistance"><a href="#">Veihjelp</a></li>
-                  <li class="damageReport"><a href="#">Meld skade</a></li>
-                  <li class="benefits"><a href="#">Få fordeler</a></li>
-                  <li class="contact"><a href="#">Kontakt oss</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          
-          <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
-        
-          <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
-        
-          <li class="search col-md-3">
-          	  <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
-	          <label style="width: 95%">
-	          	<input type="text" class="typeahead" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
-	          </label>
-          </li>
-        </ul>
-      </div>
+<!-- Start top of page -->
+
+<!-- Start desktop menu -->
+<div class="navbar navbar-default hidden-xs hidden-sm desktop">
+  <div class="container yamm">
+    <div class="navbar-header col-md-4">
+      <img src="images/logo.png" title="logo image" class="logo">
     </div>
-    <div class="col-md-6 column rightColor">
+    <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav col-md-8">
+        <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
+          <ul class="dropdown-menu" id="dropdown-private">
+            <li class="col-md-2">
+              <h4>Forsikring</h4>
+              <ul>
+                <li><a href="#">Bilforsikring</a></li>
+                <li><a href="#">Husforsikring</a></li>
+                <li><a href="#">Innboforsikring</a></li>
+                <li><a href="#">Reiseforsikring</a></li>
+                <li><a href="#">Motorsykkelforsikring</a></li>
+                <li><a href="#">Båtforsikring</a></li>
+                <li><a href="#">Liv og helse</a></li>
+                <li><a href="#">Barneforsikring</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <h4>Bank og lån</h4>
+              <ul>
+                <li><a href="#">Bli bankkunde</a></li>
+                <li><a href="#">Konto og kort</a></li>
+                <li><a href="#">Ungdomskonto</a></li>
+                <li><a href="#">Visa-kort</a></li>
+                <li><a href="#">Kredittkort</a></li>
+                <li><a href="#">Boliglån</a></li>
+                <li><a href="#">Boligkreditt</a></li>
+                <li><a href="#">Boliglån for unge</a></li>
+                <li><a href="#">Nettbank</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <h4>Pensjon</h4>
+              <ul>
+                <li><a href="#">Egensparing til pensjon</a></li>
+                <li><a href="#">Ekstrapensjon</a></li>
+                <li><a href="#">IPS</a></li>
+                <li><a href="#">Pensjon fra arbeidsgiver</a></li>
+                <li><a href="#">Pensjonskapitalbevis</a></li>
+                <li><a href="#">Fripolise</a></li>
+                <li><a href="#">Fripolise med investeringsvalg</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <h4>Sparing</h4>
+              <ul>
+                <li><a href="#">Spar i fond</a></li>
+                <li><a href="#">Spar i bank</a></li>
+                <li><a href="#">Spar til pensjon</a></li>
+                <li><a href="#">Spareavtaler</a></li>
+                <li><a href="#">Gi fond i gave</a></li>
+                <li><a href="#">Flytte fond</a></li>
+                <li><a href="#">Sparekonto</a></li>
+                <li><a href="#">Fondspakker</a></li>
+                <li><a href="#">BSU-sparing</a></li>
+                <li><a href="#">Junior-sparing</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
+              <ul>
+                <li><a href="#">Lånekalkulator</a></li>
+                <li><a href="#">Ditt pensjonstall</a></li>
+                <li><a href="#">Pensjonsskolen</a></li>
+                <li><a href="#">Demo av Mitt forbruk</a></li>
+                <li><a href="#">Priser og vilkår</a></li>
+                <li><a href="#">Renter og priser</a></li>
+                <li><a href="#">Sperre kort</a></li>
+                <li><a href="#">Nyheter og rapporter</a></li>
+              </ul>
+            </li>
+            <li class="extraLinks">
+              <ul>
+                <li class="roadAssistance"><a href="#">Veihjelp</a></li>
+                <li class="damageReport"><a href="#">Meld skade</a></li>
+                <li class="benefits"><a href="#">Få fordeler</a></li>
+                <li class="contact"><a href="#">Kontakt oss</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+
+        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+
+        <li class="search col-md-3">
+          <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
+          <label style="width: 95%">
+            <input type="text" class="typeahead" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+          </label>
+        </li>
+      </ul>
     </div>
   </div>
-  <!-- End desktop menu -->
-  
-  <!-- Start mobile menu -->
-  <nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
-    <div class="row stbcolor-primary third">
-      <div class="navbar-header col-xs-5 logo">
-        <img class="stb-logo-mobile" src="images/logo.storebrand.172x21.png" title="storebrand logo"/>
-      </div>
-      <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6 col-xs-offset-1" style="padding-left: 6px;">
-        <ul class="nav navbar">
-          <li class="dropdown yamm-fw" style="width: 25%;">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars" style="font-size: 24px; color: white;"></i><span class="marker"></span></a>
-            <ul id="subMenu" class="dropdown-menu">
-              <div class="yamm-content">
-                <div class="row">
-                  <div class="col-xs-12">
-                    <ul class="nav nav-tabs">
-                      <li class="active tab-box"><a id="tabheader-privat" href="#tab-privat" data-toggle="tab">Privat</a></li>
-                      <li class="tab-box"><a id="tabheader-bedrift" href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
-                    </ul>
-                    <div class="tab-content">
-                      <div class="tab-pane fade in active" id="tab-privat">
+  <div class="col-md-6 column rightColor">
+  </div>
+</div>
+<!-- End desktop menu -->
 
-                        <div class="panel-group" id="accordion-privat">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#forsikring">
-                                  <span class="glyphicon glyphicon-chevron-right"></span> Forsikring
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="forsikring" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <ul class="stb">
-                                  <li><a href="#">Bilforsikring</a></li>
-                                  <li><a href="#">Husforsikring</a></li>
-                                  <li><a href="#">Innboforsikring</a></li>
-                                  <li><a href="#">Reiseforsikring</a></li>
-                                  <li><a href="#">Motorsykkelforsikring</a></li>
-                                  <li><a href="#">Båtforsikring</a></li>
-                                  <li><a href="#">Liv og helse</a></li>
-                                  <li><a href="#">Barneforsikring</a></li>
-                                </ul>
-                              </div>
-                            </div>
+<!-- Start mobile menu -->
+<nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
+  <div class="row stbcolor-primary third">
+    <div class="navbar-header col-xs-5 logo">
+      <img class="stb-logo-mobile" src="images/logo.storebrand.172x21.png" title="storebrand logo"/>
+    </div>
+    <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6 col-xs-offset-1" style="padding-left: 6px;">
+      <ul class="nav navbar">
+        <li class="dropdown yamm-fw" style="width: 25%;">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars" style="font-size: 24px; color: white;"></i><span class="marker"></span></a>
+          <ul id="subMenu" class="dropdown-menu">
+            <div class="yamm-content">
+              <div class="row">
+                <div class="col-xs-12">
+                  <ul class="nav nav-tabs">
+                    <li class="active tab-box"><a id="tabheader-privat" href="#tab-privat" data-toggle="tab">Privat</a></li>
+                    <li class="tab-box"><a id="tabheader-bedrift" href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab-privat">
+
+                      <div class="panel-group" id="accordion-privat">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#forsikring">
+                                <span class="glyphicon glyphicon-chevron-right"></span> Forsikring
+                              </a>
+                            </h4>
                           </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#bank">
-                                  <span class="glyphicon glyphicon-chevron-right"></span> Bank og lån
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="bank" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <ul class="stb">
-                                  <li><a href="#">Bli bankkunde</a></li>
-                                  <li><a href="#">Konto og kort</a></li>
-                                  <li><a href="#">Ungdomskonto</a></li>
-                                  <li><a href="#">Visa-kort</a></li>
-                                  <li><a href="#">Kredittkort</a></li>
-                                  <li><a href="#">Boliglån</a></li>         
-                                  <li><a href="#">Boligkreditt</a></li>       
-                                  <li><a href="#">Boliglån for unge</a></li>
-                                  <li><a href="#">Nettbank</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#pensjon">
-                                  <span class="glyphicon glyphicon-chevron-right"></span> Pensjon
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="pensjon" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <ul class="stb">
-                                  <li><a href="#">Egensparing til pensjon</a></li>
-                                  <li><a href="#">Ekstrapensjon</a></li>
-                                  <li><a href="#">IPS</a></li>
-                                  <li><a href="#">Pensjon fra arbeidsgiver</a></li>
-                                  <li><a href="#">Pensjonskapitalbevis</a></li>
-                                  <li><a href="#">Fripolise</a></li>
-                                  <li><a href="#">Fripolise med investeringsvalg</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#sparing">
-                                  <span class="glyphicon glyphicon-chevron-right"></span> Sparing
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="sparing" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <ul class="stb">
-                                  <li><a href="#">Spar i fond</a></li>
-                                  <li><a href="#">Spar i bank</a></li>
-                                  <li><a href="#">Spar til pensjon</a></li>
-                                  <li><a href="#">Spareavtaler</a></li>
-                                  <li><a href="#">Gi fond i gave</a></li>
-                                  <li><a href="#">Flytte fond</a></li>
-                                  <li><a href="#">Sparekonto</a></li>
-                                  <li><a href="#">Fondspakker</a></li>
-                                  <li><a href="#">BSU-sparing</a></li>
-                                  <li><a href="#">Junior-sparing</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#kalkulator">
-                                  <span class="glyphicon glyphicon-chevron-right"></span><span class="tools"></span> Kalkulatorer & verktøy
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="kalkulator" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <ul class="stb">
-                                  <li><a href="#">Lånekalkulator</a></li>
-                                  <li><a href="#">Ditt pensjonstall</a></li>
-                                  <li><a href="#">Pensjonsskolen</a></li>
-                                  <li><a href="#">Demo av Mitt forbruk</a></li>
-                                  <li><a href="#">Priser og vilkår</a></li>
-                                  <li><a href="#">Renter og priser</a></li>
-                                  <li><a href="#">Sperre kort</a></li>
-                                  <li><a href="#">Nyheter og rapporter</a></li>	
-                                </ul>
-                              </div>
+                          <div id="forsikring" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Bilforsikring</a></li>
+                                <li><a href="#">Husforsikring</a></li>
+                                <li><a href="#">Innboforsikring</a></li>
+                                <li><a href="#">Reiseforsikring</a></li>
+                                <li><a href="#">Motorsykkelforsikring</a></li>
+                                <li><a href="#">Båtforsikring</a></li>
+                                <li><a href="#">Liv og helse</a></li>
+                                <li><a href="#">Barneforsikring</a></li>
+                              </ul>
                             </div>
                           </div>
                         </div>
-                        
-                        <div class="row">
-                          <div class="col-xs-6">
-                            <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-wrench"></i> Veihjelp</a>
-                            <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-plus-circle"></i> Få Fordeler</a>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#bank">
+                                <span class="glyphicon glyphicon-chevron-right"></span> Bank og lån
+                              </a>
+                            </h4>
                           </div>
-                          <div class="col-xs-6">
-                            <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-file-text-o"></i> Meld skade</a>
-                            <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-comment-o"></i> Kontakt oss</a>
+                          <div id="bank" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Bli bankkunde</a></li>
+                                <li><a href="#">Konto og kort</a></li>
+                                <li><a href="#">Ungdomskonto</a></li>
+                                <li><a href="#">Visa-kort</a></li>
+                                <li><a href="#">Kredittkort</a></li>
+                                <li><a href="#">Boliglån</a></li>
+                                <li><a href="#">Boligkreditt</a></li>
+                                <li><a href="#">Boliglån for unge</a></li>
+                                <li><a href="#">Nettbank</a></li>
+                              </ul>
+                            </div>
                           </div>
-                        </div>                        
-
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#pensjon">
+                                <span class="glyphicon glyphicon-chevron-right"></span> Pensjon
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="pensjon" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Egensparing til pensjon</a></li>
+                                <li><a href="#">Ekstrapensjon</a></li>
+                                <li><a href="#">IPS</a></li>
+                                <li><a href="#">Pensjon fra arbeidsgiver</a></li>
+                                <li><a href="#">Pensjonskapitalbevis</a></li>
+                                <li><a href="#">Fripolise</a></li>
+                                <li><a href="#">Fripolise med investeringsvalg</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#sparing">
+                                <span class="glyphicon glyphicon-chevron-right"></span> Sparing
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="sparing" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Spar i fond</a></li>
+                                <li><a href="#">Spar i bank</a></li>
+                                <li><a href="#">Spar til pensjon</a></li>
+                                <li><a href="#">Spareavtaler</a></li>
+                                <li><a href="#">Gi fond i gave</a></li>
+                                <li><a href="#">Flytte fond</a></li>
+                                <li><a href="#">Sparekonto</a></li>
+                                <li><a href="#">Fondspakker</a></li>
+                                <li><a href="#">BSU-sparing</a></li>
+                                <li><a href="#">Junior-sparing</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#kalkulator">
+                                <span class="glyphicon glyphicon-chevron-right"></span><span class="tools"></span> Kalkulatorer & verktøy
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="kalkulator" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Lånekalkulator</a></li>
+                                <li><a href="#">Ditt pensjonstall</a></li>
+                                <li><a href="#">Pensjonsskolen</a></li>
+                                <li><a href="#">Demo av Mitt forbruk</a></li>
+                                <li><a href="#">Priser og vilkår</a></li>
+                                <li><a href="#">Renter og priser</a></li>
+                                <li><a href="#">Sperre kort</a></li>
+                                <li><a href="#">Nyheter og rapporter</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="tab-pane fade" id="tab-bedrift">Bedrift</div>
+
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-wrench"></i> Veihjelp</a>
+                          <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-plus-circle"></i> Få Fordeler</a>
+                        </div>
+                        <div class="col-xs-6">
+                          <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-file-text-o"></i> Meld skade</a>
+                          <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-comment-o"></i> Kontakt oss</a>
+                        </div>
+                      </div>
+
                     </div>
+                    <div class="tab-pane fade" id="tab-bedrift">Bedrift</div>
                   </div>
                 </div>
+              </div>
 
-              </div>
-            </ul>
-          </li>
-          <li class="dropdown yamm-fw" style="width: 25%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-search" style="font-size: 24px; color: white;"></i><span class="marker"></span></a>
-            <ul id="searchField" class="dropdown-menu" style="background: white">
-              <div class="yamm-content">
-                <div class="row">
-                  <div class="col-xs-12">
-                      <input type="text" class="form-control search" placeholder="Søk i sidene" style="">
-                  </div>
+            </div>
+          </ul>
+        </li>
+        <li class="dropdown yamm-fw" style="width: 25%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-search" style="font-size: 24px; color: white;"></i><span class="marker"></span></a>
+          <ul id="searchField" class="dropdown-menu" style="background: white">
+            <div class="yamm-content">
+              <div class="row">
+                <div class="col-xs-12">
+                  <input type="text" class="form-control search" placeholder="Søk i sidene" style="">
                 </div>
               </div>
-            </ul>
-          </li>
-          <li class="dropdown yamm-fw" style="width: 50%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn<span class="marker"></span></a>
-            <ul id="signIn" class="dropdown-menu" style="background: white">
-              <div class="yamm-content">
-                <div class="row">
-                  <div class="col-xs-12">
-                  </div>
+            </div>
+          </ul>
+        </li>
+        <li class="dropdown yamm-fw" style="width: 50%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn<span class="marker"></span></a>
+          <ul id="signIn" class="dropdown-menu" style="background: white">
+            <div class="yamm-content">
+              <div class="row">
+                <div class="col-xs-12">
                 </div>
               </div>
-            </ul>
-          </li>
+            </div>
+          </ul>
+        </li>
 
-        </ul>
-      </div>
+      </ul>
     </div>
-  </nav>  
-  
-  <!-- End mobile menu -->
-  <!-- End top of page -->
+  </div>
+</nav>
+
+<!-- End mobile menu -->
+<!-- End top of page -->
 
 <div class="container">
   <div class="row"style="margin-top: 50px;">
@@ -1439,8 +1442,8 @@ $(window).scroll(function(event){
 
 <div class="container stbcolor-secondary sixth">
 
-<form id="skademelding" class="validateForm" role="form">
-<section id="omTapet" class="stepPanel active">
+<form id="skademelding" class="validateForm" role="form" method="post">
+<section id="omTapet" class="stepPanel">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -1448,15 +1451,15 @@ $(window).scroll(function(event){
       <h3>Hva har skjedd?</h3>
 
       <label>Hva har skjedd med gjenstanden(e)</label>
-      <div class="stb-form-group al checkbox">
-        <span class="help-block info-message"></span>
-        <input type="radio" name="loss" id="lossYes" value="Stjålet" class="stb-radio"><label class="stb-custom-input" for="lossYes">Stjålet</label>
-        <input type="radio" name="loss" id="lossNo" value="Skader" class="stb-radio" ><label class="stb-custom-input" for="lossNo">Skadet</label>
+      <span id="#loss-message" class="help-block"></span>
+      <div class="stb-form-group checkbox al">
+        <div class="radio" style="display: inline-block;"><input type="radio" name="loss" id="lossYes" value="Stjålet" class="stb-radio"><label class="stb-custom-input" for="lossYes">Stjålet</label></div>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="loss" id="lossNo" value="Skader" class="stb-radio" ><label class="stb-custom-input" for="lossNo">Skadet</label></div>
       </div>
 
       <label>Når ble gjenstanden(e) skadet?</label>
-      <div class="stb-form-group al">
-        <span class="help-block info-message"></span>
+      <span id="dateWhen-message" class="help-block"></span>
+      <div class=" stb-form-group al">
         <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
           <input type='text' class="form-control" name="dateWhen"/>
           <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -1464,14 +1467,14 @@ $(window).scroll(function(event){
       </div>
 
       <label>I hvilket land skjedde skaden?</label>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
+      <span id="lostCountry-message" class="help-block"></span>
+      <div class=" stb-form-group al text-area">
         <input class="form-control" name="lostCountry">
       </div>
 
       <label>På hvilket sted skjedde skaden?</label>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
+      <span id="lostPlace-message" class="help-block"></span>
+      <div class=" stb-form-group al text-area">
         <input class="form-control" name="lostPlace">
       </div>
 
@@ -1479,27 +1482,26 @@ $(window).scroll(function(event){
 
       <h3>Hvordan skjedde det?</h3>
       <label>På hvilken måte tror du at tapet kan ha skjedd?</label>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
+      <span id="lostHow-message" class="help-block"></span>
+      <div class=" stb-form-group al text-area">
         <textarea cols="40" rows="4" class="form-control" name="lostHow"></textarea>
       </div>
 
-
       <label>Hvor oppholdt du deg da tapet skjedde? Og hvilke aktiviteter ble utført?</label>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
+      <span id="lostActivities-message" class="help-block"></span>
+      <div class=" stb-form-group al text-area">
         <textarea cols="40" rows="4" class="form-control" name="lostActivities"></textarea>
       </div>
 
       <label>La du merke til en spesiell hendelse som kan ha noe med tapet å gjøre?</label>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
+      <span id="lostEvents-message" class="help-block"></span>
+      <div class=" stb-form-group al text-area">
         <textarea cols="40" rows="4" class="form-control" name="lostEvents" ></textarea>
       </div>
 
       <label>Var det utenforstående vitne(r) til hendelsen?</label>
-      <div class="stb-form-group al checkbox">
-        <span class="help-block info-message"></span>
+      <span id="lossWitness-message" class="help-block"></span>
+      <div class=" stb-form-group al checkbox">
         <input type="radio" name="lossWitness" id="lossWitnessYes"  value="Yes" class="stb-radio"><label for="lossWitnessYes"class="stb-custom-input">Ja</label>
         <input type="radio" name="lossWitness" id="lossWitnessNo" value="No" class="stb-radio" ><label for="lossWitnessNo" class="stb-custom-input">Nei</label>
       </div>
@@ -1508,15 +1510,14 @@ $(window).scroll(function(event){
 
       <h3>Annet</h3>
       <label>Hvor og hvordan var gjenstanden(e) oppbevart?</label>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
+      <span id="safeKeeping-message" class="help-block"></span>
+      <div class=" stb-form-group al text-area">
         <textarea cols="40" rows="4" class="form-control" name="safeKeeping"></textarea>
       </div>
 
-
       <label>Andre opplysninger om skaden?</label>
-      <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
+      <span id="otherInfo-message" class="help-block"></span>
+      <div class=" stb-form-group al text-area">
         <textarea cols="40" rows="4" class="form-control" name="otherInfo"></textarea>
       </div>
 
@@ -1530,14 +1531,14 @@ $(window).scroll(function(event){
       <hr>
       <h3>Legg til gjenstanden(e)</h3>
       <label>Type gjenstand</label>
+      <span id="lostItemType-message" class="help-block"></span>
       <div class="stb-form-group al text-area stb-input-group-lrg">
-        <span class="help-block info-message"></span>
         <input id="lostItemType" type='text' class="form-control" name="lostItemType" placeholder="Merke og modell" />
       </div>
 
       <label> Hvor gammel er gjenstanden?</label>
+      <span id="lostItemAge-message" class="help-block"></span>
       <div class="stb-form-group al select">
-        <span class="help-block info-message"></span>
         <select id="lostItemAge" class="form-control" name="howOld">
           <option value=""></option>
           <option value="1">1 år</option>
@@ -1559,23 +1560,23 @@ $(window).scroll(function(event){
       </div>
 
       <label>Hvor ble gjenstanden kjøpt?</label>
+      <span id="purchasedWhere-message" class="help-block"></span>
       <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
         <textarea id="purchasedWhere" cols="40" rows="4" class="form-control" name="purchasedWhere"></textarea>
       </div>
 
       <label>Var gjenstanden ny ved anskaffelse?</label>
+      <span id="itemNewMessage" class="help-block"></span>
       <div class="stb-form-group al checkbox">
-        <span class="help-block info-message"></span>
-        <input type="radio" name="itemNew" id="itemNewYes" value="Ja" class="stb-radio"><label class="stb-custom-input" for="itemNewYes">Ja</label>
-        <input type="radio" name="itemNew" id="itemNewNo" value="Nei" class="stb-radio" ><label class="stb-custom-input" for="itemNewNo">Nei</label>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="itemNew" id="itemNewYes" value="Ja" class="stb-radio"><label class="stb-custom-input" for="itemNewYes">Ja</label></div>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="itemNew" id="itemNewNo" value="Nei" class="stb-radio" ><label class="stb-custom-input" for="itemNewNo">Nei</label></div>
       </div>
 
       <label>Kan gjenstanden repareres?</label>
+      <span id="itemRepairable-message" class="help-block"></span>
       <div class="stb-form-group al checkbox">
-        <span class="help-block info-message"></span>
-        <input type="radio" name="itemRepairable" id="itemRepairableYes" value="Ja" class="stb-radio"><label class="stb-custom-input" for="itemRepairableYes">Ja</label>
-        <input type="radio" name="itemRepairable" id="itemRepairableNo" value="Nei" class="stb-radio" ><label class="stb-custom-input" for="itemRepairableNo">Nei</label>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="itemRepairable" id="itemRepairableYes" value="Ja" class="stb-radio"><label class="stb-custom-input" for="itemRepairableYes">Ja</label></div>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="itemRepairable" id="itemRepairableNo" value="Nei" class="stb-radio" ><label class="stb-custom-input" for="itemRepairableNo">Nei</label></div>
       </div>
       <div id="repairItem" class="well" style="display: none;">
         <p class="petit">Last opp bevis som inneholder informasjon om gjenstanden kan repareres eller ikke,
@@ -1588,7 +1589,6 @@ $(window).scroll(function(event){
         </div>
         <a class="stb-btn secondary" onclick="$('#repairFile').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;" ></span> Last opp</a>
       </div>
-      s
       <label>Kvittering</label>
       <p class="petit">Har du kvittering for gjenstanden eller annet bevis på kjøpet (avbetalingskontrakt, garanti e.l.)?</p>
       <div id="receiptItemUpload" class="list-group">
@@ -1621,15 +1621,15 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="omReisen" class="stepPanel">
+<section id="omReisen" class="stepPanel active">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om reisen</h2>
       <hr>
       <h3>Detaljer om reisen</h3>
 
+      <label>Hva var hensikten med reisen?</label><br>
       <div class="stb-form-group">
-        <label>Hva var hensikten med reisen?</label><br>
         <input type="radio" name="travel" id="travelLeisure" value="Leisure" class="stb-radio travel" checked="checked"><label for="travelLeisure" class="stb-custom-input">Fritidsreise</label>
         <input type="radio" name="travel" id="travelBusiness" value="Business" class="stb-radio travel"><label for="travelBusiness" class="stb-custom-input">Forretningsreise</label>
       </div>
@@ -1650,7 +1650,7 @@ $(window).scroll(function(event){
 
       <label>Utreisedato fra fast bostedsadresse</label>
       <div class="stb-form-group al">
-        <span class="help-block info-message"></span>
+        <span id="dateTravelTo-message" class="help-block"></span>
         <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
           <input type='text' class="form-control" name="dateTravelTo"/>
           <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -1659,7 +1659,7 @@ $(window).scroll(function(event){
 
       <label>Hjemreisedato til fast bostedsadresse?</label>
       <div class="stb-form-group al">
-        <span class="help-block info-message"></span>
+        <span id="dateTravelFrom-message" class="help-block"></span>
         <div class='input-group date datePicker' data-date-format="DD.MM.YYYY">
           <input type='text' class="form-control" name="dateTravelFrom"/>
           <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -1667,66 +1667,66 @@ $(window).scroll(function(event){
       </div>
 
       <label>Oppgi arrangørens navn ved charterreiser, eller navn på flyselskap</label>
+      <span id="organizator-message" class="help-block"></span>
       <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
         <input class="form-control" name="organizator">
       </div>
       <hr>
 
       <label>Har du betalt reisen med et kort som inkluderer reiseforsikring?</label>
+      <span id="creditInsurance-message" class="help-block"></span>
       <div class="stb-form-group al checkbox">
-        <span class="help-block info-message"></span>
-        <input type="radio" name="creditInsurance" id="creditInsuranceYes" value="Yes" class="stb-radio"><label for="creditInsuranceYes" class="stb-custom-input">Ja</label>
-        <input type="radio" name="creditInsurance" id="creditInsuranceNo" value="No" class="stb-radio" ><label for="creditInsuranceNo" class="stb-custom-input">Nei</label>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="creditInsurance" id="creditInsuranceYes" value="Yes" class="stb-radio"><label for="creditInsuranceYes" class="stb-custom-input">Ja</label></div>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="creditInsurance" id="creditInsuranceNo" value="No" class="stb-radio" ><label for="creditInsuranceNo" class="stb-custom-input">Nei</label></div>
       </div>
 
       <div id="creditInsuranceInfo" class="well" style="display: none;">
 
         <label>Korteierens navn</label>
+        <span id="cardOwner-message" class="help-block"></span>
         <div class="stb-form-group al input-group">
-          <span class="help-block info-message"></span>
           <input type='text' class="form-control" name="cardOwner" placeholder="Fornavn og etternavn" />
         </div>
 
         <label>Kortnummer</label>
+        <span id="cardNumber-message" class="help-block"></span>
         <div class="stb-form-group al input-group">
-          <span class="help-block info-message"></span>
           <input type='text' class="form-control" name="cardNumber" placeholder="16 siffer"/>
         </div>
 
         <label>Er skaden meldt til dette selskapet? </label>
+        <span id="damageReport-message" class="help-block"></span>
         <div class="stb-form-group al checkbox">
-          <span class="help-block info-message"></span>
-          <input type="radio" name="damageReport" id="damageReportYes" value="Yes" class="stb-radio"><label for="damageReportYes" class="stb-custom-input">Ja</label>
-          <input type="radio" name="damageReport" id="damageReportNo" value="No" class="stb-radio" ><label for="damageReportNo" class="stb-custom-input">Nei</label>
+          <div class="radio" style="display: inline-block;"><input type="radio" name="damageReport" id="damageReportYes" value="Yes" class="stb-radio"><label for="damageReportYes" class="stb-custom-input">Ja</label></div>
+          <div class="radio" style="display: inline-block;"><input type="radio" name="damageReport" id="damageReportNo" value="No" class="stb-radio" ><label for="damageReportNo" class="stb-custom-input">Nei</label></div>
         </div>
 
         <label>Har du mottatt erstatning? Hvor mye?</label>
+        <span id="refund-message" class="help-block"></span>
         <div class="stb-form-group al text-area">
-          <span class="help-block info-message"></span>
           <textarea cols="40" rows="4" class="form-control" name="refund"></textarea>
         </div>
 
       </div>
 
       <label>Har du i løpet av siste 3 år hatt skader som har medført forsikringsutbetaling?</label>
+      <span id="damagesLately-message" class="help-block"></span>
       <div class="stb-form-group al checkbox">
-        <span class="help-block info-message"></span>
-        <input type="radio" name="damagesLately" id="damagesLatelyYes" value="Yes" class="stb-radio"><label for="damagesLatelyYes" class="stb-custom-input">Ja</label>
-        <input type="radio" name="damagesLately" id="damagesLatelyNo" value="No" class="stb-radio" ><label for="damagesLatelyNo" class="stb-custom-input">Nei</label>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="damagesLately" id="damagesLatelyYes" value="Yes" class="stb-radio"><label for="damagesLatelyYes" class="stb-custom-input">Ja</label></div>
+          <div class="radio" style="display: inline-block;"><input type="radio" name="damagesLately" id="damagesLatelyNo" value="No" class="stb-radio" ><label for="damagesLatelyNo" class="stb-custom-input">Nei</label></div>
       </div>
 
       <div id="insurancePayment" class="well" style="display: none;">
 
         <label>Beskriv tidligere tap/skade og erstatningen av den</label>
+        <span id="damagesDescription-message" class="help-block"></span>
         <div class="stb-form-group al text-area">
-          <span class="help-block info-message"></span>
           <textarea id="damageDescription" cols="40" rows="4" class="form-control" name="damageDescription"></textarea>
         </div>
 
         <label>Ditt forsikringsselskap ved tapet/skaden</label>
+        <span id="insuranceCompany-message" class="help-block"></span>
         <div class="stb-form-group al text-area">
-          <span class="help-block info-message"></span>
           <textarea id="insuranceCompany"  cols="40" rows="1" class="form-control" name="insuranceCompany"></textarea>
         </div>
 
@@ -2065,85 +2065,85 @@ $(window).scroll(function(event){
 </div>
 
 
-  <!-- Start responsive footer -->
-  <footer class="stbcolor-primary first stb-footer">
-    <div class="row toTop">
-      <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" >Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
-        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right">Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
-      </div>
+<!-- Start responsive footer -->
+<footer class="stbcolor-primary first stb-footer">
+  <div class="row toTop">
+    <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" >Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right">Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
     </div>
-  
-    <div class="container">
+  </div>
 
-      <div class="row content">
-        <div class="col-sm-3 column info">
-          <div class="border-right">
-            <ul class="stb">
-              <li><span class="stb-sprite-24 white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
-              <li><span class="stb-sprite-24 white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
-              <li><span class="stb-sprite-24 white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
-            </ul>
-            <h4>Alt innhold</h4>
+  <div class="container">
+
+    <div class="row content">
+      <div class="col-sm-3 column info">
+        <div class="border-right">
+          <ul class="stb">
+            <li><span class="stb-sprite-24 white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
+            <li><span class="stb-sprite-24 white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
+            <li><span class="stb-sprite-24 white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
+          </ul>
+          <h4>Alt innhold</h4>
+          <p class="petit">
+            <a class="stb-footer-link" href="#">A til Å / Kategorisert</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-sm-3 column contact">
+        <h4>Lurer du på noe?</h4>
+        <div class="row">
+          <div class="col-xs-6">
+            <p class="petit">Vi er tilgjengelige:</p>
+            <p class="petit">Mandag-fredag<br />08-16, bank til 20</p>
+            <p class="petit">Lørdag (kun bank)<br />09-15</p>
+          </div>
+          <div class="col-xs-6">
             <p class="petit">
-              <a class="stb-footer-link" href="#">A til Å / Kategorisert</a>
+              <span class="stb-sprite-16 white phone"></span>
+              &nbsp;Ring:&nbsp;<a class="stb-footer-link hidden-xs hidden-sm" href="tel:08880"><span>08880</span></a>
+              <a class="visible-xs visible-sm" style="display: inline-block!important;" href="tel:08880"><span class="visible-xs visible-sm stbcolor-primary first darker badge">08880</span></a>
+              <br/>
+              Fra&nbsp;utlandet:<br />
+              <a class="stb-footer-link hidden-xs hidden-sm" href="tel:+4791508880"><span>+47&nbsp;915&nbsp;08880</span></a>
+              <a class="visible-xs visible-sm" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47&nbsp;915&nbsp;08880</span></a>
             </p>
-          </div>
-        </div>
-    
-        <div class="col-sm-3 column contact">
-          <h4>Lurer du på noe?</h4>
-          <div class="row">
-            <div class="col-xs-6">
-              <p class="petit">Vi er tilgjengelige:</p>
-              <p class="petit">Mandag-fredag<br />08-16, bank til 20</p>
-              <p class="petit">Lørdag (kun bank)<br />09-15</p>
-            </div>
-            <div class="col-xs-6">
-              <p class="petit">
-                <span class="stb-sprite-16 white phone"></span>
-                &nbsp;Ring:&nbsp;<a class="stb-footer-link hidden-xs hidden-sm" href="tel:08880"><span>08880</span></a>
-                <a class="visible-xs visible-sm" style="display: inline-block!important;" href="tel:08880"><span class="visible-xs visible-sm stbcolor-primary first darker badge">08880</span></a>
-                <br/>
-                Fra&nbsp;utlandet:<br />
-                <a class="stb-footer-link hidden-xs hidden-sm" href="tel:+4791508880"><span>+47&nbsp;915&nbsp;08880</span></a>
-                <a class="visible-xs visible-sm" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47&nbsp;915&nbsp;08880</span></a>
-              </p>              
-              <ul class="stb">
-                <li><span class="stb-sprite-16 white envelope"></span><a class="stb-footer-link petit" href="#">&nbsp;E-post</a></li>
-                <li><span class="stb-sprite-16 white chat"></span><a class="stb-footer-link petit"  href="#">&nbsp;Chat</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3 col-xs-6 column social">
-          <div class="border-left">
-          <h4>Sosiale&nbsp;medier</h4>
             <ul class="stb">
-              <li><span class="stb-sprite-24 white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
-              <li><span class="stb-sprite-24 white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
-              <li><span class="stb-sprite-24 white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
-              <li><span class="stb-sprite-24 white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-3 col-xs-6 column more">
-          <div class="border-left">
-            <h4>Mer&nbsp;Storebrand</h4>
-            <ul class="stb">
-              <li><a class="stb-footer-link petit"  href="#"> Om Storebrand </a></li>
-              <li><a class="stb-footer-link petit"  href="#"> Eiendom</a></li>
-              <li><a class="stb-footer-link petit"  href="#"> Asset Management</a></li>
-              <li><a class="stb-footer-link petit"  href="#"> Personvern og cookies</a></li>
+              <li><span class="stb-sprite-16 white envelope"></span><a class="stb-footer-link petit" href="#">&nbsp;E-post</a></li>
+              <li><span class="stb-sprite-16 white chat"></span><a class="stb-footer-link petit"  href="#">&nbsp;Chat</a></li>
             </ul>
           </div>
         </div>
       </div>
+
+      <div class="col-sm-3 col-xs-6 column social">
+        <div class="border-left">
+          <h4>Sosiale&nbsp;medier</h4>
+          <ul class="stb">
+            <li><span class="stb-sprite-24 white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
+            <li><span class="stb-sprite-24 white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
+            <li><span class="stb-sprite-24 white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
+            <li><span class="stb-sprite-24 white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-3 col-xs-6 column more">
+        <div class="border-left">
+          <h4>Mer&nbsp;Storebrand</h4>
+          <ul class="stb">
+            <li><a class="stb-footer-link petit"  href="#"> Om Storebrand </a></li>
+            <li><a class="stb-footer-link petit"  href="#"> Eiendom</a></li>
+            <li><a class="stb-footer-link petit"  href="#"> Asset Management</a></li>
+            <li><a class="stb-footer-link petit"  href="#"> Personvern og cookies</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  
-  </footer>  
-  <!-- End responsive footer -->
+  </div>
+
+</footer>
+<!-- End responsive footer -->
 
 </body>
 </html>
