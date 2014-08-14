@@ -1,17 +1,17 @@
 var promotions = {
-  "banksparing" : {"header": "Det er lurt &aring; spare i bank!",
-            "text": "Da f&aring;r du nemlig rente p&aring; pengene dine!", 
+  "banksparing" : {"header": "Det er lurt å spare i bank!",
+            "text": "Da får du nemlig rente på pengene dine!", 
             "name": "Den som sparer, han har!", 
             "url": "http://www.storebrand.no/site/stb.nsf/Pages/sparekonto.html"},            
-  "fond" : {"header": "Vet du hva du f�r i fond",
+  "fond" : {"header": "Vet du hva du får i fond",
             "text": "Write something here", 
             "name": "write something here", 
             "url": "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-  "l�n" : {"header": "Vet du hva du f�r i bank og l�n",
+  "lån" : {"header": "Vet du hva du får i bank og lån",
            "text": "Write something here", 
            "name": "Write something here", 
            "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-  "s�k" : {"header": "Vet du hva du f�r i pensjon",
+  "søk" : {"header": "Vet du hva du får i pensjon",
            "text": "Write something here", 
            "name": "Write something here", 
            "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}	     
@@ -31,10 +31,10 @@ var typeaheads = {
     [
       {"name": "Fond","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Fondslister","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "L&aeligr mer om fondsparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "B&aeligrekraft","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "Kj&oslashp fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "V&aring;re anbefalte fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+      {"name": "Lær mer om fondsparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+      {"name": "Bærekraft","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+      {"name": "Kjøp fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+      {"name": "Våre anbefalte fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Delphi","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Storebrandfondene","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Kontakt fond","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
@@ -43,9 +43,9 @@ var typeaheads = {
     ],
   "Pensjon" :
     [
-      {"name": "L&aelig;r om pensjon","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+      {"name": "Lær om pensjon","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Pensjonskalkulator","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "Kj&oslash;p pensjonssparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+      {"name": "Kjøp pensjonssparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Hva er pensjonssparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Ditt pensjonstall","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Fripolise","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
@@ -69,9 +69,9 @@ var typeaheads = {
       {"name": "Kredittkort","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Bli kunde","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Kontakt banken","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "Priser og vilk&aring;r","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+      {"name": "Priser og vilkår","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Dagens renter","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "S&oslash;k boligl&aring;n","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+      {"name": "Søk boliglån","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Start Banksparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Chat om bank","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
     ],
@@ -90,7 +90,7 @@ var typeaheads = {
       {"name": "Chat om forsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Motorsykkelforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Tilhengerforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "Uf&oslash;reforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
+      {"name": "Uføreforsikring","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
     ],
   "Minside" :
     [
@@ -100,10 +100,10 @@ var typeaheads = {
       {"name": "Efaktura","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Kort og kreditt","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Anders Losvik","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "Bj�rn Christian T�rrissen'","url":"http://bjornfree.com/"},
+      {"name": "Bjørn Christian Tørrissen'","url":"http://bjornfree.com/"},
       {"name": "Mine kontoer","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Mine innstillinger","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
-      {"name": "S�k l�n","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+      {"name": "Søk lån","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Banksparing","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Nettbank","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Sikker chat - logg inn","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}
