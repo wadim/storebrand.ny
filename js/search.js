@@ -436,6 +436,32 @@ function displaySearchResult(xml) {
       } else {
         var shortenedU = strippedU;
       }
+      
+     // shorten the URL's
+      
+      var mobileU = shortenedU;
+      
+     //get the index of the last / in the url
+      lastSlashIndex = mobileU.lastIndexOf("/");
+      
+      //if the last / was at the end of the URL, for example in storebrand.no/bank/
+      if( lastSlashIndex+1 == mobileU.length ) {
+     //remove the last /
+        mobileU = mobileU.substr( 0, mobileU.length-1 );
+     //now look for the new last /
+     lastSlashIndex = mobileU.lastIndexOf("/", lastSlashIndex);
+      }
+      
+      //if no slash was found, reset it to 0
+      if( lastSlashIndex == -1 ) {
+           lastSlashIndex = 0;
+      }
+      
+      //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
+      var numOfSlashes = (mobileU.split("/").length - 1);
+      mobileU = decodeURI(( numOfSlashes > 1?"/...":"" ) + mobileU.substr( lastSlashIndex ));
+      
+      
       var linkDecoration = "";
       if (strippedU.indexOf(".pdf") > 0) {
         linkDecoration = ' class="pdf document" ';
@@ -444,12 +470,14 @@ function displaySearchResult(xml) {
       var resultMarkup = "";
 
       if (strippedS.indexOf("reutzer") > 0) {
-        resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
+        resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + mobileU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
         $(".searchresults").append(resultMarkup);
       } else {
-        resultMarkup = '<div class="top-margin-50' + '"><h4 class=""' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
+        resultMarkup = '<div class="top-margin-50' + '"><h4 class=""' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + mobileU + '<' + '/a><' + '/p><' + '/div>';
         $(".searchresults").append(resultMarkup);
       }
+      
+    
     }
   });
 
