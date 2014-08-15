@@ -1,4 +1,4 @@
-// Start navigation padding 
+﻿// Start navigation padding 
 
 // Start mobile top menu decoration
 $(document).ready(function(){
@@ -63,10 +63,6 @@ $("document").ready(function(){
     
 // Handling automatic generation of toc lists on article pages
 $(document).ready(function() {
-  
-
- 
-  
   // Prepare the row that contains the table of contents
   var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">G&aring; direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down pull-right"></span></p><ul class="items"></ul></div></div>';
   
@@ -78,10 +74,10 @@ $(document).ready(function() {
   
   // Iterate through all the top level headings (h3)
   for(var i=0; i<tocHeaders.length; i++) {
-	listMade = false;
-	var h3tag = tocHeaders[i];
+    listMade = false;
+	  var h3tag = tocHeaders[i];
     
-	// Appending heading text to table to contents
+	  // Appending heading text to table to contents
     $('.toc-list .items').append( prepareTocLink(h3tag, "") );
     
     // Find all sub-headings(h4) inside each heading(h3)
@@ -94,7 +90,7 @@ $(document).ready(function() {
     
     // Iterate through these sub headings
     for( var j=0; j<allh4.length;j++) {
-	  var h4tag = allh4[j];
+	    var h4tag = allh4[j];
       // adding the sub headings to the subheading list
       h4list = h4list + prepareTocLink(h4tag, $(h3tag).text());
     }
@@ -103,19 +99,16 @@ $(document).ready(function() {
     //append sub-heading list to the table of contents
     $('.toc-list .items').append(h4list);
     
-    
   }
  
   //check if URL already has a hash and scroll to the correct heading 
   if(window.location.hash.length > 0) {
-	
     var hashId = window.location.hash;
-	//if a matching h3 or h4 has the hash ID, then scroll to it.
-	if($("h3"+hashId).length > 0 || $("h4"+hashId).length > 0) {
+    //if a matching h3 or h4 has the hash ID, then scroll to it.
+    if($("h3"+hashId).length > 0 || $("h4"+hashId).length > 0) {
       scrollToHash( hashId );
-	}
+	  }
   }
-  
   
   // Perform a smooth page scroll to an anchor on the same page.
   $(function() {
@@ -127,7 +120,7 @@ $(document).ready(function() {
     });
   });
 
-  //takes a hash as input and smooth scrolls to the related target element
+  // Take a hash as input and smooth-scroll to the related target element
   function scrollToHash(hash) {
     var target = $(hash);
     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -144,7 +137,7 @@ $(document).ready(function() {
     }
   }
   
-  //Prepares the TOC link for a given header tag
+  // Prepare the TOC link for a given header tag
   function prepareTocLink(headerTag, prefix) {
     //take the header text
     var headerText = $(headerTag).text();
@@ -206,6 +199,223 @@ function acceptCookies(){
 
 
 // End content padding
+
+// Start full-screen modal box padding
+// Requires Modernizr for now! (for transition prefixing)
+/**
+ * uiMorphingButton_fixed.js v1.0.0
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * Copyright 2014, Codrops
+ * http://www.codrops.com
+ */
+;( function( window ) {
+  'use strict';
+  var transEndEventNames = {
+            'WebkitTransition': 'webkitTransitionEnd',
+            'MozTransition': 'transitionend',
+            'OTransition': 'oTransitionEnd',
+            'msTransition': 'MSTransitionEnd',
+            'transition': 'transitionend'
+  },
+  transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+  support = { transitions : Modernizr.csstransitions };
+
+  function extend( a, b ) {
+    for( var key in b ) {
+      if( b.hasOwnProperty( key ) ) {
+        a[key] = b[key];
+      }
+    }
+    return a;
+  }
+
+  function UIMorphingButton( el, options ) {
+    this.el = el;
+    this.options = extend( {}, this.options );
+    extend( this.options, options );
+    this._init();
+  }
+
+  UIMorphingButton.prototype.options = {
+    closeEl : '',
+    onBeforeOpen : function() { return false; },
+    onAfterOpen : function() { return false; },
+    onBeforeClose : function() { return false; },
+    onAfterClose : function() { return false; }
+  }
+
+  UIMorphingButton.prototype._init = function() {
+    // the button
+    this.button = this.el.querySelector( '.stb-modal-btn' );
+    // state
+    this.expanded = false;
+    // content el
+    this.contentEl = this.el.querySelector( '.morph-content' );
+    // init events
+    this._initEvents();
+  }
+
+  UIMorphingButton.prototype._initEvents = function() {
+    var self = this;
+    // open
+    this.button.addEventListener( 'click', function() {
+      self.toggle();
+    } );
+    // close
+    if( this.options.closeEl !== '' ) {
+      var closeEl = this.el.querySelector( this.options.closeEl );
+      if( closeEl ) {
+        closeEl.addEventListener( 'click', function() { self.toggle(); } );
+      }
+    }
+  }
+
+  UIMorphingButton.prototype.toggle = function() {
+    if( this.isAnimating ) return false;
+
+    // callback
+    if( this.expanded ) {
+      this.options.onBeforeClose();
+    } else {
+      // add class active (solves z-index problem when more than one button is on the page)
+      $(this.el).addClass('active');
+      this.options.onBeforeOpen();
+    }
+
+    this.isAnimating = true;
+
+    var self = this, onEndTransitionFn = function( ev ) {
+      if( ev.target !== this ) return false;
+      if( support.transitions ) {
+        // open: first opacity then width/height/left/top
+        // close: first width/height/left/top then opacity
+        if( self.expanded && ev.propertyName !== 'opacity' || !self.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' ) {
+          return false;
+        }
+        this.removeEventListener( transEndEventName, onEndTransitionFn );
+      }
+      self.isAnimating = false;
+      // callback
+      if( self.expanded ) {
+        // remove class active (after closing)
+        $(self.el).removeClass('active');
+        self.options.onAfterClose();
+      } else {
+        self.options.onAfterOpen();
+      }
+      self.expanded = !self.expanded;
+    };
+
+    if( support.transitions ) {
+      this.contentEl.addEventListener( transEndEventName, onEndTransitionFn );
+    } else {
+      onEndTransitionFn();
+    }
+
+    // Set the left and top values of the contentEl (same as the button)
+    var buttonPos = this.button.getBoundingClientRect();
+    // need to reset
+    $(this.contentEl).addClass('no-transition');
+    this.contentEl.style.left = 'auto';
+    this.contentEl.style.top = 'auto';
+
+    // Add/remove class "open" to the button wrapper
+    setTimeout( function() {
+      self.contentEl.style.left = buttonPos.left + 'px';
+      self.contentEl.style.top = buttonPos.top + 'px';
+
+      if( self.expanded ) {
+        $(self.contentEl).removeClass('no-transition');
+        $(self.el).removeClass('open');
+      } else {
+        setTimeout( function() {
+          $(self.contentEl).removeClass('no-transition');
+          $(self.el).addClass('open');
+        }, 25 );
+      }
+    }, 25 );
+  }
+
+  // Add to global namespace
+  window.UIMorphingButton = UIMorphingButton;
+
+})( window );
+
+$("document").ready(function(){
+  (function() {
+    var docElem = window.document.documentElement, didScroll, scrollPosition;
+    // Trick to prevent scrolling when opening/closing button
+    function noScrollFn() {
+      window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+    }
+
+    function noScroll() {
+      window.removeEventListener( 'scroll', scrollHandler );
+      window.addEventListener( 'scroll', noScrollFn );
+    }
+
+    function scrollFn() {
+      window.addEventListener( 'scroll', scrollHandler );
+    }
+
+    function canScroll() {
+      window.removeEventListener( 'scroll', noScrollFn );
+      scrollFn();
+    }
+
+    function scrollHandler() {
+      if( !didScroll ) {
+        didScroll = true;
+        setTimeout( function() { scrollPage(); }, 60 );
+      }
+    };
+
+    function scrollPage() {
+      scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+      didScroll = false;
+    };
+
+    scrollFn();
+
+    $('.stb-modal-full').each(function(index, el){
+      new UIMorphingButton( el, {
+        closeEl : '.close',
+        onBeforeOpen : function() {
+          // Do not allow scrolling in opened modal
+          noScroll();
+        },
+        onAfterOpen : function() {
+          // Allow scrolling again
+          canScroll();
+          // Add class "noscroll" to body
+          $(document.body).addClass('noscroll');
+          // Add scroll class to main el
+          $(el).addClass('scroll');
+        },
+        onBeforeClose : function() {
+          // Remove class "noscroll" to body
+          $(document.body).removeClass('noscroll');
+          // Remove scroll class from main el
+          $(el).removeClass('scroll');
+          // Do not allow scrolling during closing of modal
+          noScroll();
+        },
+        onAfterClose : function() {
+          // Allow scrolling again
+          canScroll();
+        }
+      });
+    });
+    
+  })();
+ 
+});
+// End full-screen modal padding
+
 
 // Adding hotkeys based on Resig
 $("document").ready(function(){
