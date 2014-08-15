@@ -392,7 +392,7 @@
 		  <div class="stb-form-group">
 		    <h4>Engangskode</h4>
   		    <input maxlength="6" class="has-submit bottom-margin-30 width-40" placeholder="6 siffer" onKeyPress="return numbersonly(this,event)">
-            <button type="submit" class="stb-btn stb-form is-submit">Logg inn med BankID</button>
+            <button type="submit" class="stb-btn stb-form is-submit" onclick="event.preventDefault(); window.location ='login-step-loggedin.html'">Logg inn med BankID</button>
           </div>
         </form>
       </div>
@@ -406,7 +406,7 @@
          <form class="stb-form-inline" role="form">
 		  <div class="stb-form-group">
   		    <input maxlength="8" class="has-submit bottom-margin-30 width-50" placeholder="8 siffer" onKeyPress="return numbersonly(this,event)">
-            <button type="submit" class="stb-btn stb-form is-submit">Logg inn med BankID på mobil</button>
+            <button type="submit" class="stb-btn stb-form is-submit" onclick="event.preventDefault();window.location ='login-step-loggedin.html'">Logg inn med BankID på mobil</button>
           </div>
         </form>
         <p> For å kunne benytte seg av BankID må du ha opprettet en avtale med din bank. Har du det ikke? Da kan du <a href="#"> bestille her</a></p>
@@ -423,7 +423,7 @@
   		    <input maxlength="8" class="has-submit bottom-margin-30 width-50" placeholder="8 siffer" onKeyPress="return numbersonly(this,event)">
   		    <h4>Personlig passord</h4>
   		    <input type="password" class="has-submit bottom-margin-30 width-75" placeholder="">
-            <button type="submit" class="stb-btn stb-form is-submit">Send meg engangspassord</button>
+            <button type="submit" class="stb-btn stb-form is-submit" onclick="event.preventDefault(); window.location ='login-step-loggedin.html'">Send meg engangspassord</button>
           </div>
         </form>
         <p> For å kunne benytte seg av BankID må du ha opprettet en avtale med din bank. Har du det ikke? Da kan du <a href="#"> bestille her</a></p>
