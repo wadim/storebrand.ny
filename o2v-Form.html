@@ -194,7 +194,6 @@
     padding-right: 6px;
   }
 
-
 </style>
 <script type="text/javascript">
 
@@ -535,7 +534,7 @@ $(document).ready(function(){
   var personOpplysningerFields = {
     birthNumber: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#birthNumber-message',
       validators: {
         callback: idValidator
       }
@@ -543,7 +542,7 @@ $(document).ready(function(){
     },
     firstNamePerson: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#firstNamePerson-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi et fornavn!'
@@ -553,7 +552,7 @@ $(document).ready(function(){
     },
     lastNamePerson: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#lastNamePerson-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span>  Oppgi et etternavn!'
@@ -563,7 +562,7 @@ $(document).ready(function(){
     },
     emailPerson: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#emailPerson-message',
       validators: {
         emailAddress: {
           message: 'Dette er ikke en gyldig email adresse'
@@ -576,7 +575,7 @@ $(document).ready(function(){
     },
     reEmailPerson: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#reEmailPerson-message',
       validators: {
         emailAddress: {
           message: 'Dette er ikke en gyldig email adresse'
@@ -593,7 +592,7 @@ $(document).ready(function(){
     },
     telephonePerson: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#telephonePerson-message',
       validators: {
         stringLength: {
           min: 8,
@@ -611,7 +610,7 @@ $(document).ready(function(){
     },
     bankAccount: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#bankAccount-message',
       validators: {
         stringLength: {
           min: 11,
@@ -629,7 +628,7 @@ $(document).ready(function(){
     },
     poliseNumber: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#poliseNumber-message',
       validators: {
         stringLength: {
           min: 7,
@@ -647,7 +646,7 @@ $(document).ready(function(){
     },
     birthNumberTable: {
       trigger: 'blur',
-      container: '.info-message',
+      container: '#birthNumberTable-message',
       validators: {
         trigger: 'blur',
         container: '.info-message',
@@ -660,7 +659,7 @@ $(document).ready(function(){
   var oppsummeringFields ={
     confirm:{
       threshold: 3,
-      container: '.info-message',
+      container: '#confirm-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må bekrefte for å kunne sende inn sjema.'
@@ -669,7 +668,7 @@ $(document).ready(function(){
     },
     acceptEmail:{
       threshold: 3,
-      container: '.info-message',
+      container: '#acceptEmail-message',
       validators: {
         notEmpty: {
           message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Du må godkjenne for å kunne sende inn sjema.'
@@ -689,16 +688,16 @@ $(document).ready(function(){
     },
     group: '.stb-form-group',
     fields: validationFields
-  }).on('error.form.bv', function(e) {
+  }).on('success.form.bv', function(e) {
             // Prevent form submission
             e.preventDefault();
 
             var $form        = $(e.target),
-                    validator    = $form.data('bootstrapValidator'),
-                    submitButton = validator.getSubmitButton();
+            validator    = $form.data('bootstrapValidator'),
+            submitButton = validator.getSubmitButton();
 
             // Do whatever you want here ...
-    });
+          });
 
   $('.datePicker')
           .on('dp.change dp.show', function(e) {
@@ -1442,8 +1441,8 @@ $(window).scroll(function(event){
 
 <div class="container stbcolor-secondary sixth">
 
-<form id="skademelding" class="validateForm" role="form" method="post">
-<section id="omTapet" class="stepPanel">
+<form id="skademelding" class="stb-form validateForm" role="form">
+<section id="omTapet" class="stepPanel active">
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       <h2>Om tapet/skaden</h2>
@@ -1502,8 +1501,8 @@ $(window).scroll(function(event){
       <label>Var det utenforstående vitne(r) til hendelsen?</label>
       <span id="lossWitness-message" class="help-block"></span>
       <div class=" stb-form-group al checkbox">
-        <input type="radio" name="lossWitness" id="lossWitnessYes"  value="Yes" class="stb-radio"><label for="lossWitnessYes"class="stb-custom-input">Ja</label>
-        <input type="radio" name="lossWitness" id="lossWitnessNo" value="No" class="stb-radio" ><label for="lossWitnessNo" class="stb-custom-input">Nei</label>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="lossWitness" id="lossWitnessYes"  value="Yes" class="stb-radio"><label for="lossWitnessYes"class="stb-custom-input">Ja</label></div>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="lossWitness" id="lossWitnessNo" value="No" class="stb-radio" ><label for="lossWitnessNo" class="stb-custom-input">Nei</label></div>
       </div>
 
       <hr>
@@ -1621,7 +1620,7 @@ $(window).scroll(function(event){
     </div>
   </div>
 </section>
-<section id="omReisen" class="stepPanel active">
+<section id="omReisen" class="stepPanel">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2>Om reisen</h2>
@@ -1713,7 +1712,7 @@ $(window).scroll(function(event){
       <span id="damagesLately-message" class="help-block"></span>
       <div class="stb-form-group al checkbox">
         <div class="radio" style="display: inline-block;"><input type="radio" name="damagesLately" id="damagesLatelyYes" value="Yes" class="stb-radio"><label for="damagesLatelyYes" class="stb-custom-input">Ja</label></div>
-          <div class="radio" style="display: inline-block;"><input type="radio" name="damagesLately" id="damagesLatelyNo" value="No" class="stb-radio" ><label for="damagesLatelyNo" class="stb-custom-input">Nei</label></div>
+        <div class="radio" style="display: inline-block;"><input type="radio" name="damagesLately" id="damagesLatelyNo" value="No" class="stb-radio" ><label for="damagesLatelyNo" class="stb-custom-input">Nei</label></div>
       </div>
 
       <div id="insurancePayment" class="well" style="display: none;">
@@ -1760,50 +1759,49 @@ $(window).scroll(function(event){
       <h3>Hvem står forsikringen på?</h3>
 
       <label>Fødselsnummer</label>
+      <span id="birthNumber-message" class="help-block"></span>
       <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="birthNumber" placeholder="11 siffer" />
       </div>
 
       <label>Fornavn</label>
+      <span id="firstNamePerson-message" class="help-block"></span>
       <div class="stb-form-group al text-area stb-input-group-md">
-        <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="firstNamePerson"/>
       </div>
 
       <label>Etternavn</label>
+      <span id="lastNamePerson-message" class="help-block"></span>
       <div class="stb-form-group al text-area stb-input-group-md">
-        <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="lastNamePerson"/>
       </div>
 
       <label>E-post</label>
+      <span id="emailPerson-message" class="help-block"></span>
       <div class="stb-form-group al text-area stb-input-group-md">
-        <span class="help-block info-message"></span>
         <input type='email' class="form-control" name="emailPerson"/>
       </div>
 
       <label>Gjenta e-post</label>
+      <span id="reEmailPerson-message" class="help-block"></span>
       <div class="stb-form-group al text-area stb-input-group-md">
-        <span class="help-block info-message"></span>
         <input type='email' class="form-control" name="reEmailPerson" />
       </div>
 
       <label>Telefon</label>
+      <span id="telephonePerson-message" class="help-block"></span>
       <div class="stb-form-group al text-area stb-input-group-md">
-        <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="telephonePerson" />
       </div>
 
       <label>Kontonummer</label>
+      <span id="bankAccount-message" class="help-block"></span>
       <div class="stb-form-group al text-area stb-input-group-md">
-        <span class="help-block info-message"></span>
         <input type='text' class="form-control" name="bankAccount" placeholder="11 siffer" />
       </div>
 
       <label>Polisenummer<span class="petit"> (valgfritt)</span></label>
       <div class="stb-form-group al text-area">
-        <span class="help-block info-message"></span>
         <input type='text' class="form-control" placeholder="7 siffer" />
       </div>
 
@@ -1811,8 +1809,8 @@ $(window).scroll(function(event){
       <h3>Hvem var utsatt for hendelsen?</h3>
 
       <label>Oppgi de som opplevde å få gjenstanden(e) skadet</label>
+      <span id="personAffected-message" class="help-block"></span>
       <div class="stb-form-group al checkbox">
-        <span class="help-block info-message"></span>
         <input type="radio" id="yourself" value="Yourself" name="personAffected" onclick="fillOutPerson();$('#affectedPerson').hide();" class="stb-radio"><label for="yourself" class="stb-custom-input">Du som melder fra om tyveriet</label>
         <input type="radio" id="andre" value="Andre" name="personAffected" onclick="$('#affectedPerson').show();" checked="checked" class="stb-radio" ><label for="andre" class="stb-custom-input">Andre</label>
       </div>
@@ -1824,20 +1822,20 @@ $(window).scroll(function(event){
       <div id="affectedPersons" class="well">
 
         <label>Fødselsnummer</label>
+        <span id="birthNumberTable-message" class="help-block"></span>
         <div class="stb-form-group al input-group">
-          <span class="help-block info-message"></span>
           <input id="birthNumberTable" type='text' class="form-control" name="birthNumberTable" placeholder="11 siffer" />
         </div>
 
         <label>Fornavn</label>
+        <span id="firstNameTable-message" class="help-block"></span>
         <div class="stb-form-group al input-group stb-input-group-sm">
-          <span class="help-block info-message"></span>
           <input id="firstNameTable" type='text' class="form-control" name="firstNameTable"/>
         </div>
 
         <label>Etternavn</label>
+        <span id="lastNameTable-message" class="help-block"></span>
         <div class="stb-form-group al input-group stb-input-group-sm">
-          <span class="help-block info-message"></span>
           <input id="lastNameTable" type='text' class="form-control" name="lastNameTable"/>
         </div>
 
@@ -1972,20 +1970,24 @@ $(window).scroll(function(event){
         <li class="list-group-item showMore stbcolor-gray third"><a><span class="glyphicon glyphicon-chevron-down"></span> Vis flere detaljer</a></li>
       </ul>
 
-      <div class="stb-form-group al checkbox">
+      <div class="stb-form-group al checkbox" style="width:100%;">
         <span class="help-block info-message"></span>
-        <input class="stb-checkbox" id="confirmInfo" name="confirm" type="checkbox" />
-        <label class="stb-custom-input" for="confirmInfo"> Jeg bekrefter at alle opplysningene jeg har oppgitt er korrekte.</label><br>
+        <div class="checkbox">
+          <input class="stb-checkbox" id="confirmInfo" name="confirm" type="checkbox" />
+          <label class="stb-custom-input" for="confirmInfo" style="margin: 0;"> Jeg bekrefter at alle opplysningene jeg har oppgitt er korrekte.</label>
+        </div>
         <p class="petit">
           Den som bevisst gir uriktige eller ufullstendige opplysninger i forbindelse med skadeoppgjør, kan tape enhver rett etter forsikringsavtalen.
           Skaden vil bli meldt til Forsikringsselskapenes sentrale skaderegister.
         </p>
       </div>
 
-      <div class="stb-form-group al checkbox">
+      <div class="stb-form-group al checkbox" style="width:100%;">
         <span class="help-block info-message"></span>
-        <input class="stb-checkbox" id="acceptEmail" name="acceptEmail" type="checkbox"  />
-        <label for="acceptEmail"> Jeg godtar at e-postadressen jeg har oppgitt benyttes i videre dialog rundt skademeldingen.</label><br>
+        <div class="checkbox">
+          <input class="stb-checkbox" id="acceptEmail" name="acceptEmail" type="checkbox"  />
+          <label for="acceptEmail" style="margin: 0;"> Jeg godtar at e-postadressen jeg har oppgitt benyttes i videre dialog rundt skademeldingen.</label>
+        </div>
       </div>
     </div>
   </div>
@@ -2030,7 +2032,7 @@ $(window).scroll(function(event){
 <div id="navigationButtons" class="row">
   <div class="col-md-10 col-md-offset-1">
     <div class="stb-form-group al" >
-      <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left transparent-btn"  onclick=" ">Tilbake</a>
+      <a id="backButton" class="stb-btn stb-btn-lg secondary pull-left transparent-btn">Tilbake</a>
       <button id="nextButton" type="submit" class="stb-btn stb-btn-lg submitButton navButton">Neste</button>
       <hr>
       <a class="stb-btn stb-btn-lg secondary cancel-btn" onclick="cancelSubmitForm()"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a>

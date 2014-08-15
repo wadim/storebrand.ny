@@ -109,6 +109,33 @@
     color: @stb-gray-fourth;
   }
 
+  button:disabled{
+    background-color: @stb-gray-third !important;
+    color: @stb-primary-black;
+    cursor: not-allowed;
+
+    &:hover, &:active, &:focus {
+      // No change for disabled buttons
+    }
+  }
+
+}
+
+.stb-form{
+  button:disabled{
+    background-color: @stb-gray-third !important;
+    color: @stb-primary-black;
+    cursor: not-allowed;
+
+    &:hover, &:active, &:focus {
+      // No change for disabled buttons
+    }
+  }
+
+  input[type=checkbox].stb-checkbox {
+    display: block !important;
+    visibility: hidden;
+  }
 }
 
 /***************************************************
