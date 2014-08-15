@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>storebrand.ny 0.31</title>
+  <title>storebrand.ny 0.314159265358979</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -334,19 +334,42 @@
       <div class="col-md-12 column">
         <div class="stb-box banner">
           <div class="text">
-            <h2>Storebrand.ny version 0.31</h2>
+            <h2>Storebrand.ny - Version <span class="fraction">&pi;/10</span></h2>
+            <style>
+            .fraction, .top, .bottom {
+              padding: 0 5px;    
+            }
+            .fraction {
+              display: inline-block;
+              text-align: center;
+            }
+            .bottom {
+              border-top: 1px solid #000;
+              display: block;
+            }
+            </style>
+           
+            <script type="text/javascript">
+            $('.fraction').each(function(key, value) {
+              $this = $(this)
+              var split = $this.html().split("/")
+              if( split.length == 2 ){
+                $this.html('<span class="top">'+split[0]+'</span><span class="bottom">'+split[1]+'</span>')
+              }    
+            });
+            </script>
             <p>
-              Examples and Web manual as of August 13 2014.
+              Web manual and examples as of August 15 2014.
             </p>           
             <p>
               This is some of the new stuff: 
             </p>
             <ul class="stb">
-              <li>web manual: new text decoration on links</li>
-              <li>a more functional search with typeahead</li>
-              <li>a new search results page, filters are removed and we use scroll instead of pagination</li>
-              <li>a new mobile menu suggestion</li>
-              <li style="background: #b0dfdb;">our brand new color, sky...</li>
+              <li>web manual: new full-screen modal thingy</li>
+              <li>web manual: listgroup as an alternative to two-column tables</li>
+              <li>adjustments to new mobile menu suggestion</li>
+              <li>updated form element examples with Bootstrap Validator (page, not part of web manual yet!)</li>
+              <li>improved URL presentation on search results page (mobile-friendly)</li>
             </ul>
             <p class="top-padding-20">
               Example pages: 
@@ -359,12 +382,24 @@
               <li><a href="themepage-with-full-navigation.html">Theme page</a></li>
               <li><a href="articlepage-with-linklists.html">Article page</a></li>
               <li><a href="search-results.html?action=search&q=Bank">Search results page</a></li>
+              <li><a href="attention-grabber.html">Full-screen modal example</a></li>              
               <li><a href="mobilemenu-sliding.html">Alternative mobile menu (only shown on narrow screens)</a></li>
-              
+              <li><a href="o2v-Form.html">Early example of form with validations</a></li>
+              <li><a href="asset-management.html">Attempt at using category and article templates for Asset Management</a></li>
               <li>Pages served from CMS are incoming, early example <a href="http://client.stb.intra/cms/site/4/forside/produktside-eksempel">here</a>.</li>
             </ul>           
             <p class="top-padding-20">
               Peace out.
+            </p>
+            <hr />
+            <p>
+              Previous versions: <br />
+              - <a href="../0.31/index.html">0.31</a><br />
+              - <a href="../0.29/index.html">0.29</a><br />
+              - <a href="../0.28/index.html">0.28</a><br />
+              - <a href="../0.25/index.html">0.25</a><br />
+              - <a href="../0.2/index.html">0.2</a><br />
+              
             </p>
           </div>
           
