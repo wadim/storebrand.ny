@@ -422,7 +422,8 @@ $("document").ready(function(){
 
   //Hotkey for search
   if($('.typeahead').length){
-    $(document).bind('keydown', 'shift+s', function(){$('.typeahead').click();});
+
+    $(document).bind('keydown', 'shift+s', function(event){event.preventDefault();$('.typeahead').click();});
   }
 
   //Hotkey for bottom
