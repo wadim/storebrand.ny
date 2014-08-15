@@ -9,6 +9,7 @@ var animating;
 var animSpeed;
 var searchIsRunning=false;
 var hitcounter=0;
+var hasURL= false;
 
 $(document).ready(function(){
   // Make search in menu header visible 
@@ -116,6 +117,7 @@ function initTypeahead(){
     }
     if (data.url) {
       //Go to the defined URL for the current search keyword
+      hasURL = true;
       window.location.href = data.url;
     }
     $('.typeahead').typeahead('close');
@@ -127,11 +129,11 @@ function initTypeahead(){
 
   // Call checkSearch when hitting Enter while in the input area
   $("input.searchbox").keydown(function(event){
-	if(!data.url){
-    if(event.which == 13){   
-      checkSearch( this.value );
-      return false;
-    }
+	if(!hasURL){
+      if(event.which == 13){   
+        checkSearch( this.value );
+        return false;
+      }
 	}
   });
 
