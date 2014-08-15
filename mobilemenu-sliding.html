@@ -7,16 +7,17 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/stb-main.css">
   <link rel="stylesheet" type="text/css" href="css/yamm.css">
+  <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
   <script type="text/javascript" src="js/dist/jquery.min.js"></script>
   <script type="text/javascript" src="js/dist/jquery.color-2.1.2.min.js"></script>
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
-  <script type="text/javascript" src="js/dist/jquery-ui-1.11.0.js"></script><!-- Needed for sliding mobile menu! -->
+  <script type="text/javascript" src="js/dist/jquery-ui-1.11.0.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script><!-- Needed for shortcuts! -->
   <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>
   <script type="text/javascript" src="data/searchdata.js"></script>
   <script type="text/javascript" src="js/search.js"></script>
-  <script type="text/javascript" src="js/stb-common.js"></script>
+  <script type="text/javascript" src="js/stb-common.js"></script>  
   <script type="text/javascript" src="js/stb-page-padding.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
@@ -214,7 +215,7 @@
                         <a href="#" onclick="menuhandler($(this),'#stb-menu-topp', true);"> <b class="menu-back-top pull-left"><span style="position: relative; top: 12px; font-size: 15px">Til start</span></b></a>
                       </div>
                       </li>
-                      <li><a class="arrowRight" href="themepage-with-full-navigation.html"><b>Bilforsikring</b></a></li>
+                      <li><a class="arrowRight" href="productpage-with-full-navigation.html"><b>Bilforsikring</b></a></li>
                       <li><a class="arrowRight" href="#">Husforsikring</a></li>
                       <li><a class="arrowRight" href="#">Innboforsikring</a></li>
                       <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-insurance-things-other');">Annet</a></li>
@@ -304,7 +305,7 @@
 
                     <ul class="nav navbar-nav" id="stb-menu-pension" style="display:none;">
                       <li><a href="#" onclick="menuhandler($(this),'#stb-menu-topp',true);">&nbsp;<b class="menu-back pull-right">Tilbake</b></a></li>
-                      <li><a class="arrowRight" href="#">Alt om pensjon</a></li>                         
+                      <li><a class="arrowRight" href="themepage-with-full-navigation.html">Alt om pensjon</a></li>                         
                       <li><a class="arrowRight" href="#">Begynn sparing</a></li>
                       <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-pension-learn');">Lær om pensjon</a></li>
                     </ul>
@@ -316,6 +317,7 @@
                       </div>
                       </li>                  
                       <li><a class="arrowRight" href="#">Hva får du?</a></li>
+                      <li><a class="arrowRight" href="themepage-with-full-navigation.html">Ekstrapensjon</a></li>
                       <li><a class="arrowRight" href="#">IPS</a></li>
                       <li><a class="arrowRight" href="#">Fripolise</a></li>
                       <li><a class="arrowRight" href="#">Pensjonskapitalbevis</a></li>
@@ -394,8 +396,8 @@
   <footer class="stbcolor-primary first stb-footer">
     <div class="row toTop">
       <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" >Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
-        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right">Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIcon"></span></a>
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIconMobile"></span></a>
       </div>
     </div>
   
@@ -466,9 +468,9 @@
         </div>
       </div>
     </div>
-  
-  </footer>  
+  </footer>
   <!-- End responsive footer -->
+  
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
