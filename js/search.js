@@ -466,7 +466,7 @@ function displaySearchResult(xml) {
       
       var linkDecoration = "";
       if (strippedU.indexOf(".pdf") > 0) {
-        linkDecoration = ' class="pdf document" ';
+        linkDecoration = ' class="pdf_document" ';
       }
 
       var resultMarkup = "";
