@@ -33,6 +33,11 @@
     // Needs specification because stb-btn:hover has default color
     color: @stb-primary-white;
   }
+
+  &.shimmer{
+    -webkit-animation: shimmerGreen 2s ease-in-out 0s infinite;
+    animation-name: shimmerGreen 2s ease-in-out 0s infinite;
+  }
   
   &.disabled {
     background-color: @stb-gray-third;
@@ -64,6 +69,11 @@
         border-color: @stb-primary-white;
       }
     }
+
+    &.shimmer{
+      -webkit-animation: shimmerTransparent 2s ease-in-out 0s infinite;
+      animation-name: shimmerTransparent 2s ease-in-out 0s infinite;
+    }
     
   }
   
@@ -74,26 +84,14 @@
     &:hover, &:focus, &:active {
       .stbcolor-primary.first .darker;
     }
-    
+    &.shimmer{
+      -webkit-animation: shimmerRed 2s ease-in-out 0s infinite;
+      animation-name: shimmerRed 2s ease-in-out 0s infinite;
+    }
   }  
 
   &.link-icon {
     font-weight: normal;
-  }
-
-  &.shimmerGreen{
-    -webkit-animation: shimmerGreen 2s ease-in-out 0s infinite;
-    animation-name: shimmerGreen 2s ease-in-out 0s infinite;
-  }
-
-  &.shimmerRed{
-    -webkit-animation: shimmerRed 2s ease-in-out 0s infinite;
-    animation-name: shimmerRed 2s ease-in-out 0s infinite;
-  }
-
-  &.shimmerTransparent{
-    -webkit-animation: shimmerTransparent 2s ease-in-out 0s infinite;
-    animation-name: shimmerTransparent 2s ease-in-out 0s infinite;
   }
 
 }
