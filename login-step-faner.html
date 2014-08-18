@@ -62,16 +62,6 @@
       border: 1px solid #E6E6E6;
     }
 
-
-    .login button.is-submit {
-      padding: 20px;
-      height: 60px !important;
-      top: 0;
-      left: 0;
-      width: 50%;
-      max-width: 100%;
-    }
-
     .login input {
       height: 50px;
       width: inherit;
@@ -108,65 +98,58 @@
         jQuery('#cookieFooter').hide();
       }
 
-      /* Verify National Identity Number ***********************************************/
-      function verifyIDNumber(nr) {
-        var pn = new Array();
-        var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
-        var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
-        for(var i=0; i<nr.length; i++) {
-          pn[i] = nr.charAt(i);
-        }
-        var k1=0;
-        for(var i=0; i<v1.length; i++) {
-          k1 += pn[i]*v1[i];
-        }
-        var k2=0;
-        for(var i=0; i<v2.length; i++) {
-          k2 += pn[i]*v2[i];
-        }
-        if (k1%11==0 && k2%11==0 ) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-
-      var idValidator = {
-        message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Fødselsnummeret er ikke gyldig!',
-        callback: function(value, validor){
-          return verifyIDNumber(value);
-        }
-      };
-
-      $('#start-login-form').bootstrapValidator({
+      $('#bankID-form').bootstrapValidator({
         message: 'This value is not valid',
-        live: 'disabled',
         feedbackIcons: {
           valid: 'glyphicon glyphicon-ok',
           invalid: 'glyphicon glyphicon-remove',
           validating: 'glyphicon glyphicon-refresh'
         },
-        fields: {
-          birthNumber: {
-            container: '.info-message',
-            validators: {
-              callback: idValidator,
-              notEmpty: {
-                message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi fødselsnummer'
-              }
+        fields: { engangskode: {
+          container: '#bankID-form .info-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi engangskode'
             }
-
           }
         }
-      }).on('success.form.bv', function(e) {
-                // Prevent form submission
-                e.preventDefault();
+        }
+      });
 
-                var $form        = $(e.target),
-                        validator    = $form.data('bootstrapValidator'),
-                        submitButton = validator.getSubmitButton();
+      $('#bankID-mobil-form').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: { mobilnummer: {
+          container: '#bankID-mobil-form .info-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi mobilnummer'
+            }
+          }
+        }
+        }
+      });
 
-                window.location = "login-step-kundevalg.html"
+      $('#engangskode-form').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: { telefonnummer: {
+          container: '#engangskode-form .info-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi mobilnummer'
+            }
+          }
+        }
+        }
       });
 
     });
@@ -495,15 +478,68 @@
   <div class="row">
     <div class="col-md-12 column">
       <h1>Logg inn</h1>
-      <form id="start-login-form" class="stb-form-inline" role="form">
-        <label>Skriv inn ditt fødselsnummer </label><br>
-        <span class="help-block info-message"></span>
-        <div class="form-group stb-form-group">
-          <input type="number" class="" name="birthNumber" style="width: 350px">
-        </div>
-        <button class="stb-btn stb-form">Logg inn</button>
-      </form>
+      <ul class="nav nav-tabs nav-justified" role="tablist" style="background-color: #CCCCCC">
+        <li class="active"><a class="tab-link" href="#bankID" role="tab" data-toggle="tab"><span>BankID</span></a></li>
+        <li><a class="tab-link" href="#bankIDMob" role="tab" data-toggle="tab">BankID på mobil</a></li>
+        <li><a class="tab-link" href="#engangSMS" role="tab" data-toggle="tab">Engangskode på SMS</a></li>
+      </ul>
       <!-- Tab panes -->
+      <div class="tab-content" style="background-color: #E6E6E6">
+        <div class="tab-pane active top-padding-20 bottom-padding-40" id="bankID" style="margin-left: 40px;">
+          <form  id="bankID-form" class="stb-form-inline" role="form">
+            <h2>BankID</h2>
+            <p>Benytt engangskode fra din kodebrikke</p>
+            <label>EngangsKode</label><br>
+            <span class="help-block info-message"></span>
+            <div class="form-group stb-form-group">
+              <input name="engangskode" type="number" class="form-control" placeholder="6 siffer" style="width: 180px;">
+            </div>
+            <img src="images/bankID.png" class="img-responsive" alt="Responsive image" style="display: inline-block; width:100px; margin-left: 10px;">
+            <br>
+            <button class="stb-btn stb-form" onclick="window.location ='login-step-loggedin.html'">Logg inn med BankID</button>
+          </form>
+        </div>
+        <div class="tab-pane top-padding-20 bottom-padding-40" id="bankIDMob" style="margin-left: 40px;">
+          <form id="bankID-mobil-form" class="stb-form-inline" role="form">
+            <h2>BankID på mobil</h2>
+            <p>Bruk mobilen til å logge inn</p>
+            <label>Mobilnummer</label><br>
+            <span class="help-block info-message"></span>
+            <div class="form-group stb-form-group">
+              <input name="mobilnummer" type="tel" class="form-control" placeholder="8 siffer" style="width: 180px;">
+            </div>
+            <img src="images/bankID.png" class="img-responsive" alt="Responsive image" style="display: inline-block; width:100px; margin-left: 10px;">
+            <br>
+            <button class="stb-btn stb-form" onclick="window.location ='login-step-loggedin.html'">Logg inn med BankID på mobil</button>
+          </form>
+        </div>
+        <div class="tab-pane top-padding-20 bottom-padding-40" id="engangSMS" style="margin-left: 40px;">
+          <form id="engangskode-form" class="stb-form-inline" role="form">
+            <h2>Engangskode på SMS</h2>
+            <p>Bruk mobilen for å logge inn</p>
+            <div class="row">
+              <div class="col-md-2">
+                <label>Mobilnummer</label><br>
+                <span class="help-block info-message"></span>
+                <div class="form-group stb-form-group">
+                  <input name="telefonnummer" type="tel" class="form-control" placeholder="8 siffer" style="width: 180px;">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label>Personlig passord</label><br>
+                <span class="help-block info-message"></span>
+                <div class="form-group stb-form-group">
+                  <input type="password" class="" style="width: 350px">
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <button class="stb-btn stb-form" onclick="window.location ='login-step-loggedin.html'">Send meg engangspassord</button>
+          </form>
+
+        </div>
+      </div>
     </div>
   </div>
 
