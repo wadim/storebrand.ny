@@ -11,10 +11,11 @@
   border: none;
   color: @stb-primary-white;
   .stbcolor-secondary.third;
-  height: 30px;
+  height: 48px;
   border-radius: 0px;
-  font-weight: bold; 
-  padding: 0 10px;
+  font-size: 14px; //Mobile
+  font-weight: bold;
+  padding: 0 12px;
   min-width: 100px;
   .box-shadow(none);
   
@@ -24,7 +25,7 @@
   cursor: pointer;
   
   // Smooth transition on hover:
-  .transition(all .025s ease-in-out);
+  .transition(all .5s ease-in-out);
   transition-property: background-color, color;
   
   &:hover, &:focus, &:active {
@@ -52,6 +53,7 @@
       color: @stb-primary-black;
       &:hover, &:focus, &:active {
         background-color: rgba(0, 0, 0, 0.1);
+        border-color: @stb-primary-black;
       }
     }
 
@@ -59,6 +61,7 @@
       color: @stb-primary-white;
       &:hover, &:focus, &:active {
         background-color: rgba(0, 0, 0, 0.2);
+        border-color: @stb-primary-white;
       }
     }
     
@@ -78,4 +81,12 @@
     font-weight: normal;
   }
 
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .stb-btn{
+    font-size: 16px;
+    padding: 0 24px;
+  }
 }
