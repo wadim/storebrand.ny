@@ -81,6 +81,21 @@
     font-weight: normal;
   }
 
+  &.shimmerGreen{
+    -webkit-animation: shimmerGreen 2s ease-in-out 0s infinite;
+    animation-name: shimmerGreen 2s ease-in-out 0s infinite;
+  }
+
+  &.shimmerRed{
+    -webkit-animation: shimmerRed 2s ease-in-out 0s infinite;
+    animation-name: shimmerRed 2s ease-in-out 0s infinite;
+  }
+
+  &.shimmerTransparent{
+    -webkit-animation: shimmerTransparent 2s ease-in-out 0s infinite;
+    animation-name: shimmerTransparent 2s ease-in-out 0s infinite;
+  }
+
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -90,3 +105,41 @@
     padding: 0 24px;
   }
 }
+
+@-webkit-keyframes shimmerGreen{
+  0% {background-color: #6C8524}
+  50% {background-color: #576B1D}
+  100% {background-color: #6C8524}
+}
+
+@keyframes shimmerGreen{
+  0% {background-color: #6C8524}
+  50% {background-color: #576B1D}
+  100% {background-color: #6C8524}
+}
+
+@-webkit-keyframes shimmerRed{
+  0% {background-color: #DA291C}
+  50% {background-color: #BF1D19}
+  100% {background-color: #DA291C}
+}
+
+@keyframes shimmerRed{
+  0% {background-color: #DA291C}
+  50% {background-color: #BF1D19}
+  100% {background-color: #DA291C}
+}
+
+
+@-webkit-keyframes shimmerTransparent{
+  0% {background-color: @stb-primary-white}
+  50% {background-color: rgba(0, 0, 0, 0.1);}
+  100% {background-color:  @stb-primary-white}
+}
+
+@keyframes shimmerTransparent{
+  0% {background-color: @stb-primary-white}
+  50% {background-color: rgba(0, 0, 0, 0.1);}
+  100% {background-color:  @stb-primary-white}
+}
+

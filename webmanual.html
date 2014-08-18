@@ -1384,9 +1384,27 @@ $('ul[data-widget=stbFaq]').stbFaq();
               <p>A red button on a red background is of course not allowed.</p>
             </div>
 
-          </div> <!-- /row --> 
-          
+          </div> <!-- /row -->
+          <div class="row top-padding-20">
+            <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
+              <strong class="clearfix">Shimmering Primary</strong>
+              <button class="stb-btn shimmerGreen">Primary action</button><br /><br />
+              <code>Class: <br/>  stb-btn</code><br /><br />
+            </div>
+            <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
+              <strong class="clearfix">Shimmering Transparent</strong>
+              <button class="stb-btn transparent light shimmerTransparent">Cancel</button><br /><br />
+              <code>Class: <br/>  stb-btn</code><br /><br />
+            </div>
+            <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
+              <strong class="clearfix">Shimmering Warning</strong>
+              <button class="stb-btn alarm shimmerRed">Warning</button><br /><br />
+              <code>Class: <br/>  stb-btn</code><br /><br />
+            </div>
+
+          </div>
         </div>
+
       </div> <!-- /Buttons row -->
       
       <hr class="top-margin-30" />  
@@ -1412,34 +1430,13 @@ $('ul[data-widget=stbFaq]').stbFaq();
             </div>
 
           <p>
-            If that's too tame, you can always play with styling that fits your image to create a caption put straight onto the image. 
-            Size, color, positioning and other details regarding image and caption must most likely be locally defined per use case. See source code on this page for an example of how it can be done.
+            An ordinary image.
           </p>
-          <figure class="snowpic">
+          <figure>
             <img src="images/snow.gif" class="img-responsive" alt="Let it snow..." />
-            <figcaption class="myCaption">
-              A lot of people like snow. I find it to be an unnecessary freezing of water.
+            <figcaption class="imageText">
+              <p class="petit">A lot of people like snow. I find it to be an unnecessary freezing of water.</p>
             </figcaption>
-            <style>
-              figure.snowpic {
-                max-width: 720px;
-                position: relative;
-              }
-            
-              figure.snowpic > figcaption.myCaption {
-                text-shadow: 0 1px 2px #000;
-                z-index: 2;
-                position: absolute;
-                bottom: 0;
-                height: 60px;
-                width: 100%;
-                margin: 0;
-                padding: 10px;
-                font-size: 16px;
-                color: #fff;
-                background-color: rgba(0,0,0,0.3);            
-              }
-            </style>
           </figure>
 
         </div>
@@ -1453,7 +1450,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 &lt;figure&gt;
   &lt;img src=&quot;images/snow.gif&quot; class=&quot;img-responsive&quot; /&gt;
   &lt;figcaption class=&quot;imageText&quot;&gt;
-    Figure caption text here.
+    &lt;p class=&quot;petit&quot;&gt; Figure caption text here. &lt;p /&gt;
   &lt;/figcaption&gt;
 &lt;/figure&gt;</pre>
         </div>
