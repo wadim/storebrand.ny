@@ -44,7 +44,10 @@
 
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
-      //event.target.playVideo();
+      $('.video-label').after('<button id="playVideoBtn" class="stb-btn transparent light shimmer hidden-sm hidden-xs">Spill av video <span class="glyphicon glyphicon-play"></span></button>');
+      $('#playVideoBtn').click(function(){
+        playTheVideo();
+      });
     }
 
     // 5. The API calls this function when the player's state changes.
@@ -67,13 +70,6 @@
       player.playVideo();
     }
 
-    $(document).ready(function(){
-
-      $('#playVideoBtn').click(function(){
-          playTheVideo();
-      });
-
-    });
   </script>
 
   <!-- Start JavaScript for this page only -->
@@ -412,8 +408,8 @@
     <div class="col-md-6">
       <div class="stb-banner">
         <h1 class="stb-font">Video eksempel </h1>
-          <h3>Her er en video.</h3>
-          <button id="playVideoBtn" class="stb-btn transparent light shimmer hidden-sm hidden-xs">Spill av video <span class="glyphicon glyphicon-play"></span></button>
+          <h3 class="video-label">Her er en video.</h3>
+
       </div>
     </div>
     <div class="col-md-6">
