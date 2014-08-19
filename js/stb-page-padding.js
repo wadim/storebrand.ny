@@ -185,8 +185,8 @@ $(document).ready(function() {
 
 // Handling cookie note
 $(document).ready(function(){
-  var acceptCookies = readCookie('acceptCookies');
-  if(acceptCookies!='Yes'){
+  var acceptingCookies = readCookie('acceptCookies');
+  if(acceptingCookies!='Yes'){
     $('#cookieNote').show();
   }
 });

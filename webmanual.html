@@ -414,6 +414,10 @@
           <p>
             You can use the same pattern for padding, e.g. <strong>class="top-padding-50"</strong> gives padding-top of 50 to that element, and you can use the <strong>-mdlg</strong> extension to make it valid only for md and lg width devices.
           </p>
+          <h3>Spacing on the sides</h3>
+          <p>
+            You can add margins and padding on the sides in the same way, and if desired for large and medium screen widths only, using these classes: left-margin-x and left-margin-x-mdlg, where x can be 5, 10 or 20. And you can of course do the same with right-margin, left-padding and right-padding.
+          </p>
           <h3>Usage of width</h3>
           <p>
             There are also classes for setting the width of an element that otherwise would inherit the full width from its parent element. They were introduced in order to prevent clashes between background graphics pulled to the right when contents pulled to the left needs to be responsive.
@@ -1197,6 +1201,45 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div>
       </div>      
       
+      <hr class="top-margin-30" />
+
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Cookie Notice</h2>
+          (Done, text may vary.)
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <p>
+              This is a very specific element that in theory should be on all pages where a customer is likely to enter our site. It is NOT necessary on pages that require authentication, as the notification will have been given prior to reaching them.
+            <p>
+              The notification needs the script acceptCookies() from stb-page-padding.js to function. As long as a cookie "acceptCookies" does not exist and contain the value "Yes", the notification will be displayed upon document.ready.
+            </p>
+            <p>
+              <button class="stb-btn" onclick="$('#cookieNote').toggle('slow');">Toggle notification</button>
+              <script type="text/javascript">
+                createCookie('acceptCookies','Yes', '1000');
+              </script>
+            </p>
+
+            <p>Code needed, placed near bottom of page outside any container:</p>
+<pre class="prettyprint">
+  &lt;div data-spy="affix" class="cookieNote" id="cookieNote"&gt;
+    &lt;div class="cookieClose"&gt;
+      &nbsp;&nbsp;&nbsp;&lt;a title="Lukk" href="#" onclick="acceptCookies(); return false"&gt;&lt;span class="stb-sprite-16 white remove"&gt;&lt;/span&gt;&lt;br /&gt;(Lukk)&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="cookieInfo"&gt;
+      &lt;div class="info"&gt;
+        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. &lt;a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies&lt;/a&gt;.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+            
+          </div>
+        </div>
+      </div>   
+          
       <hr class="top-margin-30" />
       
       <div class="row">
@@ -2835,6 +2878,17 @@ $('ul[data-widget=stbFaq]').stbFaq();
       
     
     </div>
+    
+  <div data-spy="affix" class="cookieNote" id="cookieNote">
+    <div class="cookieClose">
+      &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-16 white remove"></span><br />(Lukk)</a>
+    </div>
+    <div class="cookieInfo">
+      <div class="info">
+        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="https://www.storebrand.no/pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
+      </div>
+    </div>
+  </div> 
     
     <footer class="stbcolor-primary first stb-footer">
     </footer>
