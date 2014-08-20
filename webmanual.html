@@ -789,9 +789,54 @@
     &lt;li class="list-group-item header&gt;Lorem ipsum&lt;/li&gt;
     &lt;li class="list-group-item clickable" rel="http://www.storebrand.no/ny""&gt;...content &lt;/li&gt; 
 &lt;/ul&gt;                          
-</pre> 
+</pre>
 
+          <div class="row">
+            <h3>Expandable lists</h3>
+            <p> The 'summary' class is added to the li elements that should be displayed initially (before expanded).
+            </p>
+            <div class="col-md-6">
+              <ul class="stb-list-group expandable">
+                <li class="list-group-item summary">Fødselsnummer</li>
+                <li class="list-group-item">Fornavn</li>
+                <li class="list-group-item">Etternavn</li>
+                <li class="list-group-item summary">Email </li>
+                <li class="list-group-item summary">Telefon </li>
+                <li class="list-group-item">Kontonummer</li>
+                <li class="list-group-item">Polisenummer</span></li>
+                <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-16 chevron-down"></span> Vis flere detaljer</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="stb-list-group expandable">
+                <li class="list-group-item summary">Type gjenstand</li>
+                <li class="list-group-item"><ul><li class="list-group-item">1</li><li class="list-group-item">2</li></ul></li>
+                <li class="list-group-item">Type gjenstand 2</li>
+                <li class="list-group-item"><ul><li class="list-group-item">1</li><li class="list-group-item">2</li></ul></li>
+                <li class="list-group-item summary">Type gjenstand 3</li>
+                <li class="list-group-item"><ul><li class="list-group-item">1</li><li class="list-group-item">2</li></ul></li>
+                <li class="list-group-item summary">Type gjenstand 4</li>
+                <li class="list-group-item"><ul><li class="list-group-item">1</li><li class="list-group-item">2</li></ul></li>
+                <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-16 chevron-down"></span> Vis flere detaljer</a></li>
+              </ul>
+            </div>
+          </div>
+          <strong>Code:</strong> <br />
+          <pre class="prettyprint">
+&lt;ul class="list-group expandable"&gt;
+    &lt;li class="list-group-item summary"&gt;Fødselsnummer&lt;/li&gt;
+    &lt;li class="list-group-item"&gt;Fornavn&lt;/li&gt;
+    &lt;li class="list-group-item &gt;Etternavn&lt;/li&gt;
+    &lt;li class="list-group-item summary"&gt;Emailr&lt;/li&gt;
+    &lt;li class="list-group-item summary"&gt;Telefon&lt;/li&gt;
+    &lt;li class="list-group-item &gt;Kontonummer&lt;/li&gt;
+    &lt;li class="list-group-item &gt;Polisenummer&lt;/li&gt;
+    &lt;li class="list-group-item showMore stbcolor-secondary fifth"&gt;&lt;a&gt;
+    &lt;span class="stb-sprite-16 chevron-down"/&gt;&lt;/span&gt;Vis flere detaljer&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+</pre>
         </div>
+
 
         <!--New -->
 

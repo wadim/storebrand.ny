@@ -473,3 +473,40 @@ function numbersonly(myfield, e, dec) {
    return false;
 }
 
+//Checks for list groups with .expandable class and makes them expandable.
+$(document).ready(function(){
+  $('ul.stb-list-group.expandable').each(function(index){
+    makeExpandableList($(this),2);
+  });
+
+});
+
+
+
+//Making lists expandable
+function makeExpandableList(selector){
+  initialExpandable(selector);
+
+  var showMore = selector.find('.showMore');
+
+  showMore.click(function() {
+    if(showMore.hasClass('open')){
+      initialExpandable(selector);
+      showMore.find('span').toggleClass('chevron-up red chevron-down');
+    }else{
+      selector.children('li').show(400);
+      showMore.find('span').toggleClass('chevron-up red chevron-down');
+    }
+    showMore.toggleClass('open');
+  });
+}
+
+//Loops through list, showing li elements with summary class, and hides the other li elements
+function initialExpandable(selector){
+  selector.children('li').each(function(index){
+    if(!$(this).is('.summary, .showMore')){
+      $(this).hide(400);
+    }
+  });
+}
+
