@@ -441,6 +441,17 @@ $("document").ready(function(){
 });
 
 
+//Functions for chat choice on minibox
+function openChatChoice(){
+  $('.allContact').slideUp('slow');
+  $('.chatWhat').slideDown('slow');
+}
+function closeChatChoice(){
+  $('.allContact').slideDown('slow');
+  $('.chatWhat').slideUp('slow');
+}
+
+
 //Function to handle only numbers and nothing else in the input field
 
 function numbersonly(myfield, e, dec) {
