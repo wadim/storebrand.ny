@@ -47,7 +47,7 @@
 * lets us change/tune profile without touching any markup at all
 */
 
-// PRIMARY COLORS (stb-red, black, white, charcoal)
+// PRIMARY COLORS (stb-red, black, white)
 .stbcolor-primary {
   &.first {
     background-color: @stb-primary-color;
@@ -67,10 +67,16 @@
 
   &.second {
     background-color: @stb-primary-black;
+    p {
+      color: @stb-primary-white;
+    }
   }
 
   &.third {
     background-color: @stb-primary-white;
+    p {
+      color: @stb-primary-black;
+    }    
   }
 
   }
@@ -99,17 +105,23 @@
 .stbcolor-secondary {
   &.first {
     background-color: @stb-secondary-charcoal;
-     >p {
-    	color: @stb-primary-white;
+    p {
+      color: @stb-primary-white;
     }
   }
   
   &.second {
     background-color: @stb-secondary-moss;
+    p {
+      color: @stb-primary-white;
+    }
   }
 
   &.third {
     background-color: @stb-secondary-forest;
+    p {
+      color: @stb-primary-white;
+    }
     &.darker {
       background-color: @stb-secondary-forest-darker;
     }    
@@ -117,6 +129,9 @@
 
   &.fourth {
     background-color: @stb-secondary-dust;
+    p {
+      color: @stb-primary-white;
+    }
   }
   
   &.fifth {
@@ -137,18 +152,30 @@
 .stbcolor-gray {
   &.first {
     background-color: @stb-gray-first;
+    p {
+      color: @stb-primary-black;
+    }
   }
   
   &.second {
     background-color: @stb-gray-second;
+    p {
+      color: @stb-primary-black;
+    }    
   }
   
   &.third {
     background-color: @stb-gray-third;
+    p {
+      color: @stb-primary-black;
+    }    
   }
   
   &.fourth {
     background-color: @stb-gray-fourth;
+    p {
+      color: @stb-primary-black;
+    }    
   }
   
   &.fifth {
