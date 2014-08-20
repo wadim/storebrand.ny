@@ -21,10 +21,13 @@ ul.accordion {
       position: relative;
 
       &:hover,
-      &:focus,
-      &.open {
+      &:focus {
         text-decoration: none;
         background-color: @stb-gray-first;
+      }
+      &.open {
+        text-decoration: none;
+        background-color: @stb-primary-white;      
       }
 
       // Display open/close icons:
@@ -42,7 +45,7 @@ ul.accordion {
           background: url(../images/stb-sprites/general-sprites.png) no-repeat;
           width: 24px;
           height: 24px;
-          background-position: -300px 0px;
+          background-position: -500px 0px;
           display: inline-block;
           float: right;
         }
