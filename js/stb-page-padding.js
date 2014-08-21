@@ -521,3 +521,35 @@ function initialExpandable(selector){
   });
 }
 
+//Google Analytics eventtagging -- automated for various designelements
+$(document).ready(function(){  
+
+    $('button').bind( "click", function() {
+      var btnTxt = $(this).html();
+      var path = window.location.pathname;
+      //console.log(btnTxt);
+      //console.log(page);
+      ga('send', 'event', path , 'Klikk på knappen', btnTxt);
+    });
+
+    $('.mini.clickable').bind( "click", function() {
+      var boxId = $(this).attr('alt');
+      var path = window.location.pathname;
+      //console.log(boxId);
+      //console.log(path);
+      ga('send', 'event', path , 'Klikk på boksen ', boxId);
+    });
+
+    $('.twister').bind( "click", function() {
+      console.log('faq');
+      var q = $(this).html();
+      var path = window.location.pathname;
+      //console.log(q);
+      //console.log(path);
+      ga('send', 'event', path , 'Klikk på boksen ', q);
+    });
+
+});
+
+
+
