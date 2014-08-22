@@ -370,7 +370,58 @@
   </div>
   <!-- End top of page -->
 
+<style>
+
+.errormessage{
+  display:none;
+}
+.alert{
+  background-color:#DA291C;
+  
+}
+.alert h2,
+.alert p,
+.alert a {
+  color:#FFFFFF;
+}
+.alert a {
+  border-bottom-color: #FFFFFF;
+}
+
+.alert a:hover {
+  color:#E6E6E6;
+  border-bottom-color: #E6E6E6;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function(){  
+  setTimeout(function() {
+     showErrorMsg();
+    }, 1000);
+  });
+ 
+
+function showErrorMsg(){
+  $('.errormessage').toggle('slow');
+}
+
+</script>
+
   <!-- Start actual page contents -->
+<div class="container top-padding-40-mdlg bottom-padding-40 errormessage">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="alert" role="alert">
+            <h2>Vikitig melding</h2>
+            <p>Vi har desverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+        </div>
+    </div>
+  </div>
+</div> 
   
 <div class="category-banner stbcolor-secondary first">
   <div class="container">
@@ -382,11 +433,13 @@
         </div>
       </div>
       <div class="col-md-6 image">
-        <img class="img-responsive" src="images/categorybannerimage.png" alt="category banner image" title="category bannner image" style="width:250px;"/>
+        <img class="img-responsive" src="images/categorybannerimage.png" alt="category banner image" title="category bannner image" style="width:250px;" onclick="showErrorMsg();return false;"/>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <div class="container top-padding-40-mdlg bottom-padding-40">
   <div class="row">
