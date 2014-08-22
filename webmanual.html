@@ -1128,6 +1128,9 @@
    &lt;/div&gt;    
  &lt;/div&gt;                
 </pre>     
+
+           
+
             </div>
           </div>  
 
@@ -1243,19 +1246,80 @@
             </div>
           </div>  
 
+<style>
+.callBackForm{
+  display: none;
+}
+.callBackRecipt{
+  display: none;
+}
+.pillText{
+  line-height: 2.5;
+  padding-left:5px;
+}
+
+a.ChatClosed:hover{
+  cursor:default; ;
+}
+
+div.circle-16 a,
+div.circle-24 a{
+  border-bottom: none;
+}
+</style>
+
+          <div class="row">
+              <h4 style="padding-left:15px;">Small contactelements</h4>
+              <div class="col-md-6">
+                  <p>Done-ish</p>
+                  <p>Can be used seperatly or as a group.</p>
+                  <p>Example for single use under and group to the right/under.</p>
+                  <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a></p>
+                  <p>One more single example</p>
+                  <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a></p>
+              </div>
+              <div class="col-md-6">
+                  <div class="single-contact">
+                      <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white envelope"></span></div><span class="pillText">Skriv til oss</span></a></p>
+                      <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span></a></p>
+                      <p><a href="tel:08880" class="ChatClosed" onclick="return false;"><div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span> <br></a><span class="petit">Stengt. Åpen hverdager 8-16</span></p>
+                      <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a></p>
+                      <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a></p>
+                      <p><a href="#" onclick="callMeSmallToggle();return false;"><div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Vi ringer deg</span>&nbsp;<span id="upDown" class="stb-sprite-16 chevron-down"></span></a>
+                          <div class="stb-form-group callBackForm">
+                              <label for="callMe">Ditt telefonnummer</label>
+                              <br>
+                              <input type="text" id="callMe" placeholder="8 siffer" style="width: 180px;">
+                              <p><a href="#" onclick="callBack();return false"> Ring meg</a></p>
+                          </div>
+                          <div class="callBackRecipt">
+                               <a href="#" onclick="callBackReciptClose();return false;"><br>Vi vil ringe deg på <span id="tlf"></span> innen vår åpningstid.</a>
+                          </div>  
+                       </p>     
+                  </div>
+               </div>   
+            </div>   
+
+          <div class="row">
+            <div class="col-md-10">
+              <h4>Code:</h4>
+              <pre class="prettyprint">
+&lt;p&gt;
+  &lt;a href="tel:08880"&gt;
+    &lt;div class="circle-16 stbcolor-[secondary]-[gray] [first] [third] pull-left"&gt;
+      &lt;span class="stb-sprite-16 white phone"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;span class="pillText"&gt;
+      Ring 08880
+    &lt;/span&gt;
+  &lt;/a&gt;
+&lt;/p&gt;               
+&lt;/pre&gt;  
+
    </div> 
+ </div>
 
-
-        
-
-
-
-
-
-
-
-
-
+<hr>
 
         </div> <!-- /col-md-9 -->
 

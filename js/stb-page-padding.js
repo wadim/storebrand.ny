@@ -552,5 +552,22 @@ $(document).ready(function(){
 
 });
 
+//Small contact elements
+
+function callMeSmallToggle(){
+  $('.callBackForm').toggle();
+  $('#upDown').toggleClass('chevron-down','chevron-up');
+}
+function callBackReciptClose(){
+  $('.callBackRecipt').slideUp();
+  $('#callMe').val('');
+  $('#upDown').toggleClass('chevron-down','chevron-up');
+}
+function callBack(){
+  $('.callBackRecipt').slideDown();
+  $('.callBackForm').slideUp();
+  $('#tlf').html($('#callMe').val());
+}
+
 
 
