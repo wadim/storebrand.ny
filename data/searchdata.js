@@ -14,7 +14,15 @@ var promotions = {
   "søk" : {"header": "Vet du hva du får i pensjon",
            "text": "Write something here", 
            "name": "Write something here", 
-           "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"}	     
+           "url":"http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
+  "eiendom" : { "header": "Storebrand Eiendom er en av Norges største eiendomsforvaltere.",
+                "text": "Vi eier kjøpesentre, kontorbygg og lagerbygg.",
+                "name": "Se tjenestene våre",
+                "url": "http://www.storebrand.no/site/stb.nsf/pages/forsideeiendom.html"},
+  "kontorbygg" : { "header": "Storebrand Eiendom forvalter mange kontorbygg.",
+                "text": "Lei kontor fra oss!",
+                "name": "Se kontorbyggene våre",
+                "url": "http://www.storebrand.no/site/stb.nsf/Pages/eiendom_kontor.html"}                
 };
 
 var typeaheads = {
