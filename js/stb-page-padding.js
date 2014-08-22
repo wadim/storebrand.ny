@@ -187,7 +187,8 @@ $(document).ready(function() {
 $(document).ready(function(){
   var acceptingCookies = readCookie('acceptCookies');
   if(acceptingCookies!='Yes'){
-    $('#cookieNote').show();
+    // Disabling showing of cookie notification for now, for peace of mind during testing.
+    //$('#cookieNote').show();
   }
 });
 

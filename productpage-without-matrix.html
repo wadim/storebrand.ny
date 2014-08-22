@@ -22,7 +22,12 @@
   
   <!-- Start JavaScript for this page only -->
   <script>
-
+  $(document).ready(function(){
+    var acceptingCookies = readCookie('acceptCookies');
+    if(acceptingCookies!='Yes'){
+      $('#cookieNote').show();
+    }
+  });
   </script>
   <!-- End of JavaScript for this page only -->
   
@@ -345,7 +350,9 @@
       <div class="col-md-6">
         <div class="stb-banner">
           <h1 class="stb-font">Ekstrapensjon</h1>
-          <h3>Alle bør spare til pensjon &ndash; jo tidligere, jo bedre. Ekstrapensjon har lav risiko og gir deg full tilgang til sparepengene dine.</h3>
+          <p class="intro">
+            Alle bør spare til pensjon &ndash; jo tidligere, jo bedre. Ekstrapensjon har lav risiko og gir deg full tilgang til sparepengene dine.
+          </p>
         </div>        
       </div>
       <div class="col-md-6">
@@ -455,6 +462,19 @@
     </div>
   </div>
   <!-- End of page contents -->    
+  
+  <!-- Start Cookie notice -->
+  <div data-spy="affix" class="cookieNote" id="cookieNote">
+    <div class="cookieClose">
+      &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-16 white remove"></span><br />(Lukk)</a>
+    </div>
+    <div class="cookieInfo">
+      <div class="info">
+        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
+      </div>
+    </div>
+  </div>
+  <!-- End Cookie notice -->  
   
   <!-- Start responsive footer -->
   <footer class="stbcolor-primary first stb-footer">
