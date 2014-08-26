@@ -370,26 +370,11 @@
 
 <style>
 
-.errormessage{
+.errormessage,
+.commonmessage {
   display:none;
 }
-.alert{
-  background-color:#DA291C;
-  
-}
-.alert h2,
-.alert p,
-.alert a {
-  color:#FFFFFF;
-}
-.alert a {
-  border-bottom-color: #FFFFFF;
-}
 
-.alert a:hover {
-  color:#E6E6E6;
-  border-bottom-color: #E6E6E6;
-}
 
 </style>
 
@@ -406,17 +391,36 @@ function showErrorMsg(){
   $('.errormessage').toggle('slow');
 }
 
+function showCommonMsg(){
+  $('.errormessage').toggle('slow');
+  $('.commonmessage').toggle('slow');
+}
+
+
 </script>
 
   <!-- Start actual page contents -->
-<div class="container top-padding-40-mdlg bottom-padding-40 errormessage">
+
+<div class="container top-padding-20 bottom-padding-20 errormessage">
   <div class="row">
     <div class="col-md-12">
-        <div class="alert" role="alert">
-            <span aria-hidden="true" style="color:#FFFFFF; cursor:pointer;" onclick="showErrorMsg();return false;" class="pull-right">X</span>
-            <h2>Vikitig melding</h2>
+      <div class="stb-alert stb-alert-alarm">
+          <span aria-hidden="true" style="color:#FFFFFF; cursor:pointer;" onclick="showErrorMsg();return false;" class="pull-right">X</span>
+            <h2><span class="stb-color-sprite-48 warning"></span> Vikitig melding</h2>
             <p>Vi har desverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
             <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+        </div>
+    </div>
+  </div>
+</div> 
+
+<div class="container top-padding-20 bottom-padding-20 commonmessage">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="stb-alert stb-alert-success">
+          <span aria-hidden="true" style="color:#FFFFFF; cursor:pointer;" onclick="showErrorMsg();return false;" class="pull-right">X</span>
+            <h2><span class="stb-color-sprite-48 ok-circle"></span> Pensjonsreglene endelig klare</h2>
+            <p>Endelig har pensjonsreglene blitt vedtatt og vi kan stolt presententere våre nye produkter  <a href="#">Spar til pensjon</a><br></p>
         </div>
     </div>
   </div>
@@ -432,7 +436,7 @@ function showErrorMsg(){
         </div>
       </div>
       <div class="col-md-6 image">
-        <img class="img-responsive" src="images/categorybannerimage.png" alt="category banner image" title="category bannner image" style="width:250px;" onclick="showErrorMsg();return false;"/>
+        <img class="img-responsive" src="images/categorybannerimage.png" alt="category banner image" title="category bannner image" style="width:250px;" onclick="showCommonMsg();return false;"/>
       </div>
     </div>
   </div>
@@ -600,55 +604,45 @@ div.circle-24 a{
 
 <div class="container bottom-padding-50">
   <div class="row">
-    <div class="col-md-6">
-        <div class="col-md-6 column">
-          <h3>Test av småkontakter</h3>
-          <p>De kan brukes hver for seg eller settes sammen i en gruppe</p>
-          <p>Eksempel under her</p>
-          <p>
-              <a href="tel:08880">
-                  <div class="circle-16 stbcolor-secondary third pull-left">
-                      <span class="stb-sprite-16 white phone">
-                      </span>
+        <div class="col-md-6">
+              <div class="col-md-6 column">
+                <h3>Test av småkontakter</h3>
+                <p>De kan brukes hver for seg eller settes sammen i en gruppe</p>
+                <p>Eksempel under her</p>
+                <p>
+                    <a href="tel:08880">
+                        <div class="circle-16 stbcolor-secondary third pull-left">
+                            <span class="stb-sprite-16 white phone">
+                            </span>
+                        </div>
+                        <span class="pillText">
+                            Ring 08880
+                        </span>
+                    </a>
+                </p>
+                <p>Og ett til hvor man kan avtale en time:
+                <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a></p>            
+            </div>
+        </div>
+        <div class="col-md-6">
+               <h3>Kontakt oss</h3>
+          <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white envelope"></span></div><span class="pillText">Skriv til oss</span></a></p>
+          <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span></a></p>
+          <p><a href="tel:08880" class="ChatClosed" onclick="return false;"><div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span> <br></a><span class="petit">Stengt. Åpen hverdager 8-16</span></p>
+          <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a></p>
+          <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a></p>
+          <p><a href="#" onclick="callMeSmallToggle();return false;"><div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Vi ringer deg</span>&nbsp;<span id="upDown" class="stb-sprite-16 chevron-down"></span></a>
+                  <div class="stb-form-group callBackForm">
+                      <label for="callMe">Ditt telefonnummer</label>
+                      <br>
+                      <input type="text" id="callMe" placeholder="8 siffer" style="width: 180px;">
+                      <p><a href="#" onclick="callBack();return false"> Ring meg</a></p>
                   </div>
-                  <span class="pillText">
-                      Ring 08880
-                  </span>
-              </a>
-          </p>
-          <p>Og ett til hvor man kan avtale en time:
-          <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a></p>            
-      </div>
-    </div>
-    <div class="col-md-6">
-           <h3>Kontakt oss</h3>
-      <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white envelope"></span></div><span class="pillText">Skriv til oss</span></a></p>
-
-<!--Chat-->
-      <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span></a></p>
-
-<!--Chat stengt class="off" onclick="return false" stbcolor-gray Add petit-text -->
-      <p><a href="tel:08880" class="ChatClosed" onclick="return false;"><div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span> <br></a><span class="petit">Stengt. Åpen hverdager 8-16</span></p>
-
-
-
-      <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a></p>
-      
-      <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a></p>
-
-       <p><a href="#" onclick="callMeSmallToggle();return false;"><div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Vi ringer deg</span>&nbsp;<span id="upDown" class="stb-sprite-16 chevron-down"></span></a>
-              <div class="stb-form-group callBackForm">
-                  <label for="callMe">Ditt telefonnummer</label>
-                  <br>
-                  <input type="text" id="callMe" placeholder="8 siffer" style="width: 180px;">
-                  <p><a href="#" onclick="callBack();return false"> Ring meg</a></p>
-              </div>
-              <div class="callBackRecipt">
-                <a href="#" onclick="callBackReciptClose();return false;"><br>Vi vil ringe deg på <span id="tlf"></span> innen vår åpningstid.</a>
-              </div>  
-      
-        </p>     
-    </div>
+                  <div class="callBackRecipt">
+                    <a href="#" onclick="callBackReciptClose();return false;"><br>Vi vil ringe deg på <span id="tlf"></span> innen vår åpningstid.</a>
+                  </div>  
+           </p>     
+        </div>
 </div>    
       
 
