@@ -7,13 +7,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/stb-main.css">
     
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
     <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
     <script type="text/javascript" src="js/dist/jquery.min.js"></script>
     <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
@@ -45,13 +38,16 @@
         <div class="col-md-9">
           <h1 class="stb-font">Web Manual</h1>
           <p class="lead">
-            This page gives a technical description of all elements generally available for creating Web content for Storebrand.
+            This page is a technical description of all elements generally available for creating Web content for Storebrand.
           </p>
           <p>
-            The design details are being worked out as you read this, so don't worry if something looks a bit odd.
+            Underneath each section on this page, we have indicated how ready that section is for being used by other projects. If in doubt, please contact the storebrand.ny project for clarifications. We are still (late August 2014) making minor visual adjustments, but the tag mark-up is likely to remain unchanged. New elements will be added as needed. If you need some kind of new element, please get in touch with the storebrand.ny project for assistance.
           </p>
           <p>
-            Grid: Based on 12 columns from <a href="http://getbootstrap.com/css/#grid">Bootstrap 3</a>. We can responsively divide the contents horizontally into any combination of 12 in total (12, 6+6, 3+3+3+3, 4+4+4, and so on).  
+            The design will be made available from a shared depository, probably on Amazon. The URL to use is not yet available. If you have any cross-site scripting issues, for now you must copy the items you need to your own project. We will establish the Amazon files as a .storebrand.no domain with SSL before launch of storebrand.ny, but it's not there yet.
+          </p>
+          <p>
+            Grid: Based on 12 columns from <a href="http://getbootstrap.com/css/#grid">Bootstrap 3</a>. We can responsively divide the contents horizontally into any combination of 12 in total (12, 6+6, 3+3+3+3, 4+4+4, and so on).
           </p>
           <p>
             Our screen width breakpoints are:<br /> Extra small = up to 767px, Small = 768-991px, Medium = 992-1199px, Large = 1200px and up. 
@@ -68,7 +64,7 @@
       <div class="row"><!-- Colors Row -->
         <div class="col-md-3" id="index-nav" role="navigation">
           <h2>Colors</h2>
-          (Done)
+          (Safe to use)
         </div>
 
         <div class="col-md-9" id="webfarger">
@@ -196,7 +192,7 @@
       <div class="row"> <!-- Typography Headers row-->
         <div class="col-md-3">
           <h2>Typography / Headers</h2>
-          (Done)
+          (Safe to use)
         </div>
         <div class="col-md-9">
           <p><strong>Signa</strong> is the standard header font on storebrand.no for h1 (light), h2 (light) and h3 (book). For h4, h5 and h6 we use <strong>Open Sans Bold</strong>. Arial is the preferred fallback in all cases.</p>
@@ -439,6 +435,9 @@
           <p class="border-top-and-bottom">
             And then there's the class "border-top-and-bottom", which adds visible borders at the top and bottom of the element.
           </p>
+          <p>
+            (The actual margins/paddings are NOT 5, 10, ... or 50. That's just the easy to remember numbers used for the classes. Right now, the numbers are mapped to pixels in the following way: 5 to 6, 10 to 12, 20 to 24, 30 to 30, 40 to 36 and 50 to 48. Sorry about the confusion, if there is any.)
+          </p>
         </div>
       </div> <!-- / Spacing row -->
       
@@ -462,6 +461,9 @@
           </p>
           <p>
             Tables have no vertical borders anywhere.
+          </p>
+          <p>
+            Table font-size is 16px by default. By adding the class "small-text" to the table tag, the font-size is reduced to 14.
           </p>
            
           <h3>Standard table</h3>           
@@ -1430,9 +1432,9 @@
           <p>
             Example:
           </p>
-          <div class="stbcolor-secondary sixth"> <!-- FAQ example div -->
+          <div> <!-- FAQ example div -->
             <br />
-            <h3>Alt om din pensjon</h3>
+            <h3 class="left-padding-10">Alt om din pensjon</h3>
             <ul class="accordion" data-widget="stbFaq">
               <li>
                 <a href="#" class="twister">Hvordan får jeg oversikt over hva jeg får i pensjon?
@@ -1818,19 +1820,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <p>
             Bootstrap has a standard thumbnail image with caption thing. There's no reason not to use it, really:
           </p>
-            <div style="width: 333px;">
-              <div class="thumbnail">
-                <img src="images/271x271_2.png" alt="Fint bilde" data-src="holder.js/300x200" style="">
-                <div class="caption">
-                  <h3>Optional title</h3>
-                  <p>Optional additional text/caption.</p>          
-                </div>
-              </div>
-            </div>
 
-          <p>
-            An ordinary image.
-          </p>
           <figure>
             <img src="images/snow.gif" class="img-responsive" alt="Let it snow..." />
             <figcaption class="imageText">
@@ -1854,64 +1844,8 @@ $('ul[data-widget=stbFaq]').stbFaq();
 &lt;/figure&gt;</pre>
         </div>
       </div>      
-            
+      
       <hr class="top-margin-30" />  
-
-      
-      <div class="row">
-        <div class="col-md-3">
-          <h2>Popover</h2>
-          (Done)
-        </div>
-        <div class="col-md-9">
-          <p>
-            <strong>Note</strong>: Popover does not have namespaced class names; markup/class names are inside Bootstrap javascript-files. We simply override the CSS with the same classnames as default BS.
-          </p>
-          <p>Display of popover can be done on click, hover or focus for the element. For full documentation, see <a href="http://getbootstrap.com/javascript/#popovers">Bootstrap</a>.
-          <p>
-            If there's not enough room to show the popover at the desired placement (top, bottom, right, left), the popover will automatically fail to an alternative placement.
-          </p>
-          <p> Examples (please hover for demo):
-            <button 
-              class="stb-btn stb-btn-primary"
-              id="demo-popover"
-              data-toggle="popover"
-              data-trigger="hover"
-              data-content="In matters of style, swim with the current; in matters of principle, stand like a rock."
-              data-placement="top">
-              Hover popover button
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" 
-              id="demo-a-popover"
-              data-toggle="popover"
-              data-trigger="hover"
-              data-content="In matters of style, swim with the current; in matters of principle, stand like a rock."
-              data-placement="bottom">
-              Link with hover-popover
-            </a>
-          </p>
-          <p>
-            Popover requires Bootstrap's popover.js + tooltip.js. Also, note that standard Bootstrap offers tooltip, which is just a simpler version of popover. We have deliberately not included tooltip in our web manual, because popover probably covers our needs.
-            <br />
-            <strong>Code:</strong>
-          </p>
-          <pre class="prettyprint">
-&lt;button class=&quot;stb-btn stb-btn-primary&quot;
-        id=&quot;demo-popover&quot;
-        data-toggle=&quot;popover&quot;
-        data-trigger=&quot;hover&quot;
-        data-content=&quot;Mr. Fogg learned all this in consulting his Bradshaw.&quot;
-        data-placement=&quot;auto top&quot;&gt;Hover for popover
-&lt;/button&gt;
-&lt;script&gt;
-  // use this in document.ready or similar:
-  $('#demo-popover').popover();
-&lt;/script&gt;</pre>
-        </div>
-      </div> <!-- /Popover row -->
-      
-      <hr class="top-margin-30" />
 
       
       <div class="row"> <!-- Standard icons row -->

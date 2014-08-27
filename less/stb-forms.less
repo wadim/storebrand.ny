@@ -11,6 +11,7 @@
     // tweak the default BS transition-speed:
     .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
     display: inline-block; 
+    border-radius: 0px;
 
     &:hover {
       color: @stb-secondary-charcoal;
@@ -24,10 +25,9 @@
 
   // input and buttons line up with no spacing:
   input.has-submit {
-    .border-right-radius(0);
+
   }
   button.is-submit {
-    .border-left-radius(0);
     position: relative;
     height: 34px;
     left: -4px;
