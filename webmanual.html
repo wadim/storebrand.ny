@@ -38,14 +38,16 @@
         <div class="col-md-9">
           <h1 class="stb-font">Web Manual</h1>
           <p class="lead">
-            This page is a technical description of all elements generally available for creating Web content for Storebrand.
+            - A technical description of elements to be used when creating Web content.
+          </p>
+          <h3>How to use this</h3>
+          <p>
+            Underneath each section on this page, we indicate how ready that section is for use by any project. Contact the storebrand.ny project for clarifications or requests for adding new elements. As of late August 2014 we still make minor visual adjustments, but the tag mark-up should remain unchanged. New elements will be added as needed. 
           </p>
           <p>
-            Underneath each section on this page, we have indicated how ready that section is for being used by other projects. If in doubt, please contact the storebrand.ny project for clarifications. We are still (late August 2014) making minor visual adjustments, but the tag mark-up is likely to remain unchanged. New elements will be added as needed. If you need some kind of new element, please get in touch with the storebrand.ny project for assistance.
+            The design will be made available from a shared depository, probably on Amazon. The URL to use is <strong>not</strong> yet available. If you have any cross-site scripting issues, for now you must copy the items you need to your own project. We will establish the Amazon files as a .storebrand.no domain with SSL before launch of storebrand.ny, but it's not there yet. 
           </p>
-          <p>
-            The design will be made available from a shared depository, probably on Amazon. The URL to use is not yet available. If you have any cross-site scripting issues, for now you must copy the items you need to your own project. We will establish the Amazon files as a .storebrand.no domain with SSL before launch of storebrand.ny, but it's not there yet.
-          </p>
+          <h3>Grid and breakpoints</h3>
           <p>
             Grid: Based on 12 columns from <a href="http://getbootstrap.com/css/#grid">Bootstrap 3</a>. We can responsively divide the contents horizontally into any combination of 12 in total (12, 6+6, 3+3+3+3, 4+4+4, and so on).
           </p>
@@ -223,7 +225,7 @@
       <div class="row">
         <div class="col-md-3">
           <h2>Typography / Text</h2>
-          (Done)
+          (Safe to use)
         </div>
         <div class="col-md-9">
           <h3>Lead paragraph</h3>
@@ -270,7 +272,7 @@
       <div class="row">
         <div class="col-md-3">
           <h2>Typography / Links</h2>
-          (Done-ish)
+          (Safe to use)
         </div>
         <div class="col-md-9">
           <div class="row">
@@ -307,7 +309,7 @@
       <div class="row">
         <div class="col-md-3">
           <h2>Typography / Lists</h2>
-          (Done)
+          (Safe to use)
         </div>
         <div class="col-md-9">
           <p>We don't do much with lists, only adjusting the font sizing somewhat to improve responsive readability.</p>
@@ -333,11 +335,11 @@
       <div class="row">
         <div class="col-md-3">
           <h2>Typography / Diamonds</h2>
-          (Done)
+          (Do not use yet)
         </div>
         <div class="col-md-9">
           <p>
-            Purely a design thing, meant used in gods know what situation, are the diamond lists. Incidentally, these might possibly not last forever. They are different from the progress bars / step indicators in forms, but certainly share a bit of design with them.
+            The "diamond list" is purely a design thing, meant used in gods know what situations. Incidentally, these diamonds might possibly not last forever. They are different from the progress bars / step indicators in forms, but certainly share a bit of design with them.
           </p>
           <div class="row top-margin-20">
           
@@ -383,7 +385,7 @@
           </div>
           
           <p>
-            We'll hopefully add some instructions eventually about how these are to be used. For now, try using only numbers inside the diamonds.
+            We'll hopefully add some instructions eventually about how these are to be used. If you use it, put only single digits inside the diamonds.
           </p>
           <strong>Code:</strong><br />
           <pre class="prettyprint">
@@ -399,11 +401,14 @@
       <div class="row"><!-- Spacing row -->
         <div class="col-md-3">
           <h2>Layout / Spacing</h2>
-          (Done)
+          (Safe to use)
         </div>
         <div class="col-md-9">      
           <p>
             We have a number of classes that can be used on any element to provide some spacing in different ways. Depending on your situation, you might of course want to just use straight CSS styling instead, but these classes come in handy when we want to let our non-IT Web editors use our CMS to work on contents and space things out.
+          </p>
+          <p>
+            (Note: The actual margins/paddings are NOT 5, 10, ... or 50. That's just a simplification to help people remember the classes. Right now, the numbers are mapped to pixels in the following way: 5 to 6, 10 to 12, 20 to 24, 30 to 30, 40 to 36 and 50 to 48. Sorry about the confusion, if any.)
           </p>
 
           <h3>Vertical spacing</h3>
@@ -435,9 +440,6 @@
           <p class="border-top-and-bottom">
             And then there's the class "border-top-and-bottom", which adds visible borders at the top and bottom of the element.
           </p>
-          <p>
-            (The actual margins/paddings are NOT 5, 10, ... or 50. That's just the easy to remember numbers used for the classes. Right now, the numbers are mapped to pixels in the following way: 5 to 6, 10 to 12, 20 to 24, 30 to 30, 40 to 36 and 50 to 48. Sorry about the confusion, if there is any.)
-          </p>
         </div>
       </div> <!-- / Spacing row -->
       
@@ -447,7 +449,7 @@
       <div class="row"><!-- Tables row -->
         <div class="col-md-3">
           <h2>Tables</h2>
-          (Done)
+          (Ready to use)
         </div>
         <div class="col-md-9">
           <p>
@@ -689,11 +691,11 @@
 
       <hr class="top-margin-30" />
 
-  
+      <!-- List Group Row -->
       <div class="row">
         <div class="col-md-3">
           <h2>List group</h2>
-          (Done)
+          (Ready to use)
         </div>
         <div class="col-md-9">
           <p>
@@ -703,96 +705,49 @@
           <div class="row">
             <div class="col-md-6">
               <p>
-                A plain list-group containing badges:<br /><br />
+                <h3>A list of links in a list-group</h3>
               </p>
-              <ul class="stb-list-group">
-                <li class="list-group-item"><span class="badge">1822,44</span>Delphi Global</li>
-                <li class="list-group-item"><span class="badge">3445,64</span>Delphi Europe</li>
-                <li class="list-group-item active"><span class="badge">7766,09</span>Delphi Norge</li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <p>
-                A clickable list-group example. Clicking just toggles the item class to "active", we could trigger anything, really.
-              </p>
-              <div class="stb-list-group">
-                <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">1822,44</span>Delphi Global</a>
-                <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">3445,64</span>Delphi Europe</a>
-                <a href="#" onclick="$(this).toggleClass('active');return false" class="list-group-item"><span class="badge">2245,65</span>Delphi Nordic</a>
+              <div class="stb-list-group" >
+                <a class="list-group-item" href="#">Bilforsikring </a>
+                <a class="list-group-item" href="#">Motorsykkelforsikring </a>
+                <a class="list-group-item" href="#">Traktorforsikring </a>
               </div>
             </div>
           </div>
-          <strong>Code:</strong> <br />
-          <pre class="prettyprint">
-&lt;div class="stb-list-group"&gt;
-  &lt;a href="#" class="list-group-item"&gt;Content 1&lt;/a&gt;
-  &lt;a href="#" class="list-group-item forest"&gt;Content 2&lt;/a&gt;
-&lt;/div&gt;  
-
-&lt;ul class="stb-list-group"&gt;
-  &lt;li class="list-group-item"&gt;Content 1&lt;/li&gt;
-  &lt;li class="list-group-item"&gt;Content 2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;span class="badge"&gt;1822,44&lt;/span&gt;</pre>    
-
-          <hr />
-          <div class="row">
-            <div class="col-md-6">
-              <p>
-                A list of links in a list-group
-              </p>
-                <div class="stb-list-group" >
-                  <a class="list-group-item links" href="#">Bilforsikring </a>
-                  <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
-                  <a class="list-group-item links" href="#">Traktorforsikring </a>
-                </div>
-            </div>
-            <div class="col-md-6">
-              <p>
-               Another list
-              </p>
-                <div class="stb-list-group" >
-                  <a class="list-group-item links" href="#">Husforsikring </a>
-                  <a class="list-group-item links" href="#">Hytteforsikring </a>
-                  <a class="list-group-item links" href="#">Innboforsikring </a>
-                </div>
-            </div>
-          </div>
-          <strong>Code:</strong> <br />
+          <br />
+          <strong>Code:</strong> 
+          <br />
           <pre class="prettyprint">
 &lt;div class="stb-list-group" &gt;
-    &lt;a class="list-group-item links" href="#"&gt;Bilforsikring &lt;/a&gt;
-    &lt;a class="list-group-item links" href="#"&gt;Motorsykkelforsikring &lt;/a&gt;
-    &lt;a class="list-group-item links" href="#"&gt;Traktorforsikring &lt;/a&gt;
+    &lt;a class="list-group-item" href="#"&gt;Bilforsikring &lt;/a&gt;
+    &lt;a class="list-group-item" href="#"&gt;Motorsykkelforsikring &lt;/a&gt;
+    &lt;a class="list-group-item" href="#"&gt;Traktorforsikring &lt;/a&gt;
 &lt;/div&gt;</pre> 
 
-       
-
-
-        <!--New -->
-         <div class="row">
-            <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Standard list group 
+              with headers (table-like)</h3>
               <p>
-                <b>Standard list-group</b> with headers (like a table)
+                The standard list group is an alternative to a simple table.
               </p>
-              <ul class="list-group">
-                  <li class="list-group-item header">Lorem ipsum</li>
-                  <li class="list-group-item">Terra scriptum delta echo verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum grimt delta scriptum sierra alpha verso grimt delta scriptum sierra </li>
-                  <li class="list-group-item header">Alpha echo</li>
-                  <li class="list-group-item clickable" rel="http://www.storebrand.no/ny">Sierra alpha terra scriptum delta echo verso grimt delta <a href="#">webmanual</a> sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra scriptum delta echo verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra</li>
-                  <li class="list-group-item header">Scriptum post</li>
-                  <li class="list-group-item">Delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra scriptum delta echo verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
               <p>
-               <br>This standard listgroup is an option to a simple table.</p>
-               <p> Col-8 is the biggest gridsize for this element.</p>
-               <p> You can make a list clickable by adding "class="clickable" and a specify the rel-attribute. Remember to mark it clickable with a link og button.</p>
+                You can make a list group item clickable by adding "class="clickable" and a specifying a URL in the rel-attribute. If you do this, the list group item must not contain any additional links. 
               </p>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-10">
+              <ul class="stb-list-group">
+                <li class="list-group-item header">Lorem ipsum</li>
+                <li class="list-group-item clickable" rel="http://www.storebrand.no">Terra scriptum delta echo verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum grimt delta scriptum sierra alpha verso grimt delta scriptum sierra </li>
+                <li class="list-group-item header">Alpha echo</li>
+                <li class="list-group-item"> Sierra alpha terra scriptum delta echo verso grimt delta <a href="#">webmanual</a> sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra scriptum delta echo verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra</li>
+                <li class="list-group-item header">Post Scriptum</li>
+              </ul>
+            </div>
+          </div>
+          <br />
           <strong>Code:</strong> <br />
           <pre class="prettyprint">
 &lt;ul class="list-group"&gt;
@@ -802,10 +757,10 @@
     &lt;li class="list-group-item clickable" rel="http://www.storebrand.no/ny""&gt;...content &lt;/li&gt; 
 &lt;/ul&gt;                          
 </pre>
-
           <div class="row">
             <h3>Expandable lists</h3>
-            <p> The 'summary' class is added to the li elements that should be displayed initially (before expanded).
+            <p>
+              Add the class "summary" to li elements that should be displayed initially, and a "showMore" class to the li element that can be used to show or hide all list elements.
             </p>
             <div class="col-md-6">
               <ul class="stb-list-group expandable">
@@ -816,7 +771,7 @@
                 <li class="list-group-item summary">Telefon </li>
                 <li class="list-group-item">Kontonummer</li>
                 <li class="list-group-item">Polisenummer</span></li>
-                <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-16 chevron-down"></span> Vis flere detaljer</a></li>
+                <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-16 chevron-down"></span> Vis/skjul detaljer</a></li>
               </ul>
             </div>
             <div class="col-md-6">
@@ -829,7 +784,7 @@
                 <li class="list-group-item"><ul><li class="list-group-item">Lorum</li><li class="list-group-item">Ipsum</li></ul></li>
                 <li class="list-group-item summary">Type gjenstand 4</li>
                 <li class="list-group-item"><ul><li class="list-group-item">Lorum</li><li class="list-group-item">Ipsum</li></ul></li>
-                <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-16 chevron-down"></span> Vis flere detaljer</a></li>
+                <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-16 chevron-down"></span> Vis/skjul detaljer</a></li>
               </ul>
             </div>
           </div>
@@ -844,20 +799,16 @@
     &lt;li class="list-group-item &gt;Kontonummer&lt;/li&gt;
     &lt;li class="list-group-item &gt;Polisenummer&lt;/li&gt;
     &lt;li class="list-group-item showMore stbcolor-secondary fifth"&gt;&lt;a&gt;
-    &lt;span class="stb-sprite-16 chevron-down"/&gt;&lt;/span&gt;Vis flere detaljer&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;span class="stb-sprite-16 chevron-down"/&gt;&lt;/span&gt;Vis/skjul flere detaljer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </pre>
         </div>
-
-
-        <!--New -->
-
-
       </div>
+      <!-- /List Group Row -->
      
       <hr class="top-margin-30" />
 
- 
+      
       <div class="row"> <!-- Boxes row -->
         <div class="col-md-3">
           <h2>Boxes</h2>
