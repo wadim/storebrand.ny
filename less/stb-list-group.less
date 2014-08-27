@@ -1,63 +1,5 @@
-list-group.stb-list-group {
+.stb-list-group {
   .list-group();
-}
-
-.center {
-  text-align: center;
-}
-
-a.list-group-item:hover {
-  background-color: @stb-secondary-sand;
-}
-
-a.list-group-item.moss:hover {
-  background-color: @stb-secondary-moss;
-  color: @stb-primary-white;
-}
-
-a.list-group-item.forest:hover {
-  background-color: @stb-secondary-forest;
-  color: @stb-primary-white;
-}
-
-a.list-group-item.dust:hover {
-  background-color: @stb-secondary-dust;
-  color: @stb-primary-white;
-}
-
-a.list-group-item.nude:hover {
-  background-color: @stb-secondary-nude;
-  color: @stb-primary-white;
-}
-
-//Links selection with no right og left border
-
-.stb-list-group a.list-group-item.links {
-  border-left:none;
-  border-right:none;
-  border-radius: 0px;
-  padding: 10px 15px 9px 15px;
-}
-
-.stb-list-group a.list-group-item.links:hover {
-  background-color: @stb-gray-first;
-  cursor: pointer;
-  padding: 10px 15px;
-}
-
-.list-group-item.header {
-  background-color: @stb-gray-third;
-  color: #000000;
-  font-weight: bold;
-}
-
-.list-group-item, .list-group-item:hover {
-  padding: 10px 15px 10px 15px;
-  border-bottom: 1px solid @stb-gray-third;
-}
-
-.stb-list-group{
-
   &.expandable{
 
     li.showMore{
@@ -77,5 +19,28 @@ a.list-group-item.nude:hover {
       }
     }
 
+  }  
+  
+  a.list-group-item {
+    border-left:none;
+    border-right:none;
+    border-radius: 0px;
+  }  
+  
+  a.list-group-item:hover {
+    background-color: @stb-gray-first;
+    cursor: pointer;
+    padding: 10px 15px;
+  }  
+
+  .list-group-item.header {
+    background-color: @stb-gray-third;
+    color: @stb-primary-black;
+    font-weight: bold;
+  }  
+
+  .list-group-item, .list-group-item:hover {
+    border-bottom: 1px solid @stb-gray-third;
   }
+  
 }
