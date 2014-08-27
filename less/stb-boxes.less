@@ -1,57 +1,14 @@
 .stb-box {
-
   padding: 12px 10px 10px 10px;
   margin-bottom: 20px;
   border: 1px solid transparent;  
   
-  &.first {
-    .stbcolor-primary .third;
-    > p {
-      color: @stb-primary-black;
-    }
-  }
-  
-  &.second {
-    .stbcolor-secondary.sixth;
-    a {
-      font-weight: strong;
-    }
-  }
-  
-  &.third {
-    .stbcolor-gray .first;
-    border: 1px solid @stb-gray-third;
-  }
-  
-  &.fourth {
-    .stbcolor-background .first;
-  }  
 
-  &.fifth {
-    .stbcolor-background .second;
-  }    
-
-  &.sixth {
-    .stbcolor-background .third;
-  }
   
-  &.dark {
-    color: @stb-primary-white;
-    & h1, h2, h3, h4, h5, h6, p {
-      color: @stb-primary-white;
-    }
-  }
-  
-
   // Forcing solid border
   &.border {
     border: 1px solid;
-    
-    // Adding border color themes
-    
-    &.charcoal {
-    	border-color: @stb-secondary-charcoal;
-    }
+    border-color: @stb-secondary-charcoal;
     
     &.red {
     	border-color: @stb-primary-color;
@@ -148,9 +105,3 @@ div.circle-16 a,
 div.circle-24 a{
   border-bottom: none;
 }
-
-.textBox{
-  margin-top: 20px;
-}
-
-

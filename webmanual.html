@@ -47,6 +47,9 @@
           <p>
             The design will be made available from a shared depository, probably on Amazon. The URL to use is <strong>not</strong> yet available. If you have any cross-site scripting issues, for now you must copy the items you need to your own project. We will establish the Amazon files as a .storebrand.no domain with SSL before launch of storebrand.ny, but it's not there yet. 
           </p>
+          <p>
+            Elements for user interaction should log activity to Google Analytics. This is in some cases not yet implemented. JavaScript for this will be available later.
+          </p>
           <h3>Grid and breakpoints</h3>
           <p>
             Grid: Based on 12 columns from <a href="http://getbootstrap.com/css/#grid">Bootstrap 3</a>. We can responsively divide the contents horizontally into any combination of 12 in total (12, 6+6, 3+3+3+3, 4+4+4, and so on).
@@ -301,6 +304,74 @@
               </p>
             </div>
           </div>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Specialized contact links</h3>
+              <p>
+                Links accompanied with icons, designed to be particularly visible and with some hidden functionality.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p>
+                Single link:
+              </p>
+              <p>
+                <a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a>
+              </p>
+              <p>
+                Another one:
+              </p>
+              <p>
+                <a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a>
+              </p>
+              <p>Disabled example:</p>
+              <p>
+                <a href="tel:08880" class="ChatClosed" onclick="return false;"><div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span> <br></a><span class="petit">Stengt. Åpen hverdager 8-16</span>
+              </p>
+              
+            </div>
+
+            <div class="col-md-6">
+              <p>
+                Example of group of contact links:
+              </p>
+              <p>
+                <h4>Kontakt oss</h4>
+              </p>
+              <p>
+                <a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white envelope"></span></div><span class="pillText">Skriv til oss</span></a>
+              </p>
+              <p>
+                <a href="#"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span></a>
+              </p>
+              <p>
+                <a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a>
+              </p>
+              <p>
+                <a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a>
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10">
+              <h4>Code:</h4>
+              <pre class="prettyprint">
+  &lt;p&gt;
+    &lt;a href="tel:08880"&gt;
+      &lt;div class="circle-16 stbcolor-secondary third/first pull-left"&gt;
+        &lt;span class="stb-sprite-16 white phone/chat/envelope"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;span class="pillText"&gt;
+        Ring 08880
+      &lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/p&gt;             
+</pre>     
+            </div>
+          </div>  
+
         </div>
       </div>
       
@@ -812,287 +883,64 @@
       <div class="row"> <!-- Boxes row -->
         <div class="col-md-3">
           <h2>Boxes</h2>
-          (Done)
+          (Ready to use)
         </div>
         <div class="col-md-9">
+
           <div class="row">
-            <div class="col-md-12">
-              <p>
-                Boxes are established using div-s with class stb-box + version class (e.g. "stb-box first") and styling class (e.g. "fat gray").
-              </p>
-              <p>
-                The boxes come with a predefined background, text and link colors, plus some padding/margin. The width of the box scales to its parent element.
-              </p>
-            </div>
-          </div>
-          
-          <hr />
-          
-          <div class="row">
-         
-            <div class="col-md-4 stbcolor-secondary sixth">
-              <p>class="first" on nude</p>
-              <div class="stb-box first">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>
-            </div>  
-            <div class="col-md-1">
-              &nbsp;
-            </div>
+            <p>
+              A "box" (div with class "stb-box") is used to group contents of various kinds, visually or not.
+            </p>
+            <h3>Basic box</h3>
+            
+            <p>
+              Simple contents with no background colour. You can add a border by adding the class "border". The border color is charcoal by default, but this can be overridden by adding classes "red" or "gray".
+            </p>
             <div class="col-md-4">
-              <p>class="second" on white</p>
-              <div class="stb-box second">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>
-            </div>
-          </div>
-          
-          <hr />
- 
-          <div class="row">
-            <div class="col-md-4 stbcolor-secondary sixth">
-              <p>class="third" on nude</p>
-              <div class="stb-box third">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>
-            </div>
-            <div class="col-md-1">
-              &nbsp;
-            </div>
+              <div class="stb-box border">
+                <h3>Våre fond</h3>
+                <div class="stb-list-group">
+                  <a href="#" class="list-group-item">Anbefalt </a>
+                  <a href="#" class="list-group-item">Verden </a>
+                  <a href="#" class="list-group-item">Nordisk </a>
+                  <a href="#" class="list-group-item">Norge </a>
+                </div>
+              </div>  
+            </div> 
             <div class="col-md-4">
-              <p>class="third" on white</p>
-              <div class="stb-box third">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>
-            </div>
-          </div> 
-
-          <hr />
- 
-          <div class="row">
-            <div class="col-md-4 stbcolor-secondary sixth">
-              <p>class="fourth" on nude</p>
-              <div class="stb-box fourth">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-center" style=""><button class="stb-btn alarm">Samle avtaler</button></div>
-              </div>            
-            </div>
-            <div class="col-md-1">
-              &nbsp;
-            </div>
+              <div class="stb-box">
+                <h3>Important stuff</h3>
+                <p>
+                  Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in liberty, and dedicated to the proposition that "all men are created equal."
+                </p>
+                <p>
+                  Not.
+                </p>
+              </div>  
+            </div> 
             <div class="col-md-4">
-              <p>class="fourth" on white</p>
-              <div class="stb-box fourth">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-right" style=""><button class="stb-btn alarm">Samle avtaler</button></div>
-              </div>
-            </div>
-          </div>
-
-          <hr />
-
-          <div class="row">
-            <div class="col-md-4 stbcolor-secondary sixth">
-              <p>class="fifth" on nude</p>
-              <div class="stb-box fifth">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>            
-            </div>
-            <div class="col-md-1">
-              &nbsp;
-            </div>
-            <div class="col-md-4">
-              <p>class="fifth" on white</p>
-              <div class="stb-box fifth">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>
-            </div>
-          </div>
-
-          <hr />
-
-          <div class="row">
-            <div class="col-md-4 stbcolor-secondary sixth">
-              <p>class="sixth" on nude</p>
-              <div class="stb-box sixth">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>            
-            </div>
-            <div class="col-md-1">
-              &nbsp;
-            </div>
-            <div class="col-md-4">
-              <p>class="sixth" on white</p>
-              <div class="stb-box sixth">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>
-            </div>
-          </div>
-          
-          <hr />
-
-          <div class="row">
-            <div class="col-md-4 stbcolor-secondary sixth">
-              <p>Any box can force a dotted border:</p>
-              <p>class="fifth dottedborder" on nude</p>
-              <div class="stb-box fifth dottedborder">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>            
-            </div>
-            <div class="col-md-1">
-              &nbsp;
-            </div>
-            <div class="col-md-4">
-              <p>Any box can force a solid border:</p>
-              <p>class="second border" on white</p>
-              <div class="stb-box second border">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>
-            </div>
-          </div>
-
-          <hr />          
-          
-          <div class="row">
-            <div class="col-md-4 stbcolor-secondary sixth">
-              <p>Any box can force a fat solid border:<br /><br /></p>
-              <p>class="fifth fat border" on nude</p>
-              <div class="stb-box fifth fat border">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>            
-            </div>
-            <div class="col-md-1">
-              &nbsp;
-            </div>
-            <div class="col-md-4">
-              <p>Any box can force border color to charcoal, gray or red:</p>
-              <p>class="second border red" on white</p>
-              <div class="stb-box second border red">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>
-            </div>
-          </div>            
-
-          <div class="row">
-            <div class="col-md-10">
-          <h4>Code:</h4>
-          <pre class="prettyprint">
-&lt;div class="stb-box first / second / third + solid / dotted + fat / [nothing] + gray / charcoal / red"&gt;
-  ... Box html contents ...
-  &lt;div class="text-center / text-right"&gt;... Centered/right-adjusted box html contents&lt;/div&gt;
-&lt;/div&gt;</pre>      
-            </div>
-           
-          </div>              
-          
-          <hr />
-
-          <div class="row">
-            <h4>Clickable boxes.</h4>
-            <p>Add the class "clickable" and the url in the "rel" attribute.</p>
-            <div class="col-md-4 stbcolor-secondary sixth top-padding-30-mdlg">
-              <div class="stb-box fifth fat border clickable" rel="#index-nav">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-center" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>            
-            </div>
-            <div class="col-md-1">
-              &nbsp;
-            </div>
-            <div class="col-md-4">
-              <div class="stb-box second border red clickable" rel="#index-nav">
-                <p>Først bør du samle alle dine spareavtaler og tidligere pensjonsavtaler.</p>
-                <div class="text-right" style=""><button class="stb-btn">Samle avtaler</button></div>
-              </div>
+              <div class="stb-box">
+                <h3>Kontakt oss</h3>
+                <p>
+                  Ring eller send oss en e-post om du vil snakke litt pensjon med oss.
+                </p>
+                <p>
+                  <a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a>
+                </p>
+                <p>
+                  <a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white envelope"></span></div><span class="pillText">Skriv til oss</span></a>
+                </p>
+              </div>  
             </div>
           </div>  
 
           <div class="row">
-            <div class="col-md-10">
-              <h4>Code:</h4>
-              <pre class="prettyprint">
-&lt;div class="stb-box fifth fat border clickable" rel="#index-nav"&gt;
-  ... Box html contents ...
-&lt;/div&gt;</pre>      
-            </div>
-          </div>    
-
-          <div class="row">
-              <h4 style="padding-left:15px;">Text boxes</h4>
-              <p>Simple textboxes with no background.</p>
-                <div class="col-md-4">
-                    <div class="textBox">
-                      <h3>Våre fond</h3>
-                      <div class="stb-list-group">
-                          <a href="#" class="list-group-item links">Anbefalt </a>
-                          <a href="#" class="list-group-item links">Verden </a>
-                          <a href="#" class="list-group-item links">Nordisk </a>
-                          <a href="#" class="list-group-item links">Norge </a>
-                      </div>
-                    </div>  
-                  </div> 
-                  <div class="col-md-4">
-                    <div class="textBox">
-                      <h3>Aktuelt</h3>
-                      <p>Under henvisning til en særlig tidshorisont spores relasjonene for så vidt gjelder parameterne. Med utgangspunkt i en fortsatt innsats forankres kriteriene i tillegg til visjonen. Med tanke på en avtagende organisasjon styrkes kriteriene for så vidt gjelder føringene i og med at en langsiktig arbeidsmodell effektuerer spisskompetansen utenom evalueringen.</p>
-                    </div>  
-                  </div> 
-                  <div class="col-md-4">
-                    <div class="textBox">
-                      <h3>Kontakt oss</h3>
-                      <p>Ring eller send oss en e-post om du vil snakke litt pensjon med oss.</p>
-                      <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a></p>
-                      <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white envelope"></span></div><span class="pillText">Skriv til oss</span></a></p>
-                    </div>  
-                  </div>
-           </div>  
-
-            <div class="row">
-                <div class="col-md-6">
-                  <div class="textBox">
-                    <h3>Vår filosifi</h3>
-                    <p>Under henvisning til en særlig tidshorisont spores relasjonene for så vidt gjelder <a href="#">parameterne</a>. Med utgangspunkt i en fortsatt innsats forankres kriteriene i tillegg til visjonen.</p>
-                    <p> Med tanke på en avtagende organisasjon styrkes kriteriene for så vidt gjelder føringene i og med at en <a href="#">langsiktig arbeidsmodell</a> effektuerer spisskompetansen utenom evalueringen.</p>
-                  </div> 
-                 </div>
-
-                <div class="col-md-6">
-                  <div class="textBox">
-                    <h3>Fondskjøp</h3>
-                    <p>Hvorfor er det gunstig på handle fond hos oss?</p>
-                      <ul class="stb">
-                        <li>Billig</li>
-                        <li>Gebyrfri</li>
-                        <li>Lett å skjønne</li>
-                        <li>Service</li>
-                      </ul>
-                      <button class="stb-btn transparent light">Fondshandel</button>
-                   </div>  
-                </div>  
-             </div> 
-
-          <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-5">
               <h4>Code:</h4>
               <pre class="prettyprint">
    &lt;div class="col-md-4"&gt;
     &lt;div class="textBox"&gt;
-      &lt;h3&gt;Våre fond&lt;/h3&gt;
-        &lt;div class="stb-list-group"&gt;
-          ..content
-        &lt;/div&gt;
+      ... contents ...
     &lt;/div&gt;
    &lt;/div&gt;                    
 </pre>     
@@ -1100,250 +948,201 @@
           </div> 
 
           <div class="row">
-              <h4 style="padding-left:15px;">Mini boxes</h4>
-              <div class="col-md-12 col-lg-4">
-                  <div class="stb-box mini clickable" rel="tel:08880">
-                      <div class="row">
-                          <div class="col-sm-6 col-lg-12">
-                              <center><img src="images/contactus.png"></img></center>
-                          </div>
-                          <div class="col-sm-6 col-lg-12">
-                              <h3 class="box">Kontakt oss</h3>
-                              <h3  class="box"><a href="#">Ring 08880</a></h3>
-                          </div>
-                      </div>
-                  </div>    
-              </div>
+          
+            <h3>Mini box</h3>
+            <p>
+              Grouped and framed element with a small amount of contents, usually an image and a short text. The image goes above the text when the screen width is xs and lg, and to the left of the text on screen widths sm and md. 
+            </p>
+            <div class="col-md-12 col-lg-4">
+              <div class="stb-box mini clickable" rel="tel:08880">
+                <div class="row">
+                  <div class="col-sm-6 col-lg-12">
+                    <center><img src="images/contactus.png"></img></center>
+                  </div>
+                  <div class="col-sm-6 col-lg-12">
+                    <h3 class="box">Kontakt oss</h3>
+                    <h3  class="box"><a href="#">Ring 08880</a></h3>
+                  </div>
+                </div>
+              </div>    
+            </div>
 
 
-              <div class="col-md-12 col-lg-4">
-                  <div class="stb-box mini clickable" rel="tel:08880">
-                      <div class="row">
-                          <div class="col-sm-6 col-lg-12">
-                              <center><img src="images/contactus.png"></img></center>
-                          </div>
-                          <div class="col-sm-6 col-lg-12">
-                              <h3 class="box">Snakk gjerne med oss om pensjon</h3>
-                              <h3  class="box"><a href="#">Ring 08880</a></h3>
-                          </div>
-                      </div>
-                  </div>    
-              </div>
+            <div class="col-md-12 col-lg-4">
+              <div class="stb-box mini clickable" rel="tel:08880">
+                <div class="row">
+                  <div class="col-sm-6 col-lg-12">
+                    <center><img src="images/contactus.png"></img></center>
+                  </div>
+                  <div class="col-sm-6 col-lg-12">
+                    <h3 class="box">Snakk gjerne med oss om pensjon</h3>
+                    <h3 class="box"><a href="#">Ring 08880</a></h3>
+                  </div>
+                </div>
+              </div>    
+            </div>
+            
            </div>   
 
           <div class="row">
             <div class="col-md-10">
-              <p>Picture on top for xs and lg. Picture to left for sm and md.</P>
               <h4>Code:</h4>
               <pre class="prettyprint">
- &lt;div class="col-md-12 col-lg-4"&gt;
-  &lt;div class="stb-box mini clickable" rel="tel:08880"&gt;
+&lt;div class="col-md-12 col-lg-4"&gt;
+ &lt;div class="stb-box mini clickable" rel="tel:08880"&gt;
+   &lt;div class="row"&gt;
+     &lt;div class="col-sm-6 col-lg-12"&gt;
+       &lt;center&gt;&lt;img src="images/contactus.png"&gt;&lt;/img&gt;&lt;/center&gt;
+     &lt;/div&gt;
+     &lt;div class="col-sm-6 col-lg-12"&gt;
+       &lt;h3 class="box"&gt;Kontakt oss&lt;/h3&gt;
+       &lt;h3  class="box"&gt;&lt;a href="#"&gt;Ring 08880&lt;/a&gt;&lt;/h3&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;    
+&lt;/div&gt;                
+</pre>     
+            </div>
+          </div>  
+
+          <div class="row">
+            <h3>Contact box</h3>
+            <div class="col-xs-12">
+              <p>
+                A special purpose box with lots of functionality. Relies heavily on JavaScript found in stb-page-padding.js.
+              </p>
+              <p>
+                The image goes above the text when the screen width is xs and lg, and to the left of the text on screen widths sm and md. 
+              </p>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <div class="stb-box mini">
+                <div class="row">
+                  <div class="col-sm-6 col-lg-12">
+                    <center><img src="images/contactus.png"></img></center>
+                  </div>
+                  <div class="col-sm-6 col-lg-12">
+                    <div class="allContact">
+                      <h3 class="box">Kontakt oss</h3>
+                      <h3 class="stb-font box"><a href="tel:08880"><span class="stb-sprite-24 phone"></span> 08880 </a></h3>
+                      <h3 class="stb-font box"><a href="https://www.storebrand.no/mail/mailinn/meldaapnesider.nsf/PostAapen?OpenForm" target="_new"><span class="stb-sprite-24 envelope"></span> E-post </a></h3>
+                      <h3 class="stb-font box">
+                        <a href="#" onclick="openChatChoice(); return false;"><span class="stb-sprite-24 chat"></span> Chat </a>
+                      </h3>
+                    </div>
+                    <div class="chatWhat">
+                      <a class="pull-right" style="cursor:pointer; padding-right:10px;"onclick="closeChatChoice(); return false;" href="#"><span aria-hidden="true">Lukk</span></a>
+                      <br />
+                      <h3 class="box">Hva vil du chatte om?</h3>
+                      <h3 class="box"><a href="#" id="chatF"><span class="stb-sprite-24 chat"></span> Forsikring </a></h3>
+                      <h3 class="box"><a href="#"><span class="stb-sprite-24 chat"></span> Bank </a></h3>
+                      <h3 class="box"><span class="stb-sprite-24 chat"></span> <span class="closedChat disabled">Pensjon</span><br /><span class="petit"> Åpent hverdager 8 - 16</span> </h3>
+                    </div>  
+                  </div>
+                </div>
+              </div>    
+            </div>
+          </div> 
+          <div class="row">
+            <div class="col-md-10">
+              <h4>Code:</h4>
+              <pre class="prettyprint">
+&lt;div class="col-md-12 col-lg-4"&gt;
+  &lt;div class="stb-box mini"&gt;
     &lt;div class="row"&gt;
       &lt;div class="col-sm-6 col-lg-12"&gt;
         &lt;center&gt;&lt;img src="images/contactus.png"&gt;&lt;/img&gt;&lt;/center&gt;
       &lt;/div&gt;
       &lt;div class="col-sm-6 col-lg-12"&gt;
-        &lt;h3 class="box"&gt;Kontakt oss&lt;/h3&gt;
-        &lt;h3  class="box"&gt;&lt;a href="#"&gt;Ring 08880&lt;/a&gt;&lt;/h3&gt;
+        &lt;div class="allContact"&gt;
+        ..content
       &lt;/div&gt;
+      &lt;div class="chatWhat"&gt;
+        ..content
+      &lt;/div&gt;  
     &lt;/div&gt;
-   &lt;/div&gt;    
- &lt;/div&gt;                
-</pre>     
-            </div>
-          </div>  
-
-          <div class="row">
-              <h4 style="padding-left:15px;">Full mini contact</h4>
-              <div class="col-md-12 col-lg-4">
-                  <p>This contact box is a mini not clickable. Uses script for toggle. </p>
-              </div>
-              <div class="col-md-12 col-lg-4">
-                  <div class="stb-box mini">
-                      <div class="row">
-                          <div class="col-sm-6 col-lg-12">
-                              <center><img src="images/contactus.png"></img></center>
-                          </div>
-                            <div class="col-sm-6 col-lg-12">
-                               <div class="allContact">
-                                    <h3 class="box">Kontakt oss</h3>
-                                    <h3 class="stb-font box"><a href="tel:08880"><span class="stb-sprite-24 phone"></span> 08880 </a></h3>
-                                    <h3 class="stb-font box"><a href="https://www.storebrand.no/mail/mailinn/meldaapnesider.nsf/PostAapen?OpenForm" target="_new"><span class="stb-sprite-24 envelope"></span> E-post </a></h3>
-                                    <h3 class="stb-font box"><a href="#" onclick="openChatChoice(); return false;"><span class="stb-sprite-24 chat"></span> Chat </a></h3>
-                               </div>
-                               <div class="chatWhat">
-                                    <a class="pull-right" style="cursor:pointer; padding-right:10px;"onclick="closeChatChoice(); return false;" href="#"><span aria-hidden="true">Lukk</span></a>
-                                    <br>
-                                    <h3 class="box">Hva vil du chatte om?</h3>
-                                    <h3 class="box"><a href="#" id="chatF"><span class="stb-sprite-24 chat"></span> Forsikring </a></h3>
-                                    <h3 class="box"><a href="#"><span class="stb-sprite-24 chat"></span> Bank </a></h3>
-                                    <h3 class="box"><span class="stb-sprite-24 chat"></span> <span class="closedChat disabled">Pensjon</span><span class="petit"> Åpent hverdager 8 - 16</span> </h3>
-                                </div>  
-                            </div>
-                        </div>
-                  </div>    
-              </div>
-          </div> 
- <div class="row">
-            <div class="col-md-10">
-              <p>Picture on top for xs and lg. Picture to left for sm and md. This is a spesialized contactbox. A developer is creating this, I guess :-)</P>
-              <h4>Code:</h4>
-              <pre class="prettyprint">
- &lt;div class="col-md-12 col-lg-4"&gt;
-    &lt;div class="stb-box mini"&gt;
-        &lt;div class="row"&gt;
-            &lt;div class="col-sm-6 col-lg-12"&gt;
-                &lt;center&gt;&lt;img src="images/contactus.png"&gt;&lt;/img&gt;&lt;/center&gt;
-            &lt;/div&gt;
-              &lt;div class="col-sm-6 col-lg-12"&gt;
-                 &lt;div class="allContact"&gt;
-                      ..content
-                 &lt;/div&gt;
-                 &lt;div class="chatWhat"&gt;
-                      ..content
-                  &lt;/div&gt;  
-              &lt;/div&gt;
-          &lt;/div&gt;
-    &lt;/div&gt;  
-
+  &lt;/div&gt;
+&lt;/div&gt;  
 </pre>    
-</div>
+            </div>
           </div>              
 
-           <div class="row">
-              <h4 style="padding-left:15px;">Big boxes</h4>
-              <div class="col-md-12 col-lg-4">
-                  <div class="stb-box big clickable" rel="tel:08880">
-                      <div class="row">
-                          <div class="col-sm-6 col-lg-12">
-                              <center><img src="images/contactus.png"></img></center>
-                          </div>
-                          <div class="col-sm-6 col-lg-12">
-                              <h3 class="box"><a href="#">Skal bare</a></h3>
-                              <p>Under henvisning til en særlig tidshorisont spores relasjonene for så vidt gjelder parameterne. Med utgangspunkt i en fortsatt innsats forankres kriteriene i tillegg til visjonen. Med tanke på en avtagende organisasjon styrkes kriteriene for så vidt gjelder føringene i og med at en langsiktig arbeidsmodell effektuerer spisskompetansen utenom evalueringen.</p>
-                          </div>
-                      </div>
-                  </div>    
-              </div>
-
-
-              <div class="col-md-12 col-lg-4">
-                  <div class="stb-box big clickable" rel="tel:08880">
-                      <div class="row">
-                          <div class="col-sm-6 col-lg-12">
-                              <center><img src="images/contactus.png"></img></center>
-                          </div>
-                          <div class="col-sm-6 col-lg-12">
-                              <h3 class="box"><a href="#">Tjenestepensjon</a></h3>
-                              <p>Under henvisning til en særlig tidshorisont spores relasjonene for så vidt gjelder parameterne. </p>
-                              <p>Med utgangspunkt i en fortsatt innsats forankres kriteriene i tillegg til visjonen. Med tanke på en avtagende organisasjon styrkes kriteriene for så vidt gjelder føringene i og med at en langsiktig arbeidsmodell effektuerer spisskompetansen utenom evalueringen.</p>
-                              
-                          </div>
-                      </div>
-                  </div>    
-              </div>
-
           <div class="row">
-            <div class="col-md-10">
-              <p>Picture on top for xs and lg. Picture to left for sm and md.</P>
-              <h4>Code:</h4>
-              <pre class="prettyprint">
-  &lt;div class="col-md-12 col-lg-4"&gt;
-    &lt;div class="stb-box big clickable" rel="tel:08880"&gt;
-      &lt;div class="row"&gt;
-        &lt;div class="col-sm-6 col-lg-12"&gt;
-          &lt;center&gt;&lt;img src="images/contactus.png"&gt;&lt;/img&gt;&lt;/center&gt;
-        &lt;/div&gt;
-        &lt;div class="col-sm-6 col-lg-12"&gt;
-          &lt;h3 class="box"&gt;&lt;a href="#"&gt;Tjenestepensjon&lt;/a&gt;&lt;/h3&gt;
-          ..content
-        &lt;/div&gt;
-       &lt;/div&gt;
-      &lt;/div&gt;    
-    &lt;/div&gt;               
-</pre>     
+            <h3>Big box</h3>
+            <p>
+              Clickable element containing more than just a tiny bit of contents. The element can contain an image that goes above the text on screen widths xs and lg, but to the left of the text on screen widths sm and md.
+            </p>
+            <div class="col-md-12 col-lg-4">
+              <div class="stb-box big clickable" rel="tel:08880">
+                <div class="row">
+                  <div class="col-sm-6 col-lg-12">
+                    <center><img src="images/contactus.png"></img></center>
+                  </div>
+                  <div class="col-sm-6 col-lg-12">
+                    <h3 class="box">Tjenestepensjon</h3>
+                    <p>
+                      En god pensjonsordning er et viktig personalgode som har stor verdi for de ansatte og som bidrar til at bedriftene stiller sterkere i kampen om å tiltrekke seg og beholde de beste medarbeiderne.
+                    </p>
+                    <p>                
+                      Med tjenestepensjon er det du som arbeidsgiver som sparer til pensjon for de ansatte. Du kan også knytte til utvidede dekninger for å gi dine ansatte en bedre pensjonsordning enn det lovpålagte minimumskravet. 
+                    </p>
+                  </div>
+                </div>
+              </div>    
             </div>
-          </div>  
+            
+            <div class="col-md-12 col-lg-4">
+              <div class="stb-box big clickable" rel="tel:08880">
+                <div class="row">
+                  <div class="col-sm-6 col-lg-12">
+                    <center><img src="images/contactus.png"></img></center>
+                  </div>
+                  <div class="col-sm-6 col-lg-12">
+                    <h3 class="box">Skal bare</h3>
+                    <p>
+                      Under henvisning til en særlig tidshorisont spores relasjonene for så vidt gjelder parametrene.
+                    </p>
+                    <p>
+                      Med utgangspunkt i en fortsatt innsats forankres kriteriene i tillegg til visjonen. Med tanke på en avtagende organisasjon styrkes kriteriene for så vidt gjelder føringene i og med at en langsiktig arbeidsmodell effektuerer spisskompetansen utenom evalueringen.
+                    </p>                            
+                  </div>
+                </div>
+              </div>    
+            </div>
 
-   </div> 
-
-        
-           <div class="row">
-              <h4 style="padding-left:15px;">Small contactboxes</h4>
-              <div class="col-md-12 col-lg-4">
-                <p>Can be used seperatly or in a group</p>
-                <p>Single examples:</p>
-                <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a></p>
-                <p>One more example:
-                <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a></p>  
-              </div>
-
-
-              <div class="col-md-12 col-lg-4">
-                  <p><b>Kontakt oss</b></p>
-                  <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white envelope"></span></div><span class="pillText">Skriv til oss</span></a></p>
-                  <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span></a></p>
-                  <p><a href="tel:08880" class="ChatClosed" onclick="return false;"><div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-16 white chat"></span></div><span class="pillText">Chat med oss</span> <br></a><span class="petit">Stengt. Åpen hverdager 8-16</span></p>
-                  <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a></p>
-                  <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a></p>
-                  <p><a href="#" onclick="callMeSmallToggle();return false;"><div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Vi ringer deg</span>&nbsp;<span id="upDown" class="stb-sprite-16 chevron-down"></span></a>
-                          <div class="stb-form-group callBackForm">
-                              <label for="callMe">Ditt telefonnummer</label>
-                              <br>
-                              <input type="text" id="callMe" placeholder="8 siffer" style="width: 180px;">
-                              <p><a href="#" onclick="callBack();return false"> Ring meg</a></p>
-                          </div>
-                          <div class="callBackRecipt">
-                            <a href="#" onclick="callBackReciptClose();return false;"><br>Vi vil ringe deg på <span id="tlf"></span> innen vår åpningstid.</a>
-                          </div>  
-                   </p> 
-              </div>
-
-          <div class="row">
-            <div class="col-md-10">
-              <h4>Code:</h4>
-              <pre class="prettyprint">
-    
-  &lt;p&gt;
-    &lt;a href="tel:08880"&gt;
-      &lt;div class="circle-16 stbcolor-secondary third/first pull-left"&gt;
-        &lt;span class="stb-sprite-16 white phone/chat/envelope"&gt;&lt;/span&gt;
+            <div class="row">
+              <div class="col-md-10">
+                <h4>Code:</h4>
+                <pre class="prettyprint">
+&lt;div class="col-md-12 col-lg-4"&gt;
+  &lt;div class="stb-box big clickable" rel="tel:08880"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-sm-6 col-lg-12"&gt;
+        &lt;center&gt;&lt;img src="images/contactus.png"&gt;&lt;/img&gt;&lt;/center&gt;
       &lt;/div&gt;
-      &lt;span class="pillText"&gt;
-        Ring 08880
-      &lt;/span&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;             
+      &lt;div class="col-sm-6 col-lg-12"&gt;
+        &lt;h3 class="box"&gt;&lt;a href="#"&gt;Tjenestepensjon&lt;/a&gt;&lt;/h3&gt;
+        ..content
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;    
+&lt;/div&gt;               
 </pre>     
-            </div>
-          </div>  
-
-   </div> 
-
-
-
-
-
-
-
-
-
-
+              </div>
+            </div>  
+          </div> 
 
         </div> <!-- /col-md-9 -->
 
       </div> <!-- /Boxes row -->
-      
-    
-      
-     
+   
       
       <hr class="top-margin-30" />
 
       <div class="row"> <!-- Notification row -->
         <div class="col-md-3">
           <h2>Notification</h2>
-          (Done-ish, icon use is not established.)
+          (Ready to use, icons may change.)
         </div>
         <div class="col-md-9">
           <p>
@@ -1373,7 +1172,7 @@
       <div class="row"> <!-- FAQ row -->
         <div class="col-md-3">
           <h2>FAQ</h2>
-          (Done)
+          (Ready to use)
         </div>
         <div class="col-md-9">
           <h3>Frequently Asked Questions ("Accordion")</h3>
@@ -1449,7 +1248,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row">
         <div class="col-md-3">
           <h2>Modals</h2>
-          (Slightly done-ish, needs variations.)
+          (Needs styling, otherwise ready to use)
         </div>
         <div class="col-md-9">
           <div class="row">
@@ -1515,7 +1314,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row">
         <div class="col-md-3">
           <h2>Cookie Notice</h2>
-          (Done, text may vary.)
+          (Ready to use)
         </div>
         <div class="col-md-9">
           <div class="row">
@@ -1554,7 +1353,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row">
         <div class="col-md-3">
           <h2>Buttons</h2>
-          (Done-ish, needs specification regarding buttons on top of background graphics.)
+          (Ready to use)
         </div>
         <div class="col-md-9">
           <div class="row">
@@ -1765,7 +1564,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row"> <!-- Image row -->
         <div class="col-md-3">
           <h2>Image with caption</h2>
-          (Done-ish)
+          (Ready to use)
         </div>
         <div class="col-md-9">
           <p>
@@ -1802,7 +1601,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row"> <!-- Standard icons row -->
         <div class="col-md-3">
           <h2>Icons</h2>
-          (Done per 2014-07-23. Will probably add more later.)
+          (Ready to use. More icons are coming.)
         </div>
         <div class="col-md-9">
           <div class="row">
@@ -2619,7 +2418,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row bottom-margin-50"> <!-- Backgrounds section row -->
         <div class="col-md-3">
           <h2>Background playground</h2>
-          (Done-ish)
+          (NOT ready to use. Still being designed. Stick to simple white backgrounds for now.)
         </div>
         <div class="col-md-9">
           <p>
@@ -2878,7 +2677,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row"> <!-- About forms -->
         <div class="col-md-3">
           <h2>Forms</h2>
-          (Barely started)
+          (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
         </div>
         <div class="col-md-9">
           <p>
@@ -2893,7 +2692,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row"> <!-- / General input fields row -->
         <div class="col-md-3">
           <h2>Forms: Text input fields</h2>
-          (Not done! Form elements are still in the making...)
+          (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
         </div>
         <div class="col-md-9">
           <p>
@@ -3046,7 +2845,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row">
         <div class="col-md-3">
           <h2>Forms: Radio buttons and checkboxes</h2>
-          (Done-ish, needs some graphical elements still)
+          (Not finished, design will definitely change, but you can start using it anyway. Please consult storebrand.ny project.)
         </div>
         
         <div class="col-md-9">
@@ -3137,7 +2936,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row"> <!-- Dropdown select -->
         <div class="col-md-3">
           <h2>Dropdown / Select</h2>
-          (Done-ish)
+          (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
         </div>
         <div class="col-md-9">
           <div class="row">
@@ -3199,12 +2998,17 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row"><!-- Sliders row -->
         <div class="col-md-3">
           <h2>Sliders</h2>
-          (Done-ish)
+          (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
         </div>      
         <div class="col-md-9">
           <div class="row">
             <div class="col-md-12">
-              <p>As we wait for browsers world-wide to deliver excellent sliders through the HTML5 range tag, we currently use a customized slider.</p>
+              <p>
+                As we wait for browsers world-wide to deliver excellent sliders through the HTML5 range tag, we currently use a customized slider.
+              </p>
+              <p>
+                A slider must always be accompanied by a good old text input field, for universal design.
+              </p>
             </div>
           </div>
           <div class="row">
@@ -3289,7 +3093,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="row"> <!-- Progress bar row -->
         <div class="col-md-3">
           <h2>Progress bar</h2>
-          (Done-ish)
+          (Not ready to use, but if you need something like this, consult with storebrand.ny project.)
         </div>
 
         <div class="col-md-9">
