@@ -512,35 +512,46 @@
           <p class="border-top-and-bottom">
             And then there's the class "border-top-and-bottom", which adds visible borders at the top and bottom of the element.
           </p>
-          <h3>Reverse box layout</h3>
-          <p>This example reverses the default responsive break. The left column will be placed over the right one at "sm" and "xs" </p>
-          <div class="row">
-          <div class="col-md-4 col-md-push-8">
-            <div rel="tel:08880" class="stb-box mini clickable">
-                <div class="row">
-                    <div class="col-sm-6 col-md-12">
-                      <center><img src="images/contactus.png"></center>
-                    </div>
-                    <div class="col-sm-6 col-md-12">
-                      <h3 class="box">Kontakt oss</h3>
-                      <h3 class="box"><a href="#">Ring 08880</a></h3>
-                    </div>
-                 </div>
-              </div>
-          </div>
-          <div class="col-md-8 col-md-pull-4">
-                <div class="stb-box border black">
-                    <h3 class="box">Content</h3>
-                    <p>This box will go under the right contactbox.</p>
-                    <img src="images/toolBox.png">
-                </div> 
-          </div>
-    
         </div>
-        <strong>Code:</strong> 
+      </div> <!-- / Spacing row -->
+      
+      <hr class="top-margin-30" />
+
+      <div class="row"><!-- Reverse box layout row -->
+        <div class="col-md-3">
+          <h2>Layout / Box order</h2>
+          (Ready to use)
+        </div>
+        <div class="col-md-9">      
+          <h3>Reverse box layout</h3>
+          <p>This example reverses the default responsive break. Using push and pull classes from Bootstrap, the left side column can be floated to appear above the right side column at screen widths sm and xs, instead of what normally would happen.</p>
+          <div class="row">
+            <div class="col-md-4 col-md-push-8">
+              <div rel="tel:08880" class="stb-box mini clickable">
+                <div class="row">
+                  <div class="col-sm-6 col-md-12">
+                    <center><img src="images/contactus.png"></center>
+                  </div>
+                  <div class="col-sm-6 col-md-12">
+                    <h3 class="box">Kontakt oss</h3>
+                    <h3 class="box"><a href="#">Ring 08880</a></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 col-md-pull-4">
+              <div class="stb-box border black">
+                <h3 class="box">Content</h3>
+                <p>
+                  This box will go underneath the right side contact box.
+                </p>
+                <img src="images/toolBox.png" />
+              </div> 
+            </div>
+          </div>
+          <strong>Code:</strong> 
           <br />
           <pre class="prettyprint">
- 
 &lt;div class="row"&gt;
   &lt;div class="col-md-8 col-md-push-4"&gt;
     ..content
@@ -550,10 +561,10 @@
   &lt;/div&gt;  
 &lt;/div&gt;
 </pre> 
-      </div> <!-- / Spacing row -->
-      
-      <hr />
-      
+        </div>
+      </div><!-- /Reverse box layout row -->
+
+      <hr class="top-margin-30" />
 
       <div class="row"><!-- Tables row -->
         <div class="col-md-3">
