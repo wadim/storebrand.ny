@@ -22,35 +22,74 @@
 
   <style>
   
-  .nav-container {
-    border-bottom: 2px solid  #efe8df
+  .tab-container {
+    border-bottom: 2px solid  #efe8df;
   }
   
-  .nav-container ul {
+  .tab-container ul {
     border: none;
   }
-  .nav-tabs>li {
+  
+  .tab-container .nav-tabs>li {
     background-color: #efe8df;
     margin-right: 2px;
     margin-bottom: -2px;
   }
   
-  .nav-tabs>li.active {
+  .tab-container .nav-tabs>li.active {
     border-color: #efe8df;
    }
  
-   .nav-tabs>li>a {
+   .tab-container .nav-tabs>li>a {
     margin-right: 0;
     display: inline-block;
     height: 100%; 
   }
   
-  .nav-tabs>li>a:hover{
+  .tab-container .nav-tabs>li>a:hover{
     background-color: #fff;
     padding-bottom: 10px;
     color: #000;
   }
+  
+  .dropdown-tabs .dropdown a{
+    border-bottom: none;
+    padding: 3px 20px;
+    color: 000;
+  }
+  
+  .dropdown-tabs .dropdown a:hover{
+    border-bottom: none;
+    padding: 3px 20px;
+  }
+  
+  .dropdown-tabs .dropdown .btn-default:hover, .dropdown-tabs .dropdown .btn-default:focus, .dropdown-tabs .dropdown .btn-default:active {
+    background-color: #fff;
+  }
+  .dropdown-tabs .dropdown button {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .dropdown-tabs .dropdown button span.icon {
+    float: right;
+  }
   </style>
+  
+  
+  <script>
+  
+  // script for populating the dropdown with the selected tab link
+  
+  $(document).ready(function() {
+	  $(".dropdown-tabs .dropdown-menu li a").click(function() {
+		  $(".dropdown-tabs .dropdown .heading").html($(this).html());
+		 
+	  });  
+  });
+  
+  </script>
+ 
 </head>
 
 <body>
@@ -364,9 +403,7 @@
   <div class="container top-padding-40-mdlg">
     <h1>Kontakt Oss</h1>
  </div>
- 
-
- <div class="nav-container">
+ <div class="tab-container visible-md visible-lg visible-sm">
    <div class="container">
      <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
        <li class="active"><a href="#" data-toggle="tab">Privat</a></li>
@@ -378,8 +415,23 @@
    </div>
  </div> 
 
+<div class="container dropdown-tabs visible-xs top-margin-40">
+  <div class="dropdown" style="width: 100%">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="width: 100%">
+     <span class="heading">Velg området</span>
+     <span class="icon stb-sprite-16 charcoal chevron-down"></span>
+    </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="width: 100%">
+  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Privat</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="click">Bedrift</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Presse og IR</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Eiendom</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Asset management</a></li>
+  </ul>
+</div>
+</div>
 
-   <div class="container top-padding-40-mdlg">
+   <div class="container top-padding-40">
     <div class="row">
     	<div class="col-md-12 col-lg-4">
     	  <h3> Generelle hendvendelser</h3>
@@ -408,7 +460,7 @@
             <p class="petit">Dersom du ringer fra utlandet</p>
          </p>      
     	</div>
-    	<div class="col-md-12 col-lg-4">
+    	<div class="col-md-12 col-lg-4 visible-sm visible-md visible-lg">
             <div class="stb-box big clickable" rel="tel:08880">
               <div class="row">
                 <div class="col-sm-6 col-lg-12">
@@ -423,7 +475,7 @@
           </div>    
            	
     	</div>
-    	<div class="col-md-12 col-lg-4">
+    	<div class="col-md-12 col-lg-4 visible-sm visible-md visible-lg">
     	  <div class="stb-box big clickable" rel="tel:08880">
               <div class="row">
                 <div class="col-sm-6 col-lg-12">
@@ -438,9 +490,18 @@
     	</div>
     </div>
   
+   <div class="row visible-xs top-margin-30">
+     <div class="col-xs-3">
+          <button class="stb-btn transparent light">Sperre kort</button>
+        </div>
+    <div class="col-xs-4">
+     <button class="stb-btn transparent light">Meld skade</button>
+   </div>
    
+   <div class="col-xs-4"></div>
+   </div>
    
-    <div class="row top-margin-50">
+    <div class="row top-margin-30">
     	<div class="col-md-4">
     	  <p>
     		<a href="tel:08880">
@@ -490,7 +551,7 @@
     	
     </div>
     
-    <div class="row top-margin-50 bottom-margin-50-mdlg">
+    <div class="row top-margin-30 bottom-margin-50-mdlg">
       <div class="col-md-4">
         <h3>Viktige kontaktpersoner</h3>
         <div class="stb-list-group">
