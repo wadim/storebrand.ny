@@ -553,4 +553,14 @@ $(document).ready(function(){
 });
 
 
+// script for populating the dropdown with the selected tab link
+
+$(document).ready(function() {
+	  $(".dropdown-tabs .dropdown .heading").html($(".dropdown-tabs .dropdown-menu li.active a").html());
+	  $(".dropdown-tabs .dropdown-menu li a").click(function() {
+		  $(".dropdown-tabs .dropdown-menu li.active").removeClass("active");
+		  $(".dropdown-tabs .dropdown .heading").html($(this).html());
+	  });  
+});
+
 
