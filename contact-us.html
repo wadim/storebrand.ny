@@ -57,6 +57,7 @@
     padding: 3px 20px;
     color: 000;
   }
+
   
   .dropdown-tabs .dropdown a:hover{
     border-bottom: none;
@@ -83,8 +84,8 @@
   
   $(document).ready(function() {
 	  $(".dropdown-tabs .dropdown-menu li a").click(function() {
+		  $(".dropdown-tabs .dropdown-menu li.active").removeClass("active");
 		  $(".dropdown-tabs .dropdown .heading").html($(this).html());
-		 
 	  });  
   });
   
@@ -406,11 +407,11 @@
  <div class="tab-container visible-md visible-lg visible-sm">
    <div class="container">
      <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-       <li class="active"><a href="#" data-toggle="tab">Privat</a></li>
-       <li><a href="#" data-toggle="tab">Bedrift</a></li>
-       <li><a href="#" data-toggle="tab">Presse og IR</a></li>
-       <li><a href="#" data-toggle="tab">Eiendom</a></li>
-       <li><a href="#" data-toggle="tab">Asset management</a></li>
+       <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
+       <li><a href="#company" data-toggle="tab">Bedrift</a></li>
+       <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
+       <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
+       <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
      </ul>
    </div>
  </div> 
@@ -421,19 +422,21 @@
      <span class="heading">Velg området</span>
      <span class="icon stb-sprite-16 charcoal chevron-down"></span>
     </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="width: 100%">
-  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Privat</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="click">Bedrift</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Presse og IR</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Eiendom</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Asset management</a></li>
+  <ul class="dropdown-menu" data-tabs="tabs" style="width: 100%">
+   <li><a href="#private" data-toggle="tab">Privat</a></li>
+   <li><a href="#company" data-toggle="tab">Bedrift</a></li>
+   <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
+   <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
+   <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
   </ul>
 </div>
 </div>
 
-   <div class="container top-padding-40">
+<div id="my-tab-content" class="tab-content">
+
+   <div class="container top-padding-40 tab-pane active" id="private">
     <div class="row">
-    	<div class="col-md-12 col-lg-4">
+    	<div class="col-md-4 col-lg-4">
     	  <h3> Generelle hendvendelser</h3>
     	  <p>
     		<a href="tel:08880">
@@ -466,7 +469,7 @@
                 <div class="col-sm-6 col-lg-12">
                   <center><img src="images/helpImage.png"></img></center>
                 </div>
-             <div class="col-sm-6 col-lg-12">
+             <div class="col-sm-6 col-md-12">
                   <h3 class="box"><a href="#">Sperr kort</a></h3>
                   <p>Våre sperretjenester er åpne alle dager hele døgnet.</p>
                  
@@ -481,7 +484,7 @@
                 <div class="col-sm-6 col-lg-12">
                   <center><img src="images/contactus.png"></img></center>
                 </div>
-             <div class="col-sm-6 col-lg-12">
+             <div class="col-sm-6 col-md-12">
                   <h3  class="box"><a href="#">Meld skade</a></h3>
                  <p>Når uhellet har vært ute, du er blitt syk eller noen har falt fra, er det viktig å melde ifra så snart som mulig.</p>
              </div>
@@ -578,6 +581,346 @@
      </div>
     </div>
   </div>
+  
+  <div class="container top-padding-40 tab-pane" id="company">
+     <div class="row">
+    	<div class="col-md-4 col-lg-4">
+    	  <h3> Generelle hendvendelser</h3>
+    	  <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white phone"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Ring 08880
+              </span>
+            </a>
+            <p class="petit">Hverdage: 8-16 (bank 8-20). Lørdag: 9-15 (kun bank)</p>
+            <p class="petit">Lørdag: 9-15 (kun bank)</p>
+         </p>      
+         
+         <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white phone"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Ring +47 915 08880
+              </span>
+            </a>
+            <p class="petit">Dersom du ringer fra utlandet</p>
+         </p>      
+    	</div>
+    	<div class="col-md-12 col-lg-4 visible-sm visible-md visible-lg">
+            <div class="stb-box big clickable" rel="tel:08880">
+              <div class="row">
+                <div class="col-sm-6 col-lg-12">
+                  <center><img src="images/helpImage.png"></img></center>
+                </div>
+             <div class="col-sm-6 col-md-12">
+                  <h3 class="box"><a href="#">Sperr kort</a></h3>
+                  <p>Våre sperretjenester er åpne alle dager hele døgnet.</p>
+                 
+             </div>
+            </div>
+          </div>    
+           	
+    	</div>
+    	<div class="col-md-12 col-lg-4 visible-sm visible-md visible-lg">
+    	  <div class="stb-box big clickable" rel="tel:08880">
+              <div class="row">
+                <div class="col-sm-6 col-lg-12">
+                  <center><img src="images/contactus.png"></img></center>
+                </div>
+             <div class="col-sm-6 col-md-12">
+                  <h3  class="box"><a href="#">Meld skade</a></h3>
+                 <p>Når uhellet har vært ute, du er blitt syk eller noen har falt fra, er det viktig å melde ifra så snart som mulig.</p>
+             </div>
+            </div>
+          </div>    
+    	</div>
+    </div>
+  
+   <div class="row visible-xs top-margin-30">
+     <div class="col-xs-3">
+          <button class="stb-btn transparent light">Sperre kort</button>
+        </div>
+    <div class="col-xs-4">
+     <button class="stb-btn transparent light">Meld skade</button>
+   </div>
+   
+   <div class="col-xs-4"></div>
+   </div>
+   
+    <div class="row top-margin-30">
+    	<div class="col-md-4">
+    	  <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white chat"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Chat med oss
+              </span>
+            </a>
+           
+         </p>      
+         
+        <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white envelope"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Skriv med oss
+              </span>
+            </a>
+            
+         </p>     
+         
+          <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white user"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Avtale rådgivingstime
+              </span>
+            </a>
+            
+         </p>     
+         
+    	</div>
+    	<div class="col-md-8">
+          <h3>Hovedkontor</h3>
+          <p>Besøkeaddress: Professor Kohts vei 9, Lysaker<br/>
+             Postaddress: Postboks 500, 1327 Lysakerbr<br/>
+             Organisasjonsnummer: NO 916 300 484
+          </p>
+          <p>Sentralbord: <a href="#">22 31 50 50 </a> </p>
+    	</div>
+    	
+    </div>
+    
+  </div>
+  
+   <div class="container top-padding-40 tab-pane" id="press">
+     <div class="row">
+    	<div class="col-md-12 col-lg-4 visible-sm visible-md visible-lg">
+            <div class="stb-box big clickable" rel="tel:08880">
+              <div class="row">
+                <div class="col-sm-6 col-lg-12">
+                  <center><img src="images/helpImage.png"></img></center>
+                </div>
+             <div class="col-sm-6 col-md-12">
+                  <h3 class="box"><a href="#">Sperr kort</a></h3>
+                  <p>Våre sperretjenester er åpne alle dager hele døgnet.</p>
+                 
+             </div>
+            </div>
+          </div>    
+           	
+    	</div>
+    	<div class="col-md-12 col-lg-4 visible-sm visible-md visible-lg">
+    	  <div class="stb-box big clickable" rel="tel:08880">
+              <div class="row">
+                <div class="col-sm-6 col-lg-12">
+                  <center><img src="images/contactus.png"></img></center>
+                </div>
+             <div class="col-sm-6 col-md-12">
+                  <h3  class="box"><a href="#">Meld skade</a></h3>
+                 <p>Når uhellet har vært ute, du er blitt syk eller noen har falt fra, er det viktig å melde ifra så snart som mulig.</p>
+             </div>
+            </div>
+          </div>    
+    	</div>
+    </div>
+  
+   <div class="row visible-xs top-margin-30">
+     <div class="col-xs-3">
+          <button class="stb-btn transparent light">Sperre kort</button>
+        </div>
+    <div class="col-xs-4">
+     <button class="stb-btn transparent light">Meld skade</button>
+   </div>
+   
+   <div class="col-xs-4"></div>
+   </div>
+   
+    <div class="row top-margin-30">
+    	<div class="col-md-4">
+    	  <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white chat"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Chat med oss
+              </span>
+            </a>
+           
+         </p>      
+         
+        <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white envelope"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Skriv med oss
+              </span>
+            </a>
+            
+         </p>     
+         
+          <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white user"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Avtale rådgivingstime
+              </span>
+            </a>
+            
+         </p>     
+         
+    	</div>
+    	<div class="col-md-8">
+          <h3>Hovedkontor</h3>
+          <p>Besøkeaddress: Professor Kohts vei 9, Lysaker<br/>
+             Postaddress: Postboks 500, 1327 Lysakerbr<br/>
+             Organisasjonsnummer: NO 916 300 484
+          </p>
+          <p>Sentralbord: <a href="#">22 31 50 50 </a> </p>
+    	</div>
+    	
+    </div>
+    
+  </div>
+  
+   <div class="container top-padding-40 tab-pane" id="real-estate">
+    
+    <div class="row top-margin-30 bottom-margin-50-mdlg">
+      <div class="col-md-4">
+        <h3>Viktige kontaktpersoner</h3>
+        <div class="stb-list-group">
+          <a class="list-group-item" href="#">Bilforsikring</a>
+          <a class="list-group-item" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item" href="#">Traktorforsikring </a>
+       </div>
+     </div>
+     <div class="col-md-4">
+        <h3>klage eller reklamasjon</h3>
+        <div class="stb-list-group">
+          <a class="list-group-item links" href="#">Bilforsikring </a>
+          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item links" href="#">Traktorforsikring </a>
+       </div>
+     </div>
+     <div class="col-md-4">
+        <h3>Kontorer og rådgivere</h3>
+        <div class="stb-list-group">
+          <a class="list-group-item links" href="#">Bilforsikring </a>
+          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item links" href="#">Traktorforsikring </a>
+       </div>
+     </div>
+    </div>
+  </div>
+  
+   <div class="container top-padding-40 tab-pane" id="asset-management">
+    
+     <div class="row">
+    	<div class="col-md-4 col-lg-4">
+    	  <h3> Generelle hendvendelser</h3>
+    	  <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white phone"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Ring 08880
+              </span>
+            </a>
+            <p class="petit">Hverdage: 8-16 (bank 8-20). Lørdag: 9-15 (kun bank)</p>
+            <p class="petit">Lørdag: 9-15 (kun bank)</p>
+         </p>      
+         
+         <p>
+    		<a href="tel:08880">
+      	      <div class="circle-16 stbcolor-secondary third pull-left">
+        	    <span class="stb-sprite-16 white phone"></span>
+      	      </div>
+      	      <span class="pillText">
+        		Ring +47 915 08880
+              </span>
+            </a>
+            <p class="petit">Dersom du ringer fra utlandet</p>
+         </p>      
+    	</div>
+    	<div class="col-md-12 col-lg-4 visible-sm visible-md visible-lg">
+            <div class="stb-box big clickable" rel="tel:08880">
+              <div class="row">
+                <div class="col-sm-6 col-lg-12">
+                  <center><img src="images/helpImage.png"></img></center>
+                </div>
+             <div class="col-sm-6 col-md-12">
+                  <h3 class="box"><a href="#">Sperr kort</a></h3>
+                  <p>Våre sperretjenester er åpne alle dager hele døgnet.</p>
+                 
+             </div>
+            </div>
+          </div>    
+           	
+    	</div>
+    	<div class="col-md-12 col-lg-4 visible-sm visible-md visible-lg">
+    	  <div class="stb-box big clickable" rel="tel:08880">
+              <div class="row">
+                <div class="col-sm-6 col-lg-12">
+                  <center><img src="images/contactus.png"></img></center>
+                </div>
+             <div class="col-sm-6 col-md-12">
+                  <h3  class="box"><a href="#">Meld skade</a></h3>
+                 <p>Når uhellet har vært ute, du er blitt syk eller noen har falt fra, er det viktig å melde ifra så snart som mulig.</p>
+             </div>
+            </div>
+          </div>    
+    	</div>
+    </div>
+    <div class="row top-margin-30 bottom-margin-50-mdlg">
+      <div class="col-md-4">
+        <h3>Viktige kontaktpersoner</h3>
+        <div class="stb-list-group">
+          <a class="list-group-item" href="#">Bilforsikring</a>
+          <a class="list-group-item" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item" href="#">Traktorforsikring </a>
+       </div>
+     </div>
+     <div class="col-md-4">
+        <h3>klage eller reklamasjon</h3>
+        <div class="stb-list-group">
+          <a class="list-group-item links" href="#">Bilforsikring </a>
+          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item links" href="#">Traktorforsikring </a>
+       </div>
+     </div>
+     <div class="col-md-4">
+        <h3>Kontorer og rådgivere</h3>
+        <div class="stb-list-group">
+          <a class="list-group-item links" href="#">Bilforsikring </a>
+          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item links" href="#">Traktorforsikring </a>
+       </div>
+     </div>
+    </div>
+  </div>
+   
+   
+   <div>
+    <a name="private"></a>
+   </div>
+</div>
  
 	<!-- End actual page contents -->  
 
