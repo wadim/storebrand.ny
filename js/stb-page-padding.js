@@ -561,6 +561,10 @@ $(document).ready(function() {
 		  $(".dropdown-tabs .dropdown-menu li.active").removeClass("active");
 		  $(".dropdown-tabs .dropdown .heading").html($(this).html());
 	  });  
+	  
+	  $(".dropdown-tabs button").click(function() {
+		  $(".dropdown-tabs button span.icon").toggleClass('chevron-up chevron-down');
+	  });
 });
 
 
