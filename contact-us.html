@@ -18,78 +18,7 @@
   <script type="text/javascript" src="data/searchdata.js"></script>
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript" src="js/stb-common.js"></script>  
-  <script type="text/javascript" src="js/stb-page-padding.js"></script>
-
-  <style>
-  
-  .tab-container {
-    border-bottom: 2px solid  #efe8df;
-  }
-  
-  .tab-container ul {
-    border: none;
-  }
-  
-  .tab-container .nav-tabs>li {
-    background-color: #efe8df;
-    margin-right: 2px;
-    margin-bottom: -2px;
-  }
-  
-  .tab-container .nav-tabs>li.active {
-    border-color: #efe8df;
-   }
- 
-   .tab-container .nav-tabs>li>a {
-    margin-right: 0;
-    display: inline-block;
-    height: 100%; 
-  }
-  
-  .tab-container .nav-tabs>li>a:hover{
-    background-color: #fff;
-    padding-bottom: 10px;
-    color: #000;
-  }
-  
-  .dropdown-tabs .dropdown a{
-    border-bottom: none;
-    padding: 3px 20px;
-    color: 000;
-  }
-
-  
-  .dropdown-tabs .dropdown a:hover{
-    border-bottom: none;
-    padding: 3px 20px;
-  }
-  
-  .dropdown-tabs .dropdown .btn-default:hover, .dropdown-tabs .dropdown .btn-default:focus, .dropdown-tabs .dropdown .btn-default:active {
-    background-color: #fff;
-  }
-  .dropdown-tabs .dropdown button {
-    text-align: left;
-    font-weight: bold;
-  }
-  
-  .dropdown-tabs .dropdown button span.icon {
-    float: right;
-  }
-  </style>
-  
-  
-  <script>
-  
-  // script for populating the dropdown with the selected tab link
-  
-  $(document).ready(function() {
-	  $(".dropdown-tabs .dropdown-menu li a").click(function() {
-		  $(".dropdown-tabs .dropdown-menu li.active").removeClass("active");
-		  $(".dropdown-tabs .dropdown .heading").html($(this).html());
-	  });  
-  });
-  
-  </script>
+  <script type="text/javascript" src="js/stb-page-padding.js"></script>  
  
 </head>
 
@@ -403,7 +332,8 @@
 
   <div class="container top-padding-40-mdlg">
     <h1>Kontakt Oss</h1>
- </div>
+  </div>
+  
  <div class="tab-container visible-md visible-lg visible-sm">
    <div class="container">
      <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
@@ -419,11 +349,11 @@
 <div class="container dropdown-tabs visible-xs top-margin-40">
   <div class="dropdown" style="width: 100%">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="width: 100%">
-     <span class="heading">Velg området</span>
+     <span class="heading"></span>
      <span class="icon stb-sprite-16 charcoal chevron-down"></span>
     </button>
   <ul class="dropdown-menu" data-tabs="tabs" style="width: 100%">
-   <li><a href="#private" data-toggle="tab">Privat</a></li>
+   <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
    <li><a href="#company" data-toggle="tab">Bedrift</a></li>
    <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
    <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
@@ -433,7 +363,6 @@
 </div>
 
 <div id="my-tab-content" class="tab-content">
-
    <div class="container top-padding-40 tab-pane active" id="private">
     <div class="row">
     	<div class="col-md-4 col-lg-4">
@@ -566,17 +495,17 @@
      <div class="col-md-4">
         <h3>klage eller reklamasjon</h3>
         <div class="stb-list-group">
-          <a class="list-group-item links" href="#">Bilforsikring </a>
-          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
-          <a class="list-group-item links" href="#">Traktorforsikring </a>
+          <a class="list-group-item" href="#">Bilforsikring </a>
+          <a class="list-group-item" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item" href="#">Traktorforsikring </a>
        </div>
      </div>
      <div class="col-md-4">
         <h3>Kontorer og rådgivere</h3>
         <div class="stb-list-group">
-          <a class="list-group-item links" href="#">Bilforsikring </a>
-          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
-          <a class="list-group-item links" href="#">Traktorforsikring </a>
+          <a class="list-group-item" href="#">Bilforsikring </a>
+          <a class="list-group-item" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item" href="#">Traktorforsikring </a>
        </div>
      </div>
     </div>
@@ -652,7 +581,7 @@
    <div class="col-xs-4"></div>
    </div>
    
-    <div class="row top-margin-30">
+    <div class="row top-margin-30 bottom-margin-30">
     	<div class="col-md-4">
     	  <p>
     		<a href="tel:08880">
@@ -747,7 +676,7 @@
    <div class="col-xs-4"></div>
    </div>
    
-    <div class="row top-margin-30">
+    <div class="row top-margin-30 bottom-margin-30">
     	<div class="col-md-4">
     	  <p>
     		<a href="tel:08880">
@@ -813,17 +742,17 @@
      <div class="col-md-4">
         <h3>klage eller reklamasjon</h3>
         <div class="stb-list-group">
-          <a class="list-group-item links" href="#">Bilforsikring </a>
-          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
-          <a class="list-group-item links" href="#">Traktorforsikring </a>
+          <a class="list-group-item" href="#">Bilforsikring </a>
+          <a class="list-group-item" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item" href="#">Traktorforsikring </a>
        </div>
      </div>
      <div class="col-md-4">
         <h3>Kontorer og rådgivere</h3>
         <div class="stb-list-group">
-          <a class="list-group-item links" href="#">Bilforsikring </a>
-          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
-          <a class="list-group-item links" href="#">Traktorforsikring </a>
+          <a class="list-group-item" href="#">Bilforsikring </a>
+          <a class="list-group-item" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item" href="#">Traktorforsikring </a>
        </div>
      </div>
     </div>
@@ -900,17 +829,17 @@
      <div class="col-md-4">
         <h3>klage eller reklamasjon</h3>
         <div class="stb-list-group">
-          <a class="list-group-item links" href="#">Bilforsikring </a>
-          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
-          <a class="list-group-item links" href="#">Traktorforsikring </a>
+          <a class="list-group-item" href="#">Bilforsikring </a>
+          <a class="list-group-item" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item" href="#">Traktorforsikring </a>
        </div>
      </div>
      <div class="col-md-4">
         <h3>Kontorer og rådgivere</h3>
         <div class="stb-list-group">
-          <a class="list-group-item links" href="#">Bilforsikring </a>
-          <a class="list-group-item links" href="#">Motorsykkelforsikring </a>
-          <a class="list-group-item links" href="#">Traktorforsikring </a>
+          <a class="list-group-item" href="#">Bilforsikring </a>
+          <a class="list-group-item" href="#">Motorsykkelforsikring </a>
+          <a class="list-group-item" href="#">Traktorforsikring </a>
        </div>
      </div>
     </div>
