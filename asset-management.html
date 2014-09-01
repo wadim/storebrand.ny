@@ -369,62 +369,87 @@
   <!-- End top of page -->
 
 <style>
-
 .errormessage,
 .commonmessage {
   display:none;
 }
-
-
 </style>
 
 <script>
-
+//Runs onload and show error or common message if found
 $(document).ready(function(){  
-  setTimeout(function() {
-     showErrorMsg();
-    }, 1000);
+  //var msgRead = readCookie('messageRead');
+    //if(msgRead != 'Yes'){
+        setTimeout(function() {
+           toggleErrorMsg();
+           toggleCommonMsg();
+        }, 1000);
+    //}    
   });
- 
-
-function showErrorMsg(){
+function toggleErrorMsg(){
   $('.errormessage').toggle('slow');
+  //createCookie('messageRead','Yes'); 
 }
-
-function showCommonMsg(){
-  $('.errormessage').toggle('slow');
+function toggleCommonMsg(){
   $('.commonmessage').toggle('slow');
+  //createCookie('messageRead','Yes'); 
 }
+
+/*
+function createCookie(n,value,days) {
+if (days) {
+var date = new Date();
+date.setTime(date.getTime()+(days*24*60*60*1000));
+var expires = "; expires="+date.toGMTString();
+}
+else var expires = "";
+dom = "; domain=.storebrand.no";
+document.cookie = n+"="+value+expires+"; path=/"+dom; } function readCookie(name) {
+var nameEQ = name + "=";
+var ca = document.cookie.split(';');
+for(var i=0;i < ca.length;i++) {
+var c = ca[i];
+while (c.charAt(0)==' ') c = c.substring(1,c.length);
+if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+}
+return null;
+} 
+*/
 
 
 </script>
 
+
   <!-- Start actual page contents -->
 
-<div class="container top-padding-20 bottom-padding-20 errormessage">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="stb-alert stb-alert-alarm">
-          <span aria-hidden="true" style="color:#FFFFFF; cursor:pointer;" onclick="showErrorMsg();return false;" class="pull-right">X</span>
-            <h2><span class="stb-color-sprite-48 warning"></span> Vikitig melding</h2>
-            <p>Vi har desverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
-            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
-        </div>
-    </div>
-  </div>
-</div> 
 
-<div class="container top-padding-20 bottom-padding-20 commonmessage">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="stb-alert stb-alert-success">
-          <span aria-hidden="true" style="color:#FFFFFF; cursor:pointer;" onclick="showErrorMsg();return false;" class="pull-right">X</span>
-            <h2><span class="stb-color-sprite-48 ok-circle"></span> Pensjonsreglene endelig klare</h2>
-            <p>Endelig har pensjonsreglene blitt vedtatt og vi kan stolt presententere våre nye produkter  <a href="#">Spar til pensjon</a><br></p>
+<div id="topMessages">
+
+    <div class="container top-padding-20 bottom-padding-20 errormessage">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="stb-alert stb-alert-alarm">
+                <button data-dismiss="modal" onclick="toggleErrorMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-16 remove pull-left"></span></button>
+                <h2><span class="stb-color-sprite-48 warning"></span> Viktig melding</h2>
+                <p>Vi har dessverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
+                <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+            </div>
         </div>
-    </div>
-  </div>
-</div> 
+      </div>
+    </div> 
+
+    <div class="container top-padding-20 bottom-padding-20 commonmessage">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="stb-alert stb-alert-success">
+                <button data-dismiss="modal" onclick="toggleCommonMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-16 remove pull-left"></span></button>
+                <h2><span class="stb-color-sprite-48 ok-circle"></span> Pensjonsreglene endelig klare</h2>
+                <p>Endelig har pensjonsreglene blitt vedtatt og vi kan stolt presententere våre nye produkter  <a href="#">Spar til pensjon</a><br></p>
+            </div>
+        </div>
+      </div>
+    </div> 
+</div>  
   
 <div class="category-banner stbcolor-secondary first">
   <div class="container">
@@ -443,6 +468,67 @@ function showCommonMsg(){
 </div>
 
 
+
+
+<div class="container top-padding-20 bottom-padding-20">
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="textBox top-padding-20">
+        <h3>Våre fond</h3>
+        <ul class="stb-list-group">
+            <a href="#" class="list-group-item links">Anbefalt </a>
+            <a href="#" class="list-group-item links">Verden </a>
+            <a href="#" class="list-group-item links">Nordisk </a>
+            <a href="#" class="list-group-item links">Norge </a>
+        </ul>
+      </div>  
+    </div> 
+    <div class="col-md-4">
+      <div class="textBox top-padding-20">
+        <h3>Aktuelt</h3>
+        <p>Under henvisning til en særlig tidshorisont spores relasjonene for så vidt gjelder parameterne. Med utgangspunkt i en fortsatt innsats forankres kriteriene i tillegg til visjonen. Med tanke på en avtagende organisasjon styrkes kriteriene for så vidt gjelder føringene i og med at en langsiktig arbeidsmodell effektuerer spisskompetansen utenom evalueringen.</p>
+      </div>  
+    </div> 
+    <div class="col-md-4">
+      <div class="textBox top-padding-20">
+        <h3>Kontakt oss</h3>
+        <p>Ring eller send oss en e-post om du vil snakke litt pensjon med oss.</p>
+        <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a></p>
+        <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white envelope"></span></div><span class="pillText">Skriv til oss</span></a></p>
+      </div>  
+    </div>
+
+  </div>
+</div>
+
+<div class="container top-padding-20 bottom-padding-20">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="textBox top-padding-20">
+        <h3>Vår filosifi</h3>
+        <p>Under henvisning til en særlig tidshorisont spores relasjonene for så vidt gjelder <a href="#">parameterne</a>. Med utgangspunkt i en fortsatt innsats forankres kriteriene i tillegg til visjonen.</p>
+        <p> Med tanke på en avtagende organisasjon <b>styrkes kriteriene</b> for så vidt gjelder føringene i og med at en <a href="#">langsiktig arbeidsmodell</a> effektuerer spisskompetansen utenom evalueringen.</p>
+      </div> 
+     </div>
+
+    <div class="col-md-6">
+      <div class="textBox top-padding-20">
+        <h3>Fondskjøp</h3>
+        <p>Hvorfor er det gunstig på handle fond hos oss?</p>
+          <ul class="stb">
+            <li>Billig</li>
+            <li>Gebyrfri</li>
+            <li>Lett å skjønne</li>
+            <li>Service</li>
+          </ul>
+          <button class="stb-btn transparent light">Fondshandel</button>
+       </div>  
+    </div>  
+    
+  </div>
+</div>
 
 <div class="container top-padding-40-mdlg bottom-padding-40">
   <div class="row">
@@ -559,6 +645,37 @@ function showCommonMsg(){
   </div>
 </div>
 
+<div class="container top-padding-20 bottom-padding-20">
+    <div class="row">
+        <div class="col-md-4 col-md-push-8">
+          <div rel="tel:08880" class="stb-box mini clickable">
+                    <div class="row">
+                      <div class="col-sm-6 col-md-12">
+                        <center><img src="images/contactus.png"></center>
+                      </div>
+                      <div class="col-sm-6 col-md-12">
+                        <h3 class="box">Kontakt oss</h3>
+                        <h3 class="box"><a href="#">Ring 08880</a></h3>
+                        <p class="visible-lg">Debug:LG</p>
+                        <p class="visible-md">Debug:MD</p>
+                        <p class="visible-sm">Debug:SM</p>
+                        <p class="visible-xs">Debug:XS</p>
+                      </div>
+                    </div>
+                  </div>
+      </div>
+      <div class="col-md-8 col-md-pull-4">
+          <div class="stb-box border black">
+          <h3 class="box">Produktet</h3>
+          <img src="images/toolBox.png" class="pull-right">
+          <p>Vedrørende en integrert måloppnåelse ivaretas oppfølgingen utenom løsningen, uavhengig av en helhetlig måloppnåelse dokumenteres scenarioet med henblikk på føringene. Vedrørende en avtagende implementering effektueres fokus med sikte på konseptet. Under forutsetning av en tiltagende kvalitetssikring realiseres kompetansehevingen utenom beskaffenheten. Under forutsetning av en vedvarende effekt identifiseres kriteriene eller sagt på en annen måte: vesentligheten.</p>
+          <p>På grunn av en integrert struktur dokumenteres relasjonene i tilknytning til føringene i og med en tverrfaglig struktur ivaretar forankringen i relasjon til visjonen. Under henvisning til en tverrfaglig målsetting tas det høyde for informasjonsflyten for så vidt gjelder problemstillingen.</p>
+        </div> 
+      </div>
+    </div>
+</div>
+
+
 <script>
 
 function callMeSmallToggle(){
@@ -609,17 +726,7 @@ div.circle-24 a{
                 <h3>Test av småkontakter</h3>
                 <p>De kan brukes hver for seg eller settes sammen i en gruppe</p>
                 <p>Eksempel under her</p>
-                <p>
-                    <a href="tel:08880">
-                        <div class="circle-16 stbcolor-secondary third pull-left">
-                            <span class="stb-sprite-16 white phone">
-                            </span>
-                        </div>
-                        <span class="pillText">
-                            Ring 08880
-                        </span>
-                    </a>
-                </p>
+                <p><a href="tel:08880"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white phone"></span></div><span class="pillText">Ring 08880</span></a></p>
                 <p>Og ett til hvor man kan avtale en time:
                 <p><a href="http://www.storebrand.no"><div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-16 white employee"></span></div><span class="pillText">Avtal rådgivningstime</span></a></p>            
             </div>
@@ -644,7 +751,59 @@ div.circle-24 a{
            </p>     
         </div>
 </div>    
+    
+<style>
+
+.acText{
+  padding-right:10%;
+}
+
+</style>
+
+<div class="container top-padding-20 bottom-padding-20">
+  <div class="row">
+
+    <div class="col-md-6">
+        <ul data-widget="stbFaq" class="accordion">
+              <li>
+                <a class="twister" href="#">
+                  <span class="acText">Hvordan får jeg oversikt over hva jeg får i pensjon?</span>
+                  <span class="number">1</span>
+                  <span class="expander"></span>
+                </a>
+                <div class="answer">
+                  <ul>
+                    <li>Har du pensjon i Storebrand, logg inn på dine personlige sider for fullstendig oversikt. Der kan du også hente inn tallene dine fra folketrygden (NAV).</li>
+                    <li>Har du fripoliser eller pensjonskapitalbevis fra tidligere arbeidsgivere, finner du disse på minpensjon.no</li>
+                    <li>Prøv vår kalkulator som enkelt viser deg hva du kan forvente å få i pensjon. Vi gir deg også en vurdering av hvor mye du bør spare for å få den pensjonen du ønsker deg.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="twister" href="#">
+                  <span class="acText">Hva består egentlig pensjon av?</span>
+                  <span class="number">2</span>
+                  <span class="expander"></span>
+                </a>
+                <div class="answer">
+                  Pensjon består av:   <br>
+                  <ol>
+                    <li>Folketrygden - opptjening betalt av staten. Hvor mye du får, kommer an på hvor gammel du er, ditt lønnsnivå og hvor lenge du har jobbet.</li>
+                    <li>Tjenestepensjon - dette betales av din arbeidsgiver. Her finnes det forskjellige avtaler og det lønner seg å være bevisst på hva du får fra din arbeidsgiver.</li>
+                    <li>AFP - Avtalefestet pensjon. Betales av arbeidsgiver, men fungerer litt som folketrygden. Ikke alle har denne avtalen, så undersøk hos din arbeidsgiver.</li>
+                  </ol>
+                </div>
+              </li>
+            </ul>
+    </div>
+
+    <div class="col-md-6">
       
+    </div>
+
+  </div>
+</div>    
+
 
 <div class="container">
   <div class="row">
