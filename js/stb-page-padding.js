@@ -552,29 +552,50 @@ $(document).ready(function(){
 
 });
 
+
+
+//Options example object.
+/*var options = {
+  onConfirmAction : function(){console.log("Confirm")},
+  onCancelAction : function(){console.log("Cancel")},
+  onCloseAction : function(){console.log("Close")},
+  title : "This is the title of the modal",
+  text : "this is the text/description of the modal, must accept HTML"
+}
+*/
+
+
+
 var modalDialog = {
 
-  triggerModal : function(type, options){
+  triggerModal : function(type,options){
 
     if(type == 'confirm'){
-     var markup = ' <div class="modal stb-modal fade" id="dialogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"' +
+     var markup = ' <div class="modal stb-modal fade" id="dialogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
          '<div class="modal-dialog modal-span6">' +
-         '<div class="modal-content">' +
-         '<div class="modal-header stbcolor-secondary fifth">' +
-         '<button type="button" class="close" data-dismiss="modal" onclick="options.onCloseAction();"><p class="pull-left">Lukk</p><span class="stb-sprite-24 remove pull-left"></span></button>' +
-         '<h4 class="modal-title"><span class="stb-color-sprite-24 info"></span></h4>' +
-         '</div>' +
-         '<div class="modal-body">' +
-         '<h3>'+options.title+'</h3>' +
-         '<p>'+options.text+'</p>' +
-         '<form>' +
-          '<button class="stb-btn" onclick="options.onConfirmAction();">Yes</button>' +
-          '<button class="stb-btn transparent light" onclick="options.onCancelAction();">No</button>' +
-         '</form></div></div></div></div>';
+          '<div class="modal-content">' +
+            '<div class="modal-header stbcolor-secondary fifth">' +
+              '<button type="button" class="close" data-dismiss="modal" onclick="options.onCloseAction();"><p class="pull-left">Lukk</p><span class="stb-sprite-24 remove pull-left"></span></button>' +
+              '<h4 class="modal-title"><span class="stb-color-sprite-24 info"></span></h4>' +
+            '</div>' +
+            '<div class="modal-body">' +
+              '<h3>'+options.title+'</h3>' +
+              '<p>'+options.text+'</p>' +
+              '<form>' +
+               '<button class="stb-btn" onclick="options.onConfirmAction();">Yes</button>' +
+               '<button class="stb-btn transparent light" onclick="options.onCancelAction();">No</button>' +
+              '</form>' +
+            '</div>' +
+          '</div>' +
+         '</div>';
+        '</div>';
 
-      $('body').append(markup);
-      $('dialogModal').show();
-      $('dialogModal').modal();
+      if($('#dialogModal').length == 0){
+        $('body').append(markup);
+      }
+
+      $('#dialogModal').show();
+      $('#dialogModal').modal();
 
     }
 
