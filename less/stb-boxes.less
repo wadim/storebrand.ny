@@ -1,57 +1,14 @@
 .stb-box {
-
   padding: 12px 10px 10px 10px;
   margin-bottom: 20px;
   border: 1px solid transparent;  
   
-  &.first {
-    .stbcolor-primary .third;
-    > p {
-      color: @stb-primary-black;
-    }
-  }
-  
-  &.second {
-    .stbcolor-secondary.sixth;
-    a {
-      font-weight: strong;
-    }
-  }
-  
-  &.third {
-    .stbcolor-gray .first;
-    border: 1px solid @stb-gray-third;
-  }
-  
-  &.fourth {
-    .stbcolor-background .first;
-  }  
 
-  &.fifth {
-    .stbcolor-background .second;
-  }    
-
-  &.sixth {
-    .stbcolor-background .third;
-  }
   
-  &.dark {
-    color: @stb-primary-white;
-    & h1, h2, h3, h4, h5, h6, p {
-      color: @stb-primary-white;
-    }
-  }
-  
-
   // Forcing solid border
   &.border {
     border: 1px solid;
-    
-    // Adding border color themes
-    
-    &.charcoal {
-    	border-color: @stb-secondary-charcoal;
-    }
+    border-color: @stb-secondary-charcoal;
     
     &.red {
     	border-color: @stb-primary-color;
@@ -77,29 +34,44 @@
   }
   
   &.mini{
-    background-color: #F2F2F2;
-    border-color: #666666;
-    padding: 10px;
-}
+    background-color: @stb-gray-first;
+    padding: 24px;
+    @media screen and (max-width: 768px) {
+      padding: 12px;
+    }
+    outline: 1px solid @stb-gray-fifth;
+   
+  }
 
   &.mini:hover {
-    padding: 6px;
-    border: 5px solid #6C8524;
-}
+    padding: 24px;
+    @media screen and (max-width: 768px) {
+      padding: 12px;
+    }
+    outline: 5px solid @stb-secondary-forest;
+  }
 
   &.big{
-    background-color: #FFFFFF;
-    border-color: #DA291C;
-    padding: 10px;
-}
+    background-color: @stb-primary-white;
+    padding: 24px;
+    @media screen and (max-width: 768px) {
+      padding: 12px;
+    }
+    outline: 1px solid @stb-primary-color;
+  }
 
   &.big:hover {
-    padding: 6px;
-    border: 5px solid #6C8524;
-}
+    padding: 24px;
+    @media screen and (max-width: 768px) {
+      padding: 12px;
+    }
+    outline: 5px solid @stb-secondary-forest;
+  }
 
   &.showClickable {
     cursor: pointer;
+  }
+
 }
 
 .chatWhat{
@@ -113,6 +85,23 @@
   text-decoration: line-through;
 }
 
+.callBackForm{
+  display: none;
+}
+.callBackRecipt{
+  display: none;
 }
 
+.pillText{
+  line-height: 2.5;
+  padding-left:5px;
+}
 
+a.ChatClosed:hover{
+  cursor:default; ;
+}
+
+div.circle-16 a,
+div.circle-24 a{
+  border-bottom: none;
+}

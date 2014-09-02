@@ -174,7 +174,7 @@ $(document).ready(function($) {
 //Appending arrow after link for clickable links
 $(document).ready(function() {
     var arrowCode ='<span class="stb-sprite-16 arrow-right pull-right"></span>';
-    $('.list-group-item.links').append(arrowCode);
+    $('a.list-group-item').append(arrowCode);
 });
 
 //Appending arrow after text in first column in every row for clickable tables
@@ -581,5 +581,19 @@ var modalDialog = {
   }
 }
 
+
+// script for populating the dropdown with the selected tab link
+
+$(document).ready(function() {
+	  $(".dropdown-tabs .dropdown .heading").html($(".dropdown-tabs .dropdown-menu li.active a").html());
+	  $(".dropdown-tabs .dropdown-menu li a").click(function() {
+		  $(".dropdown-tabs .dropdown-menu li.active").removeClass("active");
+		  $(".dropdown-tabs .dropdown .heading").html($(this).html());
+	  });  
+	  
+	  $(".dropdown-tabs button").click(function() {
+		  $(".dropdown-tabs button span.icon").toggleClass('chevron-up chevron-down');
+	  });
+});
 
 

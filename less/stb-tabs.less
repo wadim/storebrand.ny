@@ -1,0 +1,67 @@
+// CSS for the tabs ( both desktop and mobile)
+
+.tab-container {
+  border-bottom: 2px solid  #efe8df;
+}
+  
+.tab-container ul {
+  border: none;
+}
+  
+.tab-container .nav-tabs>li {
+  background-color: #efe8df;
+  margin-right: 2px;
+  margin-bottom: -2px;
+}
+  
+.tab-container .nav-tabs>li.active {
+  border-color: #efe8df;
+}
+ 
+.tab-container .nav-tabs>li>a {
+  margin-right: 0;
+  display: inline-block;
+  height: 100%; 
+}
+  
+.tab-container .nav-tabs>li>a:hover{
+  background-color: #fff;
+  padding-bottom: 10px;
+  color: #000;
+}
+  
+.dropdown-tabs .dropdown-menu {
+  border-radius: 0;
+  background-color: @stb-gray-first;
+}
+
+.dropdown-tabs .dropdown button {
+  text-align: left;
+  font-weight: bold;
+  border-radius: 0;
+  height: 40px;
+}
+
+.dropdown-tabs .dropdown a{
+  border-bottom: none;
+  padding: 10px 20px;
+  color: #000;
+}
+
+.dropdown-tabs .dropdown a:hover{
+  border-bottom: none;
+  padding: 10px 20px;
+  background: 0 0;
+  background-color: @stb-gray-second;
+}
+
+.dropdown-tabs .dropdown li.active a {
+	background-color: @stb-gray-second;
+}
+.dropdown-tabs .dropdown li.active a:hover {
+  color: #000;	
+}
+  
+.dropdown-tabs .dropdown .btn-default:hover, .dropdown-tabs .dropdown .btn-default:focus, .dropdown-tabs .dropdown .btn-default:active {
+  background-color: #fff;
+}
