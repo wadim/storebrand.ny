@@ -33,7 +33,6 @@
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
         videoId: '_7Foh3T1gN4',
-        //width:$('.container.content').width(),
         playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1},
         events: {
           'onReady': onPlayerReady,
@@ -44,7 +43,7 @@
 
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
-      $('.video-label').after('<button id="playVideoBtn" class="stb-btn transparent light shimmer hidden-sm hidden-xs">Spill av video <span class="glyphicon glyphicon-play"></span></button>');
+      $('.video-label').after('<button id="playVideoBtn" class="stb-btn transparent light hidden-sm hidden-xs">Spill av video <span class="glyphicon glyphicon-play"></span></button>');
       $('#playVideoBtn').click(function(){
         playTheVideo();
       });
@@ -64,15 +63,17 @@
       }
     }
     function stopTheVideo() {
-      $('.video-container').hide();
-      $('#video-text').fadeIn();
       player.stopVideo();
+      $('.video-container').hide(500);
+      $('#video-text').show(500);
+      player.seekTo(0, false);
     }
 
     function playTheVideo(){
-      $('#video-text').hide();
-      $('.video-container').fadeIn();
-      player.playVideo();
+      $('#video-text').hide(500);
+      $('.video-container').show(500, function(){
+        player.playVideo();
+      });
     }
 
   </script>
@@ -415,23 +416,22 @@
 
 <!-- Start of page contents -->
 <div class="container content">
-  <div id="video-text" class="row top-margin-30">
+  <div id="video-text" class="row">
     <div class="col-md-6">
       <div class="stb-banner">
         <h1 class="stb-font">Video eksempel </h1>
         <h3 class="video-label">Her er en video.</h3>
-
       </div>
     </div>
     <div class="col-md-6">
       <img src="images/sponge.png" class="hidden-xs center-block" />
     </div>
   </div>
-  <div class="video-container top-margin-30 bottom-margin-30  hidden-sm hidden-xs" style="display: none;">
+  <div class="video-container hidden-sm hidden-xs" style="display: none;">
     <button id="stopVideoBtn" class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-24 remove white"></span></button>
     <div id="player"></div>
   </div>
-  <div class="video-container top-margin-30 bottom-margin-30 visible-xs visible-sm">
+  <div class="video-container  visible-xs visible-sm">
     <iframe width="560" height="315" src="//www.youtube.com/embed/_7Foh3T1gN4" frameborder="0" allowfullscreen></iframe>
   </div>
 </div>
