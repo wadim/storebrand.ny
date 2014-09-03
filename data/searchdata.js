@@ -19,6 +19,14 @@ var promotions = {
                 "text": "Vi eier kjøpesentre, kontorbygg og lagerbygg.",
                 "name": "Se tjenestene våre",
                 "url": "dummy.html"},
+  "Rapporter" : { "header": "Q2 rapporten er klar.",
+                "text": "En god periode med godt resultat er stikkordene fra pressen",
+                "name": "Finn rapportene her",
+                "url": "dummy.html"},   
+  "Kalkulator" : { "header": "Bilkalulator.",
+                "text": "Vi har beste pris",
+                "name": "Finn rapportene her",
+                "url": "dummy.html"}, 
   "kontorbygg" : { "header": "Storebrand Eiendom forvalter mange kontorbygg.",
                 "text": "Lei kontor fra oss!",
                 "name": "Se kontorbyggene våre",
@@ -33,7 +41,16 @@ var typeaheads = {
       {"name": "Bank"},
       {"name": "Banksparing"},
       {"name": "Forsikring"},
+      {"name": "Bilhenger"},
       {"name": "Pensjon"}
+    ],
+    "Storebrand" :
+    [
+      {"name": "Kvartalsrapporter","url" : "http://www.storebrand.no/site/stb.nsf/Pdfkvartalsrapporterprselskap?Openview&RestrictToCategory=Storebrand%20Asa%202013"},
+      {"name": "Bærekraft","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsidebarekraft.html"},
+      {"name": "Presse","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
+      {"name": "Pressekontakter","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
+      {"name": "Jobb i Storebrand","url":"http://www.storebrand.no/site/stb.nsf/pages/hovedsidejobbistorebrand.html"}
     ],
   "Fond" :
     [
