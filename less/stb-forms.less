@@ -12,7 +12,9 @@
     .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
     display: inline-block; 
     border-radius: 0px;
-
+	height: 48px;
+	margin-bottom: 24px;
+	
     &:hover {
       color: @stb-secondary-charcoal;
       border-color: @stb-secondary-charcoal;
@@ -22,26 +24,44 @@
     }
 
   }
+  
+  textarea {
+  	margin-bottom: 24px;
+  }
 
   // input and buttons line up with no spacing:
   input.has-submit {
 
   }
   button.is-submit {
-    position: relative;
-    height: 34px;
-    left: -4px;
-    top: -1px;
+    height: 48px;
+    margin-left: 5px;
   }
 
   .stb-form-group {
     .form-group(); //Adds sane margins
 
-    display: inline-block;
     vertical-align: middle;
+    margin-bottom: 0;
 
+    >input.input-sucess {
+      border: 1px solid  @stb-secondary-forest;
+    }
+    
+     >input.input-fail {
+      .stbcolor-background .first;
+    }
+    >.error-message{
+    	margin-bottom: 6px;
+    	font-weight: 500;
+    	
+     	span.warning {
+     	margin-bottom: -3px;
+     }
+    }
     >label {
-      height: 15px; //half of input-height
+      margin-bottom: 6px;
+      display: block;
     }
     
     // Ok colors
@@ -105,8 +125,8 @@
     }
   }
   input[disabled] {
-    background-color: @stb-gray-third;
-    color: @stb-gray-fourth;
+    background-color: @stb-gray-second;
+    color: @stb-gray-third;
   }
 
   button:disabled{
