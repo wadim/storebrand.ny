@@ -5,8 +5,14 @@
 .stb-form-inline {
 
   .form-inline();
-
-  input {
+  .stb-form-group {
+  	
+  	.form-group(); //Adds sane margins
+  	
+    vertical-align: middle;
+    margin-bottom: 0;
+  	
+  	input{
     .form-control();
     // tweak the default BS transition-speed:
     .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
@@ -14,122 +20,80 @@
     border-radius: 0px;
 	height: 48px;
 	margin-bottom: 24px;
-	
+ 
     &:hover {
       color: @stb-secondary-charcoal;
       border-color: @stb-secondary-charcoal;
       &[disabled] {
-        border-color: @stb-gray-fourth;
+        border-color: @stb-gray-third;
       }
+    }
+
+     &:focus , &.has-submit:focus{
+    	border-color: #66afe9;
+    	// coming from bootstrap ( we dont have this defined in our color panel )
     }
 
   }
   
+   >input.input-sucess {
+      border: 1px solid  @stb-secondary-forest;
+    }
+    
+   >input.input-fail {
+      .stbcolor-background .first;
+    }
+ 
   textarea {
   	margin-bottom: 24px;
   }
 
   // input and buttons line up with no spacing:
-  input.has-submit {
-
-  }
+ 
   button.is-submit {
     height: 48px;
-    margin-left: 5px;
   }
-
-  .stb-form-group {
-    .form-group(); //Adds sane margins
-
-    vertical-align: middle;
-    margin-bottom: 0;
-
-    >input.input-sucess {
-      border: 1px solid  @stb-secondary-forest;
-    }
     
-     >input.input-fail {
-      .stbcolor-background .first;
-    }
-    >.error-message{
-    	margin-bottom: 6px;
-    	font-weight: 500;
-    	
-     	span.warning {
-     	margin-bottom: -3px;
-     }
-    }
-    >label {
-      margin-bottom: 6px;
-      display: block;
-    }
-    
-    // Ok colors
-    &.valid {
-      input {
-        background-color: @stb-background-mint;
-        border-color: @stb-outline-lime;
-        color: @stb-primary-black;        
-      }
-    }
 
-    // Alarm colors:
-    &.alarm {
-      input {
-        background-color: @stb-background-rose;
-        border-color: @stb-outline-pink;
-        color: @stb-primary-black;
-      }
-      button {
-        background-color: @stb-primary-color;
-        color: @stb-primary-white;
-      }
-    }
+   
+>.error-message{
+	margin-bottom: 6px;
+	font-weight: 500;
+	
+ 	span.warning {
+ 	margin-bottom: -3px;
+ }
+}
 
-    // handle hover-styles for both input and button:
-    &:hover {
+>label {
+  margin-bottom: 6px;
+  display: block;
+}
 
-      input.has-submit {
-        border-color: @stb-secondary-charcoal;
-        &[disabled]{
-          border-color: @stb-gray-third;
-        }       
-      }
-      button.is-submit {
-        background-color: @stb-secondary-forest-darker;
-        &[disabled]{
-          background-color: @stb-gray-fourth;
-        }
-      }
-      
-      // Alarm colors:
-      &.alarm {
-        input.has-submit {
-          background-color: @stb-background-rose;
-          border-color: @stb-outline-pink;
-          color: @stb-primary-black;
-        }
-        button.is-submit {
-          background-color: @stb-primary-color;
-          color: @stb-primary-white;
-        }
-      }
-
-    }
-  } //end:stb-form-group
+// Ok colors
+&.valid {
+  input {
+    background-color: @stb-background-mint;
+    border-color: @stb-outline-lime;
+    color: @stb-primary-black;        
+  }
+}
+} //end:stb-form-group
 
  
   input:disabled {
-  	 background-color: @stb-gray-second;
+  	background-color: @stb-gray-second;
     color: @stb-gray-third;
+     &:hover, &:active, &:focus {
+      // No change for disabled buttons
+    }
   }
   button:disabled{
     background-color: @stb-gray-second !important;
     color: @stb-primary-black;
     cursor: not-allowed;
-
     &:hover, &:active, &:focus {
-      // No change for disabled buttons
+      // No change for disabled input fields
     }
   }
 
