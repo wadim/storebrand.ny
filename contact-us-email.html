@@ -1,0 +1,753 @@
+<!doctype html>
+<html>
+<head>
+  <title>Menu and Footer Template - storebrand.no</title>
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+  <link rel="stylesheet" type="text/css" href="css/yamm.css">
+  <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.color-2.1.2.min.js"></script>
+  <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
+  <script type="text/javascript" src="js/dist/jquery-ui-1.11.0.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>
+  <script type="text/javascript" src="data/searchdata.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
+  <script type="text/javascript" src="js/stb-common.js"></script>
+  <script type="text/javascript" src="js/stb-page-padding.js"></script>
+  <script>
+
+    $(document).ready(function(){
+
+      $('.stb-radio').change(function() {
+        if($('input:radio[name=customer]:checked').val()=="Nei"){
+          $('#customer-yes').slideUp();
+          $('#customer-no').slideDown();
+        }else{
+          $('#customer-yes').slideDown();
+          $('#customer-no').slideUp();
+        }
+        $('#step-2').show();
+
+      });
+
+      $('.select-category').change(function(){
+
+        var step = $(this).parent().attr('id');
+
+        //Hide next info boxes
+        $('#info-'+step).children().hide();
+        $('#info-'+step).nextAll().children().hide();
+
+        if($('#info-sg-'+$(this).val())){
+          $('#info-sg-'+$(this).val()).show();
+        }
+
+        //TODO:Do a loop through steps here
+        $(this).parent().nextAll().each(function(index,element){
+          if($(element).attr('id') != "contact-fields"){
+            $(element).children().prop('selectedIndex', 0).hide();
+          }
+        });
+
+        if($('#sg-'+$(this).val())){
+          $('#sg-'+$(this).val()).show();
+        }
+
+        if($(this).find('option:selected').attr('contact-fields')){
+          $('#contact-fields').show();
+        }else{
+          $('#contact-fields').hide();
+        }
+      });
+
+    });
+  </script>
+  <style>
+    .saksinfo{
+      display: none;
+    }
+
+    .saken-gjelder{
+      display: none;
+    }
+
+    .hiddenfile {
+      width: 0px;
+      height: 0px;
+      overflow: hidden;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div id="top-menu-nav">
+<!-- Start desktop menu -->
+<div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
+  <div class="container yamm">
+    <div class="navbar-header col-md-4">
+      <img src="images/logo.png" title="logo image" class="logo">
+    </div>
+    <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav col-md-8">
+        <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
+          <ul class="dropdown-menu" id="dropdown-private">
+            <li class="col-md-2">
+              <h4>Forsikring</h4>
+              <ul>
+                <li><a href="#">Bilforsikring</a></li>
+                <li><a href="#">Husforsikring</a></li>
+                <li><a href="#">Innboforsikring</a></li>
+                <li><a href="#">Reiseforsikring</a></li>
+                <li><a href="#">Motorsykkelforsikring</a></li>
+                <li><a href="#">Båtforsikring</a></li>
+                <li><a href="#">Liv og helse</a></li>
+                <li><a href="#">Barneforsikring</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <h4>Bank og lån</h4>
+              <ul>
+                <li><a href="#">Bli bankkunde</a></li>
+                <li><a href="#">Konto og kort</a></li>
+                <li><a href="#">Ungdomskonto</a></li>
+                <li><a href="#">Visa-kort</a></li>
+                <li><a href="#">Kredittkort</a></li>
+                <li><a href="#">Boliglån</a></li>
+                <li><a href="#">Boligkreditt</a></li>
+                <li><a href="#">Boliglån for unge</a></li>
+                <li><a href="#">Nettbank</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <h4>Pensjon</h4>
+              <ul>
+                <li><a href="#">Egensparing til pensjon</a></li>
+                <li><a href="#">Ekstrapensjon</a></li>
+                <li><a href="#">IPS</a></li>
+                <li><a href="#">Pensjon fra arbeidsgiver</a></li>
+                <li><a href="#">Pensjonskapitalbevis</a></li>
+                <li><a href="#">Fripolise</a></li>
+                <li><a href="#">Fripolise med investeringsvalg</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <h4>Sparing</h4>
+              <ul>
+                <li><a href="#">Spar i fond</a></li>
+                <li><a href="#">Spar i bank</a></li>
+                <li><a href="#">Spar til pensjon</a></li>
+                <li><a href="#">Spareavtaler</a></li>
+                <li><a href="#">Gi fond i gave</a></li>
+                <li><a href="#">Flytte fond</a></li>
+                <li><a href="#">Sparekonto</a></li>
+                <li><a href="#">Fondspakker</a></li>
+                <li><a href="#">BSU-sparing</a></li>
+                <li><a href="#">Junior-sparing</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
+              <ul>
+                <li><a href="#">Lånekalkulator</a></li>
+                <li><a href="#">Ditt pensjonstall</a></li>
+                <li><a href="#">Pensjonsskolen</a></li>
+                <li><a href="#">Demo av Mitt forbruk</a></li>
+                <li><a href="#">Priser og vilkår</a></li>
+                <li><a href="#">Renter og priser</a></li>
+                <li><a href="#">Sperre kort</a></li>
+                <li><a href="#">Nyheter og rapporter</a></li>
+              </ul>
+            </li>
+            <li class="extraLinks">
+              <ul>
+                <li class="roadAssistance"><a href="#">Veihjelp</a></li>
+                <li class="damageReport"><a href="#">Meld skade</a></li>
+                <li class="benefits"><a href="#">Få fordeler</a></li>
+                <li class="contact"><a href="#">Kontakt oss</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+
+        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        <li class="search col-md-3" style="display: none;">
+          <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
+          <form>
+            <label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+            </label>
+          </form>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-6 column rightColor">
+  </div>
+</div>
+<!-- End desktop menu -->
+
+<!-- Start mobile menu -->
+<nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
+  <div class="row stbcolor-primary third">
+    <div class="navbar-header col-xs-5 logo">
+      <img class="stb-logo-mobile" src="images/logo.storebrand.172x21.png" title="storebrand logo"/>
+    </div>
+    <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6 col-xs-offset-1" style="padding-left: 6px;">
+      <ul class="nav navbar">
+        <li class="dropdown yamm-fw" style="width: 33%;">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-24 white menu-bars"></span><span class="marker"></span></a>
+          <ul id="subMenu" class="dropdown-menu">
+            <div class="yamm-content">
+              <div class="row">
+                <div class="col-xs-12">
+                  <ul class="nav nav-tabs">
+                    <li class="active tab-box"><a id="tabheader-privat" href="#tab-privat" data-toggle="tab">Privat</a></li>
+                    <li class="tab-box"><a id="tabheader-bedrift" href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab-privat">
+
+                      <div class="panel-group" id="accordion-privat">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#forsikring">
+                                <span class="stb-sprite-16 chevron-right"></span> Forsikring
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="forsikring" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Bilforsikring</a></li>
+                                <li><a href="#">Husforsikring</a></li>
+                                <li><a href="#">Innboforsikring</a></li>
+                                <li><a href="#">Reiseforsikring</a></li>
+                                <li><a href="#">Motorsykkelforsikring</a></li>
+                                <li><a href="#">Båtforsikring</a></li>
+                                <li><a href="#">Liv og helse</a></li>
+                                <li><a href="#">Barneforsikring</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#bank">
+                                <span class="stb-sprite-16 chevron-right"></span> Bank og lån
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="bank" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Bli bankkunde</a></li>
+                                <li><a href="#">Konto og kort</a></li>
+                                <li><a href="#">Ungdomskonto</a></li>
+                                <li><a href="#">Visa-kort</a></li>
+                                <li><a href="#">Kredittkort</a></li>
+                                <li><a href="#">Boliglån</a></li>
+                                <li><a href="#">Boligkreditt</a></li>
+                                <li><a href="#">Boliglån for unge</a></li>
+                                <li><a href="#">Nettbank</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#pensjon">
+                                <span class="stb-sprite-16 chevron-right"></span> Pensjon
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="pensjon" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Egensparing til pensjon</a></li>
+                                <li><a href="#">Ekstrapensjon</a></li>
+                                <li><a href="#">IPS</a></li>
+                                <li><a href="#">Pensjon fra arbeidsgiver</a></li>
+                                <li><a href="#">Pensjonskapitalbevis</a></li>
+                                <li><a href="#">Fripolise</a></li>
+                                <li><a href="#">Fripolise med investeringsvalg</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#sparing">
+                                <span class="stb-sprite-16 chevron-right"></span> Sparing
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="sparing" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Spar i fond</a></li>
+                                <li><a href="#">Spar i bank</a></li>
+                                <li><a href="#">Spar til pensjon</a></li>
+                                <li><a href="#">Spareavtaler</a></li>
+                                <li><a href="#">Gi fond i gave</a></li>
+                                <li><a href="#">Flytte fond</a></li>
+                                <li><a href="#">Sparekonto</a></li>
+                                <li><a href="#">Fondspakker</a></li>
+                                <li><a href="#">BSU-sparing</a></li>
+                                <li><a href="#">Junior-sparing</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#kalkulator">
+                                <span class="stb-sprite-16 chevron-right"></span><span class="tools"></span> Kalkulatorer & verktøy
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="kalkulator" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <ul class="stb">
+                                <li><a href="#">Lånekalkulator</a></li>
+                                <li><a href="#">Ditt pensjonstall</a></li>
+                                <li><a href="#">Pensjonsskolen</a></li>
+                                <li><a href="#">Demo av Mitt forbruk</a></li>
+                                <li><a href="#">Priser og vilkår</a></li>
+                                <li><a href="#">Renter og priser</a></li>
+                                <li><a href="#">Sperre kort</a></li>
+                                <li><a href="#">Nyheter og rapporter</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-wrench"></i> Veihjelp</a>
+                          <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-plus-circle"></i> Få Fordeler</a>
+                        </div>
+                        <div class="col-xs-6">
+                          <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-file-text-o"></i> Meld skade</a>
+                          <a class="stb-btn stb-btn-md secondary transparent-btn"><i class="fa fa-comment-o"></i> Kontakt oss</a>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="tab-bedrift">Bedrift</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </ul>
+        </li>
+        <li class="dropdown yamm-fw" style="width: 33%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-24 white search"></span><span class="marker"></span></a>
+          <ul id="searchField" class="dropdown-menu" style="background: white">
+            <div class="yamm-content">
+              <div class="row">
+                <div class="col-xs-12">
+                  <form class="search tt-mobile">
+                    <label style="width: 95%">
+                      <div class="col-xs-11" style="padding-right: 0; padding-left: 0; ">
+                        <input type="text" class="typeahead searchbox" placeholder="Søk i sidene"/>
+                      </div>
+                      <div class="col-xs-1" style="padding-left: 0; padding-right: 0;">
+                        <span class="search-icon  " style="display: block; position: relative; padding-left: 6px; padding-top: 12px;"><span class="stb-sprite-24 search"></span></span>
+                      </div>
+                    </label>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </li>
+        <li class="yamm-fw" style="background-color: #bf1d19; width: 34%;">
+
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End mobile menu -->
+
+</div>
+<!-- End top of page -->
+
+<!-- Start actual page contents -->
+<div class="container">
+<form id="contact-us-email" role="form">
+<h2>Hendvendelse til Storebrand</h2>
+<div class="row top-margin-30 bottom-margin-30">
+<div class="col-md-6 column">
+  <div id="step-1">
+    <label>Er du kunde i storebrand:</label>
+    <p>
+      <input class="stb-radio" type="radio" id="radio1" name="customer" value="Nei"><label for="radio1">Nei</label>
+      <input class="stb-radio" type="radio" id="radio2" name="customer" value="Ja"><label for="radio2">Ja</label>
+    </p>
+  </div>
+  <div id="step-2" class="top-margin-20" style="display: none;">
+    <label>Saken gjelder:</label>
+
+    <select class="form-control select-category">
+      <option value="velg">--Velg hovedområde--</option>
+      <option value="bank">Bank</option>
+      <option value="priv-forsikring">Privat forsikring</option>
+      <option value="sparing">Sparing</option>
+      <option value="arb-pensjon">Pensjon og forsikring gjennom arbeidsgiver</option>
+      <option value="priv-pensjon">Privat pensjon, livrenter og kapitalforsikring</option>
+    </select>
+  </div>
+  <div id="step-3" class="top-margin-20">
+    <select id="sg-bank" class="form-control select-category" style="display: none;">
+      <option>---Velg emne----</option>
+      <option contact-fields="true">Nettbank</option>
+      <option contact-fields="true">Konto &amp; Kort</option>
+      <option contact-fields="true">Lån</option>
+      <option contact-fields="true">Andre bankhenvendelser</option>
+      <option value="bankID">Problemer med BankID eller Java?</option>
+    </select>
+    <select id="sg-priv-forsikring" class="form-control select-category" style="display: none;">
+      <option>---Velg emne----</option>
+      <option contact-fields="true">Eksisterende forsikring av eiendeler</option>
+      <option contact-fields="true">Eksisterende forsikring av liv</option>
+      <option contact-fields="true">Eksisterende helseforsikring</option>
+      <option contact-fields="true" value="ny-forsikring">Ny forsikring</option>
+      <option contact-fields="true">Allerede innmeldt skadesak (bygning, eiendeler, reise og rettshjelp)</option>
+      <option value="bankID">Problemer med BankID eller Java?</option>
+    </select>
+    <select id="sg-sparing" class="form-control select-category" style="display: none;">
+      <option>---Velg emne----</option>
+      <option value="start-sparing" contact-fields="true">Starte sparing</option>
+      <option value="flytte-sparing">Flytte sparing til Storebrand</option>
+      <option value="innlosning-fond">Innløsning/selge fondsandeler</option>
+      <option value="Fondsbytte">Fondsbytte</option>
+      <option value="Skatt">Skatt</option>
+      <option value="Dodsbo">Dødsbo</option>
+      <option value="PersonligeSider">Tilgang til mine personlige sider</option>
+      <option value="Bedrift">Bedrift</option><option value="Adresseendring">Adresseendring</option>
+      <option value="AndreEndringer">Andre endringer</option>
+      <option value="BankId">BankID og legitimering i Storebrand</option>
+      <option value="JavaProblemer">Problemer med BankID eller Java?</option>
+      <option value="SprsmlFond">Generelle spørsmål om fond</option>
+    </select>
+    <select id="sg-arb-pensjon" class="form-control select-category" style="display: none;">
+      <option>---Velg emne----</option><option value="tilbud">Tilbud på privat pensjon, sparing og forsikring</option>
+      <option value="utb">Utbetaling/oppgjør av pensjon og forsikring gjennom arbeidsgiver</option>
+      <option value="dodsfall">Melding om dødsfall</option>
+      <option>Skattekort</option><option>Fondsbytte</option>
+      <option>Samle pensjonskapitalbevis og fripoliser</option>
+      <option>Tilgang til mine personlige sider</option>
+      <option>Adresseendring</option>
+      <option value="generellesprsml">Generelle spørsmål om pensjon og forsikring gjennom arbeidsgiver</option>
+      <option>Problemer med BankID eller Java?</option>
+    </select>
+    <select id="sg-priv-pensjon" class="form-control select-category" style="display: none;">
+      <option>---Velg emne----</option>
+      <option value="tilbud">Tilbud på privat pensjon, sparing og forsikring</option>
+      <option value="utf">Utbetaling/oppgjør av privat pensjon, livrenter eller kapitalforsikring </option>
+      <option value="dodsfall">Melding om dødsfall</option>
+      <option>Fondsbytte</option>
+      <option>Samle pensjonskapitalbevis og fripoliser</option>
+      <option>Tilgang til mine personlige sider</option>
+      <option>Adresseendring</option>
+      <option value="generellesprsml">Generelle spørsmål om pensjon og forsikring</option>
+      <option>Problemer med BankID eller Java?</option>
+    </select>
+  </div>
+  <div id="step-4" class="top-margin-20 bottom-margin-20">
+    <select id="sg-flytte-sparing" class="form-control select-category" style="display: none;">
+      <option>---Velg emne----</option>
+      <option contact-fields="true" value="flytte-sparing-fond">Fond</option>
+      <option contact-fields="true" value="link-avtaler">Linkavtaler (Forsikringsavtale med fondsvalg)</option>
+      <option contact-fields="true" value="flytte-sparing-bank">Bytte bank</option>
+      <option contact-fields="true" value="flytte-pensjkapbevis">Flytte pensjonskapitalbevis</option>
+    </select>
+    <select id="sg-innlosning-fond" class="form-control select-category" style="display: none;">
+      <option>---Velg emne----
+      </option><option value="innlosning-fond">Fond
+    </option><option value="innlosning-konto">Fondskonto Link/Ekstrapensjon/Garantikonto
+    </option><option value="innlosning-ipa">IPA Link
+    </option><option value="innlosning-eiendom">Eiendomsfond og Optimer
+    </option><option value="innlosning-aksjer">Aksjer
+    </option><option value="innlosning-kontaktmeg">Kontakt meg</option>
+    </select>
+  </div>
+  <div id="contact-fields" class="top-margin-20 bottom-margin-20" style="display: none;">
+    <label>Mine kommentarer:</label>
+    <div class="stb-form-group al text-area">
+      <textarea id="formInput8" class="form-control" rows="4" cols="40"></textarea>
+    </div>
+    <label>Navn:</label>
+    <div class="stb-form-group al text-area">
+      <input class="form-control" name="name">
+    </div>
+    <label>E-post:</label>
+    <div class="stb-form-group al text-area">
+      <input class="form-control" name="email">
+    </div>
+    <label>Gjenta e-post:</label>
+    <div class="stb-form-group al text-area">
+      <input class="form-control" name="re-email">
+    </div>
+    <label>Telefon:</label>
+    <div class="stb-form-group al text-area">
+      <input class="form-control" name="telephone">
+    </div>
+    <label>Vedlegg 1:</label>
+    <div class="hiddenfile">
+      <input name="upload" type="file" id="vedlegg1"/>
+    </div>
+    <button type="button" class="stb-btn" onclick="$('#vedlegg1').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;" ></span> Last opp</button>
+    <br>
+    <label>Vedlegg 2:</label>
+    <div class="hiddenfile">
+      <input name="upload" type="file" id="vedlegg2"/>
+    </div>
+    <button type="button" class="stb-btn" onclick="$('#vedlegg2').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;" ></span> Last opp</button>
+    <br>
+    <label>Vedlegg 3:</label>
+    <div class="hiddenfile">
+      <input name="upload" type="file" id="vedlegg3"/>
+    </div>
+    <button type="button" class="stb-btn" onclick="$('#vedlegg3').trigger('click');"><span class="glyphicon glyphicon-plus" style="margin-top:6px;" ></span> Last opp</button>
+    <br>
+    <br>
+    <p class="petit pull-left">OBS: På grunn av personvern/sikkerhetsregler har vi ikke mulighet til å gå ut med sensitiv informasjon om ditt eksisterende kundeforhold på denne e-postløsningen.
+      Logg deg inn på dine personlige sider, der kan vi gi deg et mer konkret svar på din henvendelse..</p>
+    <p class="petit"> Ønsker du tilbud av en rådgiver er det viktig med utfyllende informasjon i din e-posthenvendelse. Ved behov for ytterligere opplysninger vil du bli kontaktet av en rådgiver på telefon eller e-post.</p>
+    <hr>
+    <button class="stb-btn transparent light pull-right" style="margin-left: 10px;"> Avbryt</button>
+    <button class="stb-btn pull-right"> Send inn</button>
+  </div>
+</div>
+<div class="col-md-6 column">
+  <div id="info-boxes">
+    <div id="info-step-1">
+      <div id="customer-yes" class="saksinfo stb-box big">
+        <p class="intro">Kjære kunde</p>
+        <p>På grunn av dit personvern og sikkerhetsregler har vi ikke mulighet til å gå ut med sensitiv informasjon om ditt eksisterende kundeforhold på denne e-postløsningen.</p>
+        <p>For å kunne gi deg best mulig svar ber vi deg om å logge deg på dine personlige sider på <a href="">storebrand.no</a>.</p>
+        <p>Dersom du allikevel ønsker å komme i kontakt med oss på denne siden, vennligst velg emnefelt nedenfor.</p>
+
+      </div>
+      <div id="customer-no"  class="saksinfo stb-box big">
+        <p>På grunn av dit personvern og sikkerhetsregler har vi ikke mulighet til å gå ut med sensitiv informasjon om ditt eksisterende kundeforhold på denne e-postløsningen.</p>
+        <p>Dersom du allikevel ønsker å komme i kontakt med oss på denne siden, vennligst velg emnefelt nedenfor.</p>
+      </div>
+    </div>
+    <div id="info-step-2">
+      <div class="saksinfo stb-box big" id="info-sg-sparing">
+        <p>Dersom det haster er du velkommen til å ta kontakt med oss på tlf. <a href="tel:22315098">22 31 50 98</a></p>
+      </div>
+
+      <div class="saksinfo stb-box big"  id="info-sg-arb-pensjon">
+        <p>Vi har dessverre noe behandlingstid på e-posthenvendelser.<br>
+          Haster det er du velkommen til å ta kontakt med oss på <a href="tel:22312000">22 31 20 00.</a></p>
+      </div>
+
+      <div class="saksinfo stb-box big"  id="info-sg-priv-pensjon">
+        <p>Vi har dessverre noe behandlingstid på e-posthenvendelser.<br>
+          Haster det er du velkommen til å ta kontakt med oss på <a href="tel:22312000">22 31 20 00.</a></p>
+      </div>
+    </div>
+    <div id="info-step-3">
+      <div class="saksinfo stb-box big"  id="info-sg-bankID">
+        <p class="lead">BankID</p>
+        <p><a href="http://www.storebrand.no/site/stb.nsf/pages/javaplaga.html" target="_blank">Klikk her for informasjon</a>
+        </p>
+      </div>
+
+      <div class="saksinfo stb-box big"  id="info-sg-ny-forsikring">
+        <p class="lead">Før du går videre.</p>
+        <p>Den raskeste måte å finne pris på er å benytte våre kalkulatorer.
+          Her kan du fylle inn dine opplysninger og få pris/tilbud med en gang.
+        </p>
+        <p class="lead">Forespørsel om tilbud på forsikringer</p>
+        <p>For at vi skal kunne beregne et tilbud til deg, må skjemaet under fylles ut med detaljer
+          om alle forsikringene du ønsker tilbud på. I noen tilfeller vil det være behov for utfyllende opplysninger og i den forbindelse vil en rådgiver ta kontakt på telefon.</p>
+
+        <p>Etter at du har fylt ut skjemaet må du lagre det lokalt på maskinen din (gjerne på skrivebordet), deretter laster du det opp under "Vedlegg".
+        </p>
+      </div>
+
+      <div class="saksinfo stb-box big"  id="info-sg-start-sparing">
+        <p>Har du spørsmål ring oss på 22 31 50 98 eller send inn kontaktinformasjon.<br><br>
+          <a target="_blank" href="http://www.storebrand.no/sparerad">Ønsker du våre spareråd?</a><br><br>
+          <a target="_blank" href="http://www.storebrand.no/site/stb.nsf/Pages/dittpensjonstall.html">Sparing til pensjon - Ditt pensjonstall</a><br><br>
+          <a target="_blank" href="http://www.storebrand.no/site/stb.nsf/Pages/sparekonto.html">Sparing til bufferkapital</a><br><br>
+          <a target="_blank" href="http://www.storebrand.no/site/stb.nsf/Pages/boligsparingforungdom.html">BSU – Bolig sparing for ungdom</a><br><br>
+        </p>
+      </div>
+
+      <div class="saksinfo stb-box big"  id="info-sg-flytte-sparing">
+        <p>Er du usikker på hvilke forsikringer og pensjoner du har?</p>
+        <p>Dersom du har behov for rådgivning eller hjelp er du velkommen til å kontakte oss
+          på telefon  <a href="tel:22315098">22 31 50 98</a> (0800 -1600) eller legg inn kontaktinformasjon og vi kontakter deg.
+        </p>
+        <p>Ønsker du å hjelpe deg selv – velg sparealternativer fra listen nedenfor.</p>
+      </div>
+
+      <div class="saksinfo stb-box big"  id="info-sg-innlosning-fond">
+        <p>OBS: På grunn av personvern/sikkerhetsregler har vi ikke mulighet til å gå ut med sensitiv informasjon om ditt eksisterende kundeforhold på denne e-postløsningen.
+          Logg deg inn på dine personlige sider, der kan vi gi deg et mer konkret svar på din henvendelse.
+        </p>
+        <p>Ønsker du tilbud av en rådgiver er det viktig med utfyllende informasjon i din e-posthenvendelse.
+          Ved behov for ytterligere opplysninger vil du bli kontaktet av en rådgiver på telefon eller e-post.
+        </p>
+      </div>
+    </div>
+    <div id="info-step-4">
+      <div class="saksinfo stb-box big"  id="info-sg-flytte-sparing-fond">
+        <p>Ønsker du å flytte dine fond til Storebrand? Det kan du gjøre enkelt ved å fylle ut <a target="_blank" href="https://www2.storebrand.no/flyttfond/productinfo.html">dette skjemaet.</a><br><br>
+        </p>
+        <p>  Har du spørsmål eller ønsker råd om fond eller flytting av fond, er du velkommen til å kontakte oss
+          på telefon 22 31 50 98. Eller legg inn kontaktinformasjon nedenfor og vi kontakter deg.
+        </p>
+      </div>
+
+      <div class="saksinfo stb-box big"  id="info-sg-link-avtaler">
+        <p>Ønsker du å flytte din linkavtale? Skriv ut <a href="http://www.storebrand.no/site/stb.nsf/Get/get3733b4cdeea9b1b10ca297ca3c0efcd0/$FILE/Fullmakt-overforing-av-individuelle-forsikrings-ogspareavtaler.pdf" target="_blank">fullmakten</a> og fyll inn nødvendige opplysninger. Fullmakten kan scannes og sendes på faxnr. 23 31 71 16, e-post: link@storebrand.no eller sendes pr. post til:<br>
+          Storebrand Livsforsikring AS<br>
+          Link A4-A<br>
+          Postboks 500<br>
+          1327 Lysaker<br><br>
+
+          Storebrand mottar opplysninger om din avtale og du vil deretter bli kontaktet om videre prosess. Har du spørsmål eller ønsker råd om valg av fond, er du velkommen til å kontakte kundesenteret på telefon 22 31 50 98 eller legg inn kontaktinformasjon nedenfor og vi kontakter deg.
+        </p>
+      </div>
+      <div class="saksinfo stb-box big"  id="info-sg-flytte-sparing-bank">
+        <p>
+          Ønsker du å bytte bank til Storebrand? <a href="http://www.storebrand.no/site/stb.nsf/Pages/blibankkunde.html" target="_blank">Les om hvordan du blir bankkunde her.</a>
+        </p>
+      </div>
+      <div class="saksinfo stb-box big"  id="info-sg-flytte-pensjkapbevis">
+        <p><a href="https://www2.storebrand.no/fripoliseweb/start.html?OpenForm" target="_blank">Signer elektronisk</a></p>
+        <p>Har du spørsmål , er du velkommen til å kontakte kundesenteret på telefon 22 31 20 00 eller legg inn kontaktinformasjon nedenfor og vi kontakter deg.</p>
+      </div>
+      <div class="saksinfo stb-box big"  id="info-sg-innlosning-fond">
+        <p><a href="https://www2.storebrand.no/fripoliseweb/start.html?OpenForm" target="_blank">Signer elektronisk</a></p>
+        <p>Har du spørsmål , er du velkommen til å kontakte kundesenteret på telefon 22 31 20 00 eller legg inn kontaktinformasjon nedenfor og vi kontakter deg.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</form>
+</div>
+
+</div>
+<!-- End actual page contents -->
+
+<!-- Start responsive footer -->
+<footer class="stbcolor-primary first stb-footer">
+  <div class="row toTop">
+    <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIcon"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIconMobile"></span></a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row content">
+      <div class="col-sm-3 column info">
+        <div class="border-right">
+          <ul class="stb">
+            <li><span class="stb-sprite-24 white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
+            <li><span class="stb-sprite-24 white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
+            <li><span class="stb-sprite-24 white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
+          </ul>
+          <h4>Alt innhold</h4>
+          <p class="petit">
+            <a class="stb-footer-link" href="#">A til Å / Kategorisert</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-sm-3 column contact">
+        <h4>Lurer du på noe?</h4>
+        <div class="row">
+          <div class="col-xs-6">
+            <p class="petit">Vi er tilgjengelige:</p>
+            <p class="petit">Mandag-fredag<br />08-16, bank til 20</p>
+            <p class="petit">Lørdag (kun bank)<br />09-15</p>
+          </div>
+          <div class="col-xs-6">
+            <p class="petit">
+              <span class="stb-sprite-16 white phone"></span>
+              &nbsp;Ring:&nbsp;<a class="stb-footer-link hidden-xs hidden-sm" href="tel:08880"><span>08880</span></a>
+              <a class="visible-xs visible-sm" style="display: inline-block!important;" href="tel:08880"><span class="visible-xs visible-sm stbcolor-primary first darker badge">08880</span></a>
+              <br/>
+              Fra&nbsp;utlandet:<br />
+              <a class="stb-footer-link hidden-xs hidden-sm" href="tel:+4791508880"><span>+47&nbsp;915&nbsp;08880</span></a>
+              <a class="visible-xs visible-sm" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47&nbsp;915&nbsp;08880</span></a>
+            </p>
+            <ul class="stb">
+              <li><span class="stb-sprite-16 white envelope"></span><a class="stb-footer-link petit" href="#">&nbsp;E-post</a></li>
+              <li><span class="stb-sprite-16 white chat"></span><a class="stb-footer-link petit"  href="#">&nbsp;Chat</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-xs-6 column social">
+        <div class="border-left">
+          <h4>Sosiale&nbsp;medier</h4>
+          <ul class="stb">
+            <li><span class="stb-sprite-24 white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
+            <li><span class="stb-sprite-24 white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
+            <li><span class="stb-sprite-24 white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
+            <li><span class="stb-sprite-24 white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-3 col-xs-6 column more">
+        <div class="border-left">
+          <h4>Mer&nbsp;Storebrand</h4>
+          <ul class="stb">
+            <li><a class="stb-footer-link petit"  href="#"> Om Storebrand </a></li>
+            <li><a class="stb-footer-link petit"  href="#"> Eiendom</a></li>
+            <li><a class="stb-footer-link petit"  href="#"> Asset Management</a></li>
+            <li><a class="stb-footer-link petit"  href="#"> Personvern og cookies</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+<!-- End responsive footer -->
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41882079-4', 'storebrand.no');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+<!-- / Google Analytics -->
+
+</body>
+</html>
