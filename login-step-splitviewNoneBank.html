@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Menu and Footer Template - storebrand.no</title>
+  <title>Example -Login</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -21,45 +21,20 @@
   <script type="text/javascript" src="js/stb-page-padding.js"></script>
   <script type="text/javascript" src="js/dist/bootstrapValidator-0.5.0.js"></script>
 
+  <!-- Start JavaScript for this page only -->
+  <script>
+    $("document").ready(function(){
+      $(".row .column").matchHeight(true);
+    })
+
+    $(window).resize(function() {
+      $(".row .column").matchHeight(true);
+    }); 
+  </script>
+  <!-- End of JavaScript for this page only -->
+
+
   <style>
-    div.cookieFooter{
-      background-color: #333333;
-      height: auto;
-      opacity: 0.7;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 400;
-      color: white;
-    }
-    div.cookieFooter .contentinfo {
-      color: #FFFFFF;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 15px;
-      width: 60%;
-    }
-
-    div.cookieFooter.affix-bottom {
-      position: static;
-    }
-
-    html, body {
-      height: 100%;
-    }
-    .container {
-      min-height: 100%;
-      height: auto !important;
-      height: 100%;
-    }
-    .nav-tabs.nav-justified>li>a{
-      border: 1px solid #FFFFFF;
-      line-height: 2;
-    }
-    .nav-tabs.nav-justified>li.active>a,.nav-tabs.nav-justified>li.active>a:hover {
-      background-color: #E6E6E6 !important;
-      border: 1px solid #E6E6E6;
-    }
 
     .login input {
       height: 50px;
@@ -84,80 +59,7 @@
     .login .width-50 {
       width: 50%;
     }
-
-    form .form-control-feedback {
-      top: 8px !important;
-    }
-
   </style>
-  <script>
-    $(document).ready(function(){
-      var accept = readCookie('acceptCookie');
-      if(accept=='Yes'){
-        jQuery('#cookieFooter').hide();
-      }
-
-      $('#bankID-form').bootstrapValidator({
-        message: 'This value is not valid',
-        feedbackIcons: {
-          valid: 'glyphicon glyphicon-ok',
-          invalid: 'glyphicon glyphicon-remove',
-          validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: { engangskode: {
-          container: '#bankID-form .info-message',
-          validators: {
-            notEmpty: {
-              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi engangskode'
-            }
-          }
-        }
-        }
-      });
-
-      $('#bankID-mobil-form').bootstrapValidator({
-        message: 'This value is not valid',
-        feedbackIcons: {
-          valid: 'glyphicon glyphicon-ok',
-          invalid: 'glyphicon glyphicon-remove',
-          validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: { mobilnummer: {
-          container: '#bankID-mobil-form .info-message',
-          validators: {
-            notEmpty: {
-              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi mobilnummer'
-            }
-          }
-        }
-        }
-      });
-
-      $('#engangskode-form').bootstrapValidator({
-        message: 'This value is not valid',
-        feedbackIcons: {
-          valid: 'glyphicon glyphicon-ok',
-          invalid: 'glyphicon glyphicon-remove',
-          validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: { telefonnummer: {
-          container: '#engangskode-form .info-message',
-          validators: {
-            notEmpty: {
-              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi mobilnummer'
-            }
-          }
-        }
-        }
-      });
-
-    });
-    function aksepterCookie(){
-      createCookie('acceptCookie','Yes','60');
-      jQuery('#cookieFooter').hide('slow');
-    }
-
-  </script>
 </head>
 
 <body>
@@ -172,7 +74,7 @@
     </div>
     <div id="navbar-collapse-grid" class="navbar-collapse collapse">
       <ul class="nav navbar-nav col-md-8">
-        <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
+        <li class="dropdown private yamm-fw col-md-3 group" id="menuheader-private">
           <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
           <ul class="dropdown-menu" id="dropdown-private">
             <li class="col-md-2">
@@ -255,7 +157,7 @@
 
         <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        <li class="dropdown login yamm-fw current col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
         <li class="search col-md-3" style="display: none;">
           <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
@@ -472,86 +374,64 @@
 </div>
 <!-- End top of page -->
 
-<!-- Start actual page contents -->
 <div class="container login top-margin-50-mdlg">
+  <h1>Logg inn</h1>
   <div class="row">
-    <div class="col-md-12 column">
-      <h1>Logg inn</h1>
-      <ul class="nav nav-tabs nav-justified" role="tablist" style="background-color: #CCCCCC">
-        <li class="active"><a class="tab-link" href="#bankID" role="tab" data-toggle="tab"><span>BankID</span></a></li>
-        <li><a class="tab-link" href="#bankIDMob" role="tab" data-toggle="tab">BankID på mobil</a></li>
-        <li><a class="tab-link" href="#engangSMS" role="tab" data-toggle="tab">Engangskode på SMS</a></li>
-      </ul>
-      <!-- Tab panes -->
-      <div class="tab-content" style="background-color: #E6E6E6">
-        <div class="tab-pane active top-padding-20 bottom-padding-40" id="bankID" style="margin-left: 40px;">
-          <form  id="bankID-form" class="stb-form-inline" role="form">
-            <h2>BankID</h2>
-            <p>Benytt engangskode fra din kodebrikke</p>
-            <label>EngangsKode</label><br>
-            <span class="help-block info-message"></span>
-            <div class="form-group stb-form-group">
-              <input name="engangskode" type="number" class="form-control" placeholder="6 siffer" style="width: 180px;">
-            </div>
-            <img src="images/bankID.png" class="img-responsive" alt="Responsive image" style="display: inline-block; width:100px; margin-left: 10px;">
-            <br>
-            <button class="stb-btn stb-form" onclick="window.location ='login-step-loggedin.html'">Logg inn med BankID</button>
-          </form>
+    <div class="col-md-4 bottom-margin-50">
+      <h3>BankID</h3>
+      <p> Benytt engangskode fra din kodebrikke </p>
+      <form class="stb-form-inline" role="form">
+        <div class="stb-form-group">
+          <h4>Engangskode</h4>
+          <input maxlength="6" class="has-submit bottom-margin-30 width-40" placeholder="6 siffer" onKeyPress="return numbersonly(this,event)"> <br>
+          <button type="submit" class="stb-btn stb-form" onclick="event.preventDefault(); window.location ='login-step-loggedin.html'">Logg inn</button>
         </div>
-        <div class="tab-pane top-padding-20 bottom-padding-40" id="bankIDMob" style="margin-left: 40px;">
-          <form id="bankID-mobil-form" class="stb-form-inline" role="form">
-            <h2>BankID på mobil</h2>
-            <p>Bruk mobilen til å logge inn</p>
-            <label>Mobilnummer</label><br>
-            <span class="help-block info-message"></span>
-            <div class="form-group stb-form-group">
-              <input name="mobilnummer" type="tel" class="form-control" placeholder="8 siffer" style="width: 180px;">
-            </div>
-            <img src="images/bankID.png" class="img-responsive" alt="Responsive image" style="display: inline-block; width:100px; margin-left: 10px;">
-            <br>
-            <button class="stb-btn stb-form" onclick="window.location ='login-step-loggedin.html'">Logg inn med BankID på mobil</button>
-          </form>
-        </div>
-        <div class="tab-pane top-padding-20 bottom-padding-40" id="engangSMS" style="margin-left: 40px;">
-          <form id="engangskode-form" class="stb-form-inline" role="form">
-            <h2>Engangskode på SMS</h2>
-            <p>Bruk mobilen for å logge inn</p>
-            <div class="row">
-              <div class="col-md-2">
-                <label>Mobilnummer</label><br>
-                <span class="help-block info-message"></span>
-                <div class="form-group stb-form-group">
-                  <input name="telefonnummer" type="tel" class="form-control" placeholder="8 siffer" style="width: 180px;">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <label>Personlig passord</label><br>
-                <span class="help-block info-message"></span>
-                <div class="form-group stb-form-group">
-                  <input type="password" class="" style="width: 350px">
-                </div>
-              </div>
-            </div>
+      </form>
+    </div>
 
-            <br>
-            <button class="stb-btn stb-form" onclick="window.location ='login-step-loggedin.html'">Send meg engangspassord</button>
-          </form>
+    <hr class="visible-xs visible-sm"/>
 
+    <div class="col-md-4 bottom-margin-50">
+      <h3>BankID på mobil</h3>
+      <p> Bruk mobilen din til å logge inn </p>
+      <h4>Mobilnummer</h4>
+      <form class="stb-form-inline" role="form">
+        <div class="stb-form-group">
+          <input maxlength="8" class="has-submit bottom-margin-30 width-50" placeholder="8 siffer" onKeyPress="return numbersonly(this,event)">
+          <br>
+          <button type="submit" class="stb-btn stb-form" onclick="event.preventDefault();window.location ='login-step-loggedin.html'">Logg inn</button>
         </div>
-      </div>
+      </form>
+      <p class="petit"> For å kunne benytte seg av BankID må du ha opprettet en avtale med din bank. Har du det ikke? Da kan du <a href="#"> bestille her</a></p>
+    </div>
+
+    <hr class="visible-xs visible-sm"/>
+
+    <div class="col-md-4 bottom-margin-50">
+      <h3>Storebrand-passord</h3>
+      <p> Logg inn med ditt Storebrand-passord </p>
+      <form class="stb-form-inline" role="form">
+        <div class="stb-form-group">
+          <h4>Storebrand-passord</h4>
+          <input type="password" class="has-submit bottom-margin-30 width-75" placeholder="">
+          <button type="submit" class="stb-btn stb-form" onclick="event.preventDefault(); window.location ='login-step-loggedin.html'">Logg inn</button>
+        </div>
+      </form>
     </div>
   </div>
+  <hr/>
 
   <div class="row top-margin-50">
-        <div class="col-md-12">
-          <button class="stb-btn transparent light" onclick="window.location ='login-step-splitview.html'">Alternativ visning</button>
+      <div class="col-md-12">
+          <button class="stb-btn transparent light" onclick="window.location ='login-step-splitviewNoneBank.html'">Alternativ visning</button>
           <br><br>
           <button class="stb-btn transparent light" onclick="window.location ='login-step-kundevalg.html'">Kundevalg</button>
-        </div>
-    </div> 
+      </div>
+  </div> 
 
-</div>
-<!-- End actual page contents -->
+  </div>
+
+  <hr/>
 
   <!-- Start Cookie notice -->
   <div data-spy="affix" class="cookieNote" id="cookieNote">
@@ -566,12 +446,13 @@
   </div>
   <!-- End Cookie notice -->
 
+
 <!-- Start responsive footer -->
 <footer class="stbcolor-primary first stb-footer">
   <div class="row toTop">
     <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" style="line-height: 2;">Til toppen <span class="stb-sprite-24 white arrow-up" style="margin-bottom: -5px;"></span></a>
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" style="line-height: 2;">Til toppen <span class="stb-sprite-24 white arrow-up" style="margin-bottom: -5px;"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" >Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right">Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
     </div>
   </div>
 
@@ -642,18 +523,21 @@
       </div>
     </div>
   </div>
+
 </footer>
 <!-- End responsive footer -->
 
+<!-- Google Analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-41882079-4', {'cookieDomain': 'none'});
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41882079-4', 'storebrand.no');
   ga('set', 'anonymizeIp', true);
   ga('send', 'pageview');
 </script>
+<!-- / Google Analytics -->
 
 </body>
 </html>

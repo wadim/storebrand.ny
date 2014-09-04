@@ -2750,70 +2750,52 @@ $('ul[data-widget=stbFaq]').stbFaq();
             Forms are built using namespaced bootstrap-classes, stb-form-inline, stb-form-group, and so on. We have not over-ridden the standard Bootstrap focus indicator (a surrounding faint color gradient), because by now that is universally recognized as helpful to the general public.
           </p>
           <form class="stb-form-inline" role="form">
-            <div class="stb-form-group" style="width: 200px;">
-              <label for="formInput1">Standard with placeholder</label>
-            </div>
-
             <div class="stb-form-group">
-              <input id="formInput1" type="text" class="" placeholder="Placeholder" style="width: 180px;">
+              <label for="formInput1" style="width: 200px;">Standard with placeholder</label>
+              <input id="formInput1" type="text" class="" placeholder="Placeholder" style="width: 230px;">
             </div>
           </form>
 
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput2">Input required</label> <span class="input-required">*</span>
-              </div>
-
               <div class="stb-form-group">
-                <input id="formInput2" type="text" class="" placeholder="Placeholder" style="width: 180px;">
+                 <label for="formInput2" style="width: 200px;">Input required <span class="input-required">*</span></label>
+                 <input id="formInput2" type="text" class="" placeholder="Placeholder" style="width: 230px;">
               </div>
           </form>
 
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput3">On hover</label>
-              </div>
-
-              <div class="stb-form-group">
-                <input id="formInput3" type="text" class="fauxInputHover" placeholder="Placeholder" style="width: 180px;">
+              <div class="stb-form-group" >
+                <label for="formInput3" style="width: 200px;">On hover</label>
+                 <input id="formInput3" type="text" class="fauxInputHover" placeholder="Placeholder" style="width: 230px;">
               </div>
           </form>          
           
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput4">On focus</label>
-              </div>
-
               <div class="stb-form-group">
-                <input id="formInput4" type="text" class="fauxInputFocus" value="Show me some love|" style="width: 180px;">
+                <label for="formInput4"  style="width: 200px;">On focus</label>
+                <input id="formInput4" type="text" class="fauxInputFocus" value="Show me some love|" style="width: 230px;">
               </div>
           </form>            
 
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput5">Disabled</label>
-              </div>
-
               <div class="stb-form-group">
-                <input id="formInput5" type="text" class="" style="width: 180px;" placeholder="Can't touch this" disabled>
+                <label for="formInput5"  style="width: 200px;">Disabled</label>
+                 <input id="formInput5" type="text" class="" style="width: 230px;" placeholder="Can't touch this" disabled>
               </div>
           </form>   
           
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput6">Error in field input</label>
-              </div>
-              <div class="stb-form-group alarm">
-                <input id="formInput6" type="text" class="" value="God exists!" style="width: 180px;"> <span class="stb-color-sprite-16 warning"></span> <span class="input-faulty">Sounds about wrong!</span>
+              <div class="stb-form-group" >
+                <label for="formInput6" style="width: 200px;">Error in field input</label>
+                <div class="error-message" ><span class="stb-color-sprite-16 warning"></span><span class="input-faulty left-margin-10">Sounds about wrong!</span></div>
+                <input id="formInput6" type="text" class="input-fail" value="God exists!" style="width: 230px;">
               </div>
           </form>
 
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput7">Input becomes valid</label>
-              </div>
-              <div class="stb-form-group valid">
-                <input id="formInput7" type="text" class="" value="I'll never be Beyonce..." style="width: 180px;"> <span class="stb-color-sprite-16 ok"></span> <span class="input-valid">Sounds about right!</span>
+              <div class="stb-form-group" >
+                <label for="formInput7" style="width: 200px;">Input becomes valid<span class="success-message stb-color-sprite-16 ok left-margin-10"></span></label>
+                <input id="formInput7" type="text" class="input-sucess" value="I'll never be Beyonce..." style="width: 230px;"> 
               </div>
           </form>          
           
@@ -2831,7 +2813,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
                 <label for="formInput9">With action button</label>
               </div>
               <div class="stb-form-group">
-                <input id="formInput9" type="text" class="has-submit" placeholder="Text..." style="width: 200px;">
+                <input id="formInput9" type="text" class="has-submit" placeholder="Text..." style="width: 230px;">
                 <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
               </div>
           </form>
@@ -2841,7 +2823,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
                 <label for="formInput10">Hover with button</label>
               </div>
               <div class="stb-form-group">
-                <input id="formInput10" type="text" class="has-submit fauxInputHover" placeholder="Text..." style="width: 200px;">
+                <input id="formInput10" type="text" class="has-submit fauxInputHover" placeholder="Text..." style="width: 230px;">
                 <button type="submit" class="stb-btn stb-form is-submit fauxInputHover">Enter</button>
               </div>
           </form>
@@ -2851,7 +2833,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
                 <label for="formInput11">Focus with button</label>
               </div>
               <div class="stb-form-group">
-                <input id="formInput11" type="text" class="has-submit fauxInputFocus" value="Portveien|" style="width: 200px;">
+                <input id="formInput11" type="text" class="has-submit fauxInputFocus" value="Portveien|" style="width: 230px;">
                 <button type="submit" class="stb-btn stb-form is-submit fauxInputFocus">Enter</button>
               </div>
           </form>          
@@ -2861,7 +2843,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
                 <label for="formInput12">Disabled</label>
               </div>
               <div class="stb-form-group">
-                <input id="formInput12" type="text" class="has-submit" placeholder="Fødselsnummer" style="width: 200px;" disabled>
+                <input id="formInput12" type="text" class="has-submit" placeholder="Fødselsnummer" style="width: 230px;" disabled>
                 <button type="submit" class="stb-btn stb-form is-submit" disabled>Enter</button>
               </div>
           </form>
@@ -2870,24 +2852,54 @@ $('ul[data-widget=stbFaq]').stbFaq();
               <div class="stb-form-group" style="width: 200px;">
                 <label for="formInput13">Error in field input</label>
               </div>
-              <div class="stb-form-group alarm">
-                <input id="formInput13" type="text" class="has-submit" value="Portveien 3" style="width: 200px;">
-                <button type="submit" class="stb-btn stb-form is-submit">Enter</button> <span class="stb-color-sprite-16 warning"></span> <span class="input-faulty">Sounds about wrong!</span>
+              <div class="stb-form-group">
+              <div class="error-message"><span class="stb-color-sprite-16 warning"></span> <span class="input-faulty">Sounds about wrong!</span></div>
+              <input id="formInput13" type="text" class="input-fail" value="Portveien 3" style="width: 230px;">
+                <button type="submit" class="stb-btn stb-form is-submit">Enter</button> 
+              </div>
+          </form>
+          
+          <form class="stb-form-inline" role="form">
+              <div class="stb-form-group" style="width: 200px;">
+                <label for="formInput13">Input becomes valid<span class="success-message stb-color-sprite-16 ok left-margin-10"></span></label>
+              </div>
+              <div class="stb-form-group">
+                <input id="formInput13" type="text" class="input-fail" value="Portveien 3" style="width: 230px;">
+                <button type="submit" class="stb-btn stb-form is-submit">Enter</button> 
               </div>
           </form>
 
         </div> <!-- /col-md-9 -->
       </div> <!-- /row -->
-      <div class="row">
+      
+       <div class="row">
         <div class="col-md-9 col-md-offset-3">
+        <h4>form input elements</h4>
           <pre class="prettyprint">
 &lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
 &lt;div class=&quot;stb-form-group&quot;&gt;
-  &lt;input type=&quot;text&quot; class=&quot;has-submit&quot; placeholder=&quot;Text...&quot; style=&quot;width: 280px;&quot;&gt;
-  &lt;button type=&quot;submit&quot; class=&quot;stb-btn stb-form is-submit&quot;&gt;Enter&lt;/button&gt;
+ &lt;label for="">Write label here&lt;/label&gt;
+  &lt;input type=&quot;text&quot; placeholder=&quot;Text...&quot;&quot;&gt;
 &lt;/div&gt;
 &lt;/form&gt;</pre>
+</div>
+</div>
+
+      <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+         <h4>form input elements with action buttons</h4>
+          <pre class="prettyprint">
+&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
+&lt;div class=&quot;stb-form-group&quot;&gt;
+ &lt;label for="">Write label here&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;stb-form-group&quot;&gt;
+  &lt;input type=&quot;text&quot; class=&quot;has-submit&quot; placeholder=&quot;Text...&quot; style=&quot;width: 280px;&quot;&gt;
+  &lt;button type=&quot;submit&quot; class=&quot;stb-btn stb-form is-submit&quot;&gt;Enter&lt;/button&gt;
+&lt;/div&gt;</pre>
         </div>
+        
+     
       </div> <!-- / General input fields row --> 
       
       <hr class="top-margin-30" />    
