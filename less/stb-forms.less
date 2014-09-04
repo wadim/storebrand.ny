@@ -118,19 +118,13 @@
     }
   } //end:stb-form-group
 
-  button[disabled] {
-    background-color: @stb-gray-fourth;
-    &:hover {
-      background-color: @stb-gray-fourth;
-    }
-  }
-  input[disabled] {
-    background-color: @stb-gray-second;
+ 
+  input:disabled {
+  	 background-color: @stb-gray-second;
     color: @stb-gray-third;
   }
-
   button:disabled{
-    background-color: @stb-gray-third !important;
+    background-color: @stb-gray-second !important;
     color: @stb-primary-black;
     cursor: not-allowed;
 
