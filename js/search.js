@@ -318,7 +318,7 @@ function getPromotions() {
     initPromotion();
     $.each(promotions,function(value) {
       if (value.toLowerCase() == get['q'].toLowerCase()){ 
-        $(".searchresults").append('<div class="top-margin-20 bottom-margin-20 promotion stb-box third' + '"><h4>'+promotions[value].header + '<' + '/h1><' + 'p class="description">' + promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + promotions[value].url + '">' + promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
+        $(".searchresults").append('<div class="top-margin-20 bottom-margin-20 promotion stb-box gray' + '"><h3>'+promotions[value].header + '<' + '/h3><' + 'p class="description">' + promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + promotions[value].url + '">' + promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
       }
      });
   }
