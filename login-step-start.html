@@ -61,21 +61,6 @@
       border: 1px solid #E6E6E6;
     }
 
-
-    .login button.is-submit {
-      padding: 20px;
-      height: 60px !important;
-      top: 0;
-      left: 0;
-      width: 50%;
-      max-width: 100%;
-    }
-
-    .login input {
-      height: 50px;
-      width: inherit;
-    }
-
     .login hr {
       border-width: 4px;
       margin: 0;
@@ -496,11 +481,12 @@
       <h1>Logg inn</h1>
       <form id="start-login-form" class="stb-form-inline" role="form">
         <label>Skriv inn ditt fødselsnummer </label><br>
-        <span class="help-block info-message"></span>
+        <!-- <span class="help-block info-message"></span> -->
         <div class="form-group stb-form-group">
           <input class="" name="birthNumber" style="width: 350px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
         </div>
-        <button class="stb-btn stb-form">Logg inn</button>
+        
       </form>
       <!-- Tab panes -->
     </div>
