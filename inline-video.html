@@ -31,9 +31,9 @@
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
 
-      var player1,player2;
+
       function onYouTubeIframeAPIReady() {
-        player1 = new YT.Player('player-1', {
+        new YT.Player('player-1', {
           videoId: '_7Foh3T1gN4',
           playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0},
           events: {
@@ -42,7 +42,25 @@
           }
         });
 
-        player2 = new YT.Player('player-2', {
+        new YT.Player('player-2', {
+          videoId:'_7Foh3T1gN4',
+          playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0},
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+
+        new YT.Player('player-3', {
+          videoId:'_7Foh3T1gN4',
+          playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0},
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+
+        new YT.Player('player-4', {
           videoId:'_7Foh3T1gN4',
           playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0},
           events: {
@@ -132,19 +150,27 @@
       z-index: 1;
       padding-top: 12px;
       margin-top: 22%;
-      margin-left: 32%;
-      height: 68px;
+      margin-left: 36%;
+      height: 80px;
+      border-radius: 8px;
+    }
+    .video-play-span8 p{
+      padding-top: 4px;
       font-size: 18px;
     }
     .video-play-span10{
       position: absolute;
       z-index: 1;
       padding-top: 12px;
-      margin-top: 22%;
-      margin-left: 32%;
-      height: 68px;
-      font-size: 18px;
+      margin-top: 23%;
+      margin-left: 40%;
+      height: 80px;
+      border-radius: 8px;
     }
+    .video-play-span10 p{
+       padding-top: 4px;
+       font-size: 18px;
+     }
   </style>
   <!-- End of CSS for this page only -->
 </head>
@@ -457,11 +483,36 @@
 
 <!-- Start of page contents -->
 <div class="container content">
+
+  <div class="row top-margin-20">
+    <div class="col-md-10">
+      <div class="video-container hidden-sm hidden-xs">
+        <button id="playVideoBtn-1" class="stb-btn stbcolor-primary second video-play-span10"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-32 white youtube"></span></button>
+        <div id="player-1"></div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <img src="images/sponge.png" class="hidden-xs center-block" />
+    </div>
+  </div>
+
+  <div class="row top-margin-20">
+    <div class="col-md-8">
+      <div class="video-container hidden-sm hidden-xs">
+        <button id="playVideoBtn-2" class="stb-btn stbcolor-primary second video-play-span8"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-32 white youtube"></span></button>
+        <div id="player-2"></div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="images/sponge.png" class="hidden-xs center-block" />
+    </div>
+  </div>
+
   <div class="row top-margin-20">
     <div class="col-md-6">
       <div class="video-container hidden-sm hidden-xs">
-        <button id="playVideoBtn-1" class="stb-btn stbcolor-primary second video-play-span6"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-32 white youtube"></span></button>
-        <div id="player-1"></div>
+        <button id="playVideoBtn-3" class="stb-btn stbcolor-primary second video-play-span6"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-32 white youtube"></span></button>
+        <div id="player-3"></div>
       </div>
     </div>
     <div class="col-md-6">
@@ -472,11 +523,11 @@
   <div class="row top-margin-20">
     <div class="col-md-4">
       <div class="video-container hidden-sm hidden-xs">
-        <button id="playVideoBtn-2" class="stb-btn stbcolor-primary second video-play-span4"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-32 white youtube"></span></button>
-        <div id="player-2"></div>
+        <button id="playVideoBtn-4" class="stb-btn stbcolor-primary second video-play-span4"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-32 white youtube"></span></button>
+        <div id="player-4"></div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-8">
       <img src="images/sponge.png" class="hidden-xs center-block" />
     </div>
   </div>
