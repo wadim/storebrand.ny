@@ -33,7 +33,7 @@
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
         videoId: '_7Foh3T1gN4',
-        playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1},
+        playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0},
         events: {
           'onReady': onPlayerReady,
           'onStateChange': onPlayerStateChange
