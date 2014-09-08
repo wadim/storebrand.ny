@@ -1661,6 +1661,9 @@ $('ul[data-widget=stbFaq]').stbFaq();
                 We have two sets of icons; one with a few icons with colors that are fixed and another with some other, more 
                 general icons available in the colors charcoal, white and red, and in the sizes 16, 24, 32 and 48 pixels width and height.
               </p>
+              <p>
+                <strong>Note!</strong> The icons come in only two sizes, small and medium. On standard screens we use 16 and 24 pixel size icons. On retina screens we use 24 and 48 pixel size icons. This has NOT been implemented in the examples below yet. A full retina-fication will be done eventually. Class "stb-sprite-16" will then be replaced with classES "stb-sprite small", "stb-sprite-24" will be "stb-sprite medium", "stb-sprite-32" will be "stb-sprite small" with a media query to adjust for size and "stb-sprite-48" will be "stb-sprite medium" with a media query to adjust for size.
+              </p>
               <h3>Color icons</h3>
               <strong class="top-margin-20">Code:</strong>
               <pre class="prettyprint">
@@ -1911,7 +1914,14 @@ $('ul[data-widget=stbFaq]').stbFaq();
               <span class="stb-sprite-24 youtube"></span>
               <span class="stb-sprite-32 youtube"></span>
               <span class="stb-sprite-48 youtube"></span>
-            </p>   
+            </p>
+            <p>
+              play <br />
+              <span class="stb-sprite-16 play"></span>
+              <span class="stb-sprite-24 play"></span>
+              <span class="stb-sprite-32 play"></span>
+              <span class="stb-sprite-48 play"></span>
+            </p>               
             <p>
               blog <br />
               <span class="stb-sprite-16 blog"></span>
@@ -2134,6 +2144,13 @@ $('ul[data-widget=stbFaq]').stbFaq();
               <span class="stb-sprite-48 red youtube"></span>
             </p>   
             <p>
+              play <br />
+              <span class="stb-sprite-16 red play"></span>
+              <span class="stb-sprite-24 red play"></span>
+              <span class="stb-sprite-32 red play"></span>
+              <span class="stb-sprite-48 red play"></span>
+            </p>              
+            <p>
               blog <br />
               <span class="stb-sprite-16 red blog"></span>
               <span class="stb-sprite-24 red blog"></span>
@@ -2186,210 +2203,217 @@ $('ul[data-widget=stbFaq]').stbFaq();
                 <span class="stb-sprite-32 white chevron-up"></span>
                 <span class="stb-sprite-48 white chevron-up"></span>
               </p>
-            <p>
-              chevron-down <br />
-              <span class="stb-sprite-16 white chevron-down"></span>
-              <span class="stb-sprite-24 white chevron-down"></span>
-              <span class="stb-sprite-32 white chevron-down"></span>
-              <span class="stb-sprite-48 white chevron-down"></span>
-            </p>
-            <p>
-              chevron-left <br />
-              <span class="stb-sprite-16 white chevron-left"></span>
-              <span class="stb-sprite-24 white chevron-left"></span>
-              <span class="stb-sprite-32 white chevron-left"></span>
-              <span class="stb-sprite-48 white chevron-left"></span>
-            </p>
-            <p>
-              chevron-right <br />
-              <span class="stb-sprite-16 white chevron-right"></span>
-              <span class="stb-sprite-24 white chevron-right"></span>
-              <span class="stb-sprite-32 white chevron-right"></span>
-              <span class="stb-sprite-48 white chevron-right"></span>
-            </p>
-            <p>
-              arrow-up <br />
-              <span class="stb-sprite-16 white arrow-up"></span>
-              <span class="stb-sprite-24 white arrow-up"></span>
-              <span class="stb-sprite-32 white arrow-up"></span>
-              <span class="stb-sprite-48 white arrow-up"></span>
-            </p>
-            <p>
-              arrow-down <br />
-              <span class="stb-sprite-16 white arrow-down"></span>
-              <span class="stb-sprite-24 white arrow-down"></span>
-              <span class="stb-sprite-32 white arrow-down"></span>
-              <span class="stb-sprite-48 white arrow-down"></span>
-            </p>
-            <p>
-              arrow-left <br />
-              <span class="stb-sprite-16 white arrow-left"></span>
-              <span class="stb-sprite-24 white arrow-left"></span>
-              <span class="stb-sprite-32 white arrow-left"></span>
-              <span class="stb-sprite-48 white arrow-left"></span>
-            </p>
-            <p>
-              arrow-right <br />
-              <span class="stb-sprite-16 white arrow-right"></span>
-              <span class="stb-sprite-24 white arrow-right"></span>
-              <span class="stb-sprite-32 white arrow-right"></span>
-              <span class="stb-sprite-48 white arrow-right"></span>
-            </p>    
-            <p>
-              remove <br />
-              <span class="stb-sprite-16 white remove"></span>
-              <span class="stb-sprite-24 white remove"></span>
-              <span class="stb-sprite-32 white remove"></span>
-              <span class="stb-sprite-48 white remove"></span>
-            </p>
-            <p>
-              pencil <br />
-              <span class="stb-sprite-16 white pencil"></span>
-              <span class="stb-sprite-24 white pencil"></span>
-              <span class="stb-sprite-32 white pencil"></span>
-              <span class="stb-sprite-48 white pencil"></span>
-            </p>
-            <p>
-              edit <br />
-              <span class="stb-sprite-16 white edit"></span>
-              <span class="stb-sprite-24 white edit"></span>
-              <span class="stb-sprite-32 white edit"></span>
-              <span class="stb-sprite-48 white edit"></span>
-            </p>            
-            <p>
-              checkdot <br />
-              <span class="stb-sprite-16 white checkdot"></span>
-              <span class="stb-sprite-24 white checkdot"></span>
-              <span class="stb-sprite-32 white checkdot"></span>
-              <span class="stb-sprite-48 white checkdot"></span>
-            </p>            
-            <p>
-              menu-bars <br />
-              <span class="stb-sprite-16 white menu-bars"></span>
-              <span class="stb-sprite-24 white menu-bars"></span>
-              <span class="stb-sprite-32 white menu-bars"></span>
-              <span class="stb-sprite-48 white menu-bars"></span>
-            </p>  
-            <p>
-              personal-menu <br />
-              <span class="stb-sprite-16 white personal-menu"></span>
-              <span class="stb-sprite-24 white personal-menu"></span>
-              <span class="stb-sprite-32 white personal-menu"></span>
-              <span class="stb-sprite-48 white personal-menu"></span>
-            </p>             
-            <p>
-              globe <br />
-              <span class="stb-sprite-16 white globe"></span>
-              <span class="stb-sprite-24 white globe"></span>
-              <span class="stb-sprite-32 white globe"></span>
-              <span class="stb-sprite-48 white globe"></span>
-            </p>
-            <p>
-              search <br />
-              <span class="stb-sprite-16 white search"></span>
-              <span class="stb-sprite-24 white search"></span>
-              <span class="stb-sprite-32 white search"></span>
-              <span class="stb-sprite-48 white search"></span>
-            </p>            
-            <p>
-              phone <br />
-              <span class="stb-sprite-16 white phone"></span>
-              <span class="stb-sprite-24 white phone"></span>
-              <span class="stb-sprite-32 white phone"></span>
-              <span class="stb-sprite-48 white phone"></span>
-            </p>
-
               <p>
-              envelope <br />
-              <span class="stb-sprite-16 white envelope"></span>
-              <span class="stb-sprite-24 white envelope"></span>
-              <span class="stb-sprite-32 white envelope"></span>
-              <span class="stb-sprite-48 white envelope"></span>
-            </p>  
-            <p>
-              chat <br />
-              <span class="stb-sprite-16 white chat"></span>
-              <span class="stb-sprite-24 white chat"></span>
-              <span class="stb-sprite-32 white chat"></span>
-              <span class="stb-sprite-48 white chat"></span>
-            </p>  
-            <p>
-              bubble (general for contact) <br />
-              <span class="stb-sprite-16 white bubble"></span>
-              <span class="stb-sprite-24 white bubble"></span>
-              <span class="stb-sprite-32 white bubble"></span>
-              <span class="stb-sprite-48 white bubble"></span>
-            </p>             
-            <p>
-              employee <br />
-              <span class="stb-sprite-16 white employee"></span>
-              <span class="stb-sprite-24 white employee"></span>
-              <span class="stb-sprite-32 white employee"></span>
-              <span class="stb-sprite-48 white employee"></span>
-            </p>
-            <p>
-              user <br />
-              <span class="stb-sprite-16 white user"></span>
-              <span class="stb-sprite-24 white user"></span>
-              <span class="stb-sprite-32 white user"></span>
-              <span class="stb-sprite-48 white user"></span>
-            </p>             
-            <p>
-              facebook <br />
-              <span class="stb-sprite-16 white facebook"></span>
-              <span class="stb-sprite-24 white facebook"></span>
-              <span class="stb-sprite-32 white facebook"></span>
-              <span class="stb-sprite-48 white facebook"></span>              
-            </p>            
-            <p>
-              twitter <br />
-              <span class="stb-sprite-16 white twitter"></span>
-              <span class="stb-sprite-24 white twitter"></span>
-              <span class="stb-sprite-32 white twitter"></span>
-              <span class="stb-sprite-48 white twitter"></span>
-            </p>
-            <p>
-              youtube <br />
-              <span class="stb-sprite-16 white youtube"></span>
-              <span class="stb-sprite-24 white youtube"></span>
-              <span class="stb-sprite-32 white youtube"></span>
-              <span class="stb-sprite-48 white youtube"></span>
-            </p>   
-            <p>
-              blog <br />
-              <span class="stb-sprite-16 white blog"></span>
-              <span class="stb-sprite-24 white blog"></span>
-              <span class="stb-sprite-32 white blog"></span>
-              <span class="stb-sprite-48 white blog"></span>
-            </p>              
-            <p>
-              calc <br />
-              <span class="stb-sprite-16 white calc"></span>
-              <span class="stb-sprite-24 white calc"></span>
-              <span class="stb-sprite-32 white calc"></span>
-              <span class="stb-sprite-48 white calc"></span>
-            </p>            
-            <p>
-              lock <br />
-              <span class="stb-sprite-16 white lock"></span>
-              <span class="stb-sprite-24 white lock"></span>
-              <span class="stb-sprite-32 white lock"></span>
-              <span class="stb-sprite-48 white lock"></span>
-            </p>
-            <p>
-              trash <br />
-              <span class="stb-sprite-16 white trash"></span>
-              <span class="stb-sprite-24 white trash"></span>
-              <span class="stb-sprite-32 white trash"></span>
-              <span class="stb-sprite-48 white trash"></span>
-            </p>            
-            <p>
-              wrench <br />
-              <span class="stb-sprite-16 white wrench"></span>
-              <span class="stb-sprite-24 white wrench"></span>
-              <span class="stb-sprite-32 white wrench"></span>
-              <span class="stb-sprite-48 white wrench"></span>
-            </p>  
+                chevron-down <br />
+                <span class="stb-sprite-16 white chevron-down"></span>
+                <span class="stb-sprite-24 white chevron-down"></span>
+                <span class="stb-sprite-32 white chevron-down"></span>
+                <span class="stb-sprite-48 white chevron-down"></span>
+              </p>
+              <p>
+                chevron-left <br />
+                <span class="stb-sprite-16 white chevron-left"></span>
+                <span class="stb-sprite-24 white chevron-left"></span>
+                <span class="stb-sprite-32 white chevron-left"></span>
+                <span class="stb-sprite-48 white chevron-left"></span>
+              </p>
+              <p>
+                chevron-right <br />
+                <span class="stb-sprite-16 white chevron-right"></span>
+                <span class="stb-sprite-24 white chevron-right"></span>
+                <span class="stb-sprite-32 white chevron-right"></span>
+                <span class="stb-sprite-48 white chevron-right"></span>
+              </p>
+              <p>
+                arrow-up <br />
+                <span class="stb-sprite-16 white arrow-up"></span>
+                <span class="stb-sprite-24 white arrow-up"></span>
+                <span class="stb-sprite-32 white arrow-up"></span>
+                <span class="stb-sprite-48 white arrow-up"></span>
+              </p>
+              <p>
+                arrow-down <br />
+                <span class="stb-sprite-16 white arrow-down"></span>
+                <span class="stb-sprite-24 white arrow-down"></span>
+                <span class="stb-sprite-32 white arrow-down"></span>
+                <span class="stb-sprite-48 white arrow-down"></span>
+              </p>
+              <p>
+                arrow-left <br />
+                <span class="stb-sprite-16 white arrow-left"></span>
+                <span class="stb-sprite-24 white arrow-left"></span>
+                <span class="stb-sprite-32 white arrow-left"></span>
+                <span class="stb-sprite-48 white arrow-left"></span>
+              </p>
+              <p>
+                arrow-right <br />
+                <span class="stb-sprite-16 white arrow-right"></span>
+                <span class="stb-sprite-24 white arrow-right"></span>
+                <span class="stb-sprite-32 white arrow-right"></span>
+                <span class="stb-sprite-48 white arrow-right"></span>
+              </p>    
+              <p>
+                remove <br />
+                <span class="stb-sprite-16 white remove"></span>
+                <span class="stb-sprite-24 white remove"></span>
+                <span class="stb-sprite-32 white remove"></span>
+                <span class="stb-sprite-48 white remove"></span>
+              </p>
+              <p>
+                pencil <br />
+                <span class="stb-sprite-16 white pencil"></span>
+                <span class="stb-sprite-24 white pencil"></span>
+                <span class="stb-sprite-32 white pencil"></span>
+                <span class="stb-sprite-48 white pencil"></span>
+              </p>
+              <p>
+                edit <br />
+                <span class="stb-sprite-16 white edit"></span>
+                <span class="stb-sprite-24 white edit"></span>
+                <span class="stb-sprite-32 white edit"></span>
+                <span class="stb-sprite-48 white edit"></span>
+              </p>            
+              <p>
+                checkdot <br />
+                <span class="stb-sprite-16 white checkdot"></span>
+                <span class="stb-sprite-24 white checkdot"></span>
+                <span class="stb-sprite-32 white checkdot"></span>
+                <span class="stb-sprite-48 white checkdot"></span>
+              </p>            
+              <p>
+                menu-bars <br />
+                <span class="stb-sprite-16 white menu-bars"></span>
+                <span class="stb-sprite-24 white menu-bars"></span>
+                <span class="stb-sprite-32 white menu-bars"></span>
+                <span class="stb-sprite-48 white menu-bars"></span>
+              </p>  
+              <p>
+                personal-menu <br />
+                <span class="stb-sprite-16 white personal-menu"></span>
+                <span class="stb-sprite-24 white personal-menu"></span>
+                <span class="stb-sprite-32 white personal-menu"></span>
+                <span class="stb-sprite-48 white personal-menu"></span>
+              </p>             
+              <p>
+                globe <br />
+                <span class="stb-sprite-16 white globe"></span>
+                <span class="stb-sprite-24 white globe"></span>
+                <span class="stb-sprite-32 white globe"></span>
+                <span class="stb-sprite-48 white globe"></span>
+              </p>
+              <p>
+                search <br />
+                <span class="stb-sprite-16 white search"></span>
+                <span class="stb-sprite-24 white search"></span>
+                <span class="stb-sprite-32 white search"></span>
+                <span class="stb-sprite-48 white search"></span>
+              </p>            
+              <p>
+                phone <br />
+                <span class="stb-sprite-16 white phone"></span>
+                <span class="stb-sprite-24 white phone"></span>
+                <span class="stb-sprite-32 white phone"></span>
+                <span class="stb-sprite-48 white phone"></span>
+              </p>
+
+                <p>
+                envelope <br />
+                <span class="stb-sprite-16 white envelope"></span>
+                <span class="stb-sprite-24 white envelope"></span>
+                <span class="stb-sprite-32 white envelope"></span>
+                <span class="stb-sprite-48 white envelope"></span>
+              </p>  
+              <p>
+                chat <br />
+                <span class="stb-sprite-16 white chat"></span>
+                <span class="stb-sprite-24 white chat"></span>
+                <span class="stb-sprite-32 white chat"></span>
+                <span class="stb-sprite-48 white chat"></span>
+              </p>  
+              <p>
+                bubble (general for contact) <br />
+                <span class="stb-sprite-16 white bubble"></span>
+                <span class="stb-sprite-24 white bubble"></span>
+                <span class="stb-sprite-32 white bubble"></span>
+                <span class="stb-sprite-48 white bubble"></span>
+              </p>             
+              <p>
+                employee <br />
+                <span class="stb-sprite-16 white employee"></span>
+                <span class="stb-sprite-24 white employee"></span>
+                <span class="stb-sprite-32 white employee"></span>
+                <span class="stb-sprite-48 white employee"></span>
+              </p>
+              <p>
+                user <br />
+                <span class="stb-sprite-16 white user"></span>
+                <span class="stb-sprite-24 white user"></span>
+                <span class="stb-sprite-32 white user"></span>
+                <span class="stb-sprite-48 white user"></span>
+              </p>             
+              <p>
+                facebook <br />
+                <span class="stb-sprite-16 white facebook"></span>
+                <span class="stb-sprite-24 white facebook"></span>
+                <span class="stb-sprite-32 white facebook"></span>
+                <span class="stb-sprite-48 white facebook"></span>              
+              </p>            
+              <p>
+                twitter <br />
+                <span class="stb-sprite-16 white twitter"></span>
+                <span class="stb-sprite-24 white twitter"></span>
+                <span class="stb-sprite-32 white twitter"></span>
+                <span class="stb-sprite-48 white twitter"></span>
+              </p>
+              <p>
+                youtube <br />
+                <span class="stb-sprite-16 white youtube"></span>
+                <span class="stb-sprite-24 white youtube"></span>
+                <span class="stb-sprite-32 white youtube"></span>
+                <span class="stb-sprite-48 white youtube"></span>
+              </p>   
+              <p>
+                play <br />
+                <span class="stb-sprite-16 white play"></span>
+                <span class="stb-sprite-24 white play"></span>
+                <span class="stb-sprite-32 white play"></span>
+                <span class="stb-sprite-48 white play"></span>
+              </p>              
+              <p>
+                blog <br />
+                <span class="stb-sprite-16 white blog"></span>
+                <span class="stb-sprite-24 white blog"></span>
+                <span class="stb-sprite-32 white blog"></span>
+                <span class="stb-sprite-48 white blog"></span>
+              </p>              
+              <p>
+                calc <br />
+                <span class="stb-sprite-16 white calc"></span>
+                <span class="stb-sprite-24 white calc"></span>
+                <span class="stb-sprite-32 white calc"></span>
+                <span class="stb-sprite-48 white calc"></span>
+              </p>            
+              <p>
+                lock <br />
+                <span class="stb-sprite-16 white lock"></span>
+                <span class="stb-sprite-24 white lock"></span>
+                <span class="stb-sprite-32 white lock"></span>
+                <span class="stb-sprite-48 white lock"></span>
+              </p>
+              <p>
+                trash <br />
+                <span class="stb-sprite-16 white trash"></span>
+                <span class="stb-sprite-24 white trash"></span>
+                <span class="stb-sprite-32 white trash"></span>
+                <span class="stb-sprite-48 white trash"></span>
+              </p>            
+              <p>
+                wrench <br />
+                <span class="stb-sprite-16 white wrench"></span>
+                <span class="stb-sprite-24 white wrench"></span>
+                <span class="stb-sprite-32 white wrench"></span>
+                <span class="stb-sprite-48 white wrench"></span>
+              </p>  
             </div>       
           </div>
 
