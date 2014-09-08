@@ -11,12 +11,12 @@
   	
     vertical-align: middle;
     margin-bottom: 0;
-  	
+    display: inline-block;
   	input {
       .form-control();
       // tweak the default BS transition-speed:
       .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
-      display: inline-block; 
+      float: left;
       border-radius: 0px;
 	    height: 48px;
 	    margin-bottom: 24px;
@@ -51,8 +51,8 @@
  
     button.is-submit {
       height: 48px;
-      display: inline-block;
-      margin-top: -2px;
+      float: left;
+      margin-left: 6px;
     }
     
     > .error-message {

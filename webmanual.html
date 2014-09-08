@@ -2800,70 +2800,56 @@ $('ul[data-widget=stbFaq]').stbFaq();
           </form>          
           
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
+              <div class="stb-form-group" style="width: 250px">
                 <label for="formInput8">Textarea ("large input")</label>
-              </div>
-              <div class="stb-form-group">
-                <textarea id="formInput8" class="form-control" rows="4" cols="40" ></textarea>
+                 <textarea id="formInput8" class="form-control" rows="4" cols="40" ></textarea>
               </div>
           </form>          
 
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput9">With action button</label>
-              </div>
               <div class="stb-form-group">
+                <label for="formInput9">With action button</label>
                 <input id="formInput9" type="text" class="has-submit" placeholder="Text..." style="width: 230px;">
                 <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
               </div>
           </form>
 
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput10">Hover with button</label>
-              </div>
               <div class="stb-form-group">
+                <label for="formInput10">Hover with button</label>
                 <input id="formInput10" type="text" class="has-submit fauxInputHover" placeholder="Text..." style="width: 230px;">
                 <button type="submit" class="stb-btn stb-form is-submit fauxInputHover">Enter</button>
               </div>
           </form>
 
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput11">Focus with button</label>
-              </div>
               <div class="stb-form-group">
-                <input id="formInput11" type="text" class="has-submit fauxInputFocus" value="Portveien|" style="width: 230px;">
+                <label for="formInput11">Focus with button</label>
+                 <input id="formInput11" type="text" class="has-submit fauxInputFocus" value="Portveien|" style="width: 230px;">
                 <button type="submit" class="stb-btn stb-form is-submit fauxInputFocus">Enter</button>
               </div>
           </form>          
           
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput12">Disabled</label>
-              </div>
               <div class="stb-form-group">
+                <label for="formInput12">Disabled</label>
                 <input id="formInput12" type="text" class="has-submit" placeholder="Fødselsnummer" style="width: 230px;" disabled>
                 <button type="submit" class="stb-btn stb-form is-submit" disabled>Enter</button>
               </div>
           </form>
 
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput13">Error in field input</label>
-              </div>
               <div class="stb-form-group">
-              <div class="error-message"><span class="stb-color-sprite-16 warning"></span> <span class="input-faulty">Sounds about wrong!</span></div>
-              <input id="formInput13" type="text" class="input-fail" value="Portveien 3" style="width: 230px;">
+                <label for="formInput13">Error in field input</label>
+                 <div class="error-message"><span class="stb-color-sprite-16 warning"></span> <span class="input-faulty">Sounds about wrong!</span></div>
+                 <input id="formInput13" type="text" class="input-fail" value="Portveien 3" style="width: 230px;">
                 <button type="submit" class="stb-btn stb-form is-submit">Enter</button> 
               </div>
           </form>
           
           <form class="stb-form-inline" role="form">
-              <div class="stb-form-group" style="width: 200px;">
-                <label for="formInput13">Input becomes valid<span class="success-message stb-color-sprite-16 ok left-margin-10"></span></label>
-              </div>
               <div class="stb-form-group">
+                <label for="formInput13">Input becomes valid<span class="success-message stb-color-sprite-16 ok left-margin-10"></span></label>
                 <input id="formInput13" type="text" class="input-success" value="Portveien 3" style="width: 230px;">
                 <button type="submit" class="stb-btn stb-form is-submit">Enter</button> 
               </div>
@@ -2877,10 +2863,10 @@ $('ul[data-widget=stbFaq]').stbFaq();
         <h4>form input elements</h4>
           <pre class="prettyprint">
 &lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
-&lt;div class=&quot;stb-form-group&quot;&gt;
- &lt;label for="">Write label here&lt;/label&gt;
-  &lt;input type=&quot;text&quot; placeholder=&quot;Text...&quot;&quot;&gt;
-&lt;/div&gt;
+ &lt;div class=&quot;stb-form-group&quot;&gt;
+  &lt;label for=&quot;&quot; style=&quot;&quot;>Write label here&lt;/label&gt;
+  &lt;input id=&quot;&quot; type=&quot;text&quot; placeholder=&quot;Text...&quot; style=&quot;&quot;&gt;
+ &lt;/div&gt;
 &lt;/form&gt;</pre>
 </div>
 </div>
@@ -2890,13 +2876,13 @@ $('ul[data-widget=stbFaq]').stbFaq();
          <h4>form input elements with action buttons</h4>
           <pre class="prettyprint">
 &lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
-&lt;div class=&quot;stb-form-group&quot;&gt;
- &lt;label for="">Write label here&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class=&quot;stb-form-group&quot;&gt;
-  &lt;input type=&quot;text&quot; class=&quot;has-submit&quot; placeholder=&quot;Text...&quot; style=&quot;width: 280px;&quot;&gt;
+ &lt;div class=&quot;stb-form-group&quot;&gt;
+  &lt;label for="">Write label here&lt;/label&gt;
+  &lt;input id=&quot;&quot; type=&quot;text&quot; class=&quot;has-submit&quot; placeholder=&quot;Text...&quot; style=&quot;&quot;&gt;
   &lt;button type=&quot;submit&quot; class=&quot;stb-btn stb-form is-submit&quot;&gt;Enter&lt;/button&gt;
-&lt;/div&gt;</pre>
+ &lt;/div&gt;
+&lt;/form&gt;</pre>
+</pre>
         </div>
         
      
