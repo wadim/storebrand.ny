@@ -617,10 +617,9 @@ $(document).ready(function() {
 	  });
 });
 
-//Script for translating alias classes for Enonic editor
+//Script for translating alias classes for Enonic editor One class names is not translated.
 
 $(document).ready(function(){  
-    $( ".primaryButton").each(function() {$(this).removeClass(); $(this).addClass('stb-btn');  }); 
     $( ".regularButton").each(function() {$(this).removeClass(); $(this).addClass('stb-btn transparent light');  }); 
 }); 
 
