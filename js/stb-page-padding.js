@@ -617,4 +617,11 @@ $(document).ready(function() {
 	  });
 });
 
+//Script for translating alias classes for Enonic editor
+
+$(document).ready(function(){  
+    $( ".primaryButton").each(function() {$(this).removeClass(); $(this).addClass('stb-btn');  }); 
+    $( ".regularButton").each(function() {$(this).removeClass(); $(this).addClass('stb-btn transparent light');  }); 
+}); 
+
 
