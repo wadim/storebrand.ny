@@ -13,8 +13,8 @@
   .stbcolor-secondary.third;
   height: 48px;
   border-radius: 0px;
-  font-size: 14px; //Mobile
-  font-weight: bold;
+  font-size: 16px;
+  font-family: @font-family-sans-serif-bold;
   padding: 0 12px;
   min-width: 100px;
   .box-shadow(none);
@@ -25,7 +25,7 @@
   cursor: pointer;
   
   // Smooth transition on hover:
-  .transition(all .5s ease-in-out);
+  .transition(all .2s ease-in-out);
   transition-property: background-color, color;
   
   &:hover, &:focus, &:active {
@@ -94,6 +94,9 @@
     font-weight: normal;
   }
 
+  > span {
+    margin-left: 6px;
+  }
 }
 
 /* Small devices (tablets, 768px and up) */
