@@ -62,7 +62,6 @@
  
 <body>
   <!-- Start top of page -->
-  
   <div id="top-menu-nav">
         <!-- Start desktop menu -->
     <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
@@ -368,20 +367,23 @@
 
 <style>
 .errormessage,
-.commonmessage {
-  display:none;
+.commonmessage,
+.okmessage {
+ 
 }
 </style>
 
 <script>
 //Runs onload and show error or common message if found
-$(document).ready(function(){  
+//$(document).ready(function(){  
+	
   //var msgRead = readCookie('messageRead');
     //if(msgRead != 'Yes'){
-        setTimeout(function() {
-           toggleErrorMsg();
-           toggleCommonMsg();
-        }, 1000);
+      //  setTimeout(function(){
+        //   toggleErrorMsg();
+          // toggleCommonMsg();
+           //toggleOkMsg();
+        //}, 1000);
     //}    
   });
 function toggleErrorMsg(){
@@ -391,6 +393,11 @@ function toggleErrorMsg(){
 function toggleCommonMsg(){
   $('.commonmessage').toggle('slow');
   //createCookie('messageRead','Yes'); 
+}
+
+function toggleOkMsg(){
+	  $('.okmessage').toggle('slow');
+	  //createCookie('messageRead','Yes'); 
 }
 
 /*
@@ -420,32 +427,57 @@ return null;
 
   <!-- Start actual page contents -->
 
-
+      
 <div id="topMessages">
-
     <div class="container top-padding-20 bottom-padding-20 errormessage">
       <div class="row">
-        <div class="col-md-12">
-          <div class="stb-alert stb-alert-alarm">
-                <button data-dismiss="modal" onclick="toggleErrorMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-16 remove pull-left"></span></button>
-                <h2><span class="stb-color-sprite-48 warning"></span> Viktig melding</h2>
-                <p>Vi har dessverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
-                <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
-            </div>
+       <div class="col-md-1 stbcolor-secondary fifth column">
+        <h2><span class="stb-color-sprite-48 info"></span></h2>
+       </div>
+       <div class="col-md-11 stbcolor-secondary sixth column">
+            <button data-dismiss="modal" onclick="toggleErrorMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-16 remove pull-left"></span></button>
+            <p>Vi har dessverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+          
         </div>
       </div>
+     
     </div> 
 
     <div class="container top-padding-20 bottom-padding-20 commonmessage">
       <div class="row">
-        <div class="col-md-12">
-          <div class="stb-alert stb-alert-success">
-                <button data-dismiss="modal" onclick="toggleCommonMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-16 remove pull-left"></span></button>
-                <h2><span class="stb-color-sprite-48 ok-circle"></span> Pensjonsreglene endelig klare</h2>
-                <p>Endelig har pensjonsreglene blitt vedtatt og vi kan stolt presententere våre nye produkter  <a href="#">Spar til pensjon</a><br></p>
-            </div>
+       <div class="col-md-1 stbcolor-background first column">
+        <h2><span class="stb-color-sprite-48 warning"></span></h2>
+       </div>
+       <div class="col-md-11 stbcolor-background first column">
+            <button data-dismiss="modal" onclick="toggleCommonMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-16 remove pull-left"></span></button>
+            <p>Vi har dessverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+          
         </div>
       </div>
+     
+    </div> 
+    
+     <div class="container top-padding-20 bottom-padding-20 okmessage">
+      <div class="row">
+       <div class="col-md-1 stbcolor-background second column">
+        <h2><span class="stb-color-sprite-48 ok"></span></h2>
+       </div>
+       <div class="col-md-11 stbcolor-background second column">
+            <button data-dismiss="modal" onclick="toggleOkMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-16 remove pull-left"></span></button>
+            <p>Vi har dessverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+            <p>Du kan få rapporten tilsendt på e-post. <a href="#">Send meg rapporten</a></p>
+          
+        </div>
+      </div>
+     
     </div> 
 </div>  
   
