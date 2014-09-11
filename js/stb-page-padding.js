@@ -166,21 +166,22 @@ $(document).ready(function(){
 
 // Opens the href in the relattribute to the clickable class
 $(document).ready(function($) {
-    $(".clickable").click(function() {
-    window.document.location = $(this).attr("rel");
+  $(".clickable").click(function() {
+  window.document.location = $(this).attr("rel");
   });
 });
 
 //Appending arrow after link for clickable links
 $(document).ready(function() {
-    var arrowCode ='<span class="stb-sprite-16 arrow-right pull-right"></span>';
-    $('a.list-group-item').append(arrowCode);
+  var arrowCode ='<span class="stb-sprite-16 arrow-right pull-right"></span>';
+  $('a.list-group-item').append(arrowCode);
 });
 
-//Appending arrow after text in first column in every row for clickable tables
+//Adding link visibility to contents in first column in clickable rows in tables
 $(document).ready(function() {
-    var arrowCode ='<span class="stb-sprite-16 arrow-right pull-right"></span>';
-    $('tr.clickable td:first-child').append(arrowCode);
+  $('tr.clickable td:first-child').each(function() {
+    $(this).html('<a href="#"' + '>' + $(this).text() + '</' + 'a>')
+    });
 });
 
 // Handling cookie note
