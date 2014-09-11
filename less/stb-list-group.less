@@ -43,12 +43,17 @@
     border-bottom: none;
   }
   
-  .list-group-item:first-child,
-  .list-group-item:last-child {
+  .list-group-item:first-child {
     border-radius: 0px;
     border-bottom: none;
-    border-top: none;
-  }  
+    border-top: 1px solid @stb-gray-third;
+  }
+  
+   .list-group-item:last-child {
+    border-radius: 0px;
+    border-bottom: 1px solid @stb-gray-third;
+    border-top: 1px solid @stb-gray-third;
+  }   
   
 }
 

@@ -42,9 +42,6 @@
   }  
 
   // Forcing solid border
-  &.gray{
-    background-color: @stb-gray-first;
-  }  
   &.border {
     border: 1px solid;
     border-color: @stb-secondary-charcoal;
@@ -64,7 +61,7 @@
 	}
 
   // Forcing dotted border
-  &.dottedborder {
+  &.dotted {
     border: 1px dotted;
   }
 
@@ -104,33 +101,4 @@
     outline: 5px solid @stb-secondary-forest;
   }
 
-  &.showClickable {
-    cursor: pointer;
-  }
-
-}
-
-.chatWhat {
-  display: none;
-}
-
-.chatWhat a {
-  cursor:pointer; 
-  padding-right:10px;
-}
-
-.closedChat {
-  text-decoration: line-through;
-}
-
-.callBackForm {
-  display: none;
-}
-
-.callBackReceipt {
-  display: none;
-}
-
-a.ChatClosed:hover {
-  cursor:default; ;
 }
