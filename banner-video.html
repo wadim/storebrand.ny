@@ -29,49 +29,56 @@
 
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
-    var player;
+
     function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        videoId: '_7Foh3T1gN4',
-        playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0},
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
+
+      $('.video-player-banner').each(function(index, element){
+        new YT.Player($(element).attr('id'), {
+          videoId: $(element).attr('data-youtube-id'),
+          playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0},
+          events: {
+            'onReady': onPlayerReadyBanner,
+            'onStateChange': onPlayerStateChangeBanner
+          }
+        });
       });
     }
 
     // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {
-      $('.video-label').after('<button id="playVideoBtn" class="stb-btn transparent light hidden-sm hidden-xs">Spill av video <span class="glyphicon glyphicon-play"></span></button>');
-      $('#playVideoBtn').click(function(){
-        playTheVideo();
+    function onPlayerReadyBanner(event) {
+      $('.video-label').after('<button class="stb-btn transparent light hidden-sm hidden-xs playVideoBtn">Spill av video <span class="glyphicon glyphicon-play"></span></button>');
+      $('.playVideoBtn').click(function(){
+        playVideoBanner(event.target);
       });
 
-      $('#stopVideoBtn').click(function(){
-        stopTheVideo();
+      $('.video-close').click(function(){
+        stopVideoBanner(event.target);
       });
     }
+
+
 
     // 5. The API calls this function when the player's state changes.
     //    The function indicates that when playing a video (state=1),
     //    the player should play for six seconds and then stop.
     var done = false;
-    function onPlayerStateChange(event) {
+    function onPlayerStateChangeBanner(event) {
       if(event.data == 0){
-        stopTheVideo();
+        stopVideoBanner(event.target);
       }
     }
-    function stopTheVideo() {
+    function stopVideoBanner(player) {
       player.stopVideo();
-      $('.video-container').hide(500);
-      $('#video-text').show(500);
+      var bannerVideo = $(player.d).closest('.banner-video');
+      bannerVideo.children('.video-container').hide(500);
+      bannerVideo.children('.video-text').show(500);
       player.seekTo(0, false);
     }
 
-    function playTheVideo(){
-      $('#video-text').hide(500);
-      $('.video-container').show(500, function(){
+    function playVideoBanner(player){
+      var bannerVideo = $(player.d).closest('.banner-video');
+      bannerVideo.children('.video-text').hide(500);
+      bannerVideo.children('.video-container').show(500, function(){
         player.playVideo();
       });
     }
@@ -416,23 +423,25 @@
 
 <!-- Start of page contents -->
 <div class="container content">
-  <div id="video-text" class="row">
-    <div class="col-md-6">
-      <div class="stb-banner">
-        <h1 class="stb-font">Video eksempel </h1>
-        <h3 class="video-label">Her er en video.</h3>
+  <div class="banner-video">
+    <div class="video-text" class="row">
+      <div class="col-md-6">
+        <div class="stb-banner">
+          <h1 class="stb-font">Video eksempel </h1>
+          <h3 class="video-label">Her er en video.</h3>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="images/sponge.png" class="hidden-xs center-block" />
       </div>
     </div>
-    <div class="col-md-6">
-      <img src="images/sponge.png" class="hidden-xs center-block" />
+    <div class="video-container hidden-sm hidden-xs" style="display: none;">
+      <button class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-24 remove white"></span></button>
+      <div id="player-1" class="video-player-banner" data-youtube-id="_7Foh3T1gN4"></div>
     </div>
-  </div>
-  <div class="video-container hidden-sm hidden-xs" style="display: none;">
-    <button id="stopVideoBtn" class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-24 remove white"></span></button>
-    <div id="player"></div>
-  </div>
-  <div class="video-container  visible-xs visible-sm">
-    <iframe width="560" height="315" src="//www.youtube.com/embed/_7Foh3T1gN4" frameborder="0" allowfullscreen></iframe>
+    <div class="video-container  visible-xs visible-sm">
+      <iframe width="560" height="315" src="//www.youtube.com/embed/_7Foh3T1gN4" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
 </div>
 
