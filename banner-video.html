@@ -19,100 +19,11 @@
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript" src="js/stb-common.js"></script>
   <script type="text/javascript" src="js/stb-page-padding.js"></script>
-  <script>
-    // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
-
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-
-    function onYouTubeIframeAPIReady() {
-
-      $('.video-player-banner').each(function(index, element){
-        new YT.Player($(element).attr('id'), {
-          videoId: $(element).attr('data-youtube-id'),
-          playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0},
-          events: {
-            'onReady': onPlayerReadyBanner,
-            'onStateChange': onPlayerStateChangeBanner
-          }
-        });
-      });
-    }
-
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReadyBanner(event) {
-      $('.video-label').after('<button class="stb-btn transparent light hidden-sm hidden-xs playVideoBtn">Spill av video <span class="glyphicon glyphicon-play"></span></button>');
-      $('.playVideoBtn').click(function(){
-        playVideoBanner(event.target);
-      });
-
-      $('.video-close').click(function(){
-        stopVideoBanner(event.target);
-      });
-    }
-
-
-
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    var done = false;
-    function onPlayerStateChangeBanner(event) {
-      if(event.data == 0){
-        stopVideoBanner(event.target);
-      }
-    }
-    function stopVideoBanner(player) {
-      player.stopVideo();
-      var bannerVideo = $(player.d).closest('.banner-video');
-      bannerVideo.children('.video-container').hide(500);
-      bannerVideo.children('.video-text').show(500);
-      player.seekTo(0, false);
-    }
-
-    function playVideoBanner(player){
-      var bannerVideo = $(player.d).closest('.banner-video');
-      bannerVideo.children('.video-text').hide(500);
-      bannerVideo.children('.video-container').show(500, function(){
-        player.playVideo();
-      });
-    }
-
-  </script>
+  <script type="text/javascript" src="js/src/stb-video.js"></script>
 
   <!-- Start JavaScript for this page only -->
 
   <!-- End of JavaScript for this page only -->
-
-  <!-- Start CSS for this page only -->
-  <style>
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-    }
-
-    .video-container iframe,
-    .video-container object,
-    .video-container embed {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .video-close{
-      position: absolute;
-      z-index: 1;
-      right: 0;
-      padding-top: 12px;
-    }
-  </style>
-  <!-- End of CSS for this page only -->
 </head>
 
 <body>
@@ -424,7 +335,7 @@
 <!-- Start of page contents -->
 <div class="container content">
   <div class="banner-video">
-    <div class="video-text" class="row">
+    <div class="row video-text">
       <div class="col-md-6">
         <div class="stb-banner">
           <h1 class="stb-font">Video eksempel </h1>
