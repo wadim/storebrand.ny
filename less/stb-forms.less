@@ -2,25 +2,21 @@
 *  Custom inline form based on BS  *
 ************************************/
 
-.stb-form-inline {
-
-  .form-inline();
+form {
   .stb-form-group {
-  	
+
   	.form-group(); //Adds sane margins
-  	
+
     vertical-align: middle;
     margin-bottom: 0;
-    display: inline-block;
   	input {
       .form-control();
       // tweak the default BS transition-speed:
       .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
-      float: left;
       border-radius: 0px;
 	    height: 48px;
 	    margin-bottom: 24px;
- 
+
       &:hover {
         color: @stb-secondary-charcoal;
         border-color: @stb-secondary-charcoal;
@@ -34,7 +30,7 @@
     	  // Color from Bootstrap ( We dont have this color defined in our palette.)
       }
     }
-    
+
     > input.input-success {
       border: 1px solid  @stb-secondary-forest;
     }
@@ -94,6 +90,19 @@
     cursor: not-allowed;
     &:hover, &:active, &:focus {
       // No change for disabled input fields
+    }
+  }
+
+}
+
+
+.stb-form-inline {
+
+  .form-inline();
+  .stb-form-group {
+    display: inline-block;
+    input {
+      float: left;
     }
   }
 

@@ -42,7 +42,6 @@ function onPlayerReadyInline(event) {
 }
 
 function onPlayerReadyBanner(event) {
-  $('.video-label').after('<button class="stb-btn transparent light hidden-sm hidden-xs playVideoBtn">Spill av video <span class="glyphicon glyphicon-play"></span></button>');
   $('.playVideoBtn').click(function(){
     playVideoBanner(event.target);
   });
