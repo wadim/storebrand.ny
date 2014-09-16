@@ -104,8 +104,24 @@
 
   <style>
     .jslider{
-      margin-left: 80px;
+      margin-left: 90px;
       width: 80%;
+    }
+
+    .unit{
+      float:left;
+    }
+
+    .input-group-addon{
+      border: none;
+      background: none;
+      font-size: 18px;
+    }
+
+    p.unit{
+      padding-top: 6px;
+      padding-left: 6px;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -427,14 +443,14 @@
             </div>
           </div>
           <div class="col-md-6">
-            <img src="images/hushjem.png" class="hidden-xs center-block" />
+            <img src="images/hushjem.png" class="hidden-xs hidden-sm center-block" />
           </div>
         </div>
         <div class="video-container hidden-sm hidden-xs" style="display: none;">
           <button class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-24 remove white"></span></button>
           <div id="player-banner" class="video-player-banner" data-youtube-id="_7Foh3T1gN4"></div>
         </div>
-        <div class="video-container  visible-xs visible-sm">
+        <div class="video-container visible-xs visible-sm">
           <iframe width="560" height="315" src="//www.youtube.com/embed/_7Foh3T1gN4" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
@@ -493,17 +509,22 @@
         <form role="form">
           <div class="stb-form-group">
             <label for="lanebelop" style="">Lånebeløp</label>
-            <input class="unit" id="lanebelop" type="number" placeholder="Beløp" style="width:230px;"/>
+            <div class="input-group" style="width:230px;">
+              <input class="form-control" id="lanebelop" type="number" placeholder="Beløp"/>
+              <div class="input-group-addon">kr</div>
+            </div>
           </div>
           <div class="stb-form-group">
             <label for="boligverdi" style="">Boligens verdi</label>
-            <input class="unit" id="boligverdi" type="number" placeholder="Beløp" style="width:230px;"/>
-            <span class="unit"></span>
+            <div class="input-group" style="width:230px;">
+              <input class="form-control" id="boligverdi" type="number" placeholder="Beløp"/>
+              <div class="input-group-addon">kr</div>
+            </div>
           </div>
           <div>
             <label style="">Nedbetalingsperiode</label>
             <div style="width: 300px;">
-              <input id="nedbetaling-value" class="stb-font-bold text-center" style="font-size: 24px; float: left; width: 60px">
+              <input id="nedbetaling-value" class="stb-font-bold text-center" style="font-size: 24px; float: left; width: 60px"><p class="unit">år</p>
               <input id="stb-slider-nedbetaling" type="slider" name="stb-slider" value="0" />
             </div>
           </div>
@@ -511,13 +532,13 @@
           <div>
             <label>Lånerente</label>
             <div style="width: 300px;">
-              <input id="lanerente-value" class="stb-font-bold text-center" style="font-size: 24px; float: left; width: 60px">
+              <input id="lanerente-value" class="stb-font-bold text-center" style="font-size: 24px; float: left; width: 60px"><p class="unit">%</p>
               <input id="stb-slider-lanerente" type="slider" name="stb-slider" value="0" />
             </div>
           </div>
           <br>
           <div class="stb-form-group">
-            <p class="intro pull-left">10 899 kr i måneden</p><button class="stb-btn pull-left" style="margin-left: 20px;">Søk om lån</button>
+            <p class="intro pull-left" style="border-bottom: 4px double #000;">10 899 kr i måneden</p><button class="stb-btn pull-left" style="margin-left: 20px;">Søk om lån</button>
           </div>
         </form>
       </div>
