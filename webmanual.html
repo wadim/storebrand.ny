@@ -23,6 +23,20 @@
   <script type="text/javascript" src="js/stb-page-padding.js"></script>
   <script type="text/javascript" src="js/src/stb-video.js"></script>
   <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
+  <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
+
+  <!-- Start JavaScript for this page only -->
+  <script>
+    $("document").ready(function(){
+      $(".row .column").matchHeight(true);
+    })
+    
+    $(window).resize(function() {
+      $(".row .column").matchHeight(true);
+    });
+  </script>
+  <!-- End of JavaScript for this page only -->
+
 </head>
 
 <body>
@@ -1034,28 +1048,77 @@
 <div class="row"> <!-- Notification row -->
   <div class="col-md-3">
     <h2>Notification</h2>
-    (Ready to use, icons may change.)
+    (To be reviewed)
   </div>
   <div class="col-md-9">
-    <p>
-      "Small boxes" for use when just a quick notice is needed:
-    </p>
-    <div class="stb-alert stb-alert-success col-md-8"><span class="stb-color-sprite-medium ok-circle"></span> Document saved, press any key to continue.</div>
-    <div class="stb-alert stb-alert-alarm col-md-8"><span class="stb-color-sprite-medium warning"></span> The server made a boo-boo.</div>
+    <p>This is placed in the "topMessages" div when it is added to the page. It is hidden when loaded and toggleDown after 1 second. See the function <a href="#" onclick="toggleMsg();return false">here</a></p>
+    <div class="commonmessage">
+      <div class="row bottom-padding-20">
+        <div class="col-md-1 stbcolor-secondary fifth column top-padding-10 bottom-padding-10">
+         <span class="stb-color-sprite-medium info">
+        </div>
+        <div class="col-md-11 stbcolor-secondary sixth column top-padding-10 bottom-padding-10">
+          <button data-dismiss="modal" onclick="hideCommonMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-small remove pull-left"></span></button>
+          <h4>Kvartalsrapporter</h4>
+          <p>Vi har dessverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
+          <p><a href="#">Haster det kan du få rapporten tilsendt på e-post.</a></p>
+        </div>
+      </div>
+    </div>  
+
+    <div class="errormessage">
+        <div class="row">
+            <div class="col-md-1 stbcolor-primary first lighter column top-padding-10 bottom-padding-10">
+                <span class="stb-color-sprite-medium warning"></span>
+            </div>
+            <div class="col-md-11 stbcolor-background first column top-padding-10 bottom-padding-10">
+                <button data-dismiss="modal" onclick="hideErrorMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-small remove pull-left"></span></button>
+                <h4>Feil med nettbank</h4>
+                <p>Vår driftsleverandør har nettverktsproblemer og det er derfor ikke mulig å logge inn i nettbanken.</p>
+                <p>Vi beklager dette. Vennligst forsøk senere.</p>
+            </div>
+        </div>
+    </div>  
+
+
   </div>
 </div>
 <div class="row">
   <div class="col-md-9 col-md-offset-3">
     <strong>Code:</strong>
           <pre class="prettyprint">
-&lt;!-- OK-state: --&gt;
-&lt;div class=&quot;stb-alert stb-alert-success&quot;&gt;
-  &lt;span class=&quot;stb-color-sprite-medium ok-circle&quot;&gt;&lt;/span&gt; Document saved, press any key to continue.
+&lt;!-- Commonmessage: --&gt;
+&lt;div class="commonmessage"&gt;
+  &lt;div class="row bottom-padding-20"&gt;
+    &lt;div class="col-md-1 stbcolor-secondary fifth column top-padding-10 bottom-padding-10"&gt;
+      &lt;span class="stb-color-sprite-medium info"&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-11 stbcolor-secondary sixth column top-padding-10 bottom-padding-10"&gt;
+      &lt;button data-dismiss="modal" onclick="hideCommonMsg();return false;" class="close" type="button"&gt;
+        &lt;span style="margin-right:10px;" class="stb-sprite-small remove pull-left"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;h4&gt;..content&lt;/h4&gt;
+      &lt;p&gt;..content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- Error-state: --&gt;
-&lt;div class=&quot;stb-alert stb-alert-alarm&quot;&gt;
-  &lt;span class=&quot;stb-color-sprite-medium warning&quot;&gt;&lt;/span&gt; The server made a boo-boo.
-&lt;/div&gt;</pre>
+&lt;!-- errormessage: --&gt;
+&lt;div class="errormessage"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-1 stbcolor-primary first lighter column top-padding-10 bottom-padding-10"&gt;
+      &lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-11 stbcolor-background first column top-padding-10 bottom-padding-10"&gt;
+      &lt;button data-dismiss="modal" onclick="hideErrorMsg()();return false;" class="close" type="button"&gt;
+        &lt;span style="margin-right:10px;" class="stb-sprite-small remove pull-left"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;h4&gt;..content&lt;/h4&gt;
+      &lt;p&gt;..content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; 
+
+</pre>
   </div>
 </div> <!-- /Notification row -->
 

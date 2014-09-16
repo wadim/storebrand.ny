@@ -624,4 +624,14 @@ $(document).ready(function(){
     $( ".regularButton").each(function() {$(this).removeClass(); $(this).addClass('stb-btn transparent light');  }); 
 }); 
 
+// Script to toogle topmessages and to set cookie for the session (not yet created)
+
+function hideErrorMsg(){
+  $('.errormessage').hide('slow');
+  //createCookie('erroMessageRead','Yes'); 
+}
+function hideCommonMsg(){
+  $('.commonmessage').hide('slow');
+  //createCookie('commonMessageRead','Yes'); 
+}
 
