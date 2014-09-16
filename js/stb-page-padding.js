@@ -64,7 +64,7 @@ $("document").ready(function(){
 // Handling automatic generation of toc lists on article pages
 $(document).ready(function() {
   // Prepare the row that contains the table of contents
-  var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">G&aring; direkte til<span class=" visible-xs visible-sm stb-sprite-16 chevron-down pull-right"></span></p><ul class="items"></ul></div></div>';
+  var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">G&aring; direkte til<span class=" visible-xs visible-sm stb-sprite-small chevron-down pull-right"></span></p><ul class="items"></ul></div></div>';
   
   // Place the table of content above the first h3.toc-header
   $(toclist).insertBefore( $('h3.toc-header:first').closest("div.row") );
@@ -576,8 +576,8 @@ var modalDialog = {
          '<div class="modal-dialog modal-span6">' +
           '<div class="modal-content">' +
             '<div class="modal-header stbcolor-secondary fifth">' +
-              '<button type="button" class="close" data-dismiss="modal" onclick="options.onCloseAction();"><p class="pull-left">Lukk</p><span class="stb-sprite-24 remove pull-left"></span></button>' +
-              '<h4 class="modal-title"><span class="stb-color-sprite-24 info"></span></h4>' +
+              '<button type="button" class="close" data-dismiss="modal" onclick="options.onCloseAction();"><p class="pull-left">Lukk</p><span class="stb-sprite-medium remove pull-left"></span></button>' +
+              '<h4 class="modal-title"><span class="stb-color-sprite-medium info"></span></h4>' +
             '</div>' +
             '<div class="modal-body">' +
               '<h3>'+options.title+'</h3>' +
