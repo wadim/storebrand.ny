@@ -28,7 +28,7 @@
       });
 
       $('#contactus-cancel').click( function(){
-        showHideForm($(this).parent().parent().prev('a'));
+        showHideForm($(this).parent().parent().prevAll('a'));
       });
 
       $('#contactus').submit(function(){
@@ -43,7 +43,7 @@
     });
 
     function showHideForm(elem){
-      $(elem).next('div').slideToggle('fast');
+      $(elem).nextAll('div:last').slideToggle('fast');
       $(elem).find('span:last').toggleClass('chevron-down chevron-up');
     }
 
@@ -65,6 +65,12 @@
       <span class="iconCompanion">Vi ringer deg</span>
       <span class="stb-sprite-small chevron-down"></span>
     </a>
+    <div>
+
+      <p class="petit">Hverdager: 8-16 (bank 8-20)</p>
+      <p class="petit" style="padding-left: 42px; margin-top: -12px;">Lørdag: 9-15 (kun bank)</p>
+
+    </div>
     <div style="display: none">
       <br>
       <form id="contactus">
