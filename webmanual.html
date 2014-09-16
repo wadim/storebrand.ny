@@ -22,6 +22,7 @@
   <script type="text/javascript" src="js/stb-common.js"></script>
   <script type="text/javascript" src="js/stb-page-padding.js"></script>
   <script type="text/javascript" src="js/src/stb-video.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
 
@@ -2929,6 +2930,166 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <hr class="top-margin-30" />
 
+<div class="row"> <!-- Progress bar row -->
+  <div class="col-md-3">
+    <h2>Navigation tabs</h2>
+    </div>
+
+  <div class="col-md-9">
+   <p class="bottom-margin-30"> Put the below code outside of a container so that the border bottom streches to the entire screen </p>
+   
+   <!-- Desktop -->
+    <div class="tab-container hidden-xs">
+    <div class="container">
+      <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+        <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
+        <li><a href="#company" data-toggle="tab">Bedrift</a></li>
+        <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
+        <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
+        <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
+      </ul>
+    </div>
+  </div> 
+
+  <!--  Mobile  -->
+  <div class="container dropdown-tabs visible-xs top-margin-40">
+    <div class="dropdown" style="width: 100%">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="width: 100%">
+        <span class="heading pull-left"></span>
+        <span class="icon stb-sprite-small charcoal chevron-down pull-right"></span>
+      </button>
+      <ul class="dropdown-menu" data-tabs="tabs" style="width: 100%">
+        <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
+        <li><a href="#company" data-toggle="tab">Bedrift</a></li>
+        <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
+        <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
+        <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div id="my-tab-content" class="tab-content">
+   <div class="container top-padding-30 bottom-padding-30 tab-pane active" id="private">
+      <div class="row">
+      <div class="col-md-12 col-lg-4">
+          Privatgreier...
+        </div>
+      </div>
+  </div>
+    
+  <div class="container top-padding-30 bottom-padding-30 tab-pane" id="company">
+      <div class="row">
+       <div class="col-md-12 col-lg-4">
+          Bedriftsgreir...
+        </div>
+      </div>
+    </div>
+  <div class="container top-padding-30 bottom-padding-30 tab-pane" id="press">
+      <div class="row">
+    	  <div class="col-md-12 col-lg-4">
+          Pressegreier...
+        </div>
+      </div>
+    </div>
+    
+    <div class="container top-padding-30 bottom-padding-30 tab-pane" id="real-estate">
+      <div class="row">
+    	  <div class="col-md-12 col-lg-4">
+          Eiendomsgreier...
+        </div>
+      </div>
+    </div>    
+         
+    <div class="container top-padding-30 bottom-padding-30 tab-pane" id="asset-management">
+      <div class="row">
+    	  <div class="col-md-12 col-lg-4">
+          Alt om min kapitalforvaltning...
+        </div>
+      </div>
+    </div>  
+    </div>
+    <p>
+      <strong>Code:</strong>
+    </p>
+          <pre class="prettyprint">
+&lt;!-- desktop --&gt;
+
+&lt;div class=&quot;tab-container hidden-xs&quot;&gt; 
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;ul id=&quot;tabs&quot; class=&quot;nav nav-tabs&quot; data-tabs=&quot;tabs&quot;&gt;
+      &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#private&quot; data-toggle=&quot;tab&quot;&gt;Privat&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#company&quot; data-toggle=&quot;tab&quot;&gt;Bedrift&lt;/a&gt;&lt;/li&gt; 
+      &lt;li&gt;&lt;a href=&quot;#press&quot; data-toggle=&quot;tab&quot;&gt;Presse og IR&lt;/a&gt;&lt;/li&gt; 
+      &lt;li&gt;&lt;a href=&quot;#real-estate&quot; data-toggle=&quot;tab&quot;&gt;Eiendom&lt;/a&gt;&lt;/li&gt; 
+      &lt;li&gt;&lt;a href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot;&gt;Asset management&lt;/a&gt;&lt;/li&gt; 
+    &lt;/ul&gt; 
+  &lt;/div&gt; 
+&lt;/div&gt;
+
+&lt;!-- Mobile --&gt;
+
+&lt;div class=&quot;container dropdown-tabs visible-xs top-margin-40&quot;&gt;
+  &lt;div class=&quot;dropdown&quot; style=&quot;width: 100%&quot;&gt;
+    &lt;button class=&quot;btn btn-default dropdown-toggle&quot; type=&quot;button&quot; id=&quot;dropdownMenu1&quot; data-toggle=&quot;dropdown&quot; style=&quot;width: 100%&quot;&gt;
+      &lt;span class=&quot;heading pull-left&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;icon stb-sprite-small charcoal chevron-down pull-right&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class=&quot;dropdown-menu&quot; data-tabs=&quot;tabs&quot; style=&quot;width: 100%&quot;&gt;
+      &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#private&quot; data-toggle=&quot;tab&quot;&gt;Privat&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#company&quot; data-toggle=&quot;tab&quot;&gt;Bedrift&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#press&quot; data-toggle=&quot;tab&quot;&gt;Presse og IR&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#real-estate&quot; data-toggle=&quot;tab&quot;&gt;Eiendom&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot;&gt;Asset management&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Content area --&gt;
+
+&lt;div id=&quot;my-tab-content&quot; class=&quot;tab-content&quot;&gt;
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane active&quot; id=&quot;private&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt;
+        Privatgreier...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;company&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt;
+        Bedriftsgreir...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;press&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt;
+        Pressegreier...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;real-estate&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt;
+        Eiendomsgreier...
+      &lt;/div&gt; 
+    &lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;asset-management&quot;&gt; 
+    &lt;div class=&quot;row&quot;&gt; 
+      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt; 
+        Alt om min kapitalforvaltning... 
+      &lt;/div&gt; 
+    &lt;/div&gt; 
+  &lt;/div&gt; 
+&lt;/div&gt;
+          </pre>
+          
+        
+  </div>
+
+</div> <!-- /Progress bar row -->
+<hr class="top-margin-30" />
 <div class="row">
   <div class="col-md-3">
     <h2>Banner</h2>
