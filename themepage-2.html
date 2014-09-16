@@ -104,7 +104,7 @@
 
   <style>
     .jslider{
-      margin-left: 90px;
+      margin-left: 100px;
       width: 80%;
     }
 
@@ -119,7 +119,7 @@
     }
 
     p.unit{
-      padding-top: 6px;
+      padding-top: 8px;
       padding-left: 6px;
       font-size: 18px;
     }
@@ -439,19 +439,16 @@
             <div class="stb-banner">
               <h1>Hus og hjem</h1>
               <p class="intro">Her finner du det du trenger til boligen din, enten det gjelder boliglån eller forsikring av dine eiendeler.</p>
-              <button class="stb-btn transparent light hidden-sm hidden-xs playVideoBtn">Spill av video <span class="glyphicon glyphicon-play"></span></button>
+              <button class="stb-btn transparent light playVideoBtn">Spill av video <span class="glyphicon glyphicon-play"></span></button>
             </div>
           </div>
           <div class="col-md-6">
             <img src="images/hushjem.png" class="hidden-xs hidden-sm center-block" />
           </div>
         </div>
-        <div class="video-container hidden-sm hidden-xs" style="display: none;">
+        <div class="video-container" style="display: none;">
           <button class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-24 remove white"></span></button>
           <div id="player-banner" class="video-player-banner" data-youtube-id="_7Foh3T1gN4"></div>
-        </div>
-        <div class="video-container visible-xs visible-sm">
-          <iframe width="560" height="315" src="//www.youtube.com/embed/_7Foh3T1gN4" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
   </div>
@@ -522,18 +519,18 @@
               <div class="input-group-addon">kr</div>
             </div>
           </div>
-          <div>
+          <div class="stb-form-group">
             <label style="">Nedbetalingsperiode</label>
             <div style="width: 300px;">
-              <input id="nedbetaling-value" class="stb-font-bold text-center" style="font-size: 24px; float: left; width: 60px"><p class="unit">år</p>
+              <input id="nedbetaling-value" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
               <input id="stb-slider-nedbetaling" type="slider" name="stb-slider" value="0" />
             </div>
           </div>
           <br>
-          <div>
+          <div class="stb-form-group">
             <label>Lånerente</label>
             <div style="width: 300px;">
-              <input id="lanerente-value" class="stb-font-bold text-center" style="font-size: 24px; float: left; width: 60px"><p class="unit">%</p>
+              <input id="lanerente-value" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
               <input id="stb-slider-lanerente" type="slider" name="stb-slider" value="0" />
             </div>
           </div>
