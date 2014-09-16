@@ -173,7 +173,7 @@ $(document).ready(function($) {
 
 //Appending arrow after link for clickable links
 $(document).ready(function() {
-  var arrowCode ='<span class="stb-sprite-16 arrow-right pull-right"></span>';
+  var arrowCode ='<span class="stb-sprite-small arrow-right pull-right"></span>';
   $('a.list-group-item').append(arrowCode);
 });
 
