@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <title>Example - Category template - Pension</title>
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+  <link rel="stylesheet" type="text/css" href="css/yamm.css">
+  <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.color-2.1.2.min.js"></script>
+  <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
+  <script type="text/javascript" src="js/dist/jquery-ui-1.11.0.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>
+  <script type="text/javascript" src="data/searchdata.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
+  <script type="text/javascript" src="js/stb-common.js"></script>
+  <script type="text/javascript" src="js/stb-page-padding.js"></script>
+
+  <!-- Start JavaScript for this page only -->
+  <script>
+    $("document").ready(function(){
+      $('#contact').click(function(){
+        showHideForm(this);
+      });
+
+      $('#contactus-cancel').click( function(){
+        showHideForm($(this).parent().parent().prevAll('a'));
+      });
+
+      $('#contactus').submit(function(){
+        event.preventDefault();
+        if($('#telephone').val()){
+          $('#contact-number').append($('#telephone').val());
+          $('#contactus-receipt').show();
+          $('#contactus').hide();
+        }
+
+      });
+    });
+
+    function showHideForm(elem){
+      $(elem).nextAll('div:last').slideToggle('fast');
+      $(elem).find('span:last').toggleClass('chevron-down chevron-up');
+    }
+
+    $(window).resize(function() {
+	    $(".row .column").matchHeight(true);
+    });
+  </script>
+  <!-- End of JavaScript for this page only -->
+
+</head>
+
+
+<body>
+  <div style="width: 300px;">
+    <a id="contact" href="tel:08880">
+      <div class="circle-16 stbcolor-secondary third pull-left">
+        <span class="stb-sprite-small white phone"></span>
+      </div>
+      <span class="iconCompanion">Vi ringer deg</span>
+      <span class="stb-sprite-small chevron-down"></span>
+    </a>
+    <div>
+
+      <p class="petit">Hverdager: 8-16 (bank 8-20)</p>
+      <p class="petit" style="padding-left: 42px; margin-top: -12px;">Lørdag: 9-15 (kun bank)</p>
+
+    </div>
+    <div style="display: none">
+      <br>
+      <form id="contactus">
+        <div class="stb-form-group">
+          <label for="telephone" style="width: 200px;">Ditt telefonnummer</label>
+          <input id="telephone" type="tel" class="" placeholder="8 siffer" style="width: 230px;">
+        </div>
+        <button class="stb-btn">Ring meg</button>
+        <button id="contactus-cancel" class="stb-btn transparent light" type="button">Avbryt</button>
+      </form>
+      <div id="contactus-receipt" style="display: none;">
+        <p>Takk! Vi ringer deg på nummer <br>
+          <span id="contact-number"></span> i løpet av 24 timer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-41882079-4', 'storebrand.no');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+  <!-- / Google Analytics -->
+
+</body>
+
+</html>
