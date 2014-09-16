@@ -7,22 +7,19 @@
 }
 /* End of glyphicon fix. */
 
-.stb-sprite-16, 
-.stb-sprite-24,
-.stb-sprite-32,
-.stb-sprite-48,
-.stb-color-sprite-16,
-.stb-color-sprite-24,
-.stb-color-sprite-32,
-.stb-color-sprite-48 {
+
+.stb-sprite-small, 
+.stb-sprite-medium,
+.stb-color-sprite-small,
+.stb-color-sprite-medium
+ {
   display: inline-block;
 }
 
-.stb-sprite-16 {
+.stb-sprite-small {
   background: url("../images/stb-sprites/general-sprites.png") no-repeat;  
   width: 16px;
   height: 16px;
-	
   &.chevron-up {
     background-position: 0px 0px;
     &.white {
@@ -365,7 +362,7 @@
   
 }
 
-.stb-sprite-24 {
+.stb-sprite-medium {
   background: url("../images/stb-sprites/general-sprites.png") no-repeat;  
   width: 24px;
   height: 24px;
@@ -701,682 +698,8 @@
   }  
   
 }
-  
-.stb-sprite-32 {
-  background: url("../images/stb-sprites/general-sprites-2x.png") no-repeat;
-  width: 32px;
-  height: 32px;
-		
-  &.chevron-up {
-    background-position: 0px 0px;	
-    &.white {
-      background-position: -100px 0;
-    }
-    &.red {
-      background-position: -200px 0;
-    }
-  }
-  
-  &.chevron-down {
-    background-position: 0px -100px;
-    &.white {
-      background-position: -100px -100px;
-	  }
-    &.red {
-      background-position: -200px -100px;
-    }
-  }
-  
-  &.chevron-left {
-    background-position: 0px -200px;
-    &.white {
-      background-position: -100px -200px;
-    }
-    &.red {
-      background-position: -200px -200px;
-    }
-  }
-  
-  &.chevron-right {
-    background-position: 0px -300px;
-    &.white {
-      background-position: -100px -300px;
-    }
-    &.red {
-      background-position: -200px -300px;
-    }
-  }
-  
-  &.arrow-up {
-    background-position: 0px -400px;
-    &.white {
-      background-position: -100px -400px;
-    } 
-    &.red {
-      background-position: -200px -400px;
-    }
-  }
-  
-  &.arrow-down {
-    background-position: 0px -500px;
-    &.white {
-      background-position: -100px -500px;
-    }
-    &.red {
-      background-position: -200px -500px;
-    }
-  }
-  
-  &.arrow-left {
-    background-position: 0px -600px;
-    &.white {
-      background-position: -100px -600px;
-    } 
-    &.red {
-      background-position: -200px -600px;
-	  }
-  }
-  
-  &.arrow-right {
-    background-position: 0px -700px;
-    &.white {
-      background-position: -100px -700px;
-    } 
-    &.red {
-      background-position: -200px -700px;
-    }
-  }
-  
-  &.remove {
-    background-position: 0px -800px;
-    &.white {
-      background-position: -100px -800px;
-    }	
-    &.red {
-      background-position: -200px -800px;
-    }
-  }
-  
-  &.pencil {
-    background-position: 0px -900px;
-    &.white {
-      background-position: -100px -900px;
-    } 
-    &.red {
-      background-position: -200px -900px;
-    }
-  }
-  
-  &.menu-bars {
-    background-position: 0px -1000px;
-    &.white {
-      background-position: -100px -1000px;
-    }
-    &.red {
-      background-position: -200px -1000px;
-    }
-  }
-  
-  &.globe {
-    background-position: 0px -1100px;
-    &.white {
-      background-position: -100px -1100px;
-    }
-    &.red {
-      background-position: -200px -1100px;
-    }
-  }
-  
-  &.search {
-    background-position: 0px -1200px;
-    &.white {
-      background-position: -100px -1200px;
-    }
-    &.red {
-      background-position: -200px -1200px;
-    }
-  }
-  
-  &.phone {
-    background-position: 0px -1300px;
-    &.white {
-      background-position: -100px -1300px;
-    }
-    &.red {
-      background-position: -200px -1300px;
-    }
-  }
-  
-  &.envelope {
-    background-position: 0px -1400px;
-    &.white {
-      background-position: -100px -1400px;
-    }
-    &.red {
-      background-position: -200px -1400px;
-    }
-  }
-  
-  &.chat {
-    background-position: 0px -1500px;
-    &.white {
-      background-position: -100px -1500px;
-    }
-    &.red {
-      background-position: -200px -1500px;
-    }
-  }
-  
-  &.employee {
-    background-position: 0px -1600px;		
-    &.white {
-      background-position: -100px -1600px;
-    }
-    &.red {
-      background-position: -200px -1600px;
-    }
-  }
-  
-  &.facebook {
-    background-position: 0px -1700px;
-    &.white {
-      background-position: -100px -1700px;
-    } 
-    &.red {
-      background-position: -200px -1700px;
-    }
-  }
-  
-  &.twitter {
-    background-position: 0px -1800px;
-    &.white {
-      background-position: -100px -1800px;
-    }
-    &.red {
-      background-position: -200px -1800px;
-    }
-  }
-  
-  &.youtube {
-    background-position: 0px -1900px;
-    &.white {
-      background-position: -100px -1900px;
-    }
-    &.red {
-      background-position: -200px -1900px;
-    }
-  }
-  
-  &.calc {
-    background-position: 0px -2000px;
-    &.white {
-      background-position: -100px -2000px;
-    }
-    &.red {
-      background-position: -200px -2000px;
-    }
-  }
-  
-  &.lock {
-    background-position: 0px -2100px;
-    &.white {
-      background-position: -100px -2100px;
-    }
-    &.red {
-      background-position: -200px -2100px;
-    }
-  }
-  
-  &.trash {
-    background-position: 0px -2200px;
-    &.white {
-      background-position: -100px -2200px;
-    }
-    &.red {
-      background-position: -200px -2200px;
-    }
-  }
-  
-  &.user {
-    background-position: 0px -2300px;
-    &.white {
-      background-position: -100px -2300px;
-    }
-    &.red {
-      background-position: -200px -2300px;
-    }
-  }
-  
-  &.blog {
-    background-position: 0px -2400px;
-    &.white {
-      background-position: -100px -2400px;
-    }
-    &.red {
-      background-position: -200px -2400px;
-    }
-  }  
 
-  &.checkdot {
-    background-position: 0px -2500px;
-    &.white {
-      background-position: -100px -2500px;
-    }
-    &.red {
-      background-position: -200px -2500px;
-    }
-  }  
-  
-  &.personal-menu {
-    background-position: 0px -2600px;
-    &.white {
-      background-position: -100px -2600px;
-    }
-    &.red {
-      background-position: -200px -2600px;
-    }
-  } 
-  
-  &.wrench {
-    background-position: 0px -2700px;
-    &.white {
-      background-position: -100px -2700px;
-    }
-    &.red {
-      background-position: -200px -2700px;
-    }
-  }   
-  
-  &.edit {
-    background-position: 0px -2800px;
-    &.white {
-      background-position: -100px -2800px;
-    }
-    &.red {
-      background-position: -200px -2800px;
-    }
-  }   
-  
-  &.pretzel {
-    background-position: 0px -2900px;
-    &.white {
-      background-position: -100px -2900px;
-    }
-    &.red {
-      background-position: -200px -2900px;
-    }
-  } 
-  
-  &.bubble {
-    background-position: 0px -3100px;
-    &.white {
-      background-position: -100px -3100px;
-    }
-    &.red {
-      background-position: -200px -3100px;
-    }
-  }   
-
-  &.play {
-    background-position: 0px -3100px;
-    &.white {
-      background-position: -100px -3100px;
-    }
-    &.red {
-      background-position: -200px -3100px;
-    }
-  } 
-
-  &.calendar {
-    background-position: 0px -3200px;
-    &.white {
-      background-position: -100px -3200px;
-    }
-    &.red {
-      background-position: -200px -3200px;
-    }
-  }   
-  
-}
-
-.stb-sprite-48 {
-  background: url("../images/stb-sprites/general-sprites-2x.png") no-repeat;
-  width: 48px;
-  height: 48px;
-	
-  &.chevron-up {
-    background-position: -300px 0px;
-    &.white {
-      background-position: -400px 0;
-    }
-    &.red {
-      background-position: -500px 0;
-    }
-  }	
-  
-  &.chevron-down {
-    background-position: -300px -100px;
-    &.white {
-      background-position: -400px -100px;
-    }
-    &.red {
-      background-position: -500px -100px;
-    }
-  }	
-  
-  &.chevron-left {
-    background-position: -300px -200px;
-    &.white {
-      background-position: -400px -200px;
-    } 
-    &.red {
-      background-position: -500px -200px;
-    }
-  }	
-  
-  &.chevron-right {
-    background-position: -300px -300px;
-    &.white {
-      background-position: -400px -300px;
-    }
-    &.red {
-      background-position: -500px -300px;
-    }
-  }	
-  
-  &.arrow-up {
-    background-position: -300px -400px;
-    &.white {
-      background-position: -400px -400px;
-    }
-    &.red {
-      background-position: -500px -400px;
-    }
-  }	
-  
-  &.arrow-down {
-    background-position: -300px -500px;
-    &.white {
-      background-position: -400px -500px;
-    }
-    &.red {
-      background-position: -500px -500px;
-    }
-  }	
-  
-  &.arrow-left {
-    background-position: -300px -600px;
-    &.white {
-      background-position: -400px -600px;
-    }
-    &.red {
-      background-position: -500px -600px;
-    }
-  }	
-  
-  &.arrow-right {
-    background-position: -300px -700px;	
-    &.white {
-      background-position: -400px -700px;
-    }
-    &.red {
-      background-position: -500px -700px;
-    }
-  }
-  
-  &.remove {
-    background-position: -300px -800px;
-    &.white {
-      background-position: -400px -800px;
-    }
-    &.red {
-      background-position: -500px -800px;
-    }
-  }
-  
-  &.pencil {
-    background-position: -300px -900px;
-    &.white {
-      background-position: -400px -900px;
-    } 
-    &.red {
-      background-position: -500px -900px;
-    }
-  }	
-  
-  &.menu-bars {
-    background-position: -300px -1000px;
-    &.white {
-      background-position: -400px -1000px;
-    }
-    &.red {
-      background-position: -500px -1000px;
-    }
-  }	
-  
-  &.globe {
-    background-position: -300px -1100px;
-    &.white {
-      background-position: -400px -1100px;
-    }
-    &.red {
-      background-position: -500px -1100px;
-    }
-  }
-
-  &.search {
-    background-position: -300px -1200px;
-    &.white {
-      background-position: -400px -1200px;
-    } 
-    &.red {
-     background-position: -500px -1200px;
-    }
-  }	
-  
-  &.phone {
-    background-position: -300px -1300px;
-    &.white {
-      background-position: -400px -1300px;
-    }
-    &.red {
-      background-position: -500px -1300px;
-    }
-  }	
-  
-  &.envelope {
-	  background-position: -300px -1400px;
-    &.white {
-      background-position: -400px -1400px;
-    }
-    &.red {
-      background-position: -500px -1400px;
-    }
-  }	
-  
-  &.chat {
-    background-position: -300px -1500px;
-    &.white {
-      background-position: -400px -1500px;
-    } 
-    &.red {
-      background-position: -500px -1500px;
-    }
-  }
-  
-  &.employee {
-    background-position: -300px -1600px;
-    &.white {
-      background-position: -400px -1600px;
-    }
-    &.red {
-      background-position: -500px -1600px;
-    }
-  }	
-  
-  &.facebook {
-    background-position: -300px -1700px;
-    &.white {
-      background-position: -400px -1700px;
-    }
-    &.red {
-      background-position: -500px -1700px;
-    }
-  }	
-  
-  &.twitter {
-    background-position: -300px -1800px;
-    &.white {
-      background-position: -400px -1800px;
-    }
-    &.red {
-      background-position: -500px -1800px;
-    }
-  }	
-  
-  &.youtube {
-    background-position: -300px -1900px;
-    &.white {
-      background-position: -400px -1900px;
-    }
-    &.red {
-      background-position: -500px -1900px;
-    }
-  }		
-  
-  &.calc {
-    background-position: -300px -2000px;
-    &.white {
-      background-position: -400px -2000px;
-    }
-    &.red {
-      background-position: -500px -2000px;
-    }
-  }
-  
-  &.lock {
-    background-position: -300px -2100px;
-    &.white {
-      background-position: -400px -2100px;
-    }
-    &.red {
-      background-position: -500px -2100px;
-    }
-  }	
-  
-  &.trash {
-    background-position: -300px -2200px;
-    &.white {
-      background-position: -400px -2200px;
-    }
-    &.red {
-      background-position: -500px -2200px;
-    }
-  }	
-  
-  &.user {
-    background-position: -300px -2300px;
-    &.white {
-      background-position: -400px -2300px;
-    }
-    &.red {
-      background-position: -500px -2300px;
-    }
-  }	
-  
-  &.blog {
-    background-position: -300px -2400px;
-    &.white {
-      background-position: -400px -2400px;
-    }
-    &.red {
-      background-position: -500px -2400px;
-    }
-  }   
-
-  &.checkdot {
-    background-position: -300px -2500px;
-    &.white {
-      background-position: -400px -2500px;
-    }
-    &.red {
-      background-position: -500px -2500px;
-    }
-  } 
-  
-  &.personal-menu {
-    background-position: -300px -2600px;
-    &.white {
-      background-position: -400px -2600px;
-    }
-    &.red {
-      background-position: -500px -2600px;
-    }
-  }   
-
-  &.wrench {
-    background-position: -300px -2700px;
-    &.white {
-      background-position: -400px -2700px;
-    }
-    &.red {
-      background-position: -500px -2700px;
-    }
-  }   
-
-  &.edit {
-    background-position: -300px -2800px;
-    &.white {
-      background-position: -400px -2800px;
-    }
-    &.red {
-      background-position: -500px -2800px;
-    }
-  }    
-  
-  &.pretzel {
-    background-position: -300px -2900px;
-    &.white {
-      background-position: -400px -2900px;
-    }
-    &.red {
-      background-position: -500px -2900px;
-    }
-  }
-  
-  &.bubble {
-    background-position: -300px -3000px;
-    &.white {
-      background-position: -400px -3000px;
-    }
-    &.red {
-      background-position: -500px -3000px;
-    }
-  }   
-  
-  &.play {
-    background-position: -300px -3100px;
-    &.white {
-      background-position: -400px -3100px;
-    }
-    &.red {
-      background-position: -500px -3100px;
-    }
-  } 
-
-  &.calendar {
-    background-position: -300px -3200px;
-    &.white {
-      background-position: -400px -3200px;
-    }
-    &.red {
-      background-position: -500px -3200px;
-    }
-  }    
-  
-}
-
-.stb-color-sprite-16 {
+.stb-color-sprite-small {
   background: url("../images/stb-sprites/color-sprites.png") no-repeat;  
   width: 16px;
   height: 16px;
@@ -1415,7 +738,7 @@
   
 }
 
-.stb-color-sprite-24 {
+.stb-color-sprite-medium {
   background: url("../images/stb-sprites/color-sprites.png") no-repeat;  
   width: 24px;
   height: 24px;
@@ -1423,84 +746,6 @@
   &.ok {
     background-position: -100px 0px;
 
-  }
-  
-  &.ok-circle {
-    background-position: -100px -100px;
-  }
-  
-  &.warning {
-    background-position: -100px -200px;
-  }
-
-  &.info {
-    background-position: -100px -300px;
-  }  
-
-  &.pdf {
-    background-position: -100px -400px;
-  }  
-
-  &.word {
-    background-position: -100px -500px;
-  }
-
-  &.excel {
-    background-position: -100px -600px;
-  }  
-
-  &.powerpoint {
-    background-position: -100px -700px;
-  }  
-  
-}
-
-.stb-color-sprite-32 {
-  background: url("../images/stb-sprites/color-sprites-2x.png") no-repeat;  
-  width: 32px;
-  height: 32px;
-	
-  &.ok {
-    background-position: 0px 0px;
-  }
-  
-  &.ok-circle {
-    background-position: 0px -100px;
-  }
-  
-  &.warning {
-    background-position: 0px -200px;
-  }
-
-  &.info {
-    background-position: 0px -300px;
-  }  
-
-  &.pdf {
-    background-position: 0px -400px;
-  }  
-
-  &.word {
-    background-position: 0px -500px;
-  }
-
-  &.excel {
-    background-position: 0px -600px;
-  }  
-
-  &.powerpoint {
-    background-position: 0px -700px;
-  }  
-  
-}
-
-.stb-color-sprite-48 {
-  background: url("../images/stb-sprites/color-sprites-2x.png") no-repeat;  
-  width: 48px;
-  height: 48px;
-	
-  &.ok {
-    background-position: -100px 0px;
   }
   
   &.ok-circle {
@@ -1556,3 +801,39 @@ div.circle-16 a,
 div.circle-24 a {
   border-bottom: none;
 }
+
+
+// Retina displays
+@media
+  (min--moz-device-pixel-ratio: 2),
+  (-o-min-device-pixel-ratio: 2/1),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-device-pixel-ratio: 2) {
+  
+  .stb-sprite-small{
+    background: url("../images/stb-sprites/general-spritess-2x.png") no-repeat;
+    height: 32px;
+    width: 32px;
+  }
+  
+  .stb-sprite-medium{
+    background: url("../images/stb-sprites/general-sprites-2x.png") no-repeat;
+    /* Bring down size to 1x size */
+    height: 48px;
+    width: 48px;
+  }
+  
+  .stb-color-sprite-small {
+    background: url("../images/stb-sprites/color-sprites-2x.png") no-repeat;  
+    width: 32px;
+    height: 32px;
+  }
+
+.stb-color-sprite-medium {
+    background: url("../images/stb-sprites/color-sprites-2x.png") no-repeat;  
+    width: 48px;
+    height: 48px; 
+}
+}
+
+
