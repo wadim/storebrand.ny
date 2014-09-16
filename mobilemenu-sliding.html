@@ -21,10 +21,10 @@
   <script type="text/javascript" src="js/stb-page-padding.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      var chevronExpand ='<span class="stb-sprite-24 chevron-right pull-right" style="margin-top: 12px;"></span>';
-      var arrowRight ='<span class="stb-sprite-24 arrow-right pull-right" style="margin-top: 12px;"></span>';
-      var back = '<span class="stb-sprite-24 chevron-left pull-left" style="margin-top: 12px;"></span>'
-      var top = '<span class="stb-sprite-24 arrow-left pull-left" style="margin-top: 12px; margin-right: 6px;"></span>';
+      var chevronExpand ='<span class="stb-sprite-medium chevron-right pull-right" style="margin-top: 12px;"></span>';
+      var arrowRight ='<span class="stb-sprite-medium arrow-right pull-right" style="margin-top: 12px;"></span>';
+      var back = '<span class="stb-sprite-medium chevron-left pull-left" style="margin-top: 12px;"></span>'
+      var top = '<span class="stb-sprite-medium arrow-left pull-left" style="margin-top: 12px; margin-right: 6px;"></span>';
       $('.chevronExpand').append(chevronExpand);
       $('.arrowRight').prepend(arrowRight);
       $('.menu-back').prepend(back);
@@ -141,9 +141,9 @@
 
             <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
             <li class="search col-md-3" style="display: none;">
-              <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
+              <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
               <form>
-                <label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+                <label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-small search white"></span></span>
                 </label>
               </form>
             </li>
@@ -165,15 +165,15 @@
         <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-5 col-xs-offset-1" style="padding-left: 6px;">
           <ul class="nav stb-nav navbar">
             <li class="dropdown yamm-fw" style="width: 50%;">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-32 menu-bars white" style="margin-left: 12px; margin-top: 12px"></span><span class="marker"></span></a>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-small menu-bars white" style="margin-left: 12px; margin-top: 12px"></span><span class="marker"></span></a>
               <ul id="subMenu" class="dropdown-menu scrollable-menu">
                 <div class="yamm-content">
                   <div id="stb-menu">
                     <ul class="nav navbar-nav" id="stb-menu-topp">
                       <!--li class="active"><a href="#">Logg inn bank</a></li-->
-                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-login');">Logg inn <span class="stb-sprite-24 user pull-right" style="margin-top: 8px;"></span></a></li>
+                      <li><a href="#" onclick="menuhandler($(this),'#stb-menu-login');">Logg inn <span class="stb-sprite-medium user pull-right" style="margin-top: 8px;"></span></a></li>
                       <li><a href="#" onclick="menuhandler($(this),'#stb-menu-tools');">
-                          Kjappe verktøy <span class="stb-sprite-24 calc pull-right" style="margin-top: 8px;"></span></a>
+                          Kjappe verktøy <span class="stb-sprite-medium calc pull-right" style="margin-top: 8px;"></span></a>
                       </li>
                       <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-insurance');">Forsikring</a></li>
                       <li><a class="chevronExpand" href="#" onclick="menuhandler($(this),'#stb-menu-bank');">Bank</a></li>
@@ -333,7 +333,7 @@
                 </div>
               </ul>
             </li>
-            <li class="dropdown yamm-fw" style="width: 50%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-32 search white" style="margin-left: 12px; margin-top: 12px"></span><span class="marker"></span></a>
+            <li class="dropdown yamm-fw" style="width: 50%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-small search white" style="margin-left: 12px; margin-top: 12px"></span><span class="marker"></span></a>
               <ul id="searchField" class="dropdown-menu" style="background: white">
                 <div class="yamm-content">
                   <div class="row">
@@ -344,7 +344,7 @@
                           <input type="text" class="typeahead searchbox" placeholder="Søk i sidene"/>
                           </div>
                           <div class="col-xs-1" style="padding-left: 0; padding-right: 0;">
-                            <span class="search-icon  " style="display: block; position: relative; padding-left: 6px; padding-top: 12px;"><span class="stb-sprite-24 search"></span></span>
+                            <span class="search-icon  " style="display: block; position: relative; padding-left: 6px; padding-top: 12px;"><span class="stb-sprite-medium search"></span></span>
                           </div>
                         </label>
                       </form>
@@ -396,8 +396,8 @@
   <footer class="stbcolor-primary first stb-footer">
     <div class="row toTop">
       <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIcon"></span></a>
-        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIconMobile"></span></a>
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIcon"></span></a>
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIconMobile"></span></a>
       </div>
     </div>
   
@@ -407,9 +407,9 @@
         <div class="col-sm-3 column info">
           <div class="border-right">
             <ul class="stb">
-              <li><span class="stb-sprite-24 white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
-              <li><span class="stb-sprite-24 white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
-              <li><span class="stb-sprite-24 white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
+              <li><span class="stb-sprite-medium white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
+              <li><span class="stb-sprite-medium white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
+              <li><span class="stb-sprite-medium white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
             </ul>
             <h4>Alt innhold</h4>
             <p class="petit">
@@ -428,7 +428,7 @@
             </div>
             <div class="col-xs-6">
               <p class="petit">
-                <span class="stb-sprite-16 white phone"></span>
+                <span class="stb-sprite-small white phone"></span>
                 &nbsp;Ring:&nbsp;<a class="stb-footer-link hidden-xs hidden-sm" href="tel:08880"><span>08880</span></a>
                 <a class="visible-xs visible-sm" style="display: inline-block!important;" href="tel:08880"><span class="visible-xs visible-sm stbcolor-primary first darker badge">08880</span></a>
                 <br/>
@@ -437,8 +437,8 @@
                 <a class="visible-xs visible-sm" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47&nbsp;915&nbsp;08880</span></a>
               </p>              
               <ul class="stb">
-                <li><span class="stb-sprite-16 white envelope"></span><a class="stb-footer-link petit" href="#">&nbsp;E-post</a></li>
-                <li><span class="stb-sprite-16 white chat"></span><a class="stb-footer-link petit"  href="#">&nbsp;Chat</a></li>
+                <li><span class="stb-sprite-small white envelope"></span><a class="stb-footer-link petit" href="#">&nbsp;E-post</a></li>
+                <li><span class="stb-sprite-small white chat"></span><a class="stb-footer-link petit"  href="#">&nbsp;Chat</a></li>
               </ul>
             </div>
           </div>
@@ -448,10 +448,10 @@
           <div class="border-left">
           <h4>Sosiale&nbsp;medier</h4>
             <ul class="stb">
-              <li><span class="stb-sprite-24 white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
-              <li><span class="stb-sprite-24 white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
-              <li><span class="stb-sprite-24 white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
-              <li><span class="stb-sprite-24 white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
+              <li><span class="stb-sprite-medium white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
+              <li><span class="stb-sprite-medium white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
+              <li><span class="stb-sprite-medium white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
+              <li><span class="stb-sprite-medium white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
             </ul>
           </div>
         </div>
