@@ -967,15 +967,15 @@ function addTableRow(selector){
       rowContent += '<td cellId="firstNameTable">'+firstName+'</td>';
       rowContent += '<td cellId="who" class="text-right">'+who+'</td>';
       rowContent += '<td cellId="birthNumberTable" class="text-right">'+birthNumb+'</td>';
-      rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-      rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
+      rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-small x"></span> Fjern</a></td>';
+      rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-small pencil"></span> Endre</a></td>';
       clearInput('#affectedPersons');
     }
   }else if(tableId == "lostItemTable"){
     rowContent += '<td cellId="lostItemType">'+ $('#lostItemType').val();+'</td>';
     rowContent += '<td cellId="receiptItemUpload" class="text-right">'+$('#receiptItemUpload a:first').text()+'</td>';
-    rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-    rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
+    rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-small x"></span> Fjern</a></td>';
+    rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-small pencil"></span> Endre</a></td>';
     rowContent += '<td cellId="lostItemAge"  class="text-right" style="display: none;">'+$('#lostItemAge').val()+'</td>';
     rowContent += '<td cellId="purchasedWhere" class="text-right" style="display: none;">'+$('#purchasedWhere').val()+'</td>';
     rowContent += '<td cellId="itemNew" class="text-right" style="display: none;">'+$('input[name=itemNew]:checked').val()+'</td>';
@@ -988,8 +988,8 @@ function addTableRow(selector){
     if(damDescr && insComp){
       rowContent += '<td cellId="damageDescription">'+damDescr+'</td>';
       rowContent += '<td cellId="insuranceCompany" class="text-right">'+insComp+'</td>';
-      rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-16 x"></span> Fjern</a></td>';
-      rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-16 pencil"></span> Endre</a></td>';
+      rowContent += '<td class="text-right"><a onclick="$(this).closest(\'tr\').remove();"><span class="stb-sprite-small x"></span> Fjern</a></td>';
+      rowContent += '<td class="text-right"><a onclick="populateFields(this);"><span class="stb-sprite-small pencil"></span> Endre</a></td>';
       clearInput('#insurancePayment');
     }
   }
@@ -1166,9 +1166,9 @@ $(window).scroll(function(event){
         <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
 
         <li class="search col-md-3">
-          <div class="stb-sprite-16 remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
+          <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <label style="width: 95%">
-            <input type="text" class="typeahead" /><span class="search-icon"><span class="stb-sprite-16 search white"></span></span>
+            <input type="text" class="typeahead" /><span class="search-icon"><span class="stb-sprite-small search white"></span></span>
           </label>
         </li>
       </ul>
@@ -1885,7 +1885,7 @@ $(window).scroll(function(event){
       <h3>Personopplysninger</h3>
     </div>
     <div class="col-md-1 summary">
-      <a  onclick="setActive($('#personOpplysninger'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
+      <a  onclick="setActive($('#personOpplysninger'))"><span class="stb-sprite-small pencil"></span> Endre</a>
     </div>
   </div>
 
@@ -1909,7 +1909,7 @@ $(window).scroll(function(event){
       <h3>Om skaden</h3>
     </div>
     <div class="col-md-1 summary">
-      <a onclick="setActive($('#omTapet')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
+      <a onclick="setActive($('#omTapet')) "><span class="stb-sprite-small pencil"></span> Endre</a>
     </div>
   </div>
 
@@ -1937,7 +1937,7 @@ $(window).scroll(function(event){
       <h3>Tapt gjenstand</h3>
     </div>
     <div class="col-md-1 summary">
-      <a onclick="setActive($('#taptGjenstand')) "><span class="stb-sprite-16 pencil"></span> Endre</a>
+      <a onclick="setActive($('#taptGjenstand')) "><span class="stb-sprite-small pencil"></span> Endre</a>
     </div>
   </div>
 
@@ -1954,7 +1954,7 @@ $(window).scroll(function(event){
       <h3>Om reisen</h3>
     </div>
     <div class="col-md-1 summary">
-      <a onclick="setActive($('#omReisen'))"><span class="stb-sprite-16 pencil"></span> Endre</a>
+      <a onclick="setActive($('#omReisen'))"><span class="stb-sprite-small pencil"></span> Endre</a>
     </div>
   </div>
 
@@ -2001,7 +2001,7 @@ $(window).scroll(function(event){
       <h2>Kvittering</h2>
       <hr>
       <div class="well">
-        <p class="stb-color-secondary third intro"><span class="stb-sprite-32 circle-check"></span> Skademeldingen er motatt.</p>
+        <p class="stb-color-secondary third intro"><span class="stb-sprite-small circle-check"></span> Skademeldingen er motatt.</p>
         <h3>Hva skjer videre?</h3>
         <ul class="stb">
           <li>En bekreftelse av skademeldingen vil bli sendt til <span id="confirmEmail" class="stbcolor-secondary third"></span></li>
@@ -2071,8 +2071,8 @@ $(window).scroll(function(event){
 <footer class="stbcolor-primary first stb-footer">
   <div class="row toTop">
     <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" >Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right">Til toppen <span class="stb-sprite-24 white arrow-up"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" >Til toppen <span class="stb-sprite-medium white arrow-up"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right">Til toppen <span class="stb-sprite-medium white arrow-up"></span></a>
     </div>
   </div>
 
@@ -2082,9 +2082,9 @@ $(window).scroll(function(event){
       <div class="col-sm-3 column info">
         <div class="border-right">
           <ul class="stb">
-            <li><span class="stb-sprite-24 white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
-            <li><span class="stb-sprite-24 white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
-            <li><span class="stb-sprite-24 white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
+            <li><span class="stb-sprite-medium white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
+            <li><span class="stb-sprite-medium white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
+            <li><span class="stb-sprite-medium white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
           </ul>
           <h4>Alt innhold</h4>
           <p class="petit">
@@ -2103,7 +2103,7 @@ $(window).scroll(function(event){
           </div>
           <div class="col-xs-6">
             <p class="petit">
-              <span class="stb-sprite-16 white phone"></span>
+              <span class="stb-sprite-small white phone"></span>
               &nbsp;Ring:&nbsp;<a class="stb-footer-link hidden-xs hidden-sm" href="tel:08880"><span>08880</span></a>
               <a class="visible-xs visible-sm" style="display: inline-block!important;" href="tel:08880"><span class="visible-xs visible-sm stbcolor-primary first darker badge">08880</span></a>
               <br/>
@@ -2112,8 +2112,8 @@ $(window).scroll(function(event){
               <a class="visible-xs visible-sm" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47&nbsp;915&nbsp;08880</span></a>
             </p>
             <ul class="stb">
-              <li><span class="stb-sprite-16 white envelope"></span><a class="stb-footer-link petit" href="#">&nbsp;E-post</a></li>
-              <li><span class="stb-sprite-16 white chat"></span><a class="stb-footer-link petit"  href="#">&nbsp;Chat</a></li>
+              <li><span class="stb-sprite-small white envelope"></span><a class="stb-footer-link petit" href="#">&nbsp;E-post</a></li>
+              <li><span class="stb-sprite-small white chat"></span><a class="stb-footer-link petit"  href="#">&nbsp;Chat</a></li>
             </ul>
           </div>
         </div>
@@ -2123,10 +2123,10 @@ $(window).scroll(function(event){
         <div class="border-left">
           <h4>Sosiale&nbsp;medier</h4>
           <ul class="stb">
-            <li><span class="stb-sprite-24 white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
-            <li><span class="stb-sprite-24 white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
-            <li><span class="stb-sprite-24 white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
-            <li><span class="stb-sprite-24 white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
+            <li><span class="stb-sprite-medium white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
+            <li><span class="stb-sprite-medium white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
+            <li><span class="stb-sprite-medium white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
+            <li><span class="stb-sprite-medium white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
           </ul>
         </div>
       </div>
