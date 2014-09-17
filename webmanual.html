@@ -1109,6 +1109,90 @@
 
 <div class="row">
       <hr />
+      <h3>Notifier boxes</h3>
+      <p>
+        Mostly used for logged on pages. Under progress. Missing color for success box.
+      </p>
+       <div class="row">
+          <div class="col-md-12 top-margin-20">
+            <div class="msgText column pull-right stbcolor-secondary sixth">
+                <h3>Information box</h3>
+                <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
+                <p>Thank you for your patience</p>
+            </div>
+            <div class="msgIcon column stbcolor-secondary fifth"><center><span class="stb-color-sprite-medium info"></span></center></div> 
+          </div>  
+       </div> 
+       <div class="row">
+          <div class="col-md-12 top-margin-20">
+             <div class="msgText column pull-right stbcolor-background first">
+                <h3>Error box</h3>
+                <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
+                <p>We apologize for the inconvenience</p>
+            </div>
+            <div class="msgIcon column stbcolor-primary first lighter"><center><span class="stb-color-sprite-medium warning"></span></center></div> 
+          </div>
+       </div>  
+       <div class="row">
+          <div class="col-md-12 top-margin-20">
+             <div class="msgText column pull-right stbcolor-secondary seventh">
+                <h3>Success box</h3>
+                <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
+                <p>Thank you for your purchase</p>
+            </div>
+            <div class="msgIcon column stbcolor-gray second"><center><span class="stb-color-sprite-medium ok-circle"></span></center></div> 
+          </div>
+       </div>  
+</div>         
+
+      <div class="row">
+        <div class="col-md-10">
+          <h4>Code:</h4>
+                <pre class="prettyprint">
+&lt;!-- Information box: --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-md-12 top-margin-20"&gt;
+    &lt;div class="msgText column pull-right stbcolor-secondary sixth"&gt;
+      &lt;h3&gt;Information box&lt;/h3&gt;
+      &lt;p&gt;..content&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="msgIcon column stbcolor-secondary fifth"&gt;
+      &lt;center&gt;&lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;&lt;/center&gt;
+    &lt;/div&gt; 
+  &lt;/div&gt;  
+&lt;/div&gt;
+&lt;!-- Error box: --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-md-12 top-margin-20"&gt;
+    &lt;div class="msgText column pull-right stbcolor-background first"&gt;
+      &lt;h3&gt;Error box&lt;/h3&gt;
+      &lt;p&gt;..content&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="msgIcon column stbcolor-primary first lighter"&gt;
+      &lt;center&gt;&lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;&lt;/center&gt;
+    &lt;/div&gt; 
+  &lt;/div&gt;
+&lt;/div&gt;  
+&lt;!-- Success box: --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-md-12 top-margin-20"&gt;
+    &lt;div class="msgText column pull-right stbcolor-secondary seventh"&gt;
+      &lt;h3&gt;Success box&lt;/h3&gt;
+      &lt;p&gt;..content&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="msgIcon column stbcolor-gray second"&gt;
+      &lt;center&gt;&lt;span class="stb-color-sprite-medium ok-circle"&gt;&lt;/span&gt;&lt;/center&gt;
+    &lt;/div&gt; 
+   &lt;/div&gt;
+&lt;/div&gt;  
+</pre>
+        </div>
+      </div>
+   
+
+
+<div class="row">
+      <hr />
       <h3>Spesial boxes</h3>
       <p>
         Added some functionality for the stb-box. Here is an example.
