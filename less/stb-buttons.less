@@ -19,8 +19,8 @@
   min-width: 100px;
   .box-shadow(none);
   
-  // Stop developers from making buttons that are too wide
-  max-width: 200px;
+  // Stop developers from making buttons that are too wide - removed max-width. CMS limits the number of characters.
+  //max-width: 200px;
   overflow: hidden;
   cursor: pointer;
   
@@ -97,7 +97,7 @@
   > span {
     margin-left: 6px;
   }
-}
+} /* End stb.btn */
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
@@ -142,4 +142,13 @@
   50% {background-color: rgba(0, 0, 0, 0.1);}
   100% {background-color:  @stb-primary-white}
 }
+
+/* Changes default for button class="close"  */
+
+button.close {
+    opacity: 1;
+    text-shadow: none;
+  }
+
+
 

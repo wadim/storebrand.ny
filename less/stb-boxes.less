@@ -1,5 +1,5 @@
 .stb-box {
-  padding: 24px;
+  padding: 12px 24px 24px 24px;
   margin-bottom: 20px;
   border: 1px solid transparent;  
   
@@ -33,6 +33,9 @@
   &.sixth {
     .stbcolor-background .third;
   }
+  &.noBorder{
+    border: none;
+  }
   
   &.dark {
     color: @stb-primary-white;
@@ -65,8 +68,20 @@
     border: 1px dotted;
   }
 
+  &.dashed {
+    border: 1px dashed;
+  }
+
+
   ul.stb,ol.stb {
     padding-bottom: 0;
+  }
+
+  &.info{
+    padding: 24px;
+    @media screen and (max-width: 768px) {
+      padding: 12px;
+    }
   }
   
   &.mini{
@@ -102,3 +117,29 @@
   }
 
 }
+
+/* Style for Notification boxes */
+
+.msgIcon {
+  width: 10%;
+  padding: 24px 12px 12px 12px;
+}
+.msgText {
+  width: 90%;
+  padding: 12px;
+}
+
+@media screen and (max-width: 500px) {
+  .msgText {
+    width: 80%;
+  }
+  .msgIcon {
+    width: 20%;
+  }
+}
+
+&.infoIcon{
+    @media screen and (max-width: 768px) {
+      margin-left: 4px;
+    }
+  }

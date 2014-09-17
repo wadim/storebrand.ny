@@ -627,11 +627,17 @@ $(document).ready(function(){
 // Script to toogle topmessages and to set cookie for the session (not yet created)
 
 function hideErrorMsg(){
-  $('.errormessage').hide('slow');
+  $('.errormessage').slideUp('slow');
   //createCookie('erroMessageRead','Yes'); 
 }
 function hideCommonMsg(){
-  $('.commonmessage').hide('slow');
+  $('.commonmessage').slideUp('slow');
   //createCookie('commonMessageRead','Yes'); 
+}
+function showErrorMsg(){
+  $('.errormessage').slideDown('slow');
+}
+function showCommonMsg(){
+  $('.commonmessage').slideDown('slow');
 }
 
