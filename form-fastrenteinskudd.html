@@ -190,7 +190,7 @@
         if($('input:radio[name=statsborgerskap]:checked').val()=="norsk"){
           $('#statsborgerskap-annet-text').hide();
         }
-        else{
+        else if($('input:radio[name=statsborgerskap]:checked').val()=="annet"){
           $('#statsborgerskap-annet-text').css('display','inline-block');
         }
       });
