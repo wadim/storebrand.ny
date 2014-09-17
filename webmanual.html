@@ -35,6 +35,15 @@
     $(window).resize(function() {
       $(".row .column").matchHeight(true);
     });
+
+    function toggleMsg(){
+      hideErrorMsg();
+      hideCommonMsg();
+      setTimeout(function(){
+        showErrorMsg();
+        showCommonMsg();
+      }, 1000);
+    }
   </script>
   <!-- End of JavaScript for this page only -->
 
@@ -1043,7 +1052,6 @@
 
 </div> <!-- /Boxes row -->
 
-
 <hr class="top-margin-30" />
 
 <div class="row"> <!-- Notification row -->
@@ -1052,7 +1060,76 @@
     (To be reviewed)
   </div>
   <div class="col-md-9">
-    <p>This is placed in the "topMessages" div when it is added to the page. It is hidden when loaded and toggleDown after 1 second. See the function <a href="#" onclick="toggleMsg();return false">here</a></p>
+
+    <p>
+    This is placed in the "topMessages" div when it is added to the page. It is hidden when loaded and toggleDown after 1 second. See the function <a href="#" onclick="toggleMsg();return false">here</a>
+    </p>
+
+    <div class="top-padding-20 bottom-padding-20 commonmessage">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="msgText column pull-right stbcolor-secondary sixth">
+                <button data-dismiss="modal" onclick="hideCommonMsg();return false;" class="close" type="button">
+                   <p class="pull-left">Lukk <span style="margin-right:10px;" class="stb-sprite-small remove"></span></p>
+                </button>
+                <h3>Quarterly reports</h3>
+                <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
+                <p>Thank you for your patience</p>
+            </div>
+            <div class="msgIcon column stbcolor-secondary fifth"><center><span class="stb-color-sprite-medium info"></span></center></div>  
+        </div>
+      </div>
+    </div>  
+
+    <div class="top-padding-20 bottom-padding-20 errormessage">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="msgText column pull-right stbcolor-background first">
+                <button data-dismiss="modal" onclick="hideErrorMsg();return false;" class="close" type="button">
+                   <p class="pull-left">Lukk <span style="margin-right:10px;" class="stb-sprite-small remove"></span></p>
+                </button>
+                <h3>Error</h3>
+                <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
+                <p>We apologize for the inconvenience</p>
+            </div>
+            <div class="msgIcon column stbcolor-primary first lighter"><center><span class="stb-color-sprite-medium warning"></span></center></div>  
+        </div>
+      </div>
+    </div>  
+
+    
+  
+
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9 col-md-offset-3">
+    <strong>Code:</strong>
+          <pre class="prettyprint">
+&lt;!-- Commonmessage: --&gt;
+
+&lt;!-- errormessage: --&gt;
+
+
+</pre>
+  </div>
+</div> <!-- /Notification row -->
+
+<!--
+<hr class="top-margin-30" />
+
+<div class="row"> 
+  <div class="col-md-3">
+    <h2>Notification</h2>
+    (To be reviewed)
+  </div>
+  <div class="col-md-9">
+
+    <p>
+    This is placed in the "topMessages" div when it is added to the page. It is hidden when loaded and toggleDown after 1 second. See the function <a href="#" onclick="toggleMsg();return false">here</a>
+    </p>
+
     <div class="commonmessage">
       <div class="row bottom-padding-20">
         <div class="col-md-1 stbcolor-secondary fifth column top-padding-10 bottom-padding-10">
@@ -1079,7 +1156,8 @@
                 <p>Vi beklager dette. Vennligst forsøk senere.</p>
             </div>
         </div>
-    </div>  
+    </div>
+  
 
 
   </div>
@@ -1121,7 +1199,7 @@
 
 </pre>
   </div>
-</div> <!-- /Notification row -->
+</div>  -->
 
 <hr class="top-margin-30" />
 
