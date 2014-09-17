@@ -36,6 +36,7 @@
       $(".row .column").matchHeight(true);
     });
 
+//Code for toogle demonstration of Notification boxes
     function toggleMsg(){
       hideErrorMsg();
       hideCommonMsg();
@@ -1108,98 +1109,39 @@
     <strong>Code:</strong>
           <pre class="prettyprint">
 &lt;!-- Commonmessage: --&gt;
-
-&lt;!-- errormessage: --&gt;
-
-
-</pre>
-  </div>
-</div> <!-- /Notification row -->
-
-<!--
-<hr class="top-margin-30" />
-
-<div class="row"> 
-  <div class="col-md-3">
-    <h2>Notification</h2>
-    (To be reviewed)
-  </div>
-  <div class="col-md-9">
-
-    <p>
-    This is placed in the "topMessages" div when it is added to the page. It is hidden when loaded and toggleDown after 1 second. See the function <a href="#" onclick="toggleMsg();return false">here</a>
-    </p>
-
-    <div class="commonmessage">
-      <div class="row bottom-padding-20">
-        <div class="col-md-1 stbcolor-secondary fifth column top-padding-10 bottom-padding-10">
-         <span class="stb-color-sprite-medium info">
-        </div>
-        <div class="col-md-11 stbcolor-secondary sixth column top-padding-10 bottom-padding-10">
-          <button data-dismiss="modal" onclick="hideCommonMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-small remove pull-left"></span></button>
-          <h4>Kvartalsrapporter</h4>
-          <p>Vi har dessverre problemer med å publisere ut våre kvartalsrapporter. Vi jobber med saken og vil publisere så snart som muilg. </p>
-          <p><a href="#">Haster det kan du få rapporten tilsendt på e-post.</a></p>
-        </div>
-      </div>
-    </div>  
-
-    <div class="errormessage">
-        <div class="row">
-            <div class="col-md-1 stbcolor-primary first lighter column top-padding-10 bottom-padding-10">
-                <span class="stb-color-sprite-medium warning"></span>
-            </div>
-            <div class="col-md-11 stbcolor-background first column top-padding-10 bottom-padding-10">
-                <button data-dismiss="modal" onclick="hideErrorMsg();return false;" class="close" type="button"><span style="margin-right:10px;" class="stb-sprite-small remove pull-left"></span></button>
-                <h4>Feil med nettbank</h4>
-                <p>Vår driftsleverandør har nettverktsproblemer og det er derfor ikke mulig å logge inn i nettbanken.</p>
-                <p>Vi beklager dette. Vennligst forsøk senere.</p>
-            </div>
-        </div>
-    </div>
-  
-
-
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-9 col-md-offset-3">
-    <strong>Code:</strong>
-          <pre class="prettyprint">
-&lt;!-- Commonmessage: --&gt;
-&lt;div class="commonmessage"&gt;
-  &lt;div class="row bottom-padding-20"&gt;
-    &lt;div class="col-md-1 stbcolor-secondary fifth column top-padding-10 bottom-padding-10"&gt;
-      &lt;span class="stb-color-sprite-medium info"&gt;
-    &lt;/div&gt;
-    &lt;div class="col-md-11 stbcolor-secondary sixth column top-padding-10 bottom-padding-10"&gt;
-      &lt;button data-dismiss="modal" onclick="hideCommonMsg();return false;" class="close" type="button"&gt;
-        &lt;span style="margin-right:10px;" class="stb-sprite-small remove pull-left"&gt;&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;h4&gt;..content&lt;/h4&gt;
-      &lt;p&gt;..content&lt;/p&gt;
+&lt;div class="top-padding-20 bottom-padding-20 commonmessage"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-12"&gt;
+      &lt;div class="msgText column pull-right stbcolor-secondary sixth"&gt;
+        &lt;button data-dismiss="modal" onclick="hideCommonMsg();return false;" class="close" type="button"&gt;
+          &lt;p class="pull-left"&gt;Lukk &lt;span style="margin-right:10px;" class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
+        &lt;/button&gt;
+        &lt;h3&gt;..headline&lt;/h3&gt;
+        &lt;p&gt;..content&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="msgIcon column stbcolor-secondary fifth"&gt;&lt;center&gt;&lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;&lt;/center&gt;&lt;/div&gt;  
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;!-- errormessage: --&gt;
-&lt;div class="errormessage"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-md-1 stbcolor-primary first lighter column top-padding-10 bottom-padding-10"&gt;
-      &lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class="col-md-11 stbcolor-background first column top-padding-10 bottom-padding-10"&gt;
-      &lt;button data-dismiss="modal" onclick="hideErrorMsg()();return false;" class="close" type="button"&gt;
-        &lt;span style="margin-right:10px;" class="stb-sprite-small remove pull-left"&gt;&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;h4&gt;..content&lt;/h4&gt;
-      &lt;p&gt;..content&lt;/p&gt;
+&lt;div class="top-padding-20 bottom-padding-20 errormessage"&gt;
+   &lt;div class="row"&gt;
+    &lt;div class="col-md-12"&gt;
+      &lt;div class="msgText column pull-right stbcolor-background first"&gt;
+        &lt;button data-dismiss="modal" onclick="hideErrorMsg();return false;" class="close" type="button"&gt;
+          &lt;p class="pull-left"&gt;Lukk &lt;span style="margin-right:10px;" class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
+        &lt;/button&gt;
+        &lt;h3&gt;..headline&lt;/h3&gt;
+        &lt;p&gt;..content&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="msgIcon column stbcolor-primary first lighter"&gt;&lt;center&gt;&lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;&lt;/center&gt;&lt;/div&gt;  
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt; 
-
 </pre>
   </div>
-</div>  -->
+</div> <!-- /Notification row -->
+
 
 <hr class="top-margin-30" />
 
