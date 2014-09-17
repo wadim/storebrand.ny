@@ -19,12 +19,211 @@
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript" src="js/stb-common.js"></script>
   <script type="text/javascript" src="js/stb-page-padding.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrapValidator-0.5.0.js"></script>
 
   <!-- Start JavaScript for this page only -->
   <script>
+
+    /* Verify National Identity Number ***********************************************/
+    function verifyID(nr) {
+      var pn = new Array();
+      var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
+      var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+      for(var i=0; i<nr.length; i++) {
+        pn[i] = nr.charAt(i);
+      }
+      var k1=0;
+      for(var i=0; i<v1.length; i++) {
+        k1 += pn[i]*v1[i];
+      }
+      var k2=0;
+      for(var i=0; i<v2.length; i++) {
+        k2 += pn[i]*v2[i];
+      }
+      if (k1%11==0 && k2%11==0 ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function cancelSubmitForm(){
+      if (confirm('Vil du virkelig avbryte bestillingen?')) {
+        window.history.back();
+      }
+    }
+
     $("document").ready(function(){
       $(".row .column").matchHeight(true);
-    })
+
+      var idValidator = {
+        message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Fødselsnummeret er ikke gyldig!',
+        callback: function(value, validor){
+          return verifyID(value);
+        }
+      };
+
+      var validationFields = {
+        onsketSparebelop : {
+          container: '#onsketSparebelop-message',
+          trigger: 'blur',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi ønsket sparebeløp'
+            },
+            between: {
+              min: 100000 ,
+              max: 5000000,
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Beløpet må være mellom 100 000 og 5 000 000 kr'
+            }
+          }
+        },
+        periode : {
+          container: '#periode-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi periode'
+            }
+          }
+        },
+        navn : {
+          container: '#navn-message',
+          trigger: 'blur',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi navn'
+            },
+            regexp: {
+              regexp: /^[a-z\s]+$/i,
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Et navn kan kun bestå av bokstaver fra alfabetet.'
+            }
+          }
+        },
+        postnr : {
+          container: '#postnr-message',
+          trigger: 'blur',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi postnummer'
+            },
+            regexp: {
+              regexp: /^\d{4}$/,
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Postnummeret må bestå av 4 siffer.'
+            }
+          }
+        },
+        poststed : {
+          container: '#poststed-message',
+          trigger: 'blur',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi poststed'
+            },
+            regexp: {
+              regexp: /^[a-z\s]+$/i,
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Et stedsnavn kan kun bestå av bokstaver fra alfabetet.'
+            }
+          }
+        },
+        fodselsnummer: {
+          trigger: 'blur',
+          container: '#fodselsnummer-message',
+          validators: {
+            callback: idValidator
+          }
+        },
+        mobilnummer: {
+          trigger: 'blur',
+          container: '#mobilnummer-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi mobilnummer'
+            },
+            regexp: {
+              regexp: /^\d{8}$/,
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Telefonnummeret må bestå av 8 siffer.'
+            }
+
+          }
+        },
+        epost : {
+          trigger: 'blur',
+          container: '#epost-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi epost'
+            },
+            emailAddress: {
+              message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Detter er ikke en gyldig epost adresse.'
+            }
+          }
+        }
+      }
+
+      $('#fastrenteinskudd').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+        },
+        group: '.stb-form-group',
+        fields: validationFields
+      }).on('success.form.bv', function(e) {
+        // Prevent form submission
+        e.preventDefault();
+
+        var $form = $(e.target),
+        validator = $form.data('bootstrapValidator'),
+        submitButton = validator.getSubmitButton();
+
+        var nextPanel = $('.formSection.active').next('section.formSection');
+        navigateToSection(nextPanel);
+      });
+
+      $('#backButton').click(function(){
+        navigateToSection($('.formSection.active').prev('section.formSection'));
+        $('#nextButton').removeClass("disabled").prop("disabled", false);
+      });
+      $('.stb-radio').change(function() {
+
+        if($('input:radio[name=statsborgerskap]:checked').val()=="norsk"){
+          $('#statsborgerskap-annet-text').hide();
+        }
+        else{
+          $('#statsborgerskap-annet-text').css('display','inline-block');
+        }
+      });
+
+    });
+
+    //Set the next panel to active
+    function navigateToSection(nextActive){
+
+      var currentActive = $('.formSection.active');
+      if(currentActive.attr('id') != nextActive.attr('id')){
+        currentActive.hide().removeClass('active');
+        nextActive.show().addClass('active');
+
+        $("#navigationButtons").show();
+
+        if(nextActive.next('section').is('#kvittering')){
+          $("#nextButton").text("Send");
+        }else if(nextActive.is("#kvittering")){
+          $("#navigationButtons").hide();
+        }else{
+          $("#nextButton").text('Gå videre').removeClass("disabled");
+        }
+
+        if(nextActive.prev('section').length == 0){
+          $('#backButton').hide();
+        }else{
+          $('#backButton').show();
+        }
+        $('body,html').animate({scrollTop: 0}, 800);
+      }
+
+    }
 
     $(window).resize(function() {
       $(".row .column").matchHeight(true);
@@ -48,12 +247,44 @@
       cursor: pointer;
     }
 
-    .stepPanel{
+    .formSection{
       margin: 48px 0 48px 0;
       display:none;
     }
-    .stepPanel.active{
+    .formSection.active{
       display:block;
+    }
+
+      /* Override feedback icon position */
+    form .has-feedback i.form-control-feedback {
+      top: 4px !important ;
+    }
+
+    form .has-feedback.checkbox i.glyphicon-ok{
+      top: 8px;
+    }
+
+    form .has-feedback.checkbox i.glyphicon-remove{
+      top: 8px;
+    }
+
+    .stb-form-group .col-xs-1, .col-sm-1, .col-md-1,
+    .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,
+    .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4,
+    .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5,
+    .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6,
+    .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7,
+    .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9,
+    .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10,
+    .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11,
+    .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+      padding-right: 0;
+    }
+
+    .input-group-addon{
+      border: none;
+      background: none;
+      font-size: 18px;
     }
 
   </style>
@@ -369,10 +600,10 @@
 
 <!-- Start actual page contents -->
 <div class="container stbcolor-secondary sixth top-margin-30 bottom-margin-30 top-padding-20 bottom-padding-20">
-  <form id="fastrenteinskudds" class="stb-form validateForm" role="form">
+  <form id="fastrenteinskudd" class="stb-form validateForm" role="form">
     <h1>Åpne fastrentekonto</h1>
 
-    <section id="kontoopplysninger" class="stepPanel active">
+    <section id="kontoopplysninger" class="formSection active">
       <h3>Kontoopplysninger <span class="pull-right"> Steg 1 av 3 </span></h3>
       <p>
         Er du under 18 år kan du ikke bruke dette skjemaet.<br>
@@ -381,18 +612,20 @@
       <hr>
       <div class="row">
         <div class="col-md-4">
-          <label>Ønsket sparebeløp kr</label>
-          <span id="onsketSpareBelop-message" class="help-block"></span>
+          <label>Ønsket sparebeløp</label>
+          <span id="onsketSparebelop-message" class="help-block"></span>
           <div class="stb-form-group">
-            <input id="onsketSpareBelop" class="form-control" name="onsketSpareBelop">
+            <div class="input-group col-md-11">
+              <input id="onsketSparebelop" name="onsketSparebelop" class="form-control">
+              <div class="input-group-addon">kr</div>
+            </div>
           </div>
           <label>Periode</label>
           <span id="periode-message" class="help-block"></span>
           <div class="stb-form-group checkbox al">
-            <div class="radio"><input type="radio" name="periode" id="periode-3" value="3" class="stb-radio"><label class="stb-custom-input" for="periode-3">3&nbsp;måneder</label></div>
-            <div class="radio"><input type="radio" name="periode" id="periode-12" value="12" class="stb-radio" ><label class="stb-custom-input" for="periode-12">12&nbsp;måneder</label></div>
+            <div class="radio" style="display: inline-block;"><input type="radio" name="periode" id="periode-3" value="3" class="stb-radio"><label class="stb-custom-input" for="periode-3">3&nbsp;måneder</label></div>
+            <div class="radio" style="display: inline-block;"><input type="radio" name="periode" id="periode-12" value="12" class="stb-radio" ><label class="stb-custom-input" for="periode-12">12&nbsp;måneder</label></div>
           </div>
-
         </div>
         <div class="col-md-8">
           <div class="stb-box fat red border">
@@ -405,18 +638,79 @@
         </div>
       </div>
     </section>
-    <section id="personopplysninger" class="stepPanel">
-      <h3>Kontoopplysninger <span class="pull-right"> Steg 2 av 3 </span></h3>
+    <section id="personopplysninger" class="formSection">
+      <h3>Personopplysninger <span class="pull-right"> Steg 2 av 3 </span></h3>
+      Feltet merket <span class="input-required">*</span> må fylles ut.
+      <hr>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="navn" style="width: 200px;">Navn<span class="input-required">*</span></label>
+          <span id="navn-message" class="help-block"></span>
+          <div class="stb-form-group">
+            <input id="navn" name="navn" type="text" class="" placeholder="Navn">
+          </div>
+          <label for="adresse" style="width: 200px;">Adresse</label>
+          <span id="adresse-message" class="help-block"></span>
+          <div class="stb-form-group">
+            <input id="adresse" name="adresse" type="text" class="" placeholder="Adresse">
+          </div>
+          <label for="postnr" style="width: 200px;">Postnr./-sted<span class="input-required">*</span></label>
+          <span id="postnr-message" class="help-block"></span>
+          <span id="poststed-message" class="help-block"></span>
+          <div class="stb-form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <input id="postnr" name="postnr" type="text" placeholder="Postnr">
+              </div>
+              <div class="col-md-7">
+                <input id="poststed" name="poststed" type="text" placeholder="Poststed">
+              </div>
+            </div>
+          </div>
+          <label for="fodselsnummer" style="width: 200px;">Fødselsnummer<span class="input-required">*</span></label>
+          <span id="fodselsnummer-message" class="help-block"></span>
+          <div class="stb-form-group">
+            <input id="fodselsnummer" name="fodselsnummer" type="text" class="" placeholder="Fødselsnummer">
+          </div>
+          <label>Statsborgerskap</label>
+          <span id="statsborgerskap-message" class="help-block"></span>
+          <div class="stb-form-group checkbox al">
+            <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskap" id="statsborgerskap-norsk" value="norsk" class="stb-radio"><label class="stb-custom-input" for="statsborgerskap-norsk">Norsk</label></div>
+            <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskap" id="statsborgerskap-annet" value="annet" class="stb-radio" ><label class="stb-custom-input" for="statsborgerskap-annet">Annet</label></div>
+            <input id="statsborgerskap-annet-text" name="statsborgerskap" type="text" class="" placeholder="Statsborgerskap" style="display: none; width: 50%">
+          </div>
+          <label for="mobilnummer" style="width: 200px;">Mobil<span class="input-required">*</span></label>
+          <span id="mobilnummer-message" class="help-block"></span>
+          <div class="stb-form-group">
+            <input id="mobilnummer" name="mobilnummer" type="text" class="" placeholder="Mobilnummer">
+          </div>
+          <label for="epost" style="width: 200px;">Epost<span class="input-required">*</span></label>
+          <span id="epost-message" class="help-block"></span>
+          <div class="stb-form-group">
+            <input id="epost" name="epost" type="text" class="" placeholder="Epost">
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="kvittering" class="stepPanel">
-
+    <section id="kvittering" class="formSection">
+      <h2>Kvittering - Fastrentekonto i Storebrand Bank</h2>
+      <p>Vi har motatt din henvendles</p>
+      <ul class="stb">
+        <li> Om noen dager får du tilsendt avtaledokumenter i posten.</li>
+        <li> Hvis du ikke er kunde i Storebrand Bank fra før, vil du motta sendingen rekommandert fra Posten.<br>
+          Du bør hente den snarest, så den ikke blir retunert til oss igjen.<br></li>
+        <li> I sendingen finner du Kontoavtale og Avtale om fastrentekonto.<br>
+          Underskriv på avtalene og returner de til oss</li>
+        <li> Husk å sette inn penger innen tidsfristen som står på avtalen.<br>
+          Kontonummeret du skal benytte står også på avtalen.</li>
+      </ul>
     </section>
-    <hr>
     <div id="navigationButtons" class="row">
+      <hr>
       <div class="col-md-10 col-md-offset-1">
         <div class="stb-form-group al" >
           <button class="stb-btn transparent light cancel-btn" onclick="cancelSubmitForm()" type="button"><span class="glyphicon glyphicon-remove"></span> Avbryt</button>
-          <button id="nextButton" type="submit" class="stb-btn pull-right left-margin-10">Neste</button>
+          <button id="nextButton" type="submit" class="stb-btn pull-right left-margin-10">Gå videre</button>
           <button id="backButton" type="button" class="stb-btn pull-right">Tilbake</button>
         </div>
       </div>
