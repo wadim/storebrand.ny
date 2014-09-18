@@ -112,3 +112,91 @@
     background-color: @stb-secondary-forest;
   }
 }
+
+.progressBar-circle{
+  background-image: url('../images/stripes.png');
+  background-repeat: repeat-x;
+  background-size: 100px;
+  background-position: 0 4px;
+  margin: 0 5%;
+  width: 450px;
+
+  .circle-24  p.step{
+    font-size: 28px;
+    padding-left: 2px;
+  }
+
+  ol.progtrckr {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  ol.progtrckr li {
+    display: inline-block;
+    text-align: center;
+    line-height: 3em;
+  }
+  li.prog-todo{
+    a.steplabel{
+      color: @stb-gray-third !important;
+      padding-top: 10px;
+      cursor: default;
+    }
+
+    h4.steplabel{
+      display: none;
+    }
+
+    div{
+      background-color: @stb-gray-third;
+    }
+  }
+
+  li.prog-done{
+    a.steplabel{
+      color: @stb-primary-black !important;
+      padding-top: 10px;
+    }
+
+    h4.steplabel{
+      display: none;
+    }
+
+    div{
+      background-color: @stb-secondary-forest;
+      cursor: pointer;
+    }
+  }
+
+  li.prog-clickable{
+    a.steplabel{
+      color: @stb-primary-black !important;
+      padding-top: 10px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    div{
+      cursor: pointer;
+    }
+
+    h4.steplabel{
+      display: none;
+    }
+  }
+
+  li.prog-active{
+    a.steplabel{
+      display: none;
+    }
+    div{
+      background-color: @stb-secondary-charcoal;
+      cursor: default;
+    }
+
+    h4.steplabel{
+      color: @stb-primary-black !important;
+      display: block;
+    }
+  }
+
+}
