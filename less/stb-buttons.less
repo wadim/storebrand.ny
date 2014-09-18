@@ -98,6 +98,45 @@
     font-weight: normal;
   }
 
+/* stb-big-btn */
+
+  &.stb-big-btn:before {
+  background: url("../images/stb-sprites/general-sprites.png") no-repeat scroll -400px -700px rgba(0, 0, 0, 0);
+  content: "";
+  left: 18px;
+  min-height: 60px;
+  position: absolute;
+  top: 18px;
+  width: 48px;
+  z-index: 2;
+  }
+
+&.stb-big-btn:after {
+  background: none repeat scroll 0 0 #819f2b;
+  color: red;
+  content: "";
+  min-height: 60px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 60px;
+  z-index: 1;
+  margin-right: -12px;
+  }
+
+  &.stb-big-btn {
+   position: relative;
+   padding-left: 84px;
+   padding-right: 24px;
+    height: 60px;
+  }
+
+  &.stb-big-btn:hover {
+   background-color: #576B1D;
+  }
+
+/*End stb-big-btn */
+
   > span {
     margin-left: 6px;
   }
