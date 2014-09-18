@@ -641,3 +641,20 @@ function showCommonMsg(){
   $('.commonmessage').slideDown('slow');
 }
 
+// Script to hightlight anchor tags in mini and big boxes on mouseenter
+
+$("document").ready(function(){
+  $( ".mini" ).mouseenter(function() {
+    $('.mini a').css('color', '#DA291C');
+  });
+  $( ".mini" ).mouseleave(function() {
+    $('.mini a').css('color', '#404040');
+  });
+  $( ".big" ).mouseenter(function() {
+    $('.big a').css('color', '#DA291C');
+  });
+  $( ".big" ).mouseleave(function() {
+    $('.big a').css('color', '#404040');
+  });
+}); 
+
