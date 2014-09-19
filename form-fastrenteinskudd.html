@@ -57,7 +57,7 @@ $("document").ready(function(){
   $(".row .column").matchHeight(true);
 
   var idValidator = {
-    message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Fødselsnummeret er ikke gyldig!',
+    message: '<span class="stb-color-sprite-medium warning circle"></span> Fødselsnummeret er ikke gyldig!',
     callback: function(value, validor){
       return verifyID(value);
     }
@@ -69,12 +69,12 @@ $("document").ready(function(){
       trigger: 'blur',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi ønsket sparebeløp'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10">Oppgi ønsket sparebeløp</span> '
         },
         between: {
           min: 100000 ,
           max: 5000000,
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Beløpet må være mellom 100 000 og 5 000 000 kr'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Beløpet må være mellom 100 000 og 5 000 000 kr'
         }
       }
     },
@@ -82,7 +82,7 @@ $("document").ready(function(){
       container: '#periode-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi periode'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi periode'
         }
       }
     },
@@ -91,11 +91,11 @@ $("document").ready(function(){
       trigger: 'blur',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi navn'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi navn'
         },
         regexp: {
           regexp: /^[a-z\s]+$/i,
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Et navn kan kun bestå av bokstaver fra alfabetet.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Et navn kan kun bestå av bokstaver fra alfabetet.'
         }
       }
     },
@@ -104,11 +104,11 @@ $("document").ready(function(){
       trigger: 'blur',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi postnummer'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi postnummer'
         },
         regexp: {
           regexp: /^\d{4}$/,
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Postnummeret må bestå av 4 siffer.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Postnummeret må bestå av 4 siffer.'
         }
       }
     },
@@ -117,11 +117,11 @@ $("document").ready(function(){
       trigger: 'blur',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi poststed'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi poststed'
         },
         regexp: {
           regexp: /^[a-z\s]+$/i,
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Et stedsnavn kan kun bestå av bokstaver fra alfabetet.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Et stedsnavn kan kun bestå av bokstaver fra alfabetet.'
         }
       }
     },
@@ -137,10 +137,10 @@ $("document").ready(function(){
       container: '#mobilnummer-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi mobilnummer'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi mobilnummer'
         },
         digits: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Telefonnummeret må bestå av kun siffer.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Telefonnummeret må bestå av kun siffer.'
         }
 
       }
@@ -150,10 +150,10 @@ $("document").ready(function(){
       container: '#epost-message',
       validators: {
         notEmpty: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi epost'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi epost'
         },
         emailAddress: {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Detter er ikke en gyldig epost adresse.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span> Detter er ikke en gyldig epost adresse.'
         }
       }
     }
@@ -650,21 +650,21 @@ $(window).resize(function() {
   <div class="progressBar-circle hidden-xs hidden-sm">
     <ol class="progtrckr">
       <li id="step-kontoopplysninger" class="prog-todo prog-active prog-clickable">
-        <div class="circle-24 pull-left">
+        <div class="circle-12 pull-left">
           <p class="step" style="color: white">1</p>
           <a href="#" class="steplabel" style="margin-left:-42px;">Kontoopplysninger</a>
           <h4 class="steplabel" style="margin-left: -60px;">Kontoopplysninger</h4>
         </div>
       </li>
       <li id="step-personopplysninger" class="prog-todo" style="margin-left: 149px">
-          <div class="circle-24 pull-left">
+          <div class="circle-12 pull-left">
             <p class="step" style="color: white">2</p>
             <a href="#" class="steplabel" style="margin-left:-48px;">Personopplysninger</a>
             <h4 class="steplabel" style="margin-left: -60px;">Personopplysninger</h4>
           </div>
       </li>
       <li id="step-kvittering" class="prog-todo" style="margin-left: 149px">
-          <div class="circle-24 pull-left">
+          <div class="circle-12 pull-left">
             <p class="step" style="color: white">3</p>
             <a href="#" class="steplabel" style="margin-left:-15px;">Kvittering</a>
             <h4 class="steplabel" style="margin-left: -25px;">Kvittering</h4>

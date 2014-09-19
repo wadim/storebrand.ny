@@ -117,13 +117,13 @@
   background-image: url('../images/stripes.png');
   background-repeat: repeat-x;
   background-size: 100px;
-  background-position: 0 4px;
+  background-position: 0 -10px;
   margin: 0 5%;
-  width: 450px;
+  width: 380px;
 
-  .circle-24  p.step{
-    font-size: 28px;
-    padding-left: 2px;
+  .circle-12  p.step{
+    font-size: 16px;
+    font-family: "Open Sans Bold";
   }
 
   ol.progtrckr {
@@ -141,6 +141,8 @@
       color: @stb-gray-third !important;
       padding-top: 10px;
       cursor: default;
+      text-decoration: none !important;
+      border-bottom: none;
     }
 
     h4.steplabel{
@@ -172,8 +174,9 @@
     a.steplabel{
       color: @stb-primary-black !important;
       padding-top: 10px;
-      text-decoration: underline;
       cursor: pointer;
+      border-bottom: 1px solid #404040;
+      padding-bottom: 1px;
     }
     div{
       cursor: pointer;
