@@ -2,11 +2,11 @@
 
 // Start mobile top menu decoration
 $(document).ready(function(){
-  $('.panel-group').on('show.bs.collapse', function (event) {
+  $('#nav .panel-group').on('show.bs.collapse', function (event) {
     $(event.target).prev().find('span:first').toggleClass('chevron-down chevron-right');
   });
   
-  $('.panel-group').on('hide.bs.collapse', function () {
+  $('#nav .panel-group').on('hide.bs.collapse', function () {
     $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('chevron-down chevron-right');
   });
 
