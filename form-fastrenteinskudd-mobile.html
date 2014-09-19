@@ -206,8 +206,8 @@ $("document").ready(function(){
   $('a.accordion').click(function(){
     var currentActive = $('.panel-collapse.collapse.in');
     var nextActive = $(this).closest('div').next();
-    if(nextActive.hasClass('completed') || nextActive.hasClass('current')){
-      if(currentActive.hasClass('completed')){
+    if(nextActive.parent().hasClass('completed') || nextActive.parent().hasClass('current')){
+      if(currentActive.parent().hasClass('completed')){
         if(validateForm($('#fastrenteinskudd'))){
           setActiveMobile(currentActive, nextActive);
         }else{
@@ -227,18 +227,18 @@ $("document").ready(function(){
   });
 
   $('#accordion').on('show.bs.collapse', function (event) {
-    $(event.target).prev().find('span:first').removeClass('chevron-right').toggleClass('chevron-down chevron-up')
+    $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up')
   });
 
   $('#accordion').on('hide.bs.collapse', function () {
-    $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('chevron-down chevron-up')
+    $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up')
   });
 });
 
 function navigateToNext(currentActive, nextActive){
-  $(currentActive).addClass('completed').removeClass('current');
+  $(currentActive).parent().addClass('completed').removeClass('current');
   $('.panel-collapse.collapse.in').parent().find('span.circle-check').show();
-  nextActive.addClass('current');
+  nextActive.parent().addClass('current');
   setActiveMobile(currentActive, nextActive);
 }
 
@@ -354,6 +354,10 @@ $(window).resize(function() {
 
   .panel-title a{
     border-bottom: none;
+  }
+
+  h4.panel-title{
+    font-size: 24px;
   }
 
 </style>
@@ -669,15 +673,16 @@ $(window).resize(function() {
 
 <!-- Start actual page contents -->
 
-<div class=" top-margin-30 bottom-margin-30 top-padding-20 bottom-padding-20">
-  <h1>Åpne fastrentekonto</h1>
+<div class=" top-margin-10 bottom-margin-30 top-padding-20 bottom-padding-20">
+  <h1 class="left-margin-20">Åpne fastrentekonto</h1>
+  <hr class="top-margin-5">
   <form id="fastrenteinskudd" class="stb-form validateForm" role="form">
     <div class="panel-group" id="accordion">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
             <a class="accordion" data-toggle="collapse" data-parent="#accordion">
-              1 Kontoopplysninger <span class="stb-sprite-small chevron-down pull-right"></span>
+              <span class="step">1</span> Kontoopplysninger <span class="stb-sprite-medium chevron-down pull-right"></span>
             </a>
           </h4>
         </div>
@@ -695,7 +700,7 @@ $(window).resize(function() {
                   <label>Ønsket sparebeløp</label>
                   <span id="onsketSparebelop-message" class="help-block"></span>
                   <div class="stb-form-group">
-                    <div class="input-group col-md-6">
+                    <div class="input-group col-xs-10">
                       <input id="onsketSparebelop" name="onsketSparebelop" class="form-control">
                       <div class="input-group-addon">kr</div>
                     </div>
@@ -727,7 +732,7 @@ $(window).resize(function() {
         <div class="panel-heading">
           <h4 class="panel-title">
             <a class="accordion" data-toggle="collapse" data-parent="#accordion">
-              2 Personopplysninger <span class="stb-sprite-small chevron-up pull-right"></span>
+              <span class="step">2</span> Personopplysninger <span class="stb-sprite-medium chevron-up pull-right"></span>
             </a>
           </h4>
         </div>
@@ -794,7 +799,7 @@ $(window).resize(function() {
         <div class="panel-heading">
           <h4 class="panel-title">
             <a class="accordion" data-toggle="collapse" data-parent="#accordion">
-              3 Kvittering <span class="stb-sprite-small chevron-up pull-right"></span>
+              <span class="step">3</span> Kvittering <span class="stb-sprite-medium chevron-up pull-right"></span>
             </a>
           </h4>
         </div>
