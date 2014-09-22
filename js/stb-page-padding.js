@@ -103,19 +103,20 @@ $(document).ready(function() {
  
   //check if URL already has a hash and scroll to the correct heading 
   /**
-   * @todo Clean this up. Do not assume that all hash URLS are links to headings, sanitize and add tests!
+   * @todo Clean this up. Do not assume that all hash URLS are links to headings, sanitize and add tests! Angular uses hash URLs to simulate page navigation
    *
    */
-  if(window.location.hash.length > 0) {
-
-    try{
+  if (window.location.hash.length > 0) {
+    try {
       var hashId = window.location.hash;
       //if a matching h3 or h4 has the hash ID, then scroll to it.
       if($("h3"+hashId).length > 0 || $("h4"+hashId).length > 0) {
         scrollToHash( hashId );
   	  }
 
-    }catch(e){}
+    } catch(e) {
+      // Don't do a thing!
+    }
   }
   
   // Perform a smooth page scroll to an anchor on the same page.
