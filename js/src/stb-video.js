@@ -61,8 +61,6 @@ function onPlayerStateChangeInline(event) {
   if(event.data == 0){
     $(event.target.d).prev().show();
     event.target.seekTo(0, false);
-  }else if(event.data == 1){
-    $(event.target.d).prev().fadeOut('slow');
   }else if(event.data == 2){
     $(event.target.d).prev().show();
   }
