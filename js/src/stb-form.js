@@ -46,7 +46,6 @@ var idValidator = {
 };
 
 $("document").ready(function(){
-  $(".row .column").matchHeight(true);
 
   var bootstrapEnv = findBootstrapEnvironment();
 
@@ -68,23 +67,24 @@ $("document").ready(function(){
           e.preventDefault();
 
           var $form = $(e.target),
-              validator = $form.data('bootstrapValidator'),
-              submitButton = validator.getSubmitButton();
+          validator = $form.data('bootstrapValidator'),
+          submitButton = validator.getSubmitButton();
 
-          var nextPanel = $('.formSection.active').next('section.formSection');
-          $('#step-'+$('.formSection.active').attr('id')).removeClass('prog-todo').addClass('prog-done');
-          navigateToSection(nextPanel);
+          validatedSuccessDesktop();
 
         });
 
     $('#backButton').click(function(){
-      navigateToSection($('.formSection.active').prev('section.formSection'));
+      navigateToSectionDesktop($('.formSection.active').prev('section.formSection'));
       $('#nextButton').removeClass("disabled").prop("disabled", false);
     });
 
     $('.progressBar-circle li').click(function(){
-      var panelId = $(this).attr('id').split('-')[1];
-      navigateTo($('#'+panelId));
+      var section = $('#'+$(this).attr('id').split('-')[1]);
+      if(validateSectionDesktop(section)){
+        navigateToSectionDesktop(section);
+      }
+
     });
 
 
@@ -107,19 +107,13 @@ $("document").ready(function(){
               validator = $form.data('bootstrapValidator'),
               submitButton = validator.getSubmitButton();
 
-          var currentActive = $('.panel-collapse.collapse.in');
-          var nextActive = $(currentActive).parent().next().find('div.panel-collapse');
-          navigateToNext(currentActive, nextActive);
+          validatedSuccessMobile();
         });
 
     $('.backButton').click(function(){
       var currentActive = $('.panel-collapse.collapse.in');
       var nextActive = $(currentActive).parent().prev().find('div.panel-collapse');
-      setActiveMobile(currentActive, nextActive);
-    })
-
-    $(".nextButton").click(function(event){
-      validateFieldsMobile(event);
+      navigateToSectionMobile(currentActive, nextActive);
     });
 
     formSelector.find('a.accordion').click(function(){
@@ -128,14 +122,16 @@ $("document").ready(function(){
       if(nextActive.parent().hasClass('completed') || nextActive.parent().hasClass('current')){
         if(currentActive.parent().hasClass('completed')){
           if(validateForm(formSelector)){
-            setActiveMobile(currentActive, nextActive);
+            navigateToSectionMobile(currentActive, nextActive);
           }else{
-            $('html, body').animate({
-              scrollTop: $('div.has-error:first').offset().top-100
-            }, 1000);
+            if($('div.has-error:first').length != 0){
+              $('html, body').animate({
+                scrollTop: $('div.has-error:first').offset().top-100
+              }, 1000);
+            }
           }
         }else{
-          setActiveMobile(currentActive, nextActive);
+          navigateToSectionMobile(currentActive, nextActive);
         }
       }
 
@@ -156,43 +152,29 @@ $("document").ready(function(){
 
 });
 
-function validateForm(form){
-  var bsValidator = form.data('bootstrapValidator');
-  bsValidator.validate();
-  return bsValidator.isValid();
+function validatedSuccessDesktop(){
+  var nextPanel = $('.formSection.active').next('section.formSection');
+  $('#step-'+$('.formSection.active').attr('id')).removeClass('prog-todo').addClass('prog-done');
+  navigateToSectionDesktop(nextPanel);
 }
 
 //Desktop version Javascript
 //Navigates to next section if completed/ongoing and validates the current section
-function navigateTo(next){
+function validateSectionDesktop(next){
   //Check if we can go to the section
   if(stepPanel(next).hasClass('prog-done') || stepPanel(next).hasClass('prog-clickable')){
     var currentActive = $('.formSection.active');
     //If section has been completed before it should be validated for possible changes.
     if(stepPanel(currentActive).hasClass('prog-done')){
-      if(validateForm($('form.validateForm'))){
-        navigateToSection(next)
-      }else{
-        if($('div.has-error:first').length != 0){
-          $('html, body').animate({
-            scrollTop: $('div.has-error:first').offset().top-100
-          }, 1000);
-        }
-
-      }
+       validateSection();
     }else{
-      navigateToSection(next);
+      return true;
     }
   }
 }
 
-//Get the related step in the progress bar
-function stepPanel(element){
-  return $('#step-'+element.attr('id'));
-}
-
 //Set the next panel to active
-function navigateToSection(nextActive){
+function navigateToSectionDesktop(nextActive){
 
   var currentActive = $('.formSection.active');
   if(currentActive.attr('id') != nextActive.attr('id')){
@@ -222,18 +204,19 @@ function navigateToSection(nextActive){
 
     $('body,html').animate({scrollTop: 0}, 800);
   }
-
 }
 
 
 //Mobile version javascript
-function navigateToNext(currentActive, nextActive){
+function validatedSuccessMobile(){
+  var currentActive = $('.panel-collapse.collapse.in');
+  var nextActive = $(currentActive).parent().next().find('div.panel-collapse');
   $(currentActive).parent().addClass('completed').removeClass('current');
   nextActive.parent().addClass('current');
-  setActiveMobile(currentActive, nextActive);
+  navigateToSectionMobile(currentActive, nextActive);
 }
 
-function setActiveMobile(currentActive, nextActive){
+function navigateToSectionMobile(currentActive, nextActive){
   if(currentActive.attr('id') != nextActive.attr('id')){
     $(currentActive).collapse('hide');
     $(nextActive).collapse('show');
@@ -241,27 +224,43 @@ function setActiveMobile(currentActive, nextActive){
       $('form.validateFormMobile a.accordion').off();
     }
     $('body,html').animate({scrollTop: 0}, 800);
-    // nextActive.prev().find('span:first').next().toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
   }else{
     $(currentActive).collapse('toggle');
-    //nextActive.prev().find('span:first').next().toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
   }
 }
 
-function validateFieldsMobile(event){
+//Common functions
+function validateSection(mobile){
   event.preventDefault();
-  var currentActive = $('.panel-collapse.collapse.in');
-  var nextActive = $(currentActive).parent().next().find('div.panel-collapse');
-  if(validateForm($('form.validateFormMobile'))){
-    setActiveMobile(currentActive, nextActive);
+  var theForm;
+  if(mobile){
+    theForm = $('form.validateFormMobile');
+  }else{
+    theForm = $('form.validateForm');
+  }
+
+  if(validateForm(theForm)){
+    return true;
+
   }else{
     if($('div.has-error:first').length != 0){
       $('html, body').animate({
         scrollTop: $('div.has-error:first').offset().top-100
       }, 1000);
     }
-
+    return false;
   }
+}
+
+function validateForm(form){
+  var bsValidator = form.data('bootstrapValidator');
+  bsValidator.validate();
+  return bsValidator.isValid();
+}
+
+//Get the related step in the progress bar
+function stepPanel(element){
+  return $('#step-'+element.attr('id'));
 }
 
 function cancelSubmitForm(){
