@@ -64,7 +64,7 @@ $("document").ready(function(){
 // Handling automatic generation of toc lists on article pages
 $(document).ready(function() {
   // Prepare the row that contains the table of contents
-  var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">G&aring; direkte til<span class=" visible-xs visible-sm stb-sprite-small chevron-down pull-right"></span></p><ul class="items"></ul></div></div>';
+  var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">G&aring; direkte til<span class=" stb-sprite-medium chevron-down pull-right"></span></p><ul class="items" style="display: none;"></ul></div></div>';
   
   // Place the table of content above the first h3.toc-header
   $(toclist).insertBefore( $('h3.toc-header:first').closest("div.row") );
@@ -154,11 +154,10 @@ $(document).ready(function(){
   // hide and show articles list 
   $('.toc-list p').click(function() {
     // if the media screen width is large, then don't do anything
-    if( $( window ).width() <= 992) {
       // the following will apply for mobile view
       $('.toc-list .items').slideToggle();
       $('.toc-list p span').toggleClass("chevron-down chevron-up");
-    }
+    
   });
 });
 
