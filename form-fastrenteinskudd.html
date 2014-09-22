@@ -251,6 +251,7 @@ function navigateToSection(nextActive){
       $("#nextButton").text("Send");
     }else if(nextActive.is("#kvittering")){
       $("#navigationButtons").hide();
+      $('.progressBar-circle li').off();
     }else{
       $("#nextButton").text('Neste').removeClass("disabled");
     }

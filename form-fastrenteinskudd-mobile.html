@@ -247,8 +247,8 @@ function setActiveMobile(currentActive, nextActive){
   if(currentActive.attr('id') != nextActive.attr('id')){
     $(currentActive).collapse('hide');
     $(nextActive).collapse('show');
-    if(nextActive.attr('id') == 'oppsummering'){
-      nextActive.find('.submitButton').text('Send inn');
+    if(nextActive.attr('id') == 'kvittering'){
+      $('a.accordion').off();
     }
     // nextActive.prev().find('span:first').next().toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
   }else{
@@ -784,7 +784,7 @@ $(window).resize(function() {
                 <input id="epost" name="epost" type="text" class="" placeholder="Epost">
               </div>
               <button type="button" class="stb-btn transparent light backButton">Tilbake</button>
-              <button type="submit" class="stb-btn left-margin-10 nextButton">Neste</button>
+              <button type="submit" class="stb-btn left-margin-10 nextButton">Send inn</button>
               <hr>
               <div>
                 <p><a href="#" class="cancel-btn" onclick="cancelSubmitForm()" type="button"><span class="glyphicon glyphicon-remove"></span> Avbryt skjemautfylling</a></p>
