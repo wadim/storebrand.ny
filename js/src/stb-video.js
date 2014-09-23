@@ -1,17 +1,14 @@
-// 2. This code loads the IFrame Player API code asynchronously.
+// This loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
-
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var bootstrapEnv;
 
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
+// This function creates an <iframe> (and YouTube player) after the API code downloads.
 
 function onYouTubeIframeAPIReady() {
-
   bootstrapEnv = findBootstrapEnvironment();
   $('.video-player-banner').each(function(index, element){
     new YT.Player($(element).attr('id'), {
@@ -36,7 +33,7 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
-// 4. The API will call this function when the video player is ready.
+// The API will call this function when the video player is ready.
 function onPlayerReadyInline(event) {
   $(event.target.d).prev().click(function(){
     event.target.playVideo();
@@ -54,14 +51,13 @@ function onPlayerReadyBanner(event) {
   });
 }
 
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
+// The API calls this function when the player's state changes.
+// The function indicates that when playing a video (state=1), the player should play for six seconds and then stop.
 function onPlayerStateChangeInline(event) {
   if(event.data == 0){
     $(event.target.d).prev().show();
     event.target.seekTo(0, false);
-  }else if(event.data == 2){
+  } else if(event.data == 2) {
     $(event.target.d).prev().show();
   }
 };
@@ -73,8 +69,7 @@ function onPlayerStateChangeBanner(event) {
 }
 
 function stopVideoBanner(player) {
-
-  if(bootstrapEnv == 'md' || bootstrapEnv == 'lg'){
+  if(bootstrapEnv == 'md' || bootstrapEnv == 'lg') {
     player.stopVideo();
     player.seekTo(0, false);
   }
@@ -84,7 +79,7 @@ function stopVideoBanner(player) {
   bannerVideo.parent().addClass('top-padding-30');
 }
 
-function playVideoBanner(player){
+function playVideoBanner(player) {
   var bannerVideo = $(player.d).closest('.banner-video');
   bannerVideo.parent().removeClass('top-padding-30');
   bannerVideo.children('.video-text').hide(500);
@@ -97,13 +92,11 @@ function playVideoBanner(player){
 
 function findBootstrapEnvironment() {
   var envs = ['xs', 'sm', 'md', 'lg'];
-
   $el = $('<div>');
   $el.appendTo($('body'));
 
   for (var i = envs.length - 1; i >= 0; i--) {
     var env = envs[i];
-
     $el.addClass('hidden-'+env);
     if ($el.is(':hidden')) {
       $el.remove();
