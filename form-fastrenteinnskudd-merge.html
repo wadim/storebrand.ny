@@ -30,12 +30,12 @@ var validationFields = {
       trigger: 'blur',
       validators: {
         notEmpty: {
-          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10">Oppgi ønsket sparebeløp</span> '
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10">Oppgi ønsket sparebeløp.</span>'
         },
         between: {
           min: 100000 ,
           max: 5000000,
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Beløpet må være mellom 100 000 og 5 000 000 kr'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Beløpet må være mellom 100 000 og 5 000 000 kr.</span>'
         }
       }
     },
@@ -43,7 +43,7 @@ var validationFields = {
       container: '.periode-message',
       validators: {
         notEmpty: {
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi periode'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Oppgi periode.</span>'
         }
       }
     },
@@ -52,11 +52,11 @@ var validationFields = {
       trigger: 'blur',
       validators: {
         notEmpty: {
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi navn'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10">  Oppgi navn.</span>'
         },
         regexp: {
           regexp: /^[a-z\s]+$/i,
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Et navn kan kun bestå av bokstaver fra alfabetet.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Et navn kan kun bestå av bokstaver fra alfabetet.</span>'
         }
       }
     },
@@ -65,11 +65,11 @@ var validationFields = {
       trigger: 'blur',
       validators: {
         notEmpty: {
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi postnummer'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Oppgi postnummer.</span>'
         },
         regexp: {
           regexp: /^\d{4}$/,
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Postnummeret må bestå av 4 siffer.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Postnummeret må bestå av 4 siffer.</span>'
         }
       }
     },
@@ -78,11 +78,11 @@ var validationFields = {
       trigger: 'blur',
       validators: {
         notEmpty: {
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi poststed'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Oppgi poststed.</span>'
         },
         regexp: {
           regexp: /^[a-z\s]+$/i,
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Et stedsnavn kan kun bestå av bokstaver fra alfabetet.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Et stedsnavn kan kun bestå av bokstaver fra alfabetet.</span>'
         }
       }
     },
@@ -98,10 +98,10 @@ var validationFields = {
       container: '.mobilnummer-message',
       validators: {
         notEmpty: {
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi mobilnummer'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Oppgi mobilnummer.</span>'
         },
         digits: {
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Telefonnummeret må bestå av kun siffer.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Telefonnummeret må bestå av kun siffer.</span>'
         }
 
       }
@@ -111,10 +111,10 @@ var validationFields = {
       container: '.epost-message',
       validators: {
         notEmpty: {
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi epost'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Oppgi epost.</span>'
         },
         emailAddress: {
-          message: '<span class="stb-color-sprite-medium warning circle"></span> Detter er ikke en gyldig epost adresse.'
+          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10"> Detter er ikke en gyldig epost adresse.</span>'
         }
       }
     }
