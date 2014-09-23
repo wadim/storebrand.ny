@@ -1,4 +1,4 @@
-/* Possibly temporary styling of glyphicon. Not sure if we will actually use it. */
+/* Temporary styling of glyphicon. We will eventually replace all use of glyphicons with proprietary homemade icons. */
 // Adjustments to BS default glyphicons
 .stb-glyphicon {
   .glyphicon();
@@ -7,12 +7,10 @@
 }
 /* End of glyphicon fix. */
 
-
 .stb-sprite-small, 
 .stb-sprite-medium,
 .stb-color-sprite-small,
-.stb-color-sprite-medium
- {
+.stb-color-sprite-medium {
   display: inline-block;
 }
 
@@ -20,6 +18,7 @@
   background: url("../images/stb-sprites/general-sprites.png") no-repeat;  
   width: 16px;
   height: 16px;
+  
   &.chevron-up {
     background-position: 0px 0px;
     &.white {
@@ -778,15 +777,17 @@
   
 }
 
-
-div.circle-12,
-span.circle-12 {
+// Start of suspected unnecessary code. If nobody misses it by October 1, remove it.
+div.xcircle-12,
+span.xcircle-12 {
   height: 24px;
   width: 24px;
   -webkit-border-radius: 24px;
   -moz-border-radius: 24px;
   border-radius: 24px;
 }
+// End of suspected unnecessary code, to be removed on October 1.
+
 
 div.circle-16,
 span.circle-16 {
@@ -816,34 +817,26 @@ span.circle-24 a {
   border-bottom: none;
 }
 
-
-// Retina displays
+// Adjustments for displays with enhanced pixel density
 @media
   (min--moz-device-pixel-ratio: 2),
   (-o-min-device-pixel-ratio: 2/1),
   (-webkit-min-device-pixel-ratio: 2),
   (min-device-pixel-ratio: 2) {
   
-  .stb-sprite-small{
+  .stb-sprite-small {
     background: url("../images/stb-sprites/general-sprites-2x.png") no-repeat;
   }
   
-  .stb-sprite-medium{
+  .stb-sprite-medium {
     background: url("../images/stb-sprites/general-sprites-2x.png") no-repeat;
-    /* Bring down size to 1x size */
   }
   
   .stb-color-sprite-small {
     background: url("../images/stb-sprites/color-sprites-2x.png") no-repeat;
-    /* Bring down size to 1x size */
-    
   }
 
-.stb-color-sprite-medium {
+  .stb-color-sprite-medium {
     background: url("../images/stb-sprites/color-sprites-2x.png") no-repeat;  
-   /* Bring down size to 1x size */
+  }
 }
-
-}
-
-
