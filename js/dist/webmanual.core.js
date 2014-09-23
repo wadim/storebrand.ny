@@ -11,6 +11,25 @@ function hexc(a) {
     for (var c = 1; 3 >= c; ++c) b[c] = parseInt(b[c], 10).toString(16), 1 == b[c].length && (b[c] = "0" + b[c]);
     return color = "#" + b.join("")
 }
+
+$("document").ready(function(){
+  $(".row .column").matchHeight(true);
+})
+    
+$(window).resize(function() {
+  $(".row .column").matchHeight(true);
+});
+
+//Code for toogle demonstration of Notification boxes
+function toggleMsg(){
+  hideErrorMsg();
+  hideCommonMsg();
+  setTimeout(function(){
+    showErrorMsg();
+    showCommonMsg();
+  }, 1000);
+}
+
 $(document).ready(function() {
         $.datepicker.regional.no = {
             closeText: "Lukk",
