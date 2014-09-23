@@ -103,7 +103,7 @@ $(document).ready(function() {
  
   //check if URL already has a hash and scroll to the correct heading 
   /**
-   * @todo Clean this up. Do not assume that all hash URLS are links to headings, sanitize and add tests! Angular uses hash URLs to simulate page navigation
+   * @todo Clean this up, must be more robust! Do not assume that all hash URLS are links to headings, sanitize and add tests. Angular uses hash URLs to simulate page navigation
    *
    */
   if (window.location.hash.length > 0) {
@@ -450,51 +450,7 @@ $("document").ready(function(){
   $(document).bind('keydown', 'shift+t', function(){$('html, body').animate({ scrollTop: 0}, 500);});
 });
 
-
-//Functions for chat choice on minibox
-function openChatChoice(){
-  $('.allContact').slideUp('slow');
-  $('.chatWhat').slideDown('slow');
-}
-function closeChatChoice(){
-  $('.allContact').slideDown('slow');
-  $('.chatWhat').slideUp('slow');
-}
-
-
-//Function to handle only numbers and nothing else in the input field
-
-function numbersonly(myfield, e, dec) {
-  var key;
-  var keychar;
-
-  if (window.event)
-    key = window.event.keyCode;
-  else if (e)
-    key = e.which;
-  else
-    return true;
-  keychar = String.fromCharCode(key);
-
-  // control keys
-  if ((key==null) || (key==0) || (key==8) || (key==9) || (key==13) || (key==27) )
-    return true;
-
-  // numbers
-  else if ((("0123456789").indexOf(keychar) > -1))
-    return true;
-
-  // decimal point jump
-  else if (dec && (keychar == ".")) {
-    myfield.form.elements[dec].focus();
-    return false;
-  }
-  
-  else
-   return false;
-}
-
-//Checks for list groups with .expandable class and makes them expandable.
+// Check  for list groups with .expandable class and make them expandable
 $(document).ready(function(){
   $('ul.stb-list-group.expandable').each(function(index){
     makeExpandableList($(this),2);
@@ -503,35 +459,7 @@ $(document).ready(function(){
 });
 
 
-
-//Making lists expandable
-function makeExpandableList(selector){
-  initialExpandable(selector);
-
-  var showMore = selector.find('.showMore');
-
-  showMore.click(function() {
-    if(showMore.hasClass('open')){
-      initialExpandable(selector);
-      showMore.find('span').toggleClass('chevron-up red chevron-down');
-    }else{
-      selector.children('li').show(400);
-      showMore.find('span').toggleClass('chevron-up red chevron-down');
-    }
-    showMore.toggleClass('open');
-  });
-}
-
-//Loops through list, showing li elements with summary class, and hides the other li elements
-function initialExpandable(selector){
-  selector.children('li').each(function(index){
-    if(!$(this).is('.summary, .showMore')){
-      $(this).hide(400);
-    }
-  });
-}
-
-//Google Analytics eventtagging -- automated for various designelements
+// Google Analytics event tagging - automated for various design elements
 $(document).ready(function(){  
 
     $('button').bind( "click", function() {
@@ -561,8 +489,6 @@ $(document).ready(function(){
 
 });
 
-
-
 //Options example object.
 /*var options = {
   onConfirmAction : function(){console.log("Confirm")},
@@ -574,30 +500,27 @@ $(document).ready(function(){
 */
 
 
-
 var modalDialog = {
-
   triggerModal : function(type,options){
-
     if(type == 'confirm'){
-     var markup = ' <div class="modal stb-modal fade" id="dialogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
-         '<div class="modal-dialog modal-span6">' +
-          '<div class="modal-content">' +
-            '<div class="modal-header stbcolor-secondary fifth">' +
-              '<button type="button" class="close" data-dismiss="modal" onclick="options.onCloseAction();"><p class="pull-left">Lukk</p><span class="stb-sprite-medium remove pull-left"></span></button>' +
-              '<h4 class="modal-title"><span class="stb-color-sprite-medium info"></span></h4>' +
-            '</div>' +
-            '<div class="modal-body">' +
-              '<h3>'+options.title+'</h3>' +
-              '<p>'+options.text+'</p>' +
-              '<form>' +
-               '<button class="stb-btn" onclick="options.onConfirmAction();">Yes</button>' +
-               '<button class="stb-btn transparent light" onclick="options.onCancelAction();">No</button>' +
-              '</form>' +
-            '</div>' +
-          '</div>' +
-         '</div>';
-        '</div>';
+      var markup = '<div class="modal stb-modal fade" id="dialogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
+                     '<div class="modal-dialog modal-span6">' +
+                       '<div class="modal-content">' +
+                         '<div class="modal-header stbcolor-secondary fifth">' +
+                           '<button type="button" class="close" data-dismiss="modal" onclick="options.onCloseAction();"><p class="pull-left">Lukk</p><span class="stb-sprite-medium remove pull-left"></span></button>' +
+                           '<h4 class="modal-title"><span class="stb-color-sprite-medium info"></span></h4>' +
+                         '</div>' +
+                         '<div class="modal-body">' +
+                           '<h3>'+options.title+'</h3>' +
+                           '<p>'+options.text+'</p>' +
+                           '<form>' +
+                             '<button class="stb-btn" onclick="options.onConfirmAction();">Yes</button>' +
+                             '<button class="stb-btn transparent light" onclick="options.onCancelAction();">No</button>' +
+                           '</form>' +
+                         '</div>' +
+                       '</div>' +
+                     '</div>';
+                   '</div>';
 
       if($('#dialogModal').length == 0){
         $('body').append(markup);
@@ -605,15 +528,11 @@ var modalDialog = {
 
       $('#dialogModal').show();
       $('#dialogModal').modal();
-
     }
-
   }
 }
 
-
-// script for populating the dropdown with the selected tab link
-
+// Script for populating the dropdown with the selected tab link
 $(document).ready(function() {
 	  $(".dropdown-tabs .dropdown .heading").html($(".dropdown-tabs .dropdown-menu li.active a").html());
 	  $(".dropdown-tabs .dropdown-menu li a").click(function() {
@@ -626,32 +545,13 @@ $(document).ready(function() {
 	  });
 });
 
-//Script for translating alias classes for Enonic editor One class names is not translated.
-
+// Script for translating alias classes for Enonic editor One class names is not translated.
 $(document).ready(function(){  
     $( ".regularButton").each(function() {$(this).removeClass(); $(this).addClass('stb-btn transparent light');  }); 
 }); 
 
-// Script to toogle topmessages and to set cookie for the session (not yet created)
-
-function hideErrorMsg(){
-  $('.errormessage').slideUp('slow');
-  //createCookie('erroMessageRead','Yes'); 
-}
-function hideCommonMsg(){
-  $('.commonmessage').slideUp('slow');
-  //createCookie('commonMessageRead','Yes'); 
-}
-function showErrorMsg(){
-  $('.errormessage').slideDown('slow');
-}
-function showCommonMsg(){
-  $('.commonmessage').slideDown('slow');
-}
-
 // Script to hightlight anchor tags in mini and big boxes on mouseenter
-
-$("document").ready(function(){
+$("document").ready(function() {
   $( ".mini" ).mouseenter(function() {
     $('.mini a').css('color', '#DA291C');
   });

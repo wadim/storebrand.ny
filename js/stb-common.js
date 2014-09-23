@@ -132,6 +132,104 @@ function gup(name){
     return results[1];
   }
 }
+/* ***** END OF GET URL PARAMETER BY NAME ***** */
+
+/* ***** START Accept only numbers and nothing else in the input field ***** */
+function numbersonly(myfield, e, dec) {
+  var key;
+  var keychar;
+
+  if (window.event)
+    key = window.event.keyCode;
+  else if (e)
+    key = e.which;
+  else
+    return true;
+  keychar = String.fromCharCode(key);
+
+  // control keys
+  if ((key==null) || (key==0) || (key==8) || (key==9) || (key==13) || (key==27) )
+    return true;
+
+  // numbers
+  else if ((("0123456789").indexOf(keychar) > -1))
+    return true;
+
+  // decimal point jump
+  else if (dec && (keychar == ".")) {
+    myfield.form.elements[dec].focus();
+    return false;
+  }
+  
+  else
+   return false;
+}
+/* ***** END Accept only numbers and nothing else in the input field ***** */
+
+
+/* ***** START Functions for chat choice on minibox ***** */
+function openChatChoice(){
+  $('.allContact').slideUp('slow');
+  $('.chatWhat').slideDown('slow');
+}
+function closeChatChoice(){
+  $('.allContact').slideDown('slow');
+  $('.chatWhat').slideUp('slow');
+}
+/* ***** END Functions for chat choice on minibox ***** */
+
+
+/* ***** START Make lists expandable ***** */
+function makeExpandableList(selector){
+  initialExpandable(selector);
+
+  var showMore = selector.find('.showMore');
+
+  showMore.click(function() {
+    if(showMore.hasClass('open')){
+      initialExpandable(selector);
+      showMore.find('span').toggleClass('chevron-up red chevron-down');
+    }else{
+      selector.children('li').show(400);
+      showMore.find('span').toggleClass('chevron-up red chevron-down');
+    }
+    showMore.toggleClass('open');
+  });
+}
+/* ***** END Make lists expandable ***** */
+
+
+/* ***** START Loop through list, showing li elements with summary class and hide all other li elements ***** */
+function initialExpandable(selector){
+  selector.children('li').each(function(index){
+    if(!$(this).is('.summary, .showMore')){
+      $(this).hide(400);
+    }
+  });
+}
+/* ***** END Loop through list, showing li elements with summary class and hide all other li elements ***** */
+
+
+/* ***** START TOGGLING "important messages" ***** */
+function showErrorMsg() {
+  $('.errormessage').slideDown('slow');
+}
+
+function hideErrorMsg() {
+  $('.errormessage').slideUp('slow');
+  createCookie('errorMessageRead','Yes'); 
+}
+
+function showCommonMsg() {
+  $('.commonmessage').slideDown('slow');
+}
+
+function hideCommonMsg() {
+  $('.commonmessage').slideUp('slow');
+  createCookie('commonMessageRead','Yes'); 
+}
+/* ***** END TOGGLING "important messages" ***** */
+
 
 /* ***** CREATE COOKIE ***** */
 function createCookie(n,value,days) {
