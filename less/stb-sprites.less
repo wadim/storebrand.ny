@@ -777,18 +777,18 @@
   
 }
 
-// Start of suspected unnecessary code. If nobody misses it by October 1, remove it.
-div.xcircle-12,
-span.xcircle-12 {
+// Circling of progress bar counters in forms
+div.circle-12,
+span.circle-12 {
   height: 24px;
   width: 24px;
   -webkit-border-radius: 24px;
   -moz-border-radius: 24px;
   border-radius: 24px;
 }
-// End of suspected unnecessary code, to be removed on October 1.
+// End of circling of progress bar counters in forms
 
-
+// Circling of icons
 div.circle-16,
 span.circle-16 {
   height: 36px;
@@ -809,13 +809,16 @@ span.circle-24 {
   -moz-border-radius: 48px;
   border-radius: 48px;
 }
+// End of circling of icons
 
+// Removing "underline" border of links inside circled icons
 div.circle-16 a,
 div.circle-24 a,
 span.circle-16 a,
 span.circle-24 a {
   border-bottom: none;
 }
+// End of removing "underline" border of links inside circled icons
 
 // Adjustments for displays with enhanced pixel density
 @media
@@ -826,17 +829,25 @@ span.circle-24 a {
   
   .stb-sprite-small {
     background: url("../images/stb-sprites/general-sprites-2x.png") no-repeat;
+    // reduce to 1x size
+    background-size: 600px;
   }
   
   .stb-sprite-medium {
     background: url("../images/stb-sprites/general-sprites-2x.png") no-repeat;
+    // reduce to 1x size
+    background-size: 600px;
   }
   
   .stb-color-sprite-small {
     background: url("../images/stb-sprites/color-sprites-2x.png") no-repeat;
+    // reduce to 1x size
+    background-size: 200px;
   }
 
   .stb-color-sprite-medium {
-    background: url("../images/stb-sprites/color-sprites-2x.png") no-repeat;  
+    background: url("../images/stb-sprites/color-sprites-2x.png") no-repeat;
+    // reduce to 1x size
+    background-size: 200px;  
   }
 }
