@@ -1,10 +1,10 @@
 .stb-btn {
-  //----------------------------------------  import BS defaults:
+  // ***** Importing Bootstrap default settings:
   .btn;
   .btn-default;
 
-  &:focus{
-  outline: 0;
+  &:focus {
+    outline: 0;
   }
   
   // Base setup, defaults set for "primary button", so there is no need to add a class to indicate that the button is primary
@@ -18,9 +18,6 @@
   padding: 0 12px;
   min-width: 100px;
   .box-shadow(none);
-  
-  // Stop developers from making buttons that are too wide - removed max-width. CMS limits the number of characters.
-  //max-width: 200px;
   overflow: hidden;
   cursor: pointer;
   
@@ -34,7 +31,7 @@
     color: @stb-primary-white;
   }
 
-  &.shimmer{
+  &.shimmer {
     -webkit-animation: shimmerGreen 2s ease-in-out 0s infinite;
     animation-name: shimmerGreen 2s ease-in-out 0s infinite;
   }
@@ -49,12 +46,12 @@
     }
   }
   
-  &.transparent{
+  &.transparent {
     background: transparent;
     border-style: solid;
     border-width: 1px;
 
-    &.light{
+    &.light {
       color: @stb-primary-black;
       &:hover, &:focus, &:active {
         background-color: rgba(0, 0, 0, 0.1);
@@ -62,7 +59,7 @@
       }
     }
 
-    &.dark{
+    &.dark {
       color: @stb-primary-white;
       &:hover, &:focus, &:active {
         background-color: rgba(0, 0, 0, 0.2);
@@ -70,11 +67,11 @@
       }
     }
 
-    &.maxWidth{
+    &.maxWidth {
       max-width: 100%;
     }
     
-    &.shimmer{
+    &.shimmer {
       -webkit-animation: shimmerTransparent 2s ease-in-out 0s infinite;
       animation-name: shimmerTransparent 2s ease-in-out 0s infinite;
     }
@@ -189,9 +186,9 @@
 /* Changes default for button class="close"  */
 
 button.close {
-    opacity: 1;
-    text-shadow: none;
-  }
+  opacity: 1;
+  text-shadow: none;
+}
 
 
 
