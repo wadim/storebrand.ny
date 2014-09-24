@@ -115,6 +115,12 @@
     .jslider .jslider-bg .r{
       background-color: white;
     }
+
+    @media (max-width: 768px){
+      .stb-table td{
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 
@@ -427,16 +433,14 @@
 <div class="container">
   <div class="row top-margin-30-mdlg">
     <div class="col-md-6">
-      <h1 class="stb-font">Boliglån</h1>
-      <p class="intro visible-lg visible-md">
-        Vi hjelper deg med på realisere boligdrømmen.Hos oss får du en av markedets beste renter på boliglån.
-      </p>
-      <p class="intro visible-xs visible-sm">
-        Her kan du søke om boliglån. Sjekk hvor mye du kan få i lån og send oss en lånesøknad - raskt og enkelt.
+      <h1 class="stb-font">Egensparing til pensjon</h1>
+      <p class="intro">
+       Ekstrapensjon er den pensjonssparingen vi anbefaler til folk flest.
+       Det er enkelt og effektivt, og du kan når som helst ta ut pengene om planene dine endrer seg.
       </p>
     </div>
     <div class="col-md-6">
-      <img src="/images/product-boliglaan.png" class="center-block banner-image img-responsive" />
+      <img src="/images/product-ekstrapensjon.png" class="center-block banner-image img-responsive" />
     </div>
   </div>
 </div>
@@ -445,84 +449,126 @@
   <div class="container">
    <div class="row top-margin-20 bottom-margin-20">
       <div class="col-md-8">
-        <h2 class="stb-font">Vi tilpasser boliglånet til din økonomi</h2>
+        <h2 class="stb-font">Start gjerne i det små, men start nå</h2>
         <p class="visible-lg visible-md">
           For å vurdere hvor mye du kan låne må du sende oss en søknad om boliglån.
           Ønsker du en pekepinn på hvor mye du kan få i lån før du søker kan du benytte vår lånekalkulator.
         </p>
         <ul class="stb">
-          <li>Nedbetaling på opptil 40 år</li>
-          <li>Avdragsfrihet på inntil 10 år</li>
-          <li>Du kan låne inntil 85% av boligens verdi</li>
-          <li>Flytende rente</li>
+          <li>Velg det sparebeløpet som passer deg.</li>
+          <li>Vi tilpasser aksjeandelen til det som er anbefalt for din aldersgruppe.</li>
+          <li>Når spareavtalen er på plass, kan du når somhelst endre sparebeløpet og aksjeandelen i nettbanken.</li>
         </ul>
 
-        <button class="stb-btn stb-big-btn"><h3 class="stb-font-light">Søk om lån</h3></button>
-        <p class="top-margin-10">
-          <a href="#">Alle renter og avtalevilkår for boliglån</a>
-        </p>
-        <h2 class="stb-font top-margin-20">Hva koster lånet deg?</h2>
-        <p>Med vår lånekalkulator kan du sjekke hvor mye du kan låne og hva du må betale hver måned med dagens renter.</p>
-        <form role="form">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="stb-form-group">
-                <label for="lanebelop">Lånebeløp</label>
-                <div class="input-group">
-                  <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
-                  <div class="stb-input-group-addon">kr</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="stb-form-group">
-                <label for="boligverdi">Boligens verdi</label>
-                <div class="input-group">
-                  <input class="form-control" id="boligverdi" type="text" placeholder="Beløp"/>
-                  <div class="stb-input-group-addon">kr</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-9 col-md-12">
-              <div class="stb-form-group top-margin-10">
-                <label style="">Nedbetalingsperiode</label>
-                <div>
-                  <input id="nedbetaling-value" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
-                  <input id="stb-slider-nedbetaling" type="slider" name="stb-slider" value="0" />
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-9 col-md-12">
-              <div class="stb-form-group top-margin-10">
-                <label>Lånerente</label>
-                <div>
-                  <input id="lanerente-value" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
-                  <input id="stb-slider-lanerente" type="slider" name="stb-slider" value="0" />
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="stb-form-group top-margin-10">
-              <div class="col-md-8 col-xs-12">
-                <p class="intro pull-left" style="border-bottom: 4px double #000;">10 899 kr i måneden</p>
-              </div>
-              <div class="col-md-2 col-xs-12">
-                <button class="stb-btn transparent light">Sammenligne boliglån</button>
-              </div>
-            </div>
-        </div>
-        </form>
+        <button class="stb-btn stb-big-btn"><h3 class="stb-font-light">Start spareavtale</h3></button>
+
+        <h2 class="stb-font top-margin-20">Hvilken aksjeandel er best for deg?</h2>
+        <p>Blabla før inn tekst her</p>
+        <table class="stb-table no-alt">
+          <thead>
+          <tr class="clickable" rel="#index-nav">
+            <th>Priser</th>
+            <th class="text-right">Storebrand Fordel*</th>
+            <th class="text-right" style="width: 27%">Andre kunder</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Kostnad ved kjøp</td>
+            <td class="text-right">0</td>
+            <td class="text-right">0</td>
+          </tr>
+          <tr>
+            <td>Kostnad ved fondsbytte</td>
+            <td class="text-right">0</td>
+            <td class="text-right">0</td>
+          </tr>
+          <tr>
+            <td>
+              <p class="visible-lg visible-md visible-sm">Årlig administrasjonskostnad (%)</p>
+              <p class="visible-xs">Admin. kostnad (%)</p>
+              <ul class="stb">
+                <li>Alle fond</li>
+                <li>Garantiporteføljen</li>
+              </ul>
+            </td>
+            <td class="text-right">
+              <p></p>
+              <br>
+              <ul class="stb" style="list-style-type: none;">
+                <li>0</li>
+                <li>0</li>
+              </ul>
+            </td>
+            <td class="text-right">
+              <p></p>
+              <br>
+              <ul class="stb" style="list-style-type: none;">
+                <li>0,5</li>
+                <li>0,6</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="visible-lg visible-md visible-sm">Årlig forvaltningskostnad (%)</p>
+              <p class="visible-xs">Forvaltningskostnad (%)</p>
+              <ul class="stb">
+                <li>Balansert profil</li>
+                <li>Forsiktig profil</li>
+                <li>Øvrige fond</li>
+              </ul>
+            </td>
+            <td class="text-right">
+              <p></p>
+              <br>
+              <ul class="stb" style="list-style-type: none;">
+                <li>0,95</li>
+                <li>0,80</li>
+                <li>0,35-4,00</li>
+              </ul>
+            </td>
+            <td class="text-right">
+              <p></p>
+              <br>
+              <ul class="stb" style="list-style-type: none;">
+                <li>1,40</li>
+                <li>1,00</li>
+                <li>0,35-4,00</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Årlig forsikringspremie, avhengig av kjønn og alder(%)</td>
+            <td class="text-right">0,04 (snitt)</td>
+            <td class="text-right">0,04 (snitt)</td>
+          </tr>
+          </tbody>
+        </table>
+        <p>* Standard priser for kunder med pensjonsavtale i Storebrand.</p>
+        <p>Enkelte bedrifter/arbeidsgivere har avtale om andre priser for sine ansatte.</p>
       </div>
       <div class="col-md-4 left-padding-5 top-margin-10">
-        <div class="stb-box first noBorder">
-          <h3 class="box">Boliglånsrente fra</h3>
-          <h2 class="big">3,45%</h2>
-          <p class="petit"> Har du tjenestepensjon i Storebrand får du nominell rente fra 3,45% (effektiv 3,54%)</p>
-          <p class="petit"> Er du helkunde får du nominell rente fra 3,65% (effektiv 3,76%)</p>
-          <button class="stb-btn maxWidth transparent light">Se alle dagens renter</button>
+        <div class="stb-box mini clickable" rel="tel:08880">
+          <div class="row">
+            <div class="col-sm-6 col-md-12">
+              <center><img src="/images/contactus.png"></img></center>
+            </div>
+            <div class="col-sm-6 col-md-12">
+              <h3 class="box">Vi hjelper deg igang</h3>
+              <h3  class="box"><a href="#">Ring 08880</a></h3>
+            </div>
+          </div>
+        </div>
+        <div class="stb-box mini clickable" rel="tel:08880">
+          <div class="row">
+            <div class="col-sm-6 col-md-12">
+              <center><img src="/images/contactus.png"></img></center>
+            </div>
+            <div class="col-sm-6 col-md-12">
+              <h3 class="box"><a href="#">Beregne hvor mye du kan forvente å få i pensjon</a></h3>
+            </div>
+          </div>
         </div>
       </div>
    </div>
@@ -532,33 +578,19 @@
 <div class="container">
   <div class="row top-margin-20">
     <div class="col-md-6">
-      <div class="stb-box mini clickable top-margin-10" rel="tel:08880">
-        <div class="row">
-          <div class="col-xs-4">
-            <center><img class="img-responsive" src="/images/contactus.png"></center>
-          </div>
-          <div class="col-xs-8">
-            <h3 class="box" style="padding-top: 10%"><a href="#"> Dette bør du vite når<br> du søker lån til bolig</a></h3>
-          </div>
+      <div class="stb-box transparent dashed info top-margin-10">
+        <span class="stb-sprite-medium bubble red pull-left top-margin-10 infoIcon"></span>
+        <div class="left-padding-40">
+          <h4>Med ekstrapensjon får du også livsforsikring.</h4>
         </div>
       </div>
-
     </div>
     <div class="col-md-6">
-      <h3 class="stb-font">Dette bør du også tenke på</h3>
-      <div class="stb-list-group" >
-        <a class="list-group-item" href="#">Uføreforsikring</a>
-        <a class="list-group-item" href="#">Gjeldsforsikring</a>
-      </div>
-    </div>
-  </div>
-  <div class="row bottom-margin-40">
-    <div class="col-md-6 top-margin-10">
       <h3 class="stb-font">Ofte stilte spørsmål</h3>
       <div>
         <ul class="accordion" data-widget="stbFaq">
           <li>
-            <a href="#" class="twister">Hvor mye koster lånet?
+            <a href="#" class="twister">Hva skjer med sparepengene om jeg faller fra?
               <span class="number">1</span>
               <span class="expander"></span>
             </a>
@@ -571,7 +603,7 @@
             </div>
           </li>
           <li>
-            <a href="#" class="twister">Hvor mye kan jeg låne?
+            <a href="#" class="twister">Er sparepengene mine låst i spareperioden?
               <span class="number">2</span>
               <span class="expander"></span>
             </a>
@@ -587,7 +619,7 @@
             </div>
           </li>
           <li>
-            <a href="#" class="twister">Hva kreves av dokumentasjon i en lånesøknad?
+            <a href="#" class="twister">Kan jeg gjøre endringe i spareperioden underveis?
               <span class="number">3</span>
               <span class="expander"></span>
             </a>
@@ -604,14 +636,18 @@
         </ul>
       </div>
     </div>
+  </div>
+  <div class="row bottom-margin-40">
     <div class="col-md-6 top-margin-10">
-      <h3 class="stb-font ">Andre låneprodukter</h3>
-      <div class="stb-list-group" >
-        <a class="list-group-item" href="#">Boliglån for Unge(BLU)</a>
-        <a class="list-group-item" href="#">Fastrentelån </a>
-        <a class="list-group-item" href="#">Boligkreditt </a>
-        <a class="list-group-item" href="#">Byggekreditt </a>
-      </div>
+      <h3 class="stb-font">Skatt</h3>
+      <ul class="stb">
+        <li>Avkastningen er fritatt for beskatning i oppsparingstiden.</li>
+        <li>Spareverdien (saldo) inngår i grunnlaget for beregningen av formueskatt.</li>
+        <li>Ved utbetaling blir avkastningen beskattet med 27 %.</li>
+        <li>Ekstrapensjon gir ikke skjermingsfradrag.</li>
+      </ul>
+    </div>
+    <div class="col-md-6 top-margin-10">
     </div>
   </div>
 </div>
