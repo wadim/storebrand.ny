@@ -86,7 +86,14 @@ table.stb-table {
   // Extra padding-right at right end of table
   tr td:last-child, thead tr th:last-child {
     padding-right: 12px;
-  }  
+  }
+
+  //Text in tables drops to 14px on small screens
+  @media (max-width: 768px){
+    td{
+      font-size: 14px;
+    }
+  }
 }
 
 // Visible indication of row clickability
