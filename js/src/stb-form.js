@@ -64,13 +64,16 @@ $("document").ready(function(){
       fields: validationFields
     }).on('success.form.bv', function(e) {
           // Prevent form submission
-          e.preventDefault();
+          if(!$('.formSection.active').hasClass('lastSection')){
+            e.preventDefault();
+            validatedSuccessDesktop();
+          }
 
           var $form = $(e.target),
           validator = $form.data('bootstrapValidator'),
           submitButton = validator.getSubmitButton();
 
-          validatedSuccessDesktop();
+
 
         });
 
@@ -78,6 +81,7 @@ $("document").ready(function(){
       navigateToSectionDesktop($('.formSection.active').prev('section.formSection'));
       $('#nextButton').removeClass("disabled").prop("disabled", false);
     });
+
 
     $('.progressBar-circle li').click(function(){
       var section = $('#'+$(this).attr('id').split('-')[1]);
@@ -101,13 +105,16 @@ $("document").ready(function(){
       fields: validationFields
     }).on('success.form.bv', function(e) {
           // Prevent form submission
-          e.preventDefault();
+          if(!$('.panel-collapse.collapse.in').hasClass('lastSection')){
+            e.preventDefault();
+            validatedSuccessMobile();
+          }
 
           var $form = $(e.target),
               validator = $form.data('bootstrapValidator'),
               submitButton = validator.getSubmitButton();
 
-          validatedSuccessMobile();
+
         });
 
     $('.backButton').click(function(){
