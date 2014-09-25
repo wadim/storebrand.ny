@@ -20,6 +20,90 @@
   <script type="text/javascript" src="/js/stb-common.js"></script>
   <script type="text/javascript" src="/js/stb-page-padding.js"></script>
   <script type="text/javascript" src="/js/dist/jquery.slider.all.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#stb-slider-pensjon").slider({
+        from: 30,
+        to: 75,
+        domNode: "#stb-slider",
+        valueElem: "#stb-slider-value",
+        dimension: '&nbsp;år',
+        calculate: function(a) {
+          return $(this.domNode).siblings(this.valueElem).val(a), a
+        },
+        complete: function() {},
+        onstatechange: function() {
+          var a = $(this.domNode).find(".jslider-bg .l"),
+                  b = $(this.domNode).find(".jslider-bg .r"),
+                  c = $(this.domNode).find(".jslider-pointer");
+          if (c && c.length > 0) {
+            var d = c[0].style.left.split("%")[0],
+                    e = 100 - d;
+            a.css({
+              width: d + "%"
+            }), b.css({
+              width: e + "%",
+              left: d + "%"
+            })
+          }
+        },
+        getPercentVal: function(a) {
+          var b = a,
+                  c = 0,
+                  d = 100;
+          if (b && b.length > 0) {
+            var e = b[0].style.left.split("%")[0];
+            c = e, d = 100 - c
+          }
+          return d
+        }
+      });
+      $("#stb-slider-dagenslonn").slider({
+        from: 0,
+        to: 100,
+        step: 0.1,
+        round: 1,
+        domNode: "#stb-slider",
+        valueElem: "#stb-slider-value",
+        dimension: '&nbsp;%',
+        calculate: function(a) {
+          return $(this.domNode).siblings(this.valueElem).val(a), a
+        },
+        complete: function() {},
+        onstatechange: function() {
+          var a = $(this.domNode).find(".jslider-bg .l"),
+                  b = $(this.domNode).find(".jslider-bg .r"),
+                  c = $(this.domNode).find(".jslider-pointer");
+          if (c && c.length > 0) {
+            var d = c[0].style.left.split("%")[0],
+                    e = 100 - d;
+            a.css({
+              width: d + "%"
+            }), b.css({
+              width: e + "%",
+              left: d + "%"
+            })
+          }
+        },
+        getPercentVal: function(a) {
+          var b = a,
+                  c = 0,
+                  d = 100;
+          if (b && b.length > 0) {
+            var e = b[0].style.left.split("%")[0];
+            c = e, d = 100 - c
+          }
+          return d
+        }
+      });
+
+      $(".row .column").matchHeight(true);
+    });
+
+    $(window).resize(function() {
+      $(".row .column").matchHeight(true);
+    });
+  </script>
   <style>
     .jslider{
       margin-left: 100px;
@@ -35,6 +119,16 @@
 
     .jslider .jslider-bg .r{
       background-color: white;
+    }
+
+    .y-center-arrow {
+      position: absolute;
+      top: 50%;
+      right: 20%;
+    }
+
+    .clickable-div {
+      cursor: pointer;
     }
 
     .category-banner .image {
@@ -349,153 +443,131 @@
 <!-- End top of page -->
 
 <!-- Start actual page contents -->
-<div class="category-banner stbcolor-secondary second">
+<div class="category-banner stbcolor-secondary first">
   <div class="container">
     <div class="row">
       <div class="col-md-6 top-margin-50-mdlg">
         <div class="stb-box dark">
-          <h1>Forsikring</h1>
+          <h1>Pensjon</h1>
           <p class="intro">
-            Når skaden er skjedd eller sykdommen er et faktum, vil du ikke tenke på pengene.
-            Her kan du raskt beregne pris og kjøpe forsikring til deg selv, din familie og dine eiendeler.
+            Fremtidens pensjonister får mindre fra staten og arbeidsgiver. Derfor må de fleste spare mer selv. Her kan du starte pensjonsparing, beregne ditt pensjonstall og få gode råd om hvordan du får bedre pensjon &ndash; helt enkelt.
           </p>
         </div>
       </div>
       <div class="col-md-6 image">
-        <img class="img-responsive" src="/images/forsikring-banner2.png" alt="category banner image" title="category bannner image"/>
+        <img class="img-responsive" src="/images/categorybannerimage.png" alt="category banner image" title="category bannner image"/>
       </div>
     </div>
   </div>
 </div>
 
-<section class="top-margin-20 bottom-margin-20">
-  <div class="container">
-    <h2 class="stb-font">Velg riktig forsikring for deg</h2>
-    <div class="row top-margin-20">
-      <div class="col-md-4">
-        <h3 class="stb-font">Bil, båt og MC</h3>
-        <p>
-          Hos oss kan du forsikre de fleste kjøretøy og farkoster.
-          Det er flere ulike forsikringspakker for de ulike typene kjøretøy.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Bilforsikring </a>
-          <a class="list-group-item" href="#">Tilhengerforsikring</a>
-          <a class="list-group-item" href="#">MC-forsikring</a>
-          <a class="list-group-item" href="#">Mopedforsikring</a>
-          <a class="list-group-item" href="#">Traktorforsikring</a>
-          <a class="list-group-item" href="#">Veterankjøretøyforsikring</a>
-          <a class="list-group-item" href="#">Campingvognforsikring</a>
-          <a class="list-group-item" href="#">Båtforsikring</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <h3 class="stb-font">Hus, innbo og hytte</h3>
-        <p>
-          Hos oss kan du forsikre hus, innbo og hytter.
-          Vi har ulike typer forsikring på hus og fritidsbolig.
-          Ta kontakt, så finner vi den som er riktig for deg.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Husforsikring </a>
-          <a class="list-group-item" href="#">Innboforsikring</a>
-         </div>
-        <h3 class="stb-font">Reise og fritid</h3>
-        <p>
-          Nordmenn investerer stadig mer i egen fritid.
-          Storebrand dekker det som er viktig for deg.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Reiseforsikring</a>
-          <a class="list-group-item" href="#">Verdiforsikring</a>
-        </div>
-        <h3 class="stb-font">Dyr</h3>
-        <p>
-          Dyreforsikring loremipsumasd
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Hund og katteforsikring</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <h3 class="stb-font">Liv og helse</h3>
-        <p>
-          Blir du eller familien din rammet av sykdom eller ulykke kan mye endre seg over nattean.
-          Ingen kan være forberedt på en slik vanskelig situasjon, men personforsikringen kan gjøre
-          en ny hverdag enklere å takle økonomisk sett.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Barneforsikring </a>
-          <a class="list-group-item" href="#">Uføreforsikring</a>
-          <a class="list-group-item" href="#">Dødsfallforsikring</a>
-          <a class="list-group-item" href="#">Helseforsikring</a>
-          <a class="list-group-item" href="#">Kritisk sykdom</a>
-          <a class="list-group-item" href="#">Gjeldsforsikring</a>
-          <a class="list-group-item" href="#">Ulykkeforsikring</a>
-        </div>
-      </div>
-   </div>
+<div class="container top-padding-40-mdlg bottom-padding-40">
+  <div class="row">
+    <div class="col-md-12 bottom-margin-20">
+      <h2 class="stb-font">Start pensjonsparing</h2>
+      <p class="width-75-mdlg intro">
+        Jo tidligere du kommer i gang, jo mer rekker du å spare. Her kan du enkelt finne den spareformen som er mest effektiv for deg.
+      </p>
+    </div>
   </div>
-</section>
+  <div class="row">
+    <div class="col-md-6 top-margin-20" >
+      <hr class="fat" />
+      <div class="row clickable-div hover-gray" onclick="location.href='index.html'">
+        <div class="col-xs-10 column">
+          <h3>Ekstrapensjon</h3>
+          <ul class="stb">
+            <li>Ingen binding &ndash; ta ut pengene når du vil</li>
+            <li>Tilgang til våre beste fond</li>
+            <li>Du får vår beste betingelser gjennom Storebrand Fordel, hvis din arbeidsgiver har pensjonsavtale i Storebrand.</li>
+          </ul>
+        </div>
+        <div class="col-xs-2 column">
 
-<div class="category-banner stbcolor-secondary seventh">
+          <span class="y-center-arrow stb-sprite-small arrow-right"></span>
+
+        </div>
+      </div>
+      <hr class="fat" />
+    </div>
+    <div class="col-md-6 top-margin-20">
+      <hr class="fat hidden-xs hidden-sm" />
+      <div class="row clickable-div hover-gray" onclick="location.href='articlepage-with-full-navigation.html'">
+        <div class="col-xs-10 column">
+          <h3>Individuell pensjonssparing</h3>
+          <ul class="stb">
+            <li>Du får skattefordeler ved å spare til pensjon.</li>
+            <li>Du får årlig 4&nbsp;050 kroner i redusert skatt ved å spare 15&nbsp;000 kroner.</li>
+            <li>Pengene er bundet til pensjon og beskattes som inntekt.</li>
+          </ul>
+        </div>
+        <div class="col-xs-2 column">
+          <span class="y-center-arrow stb-sprite-small arrow-right charcoal"></span>
+        </div>
+      </div>
+      <hr class="fat" />
+    </div>
+  </div>
+</div>
+
+<div class="stbcolor-secondary sixth top-padding-50-mdlg bottom-padding-50">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 top-margin-50-mdlg">
-        <div class="stb-box light">
-          <h2>Har du det du trenger?</h2>
-          <p class="intro">
-           Ved å legge inn litt informasjon om deg selv gir vi deg våre forsikringsanbefalinger ut fra din livssituasjon.
-          </p>
-          <button class="stb-btn">Sjekk om du har det du trenger</button>
-        </div>
+      <div class="col-md-6">
+        <h2 class="stb-font">Hva er ditt pensjonstall?</h2>
+        <p class="intro">
+          Vet du hva du kan forvente å få i pensjon når du planlegger å pensjonere deg? Her kan du beregne ditt pensjonstall og se hvilken effekt selv bare et lite sparebeløp kan gi.
+        </p>
       </div>
-      <div class="col-md-6 image">
-        <img class="img-responsive" src="/images/forsikring-banner2.png" alt="category banner image" title="category bannner image"/>
+      <div class="col-md-6">
+        <h3>Når vil du gå av med pensjon?</h3>
+        <div>
+          <form role="form">
+            <div class="row">
+              <div class="col-xs-9 col-md-12">
+                <div class="stb-form-group top-margin-10">
+                  <label style="">Når vil du gå av med pensjon?</label>
+                  <div>
+                    <input id="nedbetaling-value" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
+                    <input id="stb-slider-pensjon" type="slider" name="stb-slider" value="0" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-9 col-md-12">
+                <div class="stb-form-group top-margin-10">
+                  <label>Hvor mye av dagens lønn ønsker du?</label>
+                  <div>
+                    <input id="lanerente-value" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
+                    <input id="stb-slider-dagenslonn" type="slider" name="stb-slider" value="0" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="stb-btn top-margin-20-mdlg">Gå videre og beregn</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row top-margin-20">
+<div class="container top-padding-40-mdlg bottom-padding-50">
+  <div class="row">
+
     <div class="col-md-6">
-        <div class="stb-box big clickable" rel="tel:08880">
-          <div class="row">
-            <div class="col-sm-6 col-md-12">
-              <img src="/images/helpimage.png">
-            </div>
-            <div class="col-sm-6 col-md-12">
-              <h3 class="box">Skal du bare?</h3>
-              <p class="intro">Vi hjelper deg med å løfte hodet og tenke framover</p>
-              <p>
-                Alt vi gjør handler om å sikre oss selv og våre nærmeste.
-                Når du investerer i bolig, forsikrer deg mot alvorlig sykdommer eller starter en langsiktig spareavtale,
-                handler det egentlig om at du vil gå en forutsigbar og trygg fremtid i møte.
-                Vi hjelper deg med å få overblikk over i dag, og å løfte hodet og tenke framover.
-              </p>
-            </div>
-          </div>
-        </div>
-      <h2>Gode råd om forsikringer</h2>
-      <p class="intro">Lorum ipsum</p>
-      <ol class="stb">
-        <li>samler tre eller flere forsikringer hos oss</li>
-        <li>har installert skadereduserende utstyr </li>
-        <li>er ansatt i en bedrift som har inngått fordelsavtale for sine ansatte med Storebrand eller d som privatperson har et eksisterende kundeforhold til Storebrand som gir fordelspriser</li>
+      <h2 class="stb-font">6 gode råd som gir bedre pensjon</h2>
+      <p class="intro">
+        Du kan selv gjøre mye for å få en bedre pensjon. Her er det du bør gjøre i dag:
+      </p>
+      <ol class="stb top-padding-20 bottom-padding-20">
+        <li>Finn ditt pensjonstall.</li>
+        <li>Velg riktig spareprofil for deg.</li>
+        <li>Hvis du har opptjent pensjon fra flere arbeidsgivere; samle pensjonen din ett sted.</li>
+        <li>Start en forsiktig spareavtale.</li>
+        <li>Bytt til fripolise med investeringsvalg.</li>
+        <li>Sjekk hvilke kundefordeler du har.</li>
       </ol>
-    </div>
-    <div class="col-md-6">
-      <div class="stb-box mini clickable top-margin-10" rel="tel:08880">
-        <div class="row">
-          <div class="col-xs-4">
-            <img class="img-responsive" src="/images/contactus.png">
-          </div>
-          <div class="col-xs-8">
-            <h3 class="box" style="padding-top: 10%">Slik melder du skade</h3>
-          </div>
-        </div>
-      </div>
+
       <div class="stb-box mini clickable top-margin-10" rel="tel:08880">
         <div class="row">
           <div class="col-xs-4">
@@ -510,9 +582,28 @@
         </div>
       </div>
     </div>
+
+    <div class="col-md-6">
+      <h2 class="stb-font">Har du hatt flere arbeidsgivere?</h2>
+      <p>
+        Du kan ha flere fripoliser eller pensjonskapitalbevis (PKB). Det er dine penger, dine oppsparte pensjonsmidler fra forskjellige jobber du har hatt, og du bør vite hvor du har dem og hva de består av.
+      </p>
+      <p>
+        Fra høsten 2014 av kan mange også bytte ut sine gamle fripoliser med noe som heter fripolise med investeringsvalg. Det gir deg større råderett over pengene dine. Du kan velge å si nei takk til en forholdsvis lav garantert årlig avkastning, og i stedet plassere pengene dine sånn at du ved å ta litt mer risiko får mulighet til å få en høyere pensjon.
+      </p>
+      <div class="stb-box fat red border top-margin-40">
+        <img class="img-responsive" src="/images/helpimage.png" alt="Bilde av økt avkastning" title="Trenger du en time på pensjonsskolen?"/>
+        <h3>Skal du bare?</h3>
+        <p class="intro">
+          Vi hjelper deg med å løfte hodet og å tenke fremover
+        </p>
+        <p>
+          Alt du gjør handler om å sikre deg selv og dine nærmeste. Du kjøper kanskje en bolig, du forsikrer deg mot sykdom eller du starter en langsiktig spareavtale. Alt handler om at du vil gå en forutsigbar og trygg fremtid i møte. Alt dette, og mer, kan vi hjelpe deg med.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
-
 <!-- End actual page contents -->
 
 <!-- Start Cookie notice -->
