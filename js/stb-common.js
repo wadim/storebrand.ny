@@ -193,6 +193,7 @@ function makeExpandableList(selector){
       selector.children('li').show(400);
       showMore.find('span').toggleClass('chevron-up red chevron-down');
     }
+    showMore.find("span.show-detail, span.hide-detail").toggle();
     showMore.toggleClass('open');
   });
 }
