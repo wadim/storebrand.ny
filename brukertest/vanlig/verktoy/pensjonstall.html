@@ -20,83 +20,9 @@
   <script type="text/javascript" src="/js/stb-common.js"></script>
   <script type="text/javascript" src="/js/stb-page-padding.js"></script>
   <script type="text/javascript" src="/js/dist/jquery.slider.all.js"></script>
+  <script type="text/javascript" src="/js/src/pensjonstall.js"></script>
   <script>
     $(document).ready(function(){
-      $("#stb-slider-pensjon").slider({
-        from: 30,
-        to: 75,
-        domNode: "#stb-slider",
-        valueElem: "#stb-slider-value",
-        dimension: '&nbsp;år',
-        calculate: function(a) {
-          return $(this.domNode).siblings(this.valueElem).val(a), a
-        },
-        complete: function() {},
-        onstatechange: function() {
-          var a = $(this.domNode).find(".jslider-bg .l"),
-                  b = $(this.domNode).find(".jslider-bg .r"),
-                  c = $(this.domNode).find(".jslider-pointer");
-          if (c && c.length > 0) {
-            var d = c[0].style.left.split("%")[0],
-                    e = 100 - d;
-            a.css({
-              width: d + "%"
-            }), b.css({
-              width: e + "%",
-              left: d + "%"
-            })
-          }
-        },
-        getPercentVal: function(a) {
-          var b = a,
-                  c = 0,
-                  d = 100;
-          if (b && b.length > 0) {
-            var e = b[0].style.left.split("%")[0];
-            c = e, d = 100 - c
-          }
-          return d
-        }
-      });
-      $("#stb-slider-dagenslonn").slider({
-        from: 0,
-        to: 100,
-        step: 0.1,
-        round: 1,
-        domNode: "#stb-slider",
-        valueElem: "#stb-slider-value",
-        dimension: '&nbsp;%',
-        calculate: function(a) {
-          return $(this.domNode).siblings(this.valueElem).val(a), a
-        },
-        complete: function() {},
-        onstatechange: function() {
-          var a = $(this.domNode).find(".jslider-bg .l"),
-                  b = $(this.domNode).find(".jslider-bg .r"),
-                  c = $(this.domNode).find(".jslider-pointer");
-          if (c && c.length > 0) {
-            var d = c[0].style.left.split("%")[0],
-                    e = 100 - d;
-            a.css({
-              width: d + "%"
-            }), b.css({
-              width: e + "%",
-              left: d + "%"
-            })
-          }
-        },
-        getPercentVal: function(a) {
-          var b = a,
-                  c = 0,
-                  d = 100;
-          if (b && b.length > 0) {
-            var e = b[0].style.left.split("%")[0];
-            c = e, d = 100 - c
-          }
-          return d
-        }
-      });
-
       $(".row .column").matchHeight(true);
     });
 
@@ -452,7 +378,7 @@
                 <div class="stb-form-group top-margin-10">
                   <label style="">Når vil du gå av med pensjon?</label>
                   <div>
-                    <input id="nedbetaling-value" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
+                    <input id="pensjon-input" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
                     <input id="stb-slider-pensjon" type="slider" name="stb-slider" value="0" />
                   </div>
                 </div>
@@ -461,7 +387,7 @@
                 <div class="stb-form-group top-margin-10">
                   <label>Hvor mye av dagens lønn ønsker du?</label>
                   <div>
-                    <input id="lanerente-value" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
+                    <input id="dagenslonn-input" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
                     <input id="stb-slider-dagenslonn" type="slider" name="stb-slider" value="0" />
                   </div>
                 </div>
