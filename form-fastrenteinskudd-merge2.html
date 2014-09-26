@@ -622,7 +622,7 @@ $("document").ready(function(){
   <div class=" top-margin-10 bottom-margin-30 top-padding-20 bottom-padding-20">
     <h1 class="left-margin-20">Åpne fastrentekonto</h1>
     <hr class="top-margin-5">
-    <form class="stb-form validateFormMobile" role="form">
+    <form class="stb-form validateFormMobile" role="form" method="post" action="http://www.storebrand.no/web/bank/sbb.nsf/fastrenteInnskuddNyNotes?CreateDocument">
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -714,8 +714,8 @@ $("document").ready(function(){
                 <label>Statsborgerskap</label>
                 <span class="help-block statsborgerskap-message"></span>
                 <div class="stb-form-group checkbox al">
-                  <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskapValgMob" id="statsborgerskap-norsk-mob" value="norsk" class="stb-radio"><label class="stb-custom-input" for="statsborgerskap-norsk-mob">Norsk</label></div>
-                  <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskapValgMob" id="statsborgerskap-annet-mob" value="annet" class="stb-radio" ><label class="stb-custom-input" for="statsborgerskap-annet-mob">Annet</label></div>
+                  <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskapValg" id="statsborgerskap-norsk-mob" value="norsk" class="stb-radio"><label class="stb-custom-input" for="statsborgerskap-norsk-mob">Norsk</label></div>
+                  <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskapValg" id="statsborgerskap-annet-mob" value="annet" class="stb-radio" ><label class="stb-custom-input" for="statsborgerskap-annet-mob">Annet</label></div>
                   <input class="statsborgerskap-annet-text" name="statsborgerskap" type="text" class="" placeholder="Statsborgerskap" style="display: none; width: 50%">
                 </div>
                 <label for="mobilnummer" style="width: 200px;">Mobil<span class="input-required">*</span></label>
