@@ -165,7 +165,7 @@ $(document).ready(function(){
     // if the media screen width is large, then don't do anything
       // the following will apply for mobile view
       $('.toc-list .items').slideToggle();
-      $('.toc-list p span').toggleClass("chevron-down chevron-up");
+      $('.toc-list p span').toggleClass("chevron-down red chevron-up");
     
   });
 });
