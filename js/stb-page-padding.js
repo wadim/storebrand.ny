@@ -160,6 +160,12 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){ 
+
+  // small chevron icon in mobile view
+	
+  if( $( window ).width() <= 768){
+	  $('.toc-list p span').toggleClass("stb-sprite-small stb-sprite-medium");
+  } 
   // hide and show articles list 
   $('.toc-list p').click(function() {
     // if the media screen width is large, then don't do anything
