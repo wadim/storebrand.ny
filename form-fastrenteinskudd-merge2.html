@@ -573,8 +573,8 @@ $("document").ready(function(){
               <label>Statsborgerskap</label>
               <span class="help-block statsborgerskap-message"></span>
               <div class="stb-form-group checkbox al">
-                <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskap" id="statsborgerskapNorsk" value="norsk" class="stb-radio"><label class="stb-custom-input" for="statsborgerskapNorsk">Norsk</label></div>
-                <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskap" id="statsborgerskapAnnet" value="annet" class="stb-radio" ><label class="stb-custom-input" for="statsborgerskapAnnet">Annet</label></div>
+                <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskapValg" id="statsborgerskapNorsk" value="norsk" class="stb-radio"><label class="stb-custom-input" for="statsborgerskapNorsk">Norsk</label></div>
+                <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskapValg" id="statsborgerskapAnnet" value="annet" class="stb-radio" ><label class="stb-custom-input" for="statsborgerskapAnnet">Annet</label></div>
                 <input class="statsborgerskap-annet-text" name="statsborgerskap" id="name="statsborgerskap"" type="text" class="" placeholder="Statsborgerskap" style="display: none; width: 50%">
               </div>
               <label for="mobilnummer" style="width: 200px;">Mobil<span class="input-required">*</span></label>
@@ -622,7 +622,7 @@ $("document").ready(function(){
   <div class=" top-margin-10 bottom-margin-30 top-padding-20 bottom-padding-20">
     <h1 class="left-margin-20">Åpne fastrentekonto</h1>
     <hr class="top-margin-5">
-    <form class="stb-form validateFormMobile" role="form">
+    <form class="stb-form validateFormMobile" role="form" method="post" action="http://www.storebrand.no/web/bank/sbb.nsf/fastrenteInnskuddNyNotes?CreateDocument">
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -647,7 +647,7 @@ $("document").ready(function(){
                     <span class="help-block onsketSparebelop-message"></span>
                     <div class="stb-form-group">
                       <div class="input-group col-xs-10">
-                        <input id="onsketSparebelop-mob" name="onsketSparebelop" class="form-control">
+                        <input id="onsketSparebelopMob" name="onsketSparebelop" class="form-control">
                         <div class="input-group-addon">kr</div>
                       </div>
                     </div>
@@ -656,8 +656,8 @@ $("document").ready(function(){
                     <label>Periode</label>
                     <span class="help-block periode-message"></span>
                     <div class="stb-form-group checkbox al">
-                      <div class="radio" style="display: inline-block;"><input type="radio" name="periode" id="periode-3-mob" value="3" class="stb-radio"><label class="stb-custom-input" for="periode-3-mob">3&nbsp;måneder</label></div>
-                      <div class="radio" style="display: inline-block;"><input type="radio" name="periode" id="periode-12-mob" value="12" class="stb-radio" ><label class="stb-custom-input" for="periode-12-mob">12&nbsp;måneder</label></div>
+                      <div class="radio" style="display: inline-block;"><input type="radio" name="periode" id="periode3Mob" value="3" class="stb-radio"><label class="stb-custom-input" for="periode3Mob">3&nbsp;måneder</label></div>
+                      <div class="radio" style="display: inline-block;"><input type="radio" name="periode" id="periode12Mob" value="12" class="stb-radio" ><label class="stb-custom-input" for="periode12Mob">12&nbsp;måneder</label></div>
                     </div>
                     <p>3 måneder: 2,12 % rente (eff. p.a.) - (2,10 % nominell p.a.)</p>
                     <p>12 måneder: 2,50 % rente (eff. p.a.) - (2,50 % nominell p.a.)</p>
@@ -689,44 +689,44 @@ $("document").ready(function(){
                 <label for="navn" style="width: 200px;">Navn<span class="input-required">*</span></label>
                 <span class="help-block navn-message"></span>
                 <div class="stb-form-group">
-                  <input id="navn-mob" name="navn" type="text" class="" placeholder="Navn">
+                  <input id="navnMob" name="navn" type="text" class="" placeholder="Navn">
                 </div>
                 <label for="adresse" style="width: 200px;">Adresse</label>
                 <span class="help-block adresse-message"></span>
                 <div class="stb-form-group">
-                  <input id="adresse-mob" name="adresse" type="text" class="" placeholder="Adresse">
+                  <input id="adresseMob" name="adresse" type="text" class="" placeholder="Adresse">
                 </div>
                 <label for="postnr" style="width: 200px;">Postnr<span class="input-required">*</span></label>
                 <span class="help-block postnr-message"></span>
                 <div class="stb-form-group" style="width: 200px;">
-                  <input id="postnr-mob" name="postnr" type="text" placeholder="Postnr">
+                  <input id="postnrMob" name="postnr" type="text" placeholder="Postnr">
                 </div>
                 <label for="poststed" style="width: 200px;">Poststed<span class="input-required">*</span></label>
                 <span class="help-block poststed-message"></span>
                 <div class="stb-form-group">
-                  <input id="poststed-mob" name="poststed" type="text" placeholder="Poststed">
+                  <input id="poststedMob" name="poststed" type="text" placeholder="Poststed">
                 </div>
                 <label for="fodselsnummer" style="width: 200px;">Fødselsnummer<span class="input-required">*</span></label>
                 <span class="help-block fodselsnummer-message"></span>
                 <div class="stb-form-group">
-                  <input id="fodselsnummer-mob" name="fodselsnummer" type="text" class="" placeholder="Fødselsnummer">
+                  <input id="fodselsnummerMob" name="fodselsnummer" type="text" class="" placeholder="Fødselsnummer">
                 </div>
                 <label>Statsborgerskap</label>
                 <span class="help-block statsborgerskap-message"></span>
                 <div class="stb-form-group checkbox al">
-                  <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskap" id="statsborgerskap-norsk-mob" value="norsk" class="stb-radio"><label class="stb-custom-input" for="statsborgerskap-norsk-mob">Norsk</label></div>
-                  <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskap" id="statsborgerskap-annet-mob" value="annet" class="stb-radio" ><label class="stb-custom-input" for="statsborgerskap-annet-mob">Annet</label></div>
+                  <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskapValg" id="statsborgerskap-norsk-mob" value="norsk" class="stb-radio"><label class="stb-custom-input" for="statsborgerskap-norsk-mob">Norsk</label></div>
+                  <div class="radio" style="display: inline-block;"><input type="radio" name="statsborgerskapValg" id="statsborgerskap-annet-mob" value="annet" class="stb-radio" ><label class="stb-custom-input" for="statsborgerskap-annet-mob">Annet</label></div>
                   <input class="statsborgerskap-annet-text" name="statsborgerskap" type="text" class="" placeholder="Statsborgerskap" style="display: none; width: 50%">
                 </div>
                 <label for="mobilnummer" style="width: 200px;">Mobil<span class="input-required">*</span></label>
                 <span class="help-block mobilnummer-message"></span>
                 <div class="stb-form-group">
-                  <input id="mobilnummer-mob" name="mobilnummer" type="text" class="" placeholder="Mobilnummer">
+                  <input id="mobilnummerMob" name="mobilnummer" type="text" class="" placeholder="Mobilnummer">
                 </div>
                 <label for="epost" style="width: 200px;">Epost<span class="input-required">*</span></label>
                 <span class="help-block epost-message"></span>
                 <div class="stb-form-group">
-                  <input id="epost-mob" name="epost" type="text" class="" placeholder="Epost">
+                  <input id="epostMob" name="epost" type="text" class="" placeholder="Epost">
                 </div>
                 <button type="button" class="stb-btn transparent light backButton">Tilbake</button>
                 <button type="submit" class="stb-btn left-margin-10 nextButton">Send inn</button>
