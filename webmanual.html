@@ -366,7 +366,7 @@
         </div>
        
         <p>Disabled example:</p>
-        <div>
+        <div class="chatClosed">
           <a href="tel:08880" onclick="return false;">
             <span class="circle-16 stbcolor-gray third pull-left">
               <span class="stb-sprite-small white chat"></span>
@@ -375,7 +375,7 @@
           </a>
           <div style="padding-left: 42px;">
             <p class="petit">Stengt. Åpent hverdager 8-16</p>
-            <p class="petit" style="margin-top: -10px;">Stengt. Åpent hverdager 8-16</p>
+            <p class="petit" style="margin-top: -10px;">Lør 9-15</p>
           </div>
         </div>
       </div>
@@ -393,8 +393,8 @@
             <span class="iconCompanion">Skriv til oss</span>
           </a>
         </div>
-        <div class="bottom-margin-10">
-          <a href="#">
+        <div class="chatOpen bottom-margin-10">
+          <a href="http://www.storebrand.no/site/stb.nsf/chooseChat?readForm" onclick="window.open(this.href, '','height=500,width=560');return false;">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white chat"></span>
             </span>
@@ -419,6 +419,33 @@
         </div>
       </div>
     </div>
+
+    <div class="row top-margin-30">
+      <div class="col-md-6">
+        <p>Chat to be toggled </p>
+        <div class="chatPensionOpen bottom-margin-10">
+          <a href="http://www.storebrand.no/site/stb.nsf/chooseChat?readForm" onclick="window.open(this.href, '','height=500,width=560');return false;">
+            <span class="circle-16 stbcolor-secondary third pull-left">
+              <span class="stb-sprite-small white chat"></span>
+            </span>
+            <span class="iconCompanion">Chat om pensjon</span>
+          </a>
+        </div>
+      </div>  
+      <div class="col-md-6">
+        <p>Toggle chat open/closed</p>
+        <button class="stb-btn">Open chat</button>&nbsp;<button class="stb-btn transparent light">Close chat</button>
+      </div> 
+    </div>  
+
+    <script>
+
+    function closeChatPension(){
+      
+    }
+
+    </script>
+
 
     <div class="row">
       <div class="col-md-10">
