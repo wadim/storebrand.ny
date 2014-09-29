@@ -14,6 +14,7 @@
       border-radius: 0;
       border: none;
       margin-bottom: 0;
+      font-size: 16px;
       :last-child {
         border-bottom: none;
       } 
@@ -28,12 +29,21 @@
     }
    
    .hide-detail { display: none;}
+   
+   
+	@media (max-width: @screen-sm-min) {
+	  .list-group-item {
+	    font-size: 14px;
+	 }
+    }
+   
   }  
   
   a.list-group-item {
     border-left:none;
     border-right:none;
     border-radius: 0px;
+    font-size: 16px;
     font-family: @font-family-sans-serif-bold;
     color: @stb-secondary-charcoal;
   }  
@@ -53,6 +63,7 @@
 
   .list-group-item, .list-group-item:hover {
     border-bottom: none;
+    font-size: 16px;
   }
   
   .list-group-item:first-child {
@@ -66,6 +77,12 @@
     border-bottom: 1px solid @stb-gray-third;
     border-top: 1px solid @stb-gray-third;
   }   
+  
+  @media (max-width: @screen-sm-min) {
+	  a.list-group-item, .list-group-item{
+	    font-size: 14px;
+	 }
+    }
   
 }
 
@@ -83,4 +100,5 @@ a.list-group-item:hover {
   padding: 10px 15px 11px 15px;
   border-bottom: none;
   text-decoration: none;
-} 
+}
+
