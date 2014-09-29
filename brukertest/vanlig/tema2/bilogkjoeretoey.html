@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Kategori - Forikring</title>
+  <title>Tema - Bil og kjøretøy</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -12,6 +12,7 @@
   <script type="text/javascript" src="/js/dist/jquery.color-2.1.2.min.js"></script>
   <script type="text/javascript" src="/js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="/js/dist/jquery-ui-1.11.0.js"></script>
+  <script type="text/javascript" src="/js/dist/jquery.slider.all.js"></script>
   <script type="text/javascript" src="/js/dist/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="/js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="/js/dist/typeahead.bundle.min.js"></script>
@@ -19,32 +20,30 @@
   <script type="text/javascript" src="/js/search.js"></script>
   <script type="text/javascript" src="/js/stb-common.js"></script>
   <script type="text/javascript" src="/js/stb-page-padding.js"></script>
-  <script type="text/javascript" src="/js/dist/jquery.slider.all.js"></script>
+  <script type="text/javascript" src="/js/src/stb-video.js"></script>
+  <script type="text/javascript" src="/js/src/laanekalkulator.js"></script>
   <style>
     .jslider{
       margin-left: 100px;
       width: 80%;
     }
 
-    p.unit{
+    .unit{
       float:left;
+    }
+
+    p.unit{
       padding-top: 8px;
       padding-left: 6px;
       font-size: 18px;
     }
-
     .jslider .jslider-bg .r{
       background-color: white;
-    }
-
-    .category-banner .image {
-      background: transparent url("/images/chalkdust1.png") left top no-repeat;
     }
   </style>
 </head>
 
 <body>
-<!-- Start top of page -->
 
 <div id="top-menu-nav">
 <!-- Start desktop menu -->
@@ -164,7 +163,7 @@
     <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6 col-xs-offset-1" style="padding-left: 6px;">
       <ul class="nav navbar">
         <li class="dropdown yamm-fw" style="width: 33%;">
-          <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-medium white menu-bars"></span><span class="marker"></span></a>
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-24 white menu-bars"></span><span class="marker"></span></a>
           <ul id="subMenu" class="dropdown-menu">
             <div class="yamm-content">
               <div class="row">
@@ -316,7 +315,7 @@
             </div>
           </ul>
         </li>
-        <li class="dropdown yamm-fw" style="width: 33%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-medium white search"></span><span class="marker"></span></a>
+        <li class="dropdown yamm-fw" style="width: 33%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-24 white search"></span><span class="marker"></span></a>
           <ul id="searchField" class="dropdown-menu" style="background: white">
             <div class="yamm-content">
               <div class="row">
@@ -327,7 +326,7 @@
                         <input type="text" class="typeahead searchbox" placeholder="Søk i sidene"/>
                       </div>
                       <div class="col-xs-1" style="padding-left: 0; padding-right: 0;">
-                        <span class="search-icon  " style="display: block; position: relative; padding-left: 6px; padding-top: 12px;"><span class="stb-sprite-medium search"></span></span>
+                        <span class="search-icon  " style="display: block; position: relative; padding-left: 6px; padding-top: 12px;"><span class="stb-sprite-24 search"></span></span>
                       </div>
                     </label>
                   </form>
@@ -345,195 +344,122 @@
   </div>
 </nav>
 <!-- End mobile menu -->
+
 </div>
 <!-- End top of page -->
 
-<!-- Start actual page contents -->
-<div class="category-banner stbcolor-secondary second">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 top-margin-50-mdlg">
-        <div class="stb-box dark">
-          <h1>Forsikring</h1>
-          <p class="intro">
-            Når skaden er skjedd eller sykdommen er et faktum, vil du ikke tenke på pengene.
-            Her kan du raskt beregne pris og kjøpe forsikring til deg selv, din familie og dine eiendeler.
-          </p>
+<!-- Start of page contents -->
+<div class="stbcolor-secondary seventh top-padding-30">
+  <div class="container banner-video">
+    <div class="video-text">
+      <div class="col-md-6">
+        <div class="stb-banner">
+          <h1>Bil og kjøretøy </h1>
+          <p class="intro">Her finner du all informasjon du trenger hvis du eier et kjøretøy eller har planlegger å kjøpe et kjøretøy.</p>
+          <button class="stb-btn transparent light playVideoBtn">Spill av video <span class="glyphicon glyphicon-play"></span></button>
         </div>
       </div>
-      <div class="col-md-6 image">
-        <img class="img-responsive" src="/images/forsikring-banner2.png" alt="category banner image" title="category bannner image"/>
+      <div class="col-md-6">
+        <img src="/images/hushjem.png" class="hidden-xs hidden-sm center-block" />
+      </div>
+    </div>
+    <div class="video-container" style="display: none;">
+      <button class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-24 remove white"></span></button>
+      <div id="player-banner" class="video-player-banner" data-youtube-id="_7Foh3T1gN4"></div>
+    </div>
+  </div>
+</div>
+
+<div class="top-padding-30 bottom-padding-30">
+  <div class="container">
+    <div class="col-md-4">
+      <h2>Har du pensjon gjennom jobben i Storebrand?</h2>
+      <p>Hvis din arbeidsplass sparer til
+        pensjon for deg i Storebrand får du
+        20 % rabatt på forsikringen for ditt
+      </p>
+     <button class="stb-btn"> Sjekk om du har fordeler</button>
+    </div>
+    <div class="col-md-4">
+      <h2>Når uhellet er ute</h2>
+      <p>Er uhellet ute og du trenger å melde
+        skade? Eller er batteriet på bilen flatt
+        og du trenger veihjelp? Vi hjelper deg.</p>
+      <ul class="stb">
+        <li><a>Meld skade på bil og kjøretøy</a></li>
+        <li>Ring Veihjelp <a href="tel:02222">02222</a></li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h2>Jeg ønsker å forsikre...</h2>
+      <div class="stb-list-group" >
+        <a class="list-group-item" href="#">Bilen min </a>
+        <a class="list-group-item" href="#">Tilhengeren min</a>
+        <a class="list-group-item" href="#">Motorsykkelen min </a>
+        <a class="list-group-item" href="#">Mopeden min </a>
+        <a class="list-group-item" href="#">Traktoren min </a>
+        <a class="list-group-item" href="#">Veterankjøretøyet mitt </a>
+        <a class="list-group-item" href="#">Firmabilen min </a>
       </div>
     </div>
   </div>
 </div>
 
-<section class="top-margin-20 bottom-margin-20">
+<div class="stbcolor-secondary sixth top-padding-30 bottom-padding-30">
   <div class="container">
-    <h2 class="stb-font">Velg riktig forsikring for deg</h2>
-    <div class="row top-margin-20">
-      <div class="col-md-4">
-        <h3 class="stb-font">Bil, båt og MC</h3>
-        <p>
-          Hos oss kan du forsikre de fleste kjøretøy og farkoster.
-          Det er flere ulike forsikringspakker for de ulike typene kjøretøy.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Bilforsikring </a>
-          <a class="list-group-item" href="#">Tilhengerforsikring</a>
-          <a class="list-group-item" href="#">MC-forsikring</a>
-          <a class="list-group-item" href="#">Mopedforsikring</a>
-          <a class="list-group-item" href="#">Traktorforsikring</a>
-          <a class="list-group-item" href="#">Veterankjøretøyforsikring</a>
-          <a class="list-group-item" href="#">Campingvognforsikring</a>
-          <a class="list-group-item" href="#">Båtforsikring</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <h3 class="stb-font">Hus, innbo og hytte</h3>
-        <p>
-          Hos oss kan du forsikre hus, innbo og hytter.
-          Vi har ulike typer forsikring på hus og fritidsbolig.
-          Ta kontakt, så finner vi den som er riktig for deg.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Husforsikring </a>
-          <a class="list-group-item" href="#">Innboforsikring</a>
-         </div>
-        <h3 class="stb-font">Reise og fritid</h3>
-        <p>
-          Nordmenn investerer stadig mer i egen fritid.
-          Storebrand dekker det som er viktig for deg.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Reiseforsikring</a>
-          <a class="list-group-item" href="#">Verdiforsikring</a>
-        </div>
-        <h3 class="stb-font">Dyr</h3>
-        <p>
-          Dyreforsikring loremipsumasd
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Hund og katteforsikring</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <h3 class="stb-font">Liv og helse</h3>
-        <p>
-          Blir du eller familien din rammet av sykdom eller ulykke kan mye endre seg over nattean.
-          Ingen kan være forberedt på en slik vanskelig situasjon, men personforsikringen kan gjøre
-          en ny hverdag enklere å takle økonomisk sett.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Barneforsikring </a>
-          <a class="list-group-item" href="#">Uføreforsikring</a>
-          <a class="list-group-item" href="#">Dødsfallforsikring</a>
-          <a class="list-group-item" href="#">Helseforsikring</a>
-          <a class="list-group-item" href="#">Kritisk sykdom</a>
-          <a class="list-group-item" href="#">Gjeldsforsikring</a>
-          <a class="list-group-item" href="#">Ulykkeforsikring</a>
-        </div>
-      </div>
-   </div>
-  </div>
-</section>
-
-<div class="category-banner stbcolor-secondary seventh">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 top-margin-50-mdlg">
-        <div class="stb-box light">
-          <h2>Har du det du trenger?</h2>
-          <p class="intro">
-           Ved å legge inn litt informasjon om deg selv gir vi deg våre forsikringsanbefalinger ut fra din livssituasjon.
-          </p>
-          <button class="stb-btn">Sjekk om du har det du trenger</button>
-        </div>
-      </div>
-      <div class="col-md-6 image">
-        <img class="img-responsive" src="/images/forsikring-banner2.png" alt="category banner image" title="category bannner image"/>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row top-margin-20">
     <div class="col-md-6">
+      <h2>Alt om bonus for motorkjøretøy</h2>
+      <p class="intro">Bonus er en rabatt som blir større med årene så lenge du ikke får noen skader på kjøretøyet.
+        Vi gir deg her svar på det meste du lurer på når det gjelder bonus på bil, motorsykkel, moped og andre kjøretøy.</p>
+      <button class="stb-btn visible-xs"> Alt om bonus for kjøretøy</button>
+    </div>
+    <div class="col-md-6 hidden-xs">
+
+    </div>
+  </div>
+</div>
+<div class="top-padding-30 bottom-padding-30">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
         <div class="stb-box big clickable" rel="tel:08880">
           <div class="row">
             <div class="col-sm-6 col-md-12">
-              <img src="/images/helpimage.png">
+              <img src="/images/contactus.png">
+              <div class="col-sm-6 col-md-12">
+                <h3 class="stb-font"><a href="#">Endre kilometerstand på bilen?</a></h3>
+                <p>Kjørelengde har betydning for prisen på forsikring, fordi den som kjører mye har større sannsynlighet for skade enn en som kjører mindre.</p>
+                <p>Logg deg inn på dine personlige sider og gå inn på forsikringer for enkelt å endre kjørelengden på forsikringen din.</p>
+              </div>
             </div>
-            <div class="col-sm-6 col-md-12">
-              <h3>Skal du bare?</h3>
-              <p class="intro">Vi hjelper deg med å løfte hodet og tenke framover</p>
-              <p>
-                Alt vi gjør handler om å sikre oss selv og våre nærmeste.
-                Når du investerer i bolig, forsikrer deg mot alvorlig sykdommer eller starter en langsiktig spareavtale,
-                handler det egentlig om at du vil gå en forutsigbar og trygg fremtid i møte.
-                Vi hjelper deg med å få overblikk over i dag, og å løfte hodet og tenke framover.
-              </p>
-            </div>
-          </div>
-        </div>
-      <h2>Gode råd om forsikringer</h2>
-      <p class="intro">Lorum ipsum</p>
-      <ol class="stb">
-        <li>samler tre eller flere forsikringer hos oss</li>
-        <li>har installert skadereduserende utstyr </li>
-        <li>er ansatt i en bedrift som har inngått fordelsavtale for sine ansatte med Storebrand eller d som privatperson har et eksisterende kundeforhold til Storebrand som gir fordelspriser</li>
-      </ol>
-    </div>
-    <div class="col-md-6">
-      <div class="stb-box mini clickable top-margin-10" rel="tel:08880">
-        <div class="row">
-          <div class="col-xs-4">
-            <img class="img-responsive" src="/images/contactus.png">
-          </div>
-          <div class="col-xs-8">
-            <h3 style="padding-top: 10%">Slik melder du skade</h3>
           </div>
         </div>
       </div>
-      <div class="stb-box mini clickable top-margin-10" rel="tel:08880">
-        <div class="row">
-          <div class="col-xs-4">
-            <img class="img-responsive" src="/images/contactus.png">
-          </div>
-          <div class="col-xs-8">
-            <h3 style="padding-top: 10%">Kontakt oss gjerne for en prat om pensjon<br><br>
-              <a class="hidden-sm hidden-xs" href="#">Ring <b>08880</b></a>
-            </h3>
-            <button class="stb-btn transparent light visible-xs visible-sm">Ring 08880</button>
-          </div>
+      <div class="col-md-4">
+        <div class="stb-box">
+         <h3>Bilferie til utlandet?</h3>
+          <p class="intro">Husk Grønt kort.</p>
+          <p>Grønt kort er et bevis på at du har har gyldig ansvarsforsikring når du er i utlandet.</p>
+          <a href="#">Sjekk hvilke land som krever Grønt kort og bestill</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stb-box">
+          <h3>Misfornøyd med oppgjøret?</h3>
+          <p>Hvis du er uenig avgjørelsen i en forsikringssak, kan du sende oss et brev med begrunnelse hvorfor du er uenig, så ser vi på saken din på nytt.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- End actual page contents -->
-
-<!-- Start Cookie notice -->
-<div data-spy="affix" class="cookieNote" id="cookieNote">
-  <div class="cookieClose">
-    &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-16 white remove"></span><br />(Lukk)</a>
-  </div>
-  <div class="cookieInfo">
-    <div class="info">
-      På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
-    </div>
-  </div>
-</div>
-<!-- End Cookie notice -->
+<!-- End of page contents -->
 
 <!-- Start responsive footer -->
 <footer class="stbcolor-primary first stb-footer visible-sm visible-md visible-lg">
   <div class="row toTop">
     <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIcon"></span></a>
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIconMobile"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIcon"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIconMobile"></span></a>
     </div>
   </div>
 
@@ -543,9 +469,9 @@
       <div class="col-sm-3 column info">
         <div class="border-right">
           <ul class="stb">
-            <li><span class="stb-sprite-medium white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
-            <li><span class="stb-sprite-medium white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
-            <li><span class="stb-sprite-medium white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
+            <li><span class="stb-sprite-24 white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
+            <li><span class="stb-sprite-24 white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
+            <li><span class="stb-sprite-24 white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
           </ul>
           <h4>Alt innhold</h4>
           <p class="petit">
@@ -584,10 +510,10 @@
         <div class="border-left">
           <h4>Sosiale&nbsp;medier</h4>
           <ul class="stb">
-            <li><span class="stb-sprite-medium white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
-            <li><span class="stb-sprite-medium white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
-            <li><span class="stb-sprite-medium white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
-            <li><span class="stb-sprite-medium white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
+            <li><span class="stb-sprite-24 white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
+            <li><span class="stb-sprite-24 white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
+            <li><span class="stb-sprite-24 white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
+            <li><span class="stb-sprite-24 white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
           </ul>
         </div>
       </div>
@@ -610,8 +536,8 @@
 <footer class="mobilefooter stbcolor-primary first stb-footer visible-xs">
   <div class="row toTop">
     <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIcon"></span></a>
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIconMobile"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIcon"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-24 white arrow-up" id="footerTopLinkIconMobile"></span></a>
     </div>
   </div>
 
@@ -637,26 +563,32 @@
     <div class="row top-margin-20 contact">
       <div class="col-xs-12">
         <h3>Kontakt oss</h3>
-        <p><span class="stb-sprite-small white phone icon"></span><span>&nbsp;&nbsp;<a href="#">Ring 08880</a></span></p>
-        <p>Mandag-fredag: 08-small (bank 8 til 20)</p>
+        <p><span class="stb-sprite-16 white phone icon"></span><span>&nbsp;&nbsp;<a href="#">Ring 08880</a></span></p>
+        <p>Mandag-fredag: 08-16 (bank 8 til 20)</p>
         <p>Lørdag 09-15 (kun bank)</p>
         <p>Fra utlandet, <a href="#">ring +47 915 08880</a></p>
-        <p><a href="#">Andre kontaktmuligheter</a></p>
+        <p><a href="#">Andre kontaktmulighter</a></p>
       </div>
     </div>
 
-    <div class="row top-margin-30 bottom-margin-10 social">
+    <div class="row top-margin-40 bottom-margin-40 social">
       <div class="col-xs-3">
-        <span class="stb-sprite-small white facebook"></span><p><a class="stb-footer-link" href="#"> Facebook</a></p>
+        <span class="stb-sprite-16 white facebook"></span><p><a class="stb-footer-link" href="#"> Facebook</a></p>
       </div>
       <div class="col-xs-3">
-        <span class="stb-sprite-small white twitter"></span><p><a class="stb-footer-link" href="#"> Twitter</a></p>
+        <span class="stb-sprite-16 white twitter"></span><p><a class="stb-footer-link" href="#"> Twitter</a></p>
       </div>
       <div class="col-xs-3">
-        <span class="stb-sprite-small white youtube"></span><p><a class="stb-footer-link" href="#"> YouTube</a></p>
+        <span class="stb-sprite-16 white youtube"></span><p><a class="stb-footer-link" href="#"> YouTube</a></p>
       </div>
       <div class="col-xs-3">
-        <span class="stb-sprite-small white employee"></span><p><a class="stb-footer-link" href="#"> Blogg</a></p>
+        <span class="stb-sprite-16 white employee"></span><p><a class="stb-footer-link" href="#"> Blogg</a></p>
+      </div>
+    </div>
+
+    <div class="row copyright bottom-margin-20">
+      <div class="col-xs-12">
+        <p>Opphavsrett <span class="glyphicon glyphicon-copyright-mark"></span> Storebrand 2014</p>
       </div>
     </div>
 
@@ -665,15 +597,17 @@
 </footer>
 <!-- End responsive footer -->
 
+<!-- Google Analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-41882079-4', {'cookieDomain': 'none'});
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41882079-4', 'storebrand.no');
   ga('set', 'anonymizeIp', true);
   ga('send', 'pageview');
 </script>
+<!-- / Google Analytics -->
 
 </body>
 </html>
