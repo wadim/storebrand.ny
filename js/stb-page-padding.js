@@ -76,7 +76,8 @@ $(document).ready(function() {
   for(var i=0; i<tocHeaders.length; i++) {
     listMade = false;
 	  var h3tag = tocHeaders[i];
-    
+
+    $(h3tag).attr('name', h3tag.textContent.replace(/\W/g, '').toLowerCase());
 	  // Appending heading text to table to contents
     $('.toc-list .items').append( prepareTocLink(h3tag, "") );
     
@@ -91,6 +92,7 @@ $(document).ready(function() {
     // Iterate through these sub headings
     for( var j=0; j<allh4.length;j++) {
 	    var h4tag = allh4[j];
+      $(h4tag).attr('name', h3tag.textContent.replace(/\W/g, '').toLowerCase() + h4tag.textContent.replace(/\W/g, '').toLowerCase());
       // adding the sub headings to the subheading list
       h4list = h4list + prepareTocLink(h4tag, $(h3tag).text());
     }
@@ -132,7 +134,7 @@ $(document).ready(function() {
   // Take a hash as input and smooth-scroll to the related target element
   function scrollToHash(hash) {
     var target = $(hash);
-    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    target = target.length ? target : $('[name=' + hash.slice(1) +']');
 	if (target.length) {
       scrollToPosition = target.offset().top;					
 	  // Checking if the navigation header is fixed. If yes, set the scrollto position by subtracting the height of the fixed header
@@ -151,8 +153,8 @@ $(document).ready(function() {
     //take the header text
     var headerText = $(headerTag).text();
     //prepare the header ID from its text
-    $(headerTag).attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/ /g,"-").toLowerCase()); // generating id for the h3
-    var headerId = $(headerTag).attr("id"); // set the id
+    $(headerTag).attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/\-/g,'').replace(/ /g,"-").toLowerCase()); // generating id for the h3
+    var headerId = $(headerTag).attr("id").replace(/\W/g, ''); // set the id
     //create the link and return it
     return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
   }
