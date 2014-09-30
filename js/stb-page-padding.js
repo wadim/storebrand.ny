@@ -582,6 +582,7 @@ function openChatPension(){
   $('.chatPensionClosed').addClass('chatPensionOpen');
   $('.chatPensionClosed').removeClass('chatPensionClosed');
 }
+
 function closeChatPension(){
   $('.chatPensionOpen span').addClass('stbcolor-gray');
   $('.chatPensionOpen span').removeClass('stbcolor-secondary');
@@ -595,15 +596,16 @@ function openChatBank(){
   $('.chatBankClosed span').addClass('stbcolor-secondary');
   $('.chatBankClosed span').removeClass('stbcolor-gray');
   $('.chatBankClosed a').attr("onClick","window.open(this.href, '','height=500,width=560');return false;");
-  $('.chatText.Bank').html('');
+  $('.chatText.bank').html('');
   $('.chatBankClosed').addClass('chatBankOpen');
   $('.chatBankClosed').removeClass('chatBankClosed');
 }
+
 function closeChatBank(){
   $('.chatBankOpen span').addClass('stbcolor-gray');
   $('.chatBankOpen span').removeClass('stbcolor-secondary');
   $('.chatBankOpen a').attr('onClick','return false');
-  $('.chatText.Bank').html('<br>Stengt. Åpent hverdager 8-16 (Lør 9-15)');
+  $('.chatText.bank').html('<br>Stengt. Åpent hverdager 8-20 (Lør 9-15)');
   $('.chatBankOpen').addClass('chatBankClosed');
   $('.chatBankOpen').removeClass('chatBankOpen');
 }
