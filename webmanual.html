@@ -420,6 +420,14 @@
       </div>
     </div>
 
+<script type="text/javascript">
+
+/*Functons to open/close chat*/
+
+
+</script>
+
+
     <div class="row top-margin-30">
       <div class="col-md-6">
         <p>Chat to be toggled </p>
@@ -429,22 +437,17 @@
               <span class="stb-sprite-small white chat"></span>
             </span>
             <span class="iconCompanion">Chat om pensjon</span>
+            <p class="chatText pension petit"></p>
           </a>
         </div>
       </div>  
       <div class="col-md-6">
         <p>Toggle chat open/closed</p>
-        <button class="stb-btn">Open chat</button>&nbsp;<button class="stb-btn transparent light">Close chat</button>
+        <button class="stb-btn" onClick="openChatPension();">Open chat</button>&nbsp;<button onClick="closeChatPension();" class="stb-btn transparent light">Close chat</button>
       </div> 
-    </div>  
+    </div> 
 
-    <script>
-
-    function closeChatPension(){
-      
-    }
-
-    </script>
+   
 
 
     <div class="row">
@@ -464,7 +467,6 @@
 </pre>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -1384,9 +1386,9 @@
       <ul class="accordion" data-widget="stbFaq">
         <li>
           <a href="#" class="twister">
-            <span class="question">Hvordan får jeg oversikt over hva jeg får i pensjon?</span>
+          	<span class="expander"></span>
             <span class="number">1</span>
-            <span class="expander"></span>
+            <span class="question" >Hvordan får jeg oversikt over hva jeg får i pensjon?</span>
           </a>
           <div class="answer">
             <ul>
@@ -1398,9 +1400,10 @@
         </li>
         <li>
           <a href="#" class="twister">
-            <span class="question">Hva består egentlig pensjon av?</span>
-            <span class="number">2</span>
             <span class="expander"></span>
+          	<span class="number">2</span>
+            <span class="question">Hva består egentlig pensjon av?</span>
+           
           </a>
           <div class="answer">
             <p>
