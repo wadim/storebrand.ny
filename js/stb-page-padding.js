@@ -562,15 +562,19 @@ $(document).ready(function(){
 $("document").ready(function() {
   $( ".mini" ).mouseenter(function() {
     $('.mini a').css('color', '#DA291C');
+    $('.mini a').css('border-color', '#DA291C');
   });
   $( ".mini" ).mouseleave(function() {
     $('.mini a').css('color', '#404040');
+    $('.mini a').css('border-color', '#404040');
   });
   $( ".big" ).mouseenter(function() {
     $('.big a').css('color', '#DA291C');
+    $('.big a').css('border-color', '#DA291C');
   });
   $( ".big" ).mouseleave(function() {
     $('.big a').css('color', '#404040');
+    $('.big a').css('border-color', '#404040');
   });
 }); 
 
