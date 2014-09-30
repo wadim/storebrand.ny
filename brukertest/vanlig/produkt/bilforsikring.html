@@ -20,10 +20,16 @@
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
 
-  <script>
-
-  </script>
 </head>
+
+<style>
+  @media (max-width: 768px){
+    .col-md-8{
+      padding-left: 0px; padding-right: 0px;
+    }
+  }
+
+</style>
 
 <body>
 <!-- Start top of page -->
@@ -354,107 +360,108 @@
         Når du har bestemt deg for hvilken som passer deg kan du sjekke pris og få et tilbud.
       </p>
       <button class="stb-btn stb-big-btn"><h3 class="stb-font-light">Sjekk pris og kjøp</h3></button>
+
       <table class="stb-table no-alt hoverable nude top-margin-20">
         <thead>
         <tr>
-          <th style="width-50">&nbsp;</th>
-          <th class="text-center width-10">Ansvar</th>
-          <th class="text-center width-10">Delkasko</th>
-          <th class="text-center width-10">Kasko</th>
-          <th class="text-center width-10">Super</th>
+          <th >&nbsp;</th>
+          <th class="text-center">Ansvar</th>
+          <th class="text-center hidden-xs">Delkasko</th> <th class="text-center visible-xs">Del-kasko</th>
+          <th class="text-center">Kasko</th>
+          <th class="text-center">Super</th>
         </tr>
         </thead>
         <tbody>
         <tr>
           <td>Ansvar</td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></span></td>
         </tr>
         <tr>
           <td>Brannskade</td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Tyveri</td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
-          <td>Glassruteskade</td>
+          <td class="hidden-xs">Glassruteskade</td><td class="visible-xs">Glassrute-skade</td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Veihjelp i Norden</td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Skade på eget kjøretøy</td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Skade utover kollisjon</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Bil-/veihjelp Europa</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Bagasje</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Leiebil 30&nbsp;d</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-sprite-medium checkdot"></span></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-sprite-medium checkdot hidden-xs"></span><span class="stb-sprite-small checkdot visible-xs"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Bedre erstatning</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Motor og girkasse</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
           <td>Oppgradert leiebil</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-center"><span class="stb-color-sprite-medium ok"></span></td>
+          <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         </tbody>
       </table>
