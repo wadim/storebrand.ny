@@ -68,7 +68,7 @@
  #mobilemenu{
     border-bottom-style: solid;
     border-width: 2px;
-    border-color: #000000;
+    border-color: #404040;
  }
 
   #desktopmenu ul{
@@ -89,7 +89,7 @@
   }
 
 
-  #mobilemenu a.list-group-item{
+  #mobilemenu a.menu-item{
     border: none;
   }
 
@@ -98,7 +98,7 @@
   }
 
   #mobilemenu .panel-heading {
-    border-bottom: 1px solid #a6a6a6;
+    border-bottom: 1px solid #404040;
   }
 
   .panel-default>.panel-heading{
@@ -112,8 +112,12 @@
     border-bottom: none;
   }
 
-  #mobilemenu .panel.active, #mobilemenu .panel.active .panel-heading,#mobilemenu .panel.active .panel-body,#mobilemenu .panel.active .list-group-item{
-    background: #EFE8DF;
+  #mobilemenu .panel.active, #mobilemenu .panel.active .panel-heading,#mobilemenu .panel.active .panel-body,#mobilemenu .panel.active .menu-item{
+    background: #F2F2F2
+  }
+
+  #mobilemenu .panel.active:first-child{
+    border-top: 1px solid #404040;
   }
 
   #mobilemenu .panel.active .panel-heading{
@@ -121,13 +125,14 @@
   }
   #mobilemenu .panel.active .panel-body{
     border: none;
+    border-bottom: 1px solid #404040;
   }
 
   #mobilemenu .panel-group .panel+.panel {
     margin-top: 0;
   }
 
-  #mobilemenu .stb-list-group a.list-group-item{
+  #mobilemenu .stb-list-group a.menu-item{
     font-family: 'SignaWeb-Light';
   }
 
@@ -149,6 +154,7 @@
     font-size: 16px;
     text-align: center;
     padding-left: 2px;
+    padding-top: 4px;
   }
 
   #mobilemenu li.active a{
@@ -161,6 +167,34 @@
   }
   #mobilemenu a:hover{
     background-color: transparent;
+  }
+
+  #mobilemenu .panel-body{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  #mobilemenu a.menu-item{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    font-size: 16px;
+    font-family: 'SignaWeb-Light';
+    border: none;
+    color: #404040;
+  }
+
+  #mobilemenu .twitter-typeahead{
+    width: 99%;
+  }
+
+  #mobilemenu .twitter-typeahead .typeahead{
+    width: 99%;
+    border: 2px solid #404040;
   }
 
 
@@ -330,19 +364,19 @@
   </div>
 </div>
 
-<div id="mobilemenu" class="top-margin-10 hidden-md hidden-lg" style="display: none;">
+<div id="mobilemenu" class="top-margin-10 bottom-margin-30 hidden-md hidden-lg" style="display: none;">
   <div class="row">
     <div class="col-xs-12">
       <ul class="nav nav-tabs" style="width: 100%; padding-left: 8px; padding-right: 2px;">
         <li class="active tab-box" style="width: 24%"><a id="tabheader-privat" href="#tab-privat" data-toggle="tab">Privat</a></li>
         <li class="tab-box" style="width: 24%; margin-left: 2px;"><a id="tabheader-bedrift" href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
         <li class="tab-box" style="width: 32%; margin-left: 2px;"><a id="tabheader-login" href="#tab-login" data-toggle="tab">Logg inn</a></li>
-        <li class="tab-box" style="width: 18%; margin-left: 2px;"><a id="tabheader-search" href="#tab-search" data-toggle="tab"><span class="stb-sprite-medium search white"></span></a></li>
+        <li class="tab-box" style="width: 18%; margin-left: 2px;"><a id="tabheader-search" href="#tab-search" data-toggle="tab" style="padding: 8px 15px;"><span class="stb-sprite-medium search white"></span></a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade in active" id="tab-privat">
 
-          <div class="panel-group" id="accordion-privat">
+          <div class="panel-group top-margin-10" id="accordion-privat">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#pensjon">
@@ -355,13 +389,13 @@
               <div id="pensjon" class="panel-collapse collapse">
                 <div class="panel-body">
                   <div class="stb-list-group">
-                    <a class="list-group-item" href="#">Pensjonsparing</a>
-                    <a class="list-group-item" href="verktoy/pensjonstall.html">Finn ditt pensjonstall</a>
-                    <a class="list-group-item" href="produkt/egensparingpensjon.html">Egensparing til pensjon</a>
-                    <a class="list-group-item" href="#">Pensjonsskolen</a>
-                    <a class="list-group-item" href="#">Pensjonskapitalbevis</a>
-                    <a class="list-group-item" href="#">Fripolise</a>
-                    <a class="list-group-item" href="kategori/pensjon.html">Forside Pensjon</a>
+                    <a class="menu-item" href="#">Pensjonsparing</a>
+                    <a class="menu-item" href="verktoy/pensjonstall.html">Finn ditt pensjonstall</a>
+                    <a class="menu-item" href="produkt/egensparingpensjon.html">Egensparing til pensjon</a>
+                    <a class="menu-item" href="#">Pensjonsskolen</a>
+                    <a class="menu-item" href="#">Pensjonskapitalbevis</a>
+                    <a class="menu-item" href="#">Fripolise</a>
+                    <a class="menu-item" href="kategori/pensjon.html">Forside Pensjon</a>
                   </div>
                 </div>
               </div>
@@ -378,15 +412,15 @@
               <div id="sparing" class="panel-collapse collapse">
                 <div class="panel-body">
                   <div class="stb-list-group">
-                    <a class="list-group-item" href="#">Fond</a>
-                    <a class="list-group-item" href="#">Banksparing</a>
-                    <a class="list-group-item" href="#">Høyrentekonto</a>
-                    <a class="list-group-item" href="#">Sparekonto</a>
-                    <a class="list-group-item" href="#">BSU</a>
-                    <a class="list-group-item" href="#">Plasseringskonto</a>
-                    <a class="list-group-item" href="#">Fondskonto</a>
-                    <a class="list-group-item" href="#">Fond i gave</a>
-                    <a class="list-group-item" href="kategori/sparing.html">Forside Sparing</a>
+                    <a class="menu-item" href="#">Fond</a>
+                    <a class="menu-item" href="#">Banksparing</a>
+                    <a class="menu-item" href="#">Høyrentekonto</a>
+                    <a class="menu-item" href="#">Sparekonto</a>
+                    <a class="menu-item" href="#">BSU</a>
+                    <a class="menu-item" href="#">Plasseringskonto</a>
+                    <a class="menu-item" href="#">Fondskonto</a>
+                    <a class="menu-item" href="#">Fond i gave</a>
+                    <a class="menu-item" href="kategori/sparing.html">Forside Sparing</a>
                   </div>
                 </div>
               </div>
@@ -403,16 +437,16 @@
               <div id="bank" class="panel-collapse collapse">
                 <div class="panel-body">
                   <div class="stb-list-group">
-                    <a class="list-group-item" href="#">Bli bankkunde</a>
-                    <a class="list-group-item" href="produkt/boliglaan.html">Boliglån</a>
-                    <a class="list-group-item" href="verktoy/laanekalkulator.html">Lånekalkulator</a>
-                    <a class="list-group-item" href="produkt/boliglaanunge.html">Boliglån for unge</a>
-                    <a class="list-group-item" href="#">Konto og kort</a>
-                    <a class="list-group-item" href="#">Visa-kort</a>
-                    <a class="list-group-item" href="#">Kredittkort</a>
-                    <a class="list-group-item" href="#">Ungdomskonto</a>
-                    <a class="list-group-item" href="#">Renter og priser</a>
-                    <a class="list-group-item" href="kategori/bankoglaan.html">Forside Bank</a>
+                    <a class="menu-item" href="#">Bli bankkunde</a>
+                    <a class="menu-item" href="produkt/boliglaan.html">Boliglån</a>
+                    <a class="menu-item" href="verktoy/laanekalkulator.html">Lånekalkulator</a>
+                    <a class="menu-item" href="produkt/boliglaanunge.html">Boliglån for unge</a>
+                    <a class="menu-item" href="#">Konto og kort</a>
+                    <a class="menu-item" href="#">Visa-kort</a>
+                    <a class="menu-item" href="#">Kredittkort</a>
+                    <a class="menu-item" href="#">Ungdomskonto</a>
+                    <a class="menu-item" href="#">Renter og priser</a>
+                    <a class="menu-item" href="kategori/bankoglaan.html">Forside Bank</a>
                   </div>
                 </div>
               </div>
@@ -429,65 +463,68 @@
               <div id="forsikring" class="panel-collapse collapse">
                 <div class="panel-body">
                   <div class="stb-list-group" >
-                    <a class="list-group-item" href="produkt/bilforsikring.html">Bilforsikring</a>
-                    <a class="list-group-item" href="#">Barneforsikring</a>
-                    <a class="list-group-item" href="#">Reiseforsikring</a>
-                    <a class="list-group-item" href="#">Uføreforsikring</a>
-                    <a class="list-group-item" href="#">Husforsikring</a>
-                    <a class="list-group-item" href="#">Innboforsikring</a>
-                    <a class="list-group-item" href="#">Hund- og kattforsikring</a>
-                    <a class="list-group-item" href="#">Behovsveileder</a>
-                    <a class="list-group-item" href="#">Personforsikringer</a>
-                    <a class="list-group-item" href="#">MC-forsikring</a>
-                    <a class="list-group-item" href="#">Båtforsikring</a>
-                    <a class="list-group-item" href="kategori/forsikring.html">Forside Forsikring</a>
+                    <a class="menu-item" href="produkt/bilforsikring.html">Bilforsikring</a>
+                    <a class="menu-item" href="#">Barneforsikring</a>
+                    <a class="menu-item" href="#">Reiseforsikring</a>
+                    <a class="menu-item" href="#">Uføreforsikring</a>
+                    <a class="menu-item" href="#">Husforsikring</a>
+                    <a class="menu-item" href="#">Innboforsikring</a>
+                    <a class="menu-item" href="#">Hund- og kattforsikring</a>
+                    <a class="menu-item" href="#">Behovsveileder</a>
+                    <a class="menu-item" href="#">Personforsikringer</a>
+                    <a class="menu-item" href="#">MC-forsikring</a>
+                    <a class="menu-item" href="#">Båtforsikring</a>
+                    <a class="menu-item" href="kategori/forsikring.html">Forside Forsikring</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="tab-bedrift">Bedrift
+        <div class="tab-pane fade" id="tab-bedrift">
+          <h3 class="left-margin-10">Bedrift her</h3>
           <hr></div>
-        <div class="tab-pane fade" id="tab-login">login
+        <div class="tab-pane fade" id="tab-login">
+          <h3 class="left-margin-10">Logg in her</h3>
           <hr>
         </div>
 
         <div class="tab-pane fade" id="tab-search">
-          <div class="row top-margin-10 left-padding-10">
-            <div class="col-xs-12">
-              <form class="search tt-mobile">
-                <label style="width: 95%">
-                  <div class="col-xs-11" style="padding-right: 0; padding-left: 0; ">
-                    <input type="text" class="typeahead searchbox" placeholder="Søk i sidene"/>
-                  </div>
-                  <div class="col-xs-1" style="padding-left: 0; padding-right: 0;">
-                    <span class="search-icon  " style="display: block; position: relative; padding-left: 6px; padding-top: 12px;"><span class="stb-sprite-medium search"></span></span>
-                  </div>
-                </label>
-              </form>
-              <hr>
+          <div class="row top-margin-20 left-padding-10">
+            <div class="col-xs-11">
+              <div class="row">
+                <div class="col-xs-12">
+                  <form class="search tt-mobile">
+                    <label style="width: 80%">
+                      <div class="col-xs-11" style="padding-right: 0; padding-left: 0; ">
+                        <input type="text" class="typeahead searchbox" placeholder="Søk i sidene" style="width: 99%"/>
+                      </div>
+                      <div class="col-xs-1" style="padding-left: 0; padding-right: 0;">
+                        <button class="stb-btn" style="display: block; position: relative; padding-left: 6px; height: 53px;"><span class="stb-sprite-medium search white"></span></span></button>
+                      </div>
+                    </label>
+                  </form>
+                </div>
+              </div>
             </div>
-
           </div>
+          <hr>
         </div>
       </div>
     </div>
   </div>
-  <div class="row bottom-margin-10" style="margin-left: -8px;">
-    <div class="col-xs-6">
-      <button class="stb-btn transparent light" style="width: 150px;">Veihjelp<span class="stb-sprite-small wrench"</span></button><br>
+  <div class="row top-margin-10 bottom-margin-50" style="margin-left: -8px;">
+    <div class="col-xs-6 col-sm-3">
+      <button class="stb-btn transparent light top-margin-5" style="width: 99%">Veihjelp<span class="stb-sprite-small wrench"></span></button>
     </div>
-    <div class="col-xs-6 left-padding-5">
-      <button class="stb-btn transparent light pull-right right-margin-5" style="width: 150px;">Få fordeler<span class="stb-sprite-small wrench"></span> </button><br>
+    <div class="col-xs-6 col-sm-3">
+      <button class="stb-btn transparent light top-margin-5" style="width: 99%">Meld skade<span class="stb-sprite-small wrench"></span> </button>
     </div>
-  </div>
-  <div class="row bottom-margin-10" style="margin-left: -8px;">
-    <div class="col-xs-6 right-padding-5">
-      <button class="stb-btn transparent light" style="width: 150px;">Meld skade<span class="stb-sprite-small wrench"></span> </button>
+    <div class="col-xs-6 col-sm-3">
+      <button class="stb-btn transparent light top-margin-5" style="width: 99%">Få fordeler<span class="stb-sprite-small wrench"></span> </button>
     </div>
-    <div class="col-xs-6 left-padding-5">
-      <button class="stb-btn transparent light pull-right right-margin-5" style="width: 150px;">Kontakt oss<span class="stb-sprite-small bubble"></span></button>
+    <div class="col-xs-6 col-sm-3">
+      <button class="stb-btn transparent light top-margin-5" style="width: 99%">Kontakt oss<span class="stb-sprite-small bubble"></span></button>
     </div>
   </div>
 </div>
