@@ -1,3 +1,13 @@
+
+//get the searchdata.js absolute URL
+var scripts = document.getElementsByTagName('script');
+
+//load the current running script (which has to be this script as its running right now)
+var absURL = scripts[scripts.length-1].src;
+
+//remove the JS file name
+absURL = absURL.substring(0,absURL.lastIndexOf("/")+1);
+
 var promotions = {
   "banksparing" : {"header": "Det er lurt å spare i bank!",
             "text": "Da får du nemlig rente på pengene dine!", 
@@ -55,7 +65,7 @@ var typeaheads = {
       {"name": "Presse","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
       {"name": "Pressekontakter","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
       {"name": "Jobb i Storebrand","url":"http://www.storebrand.no/site/stb.nsf/pages/hovedsidejobbistorebrand.html"},
-      {"name": "Kundefordeler","url":"../vanlig/tema3/kundefordeler.html"}
+      {"name": "Kundefordeler","url":absURL+"../brukertest/vanlig/tema3/kundefordeler.html"}
     ],
   "Fond" :
     [
@@ -69,30 +79,30 @@ var typeaheads = {
     ],
   "Pensjon" :
     [
-      {"name": "Lær om pensjon","url" : "../vanlig/kategori/pensjon.html"},
-      {"name": "Pensjonskalkulator","url":"../vanlig/verktoy/pensjonstall.html"},
-      {"name": "Pensjonssparing","url":"../vanlig/artikkel/pensjonssparing.html"},
-      {"name": "Egen sparing pensjon","url":"../vanlig/produkt/egensparingpensjon.html"}
+      {"name": "Lær om pensjon","url" : absURL+"../brukertest/vanlig/kategori/pensjon.html"},
+      {"name": "Pensjonskalkulator","url":absURL+"../brukertest/vanlig/verktoy/pensjonstall.html"},
+      {"name": "Pensjonssparing","url":absURL+"../brukertest/vanlig/artikkel/pensjonssparing.html"},
+      {"name": "Egen sparing pensjon","url":absURL+"../brukertest/vanlig/produkt/egensparingpensjon.html"}
     ],
   "Bank" :
     [
-      {"name": "Banksparing","url" : "../vanlig/kategori/sparing.html"},
-      {"name": "Bank og LÅn","url":"../vanlig/kategori/bankoglaan.html"},
+      {"name": "Banksparing","url" : absURL+"../brukertest/vanlig/kategori/sparing.html"},
+      {"name": "Bank og LÅn","url":absURL+"../brukertest/vanlig/kategori/bankoglaan.html"},
       {"name": "Bolig lån","url":"../vanlig/produkt/boliglaan.html"},
-      {"name": "Bolig lån for unge","url":"../vanlig/produkt/boliglaanunge.html"},
-      {"name": "Lånekalkulator","url":"../vanlig/verktoy/laanekalkulator.html"},
-      {"name": "Dagens Lånerenter","url":"../vanlig/artikkel/dagenslaanerenter.html"},
-      {"name": "Søke boliglån","url":"../vanlig/artikkel/sokeboliglaan.html"},
-      {"name": "Vilkår for boliglån","url":"../vanlig/artikkel/vilkaarboliglaan.html"}
+      {"name": "Bolig lån for unge","url":absURL+"../brukertestvanlig/produkt/boliglaanunge.html"},
+      {"name": "Lånekalkulator","url":absURL+"../brukertest/vanlig/verktoy/laanekalkulator.html"},
+      {"name": "Dagens Lånerenter","url":absURL+"../brukertest/vanlig/artikkel/dagenslaanerenter.html"},
+      {"name": "Søke boliglån","url":absURL+"../brukertest/vanlig/artikkel/sokeboliglaan.html"},
+      {"name": "Vilkår for boliglån","url":absURL+"../brukertest/vanlig/artikkel/vilkaarboliglaan.html"}
     ],
   "Forsikring" :
     [
-      {"name": "Tips om forsikring","url":"../vanlig/kategori/forsikring.html"},
-      {"name": "Bilforsikring","url":"../vanlig/produkt/bilforsikring.html"},
-      {"name": "Bil og kjøretøy","url" : "../vanlig/tema2/bilogkjoretoy.html"},
-      {"name": "Hus og hjem","url" : "../vanlig/tema2/husoghjem.html"},
-      {"name": "At om bilforsikring","url" : "../vanlig/artikkel/bilforsikring.html"},
-      {"name": "Bonus på Kjøretøy","url" : "../vanlig/artikkel/bonuskjoretoy.html"},
+      {"name": "Tips om forsikring","url":absURL+"../brukertest/vanlig/kategori/forsikring.html"},
+      {"name": "Bilforsikring","url":absURL+"../brukertest/vanlig/produkt/bilforsikring.html"},
+      {"name": "Bil og kjøretøy","url" : absURL+"../brukertest/vanlig/tema2/bilogkjoretoy.html"},
+      {"name": "Hus og hjem","url" : absURL+"../brukertest/vanlig/tema2/husoghjem.html"},
+      {"name": "At om bilforsikring","url" : absURL+"../brukertest/vanlig/artikkel/bilforsikring.html"},
+      {"name": "Bonus på Kjøretøy","url" : absURL+"../brukertest/vanlig/artikkel/bonuskjoretoy.html"},
     ],
   "Minside" :
     [
