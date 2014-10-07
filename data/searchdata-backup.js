@@ -54,8 +54,7 @@ var typeaheads = {
       {"name": "Bærekraft","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsidebarekraft.html"},
       {"name": "Presse","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
       {"name": "Pressekontakter","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
-      {"name": "Jobb i Storebrand","url":"http://www.storebrand.no/site/stb.nsf/pages/hovedsidejobbistorebrand.html"},
-      {"name": "Kundefordeler","url":"../vanlig/tema3/kundefordeler.html"}
+      {"name": "Jobb i Storebrand","url":"http://www.storebrand.no/site/stb.nsf/pages/hovedsidejobbistorebrand.html"}
     ],
   "Fond" :
     [
@@ -69,30 +68,53 @@ var typeaheads = {
     ],
   "Pensjon" :
     [
-      {"name": "Lær om pensjon","url" : "../vanlig/kategori/pensjon.html"},
-      {"name": "Pensjonskalkulator","url":"../vanlig/verktoy/pensjonstall.html"},
-      {"name": "Pensjonssparing","url":"../vanlig/artikkel/pensjonssparing.html"},
-      {"name": "Egen sparing pensjon","url":"../vanlig/produkt/egensparingpensjon.html"}
+      {"name": "Lær om pensjon","url" : "dummy.html"},
+      {"name": "Pensjonskalkulator","url":"dummy.html"},
+      {"name": "Kjøp pensjonssparing","url":"dummy.html"},
+      {"name": "Ekstrapensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/ekstrapensjon.html"},
+      {"name": "Ditt pensjonstall","url":"dummy.html"},
+      {"name": "Fripolise","url":"dummy.html"},
+      {"name": "Pensjonsskolen","url":"dummy.html"},
+      {"name": "Folketrygden","url":"dummy.html"},
+      {"name": "Tjenestepensjon","url":"dummy.html"},
+      {"name": "Kontakt pensjon","url":"dummy.html"},
+      {"name": "Start pensjonssparing","url":"dummy.html"},
+      {"name": "Chat om pensjon","url":"dummy.html"},
+      {"name": "Mitt pensjonstall","url":"dummy.html"},
+      {"name": "Tips til pensjon","url":"dummy.html"}
     ],
   "Bank" :
     [
-      {"name": "Banksparing","url" : "../vanlig/kategori/sparing.html"},
-      {"name": "Bank og LÅn","url":"../vanlig/kategori/bankoglaan.html"},
-      {"name": "Bolig lån","url":"../vanlig/produkt/boliglaan.html"},
-      {"name": "Bolig lån for unge","url":"../vanlig/produkt/boliglaanunge.html"},
-      {"name": "Lånekalkulator","url":"../vanlig/verktoy/laanekalkulator.html"},
-      {"name": "Dagens Lånerenter","url":"../vanlig/artikkel/dagenslaanerenter.html"},
-      {"name": "Søke boliglån","url":"../vanlig/artikkel/sokeboliglaan.html"},
-      {"name": "Vilkår for boliglån","url":"../vanlig/artikkel/vilkaarboliglaan.html"}
+      {"name": "Banksparing","url" : "dummy.html"},
+      {"name": "Kort og kreditt","url":"dummy.html"},
+      {"name": "Mistet kort","url":"dummy.html"},
+      {"name": "Sperr kort","url":"dummy.html"},
+      {"name": "Visakort","url":"dummy.html"},
+      {"name": "Kredittkort","url":"dummy.html"},
+      {"name": "Bli kunde","url":"dummy.html"},
+      {"name": "Kontakt banken","url":"dummy.html"},
+      {"name": "Priser og vilkår","url":"dummy.html"},
+      {"name": "Dagens renter","url":"dummy.html"},
+      {"name": "Søk boliglån","url":"dummy.html"},
+      {"name": "Start Banksparing","url":"dummy.html"},
+      {"name": "Chat om bank","url":"dummy.html"}
     ],
   "Forsikring" :
     [
-      {"name": "Tips om forsikring","url":"../vanlig/kategori/forsikring.html"},
-      {"name": "Bilforsikring","url":"../vanlig/produkt/bilforsikring.html"},
-      {"name": "Bil og kjøretøy","url" : "../vanlig/tema2/bilogkjoretoy.html"},
-      {"name": "Hus og hjem","url" : "../vanlig/tema2/husoghjem.html"},
-      {"name": "At om bilforsikring","url" : "../vanlig/artikkel/bilforsikring.html"},
-      {"name": "Bonus på Kjøretøy","url" : "../vanlig/artikkel/bonuskjoretoy.html"},
+      {"name": "Meld skade","url" : "dummy.html"},
+      {"name": "Bilforsikring","url":"dummy.html"},
+      {"name": "Helseforsikring","url":"dummy.html"},
+      {"name": "Hytteforsikring","url":"dummy.html"},
+      {"name": "Tips om forsikring","url":"dummy.html"},
+      {"name": "Mine behov","url":"dummy.html"},
+      {"name": "Alt til bilen","url":"dummy.html"},
+      {"name": "Alt til barnet","url":"dummy.html"},
+      {"name": "Alt til huset","url":"dummy.html"},
+      {"name": "Kontakt forsikring","url":"dummy.html"},
+      {"name": "Chat om forsikring","url":"dummy.html"},
+      {"name": "Motorsykkelforsikring","url":"dummy.html"},
+      {"name": "Tilhengerforsikring","url":"dummy.html"},
+      {"name": "Uføreforsikring","url":"dummy.html"}
     ],
   "Minside" :
     [
