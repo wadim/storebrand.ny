@@ -60,11 +60,6 @@ var typeaheads = {
     ],
     "Storebrand" :
     [
-      {"name": "Kvartalsrapporter","url" : "http://www.storebrand.no/site/stb.nsf/Pdfkvartalsrapporterprselskap?Openview&RestrictToCategory=Storebrand%20Asa%202013"},
-      {"name": "Bærekraft","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsidebarekraft.html"},
-      {"name": "Presse","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
-      {"name": "Pressekontakter","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
-      {"name": "Jobb i Storebrand","url":"http://www.storebrand.no/site/stb.nsf/pages/hovedsidejobbistorebrand.html"},
       {"name": "Kundefordeler","url":absURL+"../brukertest/vanlig/tema3/kundefordeler.html"}
     ],
   "Fond" :
@@ -106,18 +101,5 @@ var typeaheads = {
     ],
   "Minside" :
     [
-      {"name": "Betal regning","url" : "dummy.html"},
-      {"name": "Min oversikt","url":"dummy.html"},
-      {"name": "Mitt forbruk","url":"dummy.html"},
-      {"name": "Efaktura","url":"dummy.html"},
-      {"name": "Kort og kreditt","url":"dummy.html"},
-      {"name": "Anders Losvik","url":"dummy.html"},
-      {"name": "Bjørn Christian Tørrissen'","url":"http://bjornfree.com/"},
-      {"name": "Mine kontoer","url":"dummy.html"},
-      {"name": "Mine innstillinger","url":"dummy.html"},
-      {"name": "Søk lån","url":"dummy.html"},
-      {"name": "Banksparing","url":"dummy.html"},
-      {"name": "Nettbank","url":"dummy.html"},
-      {"name": "Sikker chat - logg inn","url":"dummy.html"}
     ]
 };
