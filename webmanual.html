@@ -892,7 +892,7 @@
           <li class="list-group-item summary">Telefon </li>
           <li class="list-group-item">Kontonummer</li>
           <li class="list-group-item">Polisenummer</span></li>
-          <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-small chevron-down"></span><span class="show-detail">Vis detaljer</span><span class="hide-detail">Skjul</span></a></li>
+          <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-small chevron-down"></span><span class="show-detail">Vis detaljer</span><span class="hide-detail">Skjul detaljer</span></a></li>
         </ul>
       </div>
       <div class="col-md-6">
@@ -905,7 +905,7 @@
           <li class="list-group-item"><ul><li class="list-group-item">Lorum</li><li class="list-group-item">Ipsum</li></ul></li>
           <li class="list-group-item summary"><span class="stb-font-bold">Gjenstand D</span></li>
           <li class="list-group-item"><ul><li class="list-group-item">Lorum</li><li class="list-group-item">Ipsum</li></ul></li>
-          <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-small chevron-down"></span><span class="show-detail">Vis detaljer</span><span class="hide-detail">Skjul</span></a></li>
+          <li class="list-group-item showMore stbcolor-secondary fifth"><a><span class="stb-sprite-small chevron-down"></span><span class="show-detail">Vis detaljer</span><span class="hide-detail">Skjul detaljer</span></a></li>
         </ul>
       </div>
     </div>
@@ -919,8 +919,8 @@
     &lt;li class="list-group-item summary"&gt;Telefon&lt;/li&gt;
     &lt;li class="list-group-item &gt;Kontonummer&lt;/li&gt;
     &lt;li class="list-group-item &gt;Polisenummer&lt;/li&gt;
-    &lt;li class="list-group-item showMore stbcolor-secondary fifth"&gt;&lt;a&gt;
-    &lt;span class="stb-sprite-small chevron-down"/&gt;&lt;/span&gt;Vis/skjul flere detaljer&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="list-group-item showMore stbcolor-secondary fifth"&gt;
+      &lt;a&gt;&lt;span class="stb-sprite-small chevron-down"/&gt;&lt;/span&gt;&lt;span class="show-detail"&gt;Vis detaljer&lt;/span&gt;&lt;span class="hide-detail"&gt;Skjul detaljer&lt;/span&gt&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
   </div>
@@ -984,21 +984,21 @@
       <div class="col-md-5">
         <h4>Code:</h4>
               <pre class="prettyprint">
-   &lt;div class="col-md-4"&gt;
-    &lt;div class="stb-box border"&gt;
-      ... contents ...
-    &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class="col-md-4"&gt;
-    &lt;div class="stb-box gray fat border"&gt;
-      ... contents ...
-    &lt;/div&gt;
-   &lt;/div&gt; 
-   &lt;div class="col-md-4"&gt;
-    &lt;div class="stb-box red dotted border"&gt;
-      ... contents ...
-    &lt;/div&gt;
-   &lt;/div&gt;     
+&lt;div class="col-md-4"&gt;
+&lt;div class="stb-box border"&gt;
+  ... contents ...
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-md-4"&gt;
+&lt;div class="stb-box gray fat border"&gt;
+  ... contents ...
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-md-4"&gt;
+&lt;div class="stb-box red dotted border"&gt;
+  ... contents ...
+&lt;/div&gt;
+&lt;/div&gt;
 </pre>
       </div>
     </div>
@@ -1035,15 +1035,13 @@
           <h4>Code:</h4>
                 <pre class="prettyprint">
 &lt;!-- Gray background: --&gt;
-&lt;div class="col-md-4"&gt;
-  &lt;div class="stb-box third noBorder"&gt;
-    &lt;h3 class="box"&gt;..headline&lt;/h3&gt;
-    &lt;h2 class="big"&gt;3,45%&lt;/h2&gt;
-    &lt;p class="petit"&gt; ..content&lt;/p&gt;
-    &lt;p class="petit"&gt;..content&lt;/p&gt;
-    &lt;button class="stb-btn transparent light"&gt;..text&lt;/button&gt;
-  &lt;/div&gt;  
-&lt;/div&gt;            
+&lt;div class="stb-box third noBorder"&gt;
+  &lt;h3 class="box"&gt;..headline&lt;/h3&gt;
+  &lt;h2 class="big"&gt;3,45%&lt;/h2&gt;
+  &lt;p class="petit"&gt; ..content&lt;/p&gt;
+  &lt;p class="petit"&gt;..content&lt;/p&gt;
+  &lt;button class="stb-btn transparent light"&gt;..text&lt;/button&gt;
+&lt;/div&gt;
 </pre>
         </div>
       </div>
@@ -1081,7 +1079,6 @@
       <div class="col-md-10">
         <h4>Code:</h4>
               <pre class="prettyprint">
-&lt;div class="col-md-12 col-lg-4"&gt;
  &lt;div class="stb-box mini clickable" rel="tel:08880"&gt;
    &lt;div class="row"&gt;
      &lt;div class="col-sm-6 col-md-12"&gt;
@@ -1092,8 +1089,7 @@
        &lt;h3  class="box"&gt;&lt;a href="#"&gt;Ring 08880&lt;/a&gt;&lt;/h3&gt;
      &lt;/div&gt;
    &lt;/div&gt;
-  &lt;/div&gt;    
-&lt;/div&gt;                
+  &lt;/div&gt;
 </pre>
       </div>
     </div>
@@ -1149,7 +1145,6 @@
         <div class="col-md-10">
           <h4>Code:</h4>
                 <pre class="prettyprint">
-&lt;div class="col-md-12 col-lg-4"&gt;
   &lt;div class="stb-box big clickable" rel="tel:08880"&gt;
     &lt;div class="row"&gt;
       &lt;div class="col-sm-6 col-md-12"&gt;
@@ -1160,8 +1155,7 @@
         ..content
       &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;    
-&lt;/div&gt;               
+  &lt;/div&gt;
 </pre>
         </div>
       </div>
@@ -1207,19 +1201,19 @@
       &lt;div class="left-padding-60"&gt;
         &lt;h4&gt;Angrerett&lt;/h4&gt;
         &lt;p&gt;..content&lt;/p&gt;
-      &lt;/div&gt;  
-    &lt;/div&gt;  
-  &lt;/div&gt;  
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
   &lt;div class="col-md-6"&gt;
     &lt;div class="stb-box transparent dashed info"&gt;
       &lt;span class="pull-left infoIcon" &gt;&lt;/span&gt;
       &lt;div class="left-padding-60"&gt;
         &lt;h4&gt;Angrerett&lt;/h4&gt;
         &lt;p&gt;..content&lt;/p&gt;
-      &lt;/div&gt;  
+      &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;  
-&lt;/div&gt; 
+  &lt;/div&gt;
+&lt;/div&gt;
 </pre>
         </div>
       </div>
@@ -2938,6 +2932,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 &lt;/form&gt;</pre>
     </pre>
   </div>
+  </div>
   <div class="row">
     <div class="col-md-9 col-md-offset-3">
       <h4>form input elements with add-on</h4>
@@ -3705,11 +3700,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <div data-spy="affix" class="cookieNote" id="cookieNote">
   <div class="cookieClose">
-    &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-small white remove"></span><br />(Lukk)</a>
+    &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false">Lukk<span class="stb-sprite-small white remove"></span></a>
   </div>
   <div class="cookieInfo">
     <div class="info">
-      På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="https://www.storebrand.no/pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
+      På storebrand.ssno brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="https://www.storebrand.no/pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
     </div>
   </div>
 </div>

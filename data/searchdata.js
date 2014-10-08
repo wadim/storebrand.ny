@@ -1,3 +1,13 @@
+
+//get the searchdata.js absolute URL
+var scripts = document.getElementsByTagName('script');
+
+//load the current running script (which has to be this script as its running right now)
+var absURL = scripts[scripts.length-1].src;
+
+//remove the JS file name
+absURL = absURL.substring(0,absURL.lastIndexOf("/")+1);
+
 var promotions = {
   "banksparing" : {"header": "Det er lurt å spare i bank!",
             "text": "Da får du nemlig rente på pengene dine!", 
@@ -50,11 +60,7 @@ var typeaheads = {
     ],
     "Storebrand" :
     [
-      {"name": "Kvartalsrapporter","url" : "http://www.storebrand.no/site/stb.nsf/Pdfkvartalsrapporterprselskap?Openview&RestrictToCategory=Storebrand%20Asa%202013"},
-      {"name": "Bærekraft","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsidebarekraft.html"},
-      {"name": "Presse","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
-      {"name": "Pressekontakter","url":"http://www.storebrand.no/site/stb.nsf/Pages/newsdesk.html#/"},
-      {"name": "Jobb i Storebrand","url":"http://www.storebrand.no/site/stb.nsf/pages/hovedsidejobbistorebrand.html"}
+      {"name": "Kundefordeler","url":absURL+"../brukertest/vanlig/tema3/kundefordeler.html"}
     ],
   "Fond" :
     [
@@ -68,68 +74,32 @@ var typeaheads = {
     ],
   "Pensjon" :
     [
-      {"name": "Lær om pensjon","url" : "dummy.html"},
-      {"name": "Pensjonskalkulator","url":"dummy.html"},
-      {"name": "Kjøp pensjonssparing","url":"dummy.html"},
-      {"name": "Ekstrapensjon","url":"http://www.storebrand.no/site/stb.nsf/Pages/ekstrapensjon.html"},
-      {"name": "Ditt pensjonstall","url":"dummy.html"},
-      {"name": "Fripolise","url":"dummy.html"},
-      {"name": "Pensjonsskolen","url":"dummy.html"},
-      {"name": "Folketrygden","url":"dummy.html"},
-      {"name": "Tjenestepensjon","url":"dummy.html"},
-      {"name": "Kontakt pensjon","url":"dummy.html"},
-      {"name": "Start pensjonssparing","url":"dummy.html"},
-      {"name": "Chat om pensjon","url":"dummy.html"},
-      {"name": "Mitt pensjonstall","url":"dummy.html"},
-      {"name": "Tips til pensjon","url":"dummy.html"}
+      {"name": "Lær om pensjon","url" : absURL+"../brukertest/vanlig/kategori/pensjon.html"},
+      {"name": "Pensjonskalkulator","url":absURL+"../brukertest/vanlig/verktoy/pensjonstall.html"},
+      {"name": "Pensjonssparing","url":absURL+"../brukertest/vanlig/artikkel/pensjonssparing.html"},
+      {"name": "Egen sparing pensjon","url":absURL+"../brukertest/vanlig/produkt/egensparingpensjon.html"}
     ],
   "Bank" :
     [
-      {"name": "Banksparing","url" : "dummy.html"},
-      {"name": "Kort og kreditt","url":"dummy.html"},
-      {"name": "Mistet kort","url":"dummy.html"},
-      {"name": "Sperr kort","url":"dummy.html"},
-      {"name": "Visakort","url":"dummy.html"},
-      {"name": "Kredittkort","url":"dummy.html"},
-      {"name": "Bli kunde","url":"dummy.html"},
-      {"name": "Kontakt banken","url":"dummy.html"},
-      {"name": "Priser og vilkår","url":"dummy.html"},
-      {"name": "Dagens renter","url":"dummy.html"},
-      {"name": "Søk boliglån","url":"dummy.html"},
-      {"name": "Start Banksparing","url":"dummy.html"},
-      {"name": "Chat om bank","url":"dummy.html"}
+      {"name": "Banksparing","url" : absURL+"../brukertest/vanlig/kategori/sparing.html"},
+      {"name": "Bank og LÅn","url":absURL+"../brukertest/vanlig/kategori/bankoglaan.html"},
+      {"name": "Bolig lån","url":"../vanlig/produkt/boliglaan.html"},
+      {"name": "Bolig lån for unge","url":absURL+"../brukertestvanlig/produkt/boliglaanunge.html"},
+      {"name": "Lånekalkulator","url":absURL+"../brukertest/vanlig/verktoy/laanekalkulator.html"},
+      {"name": "Dagens Lånerenter","url":absURL+"../brukertest/vanlig/artikkel/dagenslaanerenter.html"},
+      {"name": "Søke boliglån","url":absURL+"../brukertest/vanlig/artikkel/sokeboliglaan.html"},
+      {"name": "Vilkår for boliglån","url":absURL+"../brukertest/vanlig/artikkel/vilkaarboliglaan.html"}
     ],
   "Forsikring" :
     [
-      {"name": "Meld skade","url" : "dummy.html"},
-      {"name": "Bilforsikring","url":"dummy.html"},
-      {"name": "Helseforsikring","url":"dummy.html"},
-      {"name": "Hytteforsikring","url":"dummy.html"},
-      {"name": "Tips om forsikring","url":"dummy.html"},
-      {"name": "Mine behov","url":"dummy.html"},
-      {"name": "Alt til bilen","url":"dummy.html"},
-      {"name": "Alt til barnet","url":"dummy.html"},
-      {"name": "Alt til huset","url":"dummy.html"},
-      {"name": "Kontakt forsikring","url":"dummy.html"},
-      {"name": "Chat om forsikring","url":"dummy.html"},
-      {"name": "Motorsykkelforsikring","url":"dummy.html"},
-      {"name": "Tilhengerforsikring","url":"dummy.html"},
-      {"name": "Uføreforsikring","url":"dummy.html"}
+      {"name": "Tips om forsikring","url":absURL+"../brukertest/vanlig/kategori/forsikring.html"},
+      {"name": "Bilforsikring","url":absURL+"../brukertest/vanlig/produkt/bilforsikring.html"},
+      {"name": "Bil og kjøretøy","url" : absURL+"../brukertest/vanlig/tema2/bilogkjoretoy.html"},
+      {"name": "Hus og hjem","url" : absURL+"../brukertest/vanlig/tema2/husoghjem.html"},
+      {"name": "At om bilforsikring","url" : absURL+"../brukertest/vanlig/artikkel/bilforsikring.html"},
+      {"name": "Bonus på Kjøretøy","url" : absURL+"../brukertest/vanlig/artikkel/bonuskjoretoy.html"},
     ],
   "Minside" :
     [
-      {"name": "Betal regning","url" : "dummy.html"},
-      {"name": "Min oversikt","url":"dummy.html"},
-      {"name": "Mitt forbruk","url":"dummy.html"},
-      {"name": "Efaktura","url":"dummy.html"},
-      {"name": "Kort og kreditt","url":"dummy.html"},
-      {"name": "Anders Losvik","url":"dummy.html"},
-      {"name": "Bjørn Christian Tørrissen'","url":"http://bjornfree.com/"},
-      {"name": "Mine kontoer","url":"dummy.html"},
-      {"name": "Mine innstillinger","url":"dummy.html"},
-      {"name": "Søk lån","url":"dummy.html"},
-      {"name": "Banksparing","url":"dummy.html"},
-      {"name": "Nettbank","url":"dummy.html"},
-      {"name": "Sikker chat - logg inn","url":"dummy.html"}
     ]
 };

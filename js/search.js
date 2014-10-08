@@ -57,7 +57,7 @@ function checkSearch(query) {
   query = query.replace(reg1, "");
   query = query.replace(reg2, "");
   query = query.replace(reg3, "");
-  window.location = "search-results.html?action=search&q=" + query;
+  window.location = absURL+"../brukertest/vanlig/search-results.html?action=search&q=" + query;
 }
 
 function initPromotion() {
@@ -300,7 +300,7 @@ function getQuery(){
 // AJAX search call to Google
 function searchQuery( query, start ) {
   // loader image
-  $(".searchresults").append("<row><div class='col-12 top-margin-30' style='text-align: center;'><img id='loadingimage' src='images/ajax-loader.gif'></div></div>");
+  $(".searchresults").append("<row><div class='col-12 top-margin-30' style='text-align: center;'><img id='loadingimage' src='../../images/ajax-loader.gif'></div></div>");
   searchIsRunning = true;
 
   var query = encodeURI( encodeURI( query ) ); // Used because of the yahoo api. Replace with Storebrand proxy later.
@@ -318,7 +318,7 @@ function getPromotions() {
     initPromotion();
     $.each(promotions,function(value) {
       if (value.toLowerCase() == get['q'].toLowerCase()){ 
-        $(".searchresults").append('<div class="top-margin-20 bottom-margin-20 promotion stb-box gray' + '"><h3>'+promotions[value].header + '<' + '/h3><' + 'p class="description">' + promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + promotions[value].url + '">' + promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
+        $(".searchresults").append('<div class="top-margin-20 bottom-margin-20 promotion stb-box seventh' + '"><h3>'+promotions[value].header + '<' + '/h3><' + 'p class="description">' + promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + promotions[value].url + '">' + promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
       }
      });
   }
