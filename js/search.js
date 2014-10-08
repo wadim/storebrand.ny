@@ -57,7 +57,7 @@ function checkSearch(query) {
   query = query.replace(reg1, "");
   query = query.replace(reg2, "");
   query = query.replace(reg3, "");
-  window.location = "search-results.html?action=search&q=" + query;
+  window.location = absURL+"../brukertest/vanlig/search-results.html?action=search&q=" + query;
 }
 
 function initPromotion() {
