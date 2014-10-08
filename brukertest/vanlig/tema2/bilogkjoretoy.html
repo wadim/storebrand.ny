@@ -21,6 +21,15 @@
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/src/laanekalkulator.js"></script>
+  <script>
+    $("document").ready(function(){
+      $(".row .column").matchHeight(true);
+    })
+
+    $(window).resize(function() {
+      $(".row .column").matchHeight(true);
+    });
+  </script>
   <style>
     .jslider{
       margin-left: 100px;
@@ -38,6 +47,18 @@
     }
     .jslider .jslider-bg .r{
       background-color: white;
+    }
+    .theme-image-wide {
+      background-image: url("../../../images/1280x720test4.jpg");
+    }
+
+    .container .theme-banner {
+      height: 405px;
+    }
+
+    .theme-banner,
+    .theme-image  {
+      min-height: 405px;
     }
   </style>
 </head>
@@ -347,51 +368,52 @@
 </div>
 <!-- End top of page -->
 
-<!-- Start of page contents -->
-<div class="stbcolor-secondary seventh top-padding-30">
-  <div class="container banner-video">
-    <div class="video-text">
-      <div class="col-md-6">
-        <div class="stb-banner">
-          <h1>Bil og kjøretøy </h1>
-          <p class="intro">Det er mange ting som er viktig å tenke på når man har bil. Her finner du all informasjon du trenger hvis du eier et kjøretøy eller har planlegger å kjøpe et kjøretøy.</p>
-        </div>
+<div class="container theme-banner">
+  <div class="row">
+    <div class="col-md-6 column heading">
+      <div class="stb-box width-75-mdlg top-margin-50-mdlg">
+        <h1>Bil og kjøretøy </h1>
+        <p class="intro">Det er mange ting som er viktig å tenke på når man har bil. Her finner du all informasjon du trenger hvis du eier et kjøretøy eller har planlegger å kjøpe et kjøretøy.</p>
       </div>
-      <div class="col-md-6">
-        <img src="../../../images/hushjem.png" class="center-block" />
-      </div>
+    </div>
+    <div class="col-md-6 column theme-image">
+      <div class="theme-image-wide"></div>
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row top-margin-10">
-    <div class="col-md-8 ">
-      <h2>Har du kjøpt bil eller tenker å kjøpe bil?</h2>
-      <p class="intro">Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på forsikringen til bilen eller andre kjøretøy.</p>
-      <button class="stb-btn top-margin-10 bottom-margin-20">Sjekk om du har fordeler</button>
-    </div>
-    <div class="col-md-4">
-      <img src="../../../images/categorybannerimage.png" class="center-block hidden-sm hidden-xs" />
+
+<div class="stbcolor-secondary first">
+  <div class="container">
+    <div class="row top-margin-20">
+      <div class="col-md-6">
+        <img src="../../../images/skisseelementer/405x405Tom.png" class="center-block hidden-sm hidden-xs" />
+      </div>
+      <div class="col-md-6 top-margin-50-mdlg ">
+        <h2>Har du kjøpt bil eller tenker å kjøpe bil?</h2>
+        <p>Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på forsikringen til bilen eller andre kjøretøy.</p>
+        <button class="stb-btn top-margin-10 bottom-margin-20">Sjekk om du har fordeler</button>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="stbcolor-secondary sixth">
   <div class="container">
-   <div class="row">
+   <div class="row top-margin-20">
+     <div class="col-md-8  top-margin-50-mdlg ">
+       <h2><a href="../artikkel/bonuskjoretoy.html">Alt om bonus for motorkjøretøy</a></h2>
+       <p>Bonus er en rabatt som blir større med årene så lenge du ikke får noen skader på kjøretøyet.
+         Vi gir deg her svar på det meste du lurer på når det gjelder bonus på bil, motorsykkel, moped og andre kjøretøy.</p>
+       <button class="stb-btn visible-xs"> Alt om bonus for kjøretøy</button>
+     </div>
     <div class="col-md-4">
       <img src="../../../images/categorybannerimage.png" class="hidden-xs hidden-sm center-block" />
     </div>
-    <div class="col-md-8 top-margin-20">
-      <h2><a href="../artikkel/bonuskjoretoy.html">Alt om bonus for motorkjøretøy</a></h2>
-      <p class="intro">Bonus er en rabatt som blir større med årene så lenge du ikke får noen skader på kjøretøyet.
-        Vi gir deg her svar på det meste du lurer på når det gjelder bonus på bil, motorsykkel, moped og andre kjøretøy.</p>
-      <button class="stb-btn visible-xs"> Alt om bonus for kjøretøy</button>
-    </div>
+
    </div>
     <div class="row top-margin-20">
       <div class="col-md-6">
-          <div class="stb-box big clickable" rel="tel:08880">
+          <div class="stb-box big clickable">
             <div class="row">
               <div class="col-sm-6 col-md-12">
                 <img src="../../../images/placeholder192x108.png"/>
@@ -404,14 +426,16 @@
           </div>
         </div>
       <div class="col-md-6">
-        <div class="stb-box border">
-          <div style="text-align: center;">
-            <img src="../../../images/placeholder192x108.png">
+        <div class="stb-box big clickable">
+          <div class="row">
+            <div class="col-sm-6 col-md-12">
+              <img src="../../../images/placeholder192x108.png"/>
+            </div>
+            <div class="col-sm-6 col-md-12">
+              <h3><a href="#">Husk Grønt kort på bilferien</a></h3>
+              <p>Grønt kort er et bevis på at du har gyldig ansvarsforsikring når du er i utlandet.</p>
+            </div>
           </div>
-          <h3>Bilferie til utlandet?</h3>
-          <p class="intro">Husk Grønt kort.</p>
-          <p>Grønt kort er et bevis på at du har har gyldig ansvarsforsikring når du er i utlandet.</p>
-          <p class="intro top-padding-10"><a href="#">Bestill Grønt kort</a></p>
         </div>
       </div>
     </div>

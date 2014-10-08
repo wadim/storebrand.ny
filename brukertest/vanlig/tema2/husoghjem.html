@@ -22,6 +22,15 @@
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/src/stb-video.js"></script>
   <script type="text/javascript" src="../../../js/src/laanekalkulator.js"></script>
+  <script>
+    $("document").ready(function(){
+      $(".row .column").matchHeight(true);
+    })
+
+    $(window).resize(function() {
+      $(".row .column").matchHeight(true);
+    });
+  </script>
   <style>
     .jslider{
       margin-left: 100px;
@@ -39,6 +48,19 @@
     }
     .jslider .jslider-bg .r{
       background-color: white;
+    }
+
+    .theme-image-wide {
+      background-image: url("../../../images/1280x720test4.jpg");
+    }
+
+    .container .theme-banner {
+      height: 405px;
+    }
+
+    .theme-banner,
+    .theme-image  {
+      min-height: 405px;
     }
   </style>
 </head>
@@ -348,36 +370,32 @@
 </div>
 <!-- End top of page -->
 
-<!-- Start of page contents -->
-<div class="stbcolor-secondary seventh top-padding-30">
-  <div class="container banner-video">
-    <div class="video-text">
-      <div class="col-md-6">
-        <div class="stb-banner">
-          <h1>Hus og hjem</h1>
-          <p class="intro">Her finner du det du trenger til boligen din, enten det gjelder boliglån eller forsikring av dine eiendeler.</p>
-          <button class="stb-btn transparent light playVideoBtn bottom-margin-20">Spill av video <span class="glyphicon glyphicon-play"></span></button>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <img src="../../../images/hushjem.png" class="center-block" />
+<div class="container theme-banner">
+  <div class="row">
+    <div class="col-md-6 column heading">
+      <div class="stb-box width-75-mdlg top-margin-50-mdlg">
+        <h1>Hus og hjem</h1>
+        <p class="intro">Her finner du det du trenger til boligen din, enten det gjelder boliglån eller forsikring av dine eiendeler.</p>
       </div>
     </div>
-    <div class="video-container" style="display: none;">
-      <button class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-24 remove white"></span></button>
-      <div id="player-banner" class="video-player-banner" data-youtube-id="_7Foh3T1gN4"></div>
+    <div class="col-md-6 column theme-image">
+      <div class="theme-image-wide "></div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="col-md-8 top-margin-10">
-    <h2>Rabatt på forsikringer til hjemmet</h2>
-    <p class="intro">Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på innboforsikring og andre forsikringer.</p>
-    <button class="stb-btn top-margin-10">Sjekk om du har fordeler</button>
-  </div>
-  <div class="col-md-4">
-    <img src="../../../images/categorybannerimage.png" class="center-block" />
+<div class="stbcolor-secondary seventh">
+  <div class="container">
+    <div class="row top-margin-20">
+      <div class="col-md-6">
+        <img src="../../../images/skisseelementer/405x405Victoria.png" class="center-block hidden-sm hidden-xs" />
+      </div>
+      <div class="col-md-6 top-margin-50-mdlg ">
+        <h2>Rabatt på forsikringer til hjemmet</h2>
+        <p class="intro">Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på innboforsikring og andre forsikringer.</p>
+        <button class="stb-btn top-margin-10">Sjekk om du har fordeler</button>
+      </div>
+    </div>
   </div>
 </div>
 
