@@ -66,7 +66,7 @@
     border-width: 2px;
   }
 
- #mobilemenu{
+ #mobilemenu , #login-start{
     border-bottom-style: dotted;
     border-width: 2px;
     border-color: #404040;
@@ -312,10 +312,10 @@
       <div id="navbar-collapse-grid" class="navbar-collapse collapse">
         <ul class="nav navbar-nav col-md-8">
           <li class="private current col-md-3 group" id="menuheader-private">
-            <a href="#" onclick="$('#desktopmenu').slideToggle(200);" >Privat</a>
+            <a href="#" onclick="$('#login-start').hide(); $('#desktopmenu').slideToggle(200);" >Privat</a>
           </li>
           <li class="company col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
-          <li class="login col-md-3 group"><a href="#" onclick="$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
+          <li class="login col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
           <li class="search col-md-3" style="display: none;">
             <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
             <form>
@@ -629,7 +629,7 @@
   </div>
 </div>
 
-<div id="login-start" style="display:none; border-bottom: 2px solid #333">
+<div id="login-start" style="display:none;">
 <a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
 <div class="container login top-margin-50-mdlg" >
   <div class="row">
@@ -642,11 +642,10 @@
           <input type="tel" class="" name="birthNumber" style="width: 230px">
           <button class="stb-btn stb-form is-submit">Logg inn</button>
         </div>
-  </div>      
       </form>
-      <!-- Tab panes -->
-    </div>
+   </div>
   </div>
+ </div>
 
 </div>
 <!-- End top of page -->
