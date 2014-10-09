@@ -19,6 +19,7 @@
   <script type="text/javascript" src="../../js/search.js"></script>
   <script type="text/javascript" src="../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../js/stb-page-padding.js"></script>
+  <script type="text/javascript" src="../../js/dist/bootstrapValidator-0.5.0.js"></script>
   
   <style>
     div.cookieFooter{
@@ -197,6 +198,10 @@
     width: 99%;
     border: 2px solid #404040;
   }
+  
+  #login-start a{ 
+    border-bottom: none;
+  }
 
   </style>
   <script>
@@ -223,6 +228,75 @@
       jQuery('#cookieFooter').hide('slow');
     }
 
+    $(document).ready(function(){
+        var accept = readCookie('acceptCookie');
+        if(accept=='Yes'){
+          jQuery('#cookieFooter').hide();
+        }
+
+        /* Verify National Identity Number ***********************************************/
+        function verifyIDNumber(nr) {
+          var pn = new Array();
+          var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
+          var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+          for(var i=0; i<nr.length; i++) {
+            pn[i] = nr.charAt(i);
+          }
+          var k1=0;
+          for(var i=0; i<v1.length; i++) {
+            k1 += pn[i]*v1[i];
+          }
+          var k2=0;
+          for(var i=0; i<v2.length; i++) {
+            k2 += pn[i]*v2[i];
+          }
+          if (k1%11==0 && k2%11==0 ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        var idValidator = {
+          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Fødselsnummeret er ikke gyldig!',
+          callback: function(value, validor){
+            return verifyIDNumber(value);
+          }
+        };
+
+        $('#start-login-form').bootstrapValidator({
+          message: 'This value is not valid',
+          live: 'disabled',
+          feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+          },
+          fields: {
+            birthNumber: {
+              container: '.info-message',
+              validators: {
+                callback: idValidator,
+                notEmpty: {
+                  message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi fødselsnummer'
+                }
+              }
+
+            }
+          }
+        }).on('success.form.bv', function(e) {
+                  // Prevent form submission
+                  e.preventDefault();
+
+                  var $form        = $(e.target),
+                          validator    = $form.data('bootstrapValidator'),
+                          submitButton = validator.getSubmitButton();
+
+                  window.location = "login-step-kundevalg.html"
+        });
+
+      });
+  
   </script>
 </head>
 
@@ -241,7 +315,7 @@
             <a href="#" onclick="$('#desktopmenu').slideToggle(200);" >Privat</a>
           </li>
           <li class="company col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
-          <li class="login col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+          <li class="login col-md-3 group"><a href="#" onclick="$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
           <li class="search col-md-3" style="display: none;">
             <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
             <form>
@@ -555,6 +629,24 @@
   </div>
 </div>
 
+<div id="login-start" style="display:none; border-bottom: 2px solid #333">
+<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div class="container login top-margin-50-mdlg" >
+  <div class="row">
+    <div class="col-md-12 column">
+      <h1>Logg inn</h1>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label>Skriv inn ditt fødselsnummer </label><br>
+        <span class="help-block info-message"></span> 
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+  </div>      
+      </form>
+      <!-- Tab panes -->
+    </div>
+  </div>
 
 </div>
 <!-- End top of page -->
