@@ -66,7 +66,7 @@
     border-width: 2px;
   }
 
- #mobilemenu , #login-start{
+ #mobilemenu{
     border-bottom-style: dotted;
     border-width: 2px;
     border-color: #404040;
@@ -203,6 +203,9 @@
     border: 2px solid #404040;
   }
   
+  #login-start {
+    border-bottom: 2px dotted;
+  }
   #login-start a{ 
     border-bottom: none;
   }
@@ -260,44 +263,6 @@
             return false;
           }
         }
-
-        var idValidator = {
-          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Fødselsnummeret er ikke gyldig!',
-          callback: function(value, validor){
-            return verifyIDNumber(value);
-          }
-        };
-
-        $('#start-login-form').bootstrapValidator({
-          message: 'This value is not valid',
-          live: 'disabled',
-          feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-          },
-          fields: {
-            birthNumber: {
-              container: '.info-message',
-              validators: {
-                callback: idValidator,
-                notEmpty: {
-                  message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi fødselsnummer'
-                }
-              }
-
-            }
-          }
-        }).on('success.form.bv', function(e) {
-                  // Prevent form submission
-                  e.preventDefault();
-
-                  var $form        = $(e.target),
-                          validator    = $form.data('bootstrapValidator'),
-                          submitButton = validator.getSubmitButton();
-
-                  window.location = "../vanlig/login/login-step-faner.html"
-        });
 
       });
   
