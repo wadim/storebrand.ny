@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Tema - Hus og hjem</title>
+  <title>Tema - Bil og kjøretøy</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -20,7 +20,6 @@
   <script type="text/javascript" src="../../../js/search.js"></script>
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
-  <script type="text/javascript" src="../../../js/src/stb-video.js"></script>
   <script type="text/javascript" src="../../../js/src/laanekalkulator.js"></script>
   <script>
     $("document").ready(function(){
@@ -49,7 +48,6 @@
     .jslider .jslider-bg .r{
       background-color: white;
     }
-
     .theme-image-wide {
       background-image: url("../../../images/1280x720test4.jpg");
     }
@@ -57,6 +55,7 @@
     .container .theme-banner {
       height: 405px;
     }
+
     .theme-banner,
     .theme-image  {
       min-height: 405px;
@@ -67,11 +66,10 @@
     }
 
     @media screen and (max-width: 992px) {
-     .theme-image {
-       min-height: 260px;
+      .theme-image {
+        min-height: 260px;
       }
     }
-
   </style>
 </head>
 
@@ -384,145 +382,65 @@
   <div class="row">
     <div class="col-md-6 column heading">
       <div class="width-75-mdlg top-margin-50-mdlg">
-        <h1>Hus og hjem</h1>
-        <p class="intro">Her finner du det du trenger til boligen din, enten det gjelder boliglån eller forsikring av dine eiendeler.</p>
+        <h1>Header H1</h1>
+        <p class="intro">Introtext</p>
       </div>
     </div>
     <div class="col-md-6 column theme-image">
-      <div class="theme-image-wide "></div>
+      <div class="theme-image-wide"></div>
     </div>
   </div>
 </div>
 
-<div class="stbcolor-secondary third">
+<div class="stbcolor-secondary first">
   <div class="container">
     <div class="row top-margin-20">
       <div class="col-md-6 hidden-sm hidden-xs">
-        <img src="../../../images/skisseelementer/405x405Roger.png" class="center-block" />
+        <img src="../../../images/skisseelementer/405x405Tom.png" class="center-block" />
       </div>
       <div class="col-md-6 top-margin-50-mdlg ">
-        <h2>Rabatt på forsikringer til hjemmet</h2>
-        <p>Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på innboforsikring og andre forsikringer.</p>
-        <button class="stb-btn transparent light top-margin-10 bottom-margin-20">Sjekk om du har fordeler</button>
+        <h2>Header 2</h2>
+        <p>Paragraph</p>
+        <button class="stb-btn top-margin-10 bottom-margin-20">Call to action</button>
       </div>
       <div class="col-md-6 visible-sm visible-xs">
-        <img src="../../../images/skisseelementer/405x405Roger.png" class="center-block img-responsive" />
+        <img src="../../../images/skisseelementer/405x405Tom.png" class="center-block img-responsive" />
       </div>
     </div>
   </div>
 </div>
 
-
-<div class="stbcolor-secondary sixth top-padding-30 bottom-padding-30">
+<div class="stbcolor-secondary sixth">
   <div class="container">
-    <div class="row">
-    <div class="col-md-6">
-      <h2>Hvor mye kan jeg få i lån?</h2>
-      <p>
-        Hvor mye du kan låne avhenger av din
-        egenkaptital og din betalingsevne. Med vår lånekalkulator kan du sjekke hvor mye du kan få i lån.
-      </p>
-    </div>
-    <div class="col-md-6">
-      <form role="form">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="stb-form-group">
-              <label for="lanebelop">Lånebeløp</label>
-              <div class="input-group">
-                <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
-                <div class="stb-input-group-addon">kr</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="stb-form-group">
-              <label for="boligverdi">Boligens verdi</label>
-              <div class="input-group">
-                <input class="form-control" id="boligverdi" type="text" placeholder="Beløp"/>
-                <div class="stb-input-group-addon">kr</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-9 col-md-12">
-            <div class="stb-form-group top-margin-10">
-              <label style="">Nedbetalingsperiode</label>
-              <div>
-                <input id="nedbetaling-input" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
-                <input id="stb-slider-nedbetaling" type="slider"  value="15"  name="stb-slider" value="0" />
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-9 col-md-12">
-            <div class="stb-form-group top-margin-10">
-              <label>Lånerente</label>
-              <div>
-                <input id="lanerente-input" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
-                <input id="stb-slider-lanerente" type="slider" value="3.25"  name="stb-slider" value="0" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="stb-form-group top-margin-10">
-            <div class="col-md-8 col-xs-12">
-              <p class="intro pull-left" style="border-bottom: 4px double #000;">10 899 kr i måneden</p>
-            </div>
-            <div class="col-md-2 col-xs-12">
-              <button class="stb-btn transparent light">Søk om lån</button>
-            </div>
-          </div>
-        </div>
-      </form>
-
-    </div>
-    </div>
-    <div class="row top-margin-20">
+   <div class="row top-margin-20">
+     <div class="col-md-12">
+       <h2>Header 2</h2>
+       <p>Content here</p>
+     </div>
+   </div>
+    <div class="row top-margin-20 bottom-margin-20">
       <div class="col-md-6">
-           <img src="../../../images/placeholder192x108.png">
-          <h3>Når du skal kjøpe bolig</h3>
-          <ul class="stb">
-            <li><a href="#">Hva kan jeg få i lån?</a></li>
-            <li><a href="#">Hvordan søker jeg boliglån?</a></li>
-            <li><a href="#">Finansieringsbevis</></li>
-            <li><a href="#">Samboeravtale</a></li>
-            <li><a href="#">Betjening av lån</a></li>
-            <li><a href="#">Når dere får barn</a></li>
-          </ul>
+        <img src="../../../images/placeholder192x108.png"/>
+        <h3><a href="#">info1</a></h3>
+        <p>Lorum ipsum</p>
       </div>
       <div class="col-md-6">
-          <img src="../../../images/placeholder192x108.png">
-          <h3>Bo sammen med kjæresten</h3>
-          <p>Gleden ved å flytte sammen, gjør gjerne at dere lever for dagen i dag og glemmer de lange økonomiske linjene. Her er noe tips til hva som er lurt å tenke på når man er to.</p>
-          <ul class="stb">
-            <li><a href="#">Samboeravtale</a></li>
-            <li><a href="#">Testamente</a></li>
-            <li><a href="#">Samboerskolen fra Dine Penger </a></li>
-          </ul>
+        <img src="../../../images/placeholder192x108.png"/>
+        <h3><a href="#">info2</a></h3>
+        <p>Lorum ipsum</p>
       </div>
     </div>
   </div>
 </div>
+
 <div class="top-padding-30 bottom-padding-30">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-          <img src="../../../images/placeholder192x108.png"/>
-          <h3><a href="#">Har soverommet ditt røykvarsler?</a></h3>
-          <p>En av tre nordmenn har røykvarsler i feil rom og to prosent av oss
-            har ikke røykvarsler hjemme i det hele tatt, viser en undersøkelse Storebrand har gjennomført.
-            Vi kan hjelpe deg med hvordan du sikrer hjemmet ditt mot brann</p>
+        <p>content 1</p>
       </div>
       <div class="col-md-6">
-          <h3>Hva kan vi hjelpe deg med?</h3>
-          <div class="stb-list-group">
-            <a href="#" class="list-group-item">Forsikring av huset</a>
-            <a href="#" class="list-group-item">Forsikring av eiendeler </a>
-            <a href="#" class="list-group-item">Forsikring mot tyveri og skadeverk</a>
-            <a href="#" class="list-group-item">Forsikring ved bortgang</span></a>
-          </div>
+        <p>content 2</p>
       </div>
     </div>
   </div>
