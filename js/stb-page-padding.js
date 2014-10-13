@@ -1,4 +1,4 @@
-﻿// Start navigation padding 
+﻿// Start navigation padding
 
 // Start mobile top menu decoration
 $(document).ready(function(){
@@ -90,7 +90,7 @@ $(document).ready(function() {
     var h4list = '<ul style="margin-left: 20px">';
     
     // Iterate through these sub headings
-    for( var j=0; j<allh4.length;j++) {
+    /*for( var j=0; j<allh4.length;j++) {
 	    var h4tag = allh4[j];
       $(h4tag).attr('name', h3tag.textContent.replace(/\W/g, '').toLowerCase() + h4tag.textContent.replace(/\W/g, '').toLowerCase());
       // adding the sub headings to the subheading list
@@ -100,7 +100,7 @@ $(document).ready(function() {
     
     //append sub-heading list to the table of contents
     $('.toc-list .items').append(h4list);
-    
+    */
   }
  
   //check if URL already has a hash and scroll to the correct heading 
