@@ -22,7 +22,7 @@
   <script type="text/javascript" src="../../js/dist/bootstrapValidator-0.5.0.js"></script>
   
   <style>
-    div.cookieFooter{
+div.cookieFooter{
       background-color: #333333;
       height: auto;
       opacity: 0.7;
@@ -60,7 +60,6 @@
 	  list-style-type: none;
 	}
 
-
   #desktopmenu{
     border-bottom-style: dotted;
     border-width: 2px;
@@ -72,21 +71,28 @@
 
   #desktopmenu ul{
     list-style-type: none;
+      padding: 0;
   }
 
   #desktopmenu a{
     color: #404040;
-    border-bottom: none;
+    border-bottom: none !important;
   }
   #desktopmenu a:hover{
-    color: #da291c;
+    color: #da291c !important;
   }
-
-
+  
   #desktopmenu li{
     padding-bottom: 12px;
   }
+  
+   #desktopmenu #verktoy {
+     margin: 0;
+   }
 
+  #desktopmenu #verktoy span {
+    margin: 0 4px -4px 0
+  } 
 
   #mobilemenu a{
     border: none;
@@ -225,6 +231,7 @@
     border-bottom: none;
   }
 
+
   </style>
   <script>
     $(document).ready(function(){
@@ -286,17 +293,119 @@
 
 <body>
 <!-- Start top of page -->
-
+<div id="overlay" style="display:none; background-color:#000; position:absolute; top:100px; left:0; z-index:1; opacity: 0.5;"></div>
 <div id="top-menu-nav">
-  <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
-    <div class="container">
+    <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
+    <div class="container yamm">
       <div class="navbar-header col-md-4">
         <img src="../../images/logo.png" title="logo image" class="logo">
       </div>
       <div id="navbar-collapse-grid" class="navbar-collapse collapse">
         <ul class="nav navbar-nav col-md-8">
-          <li class="private current col-md-3 group" id="menuheader-private">
-            <a href="#" onclick="$('#login-start').hide(); $('#desktopmenu').slideToggle(200);" >Privat</a>
+          <li class="private current col-md-3 yamm-fw group dropdown" id="menuheader-private">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
+              <ul class="dropdown-menu" id="desktopmenu">
+              <li style="margin: 50px 0 0 15%">
+              <ul>
+	            <li class="col-md-2">
+	              <h4><a href="kategori/pensjon.html">Pensjon</a></h4>
+			        <ul>
+			          <li><a href="#">Pensjonsparing</a></li>
+			          <li><a href="../verktoy/pensjonstall.html">Finn ditt pensjonstall</a></li>
+			          <li><a href="../produkt/egensparingpensjon.html">Egensparing til pensjon</a></li>
+			          <li><a href="#">Pensjonsskolen</a></li>
+			          <li><a href="#">Pensjonskapitalbevis</a></li>
+			          <li><a href="#">Fripolise</a></li>
+			        </ul>
+	            </li>
+	            <li class="col-md-2">
+	              <h4><a href="../kategori/sparing.html">Sparing</a></h4>
+		        <ul>
+		          <li><a href="#">Fond</a></li>
+		          <li><a href="#">Banksparing</a></li>
+		          <li><a href="#">Høyrentekonto</a></li>
+		          <li><a href="#">Sparekonto</a></li>
+		          <li><a href="#">BSU</a></li>
+		          <li><a href="#">Plasseringskonto</a></li>
+		          <li><a href="#">Fondskonto</a></li>
+		          <li><a href="#">Fond i gave</a></li>
+		        </ul>
+	            </li>
+	            <li class="col-md-2">
+	              <h4><a href="../kategori/bankoglaan.html">Bank og lån</a></h4>
+			        <ul>
+			          <li><a href="#">Bli bankkunde</a></li>
+			          <li><a href="../produkt/boliglaan.html">Boliglån</a></li>
+			          <li><a href="../verktoy/laanekalkulator.html">Lånekalkulator</a></li>
+			          <li><a href="../produkt/boliglaanunge.html">Boliglån for unge</a></li>
+			          <li><a href="#">Konto og kort</a></li>
+			          <li><a href="#">Brukskonto</a></li>
+			          <li><a href="#">Visa-kort</a></li>
+			          <li><a href="#">Kredittkort</a></li>
+			          <li><a href="#">Ungdomskonto</a></li>
+			          <li><a href="#">Renter og priser</a></li>
+			          <li><a href="#">Nett- og mobilbank</a></li>
+			        </ul>
+	            </li>
+	            <li class="col-md-2">
+	               <h4><a href="kategori/forsikring.html">Forsikring</a></h4>
+			        <ul>
+			          <li><a href="../produkt/bilforsikring.html">Bilforsikring</a></li>
+			          <li><a href="#">Barneforsikring</a></li>
+			          <li><a href="#">Reiseforsikring</a></li>
+			          <li><a href="#">Uføreforsikring</a></li>
+			          <li><a href="#">Husforsikring</a></li>
+			          <li><a href="#">Innboforsikring</a></li>
+			          <li><a href="#">Hund- og kattforsikring</a></li>
+			          <li><a href="#">Behovsveileder</a></li>
+			          <li><a href="#">Personforsikringer</a></li>
+			          <li><a href="#">MC-forsikring</a></li>
+			          <li><a href="#">Båtforsikring</a></li>
+			        </ul>
+	            </li>
+	            <li class="col-md-4">
+	              <ul>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="../tema2/husoghjem.html">
+			                <span class="stb-theme-sprites house" style="margin-bottom: -20px; margin-right: 10px;"></span>Hus & Hjem
+			              </a>
+			            </p>
+			          </li>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="../tema2/bilogkjoretoy.html">
+			                <span class="stb-theme-sprites car" style="margin-bottom: -20px; margin-right: 10px;"></span>Bil & Kjøretøy
+			              </a>
+			            </p>
+			          </li>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="#">
+			                <span class="stb-theme-sprites couple" style="margin-bottom: -20px; margin-right: 10px;"></span>Liv & Helse
+			              </a>
+			            </p>
+			          </li>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="../tema2/ferieogfritid.html">
+			                <span class="stb-theme-sprites bike" style="margin-bottom: -20px; margin-right: 10px;"></span>Ferie & Fritid
+			              </a>
+			            </p>
+			          </li>
+	        	</ul>
+	            </li>
+	            </ul>
+	            </li>
+	            <li id="verktoy" class="row stbcolor-gray second" style="clear: both;padding-top: 15px;">
+	              <div class="">
+	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium wrench"></span><a href="#"> Veihjelp</a></h4></div>
+	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium edit"></span><a href="#"> Meld skade</a></h4></div>
+	                <div class="col-md-3 col-lg-2" style="padding-left: 0;"><h4><span class="stb-sprite-medium pretzel"></span><a href="../tema3/kundefordeler.html"> Kundefordeler</a></h4></div>
+	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium bubble"></span><a href="#"> Kontakt oss</a></h4></div>
+	              </div>
+	            </li>
+             </ul>
           </li>
           <li class="company col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
           <li class="login col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
@@ -332,109 +441,6 @@
 </div>
 <!-- End mobile menu -->
 <!-- End desktop menu -->
-<div id="desktopmenu" class="hidden-xs hidden-sm" style="display: none;">
-  <div style="padding: 40px 0 10px 18%;">
-    <a href="#" onclick="$('#desktopmenu').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
-    <div class="row top-margin-5">
-      <div class="col-md-2">
-        <h4><a href="kategori/pensjon.html">Pensjon</a></h4>
-        <ul>
-          <li><a href="#">Pensjonsparing</a></li>
-          <li><a href="verktoy/pensjonstall.html">Finn ditt pensjonstall</a></li>
-          <li><a href="produkt/egensparingpensjon.html">Egensparing til pensjon</a></li>
-          <li><a href="#">Pensjonsskolen</a></li>
-          <li><a href="#">Pensjonskapitalbevis</a></li>
-          <li><a href="#">Fripolise</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2">
-        <h4><a href="kategori/sparing.html">Sparing</a></h4>
-        <ul>
-          <li><a href="#">Fond</a></li>
-          <li><a href="#">Banksparing</a></li>
-          <li><a href="#">Høyrentekonto</a></li>
-          <li><a href="#">Sparekonto</a></li>
-          <li><a href="#">BSU</a></li>
-          <li><a href="#">Plasseringskonto</a></li>
-          <li><a href="#">Fondskonto</a></li>
-          <li><a href="#">Fond i gave</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2">
-        <h4><a href="kategori/bankoglaan.html">Bank og lån</a></h4>
-        <ul>
-          <li><a href="#">Bli bankkunde</a></li>
-          <li><a href="produkt/boliglaan.html">Boliglån</a></li>
-          <li><a href="verktoy/laanekalkulator.html">Lånekalkulator</a></li>
-          <li><a href="produkt/boliglaanunge.html">Boliglån for unge</a></li>
-          <li><a href="#">Konto og kort</a></li>
-          <li><a href="#">Brukskonto</a></li>
-          <li><a href="#">Visa-kort</a></li>
-          <li><a href="#">Kredittkort</a></li>
-          <li><a href="#">Ungdomskonto</a></li>
-          <li><a href="#">Renter og priser</a></li>
-          <li><a href="#">Nett- og mobilbank</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2">
-        <h4><a href="kategori/forsikring.html">Forsikring</a></h4>
-        <ul>
-          <li><a href="produkt/bilforsikring.html">Bilforsikring</a></li>
-          <li><a href="#">Barneforsikring</a></li>
-          <li><a href="#">Reiseforsikring</a></li>
-          <li><a href="#">Uføreforsikring</a></li>
-          <li><a href="#">Husforsikring</a></li>
-          <li><a href="#">Innboforsikring</a></li>
-          <li><a href="#">Hund- og kattforsikring</a></li>
-          <li><a href="#">Behovsveileder</a></li>
-          <li><a href="#">Personforsikringer</a></li>
-          <li><a href="#">MC-forsikring</a></li>
-          <li><a href="#">Båtforsikring</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4 top-margin-10" style="padding-left: 0;padding-right: 0;">
-        <ul>
-          <li>
-            <p style="font-size: 14px;">
-              <a href="tema2/husoghjem.html">
-                <span class="stb-theme-sprites house" style="margin-bottom: -20px; margin-right: 10px;"></span>Hus & Hjem
-              </a>
-            </p>
-          </li>
-          <li>
-            <p style="font-size: 14px;">
-              <a href="tema2/bilogkjoretoy.html">
-                <span class="stb-theme-sprites car" style="margin-bottom: -20px; margin-right: 10px;"></span>Bil & Kjøretøy
-              </a>
-            </p>
-          </li>
-          <li>
-            <p style="font-size: 14px;">
-              <a href="#">
-                <span class="stb-theme-sprites couple" style="margin-bottom: -20px; margin-right: 10px;"></span>Liv & Helse
-              </a>
-            </p>
-          </li>
-          <li>
-            <p style="font-size: 14px;">
-              <a href="tema2/ferieogfritid.html">
-                <span class="stb-theme-sprites bike" style="margin-bottom: -20px; margin-right: 10px;"></span>Ferie & Fritid
-              </a>
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="stbcolor-gray first">
-    <div id="verktoy" class="row" style="">
-     <div class="col-md-3 col-lg-2 col-lg-offset-1"><h4><span class="stb-sprite-medium wrench" style="margin-bottom: -4px;"></span><a href="#"> Veihjelp</a></h4></div>
-     <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium edit" style="margin-bottom: -4px;"></span><a href="#"> Meld skade</a></h4></div>
-      <div class="col-md-3 col-lg-2" style="padding-left: 0;"><h4><span class="stb-sprite-medium pretzel" style="margin-bottom: -4px;"></span><a href="tema3/kundefordeler.html"> Kundefordeler</a></h4></div>
-      <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium bubble" style="margin-bottom: -4px;"></span><a href="#"> Kontakt oss</a></h4></div>
-    </div>
-  </div>
-</div>
 
 <div id="mobilemenu" class="top-margin-10 bottom-margin-30 hidden-md hidden-lg" style="display: none;">
   <div class="row" style="margin-right: 0; margin-left: 0;">
