@@ -11,18 +11,28 @@ $(document).ready(function(){
   });
 
   $(".dropdown").on("hide.bs.dropdown", function(){
+	$("#overlay").toggle();
     $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+   
     $(this).find('span.marker').toggleClass('active');
   });
 
   $(".dropdown").on("show.bs.dropdown", function(){
+	$("#overlay").toggle();
     $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
     $(this).find('span.marker').toggleClass('active');
   });
     
 });
 // End mobile top menu decoration
-    
+  
+// Showing the hiding the overlay on clicking the dropdown toggle
+$(document).ready(function(){
+	//initialize the overlay to get the document's dimenstions
+	$("#overlay").css("width",$(document).width());
+	$("#overlay").css("height",$(document).height());
+});
+
 // Start prevent top menu clicks from running away with the page
 $(document).on('click', '.yamm .dropdown-menu', function(e) {
   e.stopPropagation();
