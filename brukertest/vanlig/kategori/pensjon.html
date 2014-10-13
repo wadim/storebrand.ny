@@ -21,6 +21,8 @@
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery.slider.all.js"></script>
   <script type="text/javascript" src="../../../js/src/pensjonstall.js"></script>
+  <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  
   <script>
     $(document).ready(function(){
       $(".row .column").matchHeight(true);
@@ -47,19 +49,18 @@
       background-color: white;
     }
 
-    .y-center-arrow {
-      position: absolute;
-      top: 50%;
-      right: 20%;
-    }
-
-    .clickable-div {
-      cursor: pointer;
-    }
-
     .category-banner .image {
       background: transparent url("../../../images/chalkdust1.png") left top no-repeat;
     }
+    
+    #login-start {
+      border-bottom: 2px dotted;
+    }
+    
+    #login-start a{ 
+      border-bottom: none;
+    }
+
   </style>
 </head>
 
@@ -158,7 +159,7 @@
 
         <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
         <li class="search col-md-3" style="display: none;">
           <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
@@ -366,77 +367,77 @@
 </nav>
 <!-- End mobile menu -->
 </div>
+
+<div id="login-start" style="display:none;">
+<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div class="container login top-margin-50-mdlg" >
+  <div class="row">
+    <div class="col-md-12 column">
+      <h1>Logg inn</h1>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label>Skriv inn ditt fødselsnummer </label><br>
+        <span class="help-block info-message"></span> 
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+      </form>
+   </div>
+  </div>
+ </div>
+
+</div>
 <!-- End top of page -->
 
-<!-- Start actual page contents -->
-<div class="category-banner stbcolor-secondary first">
+<div class="stbcolor-secondary fourth">
   <div class="container">
     <div class="row">
       <div class="col-md-6 top-margin-50-mdlg">
-        <div class="stb-box dark">
-          <h1>Pensjon</h1>
-          <p class="intro">
-            Fremtidens pensjonister får mindre fra staten og arbeidsgiver. Derfor må de fleste spare mer på egenhånd.
-            Her kan du starte pensjonssparing, beregne ditt pensjonstall og få gode råd om  hvordan du får bedre pensjon – helt enkelt.
-          </p>
-        </div>
+        <h1>Pensjon</h1>
+        <p class="intro">
+          Fremtidens pensjonister får mindre fra staten og arbeidsgiver. Derfor må de fleste spare mer på egenhånd.
+          Her kan du starte pensjonssparing, beregne ditt pensjonstall og få gode råd om  hvordan du får bedre pensjon – helt enkelt.
+        </p>
       </div>
-      <div class="col-md-6 image">
-        <img class="img-responsive" src="../../../images/categorybannerimage.png" alt="category banner image" title="category bannner image"/>
+      <div class="col-md-6">
+        <img class="img-responsive" src="../../../images/skisseelementer/405x405Roger.png" alt="category banner image" title="category bannner image"/>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container top-padding-40-mdlg bottom-padding-40">
-  <div class="row">
-    <h2 class="">Start pensjonsparing</h2>
-    <div class="col-md-6 top-margin-20" >
-      <h3>Sparing til pensjon</h3>
-      <p>Jo tidligere du kommer i gang desto mer kan du hente på sparingen. Egensparing til pensjon er det det produktet vi anbefaler til folk flest som ønsker å spare til pensjon.</p>
-      <div class="stb-list-group" >
-        <a class="list-group-item" href="../produkt/egensparingpensjon.html">Egensparing til pensjon</a>
+<div class="top-margin-20 bottom-margin-20">
+  <div class="container">
+    <h2>Start pensjonsparing</h2>
+    <div class="row">
+      <div class="col-md-6 top-margin-10" >
+        <p class="intro">Jo tidligere du kommer i gang, jo mer har du å hente
+          på sparingen. Her kan du enkelt finne den
+          spareformen som er mest effektiv for deg.</p>
+        <div class="stb-list-group top-margin-20">
+          <a class="list-group-item" href="../produkt/egensparingpensjon.html">Egensparing til pensjon</a>
+          <a class="list-group-item" href="#">Pensjonskapitalbevis</a>
+          <a class="list-group-item" href="#">Fripolise</a>
+        </div>
       </div>
-    </div>
-    <div class="col-md-6 top-margin-20" >
-      <h3>Pensjon fra tidligere arbeidsgivere</h3>
-      <p>Hvis du har jobbet flere steder har du nok flere pensjonskapitalbevis eller fripoliser. Dette er dine penger og det lønner seg å samle dem på ett sted. </p>
-      <div class="stb-list-group" >
-        <a class="list-group-item" href="#">Flytt pensjonskapitalbevis</a>
-        <a class="list-group-item" href="#">Fripoliser</a>
-        <a class="list-group-item" href="#">Fripoliser  med investeringsvalg</a>
-      </div>
-    </div>
- </div>
+   </div>
+  </div>
 </div>
 
-<div class="stbcolor-secondary sixth top-padding-50-mdlg bottom-padding-50">
+<div class="stbcolor-secondary seventh">
   <div class="container">
-    <div class="row">
+    <div class="row top-margin-20 bottom-margin-20">
       <div class="col-md-6">
-        <h3>Dette bør du vite om pensjon</h3>
+        <h2>Hva er ditt pensjonstall?</h2>
         <p class="intro">
-          Pensjonen din bygges opp av fire deler:</p>
-          <ol class="stb">
-            <li><a href="../produkt/egensparingpensjon.html">Egensparing til pensjon</a></li>
-            <li><a href="#">Pensjon fra tidligere arbeidsgiver</a></li>
-            <li><a href="#">Tjenestepensjon fra arbeidsgiver</a></li>
-            <li><a href="#">Alderspensjon fra Folketrygden</a></li>
-          </ol>
-      </div>
-      <div class="col-md-6">
-        <img class="img-responsive" title="Illustrasjon av firedeling" src="../../../images/271x271_2.png">
-      </div>
-     </div>
-    <div class="row top-margin-20">
-      <div class="col-md-6">
-        <h3>Vet du hva du får i pensjon?</h3>
-        <p class="intro">
-          Vet du hva du kan forvente å få i pensjon og hvor lenge du må stå i arbeid? Her kan du beregne ditt pensjonstall og se hvilken effekt et lite sparebeløp kan ha.
+          Vet du hva du kan forvente å få i
+          pensjon og hvor lenge du må stå i
+          arbeid? Her kan du beregne ditt
+          pensjonstall og se hvilken effekt et lite
+          sparebeløp kan ha.
         </p>
       </div>
       <div class="col-md-6">
-        <h3>Når vil du gå av med pensjon?</h3>
         <div>
           <form role="form">
             <div class="row">
@@ -445,7 +446,7 @@
                   <label style="">Når vil du gå av med pensjon?</label>
                   <div>
                     <input id="pensjon-input" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
-                    <input id="stb-slider-pensjon" type="slider" name="stb-slider" value="0" />
+                    <input id="stb-slider-pensjon" type="slider" value="67" name="stb-slider" value="0" />
                   </div>
                 </div>
               </div>
@@ -454,12 +455,12 @@
                   <label>Hvor mye av dagens lønn ønsker du?</label>
                   <div>
                     <input id="dagenslonn-input" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
-                    <input id="stb-slider-dagenslonn" type="slider" name="stb-slider" value="0" />
+                    <input id="stb-slider-dagenslonn" type="slider" value="70" name="stb-slider" value="0" />
                   </div>
                 </div>
               </div>
             </div>
-            <button class="stb-btn top-margin-20-mdlg">Gå videre og beregn</button>
+            <button class="stb-btn transparent light top-margin-20-mdlg">Gå videre og beregn</button>
           </form>
         </div>
       </div>
@@ -467,112 +468,10 @@
   </div>
 </div>
 
-<div class="container top-padding-40-mdlg bottom-padding-50">
+<div class="container top-margin-40 bottom-margin-40">
   <div class="row">
-    <div class="col-md-6">
-      <h3>Ofte stilte spørsmål</h3>
-      <div>
-        <ul class="accordion" data-widget="stbFaq">
-          <li>
-            <a href="#" class="twister"><span class="question"> Hva består egentlig pensjonen min av?</span>
-              <span class="number">1</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-             <p>Pensjonen din består av:</p>
-             <ol class="stb">
-              <li>
-                Folketrygd – som betales av staten . Hvor mye du får kommer an
-                alderen din, lønnsnivået ditt og hvor mange år du jobber.</li>
-              <li>
-                Tjenestepensjon eller Avtalefestet pensjon (AFP) – som betales av
-                arbeidsgiveren din. Her finnes det flere forskjellige avtaler. Du bør
-                undersøke hvilken ordning du har, og hva det betyr for størrelsen på
-                pensjonen din.
-              </li>
-              <li>
-                Du har sannsynligvis fripoliser og pensjonskapitalbevis fra tidligere
-                arbeidsgivere. De er også en del av pensjonen din.
-              </li>
-              <li>
-                Egen pensjonssparing. Alle bør spare langsiktig for å ha nok til å leve av
-                som pensjonist. Morgendagens pensjonister får langt mindre i pensjon fra
-                staten.
-              </li>
-             </ol>
-            </div>
-          </li>
-          <li>
-            <a href="#" class="twister"><span class="question">Hvordan får jeg oversikt over hva jeg får i pensjon?</span>
-              <span class="number">2</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-             <p>
-               Hvis du har pensjon i Storebrand kan du logge inn øverst til høyre på
-               siden. På dine personlige sider får du full oversikt. Der kan du også hente
-               inn tallene dine fra folketrygden (NAV).
-             </p>
-             <p>
-               Du har sannsynligvis fripoliser og pensjonskapitalbevis fra tidligere
-               arbeidsgivere. De er også en del av pensjonen din. De finner du på
-               minpensjon.no
-             </p>
-             <p>
-               Prøv vår kalkulator som enkelt viser deg hva du kan forvente å få i
-               pensjon. Vi gir deg også en vurdering av hvor mye du bør spare for å få
-               den pensjonen du ønsker deg.
-             </p>
-
-            </div>
-          </li>
-          <li>
-            <a href="#" class="twister"><span class="question">Når kan jeg pensjonere meg?</span>
-              <span class="number">3</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-              <p>
-                Du kan gå av med pensjon når du er 62 år eller kombinere arbeid og
-                pensjon frem til du er 75 år. Jo tidligere du tar ut pensjonen din, jo mindre
-                vil du få utbetalt per år.
-              </p>
-            </div>
-          </li>
-          <li>
-            <a href="#" class="twister"><span class="question">Hva er forskjellen på innskuddspensjon og ytelsespensjon?</span>
-              <span class="number">4</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-              <p>
-                Innskuddspensjon betyr at arbeidsgiveren din setter inn en fast prosent
-                av lønnen din på en pensjonskonto hver måned. Du kan ikke vite hva den
-                endelige pensjonsutbetalingen din vil bli. Du må selv sette deg inn i og ta
-                ansvar for hvordan pengene dine forvaltes (risiko, plassering, osv).
-              </p>
-              <p>
-                Ytelsespensjon betyr at du får en garantert prosentdel av sluttlønnen din
-                i pensjon – vanligvis 66 prosent av grunnlønnen, men dette kan variere.
-                Overtid, bonus osv. regnes ikke som en del av grunnlønnen.
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <h3>Slik går du frem</h3>
-      <ol class="stb">
-        <li>Få oversikt over hvor mye du kan forvente i pensjon</li>
-        <li>Vurder pensjonstallet du får opp mot det du ser for deg å trenge hver måned.</li>
-        <li>Start egensparing til pensjon. En månedlig spareavtale i fond er normalt den beste sparingen til pensjon.</li>
-      </ol>
-    </div>
-  </div>
-  <div class="row top-margin-20">
-    <div class="col-md-6">
-      <h3><a href="#">6 gode råd som gir bedre pensjon</a></h3>
+    <div class="col-md-6 bottom-margin-20">
+      <h3>6 gode råd som gir bedre pensjon</h3>
       <ol class="stb top-padding-20 bottom-padding-20">
         <li>Finn ditt pensjonstall.</li>
         <li>Endre spareprofilen din</li>
@@ -581,26 +480,54 @@
         <li>Bytt til fripolise med investeringsvalg (FMI)</li>
         <li>Har du sjekket kundefordelene dine?</li>
       </ol>
+
+      <h3>Har du hatt flere arbeidsgivere?</h3>
+      <p>
+        Da har du flere <a href="#">fripoliser</a>  eller <a href="#">pensjonskapitalbevis (PKB)</a> .
+        Dette er dine penger - det er dine oppsparte
+        pensjonsmidler fra en tidligere arbeidsgiver - og du bør vite
+        hvor de ligger og hva de består av.
+      </p>
+      <p>
+        Innen 2014 kan mange også bytte sine vanlige fripoliser til
+        <a href="#">fripolise med investeringsvalg</a>. Du får da større råderett
+        over pengene dine og mulighet til å øke din pensjon.
+      </p>
     </div>
-    <div class="col-md-6 top-margin-10">
-      <div class="stb-box border">
-        <div style="text-align: center;">
-          <img src="../../../images/placeholder192x108.png">
+    <div class="col-md-6">
+      <div class="stb-box big clickable" rel="tel:08880">
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <img src="../../../images/placeholder112x112.png"/>
+          </div>
+          <div class="col-sm-6 col-md-12">
+            <h3 class="box"><a href="#">Skal du bare?</a></h3>
+            <p class="intro">Vi hjelper deg med å løfte hodet og
+              tenke fremover</p>
+            <p>Alt vi gjør handler om å sikre oss selv og våre
+              nærmeste. Når du investerer i bolig, forsikrer deg
+              mot alvorlige sykdommer eller starter en langsiktig
+              spareavtale, handler det egentlig om at du vil gå en
+              forutsigbar og trygg fremtid i møte. Vi hjelper deg
+              med å få overblikk over i dag, og å løfte hodet og
+              tenke fremover.
+            </p>
+          </div>
         </div>
-        <h3><a href="#">Hva bør du gjøre når?</a></h3>
-        <p class="intro">Du trenger ikke vite alt om pensjonssparing, men noen enkle grep kan ha stor betydning for hvor mye du får utbetalt.</p>
+      </div>
+      <div class="stb-box mini clickable" rel="tel:08880">
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+            <img src="../../../images/placeholder112x112.png"/>
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <h3>Lurer du på noe?</h3>
+            <h3><a href="#">Ring 08880</a></h3>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h3>Andre pensjonsprodukter</h3>
-      <div class="stb-list-group" >
-        <a class="list-group-item" href="#">IPS</a>
-        <a class="list-group-item" href="#">IPA-link</a>
-      </div>
-    </div>
-    </div>
 </div>
 <!-- End actual page contents -->
 

@@ -14,6 +14,26 @@
   display: inline-block;
 }
 
+
+.stb-theme-sprites{
+  background: url("../images/stb-sprites/theme-sprites.png") no-repeat;
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+  &.house{
+    background-position: 0px 0px;
+  }
+  &.car{
+    background-position: 0px -64px;
+  }
+  &.couple{
+    background-position: 0px -128px;
+  }
+  &.bike{
+    background-position: 0px -192px;
+  }
+}
+
 .stb-sprite-small {
   background: url("../images/stb-sprites/general-sprites.png") no-repeat;  
   width: 16px;

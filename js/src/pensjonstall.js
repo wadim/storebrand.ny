@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var slider1 = $("#stb-slider-pensjon").slider({
-    from: 30,
+    from: 62,
     to: 75,
     domNode: "#stb-slider",
     valueElem: "#stb-slider-value",
@@ -36,7 +36,7 @@ $(document).ready(function(){
     }
   });
   var slider2 = $("#stb-slider-dagenslonn").slider({
-    from: 0,
+    from: 40,
     to: 100,
     step: 0.1,
     round: 1,

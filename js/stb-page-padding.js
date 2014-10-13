@@ -11,18 +11,28 @@ $(document).ready(function(){
   });
 
   $(".dropdown").on("hide.bs.dropdown", function(){
+	$("#overlay").toggle();
     $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+   
     $(this).find('span.marker').toggleClass('active');
   });
 
   $(".dropdown").on("show.bs.dropdown", function(){
+	$("#overlay").toggle();
     $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
     $(this).find('span.marker').toggleClass('active');
   });
     
 });
 // End mobile top menu decoration
-    
+  
+// Showing the hiding the overlay on clicking the dropdown toggle
+$(document).ready(function(){
+	//initialize the overlay to get the document's dimenstions
+	$("#overlay").css("width",$(document).width());
+	$("#overlay").css("height",$(document).height());
+});
+
 // Start prevent top menu clicks from running away with the page
 $(document).on('click', '.yamm .dropdown-menu', function(e) {
   e.stopPropagation();
@@ -614,6 +624,69 @@ function closeChatBank(){
   $('.chatBankOpen').removeClass('chatBankOpen');
 }
 
+// login
+$(document).ready(function(){
+	/* Verify National Identity Number ***********************************************/
+    function verifyIDNumber(nr) {
+      var pn = new Array();
+      var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
+      var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+      for(var i=0; i<nr.length; i++) {
+        pn[i] = nr.charAt(i);
+      }
+      var k1=0;
+      for(var i=0; i<v1.length; i++) {
+        k1 += pn[i]*v1[i];
+      }
+      var k2=0;
+      for(var i=0; i<v2.length; i++) {
+        k2 += pn[i]*v2[i];
+      }
+      if (k1%11==0 && k2%11==0 ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    
+	var idValidator = {
+	          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Fødselsnummeret er ikke gyldig!',
+	          callback: function(value, validor){
+	            return verifyIDNumber(value);
+	          }
+	        };
+
+	        $('#start-login-form').bootstrapValidator({
+	          message: 'This value is not valid',
+	          live: 'disabled',
+	          feedbackIcons: {
+	            valid: 'glyphicon glyphicon-ok',
+	            invalid: 'glyphicon glyphicon-remove',
+	            validating: 'glyphicon glyphicon-refresh'
+	          },
+	          fields: {
+	            birthNumber: {
+	              container: '.info-message',
+	              validators: {
+	                callback: idValidator,
+	                notEmpty: {
+	                  message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi fødselsnummer'
+	                }
+	              }
+
+	            }
+	          }
+	        }).on('success.form.bv', function(e) {
+	                  // Prevent form submission
+	                  e.preventDefault();
+
+	                  var $form        = $(e.target),
+	                          validator    = $form.data('bootstrapValidator'),
+	                          submitButton = validator.getSubmitButton();
+
+	                  window.location = absURL+"../brukertest/vanlig/login/login-step-faner.html"
+	        });
+});
 
 
 

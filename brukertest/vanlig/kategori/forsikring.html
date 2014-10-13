@@ -20,6 +20,8 @@
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery.slider.all.js"></script>
+  <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  
   <style>
     .jslider{
       margin-left: 100px;
@@ -39,6 +41,14 @@
 
     .category-banner .image {
       background: transparent url("../../../images/chalkdust1.png") left top no-repeat;
+    }
+    
+    #login-start {
+      border-bottom: 2px dotted;
+    }
+    
+    #login-start a{ 
+      border-bottom: none;
     }
   </style>
 </head>
@@ -138,7 +148,7 @@
 
         <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
         <li class="search col-md-3" style="display: none;">
           <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
@@ -346,20 +356,39 @@
 </nav>
 <!-- End mobile menu -->
 </div>
+
+<div id="login-start" style="display:none;">
+<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div class="container login top-margin-50-mdlg" >
+  <div class="row">
+    <div class="col-md-12 column">
+      <h1>Logg inn</h1>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label>Skriv inn ditt fødselsnummer </label><br>
+        <span class="help-block info-message"></span> 
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+      </form>
+   </div>
+  </div>
+ </div>
+
+</div>
+
 <!-- End top of page -->
 
 <!-- Start actual page contents -->
-<div class="category-banner stbcolor-secondary second">
+<div class="stbcolor-secondary second">
   <div class="container">
     <div class="row">
       <div class="col-md-6 top-margin-50-mdlg">
-        <div class="stb-box dark">
           <h1>Forsikring</h1>
           <p class="intro">
             Når skaden er skjedd eller sykdommen er et faktum, vil du ikke tenke på pengene.
             Her kan du raskt beregne pris og kjøpe forsikring til deg selv, din familie og dine eiendeler.
           </p>
-        </div>
       </div>
       <div class="col-md-6 image">
         <img class="img-responsive" src="../../../images/forsikring-banner2.png" alt="category banner image" title="category bannner image"/>
@@ -368,87 +397,83 @@
   </div>
 </div>
 
-<section class="top-margin-20 bottom-margin-20">
-  <div class="container">
-    <h2 class="">Velg riktig forsikring for deg</h2>
-    <div class="row top-margin-20">
-      <div class="col-md-4">
-        <h3 class="">Bil, båt og MC</h3>
-        <p>
-          Hos oss kan du forsikre de fleste kjøretøy og farkoster.
-          Det er flere ulike forsikringspakker for de ulike typene kjøretøy.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="../produkt/bilforsikring.html">Bilforsikring </a>
-          <a class="list-group-item" href="#">Tilhengerforsikring</a>
-          <a class="list-group-item" href="#">MC-forsikring</a>
-          <a class="list-group-item" href="#">Mopedforsikring</a>
-          <a class="list-group-item" href="#">Traktorforsikring</a>
-          <a class="list-group-item" href="#">Veterankjøretøyforsikring</a>
-          <a class="list-group-item" href="#">Campingvognforsikring</a>
-          <a class="list-group-item" href="#">Båtforsikring</a>
-        </div>
+<div class="container top-margin-20 bottom-margin-20">
+  <h2 class="">Velg riktig forsikring for deg</h2>
+  <div class="row top-margin-20">
+    <div class="col-md-4">
+      <h3 class="">Bil, båt og MC</h3>
+      <p>
+        Hos oss kan du forsikre de fleste kjøretøy og farkoster.
+        Det er flere ulike forsikringspakker for de ulike typene kjøretøy.
+      </p>
+      <div class="stb-list-group" >
+        <a class="list-group-item" href="../produkt/bilforsikring.html">Bilforsikring </a>
+        <a class="list-group-item" href="#">Tilhengerforsikring</a>
+        <a class="list-group-item" href="#">MC-forsikring</a>
+        <a class="list-group-item" href="#">Mopedforsikring</a>
+        <a class="list-group-item" href="#">Traktorforsikring</a>
+        <a class="list-group-item" href="#">Veterankjøretøyforsikring</a>
+        <a class="list-group-item" href="#">Campingvognforsikring</a>
+        <a class="list-group-item" href="#">Båtforsikring</a>
       </div>
-      <div class="col-md-4">
-        <h3 class="">Hus, innbo og hytte</h3>
-        <p>
-          Hos oss kan du forsikre hus, innbo og hytter.
-          Vi har ulike typer forsikring på hus og fritidsbolig.
-          Ta kontakt, så finner vi den som er riktig for deg.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Husforsikring </a>
-          <a class="list-group-item" href="#">Innboforsikring</a>
-         </div>
-        <h3 class="">Reise og fritid</h3>
-        <p>
-          Nordmenn investerer stadig mer i egen fritid.
-          Storebrand dekker det som er viktig for deg.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Reiseforsikring</a>
-          <a class="list-group-item" href="#">Verdiforsikring</a>
-        </div>
-        <h3 class="">Dyr</h3>
-        <p>
-          Dyreforsikring loremipsumasd
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Hund og katteforsikring</a>
-        </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="">Hus, innbo og hytte</h3>
+      <p>
+        Hos oss kan du forsikre hus, innbo og hytter.
+        Vi har ulike typer forsikring på hus og fritidsbolig.
+        Ta kontakt, så finner vi den som er riktig for deg.
+      </p>
+      <div class="stb-list-group" >
+        <a class="list-group-item" href="#">Husforsikring </a>
+        <a class="list-group-item" href="#">Innboforsikring</a>
+       </div>
+      <h3 class="">Reise og fritid</h3>
+      <p>
+        Nordmenn investerer stadig mer i egen fritid.
+        Storebrand dekker det som er viktig for deg.
+      </p>
+      <div class="stb-list-group" >
+        <a class="list-group-item" href="#">Reiseforsikring</a>
+        <a class="list-group-item" href="#">Verdiforsikring</a>
       </div>
-      <div class="col-md-4">
-        <h3 class="">Liv og helse</h3>
-        <p>
-          Blir du eller familien din rammet av sykdom eller ulykke kan mye endre seg over nattean.
-          Ingen kan være forberedt på en slik vanskelig situasjon, men personforsikringen kan gjøre
-          en ny hverdag enklere å takle økonomisk sett.
-        </p>
-        <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Barneforsikring </a>
-          <a class="list-group-item" href="#">Uføreforsikring</a>
-          <a class="list-group-item" href="#">Dødsfallforsikring</a>
-          <a class="list-group-item" href="#">Helseforsikring</a>
-          <a class="list-group-item" href="#">Kritisk sykdom</a>
-          <a class="list-group-item" href="#">Gjeldsforsikring</a>
-          <a class="list-group-item" href="#">Ulykkeforsikring</a>
-        </div>
+      <h3 class="">Dyr</h3>
+      <p>
+        Dyreforsikring loremipsumasd
+      </p>
+      <div class="stb-list-group" >
+        <a class="list-group-item" href="#">Hund og katteforsikring</a>
       </div>
-   </div>
-  </div>
-</section>
+    </div>
+    <div class="col-md-4">
+      <h3 class="">Liv og helse</h3>
+      <p>
+        Blir du eller familien din rammet av sykdom eller ulykke kan mye endre seg over nattean.
+        Ingen kan være forberedt på en slik vanskelig situasjon, men personforsikringen kan gjøre
+        en ny hverdag enklere å takle økonomisk sett.
+      </p>
+      <div class="stb-list-group" >
+        <a class="list-group-item" href="#">Barneforsikring </a>
+        <a class="list-group-item" href="#">Uføreforsikring</a>
+        <a class="list-group-item" href="#">Dødsfallforsikring</a>
+        <a class="list-group-item" href="#">Helseforsikring</a>
+        <a class="list-group-item" href="#">Kritisk sykdom</a>
+        <a class="list-group-item" href="#">Gjeldsforsikring</a>
+        <a class="list-group-item" href="#">Ulykkeforsikring</a>
+      </div>
+    </div>
+ </div>
+</div>
 
-<div class="category-banner stbcolor-secondary seventh">
+<div class="stbcolor-secondary seventh">
   <div class="container">
     <div class="row">
       <div class="col-md-6 top-margin-50-mdlg">
-        <div class="stb-box light">
           <h2>Har du det du trenger?</h2>
           <p class="intro">
            Ved å legge inn litt informasjon om deg selv gir vi deg våre forsikringsanbefalinger ut fra din livssituasjon.
           </p>
-          <button class="stb-btn">Sjekk om du har det du trenger</button>
-        </div>
+          <button class="stb-btn transparent light">Sjekk om du har det du trenger</button>
       </div>
       <div class="col-md-6 image">
         <img class="img-responsive" src="../../../images/forsikring-banner2.png" alt="category banner image" title="category bannner image"/>
@@ -457,26 +482,9 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row top-margin-20">
+<div class="container top-margin-40 bottom-margin-40">
+  <div class="row">
     <div class="col-md-6">
-        <div class="stb-box big clickable" rel="tel:08880">
-          <div class="row">
-            <div class="col-sm-6 col-md-12">
-              <img src="../../../images/helpimage.png">
-            </div>
-            <div class="col-sm-6 col-md-12">
-              <h3>Skal du bare?</h3>
-              <p class="intro">Vi hjelper deg med å løfte hodet og tenke framover</p>
-              <p>
-                Alt vi gjør handler om å sikre oss selv og våre nærmeste.
-                Når du investerer i bolig, forsikrer deg mot alvorlig sykdommer eller starter en langsiktig spareavtale,
-                handler det egentlig om at du vil gå en forutsigbar og trygg fremtid i møte.
-                Vi hjelper deg med å få overblikk over i dag, og å løfte hodet og tenke framover.
-              </p>
-            </div>
-          </div>
-        </div>
       <h2>Gode råd om forsikringer</h2>
       <p class="intro">Lorum ipsum</p>
       <ol class="stb">
@@ -489,7 +497,7 @@
       <div class="stb-box mini clickable top-margin-10" rel="tel:08880">
         <div class="row">
           <div class="col-xs-4">
-            <img class="img-responsive" src="../../../images/contactus.png">
+            <img class="img-responsive" src="../../../images/placeholder112x112.png">
           </div>
           <div class="col-xs-8">
             <h3 style="padding-top: 10%">Slik melder du skade</h3>

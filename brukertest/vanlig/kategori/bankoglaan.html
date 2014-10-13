@@ -20,9 +20,19 @@
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery.slider.all.js"></script>
+  <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  
   <style>
     .category-banner .image {
       background: transparent url("../../../images/chalkdust1.png") left top no-repeat;
+    }
+    
+    #login-start {
+      border-bottom: 2px dotted;
+    }
+    
+    #login-start a{ 
+      border-bottom: none;
     }
   </style>
 </head>
@@ -122,7 +132,7 @@
 
         <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
         <li class="search col-md-3" style="display: none;">
           <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
@@ -330,14 +340,33 @@
 </nav>
 <!-- End mobile menu -->
 </div>
+
+<div id="login-start" style="display:none;">
+<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div class="container login top-margin-50-mdlg" >
+  <div class="row">
+    <div class="col-md-12 column">
+      <h1>Logg inn</h1>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label>Skriv inn ditt fødselsnummer </label><br>
+        <span class="help-block info-message"></span> 
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+      </form>
+   </div>
+  </div>
+ </div>
+
+</div>
 <!-- End top of page -->
 
 <!-- Start actual page contents -->
-<div class="category-banner stbcolor-secondary second">
+<div class="stbcolor-secondary second">
   <div class="container">
     <div class="row">
       <div class="col-md-6 top-margin-50-mdlg">
-        <div class="stb-box dark">
           <h1>Bank & lån</h1>
           <p class="intro">
             Å investere i bolig er å investere i fremtiden.
@@ -345,7 +374,6 @@
             og finne informasjon om de banktjenestene du trenger i hverdagen.
           </p>
         </div>
-      </div>
       <div class="col-md-6 image">
         <img class="img-responsive" src="../../../images/forsikring-banner2.png" alt="category banner image" title="category bannner image"/>
       </div>
@@ -353,10 +381,10 @@
   </div>
 </div>
 
-<section class="top-margin-20 bottom-margin-20">
-  <div class="container">
+
+<div class="container top-margin-20 bottom-margin-20">
     <h2 class="">Banktjenester</h2>
-    <div class="row top-margin-20">
+    <div class="row">
       <div class="col-md-4">
         <h3 class="">Lån til bolig</h3>
         <p>
@@ -413,18 +441,16 @@
       </div>
    </div>
   </div>
-</section>
+</div>
 
-<div class="category-banner stbcolor-secondary sixth">
+<div class="stbcolor-secondary sixth">
   <div class="container">
     <div class="row top-margin-20 bottom-margin-20">
       <div class="col-md-8">
-        <div class="stb-box light">
           <h2>Lurer du på hvor mye du kan få i lån?</h2>
           <p class="intro">
            Lorum ipsum
           </p>
-        </div>
       </div>
       <div class="col-md-4 top-margin-10-mdlg">
         <h3>Lånekalkulator bolig</h3>
@@ -450,20 +476,9 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row top-margin-20">
+<div class="container top-margin-40 bottom-margin-40">
+  <div class="row">
     <div class="col-md-6">
-     <div class="stb-box first noBorder" rel="tel:08880">
-      <h3>Bra lånerente for deg under 34 år</h3>
-      <p class="intro">Lorum ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <div style="text-align: center">
-        <h2 class="big top-margin-10">3,25%</h2>
-        <button class="stb-btn top-margin-10" style="width: 150px; margin-right: 12px;">Søk om lån</button>
-      </div>
-     </div>
-    </div>
-    <div class="col-md-6">
-      <div class="stb-box first noBorder" rel="tel:08880">
         <h3><a href="#">Sperr kort - ring 08880</a></h3>
         <p class="intro">Våre sperretjenester er åpen hele døgnet alle dager.</p>
         <ul class="stb">
@@ -472,7 +487,6 @@
           <li>Er du i et land med dårlig utbygget telenett ringer du: <b>+47 915 08880</b></li>
         </ul>
         <br>
-      </div>
     </div>
   </div>
 </div>

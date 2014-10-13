@@ -22,6 +22,8 @@
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/src/stb-video.js"></script>
   <script type="text/javascript" src="../../../js/src/laanekalkulator.js"></script>
+  <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  
   <script>
     $("document").ready(function(){
       $(".row .column").matchHeight(true);
@@ -57,11 +59,29 @@
     .container .theme-banner {
       height: 405px;
     }
-
     .theme-banner,
     .theme-image  {
       min-height: 405px;
     }
+    
+    #login-start {
+      border-bottom: 2px dotted;
+    }
+    
+    #login-start a{ 
+      border-bottom: none;
+    }
+
+    .theme-banner .heading{
+      min-height: 180px;
+    }
+
+    @media screen and (max-width: 992px) {
+     .theme-image {
+       min-height: 260px;
+      }
+    }
+
   </style>
 </head>
 
@@ -159,7 +179,7 @@
 
         <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
         <li class="search col-md-3" style="display: none;">
           <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
@@ -368,12 +388,32 @@
 <!-- End mobile menu -->
 
 </div>
+
+<div id="login-start" style="display:none;">
+<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div class="container login top-margin-50-mdlg" >
+  <div class="row">
+    <div class="col-md-12 column">
+      <h1>Logg inn</h1>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label>Skriv inn ditt fødselsnummer </label><br>
+        <span class="help-block info-message"></span> 
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+      </form>
+   </div>
+  </div>
+ </div>
+
+</div>
 <!-- End top of page -->
 
 <div class="container theme-banner">
   <div class="row">
     <div class="col-md-6 column heading">
-      <div class="stb-box width-75-mdlg top-margin-50-mdlg">
+      <div class="width-75-mdlg top-margin-50-mdlg">
         <h1>Hus og hjem</h1>
         <p class="intro">Her finner du det du trenger til boligen din, enten det gjelder boliglån eller forsikring av dine eiendeler.</p>
       </div>
@@ -384,16 +424,19 @@
   </div>
 </div>
 
-<div class="stbcolor-secondary seventh">
+<div class="stbcolor-secondary third">
   <div class="container">
     <div class="row top-margin-20">
-      <div class="col-md-6">
-        <img src="../../../images/skisseelementer/405x405Victoria.png" class="center-block hidden-sm hidden-xs" />
+      <div class="col-md-6 hidden-sm hidden-xs">
+        <img src="../../../images/skisseelementer/405x405Roger.png" class="center-block" />
       </div>
       <div class="col-md-6 top-margin-50-mdlg ">
         <h2>Rabatt på forsikringer til hjemmet</h2>
-        <p class="intro">Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på innboforsikring og andre forsikringer.</p>
-        <button class="stb-btn top-margin-10">Sjekk om du har fordeler</button>
+        <p>Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på innboforsikring og andre forsikringer.</p>
+        <button class="stb-btn transparent light top-margin-10 bottom-margin-20">Sjekk om du har fordeler</button>
+      </div>
+      <div class="col-md-6 visible-sm visible-xs">
+        <img src="../../../images/skisseelementer/405x405Roger.png" class="center-block img-responsive" />
       </div>
     </div>
   </div>
@@ -405,57 +448,70 @@
     <div class="row">
     <div class="col-md-6">
       <h2>Hvor mye kan jeg få i lån?</h2>
-      <p class="intro">
-s        Hvor mye du kan låne avhenger av din
+      <p>
+        Hvor mye du kan låne avhenger av din
         egenkaptital og din betalingsevne. Med vår lånekalkulator kan du sjekke hvor mye du kan få i lån.
       </p>
-      <button class="stb-btn visible-xs"> Gå til lånekalkulator</button>
     </div>
-    <div class="col-md-6 hidden-xs">
-      <h3>Lånekalkulator</h3>
+    <div class="col-md-6">
       <form role="form">
-        <div class="stb-form-group">
-          <label for="lanebelop" style="">Lånebeløp</label>
-          <div class="input-group" style="width:230px;">
-            <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
-            <div class="stb-input-group-addon">kr</div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="stb-form-group">
+              <label for="lanebelop">Lånebeløp</label>
+              <div class="input-group">
+                <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
+                <div class="stb-input-group-addon">kr</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stb-form-group">
+              <label for="boligverdi">Boligens verdi</label>
+              <div class="input-group">
+                <input class="form-control" id="boligverdi" type="text" placeholder="Beløp"/>
+                <div class="stb-input-group-addon">kr</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="stb-form-group top-margin-10">
-          <label for="boligverdi" style="">Boligens verdi</label>
-          <div class="input-group" style="width:230px;">
-            <input class="form-control" id="boligverdi" type="text" placeholder="Beløp"/>
-            <div class="stb-input-group-addon">kr</div>
+        <div class="row">
+          <div class="col-xs-9 col-md-12">
+            <div class="stb-form-group top-margin-10">
+              <label style="">Nedbetalingsperiode</label>
+              <div>
+                <input id="nedbetaling-input" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
+                <input id="stb-slider-nedbetaling" type="slider"  value="15"  name="stb-slider" value="0" />
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-9 col-md-12">
+            <div class="stb-form-group top-margin-10">
+              <label>Lånerente</label>
+              <div>
+                <input id="lanerente-input" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
+                <input id="stb-slider-lanerente" type="slider" value="3.25"  name="stb-slider" value="0" />
+              </div>
+            </div>
           </div>
         </div>
-        <div class="stb-form-group top-margin-10">
-          <label style="">Nedbetalingsperiode</label>
-          <div style="width: 300px;">
-            <input id="nedbetaling-input" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
-            <input id="stb-slider-nedbetaling" type="slider" name="stb-slider" value="0" />
+        <div class="row">
+          <div class="stb-form-group top-margin-10">
+            <div class="col-md-8 col-xs-12">
+              <p class="intro pull-left" style="border-bottom: 4px double #000;">10 899 kr i måneden</p>
+            </div>
+            <div class="col-md-2 col-xs-12">
+              <button class="stb-btn transparent light">Søk om lån</button>
+            </div>
           </div>
-        </div>
-        <br>
-        <div class="stb-form-group top-margin-10">
-          <label>Lånerente</label>
-          <div style="width: 300px;">
-            <input id="lanerente-input" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
-            <input id="stb-slider-lanerente" type="slider" name="stb-slider" value="0" />
-          </div>
-        </div>
-        <br>
-        <div class="stb-form-group">
-          <p class="intro pull-left" style="border-bottom: 4px double #000;">10 899 kr i måneden</p><button class="stb-btn pull-left" style="margin-left: 20px;">Søk om lån</button>
         </div>
       </form>
+
     </div>
     </div>
     <div class="row top-margin-20">
       <div class="col-md-6">
-        <div class="stb-box border">
-          <div style="text-align: center;">
-            <img src="../../../images/placeholder192x108.png">
-          </div>
+           <img src="../../../images/placeholder192x108.png">
           <h3>Når du skal kjøpe bolig</h3>
           <ul class="stb">
             <li><a href="#">Hva kan jeg få i lån?</a></li>
@@ -465,12 +521,9 @@ s        Hvor mye du kan låne avhenger av din
             <li><a href="#">Betjening av lån</a></li>
             <li><a href="#">Når dere får barn</a></li>
           </ul>
-        </div>
       </div>
       <div class="col-md-6">
-        <div class="stb-box border">
-          <div style="text-align: center;">
-          </div>
+          <img src="../../../images/placeholder192x108.png">
           <h3>Bo sammen med kjæresten</h3>
           <p>Gleden ved å flytte sammen, gjør gjerne at dere lever for dagen i dag og glemmer de lange økonomiske linjene. Her er noe tips til hva som er lurt å tenke på når man er to.</p>
           <ul class="stb">
@@ -478,7 +531,6 @@ s        Hvor mye du kan låne avhenger av din
             <li><a href="#">Testamente</a></li>
             <li><a href="#">Samboerskolen fra Dine Penger </a></li>
           </ul>
-        </div>
       </div>
     </div>
   </div>
@@ -487,22 +539,13 @@ s        Hvor mye du kan låne avhenger av din
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-          <div class="stb-box big clickable" rel="tel:08880">
-            <div class="row">
-              <div class="col-sm-6 col-md-12">
-                <img src="../../../images/placeholder192x108.png"/>
-              </div>
-              <div class="col-sm-6 col-md-12">
-                <h3><a href="#">Har soverommet ditt røykvarsler?</a></h3>
-                <p>En av tre nordmenn har røykvarsler i feil rom og to prosent av oss
-                  har ikke røykvarsler hjemme i det hele tatt, viser en undersøkelse Storebrand har gjennomført.
-                  Vi kan hjelpe deg med hvordan du sikrer hjemmet ditt mot brann</p>
-              </div>
-            </div>
-        </div>
+          <img src="../../../images/placeholder192x108.png"/>
+          <h3><a href="#">Har soverommet ditt røykvarsler?</a></h3>
+          <p>En av tre nordmenn har røykvarsler i feil rom og to prosent av oss
+            har ikke røykvarsler hjemme i det hele tatt, viser en undersøkelse Storebrand har gjennomført.
+            Vi kan hjelpe deg med hvordan du sikrer hjemmet ditt mot brann</p>
       </div>
       <div class="col-md-6">
-        <div class="stb-box">
           <h3>Hva kan vi hjelpe deg med?</h3>
           <div class="stb-list-group">
             <a href="#" class="list-group-item">Forsikring av huset</a>
@@ -510,7 +553,6 @@ s        Hvor mye du kan låne avhenger av din
             <a href="#" class="list-group-item">Forsikring mot tyveri og skadeverk</a>
             <a href="#" class="list-group-item">Forsikring ved bortgang</span></a>
           </div>
-        </div>
       </div>
     </div>
   </div>

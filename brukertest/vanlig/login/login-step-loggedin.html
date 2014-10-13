@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Produkt- Boliglån</title>
+  <title>Menu and Footer Template - storebrand.no</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -19,34 +19,98 @@
   <script type="text/javascript" src="../../../js/search.js"></script>
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
-  <script type="text/javascript" src="../../../js/dist/jquery.slider.all.js"></script>
-  <script type="text/javascript" src="../../../js/src/laanekalkulator.js"></script>
-  <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
   <style>
-    .jslider{
-      margin-left: 100px;
-      width: 80%;
+    div.cookieFooter{
+      background-color: #333333;
+      height: auto;
+      opacity: 0.7;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 400;
+      color: white;
+    }
+    div.cookieFooter .contentinfo {
+      color: #FFFFFF;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px;
+      width: 60%;
     }
 
-    p.unit{
-      float:left;
-      padding-top: 8px;
-      padding-left: 6px;
-      font-size: 18px;
+    div.cookieFooter.affix-bottom {
+      position: static;
     }
 
-    .jslider .jslider-bg .r{
-      background-color: white;
+    html, body {
+      height: 100%;
     }
-    
-    #login-start {
-    border-bottom: 2px dotted;
+    .container {
+      min-height: 100%;
+      height: auto !important;
+      height: 100%;
     }
-    
-    #login-start a{ 
-      border-bottom: none;
+    .nav-tabs.nav-justified>li>a{
+      border: 1px solid #FFFFFF;
+      line-height: 2;
     }
+    .nav-tabs.nav-justified>li.active>a,.nav-tabs.nav-justified>li.active>a:hover {
+      background-color: #E6E6E6 !important;
+      border: 1px solid #E6E6E6;
+    }
+
+
+    .login button.is-submit {
+      padding: 20px;
+      height: 60px !important;
+      top: 0;
+      left: 0;
+      width: 50%;
+      max-width: 100%;
+    }
+
+    .login input {
+      height: 50px;
+      width: inherit;
+    }
+
+    .login hr {
+      border-width: 4px;
+      margin: 0;
+    }
+
+      /* This is just a temporary css . Needs to be rewritten*/
+
+    .login .width-75 {
+      width: 75%;
+    }
+
+    .login .width-40 {
+      width: 40%;
+    }
+
+    .login .width-50 {
+      width: 50%;
+    }
+
+    form .form-control-feedback {
+      top: 8px !important;
+    }
+
   </style>
+  <script>
+    $(document).ready(function(){
+      var accept = readCookie('acceptCookie');
+      if(accept=='Yes'){
+        jQuery('#cookieFooter').hide();
+      }
+    });
+    function aksepterCookie(){
+      createCookie('acceptCookie','Yes','60');
+      jQuery('#cookieFooter').hide('slow');
+    }
+
+  </script>
 </head>
 
 <body>
@@ -144,7 +208,7 @@
 
         <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
+        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
         <li class="search col-md-3" style="display: none;">
           <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
@@ -165,12 +229,12 @@
 <nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
   <div class="row stbcolor-primary third">
     <div class="navbar-header col-xs-5 logo">
-      <img class="stb-logo-mobile" src="../../../images/logo.storebrand.172x21.png" title="storebrand logo"/>
+      <img class="stb-logo-mobile" src="images/logo.storebrand.172x21.png" title="storebrand logo"/>
     </div>
     <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6 col-xs-offset-1" style="padding-left: 6px;">
       <ul class="nav navbar">
-        <li class="dropdown yamm-fw" style="width: 33%;">
-          <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-medium white menu-bars"></span><span class="marker"></span></a>
+        <li class="dropdown yamm-fw" style="width: 25%;">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars" style="font-size: 24px; color: white;"></i><span class="marker"></span></a>
           <ul id="subMenu" class="dropdown-menu">
             <div class="yamm-content">
               <div class="row">
@@ -322,7 +386,7 @@
             </div>
           </ul>
         </li>
-        <li class="dropdown yamm-fw" style="width: 33%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="stb-sprite-medium white search"></span><span class="marker"></span></a>
+        <li class="dropdown yamm-fw" style="width: 25%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-search" style="font-size: 24px; color: white;"></i><span class="marker"></span></a>
           <ul id="searchField" class="dropdown-menu" style="background: white">
             <div class="yamm-content">
               <div class="row">
@@ -342,8 +406,15 @@
             </div>
           </ul>
         </li>
-        <li class="yamm-fw" style="background-color: #bf1d19; width: 34%;">
-
+        <li class="dropdown yamm-fw" style="width: 50%;"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn<span class="marker"></span></a>
+          <ul id="signIn" class="dropdown-menu" style="background: white">
+            <div class="yamm-content">
+              <div class="row">
+                <div class="col-xs-12">
+                </div>
+              </div>
+            </div>
+          </ul>
         </li>
 
       </ul>
@@ -352,234 +423,38 @@
 </nav>
 <!-- End mobile menu -->
 </div>
-
-<div id="login-start" style="display:none;">
-<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
-<div class="container login top-margin-50-mdlg" >
-  <div class="row">
-    <div class="col-md-12 column">
-      <h1>Logg inn</h1>
-      <form id="start-login-form" class="stb-form-inline" role="form">
-        <label>Skriv inn ditt fødselsnummer </label><br>
-        <span class="help-block info-message"></span> 
-        <div class="form-group stb-form-group">
-          <input type="tel" class="" name="birthNumber" style="width: 230px">
-          <button class="stb-btn stb-form is-submit">Logg inn</button>
-        </div>
-      </form>
-   </div>
-  </div>
- </div>
-
-</div>
 <!-- End top of page -->
 
 <!-- Start actual page contents -->
-<div class="container">
-  <div class="row top-margin-30-mdlg">
-    <div class="col-md-6">
-      <h1 class="stb-font">Boliglån</h1>
-      <p class="intro">
-        Hos oss får du en av markedets beste renter på boliglån. Vi hjelper deg
-        med å realisere boligdrømmen.
-      </p>
-
-    </div>
-    <div class="col-md-6">
-      <img src="../../../images/product-boliglaan.png" class="center-block banner-image img-responsive" />
+<div class="container login top-margin-50-mdlg">
+  <div class="row">
+    <div class="col-md-12 column">
+      <p class="lead">Du er logget inn som vanlig kunde!</p>
     </div>
   </div>
+
 </div>
-
-<section class="stbcolor-secondary sixth">
-  <div class="container">
-   <div class="row top-margin-20 bottom-margin-20">
-      <div class="col-md-8">
-        <h2 class="">Søk lån – raskt og enkelt</h2>
-        <p class="visible-lg visible-md">
-          Du må sende oss en lånesøknad for at vi skal kunne gi deg et konkret lånebeløp. Hvis
-          du ønsker en pekepinn på hva du kan forvente, kan du prøve lånekalkulatoren vår
-          under.
-        </p>
-        <ul class="stb">
-          <li>Du kan låne inntil 85 prosent av boligens verdi</li>
-          <li>Nedbetaling på opptil 40 år</li>
-          <li>Avdragsfrihet på inntil 10 år</li>
-          <li>Flytende rente</li>
-        </ul>
-
-        <button class="stb-btn stb-big-btn"><h3>Søk om lån</h3></button>
-        <p class="top-margin-10">
-          <a href="../artikkel/vilkaarboliglaan.html">Alle renter og avtalevilkår for boliglån</a>
-        </p>
-        <h2 class=" top-margin-20">Hvor mye kan du låne?</h2>
-        <p>Med vår lånekalkulator får du en pekepinn på hvor mye du kan låne og hva du må betale hver måned med dagens renter</p>
-        <form role="form">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="stb-form-group">
-                <label for="lanebelop">Lånebeløp</label>
-                <div class="input-group">
-                  <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
-                  <div class="stb-input-group-addon">kr</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="stb-form-group">
-                <label for="boligverdi">Boligens verdi</label>
-                <div class="input-group">
-                  <input class="form-control" id="boligverdi" type="text" placeholder="Beløp"/>
-                  <div class="stb-input-group-addon">kr</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-9 col-md-12">
-              <div class="stb-form-group top-margin-10">
-                <label style="">Nedbetalingsperiode</label>
-                <div>
-                  <input id="nedbetaling-input" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
-                  <input id="stb-slider-nedbetaling" type="slider" name="stb-slider" value="0" />
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-9 col-md-12">
-              <div class="stb-form-group top-margin-10">
-                <label>Lånerente</label>
-                <div>
-                  <input id="lanerente-input" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
-                  <input id="stb-slider-lanerente" type="slider" name="stb-slider" value="0" />
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="stb-form-group top-margin-10">
-              <div class="col-md-8 col-xs-12">
-                <p class="intro pull-left" style="border-bottom: 4px double #000;">10 899 kr i måneden</p>
-              </div>
-              <div class="col-md-2 col-xs-12">
-                <button class="stb-btn transparent light">Sammenligne boliglån</button>
-              </div>
-            </div>
-        </div>
-        </form>
-      </div>
-      <div class="col-md-4 left-padding-5 top-margin-10">
-        <div class="stb-box first noBorder">
-          <h3>Boliglånsrente fra</h3>
-          <h2 class="big">3,45%</h2>
-          <p class="petit"> Har du tjenestepensjon i Storebrand får du nominell rente fra 3,45% (effektiv 3,54%)</p>
-          <p class="petit"> Er du helkunde får du nominell rente fra 3,65% (effektiv 3,76%)</p>
-          <button class="stb-btn maxWidth transparent light" onclick="event.preventDefault(); window.location.href = '../artikkel/dagenslaanerenter.html';">Se alle dagens renter</button>
-        </div>
-      </div>
-   </div>
-  </div>
-</section>
-
-<div class="container">
-  <div class="row top-margin-20">
-    <div class="col-md-6">
-      <div class="stb-box mini clickable top-margin-10" rel="tel:08880">
-        <div class="row">
-          <div class="col-xs-4">
-            <img class="img-responsive" src="../../../images/placeholder112x112.png">
-          </div>
-          <div class="col-xs-8">
-            <h3 style="padding-top: 10%"><a href="../artikkel/sokeboliglaan.html"> Dette bør du vite når<br> du søker lån til bolig</a></h3>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-md-6">
-      <h3 class="">Dette bør du også tenke på</h3>
-      <div class="stb-list-group" >
-        <a class="list-group-item" href="#">Uføreforsikring</a>
-        <a class="list-group-item" href="#">Gjeldsforsikring</a>
-      </div>
-    </div>
-  </div>
-  <div class="row bottom-margin-40">
-    <div class="col-md-6 top-margin-10">
-      <h3 class="">Ofte stilte spørsmål</h3>
-      <div>
-        <ul class="accordion" data-widget="stbFaq">
-          <li>
-            <a href="#" class="twister"><span class="question">Hvor mye koster lånet?</span>
-              <span class="number">1</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-              <p>Med lånekalkulatoren kan du "leke med tall", og på den måten skaffe deg et bilde av
-                hvor mye lånet vil koste. Vær forberedt på at renten kan gå både opp og ned. For å
-                være på den sikre siden, bør du ha mulighet til en renteøkning på 3-4 prosentpoeng.</p>
-            </div>
-          </li>
-          <li>
-            <a href="#" class="twister"><span class="question">Hvor mye kan jeg låne?</span>
-              <span class="number">2</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-              <p>
-                Med dagens lave rentenivå, vil et grovt anslag si at du totalt kan låne 4 ganger årlig
-                inntekt. Er dere 2 om lånet, tar du med partnerens inntekt også.Ta høyde for alle
-                planlagte endringer som vil påvirke dine inntekter og utgifter. For eksempel at du
-                planlegger å få barn, eller at du snart blir pensjonist.
-              </p>
-            </div>
-          </li>
-          <li>
-            <a href="#" class="twister"><span class="question">Hva kreves av dokumentasjon i en lånesøknad?</span>
-              <span class="number">3</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-              <p>
-                Lorum ipsum
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-6 top-margin-10">
-      <h3 class=" ">Flere låneprodukter</h3>
-      <div class="stb-list-group" >
-        <a class="list-group-item" href="../produkt/boliglaanunge.html">Boliglån for Unge(BLU)</a>
-        <a class="list-group-item" href="#">Fastrentelån </a>
-        <a class="list-group-item" href="#">Boligkreditt </a>
-        <a class="list-group-item" href="#">Byggekreditt </a>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- End actual page contents -->
 
-<!-- Start Cookie notice -->
-<div data-spy="affix" class="cookieNote" id="cookieNote">
-  <div class="cookieClose">
-    &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-small white remove"></span><br />(Lukk)</a>
-  </div>
-  <div class="cookieInfo">
-    <div class="info">
-      På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
+  <!-- Start Cookie notice -->
+  <div data-spy="affix" class="cookieNote" id="cookieNote">
+    <div class="cookieClose">
+      &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-small white remove"></span><br />(Lukk)</a>
+    </div>
+    <div class="cookieInfo">
+      <div class="info">
+        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
+      </div>
     </div>
   </div>
-</div>
-<!-- End Cookie notice -->
+  <!-- End Cookie notice -->
 
 <!-- Start responsive footer -->
-<footer class="stbcolor-primary first stb-footer visible-sm visible-md visible-lg">
+<footer class="stbcolor-primary first stb-footer">
   <div class="row toTop">
     <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIcon"></span></a>
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIconMobile"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" style="line-height: 2;">Til toppen <span class="stb-sprite-medium white arrow-up" style="margin-bottom: -5px;"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" style="line-height: 2;">Til toppen <span class="stb-sprite-medium white arrow-up" style="margin-bottom: -5px;"></span></a>
     </div>
   </div>
 
@@ -650,64 +525,6 @@
       </div>
     </div>
   </div>
-
-</footer>
-
-<footer class="mobilefooter stbcolor-primary first stb-footer visible-xs">
-  <div class="row toTop">
-    <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIcon"></span></a>
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIconMobile"></span></a>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row top-margin-20 info">
-      <div class="col-xs-6">
-        <ul>
-          <li><a href="#">In English</a></li>
-          <li><a href="#">Alt innhold</a></li>
-          <li><a href="#">Personvern</a></li>
-        </ul>
-      </div>
-
-      <div class="col-xs-6">
-        <ul>
-          <li><a href="#">Om Storebrand</a></li>
-          <li><a href="#">Eiendom</a></li>
-          <li><a href="#">Asset Management</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="row top-margin-20 contact">
-      <div class="col-xs-12">
-        <h3>Kontakt oss</h3>
-        <p><span class="stb-sprite-small white phone icon"></span><span>&nbsp;&nbsp;<a href="#">Ring 08880</a></span></p>
-        <p>Mandag-fredag: 08-small (bank 8 til 20)</p>
-        <p>Lørdag 09-15 (kun bank)</p>
-        <p>Fra utlandet, <a href="#">ring +47 915 08880</a></p>
-        <p><a href="#">Andre kontaktmuligheter</a></p>
-      </div>
-    </div>
-
-    <div class="row top-margin-30 bottom-margin-10 social">
-      <div class="col-xs-3">
-        <span class="stb-sprite-small white facebook"></span><p><a class="stb-footer-link" href="#"> Facebook</a></p>
-      </div>
-      <div class="col-xs-3">
-        <span class="stb-sprite-small white twitter"></span><p><a class="stb-footer-link" href="#"> Twitter</a></p>
-      </div>
-      <div class="col-xs-3">
-        <span class="stb-sprite-small white youtube"></span><p><a class="stb-footer-link" href="#"> YouTube</a></p>
-      </div>
-      <div class="col-xs-3">
-        <span class="stb-sprite-small white employee"></span><p><a class="stb-footer-link" href="#"> Blogg</a></p>
-      </div>
-    </div>
-
-  </div>
-
 </footer>
 <!-- End responsive footer -->
 

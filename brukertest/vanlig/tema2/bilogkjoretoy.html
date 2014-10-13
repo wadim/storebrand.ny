@@ -21,6 +21,8 @@
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/src/laanekalkulator.js"></script>
+  <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  
   <script>
     $("document").ready(function(){
       $(".row .column").matchHeight(true);
@@ -59,6 +61,24 @@
     .theme-banner,
     .theme-image  {
       min-height: 405px;
+    }
+    
+    #login-start {
+      border-bottom: 2px dotted;
+    }
+    
+    #login-start a{ 
+      border-bottom: none;
+    }
+
+    .theme-banner .heading{
+      min-height: 180px;
+    }
+
+    @media screen and (max-width: 992px) {
+      .theme-image {
+        min-height: 260px;
+      }
     }
   </style>
 </head>
@@ -157,7 +177,7 @@
 
         <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
         <li class="search col-md-3" style="display: none;">
           <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
@@ -366,12 +386,32 @@
 <!-- End mobile menu -->
 
 </div>
+
+<div id="login-start" style="display:none;">
+<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div class="container login top-margin-50-mdlg" >
+  <div class="row">
+    <div class="col-md-12 column">
+      <h1>Logg inn</h1>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label>Skriv inn ditt fødselsnummer </label><br>
+        <span class="help-block info-message"></span> 
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+      </form>
+   </div>
+  </div>
+ </div>
+
+</div>
 <!-- End top of page -->
 
 <div class="container theme-banner">
   <div class="row">
     <div class="col-md-6 column heading">
-      <div class="stb-box width-75-mdlg top-margin-50-mdlg">
+      <div class="width-75-mdlg top-margin-50-mdlg">
         <h1>Bil og kjøretøy </h1>
         <p class="intro">Det er mange ting som er viktig å tenke på når man har bil. Her finner du all informasjon du trenger hvis du eier et kjøretøy eller har planlegger å kjøpe et kjøretøy.</p>
       </div>
@@ -385,13 +425,16 @@
 <div class="stbcolor-secondary first">
   <div class="container">
     <div class="row top-margin-20">
-      <div class="col-md-6">
-        <img src="../../../images/skisseelementer/405x405Tom.png" class="center-block hidden-sm hidden-xs" />
+      <div class="col-md-6 hidden-sm hidden-xs">
+        <img src="../../../images/skisseelementer/405x405Tom.png" class="center-block" />
       </div>
       <div class="col-md-6 top-margin-50-mdlg ">
         <h2>Har du kjøpt bil eller tenker å kjøpe bil?</h2>
         <p>Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på forsikringen til bilen eller andre kjøretøy.</p>
         <button class="stb-btn top-margin-10 bottom-margin-20">Sjekk om du har fordeler</button>
+      </div>
+      <div class="col-md-6 visible-sm visible-xs">
+        <img src="../../../images/skisseelementer/405x405Tom.png" class="center-block img-responsive" />
       </div>
     </div>
   </div>
@@ -411,43 +454,25 @@
     </div>
 
    </div>
-    <div class="row top-margin-20">
+    <div class="row top-margin-20 bottom-margin-20">
       <div class="col-md-6">
-          <div class="stb-box big clickable">
-            <div class="row">
-              <div class="col-sm-6 col-md-12">
-                <img src="../../../images/placeholder192x108.png"/>
-              </div>
-              <div class="col-sm-6 col-md-12">
-                <h3><a href="#">Når uhellet er ute...</a></h3>
-                <p>Er uhellet ute og du trenger å melde skade? Eller er batteriet på bilen flatt og du trenger veihjelp? Vi hjelper deg.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="../../../images/placeholder192x108.png"/>
+        <h3><a href="#">Når uhellet er ute...</a></h3>
+        <p>Er uhellet ute og du trenger å melde skade? Eller er batteriet på bilen flatt og du trenger veihjelp? Vi hjelper deg.</p>
+      </div>
       <div class="col-md-6">
-        <div class="stb-box big clickable">
-          <div class="row">
-            <div class="col-sm-6 col-md-12">
-              <img src="../../../images/placeholder192x108.png"/>
-            </div>
-            <div class="col-sm-6 col-md-12">
-              <h3><a href="#">Husk Grønt kort på bilferien</a></h3>
-              <p>Grønt kort er et bevis på at du har gyldig ansvarsforsikring når du er i utlandet.</p>
-            </div>
-          </div>
-        </div>
+        <img src="../../../images/placeholder192x108.png"/>
+        <h3><a href="#">Husk Grønt kort på bilferien</a></h3>
+        <p>Grønt kort er et bevis på at du har gyldig ansvarsforsikring når du er i utlandet.</p>
       </div>
     </div>
   </div>
-
 </div>
 
 <div class="top-padding-30 bottom-padding-30">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <div class="stb-box">
           <h3>Endre kjørelengde på bilen?</h3>
           <p>Kjørelengde har betydning for prisen på forsikring, fordi den som kjører mye har større sannsynlighet for skade enn en som kjører mindre.
           </p>
@@ -460,10 +485,8 @@
               <button type="submit" class="stb-btn stb-form is-submit">Logg inn</button>
             </div>
           </form>
-        </div>
       </div>
       <div class="col-md-6">
-        <div class="stb-box">
           <h3>Hva kan vi hjelpe deg med?</h3>
           <div class="stb-list-group">
             <a href="../produkt/bilforsikring.html" class="list-group-item">Forsikring til bilen</a>
@@ -474,7 +497,6 @@
             <a href="#" class="list-group-item">Forsikring av firmabilen</a>
             <a href="#" class="list-group-item">Ny bil med boliglånet</a>
           </div>
-        </div>
       </div>
     </div>
   </div>

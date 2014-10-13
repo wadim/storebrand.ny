@@ -20,11 +20,23 @@
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery.slider.all.js"></script>
+  <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  
   <style>
     .category-banner .image {
       background: transparent url("../../../images/chalkdust1.png") left top no-repeat;
     }
+    
+    #login-start {
+      border-bottom: 2px dotted;
+    }
+    
+    #login-start a{ 
+      border-bottom: none;
+    }
+    
   </style>
+
 </head>
 
 <body>
@@ -122,7 +134,7 @@
 
         <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
         <li class="search col-md-3" style="display: none;">
           <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
           <form>
@@ -330,28 +342,46 @@
 </nav>
 <!-- End mobile menu -->
 </div>
+
+<div id="login-start" style="display:none;">
+<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div class="container login top-margin-50-mdlg" >
+  <div class="row">
+    <div class="col-md-12 column">
+      <h1>Logg inn</h1>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label>Skriv inn ditt fødselsnummer </label><br>
+        <span class="help-block info-message"></span> 
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+      </form>
+   </div>
+  </div>
+ </div>
+
+</div>
 <!-- End top of page -->
 
 <!-- Start actual page contents -->
-<div class="category-banner stbcolor-secondary second">
+<div class="stbcolor-secondary second">
   <div class="container">
     <div class="row">
       <div class="col-md-6 top-margin-50-mdlg">
-        <div class="stb-box dark">
           <h1>Sparing</h1>
           <p class="intro">
             Det er mange måter å spare på. Hvis du skal spare over lengre tid er det smartest å velge fondssparing.
           </p>
-        </div>
       </div>
-      <div class="col-md-6 image">
-        <img class="img-responsive" src="../../../images/forsikring-banner2.png" alt="category banner image" title="category bannner image"/>
+      <div class="col-md-6">
+        <img class="img-responsive" src="../../../images/skisseelementer/405x405Victoria.png" alt="category banner image" title="category bannner image"/>
       </div>
     </div>
   </div>
 </div>
 
-<section class="top-margin-20 bottom-margin-20">
+<div class="top-margin-20 bottom-margin-20">
   <div class="container">
     <h2 class="">Velg riktig sparing</h2>
     <div class="row top-margin-20">
@@ -362,7 +392,7 @@
         </p>
         <div class="stb-list-group" >
           <a class="list-group-item" href="#">Fondskonto</a>
-          <a class="list-group-item" href="#">Gi fond i gave</a>
+          <a class="list-group-item" href="#">Fond i gave</a>
           <a class="list-group-item" href="#">Flytt fond til oss</a>
         </div>
       </div>
@@ -392,38 +422,84 @@
       </div>
    </div>
   </div>
-</section>
+</div>
 
-<div class="category-banner stbcolor-secondary sixth">
+<div class="stbcolor-secondary sixth">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 top-margin-50-mdlg">
-        <div class="stb-box light">
-          <h2>Ta grep i dag</h2>
-          <p>Bygg opp en bufferkonto på 1-2 månedslønner på en <a href="#">sparekonto</a></p>
-          <p>Forsikre inntekten din med en <a href="#">uføreforsikring</a>. Blir du arbeidsufør midt i livet, går du et langt liv med dårlig økonomi i møte.</p>
-          <p><a href="#">Spar i BSU</a> hvis du er under 34 år og har skattbar inntekt.</p>
-          <p><a href="#">Start en månedlig spareavtale i fond.</a> Det er normalt den beste formen for langsiktig sparing. Litt bedre enn ingenting.</p>
-
-          </p>
-        </div>
+      <div class="col-md-8 top-margin-50-mdlg">
+        <h2>Ta grep i dag</h2>
+        <p>Bygg opp en bufferkonto på 1-2 månedslønner på en <a href="#">sparekonto</a></p>
+        <p>Forsikre inntekten din med en <a href="#">uføreforsikring</a>. Blir du arbeidsufør midt i livet, går du et langt liv med dårlig økonomi i møte.</p>
+        <p><a href="#">Spar i BSU</a> hvis du er under 34 år og har skattbar inntekt.</p>
+        <p><a href="#">Start en månedlig spareavtale i fond.</a> Det er normalt den beste formen for langsiktig sparing. Litt bedre enn ingenting.</p>
+        </p>
       </div>
-      <div class="col-md-6 image">
-        <img class="img-responsive" src="../../../images/forsikring-banner2.png" alt="category banner image" title="category bannner image"/>
+      <div class="col-md-4 top-margin-50-mdlg">
+        <img class="img-responsive" src="../../../images/skisseelementer/112x112IlluClock_2x.png" alt="category banner image" title="category bannner image"/>
+      </div>
+    </div>
+    <div class="row top-margin-20 bottom-margin-20">
+      <div class="col-md-6">
+        <h3>Uføreforsikring</h3>
+        <p>Lorum ipsum</p>
+      </div>
+      <div class="col-md-6">
+        <h3>BSU</h3>
+        <p>Lorum ipsum</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row top-margin-20">
-    <div class="col-md-6">
-      <div class="stb-box border">
-        <div style="text-align: center;">
-          <img src="../../../images/placeholder192x108.png">
+<div class="container top-margin-40 bottom-margin-40">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="stb-box mini clickable" rel="tel:08880">
+        <div class="row">
+          <div class="col-xs-4 col-md-12">
+            <img src="../../../images/placeholder112x112.png"/>
+          </div>
+          <div class="col-xs-8 col-md-12">
+            <h3 class="box"><a>Spar til pensjon</a></h3>
+          </div>
         </div>
-        <h3><a href="#">Slik bør du spare</a></h3>
-        <p>Lorum Ipsum</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stb-box mini clickable" rel="tel:08880">
+        <div class="row">
+          <div class="col-xs-4 col-md-12">
+            <img src="../../../images/placeholder112x112.png"/>
+          </div>
+          <div class="col-xs-8 col-md-12">
+            <h3 class="box"><a>Bli bankkunde</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stb-box big clickable" rel="tel:08880">
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <img src="../../../images/placeholder112x112.png"/>
+          </div>
+          <div class="col-sm-6 col-md-12">
+            <h3 class="box"><a href="#">Litt bedre enn ingenting</a></h3>
+            <p>Alt vi gjør handler om å sikre
+              oss selv og våre nærmeste.
+              Når du investerer i bolig,
+              forsikrer deg mot alvorlige
+              sykdommer eller starter en
+              langsiktig spareavtale, handler
+              det egentlig om at du vil gå en
+              forutsigbar og trygg fremtid i
+              møte. Vi hjelper deg med å få
+              overblikk over i dag, og å løfte
+              hodet og tenke fremover.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

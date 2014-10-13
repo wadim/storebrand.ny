@@ -19,11 +19,24 @@
   <script type="text/javascript" src="../../../js/search.js"></script>
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
+  <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
 
+  <style>
+    
+    #login-start {
+    border-bottom: 2px dotted;
+    }
+    
+    #login-start a{ 
+    border-bottom: none;
+    }
+    
+  </style>
+ 
 </head>
 
 <body>
-
+  <div id="overlay" style="display:none; background-color:#000; position:absolute; top:100px; left:0, z-index:1; opacity: 0.5;"></div>
   <div id="top-menu-nav">
     <!-- Start desktop menu -->
     <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
@@ -41,6 +54,7 @@
                   <ul>
                     <li><a href="#">Bilforsikring</a></li>
                     <li><a href="#">Husforsikring</a></li>
+                    
                     <li><a href="#">Innboforsikring</a></li>
                     <li><a href="#">Reiseforsikring</a></li>
                     <li><a href="#">Motorsykkelforsikring</a></li>
@@ -116,7 +130,7 @@
 
             <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
 
-            <li class="dropdown login yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a></li>
+            <li class="dropdown login yamm-fw col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
             <li class="search col-md-3" style="display: none;">
               <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
               <form>
@@ -325,6 +339,26 @@
     <!-- End mobile menu -->    
 
   </div>
+  
+  <div id="login-start" style="display:none;">
+<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div class="container login top-margin-50-mdlg" >
+  <div class="row">
+    <div class="col-md-12 column">
+      <h1>Logg inn</h1>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label>Skriv inn ditt fødselsnummer </label><br>
+        <span class="help-block info-message"></span> 
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+      </form>
+   </div>
+  </div>
+ </div>
+
+</div>
   <!-- End top of page -->
 
   
