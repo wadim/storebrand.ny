@@ -83,8 +83,8 @@ var typeaheads = {
     [
       {"name": "Banksparing","url" : absURL+"../brukertest/vanlig/kategori/sparing.html"},
       {"name": "Bank og LÅn","url":absURL+"../brukertest/vanlig/kategori/bankoglaan.html"},
-      {"name": "Bolig lån","url":"../vanlig/produkt/boliglaan.html"},
-      {"name": "Bolig lån for unge","url":absURL+"../brukertestvanlig/produkt/boliglaanunge.html"},
+      {"name": "Bolig lån","url":absURL+"../brukertest/vanlig/produkt/boliglaan.html"},
+      {"name": "Bolig lån for unge","url":absURL+"../brukertest/vanlig/produkt/boliglaanunge.html"},
       {"name": "Lånekalkulator","url":absURL+"../brukertest/vanlig/verktoy/laanekalkulator.html"},
       {"name": "Dagens Lånerenter","url":absURL+"../brukertest/vanlig/artikkel/dagenslaanerenter.html"},
       {"name": "Søke boliglån","url":absURL+"../brukertest/vanlig/artikkel/sokeboliglaan.html"},
