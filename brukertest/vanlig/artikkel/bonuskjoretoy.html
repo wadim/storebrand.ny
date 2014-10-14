@@ -20,118 +20,352 @@
   <script type="text/javascript" src="../../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  <style>
+   div.cookieFooter{
+      background-color: #333333;
+      height: auto;
+      opacity: 0.7;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 400;
+      color: white;
+    }
+    div.cookieFooter .contentinfo {
+      color: #FFFFFF;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px;
+      width: 60%;
+    }
 
+    div.cookieFooter.affix-bottom {
+      position: static;
+    }
+
+    .nav-tabs.nav-justified>li>a{
+      border: 1px solid #FFFFFF;
+      line-height: 2;
+    }
+    .nav-tabs.nav-justified>li.active>a,.nav-tabs.nav-justified>li.active>a:hover {
+      background-color: #E6E6E6 !important;
+      border: 1px solid #E6E6E6;
+    }
+
+    .sitemap ul {
+      margin: 0;
+    }
+	.sitemap ul li {
+	  list-style-type: none;
+	}
+
+  #desktopmenu{
+    border-bottom-style: dotted;
+    border-width: 2px;
+  }
+  #mobilemenu{
+    border-bottom-style: dotted;
+    border-width: 2px;
+  }
+
+  #desktopmenu ul{
+    list-style-type: none;
+      padding: 0;
+  }
+
+  #desktopmenu a{
+    color: #404040;
+    border-bottom: none !important;
+  }
+  #desktopmenu a:hover{
+    color: #da291c !important;
+  }
+  
+  #desktopmenu li{
+    padding-bottom: 12px;
+  }
+  
+   #desktopmenu #verktoy {
+     margin: 0;
+   }
+
+  #desktopmenu #verktoy span {
+    margin: 0 4px -4px 0
+  } 
+
+  #mobilemenu a{
+    border: none;
+  }
+
+  #mobilemenu .panel {
+    border: none;
+  }
+
+  #mobilemenu .panel-heading {
+    border-bottom: 1px solid #404040;
+  }
+
+  .panel-default>.panel-heading{
+    background-color: #ffffff;
+  }
+
+  h4.panel-title{
+    font-size: 16px;
+  }
+  h4.panel-title a{
+    border-bottom: none;
+  }
+
+  #mobilemenu .panel.active, #mobilemenu .panel.active .panel-heading,#mobilemenu .panel.active .panel-body,#mobilemenu .panel.active .menu-item{
+    background: #F2F2F2
+  }
+
+  #mobilemenu .panel.active:first-child{
+    border-top: 1px solid #404040;
+  }
+
+  #mobilemenu .panel:first-child{
+    border-top: 1px solid #404040;
+  }
+
+  #mobilemenu .panel.active .panel-heading{
+    border: none;
+  }
+  #mobilemenu .panel.active .panel-body{
+    border: none;
+    border-bottom: 1px solid #404040;
+  }
+
+  #mobilemenu .panel-group .panel+.panel {
+    margin-top: 0;
+  }
+
+  #mobilemenu .stb-list-group a.menu-item{
+    font-family: 'SignaWeb-Light';
+  }
+
+  #mobilemenu li{
+   background: #A6A6A6;
+   height: 50px;
+  }
+  #mobilemenu li.active{
+    background: #404040;
+    border: none;
+  }
+  #mobilemenu li a{
+    color: white;
+    border: none;
+    padding: 10px 0px;
+  }
+
+  #mobilemenu li.tab-box{
+    font-family: "Open Sans Bold",Arial,ArialMT,sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding-left: 2px;
+    padding-top: 4px;
+    border-left: 2px solid white;
+  }
+  #mobilemenu li.tab-box:first-child{
+    border-left: none;
+  }
+
+  #mobilemenu li.active a{
+    background: #404040;
+    border: none;
+  }
+
+  .nav a:hover{
+    background-color: transparent !important;
+  }
+  #mobilemenu a:hover{
+    background-color: transparent;
+  }
+
+  #mobilemenu .panel-body{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  #mobilemenu a.menu-item{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    font-size: 16px;
+    font-family: 'SignaWeb-Light';
+    border: none;
+    color: #404040;
+  }
+
+  #mobilemenu .twitter-typeahead{
+    width: 99%;
+  }
+
+  #mobilemenu .twitter-typeahead .typeahead{
+    width: 99%;
+    border: 2px solid #404040;
+  }
+
+
+  @media screen and (min-width: 992px) {
+    #verktoy{
+      padding: 10px 0 10px 10%;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    #verktoy{
+      padding: 10px 0 10px 15%;
+    }
+  }
+  
+  #login-start {
+    border-bottom: 2px dotted;
+  }
+  #login-start a{ 
+    border-bottom: none;
+  }
+  
+  </style>
 </head>
 
 <body>
-<div id="overlay" style="display:none; background-color:#000; position:absolute; top:100px; left:0, z-index:1; opacity: 0.5;"></div>
+<!-- Start top of page -->
+<div id="overlay" style="display:none; background-color:#000; position:absolute; top:100px; left:0; z-index:1; opacity: 0.5;"></div>
 <div id="top-menu-nav">
 <!-- Start desktop menu -->
 <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
-  <div class="container yamm">
-    <div class="navbar-header col-md-4">
-      <img src="../../../images/logo.png" title="logo image" class="logo">
+    <div class="container yamm">
+      <div class="navbar-header col-md-4">
+        <img src="../../../images/logo.png" title="logo image" class="logo">
+      </div>
+      <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav col-md-8">
+          <li class="private current col-md-3 yamm-fw group dropdown" id="menuheader-private">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
+              <ul class="dropdown-menu" id="desktopmenu">
+              <li style="margin: 50px 0 0 15%">
+              <ul>
+	            <li class="col-md-2">
+	              <h4><a href="../kategori/pensjon.html">Pensjon</a></h4>
+			        <ul>
+			          <li><a href="#">Pensjonsparing</a></li>
+			          <li><a href="../verktoy/pensjonstall.html">Finn ditt pensjonstall</a></li>
+			          <li><a href="../produkt/egensparingpensjon.html">Egensparing til pensjon</a></li>
+			          <li><a href="#">Pensjonsskolen</a></li>
+			          <li><a href="#">Pensjonskapitalbevis</a></li>
+			          <li><a href="#">Fripolise</a></li>
+			        </ul>
+	            </li>
+	            <li class="col-md-2">
+	              <h4><a href="../kategori/sparing.html">Sparing</a></h4>
+		        <ul>
+		          <li><a href="#">Fond</a></li>
+		          <li><a href="#">Banksparing</a></li>
+		          <li><a href="#">Høyrentekonto</a></li>
+		          <li><a href="#">Sparekonto</a></li>
+		          <li><a href="#">BSU</a></li>
+		          <li><a href="#">Plasseringskonto</a></li>
+		          <li><a href="#">Fondskonto</a></li>
+		          <li><a href="#">Fond i gave</a></li>
+		        </ul>
+	            </li>
+	            <li class="col-md-2">
+	              <h4><a href="../kategori/bankoglaan.html">Bank og lån</a></h4>
+			        <ul>
+			          <li><a href="#">Bli bankkunde</a></li>
+			          <li><a href="../produkt/boliglaan.html">Boliglån</a></li>
+			          <li><a href="../verktoy/laanekalkulator.html">Lånekalkulator</a></li>
+			          <li><a href="../produkt/boliglaanunge.html">Boliglån for unge</a></li>
+			          <li><a href="#">Konto og kort</a></li>
+			          <li><a href="#">Brukskonto</a></li>
+			          <li><a href="#">Visa-kort</a></li>
+			          <li><a href="#">Kredittkort</a></li>
+			          <li><a href="#">Ungdomskonto</a></li>
+			          <li><a href="#">Renter og priser</a></li>
+			          <li><a href="#">Nett- og mobilbank</a></li>
+			        </ul>
+	            </li>
+	            <li class="col-md-2">
+	               <h4><a href="../kategori/forsikring.html">Forsikring</a></h4>
+			        <ul>
+			          <li><a href="../produkt/bilforsikring.html">Bilforsikring</a></li>
+			          <li><a href="#">Barneforsikring</a></li>
+			          <li><a href="#">Reiseforsikring</a></li>
+			          <li><a href="#">Uføreforsikring</a></li>
+			          <li><a href="#">Husforsikring</a></li>
+			          <li><a href="#">Innboforsikring</a></li>
+			          <li><a href="#">Hund- og kattforsikring</a></li>
+			          <li><a href="#">Behovsveileder</a></li>
+			          <li><a href="#">Personforsikringer</a></li>
+			          <li><a href="#">MC-forsikring</a></li>
+			          <li><a href="#">Båtforsikring</a></li>
+			        </ul>
+	            </li>
+	            <li class="col-md-4">
+	              <ul>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="../tema2/husoghjem.html">
+			                <span class="stb-theme-sprites house" style="margin-bottom: -20px; margin-right: 10px;"></span>Hus & Hjem
+			              </a>
+			            </p>
+			          </li>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="../tema2/bilogkjoretoy.html">
+			                <span class="stb-theme-sprites car" style="margin-bottom: -20px; margin-right: 10px;"></span>Bil & Kjøretøy
+			              </a>
+			            </p>
+			          </li>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="#">
+			                <span class="stb-theme-sprites couple" style="margin-bottom: -20px; margin-right: 10px;"></span>Liv & Helse
+			              </a>
+			            </p>
+			          </li>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="../tema2/ferieogfritid.html">
+			                <span class="stb-theme-sprites bike" style="margin-bottom: -20px; margin-right: 10px;"></span>Ferie & Fritid
+			              </a>
+			            </p>
+			          </li>
+	        	</ul>
+	            </li>
+	            </ul>
+	            </li>
+	            <li id="verktoy" class="row stbcolor-gray second" style="clear: both;padding-top: 15px;">
+	              <div class="">
+	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium wrench"></span><a href="#"> Veihjelp</a></h4></div>
+	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium edit"></span><a href="#"> Meld skade</a></h4></div>
+	                <div class="col-md-3 col-lg-2" style="padding-left: 0;"><h4><span class="stb-sprite-medium pretzel"></span><a href="../tema3/kundefordeler.html"> Kundefordeler</a></h4></div>
+	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium bubble"></span><a href="#"> Kontakt oss</a></h4></div>
+	              </div>
+	            </li>
+             </ul>
+          </li>
+          <li class="company col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+          <li class="login col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
+          <li class="search col-md-3" style="display: none;">
+            <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
+            <form>
+              <label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-small search white"></span></span>
+              </label>
+            </form>
+          </li>
+
+        </ul>
+      </div>
     </div>
-    <div id="navbar-collapse-grid" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav col-md-8">
-        <li class="dropdown private yamm-fw current col-md-3 group" id="menuheader-private">
-          <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
-          <ul class="dropdown-menu" id="dropdown-private">
-            <li class="col-md-2">
-              <h4>Forsikring</h4>
-              <ul>
-                <li><a href="#">Bilforsikring</a></li>
-                <li><a href="#">Husforsikring</a></li>
-                <li><a href="#">Innboforsikring</a></li>
-                <li><a href="#">Reiseforsikring</a></li>
-                <li><a href="#">Motorsykkelforsikring</a></li>
-                <li><a href="#">Båtforsikring</a></li>
-                <li><a href="#">Liv og helse</a></li>
-                <li><a href="#">Barneforsikring</a></li>
-              </ul>
-            </li>
-            <li class="col-md-2">
-              <h4>Bank og lån</h4>
-              <ul>
-                <li><a href="#">Bli bankkunde</a></li>
-                <li><a href="#">Konto og kort</a></li>
-                <li><a href="#">Ungdomskonto</a></li>
-                <li><a href="#">Visa-kort</a></li>
-                <li><a href="#">Kredittkort</a></li>
-                <li><a href="#">Boliglån</a></li>
-                <li><a href="#">Boligkreditt</a></li>
-                <li><a href="#">Boliglån for unge</a></li>
-                <li><a href="#">Nettbank</a></li>
-              </ul>
-            </li>
-            <li class="col-md-2">
-              <h4>Pensjon</h4>
-              <ul>
-                <li><a href="#">Egensparing til pensjon</a></li>
-                <li><a href="#">Ekstrapensjon</a></li>
-                <li><a href="#">IPS</a></li>
-                <li><a href="#">Pensjon fra arbeidsgiver</a></li>
-                <li><a href="#">Pensjonskapitalbevis</a></li>
-                <li><a href="#">Fripolise</a></li>
-                <li><a href="#">Fripolise med investeringsvalg</a></li>
-              </ul>
-            </li>
-            <li class="col-md-2">
-              <h4>Sparing</h4>
-              <ul>
-                <li><a href="#">Spar i fond</a></li>
-                <li><a href="#">Spar i bank</a></li>
-                <li><a href="#">Spar til pensjon</a></li>
-                <li><a href="#">Spareavtaler</a></li>
-                <li><a href="#">Gi fond i gave</a></li>
-                <li><a href="#">Flytte fond</a></li>
-                <li><a href="#">Sparekonto</a></li>
-                <li><a href="#">Fondspakker</a></li>
-                <li><a href="#">BSU-sparing</a></li>
-                <li><a href="#">Junior-sparing</a></li>
-              </ul>
-            </li>
-            <li class="col-md-2">
-              <h4 class="calc">Kalkulatorer og&nbsp;verktøy</h4>
-              <ul>
-                <li><a href="#">Lånekalkulator</a></li>
-                <li><a href="#">Ditt pensjonstall</a></li>
-                <li><a href="#">Pensjonsskolen</a></li>
-                <li><a href="#">Demo av Mitt forbruk</a></li>
-                <li><a href="#">Priser og vilkår</a></li>
-                <li><a href="#">Renter og priser</a></li>
-                <li><a href="#">Sperre kort</a></li>
-                <li><a href="#">Nyheter og rapporter</a></li>
-              </ul>
-            </li>
-            <li class="extraLinks">
-              <ul>
-                <li class="roadAssistance"><a href="#">Veihjelp</a></li>
-                <li class="damageReport"><a href="#">Meld skade</a></li>
-                <li class="benefits"><a href="#">Få fordeler</a></li>
-                <li class="contact"><a href="#">Kontakt oss</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-
-        <li class="dropdown company yamm-fw col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
-
-        <li class="dropdown login yamm-fw col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
-        <li class="search col-md-3" style="display: none;">
-          <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
-          <form>
-            <label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-small search white"></span></span>
-            </label>
-          </form>
-        </li>
-
-      </ul>
+    <div class="col-md-6 column rightColor">
     </div>
   </div>
-  <div class="col-md-6 column rightColor">
-  </div>
-</div>
 <!-- End desktop menu -->
 
 <!-- Start mobile menu -->
@@ -363,106 +597,249 @@
     <div class="col-md-8">
       <h2>Ofte stilte spørsmål</h2>
 
-      <h3>Hva er bonus?</h3>
-      <p>Bonus er en "belønning" du får i form av redusert forsikringspris dersom du ikke bruker forsikringen. Du får høyere
-        bonus for hvert år du kjører skadefritt.</p>
+      <ul class="accordion" data-widget="stbFaq">
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">1</span>
+            <span class="question">Hva er bonus?</span>
+          </a>
+          <div class="answer">
+            <p>Bonus er en "belønning" du får i form av redusert forsikringspris dersom du ikke bruker forsikringen. Du får høyere
+              bonus for hvert år du kjører skadefritt.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">2</span>
+            <span class="question">Hvilken bonus får jeg på min første bil?</span>
+          </a>
+          <div class="answer" style="display: none;">
+            <p>Hvis du er over 18 år får du en startbonus på 20 prosent.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">3</span>
+            <span class="question">Kan jeg overføre bonus til andre?</span>
 
-      <h3>Hvilken bonus får jeg på min første bil?</h3>
-      <p>Hvis du er over 18 år får du en startbonus på 20 prosent.</p>
+          </a>
+          <div class="answer">
+            <p>Ja, du kan overføre bonus til ektefelle, samboer eller ditt personlige firma. Men du kan ikke overføre bonusen til
+              barnet ditt.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">4</span>
+            <span class="question">Får jeg samme bonus om jeg selger bilen og kjøper en ny?</span>
+          </a>
+          <div class="answer">
+            <p>Ja, hvis du allerede har en bilforsikring hos oss, får du samme bonus på bil nummer to. Legg inn
+              registreringsnummeret og bonusen på bil nummer én, så ordner vi resten. Forsikringen på den gamle bilen din
+              avsluttes når den nye eieren er registrert hos Biltilsynet, eller skiltene er levert inn. Når dette er gjort må du sende oss
+              en e-post (skadeforsikring@storebrand.no).</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">5</span>
+            <span class="question">Kan jeg overføre bonus fra et annet selskap?</span>
+          </a>
+          <div class="answer" style="display: none;">
+            <p>Ja, så lenge du har hatt bilforsikring de siste to årene, kan du gjøre det. Bare oppgi registreringsnummeret og
+              bonusen du hadde på den forrige bilen din, så ordner vi resten. Husk å trekke fra den bonusreduserende skaden, hvis
+              du har hatt det.</p>>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">6</span>
+            <span class="question">Hvilken bonus får jeg hvis jeg ikke har hatt bilforsikring de siste to årene?</span>
+          </a>
+          <div class="answer">
+            <p>Da får du en generell startbonus på 20 prosent.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">7</span>
+            <span class="question">Får jeg samme bonus på bil nummer to?</span>
+          </a>
+          <div class="answer">
+            <p>Ja, hvis du allerede har en bilforsikring hos oss vil bil nummer to få samme bonus (inntil 50 prosent).
+              Skriv inn registreringsnummeret på bil nummer én (i kjøpsløsningen), så ordner vi resten.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">8</span>
+            <span class="question">Jeg har solgt bilen min og vil ha med meg bonusen til min nye bil, hva gjør jeg?</span>
+          </a>
+          <div class="answer">
+            <ol class="stb">
+              <li>Bestill forsikring i nettløsningen som vanlig.</li>
+              <li>Informer om din nåværende bonus når du blir spurt om dette og velg "Storebrand" som selskap.</li>
+              <li>Send en e-post til skadeforsikring@storebrand.no og gi beskjed om salget av din gamle bil.</li>
+              <li>NB! Husk at salget må være registrert hos Statens vegvesen før vi har lov til å avslutte forsikringen.</li>
+            </ol>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">9</span>
+            <span class="question">Kan jeg hente bonus fra utlandet?</span>
+          </a>
+          <div class="answer">
+            <p>Ja, dersom bilen er registrert i ditt navn, og forsikringsselskapet kan dokumentere at du har kjørt skadefritt, kan du
+              få den samme bonusen hos oss.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">10</span>
+            <span class="question">Jeg har kjørt firmabil i flere år, hvilken bonus kan jeg få da?</span>
+          </a>
+          <div class="answer">
+            <p>Da kan du få en startbonus på 50 prosent, så fremt du kan dokumentere at du har kjørt skadefritt med firmabilen i
+              mer enn tre år.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">11</span>
+            <span class="question">Hvordan opparbeider jeg meg bedre bonus?</span>
+          </a>
+          <div class="answer">
+            <p>Bonusen øker med 10 prosent for hvert år du kjører skadefritt – frem til 70 prosent. Ved fem års skadefri kjøring på 70
+              prosent, kan du få maks 75 prosent i bonus. Husk at bonusen følger det navnet forsikringen står på (forsikringstaker).
+            </p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">12</span>
+            <span class="question">Hvilken årlig kjørelengde bør jeg oppgi?</span>
+          </a>
+          <div class="answer">
+            <p>For begrenset by- og lokalkjøring er 12.000 kilometer som regel tilstrekkelig. For vanlig familiekjøring bør 16.000
+              kilometer være tilstrekkelig.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">13</span>
+            <span class="question">Hvorfor er det viktig å melde korrekt kjørelengde?</span>
+          </a>
+          <div class="answer">
+            <p>Kjørelengden har betydning for prisen. Dessuten øker sannsynligheten for skade, jo lengre du kjører. Du må selv passe
+              på at du ikke overskrider den kjørelengden du har valgt. Du kan korrigere/endre kjørelengden i løpet av året om du
+              har behov for det.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">14</span>
+            <span class="question">Hvorfor bør jeg velge en forsikring som inkluderer leiebil?</span>
+          </a>
+          <div class="answer">
+            <p>Det kan bli dyrt å betale for leiebil om bilen din må repareres. Leiebildekningen hos oss dekker utgifter på inntil 350
+              kroner per dag. Ved tyveri betaler vi leiebil for den tiden du har vært uten bil.  Hvis du ikke trenger å bruke leiebilen, få
+              du uansett 150 kroner per dag du er uten bil.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">15</span>
+            <span class="question">Når trenger jeg Grønt kort og hvordan får jeg det?</span>
+          </a>
+          <div class="answer">
+            <p>Grønt kort er et bevis på at bilen har gyldig ansvarsforsikring når du er i utlandet.
+              <br><a href="http://www.storebrand.no/web/bank/sbb.nsf/grontkort?readForm">Her kan du bestille grønt kort</a></p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">16</span>
+            <span class="question">Hva dekker rettshjelpsforsikringen?</span>
+          </a>
+          <div class="answer">
+            <p>Rettshjelpsforsikringen dekker utgifter ved tvistesaker for føreren av bilen.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">17</span>
+            <span class="question">Hva er egenandel?</span>
+          </a>
+          <div class="answer">
+            <p>Egenandelen er den delen av skaden du må betale selv når du bruker forsikringen. Du kan som regel velge mellom
+              en egenandel på 4.000 kroner, 8.000 kroner, 16.000 kroner eller kr 30.000 kroner. Jo høyere egenandel du velger, jo
+              billigere blir selve forsikringen
+            </p>
 
-      <h3>Kan jeg overføre bonus til andre?
-      </h3>
-      <p>Ja, du kan overføre bonus til ektefelle, samboer eller ditt personlige firma. Men du kan ikke overføre bonusen til
-        barnet ditt.</p>
-
-      <h3>Får jeg samme bonus om jeg selger bilen og kjøper en ny?
-      </h3>
-      <p>Ja, hvis du allerede har en bilforsikring hos oss, får du samme bonus på bil nummer to. Legg inn
-        registreringsnummeret og bonusen på bil nummer én, så ordner vi resten. Forsikringen på den gamle bilen din
-        avsluttes når den nye eieren er registrert hos Biltilsynet, eller skiltene er levert inn. Når dette er gjort må du sende oss
-        en e-post (skadeforsikring@storebrand.no).</p>
-
-      <h3>Kan jeg overføre bonus fra et annet selskap?</h3>
-      <p>Ja, så lenge du har hatt bilforsikring de siste to årene, kan du gjøre det. Bare oppgi registreringsnummeret og
-        bonusen du hadde på den forrige bilen din, så ordner vi resten. Husk å trekke fra den bonusreduserende skaden, hvis
-        du har hatt det.</p>
-
-      <h3>Hvilken bonus får jeg hvis jeg ikke har hatt bilforsikring de siste to årene?</h3>
-      <p>Da får du en generell startbonus på 20 prosent.</p>
-
-      <h3>Får jeg samme bonus på bil nummer to?</h3>
-      <p>Ja, hvis du allerede har en bilforsikring hos oss vil bil nummer to få samme bonus (inntil 50 prosent).
-        Skriv inn registreringsnummeret på bil nummer én (i kjøpsløsningen), så ordner vi resten.</p>
-
-      <h3> Jeg har solgt bilen min og vil ha med meg bonusen til min nye bil, hva gjør jeg?</h3>
-      <ol class="stb">
-        <li>Bestill forsikring i nettløsningen som vanlig.</li>
-        <li>Informer om din nåværende bonus når du blir spurt om dette og velg "Storebrand" som selskap.</li>
-        <li>Send en e-post til skadeforsikring@storebrand.no og gi beskjed om salget av din gamle bil.</li>
-        <li>NB! Husk at salget må være registrert hos Statens vegvesen før vi har lov til å avslutte forsikringen.</li>
-      </ol>
-
-      <h3>Kan jeg hente bonus fra utlandet?</h3>
-      <p>Ja, dersom bilen er registrert i ditt navn, og forsikringsselskapet kan dokumentere at du har kjørt skadefritt, kan du
-        få den samme bonusen hos oss.</p>
-
-      <h3>Jeg har kjørt firmabil i flere år, hvilken bonus kan jeg få da?</h3>
-      <p>Da kan du få en startbonus på 50 prosent, så fremt du kan dokumentere at du har kjørt skadefritt med firmabilen i
-        mer enn tre år,</p>
-
-      <h3> Hvordan opparbeider jeg meg bedre bonus?</h3>
-      <p>Bonusen øker med 10 prosent for hvert år du kjører skadefritt – frem til 70 prosent. Ved fem års skadefri kjøring på 70
-        prosent, kan du få maks 75 prosent i bonus. Husk at bonusen følger det navnet forsikringen står på (forsikringstaker).
-      </p>
-
-      <h3> Hvilken årlig kjørelengde bør jeg oppgi?</h3>
-      <p>For begrenset by- og lokalkjøring er 12.000 kilometer som regel tilstrekkelig. For vanlig familiekjøring bør 16.000
-        kilometer være tilstrekkelig.</p>
-
-      <h3>Hvorfor er det viktig å melde korrekt kjørelengde?</h3>
-      <p>Kjørelengden har betydning for prisen. Dessuten øker sannsynligheten for skade, jo lengre du kjører. Du må selv passe
-        på at du ikke overskrider den kjørelengden du har valgt. Du kan korrigere/endre kjørelengden i løpet av året om du
-        har behov for det.</p>
-
-      <h3>Hvorfor bør jeg velge en forsikring som inkluderer leiebil?</h3>
-      <p>Det kan bli dyrt å betale for leiebil om bilen din må repareres. Leiebildekningen hos oss dekker utgifter på inntil 350
-        kroner per dag. Ved tyveri betaler vi leiebil for den tiden du har vært uten bil.  Hvis du ikke trenger å bruke leiebilen, få
-        du uansett 150 kroner per dag du er uten bil.</p>
-
-      <h3>Når trenger jeg Grønt kort og hvordan får jeg det?</h3>
-      <p>Grønt kort er et bevis på at bilen har gyldig ansvarsforsikring når du er i utlandet.
-      <br><a href="http://www.storebrand.no/web/bank/sbb.nsf/grontkort?readForm">Her kan du bestille grønt kort (http://www.storebrand.no/web/bank/sbb.nsf/grontkort?readForm)</a></p>
-
-      <h3>Hva dekker rettshjelpsforsikringen?</h3>
-      <p>Rettshjelpsforsikringen dekker utgifter ved tvistesaker for føreren av bilen.</p>
-
-      <h3>Hva er egenandel?</h3>
-      <p>Egenandelen er den delen av skaden du må betale selv når du bruker forsikringen. Du kan som regel velge mellom
-        en egenandel på 4.000 kroner, 8.000 kroner, 16.000 kroner eller kr 30.000 kroner. Jo høyere egenandel du velger, jo
-        billigere blir selve forsikringen
-      </p>
-
-      <h3>Når kan jeg flytte over forsikringene?</h3>
-      <p>Du kan flytte forsikringene dine til oss med en måneds varsel.   Hvis du for eksempel sier opp 5. januar, vil
-        forsikringene gjelde i det nye selskap fra 5. februar.  Du kan du alltid si opp ved hovedforfall. Er hovedforfallet mindre
-        enn en måned frem i tid, kan du flytte over forsikringen raskere enn en måned.</p>
-
-      <h3>Skjer oppsigelsen automatisk når jeg selger bilen min?</h3>
-      <p>Nei, det går dessverre ikke en direkte melding mellom selskapene og Statens Vegvesen. Du bør derfor kontakte oss et
-        par dager etter at salgsmelding er levert.</p>
-
-      <h3>Hvilken betydning har det for prisen at føreren er over/under 24 år?</h3>
-      <p>Prisen blir lavere hvis du avtaler at det ikke er førere av bilen som er under 24 år. Husk å opplyse om situasjonen
-        forandrer seg, slik at prisen på din forsikring blir endret. Hvis det er gitt rabatt for og avtalt at kjøretøyet ikke skal
-        brukes av fører under 24 år, og fører i skadeøyeblikket er under denne alderen, økes egenandelen med 10 000 kroner.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">18</span>
+            <span class="question">Når kan jeg flytte over forsikringene?</span>
+          </a>
+          <div class="answer">
+            <p>Du kan flytte forsikringene dine til oss med en måneds varsel.   Hvis du for eksempel sier opp 5. januar, vil
+              forsikringene gjelde i det nye selskap fra 5. februar.  Du kan du alltid si opp ved hovedforfall. Er hovedforfallet mindre
+              enn en måned frem i tid, kan du flytte over forsikringen raskere enn en måned.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">19</span>
+            <span class="question">Skjer oppsigelsen automatisk når jeg selger bilen min?</span>
+          </a>
+          <div class="answer">
+            <p>Nei, det går dessverre ikke en direkte melding mellom selskapene og Statens Vegvesen. Du bør derfor kontakte oss et
+              par dager etter at salgsmelding er levert.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister">
+            <span class="expander"></span>
+            <span class="number">20</span>
+            <span class="question">Hvilken betydning har det for prisen at føreren er over/under 24 år?</span>
+          </a>
+          <div class="answer">
+            <p>Prisen blir lavere hvis du avtaler at det ikke er førere av bilen som er under 24 år. Husk å opplyse om situasjonen
+              forandrer seg, slik at prisen på din forsikring blir endret. Hvis det er gitt rabatt for og avtalt at kjøretøyet ikke skal
+              brukes av fører under 24 år, og fører i skadeøyeblikket er under denne alderen, økes egenandelen med 10 000 kroner.</p>
+          </div>
+        </li>
+      </ul>
     </div>
     <div class="col-md-4">
       <div class="pull-right">
         <figure class="stb-figure">
-          <img src="../../../images/271x271.png" alt="En tekst som beskriver bildet"	class="img-responsive"
+          <img src="../../../images/271x271.png" alt="En tekst som beskriver bildet" class="img-responsive"
                title="Bilde med bildetekst oppå. Verre å plassere akkurat som man vil enn bilder med bildetekst under." />
           <figcaption class="stb-caption">
-            Bildetekst på bilde. Primis in faucibus orci luctus et ultrices poseuere.
+            Bildetekst på bilde.
           </figcaption>
         </figure>
       </div>
