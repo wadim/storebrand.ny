@@ -21,7 +21,7 @@ $(document).ready(function(){
     $("#overlay").toggle();
     $(this).find('span.marker').toggleClass('active');
   });
-    
+ 
 });
 // End mobile top menu decoration
   
@@ -650,13 +650,13 @@ $(document).ready(function(){
     }
     
 	var idValidator = {
-	          message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Fødselsnummeret er ikke gyldig!',
+	          message: '<span class="stb-color-sprite-small warning"></span> Fødselsnummeret er ikke gyldig!',
 	          callback: function(value, validor){
 	            return verifyIDNumber(value);
 	          }
 	        };
 
-	        $('#start-login-form').bootstrapValidator({
+	        $('#start-login-form, #start-login-form-mobile ').bootstrapValidator({
 	          message: 'This value is not valid',
 	          live: 'disabled',
 	          feedbackIcons: {
@@ -670,7 +670,7 @@ $(document).ready(function(){
 	              validators: {
 	                callback: idValidator,
 	                notEmpty: {
-	                  message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Oppgi fødselsnummer'
+	                  message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
 	                }
 	              }
 

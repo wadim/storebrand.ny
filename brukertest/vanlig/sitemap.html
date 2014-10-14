@@ -221,7 +221,7 @@ div.cookieFooter{
 	            </li>
 	            <li id="verktoy" class="row stbcolor-gray second" style="clear: both;padding-top: 15px;">
 	              <div class="">
-	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium wrench"></span><a href="#"> Veihjelp</a></h4></div>
+	                <div class="col-md-3 col-lg-2 col-lg-offset-1"><h4><span class="stb-sprite-medium wrench"></span><a href="#"> Veihjelp</a></h4></div>
 	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium edit"></span><a href="#"> Meld skade</a></h4></div>
 	                <div class="col-md-3 col-lg-2" style="padding-left: 0;"><h4><span class="stb-sprite-medium pretzel"></span><a href="tema3/kundefordeler.html"> Kundefordeler</a></h4></div>
 	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium bubble"></span><a href="#"> Kontakt oss</a></h4></div>
@@ -230,7 +230,29 @@ div.cookieFooter{
              </ul>
           </li>
           <li class="company col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
-          <li class="login col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
+          <li class="login col-md-3 yamm-fw group dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a>
+            <ul class="dropdown-menu">
+            <li>
+              <div id="login-start" style="background-color: #fff">
+					<div class="container top-margin-50-mdlg" >
+					  <div class="row" style="margin: 0;">
+					    <div class="col-md-12 column">
+					      <h1>Logg inn</h1>
+					      <form id="start-login-form-mobile" class="stb-form-inline" role="form">
+					        <p>Skriv inn ditt fødselsnummer</p><br>
+					        <span class="help-block info-message"></span> 
+					        <div class="form-group stb-form-group">
+					          <input type="tel" class="" name="birthNumber" style="width: 230px">
+					          <button class="stb-btn stb-form is-submit">Logg inn</button>
+					        </div>
+					      </form>
+					   </div>
+					  </div>
+ 					</div>
+				</div>
+		   </li>
+            </ul>
+          </li>
           <li class="search col-md-3" style="display: none;">
             <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
             <form>
@@ -251,7 +273,7 @@ div.cookieFooter{
   <nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
     <div class="row stbcolor-primary third">
       <div class="navbar-header col-xs-6 logo">
-        <img class="stb-logo-mobile left-padding-10" src="../../images/logo.storebrand.172x21.png" title="storebrand logo"/>
+        <img class="stb-logo-mobile left-padding-10" src="../../images/logo.png" title="storebrand logo"/>
       </div>
       <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-5 col-xs-offset-1" style="padding-left: 6px;">
         <ul class="nav navbar">
@@ -388,7 +410,23 @@ div.cookieFooter{
           <h3 class="left-margin-10">Bedrift her</h3>
           <hr></div>
         <div class="tab-pane fade" id="tab-login">
-          <h3 class="left-margin-10">Logg in her</h3>
+          <div id="login-start" style="background-color: #fff">
+					<div class="container top-margin-50-mdlg" >
+					  <div class="row" style="margin: 0;">
+					    <div class="col-md-12 column">
+					      <h1>Logg inn</h1>
+					      <form id="start-login-form" class="stb-form-inline" role="form">
+					        <p>Skriv inns ditt fødselsnummer</p><br>
+					        <span class="help-block info-message"></span> 
+					        <div class="form-group stb-form-group">
+					          <input type="tel" class="" name="birthNumber" style="width: 230px">
+					          <button class="stb-btn stb-form is-submit">Logg inn</button>
+					        </div>
+					      </form>
+					   </div>
+					  </div>
+ 					</div>
+				</div>
           <hr>
         </div>
 
