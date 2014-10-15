@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Sitemap</title>
+  <title>Forside</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -20,6 +20,7 @@
   <script type="text/javascript" src="../../js/stb-common.js"></script>
   <script type="text/javascript" src="../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  <script type="text/javascript" src="../../js/src/stb-video.js"></script>
   
   <style>
 div.cookieFooter{
@@ -506,10 +507,10 @@ div.cookieFooter{
 <!-- Start actual page contents -->
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <h3>Kundeinnlogging</h3>
+    <div class="col-md-6 top-margin-50">
+      <h3 class="top-margin-50">Kundeinnlogging</h3>
       <form id="start-login-form" class="stb-form-inline" role="form">
-        <label>Skriv inn ditt fødselsnummer </label><br>
+        <label class="stb-font-bold" >Fødselsnummer </label><br>
         <span class="help-block info-message"></span>
         <div class="form-group stb-form-group">
           <input type="tel" class="" name="birthNumber" style="width: 230px">
@@ -519,9 +520,8 @@ div.cookieFooter{
     </div>
     <div class="col-md-6">
       <img class="img-responsive" src="../../images/skisseelementer/405x405Tom.png" alt="category banner image" title="category bannner image"/>
-      <div style="text-align: center">
-        <p>For </p>
-      </div>
+        <p  style="text-align: center">For mange er pensjon noe som skjer langt der fremme. Derfor er vi så opptatt av bærekraftig investering. </p>
+        <p class="stb-font-bold"  style="text-align: center">Tom Beltesprekke, pensjonsrådgiver</p>
     </div>
   </div>
 </div>
@@ -529,38 +529,69 @@ div.cookieFooter{
 <div class="stbcolor-secondary seventh ">
   <div class="container">
   <div class="row">
+    <div class="col-md-6 top-margin-50 visible-sm visible-xs">
+      <h2>Bedre pensjon.<br> Helt enkelt.</h2>
+      <p class="intro">Vi brenner for pensjon og lever av å lære det bort til våre kunder. Bruk noen minutter på å komme igang med din pensjon – du vil ikke angre.</p>
+      <button class="stb-btn transparent light top-margin-20">Kom igang med din pensjon</button>
+    </div>
     <div class="col-md-6">
       <img class="img-responsive" src="../../images/skisseelementer/405x405Victoria.png" alt="category banner image" title="category bannner image"/>
     </div>
-    <div class="col-md-6">
-       <h2></h2>
-       <p class="intro"></p>
-       <button class="stb-btn transparent light"></button>
+    <div class="col-md-6 top-margin-50 hidden-sm hidden-xs">
+       <h2>Bedre pensjon.<br> Helt enkelt.</h2>
+       <p class="intro">Vi brenner for pensjon og lever av å lære det bort til våre kunder. Bruk noen minutter på å komme igang med din pensjon – du vil ikke angre.</p>
+       <button class="stb-btn transparent light top-margin-20" onclick="event.preventDefault(); window.location.href = 'kategori/pensjon.html';">Kom igang med din pensjon</button>
     </div>
   </div>
   </div>
 </div>
 
-<div class="stbcolor-secondary third">
-  <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h2></h2>
-      <p class="intro"></p>
-      <button class="stb-btn transparent light"></button>
+
+<!-- Start of page contents -->
+<div class="stbcolor-secondary third lighter">
+  <div class="container banner-video">
+    <div class="video-text">
+      <div class="col-md-6 top-margin-50">
+        <div class="stb-banner">
+          <h1>Spar penger på den smarte måten</h1>
+          <p class="intro">Vår spareguru Kim forteller deg enkelt og greit om de ulike spareformene og hvordan du sparer smartest.</p>
+          <button class="stb-btn transparent light playVideoBtn">Spill av video <span class="glyphicon glyphicon-play"></span></button>
+          <br><br><a href="kategori/sparing.html">Alle våre spareprodukter</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img class="img-responsive" src="../../images/skisseelementer/405x405Victoria.png" alt="category banner image" title="category bannner image"/>
+      </div>
     </div>
-    <div class="col-md-6">
-      <img class="img-responsive" src="../../images/skisseelementer/405x405Victoria.png" alt="category banner image" title="category bannner image"/>
+    <div class="video-container" style="display: none;">
+      <button class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-medium remove white"></span></button>
+      <div id="player-banner" class="video-player-banner" data-youtube-id="_7Foh3T1gN4"></div>
     </div>
-  </div>
   </div>
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
+  <div class="row top-margin-20 bottom-margin-20">
+    <div class="col-md-4 top-margin-20">
+     <img class="img-responsive" src="../../images/placeholder112x112.png"/>
+     <h3>Bilforsikring</h3>
+     <p>Ofte penger å spare. Penger du kan spare til pensjon. Se våre forsikringer og sjekk pris for din bil.</p>
+     <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'produkt/bilforsikring.html';">Bilforsikring</button><br><br>
+     <a href="kategori/forsikring.html">Alle våre forsikringer</a>
+    </div>
+    <div class="col-md-4 top-margin-20">
+      <img class="img-responsive" src="../../images/placeholder112x112.png"/>
+      <h3>Kundefordeler</h3>
+      <p>Har du tjenestepensjon hos oss i Storebrand har du automatisk flere fordeler.</p>
+      <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'tema3/kundefordeler.html';">Kundefordeler</button>
+    </div>
+    <div class="col-md-4 top-margin-20">
+      <img class="img-responsive" src="../../images/placeholder112x112.png"/>
+      <h3>Finn ditt pensjonstall</h3>
+      <p>Vår pensjonskalkulator gir deg god oversikt over hva du må spare selv.</p>
+      <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'verktoy/pensjonstall.html';">Finn ditt pensjonstall</button><br><br>
+      <a href="kategori/pensjon.html">Forstå pensjon</a>
+    </div>
   </div>
 </div>
 
