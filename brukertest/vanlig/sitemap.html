@@ -114,10 +114,11 @@ div.cookieFooter{
 
 <body>
 <!-- Start top of page -->
-<div id="overlay" style="display:none; background-color:#000; position:absolute; top:100px; left:0; z-index:1; opacity: 0.5;"></div>
+
+<div id="overlay"></div>
 <div id="top-menu-nav">
 <!-- Start desktop menu -->
-    <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
+    <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">    
     <div class="container yamm">
       <div class="navbar-header col-md-4">
         <img src="../../images/logo.png" title="logo image" class="logo">
@@ -127,6 +128,7 @@ div.cookieFooter{
           <li class="private current col-md-3 yamm-fw group dropdown" id="menuheader-private">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
               <ul class="dropdown-menu" id="desktopmenu">
+              <li><a href="#" onclick="$('#desktopmenu').slideToggle(200);$('#overlay').css('display','none');" class="pull-right right-margin-20 top-margin-10" ><span class="stb-sprite-medium remove"></span></a></li>
               <li style="margin: 50px 0 0 15%">
               <ul>
 	            <li class="col-md-2">
@@ -229,7 +231,8 @@ div.cookieFooter{
           </li>
           <li class="company col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
           <li class="login col-md-3 yamm-fw group dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" id="loginmenu">
+            <li><a href="#" onclick="$('#loginmenu').slideToggle(200);$('#overlay').css('display','none');" class="pull-right right-margin-20 top-margin-10" ><span class="stb-sprite-medium remove"></span></a></li>
             <li>
               <div id="login-start" style="background-color: #fff">
 					<div class="container top-margin-20-mdlg">
@@ -277,7 +280,7 @@ div.cookieFooter{
       <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-5 col-xs-offset-1" style="padding-left: 6px;">
         <ul class="nav navbar">
           <li style="width:100%; text-align: center">
-            <a href="#" onclick="$('#mobilemenu').slideToggle(200); $(this).children('span').toggleClass('menu-bars remove')"><span class="stb-sprite-medium white menu-bars top-margin-10" style="vertical-align: text-bottom;"></span> Meny</a>
+            <a href="#" onclick="$('#mobilemenu').slideToggle(200); $(this).children('span').toggleClass('menu-bars remove'); $('#overlay').toggle();"><span class="stb-sprite-medium white menu-bars top-margin-10" style="vertical-align: text-bottom;"></span> Meny</a>
           </li>
         </ul>
       </div>
@@ -286,7 +289,7 @@ div.cookieFooter{
 </div>
 <!-- End mobile menu -->
 
-<div id="mobilemenu" class="top-margin-10 bottom-margin-30 hidden-md hidden-lg" style="display: none;">
+<div id="mobilemenu" class="top-margin-10 bottom-margin-30 hidden-md hidden-lg" style="display: none; background-color:#fff; z-index:2; position:relative; top:0; left:0;">
   <div class="row" style="margin-right: 0; margin-left: 0;">
     <div class="col-xs-12" style="padding-left: 0; padding-right: 0;">
       <ul class="nav nav-tabs">

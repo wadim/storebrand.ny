@@ -11,14 +11,22 @@ $(document).ready(function(){
   });
 
   $(".dropdown").on("hide.bs.dropdown", function(){
-	$("#overlay").toggle();
-    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+    if( $(this).find('.dropdown-menu') ) {
+      $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+      if( $(this).closest('#top-menu-nav').length ) {
+    	  $("#overlay").css("display","none");
+      }
+    }
     $(this).find('span.marker').toggleClass('active');
   });
 
   $(".dropdown").on("show.bs.dropdown", function(){
-    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-    $("#overlay").toggle();
+    if( $(this).find('.dropdown-menu') ) {
+      $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+      if( $(this).closest('#top-menu-nav').length ) {
+      	  $("#overlay").css("display","block");
+        }
+    }
     $(this).find('span.marker').toggleClass('active');
   });
  
