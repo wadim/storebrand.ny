@@ -1,0 +1,658 @@
+<!doctype html>
+<html>
+<head>
+  <title>Artikkel - Dekningsgrad(bilforsikring)</title>
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../../../css/stb-main.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/yamm.css">
+  <script type="text/javascript" src="../../../js/dist/modernizr.custom.js"></script>
+  <script type="text/javascript" src="../../../js/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../js/dist/jquery.color-2.1.2.min.js"></script>
+  <script type="text/javascript" src="../../../js/src/jquery.eqheight.js"></script>
+  <script type="text/javascript" src="../../../js/dist/jquery-ui-1.11.0.js"></script>
+  <script type="text/javascript" src="../../../js/dist/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="../../../js/dist/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../../js/dist/typeahead.bundle.min.js"></script>
+  <script type="text/javascript" src="../../../data/searchdata.js"></script>
+  <script type="text/javascript" src="../../../js/search.js"></script>
+  <script type="text/javascript" src="../../../js/stb-common.js"></script>
+  <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
+  <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
+
+  <style>
+    div.cookieFooter{
+      background-color: #333333;
+      height: auto;
+      opacity: 0.7;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 400;
+      color: white;
+    }
+    div.cookieFooter .contentinfo {
+      color: #FFFFFF;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px;
+      width: 60%;
+    }
+
+    div.cookieFooter.affix-bottom {
+      position: static;
+    }
+
+    .nav-tabs.nav-justified>li>a{
+      border: 1px solid #FFFFFF;
+      line-height: 2;
+    }
+    .nav-tabs.nav-justified>li.active>a,.nav-tabs.nav-justified>li.active>a:hover {
+      background-color: #E6E6E6 !important;
+      border: 1px solid #E6E6E6;
+    }
+  </style>
+ 
+</head>
+
+<body>
+<!-- Start top of page -->
+<div id="overlay" style="display:none; background-color:#000; position:absolute; top:100px; left:0; z-index:1; opacity: 0.5;"></div>
+<div id="top-menu-nav">
+<!-- Start desktop menu -->
+  <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
+    <div class="container yamm">
+      <div class="navbar-header col-md-4">
+        <img src="../../../images/logo.png" title="logo image" class="logo">
+      </div>
+      <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav col-md-8">
+          <li class="private current col-md-3 yamm-fw group dropdown" id="menuheader-private">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
+              <ul class="dropdown-menu" id="desktopmenu">
+              <li style="margin: 50px 0 0 15%">
+              <ul>
+	            <li class="col-md-2">
+	              <h4><a href="../kategori/pensjon.html">Pensjon</a></h4>
+			        <ul>
+			          <li><a href="#">Pensjonsparing</a></li>
+			          <li><a href="../verktoy/pensjonstall.html">Finn ditt pensjonstall</a></li>
+			          <li><a href="../produkt/egensparingpensjon.html">Egensparing til pensjon</a></li>
+			          <li><a href="#">Pensjonsskolen</a></li>
+			          <li><a href="#">Pensjonskapitalbevis</a></li>
+			          <li><a href="#">Fripolise</a></li>
+			        </ul>
+	            </li>
+	            <li class="col-md-2">
+	              <h4><a href="../kategori/sparing.html">Sparing</a></h4>
+		        <ul>
+		          <li><a href="#">Fond</a></li>
+		          <li><a href="#">Banksparing</a></li>
+		          <li><a href="#">Høyrentekonto</a></li>
+		          <li><a href="#">Sparekonto</a></li>
+		          <li><a href="#">BSU</a></li>
+		          <li><a href="#">Plasseringskonto</a></li>
+		          <li><a href="#">Fondskonto</a></li>
+		          <li><a href="#">Fond i gave</a></li>
+		        </ul>
+	            </li>
+	            <li class="col-md-2">
+	              <h4><a href="../kategori/bankoglaan.html">Bank og lån</a></h4>
+			        <ul>
+			          <li><a href="#">Bli bankkunde</a></li>
+			          <li><a href="../produkt/boliglaan.html">Boliglån</a></li>
+			          <li><a href="../verktoy/laanekalkulator.html">Lånekalkulator</a></li>
+			          <li><a href="../produkt/boliglaanunge.html">Boliglån for unge</a></li>
+			          <li><a href="#">Konto og kort</a></li>
+			          <li><a href="#">Brukskonto</a></li>
+			          <li><a href="#">Visa-kort</a></li>
+			          <li><a href="#">Kredittkort</a></li>
+			          <li><a href="#">Ungdomskonto</a></li>
+			          <li><a href="#">Renter og priser</a></li>
+			          <li><a href="#">Nett- og mobilbank</a></li>
+			        </ul>
+	            </li>
+	            <li class="col-md-2">
+	               <h4><a href="../kategori/forsikring.html">Forsikring</a></h4>
+			        <ul>
+			          <li><a href="../produkt/bilforsikring.html">Bilforsikring</a></li>
+			          <li><a href="#">Barneforsikring</a></li>
+			          <li><a href="#">Reiseforsikring</a></li>
+			          <li><a href="#">Uføreforsikring</a></li>
+			          <li><a href="#">Husforsikring</a></li>
+			          <li><a href="#">Innboforsikring</a></li>
+			          <li><a href="#">Hund- og kattforsikring</a></li>
+			          <li><a href="#">Behovsveileder</a></li>
+			          <li><a href="#">Personforsikringer</a></li>
+			          <li><a href="#">MC-forsikring</a></li>
+			          <li><a href="#">Båtforsikring</a></li>
+			        </ul>
+	            </li>
+	            <li class="col-md-4">
+	              <ul>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="../tema2/husoghjem.html">
+			                <span class="stb-theme-sprites house" style="margin-bottom: -20px; margin-right: 10px;"></span>Hus & Hjem
+			              </a>
+			            </p>
+			          </li>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="../tema2/bilogkjoretoy.html">
+			                <span class="stb-theme-sprites car" style="margin-bottom: -20px; margin-right: 10px;"></span>Bil & Kjøretøy
+			              </a>
+			            </p>
+			          </li>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="#">
+			                <span class="stb-theme-sprites couple" style="margin-bottom: -20px; margin-right: 10px;"></span>Liv & Helse
+			              </a>
+			            </p>
+			          </li>
+			          <li>
+			            <p style="font-size: 14px;">
+			              <a href="../tema2/ferieogfritid.html">
+			                <span class="stb-theme-sprites bike" style="margin-bottom: -20px; margin-right: 10px;"></span>Ferie & Fritid
+			              </a>
+			            </p>
+			          </li>
+	        	</ul>
+	            </li>
+	            </ul>
+	            </li>
+	            <li id="verktoy" class="row stbcolor-gray second" style="clear: both;padding-top: 15px;">
+	              <div class="">
+	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium wrench"></span><a href="#"> Veihjelp</a></h4></div>
+	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium edit"></span><a href="#"> Meld skade</a></h4></div>
+	                <div class="col-md-3 col-lg-2" style="padding-left: 0;"><h4><span class="stb-sprite-medium pretzel"></span><a href="../tema3/kundefordeler.html"> Kundefordeler</a></h4></div>
+	                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium bubble"></span><a href="#"> Kontakt oss</a></h4></div>
+	              </div>
+	            </li>
+             </ul>
+          </li>
+          <li class="company col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+          <li class="login col-md-3 group"><a href="#" onclick="$('#desktopmenu').hide();$('#login-start').slideToggle(200);">Logg&nbsp;inn</a></li>
+          <li class="search col-md-3" style="display: none;">
+            <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
+            <form>
+              <label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-small search white"></span></span>
+              </label>
+            </form>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 column rightColor">
+    </div>
+  </div>
+  
+  <!-- End desktop menu -->
+
+  <!-- Start mobile menu -->
+  
+  <nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
+    <div class="row stbcolor-primary third">
+      <div class="navbar-header col-xs-6 logo">
+        <img class="stb-logo-mobile left-padding-10" src="../../images/logo.storebrand.172x21.png" title="storebrand logo"/>
+      </div>
+      <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-5 col-xs-offset-1" style="padding-left: 6px;">
+        <ul class="nav navbar">
+          <li style="width:100%; text-align: center">
+            <a href="#" onclick="$('#mobilemenu').slideToggle(200); $(this).children('span').toggleClass('menu-bars remove')"><span class="stb-sprite-medium white menu-bars top-margin-10" style="vertical-align: text-bottom;"></span> Meny</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+ 
+<div id="mobilemenu" class="top-margin-10 bottom-margin-30 hidden-md hidden-lg" style="display: none;">
+  <div class="row" style="margin-right: 0; margin-left: 0;">
+    <div class="col-xs-12" style="padding-left: 0; padding-right: 0;">
+      <ul class="nav nav-tabs">
+        <li class="active tab-box" style="width: 27%;"><a id="tabheader-privat" href="#tab-privat" data-toggle="tab">Privat</a></li>
+        <li class="tab-box" style="width: 27%;"><a id="tabheader-bedrift" href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
+        <li class="tab-box" style="width: 27%;"><a id="tabheader-login" href="#tab-login" data-toggle="tab">Logg inn</a></li>
+        <li class="tab-box" style="width: 19%;"><a id="tabheader-search" href="#tab-search" data-toggle="tab" style="padding: 8px 15px;"><span class="stb-sprite-medium search white"></span></a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab-privat">
+
+          <div class="panel-group top-margin-10" id="accordion-privat">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#pensjon">
+                  <h4 class="panel-title">
+                    Pensjon
+                    <span class="stb-sprite-medium chevron-down pull-right"></span>
+                  </h4>
+                </a>
+              </div>
+              <div id="pensjon" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="stb-list-group">
+                    <a class="menu-item" href="#">Pensjonsparing</a>
+                    <a class="menu-item" href="verktoy/pensjonstall.html">Finn ditt pensjonstall</a>
+                    <a class="menu-item" href="produkt/egensparingpensjon.html">Egensparing til pensjon</a>
+                    <a class="menu-item" href="#">Pensjonsskolen</a>
+                    <a class="menu-item" href="#">Pensjonskapitalbevis</a>
+                    <a class="menu-item" href="#">Fripolise</a>
+                    <a class="menu-item" href="kategori/pensjon.html">Forside Pensjon</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#sparing">
+                  <h4 class="panel-title">
+                    Sparing
+                    <span class="stb-sprite-medium chevron-down pull-right"></span>
+                  </h4>
+                </a>
+              </div>
+              <div id="sparing" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="stb-list-group">
+                    <a class="menu-item" href="#">Fond</a>
+                    <a class="menu-item" href="#">Banksparing</a>
+                    <a class="menu-item" href="#">Høyrentekonto</a>
+                    <a class="menu-item" href="#">Sparekonto</a>
+                    <a class="menu-item" href="#">BSU</a>
+                    <a class="menu-item" href="#">Plasseringskonto</a>
+                    <a class="menu-item" href="#">Fondskonto</a>
+                    <a class="menu-item" href="#">Fond i gave</a>
+                    <a class="menu-item" href="kategori/sparing.html">Forside Sparing</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#bank">
+                  <h4 class="panel-title">
+                    Bank og lån
+                    <span class="stb-sprite-medium chevron-down pull-right"></span>
+                  </h4>
+                </a>
+              </div>
+              <div id="bank" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="stb-list-group">
+                    <a class="menu-item" href="#">Bli bankkunde</a>
+                    <a class="menu-item" href="produkt/boliglaan.html">Boliglån</a>
+                    <a class="menu-item" href="verktoy/laanekalkulator.html">Lånekalkulator</a>
+                    <a class="menu-item" href="produkt/boliglaanunge.html">Boliglån for unge</a>
+                    <a class="menu-item" href="#">Konto og kort</a>
+                    <a class="menu-item" href="#">Brukskonto</a>
+                    <a class="menu-item" href="#">Visa-kort</a>
+                    <a class="menu-item" href="#">Kredittkort</a>
+                    <a class="menu-item" href="#">Ungdomskonto</a>
+                    <a class="menu-item" href="#">Renter og priser</a>
+                    <a class="menu-item" href="#">Nett- og mobilbank</a>
+                    <a class="menu-item" href="kategori/bankoglaan.html">Forside Bank</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#forsikring">
+                <h4 class="panel-title">
+                  Forsikring
+                  <span class="stb-sprite-medium chevron-down pull-right"></span>
+                </h4>
+                </a>
+              </div>
+              <div id="forsikring" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="stb-list-group" >
+                    <a class="menu-item" href="produkt/bilforsikring.html">Bilforsikring</a>
+                    <a class="menu-item" href="#">Barneforsikring</a>
+                    <a class="menu-item" href="#">Reiseforsikring</a>
+                    <a class="menu-item" href="#">Uføreforsikring</a>
+                    <a class="menu-item" href="#">Husforsikring</a>
+                    <a class="menu-item" href="#">Innboforsikring</a>
+                    <a class="menu-item" href="#">Hund- og kattforsikring</a>
+                    <a class="menu-item" href="#">Behovsveileder</a>
+                    <a class="menu-item" href="#">Personforsikringer</a>
+                    <a class="menu-item" href="#">MC-forsikring</a>
+                    <a class="menu-item" href="#">Båtforsikring</a>
+                    <a class="menu-item" href="kategori/forsikring.html">Forside Forsikring</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab-bedrift">
+          <h3 class="left-margin-10">Bedrift her</h3>
+          <hr></div>
+        <div class="tab-pane fade" id="tab-login">
+          <h3 class="left-margin-10">Logg in her</h3>
+          <hr>
+        </div>
+
+        <div class="tab-pane fade" id="tab-search">
+          <div class="row top-margin-20 left-padding-10">
+            <div class="col-xs-11">
+              <div class="row">
+                <div class="col-xs-12">
+                  <form class="search tt-mobile">
+                    <label style="width: 80%">
+                      <div class="col-xs-11" style="padding-right: 0; padding-left: 0; ">
+                        <input type="text" class="typeahead searchbox" placeholder="Søk i sidene" style="width: 99%"/>
+                      </div>
+                      <div class="col-xs-1" style="padding-left: 0; padding-right: 0;">
+                        <button class="stb-btn" style="display: block; position: relative; padding-left: 6px; height: 53px;"><span class="stb-sprite-medium search white"></span></span></button>
+                      </div>
+                    </label>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="themelinks" class="row top-margin-10 bottom-margin-40" style="margin-left: 0; margin-right: 0;">
+    <div class="col-xs-6 col-sm-3 top-padding-20" style="padding-left: 0; padding-right: 0;">
+      <p style="text-align: center">
+        <a href="tema2/husoghjem.html">
+        <span class="stb-theme-sprites house" style="margin-bottom: -20px;"></span>Hus & Hjem
+      </a>
+      </p>
+    </div>
+    <div class="col-xs-6 col-sm-3 top-padding-20" style="padding-left: 0; padding-right: 0;">
+      <p style="text-align: center">
+      <a href="tema2/bilogkjoretoy.html">
+        <span class="stb-theme-sprites car" style="margin-bottom: -20px;"></span>Bil & Kjøretøy
+      </a>
+      </p>
+    </div>
+    <div class="col-xs-6 col-sm-3 top-padding-20" style="padding-left: 0; padding-right: 0;">
+      <p style="text-align: center">
+      <a href="#">
+        <span class="stb-theme-sprites couple" style="margin-bottom: -20px;"></span>Liv & Helse
+      </a>
+      </p>
+    </div>
+    <div class="col-xs-6 col-sm-3 top-padding-20" style="padding-left: 0; padding-right: 0;">
+      <p style="text-align: center">
+      <a href="tema2/ferieogfritid.html">
+        <span class="stb-theme-sprites bike" style="margin-bottom: -20px;"></span>Ferie & Fritid
+      </a>
+      </p>
+    </div>
+  </div>
+  <div class="row top-margin-10 stbcolor-gray first top-padding-10 bottom-padding-10" style="margin-left: 0; margin-right: 0;">
+    <div class="col-xs-6 col-sm-3" style="text-align: center">
+      <h4><span class="stb-sprite-medium wrench" style="margin-bottom: -4px;"></span><a href="#"> Veihjelp</a></h4>
+    </div>
+    <div class="col-xs-6 col-sm-3" style="text-align: center">
+      <h4><span class="stb-sprite-medium edit" style="margin-bottom: -4px;"></span><a href="#"> Meld skade</a></h4>
+    </div>
+    <div class="col-xs-6 col-sm-3" style="text-align: center; padding-left: 0; padding-right: 0;">
+      <h4><span class="stb-sprite-medium pretzel" style="margin-bottom: -4px;"></span><a href="tema3/kundefordeler.html"> Kundefordeler</a></h4>
+    </div>
+    <div class="col-xs-6 col-sm-3" style="text-align: center">
+      <h4><span class="stb-sprite-medium bubble" style="margin-bottom: -4px;"></span><a href="#"> Kontakt oss</a></h4>
+    </div>
+  </div>
+</div>
+<!-- End mobile menu -->
+ 
+  <div id="login-start" style="display:none;">
+<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div class="container login top-margin-50-mdlg" >
+  <div class="row">
+    <div class="col-md-12 column">
+      <h1>Logg inn</h1>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label>Skriv inn ditt fødselsnummer </label><br>
+        <span class="help-block info-message"></span> 
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+      </form>
+   </div>
+  </div>
+ </div>
+
+</div>
+  <!-- End top of page -->
+
+  
+  <!-- Start actual page contents -->
+
+  <div class="container top-padding-40-mdlg bottom-padding-20">
+    <div class="row">
+	  <div class="col-md-8 width-75-mdlg conditions">
+	  <h1>Fullstendige priser og vilkår for sparing</h1>
+	  
+	  <p class="intro">Her kan du lese om de forskjellige spareprofilene du kan velge mellom, og de ulike prisene
+          og vilkårene som er knyttet til spareavtalen</p>
+        <h3>Forsiktig</h3>
+        <p>Når du velger spareprofilen ”Forsiktig” vil bare en liten andel av sparepengene dine plasseres i aksjer. Det betyr at du
+          får en forsiktig og jevnere verdiutvikling – men enn lavere forventet avkastning enn de andre spareprofilene – over tid.</p>
+        <h3>Anbefalt</h3>
+        <p>Når du velger spareprofilen ”Anbefalt” vil alderen din til enhver tid bestemme hvordan sparepengene plasseres. Det
+          betyr at du slipper å tenke på hvilke fond som ettersom årene går og du blir eldre – vi tar hånd om det for deg. Jo
+          yngre du er, jo større andel aksjer vil du ha. Ettersom tiden går og utbetalingstiden nærmer seg, reduserer vi gradvis
+          aksjeandelen.</p>
+        <h3>Balansert</h3>
+        <p>Når du velger spareprofilen ”Balansert” vil du få en større aksjeandel enn forsiktig. Det betyr at verdien på
+          sparepengene kan svinge litt i spareperioden, men disse svingningene gir deg mulighet for bedre avkasting over tid.</p>
+        <h3>Pristabell</h3>
+        <p>Prisene i tabellen er våre standardpriser. Du kan få enda bedre betingelser om du er ansatt i en bedrift som har en
+          egen avtale for sine ansatte.</p>
+          
+              <div class="table-responsive">
+          <table class="stb-table">
+          <thead>
+            <tr><th width="40%;">Priser</th><th width="35%;">Kunder med pensjons-avtale i Storebrand *</th><th width="25%;">Andre kunder</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Kostnad ved kjøp</td><td>0</td><td>0</td></tr>
+            <tr class="alt"><td>Kostnad ved fondsbytte</td><td>0</td><td>0</td></tr>
+            <tr class="visible-xs">
+              <td>Årlig forsikringspremie,<br> avhengig av kjønn og alder
+              </td>
+              <td>0,04&nbsp;% i snitt
+              </td>
+              <td>0,04&nbsp;% i snitt</td>
+            </tr>
+            <tr class="visible-xs"><td colspan="3"><h4>Årlig administrasjonskostnad</h4></td></tr>
+            <tr class="visible-xs">
+              <td style="word-break: break-all;">- Alle fond</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr class="visible-xs">
+              <td style="word-break: break-all;">- Garantiporteføljen</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr class="visible-xs"><td colspan="3"><h4>Årlig forvaltningskostnad</h4></td></tr>
+            <tr class="visible-xs">
+              <td>- Forsiktig Pensjon</td>
+              <td>
+                0,80&nbsp;%
+              </td>
+              <td>
+                0,95&nbsp;%
+              </td>
+            </tr>
+            <tr class="visible-xs">
+              <td>- Balansert Pensjon</td>
+              <td>
+                0,95&nbsp;%
+              </td>
+              <td>
+                1,10&nbsp;%
+              </td>
+            </tr>
+            </tr>
+            <tr class="visible-xs">
+              <td>- Offensiv Pensjon</td>
+              <td>
+                1,10&nbsp;%
+              </td>
+              <td>
+                1,25&nbsp;%
+              </td>
+            </tr>
+            <tr class="visible-xs">
+              <td>- Andre fond</td>
+              <td>
+                0 - 4&nbsp;%
+              </td>
+              <td>
+                0 - 4&nbsp;%
+              </td>
+            </tr>
+            <tr class="hidden-xs"><td>Årlig administrasjonskostnad<br> -Alle fond<br> -Garantiporteføljen</td>
+              <td><br>0<br>0</td>
+              <td><br>0<br>0</td>
+            </tr>
+            <tr class="hidden-xs">
+              <td>Årlig forvaltningskostnad<br>- Forsiktig Pensjon<br>- Balansert Pensjon<br>- Offensiv Pensjon<br>- Andre fond</td>
+              <td>
+                <br>
+                0,80&nbsp;%
+                <br>
+                0,95&nbsp;%
+                <br>
+                1,10&nbsp;%
+                <br>
+                0 - 4&nbsp;%
+              </td>
+              <td>
+                <br>
+                0,95&nbsp;%
+                <br>
+                1,10&nbsp;%
+                <br>
+                1,25&nbsp;%
+                <br>
+                0 - 4&nbsp;%
+              </td>
+            </tr>
+            <tr class="hidden-xs">
+              <td>Årlig forsikringspremie,<br> avhengig av kjønn og alder
+              </td>
+              <td>0,04&nbsp;% i snitt
+              </td>
+              <td>0,04&nbsp;% i snitt</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <p>* Standard priser for kunder med pensjonsavtale i Storebrand.</p>
+        <a href="../tema3/kundefordeler.html">Sjekk om du har prisfordeler hos oss</a>
+	  </div>
+    </div>
+  
+  </div>
+	<!-- End actual page contents -->
+
+  <!-- Start responsive footer -->
+  <footer class="stbcolor-primary first stb-footer">
+    <div class="row toTop">
+      <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIcon"></span></a>
+        <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIconMobile"></span></a>
+      </div>
+    </div>
+  
+    <div class="container">
+
+      <div class="row content">
+        <div class="col-sm-3 column info">
+          <div class="border-right">
+            <ul class="stb">
+              <li><a class="stb-footer-link petit" href="#"><span class="stb-sprite-medium white globe pull-left right-margin-5"></span> In&nbsp;English</a></li>
+              <li><a class="stb-footer-link petit" href="#"><span class="stb-sprite-medium white search pull-left right-margin-5"></span> Søk</a></li>
+              <li><a class="stb-footer-link petit" href="#"><span class="stb-sprite-medium white lock pull-left right-margin-5"></span> Logg&nbsp;inn</a></li>
+            </ul>
+            <h4>Alt innhold</h4>
+            <p class="petit">
+              <a class="stb-footer-link" href="#">A til Å / Kategorisert</a>
+            </p>
+          </div>
+        </div>
+    
+        <div class="col-sm-3 column contact">
+          <h4>Lurer du på noe?</h4>
+          <div class="row">
+            <div class="col-xs-6">
+              <p class="petit">Vi er tilgjengelige:</p>
+              <p class="petit">Mandag-fredag<br />08-16, bank til 20</p>
+              <p class="petit">Lørdag (kun bank)<br />09-15</p>
+            </div>
+            <div class="col-xs-6">
+              <p class="petit">
+                &nbsp;Ring:&nbsp;<a class="stb-footer-link hidden-xs hidden-sm" href="tel:08880"><span class="stb-sprite-small white phone pull-left right-margin-5"></span><span>08880</span></a>
+                <a class="visible-xs visible-sm" style="display: inline-block!important;" href="tel:08880"><span class="visible-xs visible-sm stbcolor-primary first darker badge">08880</span></a>
+                <br/>
+                Fra&nbsp;utlandet:<br />
+                <a class="stb-footer-link hidden-xs hidden-sm" href="tel:+4791508880"><span>+47&nbsp;915&nbsp;08880</span></a>
+                <a class="visible-xs visible-sm" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47&nbsp;915&nbsp;08880</span></a>
+              </p>              
+              <ul class="stb">
+                <li><a class="stb-footer-link petit small-icons" href="#"><span class="stb-sprite-small white envelope pull-left right-margin-5"></span>E-post</a></li>
+                <li><a class="stb-footer-link petit small-icons"  href="#"><span class="stb-sprite-small white chat pull-left right-margin-5"></span>Chat</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-xs-6 column social">
+          <div class="border-left">
+          <h4>Sosiale&nbsp;medier</h4>
+            <ul class="stb">
+              <li><a class="stb-footer-link petit" href="#"><span class="stb-sprite-medium white facebook pull-left right-margin-5"></span> Facebook</a></li>
+              <li><a class="stb-footer-link petit"  href="#"><span class="stb-sprite-medium white twitter pull-left right-margin-5"></span> Twitter</a></li>
+              <li><a class="stb-footer-link petit"  href="#"><span class="stb-sprite-medium white youtube pull-left right-margin-5"></span>YouTube</a></li>
+              <li><a class="stb-footer-link petit"  href="#"><span class="stb-sprite-medium white employee pull-left right-margin-5"></span>Blogg</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-6 column more">
+          <div class="border-left">
+            <h4>Mer&nbsp;Storebrand</h4>
+            <ul class="stb">
+              <li><a class="stb-footer-link petit"  href="#"> Om Storebrand </a></li>
+              <li><a class="stb-footer-link petit"  href="#"> Eiendom</a></li>
+              <li><a class="stb-footer-link petit"  href="#"> Asset Management</a></li>
+              <li><a class="stb-footer-link petit"  href="#"> Personvern og cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </footer>  
+  <!-- End responsive footer -->
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-41882079-4', 'storebrand.no');
+	  ga('set', 'anonymizeIp', true);
+	  ga('send', 'pageview');
+  </script>   
+  <!-- / Google Analytics -->
+  
+</body>
+</html>
