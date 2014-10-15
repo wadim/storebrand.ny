@@ -21,12 +21,10 @@
   <script type="text/javascript" src="../../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery.slider.all.js"></script>
   <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  <script type="text/javascript" src="../../../js/src/laanekalkulator.js"></script>
   
   <style>
-    .category-banner .image {
-      background: transparent url("../../../images/chalkdust1.png") left top no-repeat;
-    }
-    
+
     div.cookieFooter{
       background-color: #333333;
       height: auto;
@@ -56,6 +54,24 @@
     .nav-tabs.nav-justified>li.active>a,.nav-tabs.nav-justified>li.active>a:hover {
       background-color: #E6E6E6 !important;
       border: 1px solid #E6E6E6;
+    }
+
+    .jslider{
+      margin-left: 100px;
+      width: 80%;
+    }
+
+    .unit{
+      float:left;
+    }
+
+    p.unit{
+      padding-top: 8px;
+      padding-left: 6px;
+      font-size: 18px;
+    }
+    .jslider .jslider-bg .r{
+      background-color: white;
     }
   </style>
 </head>
@@ -443,10 +459,7 @@
           <a class="list-group-item" href="#">Fastrentelån</a>
           <a class="list-group-item" href="#">Byggekreditt</a>
           <a class="list-group-item" href="#">Boligkreditt</a>
-          <a class="list-group-item" href="#">Mellomfinansiering</a>
-          <a class="list-group-item" href="#">Refinansiering</a>
-          <a class="list-group-item" href="#">Forhøyelse</a>
-          <a class="list-group-item" href="#">Opplåning</a>
+
         </div>
 
       </div>
@@ -468,8 +481,6 @@
         <div class="stb-list-group" >
           <a class="list-group-item" href="#">Nettbank</a>
           <a class="list-group-item" href="#">Mobiltjenester</a>
-          <a class="list-group-item" href="#">BankID</a>
-          <a class="list-group-item" href="#">Hjelp til å logge inn</a>
         </div>
       </div>
       <div class="col-md-4">
@@ -493,31 +504,85 @@
 <div class="stbcolor-secondary sixth">
   <div class="container">
     <div class="row top-margin-20 bottom-margin-20">
-      <div class="col-md-8">
-          <h2>Lurer du på hvor mye du kan få i lån?</h2>
-          <p class="intro">
-           Lorum ipsum
-          </p>
+      <div class="col-md-6">
+        <h2>Lurer du på hvor mye du kan låne?</h2>
+        <p>
+          Hvor mye du kan låne avhenger av din
+          egenkaptital og din betalingsevne. Med vår lånekalkulator kan du sjekke hvor mye du kan få i lån.
+        </p>
       </div>
-      <div class="col-md-4 top-margin-10-mdlg">
-        <h3>Lånekalkulator bolig</h3>
+      <div class="col-md-6">
         <form role="form">
-          <div class="stb-form-group">
-            <label for="lanebelop" style="">Egenkapital</label>
-            <div class="input-group" style="width:230px;">
-              <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
-              <div class="stb-input-group-addon">kr</div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="stb-form-group">
+                <label for="lanebelop">Lånebeløp</label>
+                <div class="input-group">
+                  <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
+                  <div class="stb-input-group-addon">kr</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="stb-form-group">
+                <label for="boligverdi">Boligens verdi</label>
+                <div class="input-group">
+                  <input class="form-control" id="boligverdi" type="text" placeholder="Beløp"/>
+                  <div class="stb-input-group-addon">kr</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="stb-form-group top-margin-20">
-            <label for="lanebelop" style="">Kjøpesum (boligens verdi)</label>
-            <div class="input-group" style="width:230px;">
-              <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
-              <div class="stb-input-group-addon">kr</div>
+          <div class="row">
+            <div class="col-xs-9 col-md-12">
+              <div class="stb-form-group top-margin-10">
+                <label style="">Nedbetalingsperiode</label>
+                <div>
+                  <input id="nedbetaling-input" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
+                  <input id="stb-slider-nedbetaling" type="slider"  value="15"  name="stb-slider" value="0" />
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-9 col-md-12">
+              <div class="stb-form-group top-margin-10">
+                <label>Lånerente</label>
+                <div>
+                  <input id="lanerente-input" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
+                  <input id="stb-slider-lanerente" type="slider" value="3.25"  name="stb-slider" value="0" />
+                </div>
+              </div>
             </div>
           </div>
-          <button class="stb-btn top-margin-20" onclick="event.preventDefault(); window.location.href = '../verktoy/laanekalkulator.html';">Hvor mye kan jeg få i lån?</button>
+          <div class="row">
+            <div class="stb-form-group top-margin-10">
+              <div class="col-md-8 col-xs-12">
+                <p class="intro pull-left" style="border-bottom: 4px double #000;">10 899 kr i måneden</p>
+              </div>
+              <div class="col-md-2 col-xs-12">
+                <button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href = '../dummy/soklaan.html';">Søk om lån</button>
+              </div>
+            </div>
+          </div>
         </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stbcolor-secondary third">
+  <div class="container">
+    <div class="row top-margin-20">
+      <div class="col-md-6 hidden-sm hidden-xs">
+        <img src="../../../images/skisseelementer/405x405Roger.png" class="center-block" />
+      </div>
+      <div class="col-md-6 top-margin-50-mdlg ">
+        <h2>Rabatt på forsikringer til hjemmet</h2>
+        <p>Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på innboforsikring og andre forsikringer.</p>
+        <button class="stb-btn transparent light top-margin-10 bottom-margin-20" onclick="event.preventDefault(); window.location.href = '../tema3/kundefordeler.html';">Sjekk om du har fordeler</button>
+      </div>
+      <div class="col-md-6 visible-sm visible-xs">
+        <img src="../../../images/skisseelementer/405x405Roger.png" class="center-block img-responsive" />
       </div>
     </div>
   </div>
@@ -525,15 +590,140 @@
 
 <div class="container top-margin-40 bottom-margin-40">
   <div class="row">
-    <div class="col-md-6">
-        <h3><a href="#">Sperr kort - ring 08880</a></h3>
-        <p class="intro">Våre sperretjenester er åpen hele døgnet alle dager.</p>
-        <ul class="stb">
-          <li>Er du i <b>Norge</b> ringer du: <b>08880</b></li>
-          <li>Er du i <b>utlandet</b> ringer du: <b>+47 08880</b></li>
-          <li>Er du i et land med dårlig utbygget telenett ringer du: <b>+47 915 08880</b></li>
-        </ul>
-        <br>
+
+    <div class="col-md-4">
+      <div class="stb-box mini clickable" rel="tel:08880">
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <img src="../../../images/contactus.png"/>
+          </div>
+          <div class="col-sm-6 col-md-12">
+            <h3>Har du mistet bankkortet ditt?</h3>
+            <h3  class="box"><a href="#">Sperr kort - Ring 08880</a></h3>
+          </div>
+        </div>
+      </div>
+      <div class="stb-box mini clickable" rel="tel:08880">
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <img src="../../../images/placeholder112x112.png"/>
+          </div>
+          <div class="col-sm-6 col-md-12">
+            <h3><a>Bytt bank</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stb-box mini clickable" rel="tel:08880">
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <img src="../../../images/placeholder112x112.png"/>
+          </div>
+          <div class="col-sm-6 col-md-12">
+            <h3><a>Bli bankkunde</a></h3>
+          </div>
+        </div>
+      </div>
+      <div class="stb-box big clickable" rel="../tema2/husoghjem.html">
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <img src="../../../images/placeholder112x112.png"/>
+          </div>
+          <div class="col-sm-6 col-md-12">
+            <h3 class="box"><a href="#">Hus og hjem</a></h3>
+            ..content
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>Ofte stilte spørsmål</h3>
+      <ul class="accordion" data-widget="stbFaq">
+
+        <li>
+          <a href="#" class="twister"><span class="question">Hvordan får jeg sperret kortet?</span>
+            <span class="number">1</span>
+            <span class="expander"></span>
+          </a>
+          <div class="answer" style="display: none;">
+            Har du mistet eller blitt frastjålet kortet kan du ringe oss døgnet rundt på (+47&nbsp;915)&nbsp;08880 for sperring av kortet.
+            <br><br>
+            Du kan også sperre Visa-kortet ditt med Storebrand Mobilbank.
+            <br><br>
+            Når du har sperret kortet, logger du deg på nettbanken og bestiller nytt kort der.<br>
+            <a href="Pages/sperrekort.html">Les mer</a>
+            <br><br>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="twister"><span class="question">Hvor mye kan jeg låne?</span>
+            <span class="number">2</span>
+            <span class="expander"></span>
+          </a>
+          <div class="answer">
+            Et grovt anslag sier at du totalt kan låne 2,5 - 3 ganger årlig inntekt. Er dere to om lånet, tar du med partnerens inntekt også.
+            <br><br>
+            Vurder også utgiftene. Vær romslig - men realistisk - når du beregner disse. Ta høyde for alle planlagte endringer som vil påvirke dine inntekter og utgifter. For eksempel at du planlegger å få barn, eller at du snart blir pensjonist.
+            <br><br>
+            <a href="https://www2.storebrand.no/sjekkpris/#flytt-boliglaan/">Test din låneevne med vår lånekalkulator</a>
+            <br><br>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="twister"><span class="question">Hvordan bestiller jeg SMS-varsling?</span>
+            <span class="number">3</span>
+            <span class="expander"></span>
+          </a>
+          <div class="answer">
+            Under <strong>Nyttige lenker</strong> i nettbanken kan du bestille SMS-varsling og få melding om saldo eller manglende dekning på konto.
+            <br><br>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="twister"><span class="question">Hvordan får jeg telefonkode til mobilbanken?</span>
+            <span class="number">4</span>
+            <span class="expander"></span>
+          </a>
+          <div class="answer">
+            Under <strong>Nyttige lenker</strong> i nettbanken kan du endre eller bestille telefonkode. Telefonkoden bruker du når du skal logge deg på mobilbanken eller telebanken.
+            <br><br>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="twister"><span class="question">Betalinger til utlandet</span>
+            <span class="number">5</span>
+            <span class="expander"></span>
+          </a>
+          <div class="answer">
+            Har du konto i Storebrand Bank kan du på en enkel og sikker måte overføre penger til mottakers konto i utlandet.
+
+            <br><br>
+            For å gjennomføre betaling trenger du
+            <ul>
+              <li>Mottakers konto/IBAN</li>
+              <li>Mottakerbanks BIC/SWIFT-adresse</li>
+              <li>Mottakers navn og adresse</li>
+              <li>Valutasort du ønsker å betale i</li>
+            </ul>
+
+            Betalinger til utlandet finner du under fanen <strong>Betaling</strong> i nettbanken.
+            <br><br>
+          </div>
+        </li>
+
+      </ul>
+      <h3>Flere lånemuligheter</h3>
+      <div class="stb-list-group">
+        <a class="list-group-item" href="#">Mellomfinansiering</a>
+        <a class="list-group-item" href="#">Refinansiering</a>
+        <a class="list-group-item" href="#">Forhøyelse</a>
+        <a class="list-group-item" href="#">Opplåning</a>
+      </div>
     </div>
   </div>
 </div>
