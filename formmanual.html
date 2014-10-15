@@ -1,0 +1,560 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>Technical Form Design Manual</title>
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+
+  <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
+  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
+  <script type="text/javascript" src="js/dist/tooltip.js"></script>
+  <script type="text/javascript" src="js/dist/affix.js"></script>
+  <script type="text/javascript" src="js/dist/popover.js"></script>
+  <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
+  <script type="text/javascript" src="js/stb-common.js"></script>
+  <script type="text/javascript" src="js/stb-page-padding.js"></script>
+  <script type="text/javascript" src="js/src/stb-video.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
+  <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
+  <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
+  <!-- Start JavaScript for this page only -->
+  <script>
+  
+  </script>
+  <!-- End of JavaScript for this page only -->
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-3">
+      <p>
+        <img class="top-margin-20" src="images/logo.png" alt="A New Dawn Threatens" />
+      </p>
+    </div>
+
+    <div class="col-md-9">
+      <h1 class="stb-font">Form Manual</h1>
+      <p class="lead">
+        - A technical description of elements to be used when creating Web forms. This covers elements that are not already described in the <a href="webmanual.html">Web manual</a>.
+      </p>
+      <h3>How to use this</h3>
+      <p>
+        This page only demonstrates form functionality. General specifications for typography, colors, icons and so on are found in the <a href="webmanual.html">Web manual</a>. This includes elements like buttons and modals, because they are not only form elements, but also navigation elements.
+      <p>
+        The form design elements is available from a shared depository on Amazon. You can link to the files from there on an https://elements.storebrand.no URL.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+<hr />
+
+<div class="container">
+
+<div class="row"> <!-- / General input fields row -->
+  <div class="col-md-3">
+    <h2>Forms: Text input fields</h2>
+    (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
+  </div>
+  <div class="col-md-9">
+    <p>
+      Forms are built using namespaced bootstrap-classes, stb-form-inline, stb-form-group, and so on. We have not over-ridden the standard Bootstrap focus indicator (a surrounding faint color gradient), because by now that is universally recognized as helpful to the general public.
+    </p>
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput1" style="width: 200px;">Standard with placeholder</label>
+        <input id="formInput1" type="text" class="" placeholder="Placeholder" style="width: 230px;">
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput2" style="width: 200px;">Input required <span class="input-required">*</span></label>
+        <input id="formInput2" type="text" class="" placeholder="Placeholder" style="width: 230px;">
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group" >
+        <label for="formInput3" style="width: 200px;">On hover</label>
+        <input id="formInput3" type="text" class="fauxInputHover" placeholder="Placeholder" style="width: 230px;">
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput4"  style="width: 200px;">On focus</label>
+        <input id="formInput4" type="text" class="fauxInputFocus" value="Show me some love|" style="width: 230px;">
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput5"  style="width: 200px;">Disabled</label>
+        <input id="formInput5" type="text" class="" style="width: 230px;" placeholder="Can't touch this" disabled>
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group" >
+        <label for="formInput6" style="width: 200px;">Error in field input</label>
+        <div class="error-message" ><span class="stb-color-sprite-small warning"></span><span class="input-faulty left-margin-10">Sounds about wrong!</span></div>
+        <input id="formInput6" type="text" class="input-fail" value="War is good for something" style="width: 230px;">
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group" >
+        <label for="formInput7" style="width: 200px;">Input becomes valid<span class="success-message stb-color-sprite-small ok left-margin-10"></span></label>
+        <input id="formInput7" type="text" class="input-success" value="I'll never be Beyonce..." style="width: 230px;">
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group" style="width: 250px">
+        <label for="formInput8">Textarea ("large input")</label>
+        <textarea id="formInput8" class="form-control" rows="4" cols="40" ></textarea>
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput9">With action button</label>
+        <input id="formInput9" type="text" class="has-submit" placeholder="Text..." style="width: 230px;">
+        <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput10">Hover with button</label>
+        <input id="formInput10" type="text" class="has-submit fauxInputHover" placeholder="Text..." style="width: 230px;">
+        <button type="submit" class="stb-btn stb-form is-submit fauxInputHover">Enter</button>
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput11">Focus with button</label>
+        <input id="formInput11" type="text" class="has-submit fauxInputFocus" value="Portveien|" style="width: 230px;">
+        <button type="submit" class="stb-btn stb-form is-submit fauxInputFocus">Enter</button>
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput12">Disabled</label>
+        <input id="formInput12" type="text" class="has-submit" placeholder="Fødselsnummer" style="width: 230px;" disabled>
+        <button type="submit" class="stb-btn stb-form is-submit" disabled>Enter</button>
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput13">Error in field input</label>
+        <div class="error-message"><span class="stb-color-sprite-small warning"></span> <span class="input-faulty">Sounds about wrong!</span></div>
+        <input id="formInput13" type="text" class="input-fail" value="Portveien 3" style="width: 230px;">
+        <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
+      </div>
+    </form>
+
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="formInput13">Input becomes valid<span class="success-message stb-color-sprite-small ok left-margin-10"></span></label>
+        <input id="formInput13" type="text" class="input-success" value="Portveien 2" style="width: 230px;">
+        <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
+      </div>
+    </form>
+    
+    <form class="stb-form-inline" role="form">
+      <div class="stb-form-group">
+        <label for="lanebelop" style="">Input with add-on</label>
+        <div class="input-group" style="width:230px;">
+          <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
+          <div class="stb-input-group-addon">kr</div>
+        </div>
+      </div>
+    </form>
+
+  </div> <!-- /col-md-9 -->
+</div> <!-- /row -->
+
+<div class="row">
+  <div class="col-md-9 col-md-offset-3">
+    <h4>Form input elements</h4>
+          <pre class="prettyprint">
+&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
+ &lt;div class=&quot;stb-form-group&quot;&gt;
+  &lt;label for=&quot;&quot; style=&quot;&quot;>Write label here&lt;/label&gt;
+  &lt;input id=&quot;&quot; type=&quot;text&quot; placeholder=&quot;Text...&quot; style=&quot;&quot;&gt;
+ &lt;/div&gt;
+&lt;/form&gt;</pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-9 col-md-offset-3">
+    <h4>Form input elements with action buttons</h4>
+          <pre class="prettyprint">
+&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
+ &lt;div class=&quot;stb-form-group&quot;&gt;
+  &lt;label for="">Write label here&lt;/label&gt;
+  &lt;input id=&quot;&quot; type=&quot;text&quot; class=&quot;has-submit&quot; placeholder=&quot;Text...&quot; style=&quot;&quot;&gt;
+  &lt;button type=&quot;submit&quot; class=&quot;stb-btn stb-form is-submit&quot;&gt;Enter&lt;/button&gt;
+ &lt;/div&gt;
+&lt;/form&gt;</pre>
+    </pre>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9 col-md-offset-3">
+    <h4>Form input elements with add-on</h4>
+      <pre class="prettyprint">
+&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
+  &lt;div class=&quot;stb-form-group&quot;&gt;
+    &lt;label for=&quot;lanebelop&quot; style=&quot;&quot;&gt;Input with add-on&lt;/label&gt;
+    &lt;div class=&quot;input-group&quot; style=&quot;width:230px;&quot;&gt;
+      &lt;input class=&quot;form-control&quot; id=&quot;lanebelop&quot; type=&quot;text&quot; placeholder=&quot;Beløp&quot;/&gt;
+      &lt;div class=&quot;stb-input-group-addon&quot;&gt;kr&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+  </div>
+</div> <!-- / General input fields row -->
+
+<hr class="top-margin-30" />
+
+<div class="row">
+  <div class="col-md-3">
+    <h2>Forms: Radio buttons and checkboxes</h2>
+    (Not finished, design will definitely change, but you can start using it anyway. Please consult storebrand.ny project.)
+  </div>
+
+  <div class="col-md-9">
+    <div class="row">
+      <form>
+        <div class="col-md-12">
+          <p>Standard html input functionality, only slightly styled:</p>
+        </div>
+        <div class="col-md-12">
+          <h3>Radio buttons</h3>
+          <p>
+            <strong>Choose wisely:</strong>
+          </p>
+          <p>
+            <input class="stb-radio" type="radio" id="radio1" name="stb-a" value="African swallow" /><label for="radio1">African swallow</label>
+            <input class="stb-radio" type="radio" id="radio2" name="stb-a" value="European Swallow" /><label for="radio2">European swallow</label>
+            <input class="stb-radio" type="radio" id="radio3" name="stb-a" value="Checked" checked /><label for="radio3">Chosen</label>
+            <input class="stb-radio" type="radio" id="radio4" name="stb-a" value="Can't touch this" disabled /><label for="radio4">Can't touch this (disabled)</label>
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <form>
+        <div class="col-md-12">
+          <h3>Checkboxes</h3>
+          <p>
+            <strong>This and/or that?</strong>
+          </p>
+          <div class="row">
+            <div class="col-md-12">
+              <p>
+                All in one row:
+              </p>
+              <p>
+                <input class="stb-checkbox" type="checkbox" id="checkbox1" name="stb-c" value="This" /><label for="checkbox1">This</label>
+                <input class="stb-checkbox" type="checkbox" id="checkbox2" name="stb-c" value="That" /><label for="checkbox2">That</label>
+                <input class="stb-checkbox" type="checkbox" id="checkbox3" name="stb-c" value="Chosen" checked /><label for="checkbox3">Chosen</label>
+                <input class="stb-checkbox" type="checkbox" id="checkbox4" name="stb-c" value="Can't touch this" disabled /><label for="checkbox4">Can't touch this (disabled)</label>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p>
+                Nice and orderly in rows:
+              </p>
+              <p>
+                <input class="stb-checkbox" type="checkbox" id="checkbox11" name="stb-d" value="This" /><label for="checkbox11" style="width: 280px;">This</label><br />
+                <input class="stb-checkbox" type="checkbox" id="checkbox12" name="stb-d" value="That" /><label for="checkbox12" style="width: 280px;">That</label><br />
+                <input class="stb-checkbox" type="checkbox" id="checkbox13" name="stb-d" value="Chosen" checked/><label for="checkbox13" style="width: 280px;">Chosen</label><br />
+                <input class="stb-checkbox" type="checkbox" id="checkbox14" name="stb-d" value="Can't touch this" disabled /><label for="checkbox14" style="width: 280px;">Can't touch this (disabled)</label><br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="col-12-md">
+        <strong>Code:</strong> <br />
+              <pre class="prettyprint">
+&lt;form&gt;
+  &lt;h5&gt;Pick your poison&lt;/h5&gt;
+    &lt;!-- Radio buttons --&gt;
+    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;a&quot; value=&quot;a&quot; name=&quot;aorb&quot; /&gt;
+    &lt;label for=&quot;a&quot;&gt;I want poison A&lt;/label&gt;
+    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;b&quot; value=&quot;b&quot; name=&quot;aorb&quot; checked /&gt;
+    &lt;label for=&quot;b&quot;&gt;I want poison B&lt;/label&gt;
+    &lt;!-- Checkboxes --&gt;
+    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox1&quot; type=&quot;checkbox&quot; /&gt;
+    &lt;label for=&quot;checkbox1&quot;&gt;Check this out&lt;/label&gt;&lt;br&gt;
+    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox2&quot; type=&quot;checkbox&quot; /&gt;
+    &lt;label for=&quot;checkbox2&quot;&gt;Check that out&lt;/label&gt;&lt;br&gt;
+    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox3&quot; type=&quot;checkbox&quot; disabled /&gt;
+    &lt;label for=&quot;checkbox3&quot;&gt;Can't touch this (disabled)&lt;/label&gt;
+&lt;/form&gt;</pre>
+        <p>Be precise when using input+label; ID and for-attributes must match, and the order must be input, then label.</p>
+      </div>
+    </div>
+  </div>
+</div> <!-- /Radio button and checkbox row -->
+
+<hr class="top-margin-30" />
+
+<div class="row"> <!-- Dropdown select -->
+  <div class="col-md-3">
+    <h2>Dropdown / Select</h2>
+    (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-12">
+        <p>Increasingly, the best choice is to use native form elements. For advanced form elements, this is doubly so.</p>
+        <p>Consider what happens when your form is presented on a smart phone, a "smart-TV" or, theoretically, a Windows Phone. Manufacturers of these devices put a lot of work into creating the best possible user experience. Customizing form elements will generally obstruct that goal.
+        </p>
+      </div>
+      <div class="col-md-12">
+        <h3>Recommended default BS-style select</h3>
+        <select id="select-demo" class="form-control" style="width: 200px;">
+          <option value="">Pick a number</option>
+          <option value="1">Number one</option>
+          <option value="2">Number two</option>
+          <option value="3">Number three</option>
+          <option value="4">Number four</option>
+          <option value="4">Number five</option>
+        </select>
+              <pre class="prettyprint">
+&lt;select class="form-control"&gt;
+  &lt;option value="a">Select A&lt;/option&gt;
+  ...
+&lt;/select&gt;</pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Custom style with autocomplete</h3>
+        <p>
+          <select data-widget="chosenSelect" class="form-control" data-placeholder="Pick a number" style="width: 400px;">
+            <option value="0"></option>
+            <option value="1">Number one</option>
+            <option value="2">Number two</option>
+            <option value="3">Number three</option>
+            <option value="4">Number four</option>
+            <option value="4">Number five</option>
+          </select>
+        </p>
+        <p><strong>Note:</strong> Type-ahead requires <a href="js/dist/chosen.jquery.js">chosen.jquery.js</a> + stb-chosen-less.<br /></p>
+              <pre class="prettyprint">&lt;select data-widget=&quot;chosenSelect&quot; class=&quot;form-control&quot; data-placeholder=&quot;Pick a number&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+  &lt;option value=&quot;1&quot;&gt;Number one&lt;/option&gt;
+  &lt;option value=&quot;2&quot;&gt;Number two&lt;/option&gt;
+  &lt;option value=&quot;3&quot;&gt;Number three&lt;/option&gt;
+  &lt;option value=&quot;4&quot;&gt;Number four&lt;/option&gt;
+  &lt;option value=&quot;4&quot;&gt;Number five&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+  $('select[data-widget=chosenSelect]').chosen();
+&lt;/script&gt;</pre>
+      </div>
+
+    </div> <!-- /inner-row -->
+  </div>
+</div> <!-- /Dropdown / Select -->
+
+<hr class="top-margin-30" />
+
+<div class="row"><!-- Sliders row -->
+  <div class="col-md-3">
+    <h2>Sliders</h2>
+    (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          As we wait for browsers world-wide to deliver excellent sliders through the HTML5 range tag, we currently use a customized slider.
+        </p>
+        <p>
+          A slider must always be accompanied by a good old text input field, for universal design.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div style="width: 300px;">
+          Optional display of current value: <span id="stb-slider-value" class="stb-font-bold text-center" style="font-size: 24px;"></span>
+          <input id="stb-slider" type="slider" name="stb-slider" value="0" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p><br /><strong>Note</strong>: Our slider is based on Egorkhmelev's jslider (see <a href="https://github.com/egorkhmelev/jslider">GitHub</a>for code with more options), stripped down and with a few improvements:</p>
+        <ul>
+          <li>Self-contained JS-file, all dependencies are included at the top of the file.</li>
+          <li>Improvements &amp; some pull-requests have been included (resize, redraw-functions ++)</li>
+          <li>Minor edits to the markup template</li>
+          <li>Customized styles/graphics</li>
+        </ul>
+        <p>
+          <strong>Required JS + CSS:</strong>
+        </p>
+        <ul>
+          <li><a href="js/dist/jquery.slider.all.js">jquery.slider.all.js</a></li>
+          <li><a href="less/stb-ui-slider.less">stb-ui-slider.less</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>  <!-- /Sliders row -->
+
+<hr class="top-margin-30" />
+
+<div class="row"> <!-- Progress bar row -->
+  <div class="col-md-3">
+    <h2>Progress bar</h2>
+    (Not ready to use, but if you need something like this, consult with storebrand.ny project.)
+  </div>
+
+  <div class="col-md-9">
+    <p>
+      For use cases where you can show a progress bar based on percentage (0-100), and not necessarily on a set number of steps, you can use this progress bar.
+    </p>
+    <p>
+      <button class="stb-btn" id="progressbar-trigger">Use this button</button> to see random progress jumps up and down the scales below:
+    </p>
+    <!-- Gray version -->
+    <div class="stb-progress gray">
+      <div class="stb-progress-bar" data-widget="progressExample" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        <span class="sr-only">60% Complete</span>
+      </div>
+    </div>
+    <!-- Color version -->
+    <div class="stb-progress">
+      <div class="stb-progress-bar" data-widget="progressExample" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        <span class="sr-only">60% Complete</span>
+      </div>
+    </div>
+    <p>
+      <strong>Code:</strong>
+    </p>
+          <pre class="prettyprint">
+&lt;div class=&quot;stb-progress&quot;&gt; &lt;!-- add class .gray for gray version --&gt;
+  &lt;div class=&quot;stb-progress-bar&quot; data-widget=&quot;progressExample&quot; role=&quot;progressbar&quot;
+    aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 60%;&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;60% Complete&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  $('div.stb-progress div[data-widget=progressExample]').css({width: newPercentValue + '%'});
+&lt;/script&gt;
+          </pre>
+    <p>
+      The .sr-only class is used as a fallback for screen readers. Animation is done through css transitions.
+    </p>
+  </div>
+
+</div> <!-- /Progress bar row -->
+
+<hr class="top-margin-30" />
+
+<div class="row"><!-- Datepicker row -->
+
+  <div class="col-md-3">
+    <h2>Datepicker</h2>
+    (Not done! Likely to change to more or less standard Bootstrap!)
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-12">
+        <p>Increasingly, the best choice is to use native form elements. For datepickers, this is doubly so.</p>
+        <p>Consider what happens when your datepicker is used on a smart phone, a "smart-TV" or, theoretically, a Windows Phone. Manufacturers of these devices put a lot of work into creating the best possible user experience. Customizing the datepicker will generally obstruct that goal.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <h3>Datepicker - jQuery UI, localized for Norway</h3>
+      Velg dato:
+      <input id="datepicker" data-widget="stb-datepicker" class="ui-dateinput"><label for="datepicker">&nbsp;</label>
+    </div>
+    <div class="row">
+      <strong class="top-margin-30">HTML:</strong><br />
+      <pre class="prettyprint">
+&lt;input id=&quot;datepicker&quot; data-widget=&quot;stb-datepicker&quot; class=&quot;ui-dateinput&quot;&gt;
+&lt;label for=&quot;datepicker&quot;&gt;&amp;nbsp;&lt;/label&gt;</pre>
+      <p>
+        See <a href="js/src/demo-datepicker.js">javascript-code</a> for usage instructions.
+      </p>
+      <p>
+        <strong>Note</strong>: Requires <a href="js/dist/jquery-ui-1.10.3.datepicker.js">jQuery UI Datepicker 1.10.3.</a>
+      </p>
+      <hr class="top-margin-30" />
+      <p>
+        HTML5 will eventually deliver a standard datepicker. This hasn't yet been implemented that well in all browsers. Here you can see the current state of it, with no styling at all:
+      </p>
+      <p>
+        Please date me: <input type="date" name="bday">
+      </p>
+    </div>
+  </div>
+</div>  <!-- /Datepicker row -->
+
+</div> <!-- /End Container-->
+
+<hr class="top-margin-30" />
+
+<div data-spy="affix" class="cookieNote" id="cookieNote">
+  <div class="cookieClose">
+    &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false">Lukk<span class="stb-sprite-small white remove"></span></a>
+  </div>
+  <div class="cookieInfo">
+    <div class="info">
+      På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="https://www.storebrand.no/pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
+    </div>
+  </div>
+</div>
+
+<footer class="stbcolor-primary first stb-footer">
+</footer>
+
+<!-- Google Analytics - Tracking to test ID -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41882079-4', 'storebrand.no');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+<!-- /Google Analytics -->
+
+</body>
+</html>
