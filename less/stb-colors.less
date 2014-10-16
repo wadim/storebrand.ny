@@ -37,10 +37,10 @@
 @stb-gray-fifth:         #666;
 
 // DARKER COLORS
-//@stb-primary-color-darker:     #bf1d19;
 @stb-primary-color-darker:     #bb1b18;
-//@stb-secondary-forest-darker:  #576b1d;
 @stb-secondary-forest-darker:  #6c8524;
+@stb-secondary-moss-darker:    #5f6e57;
+@stb-secondary-dust-darker:    #776654;
 
 
 /*
@@ -86,6 +86,10 @@
 
   }
 
+
+
+/* CHANGED AFTER NEW SPESIFICATION 
+
 // BACKGROUND COLORS (moss, lime, dust, nude, sand)
 .stbcolor-background {
   &.first {
@@ -103,6 +107,70 @@
       } 
   }
 }
+
+*/
+
+/* BACKGROUND COLORS   */
+.stbcolor-background {
+  &.first {
+    background-color: @stb-secondary-charcoal;
+    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+      color: @stb-primary-white;
+    } 
+  }
+
+  &.second {
+    background-color: @stb-primary-color;
+    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+      color: @stb-primary-white;
+    } 
+  }
+
+  &.third {
+    background-color: @stb-secondary-moss-darker;
+    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+      color: @stb-primary-white;
+    } 
+  }
+
+  &.fourth {
+    background-color: @stb-secondary-dust-darker;
+    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+      color: @stb-primary-white;
+    } 
+  }
+
+  &.fifth {
+    background-color: @stb-gray-first;
+    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+      color: @stb-secondary-charcoal;
+    } 
+  }
+
+  &.sixth {
+    background-color: @stb-secondary-sand;
+    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+      color: @stb-secondary-charcoal;
+    } 
+  }
+
+  &.seventh {
+    background-color: @stb-secondary-sky;
+    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+      color: @stb-secondary-charcoal;
+    } 
+  }
+
+  &.eight {
+    background-color: @stb-outline-lime;
+    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+      color: @stb-secondary-charcoal;
+    } 
+  }
+  
+  
+}
+
 
 // SECONDARY COLORS
 .stbcolor-secondary {
