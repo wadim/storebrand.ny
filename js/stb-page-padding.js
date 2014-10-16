@@ -696,5 +696,28 @@ $(document).ready(function(){
 	        });
 });
 
+$(document).ready(function(){
+  var accept = readCookie('acceptCookie');
+  if(accept=='Yes'){
+    jQuery('#cookieFooter').hide();
+  }
+
+  $('#mobilemenu').find('#accordion-privat').on('show.bs.collapse', function (event) {
+    $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up red');
+    $(event.target).parent().addClass('active');
+  });
+
+  $('#mobilemenu').find('#accordion-privat').on('hide.bs.collapse', function () {
+    $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up red');
+    $('.panel-collapse.collapse.in').parent().removeClass('active');
+  });
+
+
+});
+function aksepterCookie(){
+  createCookie('acceptCookie','Yes','60');
+  jQuery('#cookieFooter').hide('slow');
+}
+
 
 
