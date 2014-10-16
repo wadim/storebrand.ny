@@ -44,77 +44,12 @@ div.cookieFooter{
       position: static;
     }
 
-    .nav-tabs.nav-justified>li>a{
-      border: 1px solid #FFFFFF;
-      line-height: 2;
-    }
-    .nav-tabs.nav-justified>li.active>a,.nav-tabs.nav-justified>li.active>a:hover {
-      background-color: #E6E6E6 !important;
-      border: 1px solid #E6E6E6;
-    }
-
   </style>
-  <script>
-    $(document).ready(function(){
-      var accept = readCookie('acceptCookie');
-      if(accept=='Yes'){
-        jQuery('#cookieFooter').hide();
-      }
-
-      $('#mobilemenu').find('#accordion-privat').on('show.bs.collapse', function (event) {
-        $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up red');
-        $(event.target).parent().addClass('active');
-      });
-
-      $('#mobilemenu').find('#accordion-privat').on('hide.bs.collapse', function () {
-          $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up red');
-          $('.panel-collapse.collapse.in').parent().removeClass('active');
-      });
-
-
-    });
-    function aksepterCookie(){
-      createCookie('acceptCookie','Yes','60');
-      jQuery('#cookieFooter').hide('slow');
-    }
-
-    $(document).ready(function(){
-        var accept = readCookie('acceptCookie');
-        if(accept=='Yes'){
-          jQuery('#cookieFooter').hide();
-        }
-
-        /* Verify National Identity Number ***********************************************/
-        function verifyIDNumber(nr) {
-          var pn = new Array();
-          var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
-          var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
-          for(var i=0; i<nr.length; i++) {
-            pn[i] = nr.charAt(i);
-          }
-          var k1=0;
-          for(var i=0; i<v1.length; i++) {
-            k1 += pn[i]*v1[i];
-          }
-          var k2=0;
-          for(var i=0; i<v2.length; i++) {
-            k2 += pn[i]*v2[i];
-          }
-          if (k1%11==0 && k2%11==0 ) {
-            return true;
-          } else {
-            return false;
-          }
-        }
-
-      });
-  
-  </script>
 </head>
 
 <body>
-<!-- Start top of page -->
 
+<!-- Start top of page -->
 <div id="overlay"></div>
 <div id="top-menu-nav">
 <!-- Start desktop menu -->
@@ -199,9 +134,9 @@ div.cookieFooter{
 			          </li>
 			          <li>
 			            <p style="font-size: 14px;">
-			            <span class="stb-theme-sprites car" style="margin-bottom: -20px; margin-right: 10px;">
+			            <span class="stb-theme-sprites car" style="margin-bottom: -20px; margin-right: 10px;"></span>
 			              <a href="tema2/bilogkjoretoy.html">
-			                </span>Bil & Kjøretøy
+			                Bil & Kjøretøy
 			              </a>
 			            </p>
 			          </li>
@@ -265,7 +200,6 @@ div.cookieFooter{
               <label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-small search white"></span></span>
               </label>
             </form>
-          </li>
 
         </ul>
       </div>
@@ -279,7 +213,7 @@ div.cookieFooter{
   <nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
     <div class="row stbcolor-primary third">
       <div class="navbar-header col-xs-6 logo">
-        <a href="forside.html" style="border-bottom: none;"><img class="stb-logo-mobile left-padding-10" src="../../images/logo.png" title="storebrand logo"/></a>
+        <a href="forside.html" style="border-bottom: none;"><img class="stb-logo-mobile img-responsive left-padding-10 pull-right" src="../../images/logo.png" title="storebrand logo"/></a>
       </div>
       <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-5 col-xs-offset-1" style="padding-left: 6px;">
         <ul class="nav navbar">
@@ -291,7 +225,6 @@ div.cookieFooter{
     </div>
   </nav>
 </div>
-<!-- End mobile menu -->
 
 <div id="mobilemenu" class="top-margin-10 bottom-margin-30 hidden-md hidden-lg" style="display: none; background-color:#fff; z-index:2; position:relative; top:0; left:0;">
   <div class="row" style="margin-right: 0; margin-left: 0;">
@@ -443,13 +376,13 @@ div.cookieFooter{
             <div class="col-xs-11">
               <div class="row">
                 <div class="col-xs-12">
-                  <form class="search tt-mobile">
+                  <form id="searchMobile" class="search tt-mobile">
                     <label style="width: 80%">
                       <div class="col-xs-11" style="padding-right: 0; padding-left: 0; ">
                         <input type="text" class="typeahead searchbox" placeholder="Søk i sidene" style="width: 99%"/>
                       </div>
                       <div class="col-xs-1" style="padding-left: 0; padding-right: 0;">
-                        <button class="stb-btn" style="display: block; position: relative; padding-left: 6px; height: 53px;"><span class="stb-sprite-medium search white"></span></span></button>
+                        <button class="stb-btn" onclick="event.preventDefault(); checkSearch($('#searchMobile input.tt-input').val())" style="display: block; position: relative; padding-left: 6px; height: 53px;"><span class="stb-sprite-medium search white"></span></span></button>
                       </div>
                     </label>
                   </form>
@@ -507,9 +440,10 @@ div.cookieFooter{
     </div>
   </div>
 </div>
+<!-- End mobile menu -->
 
-<div id="login-start" style="display:none;">
-<a href="#" onclick="$('#login-start').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
+<div id="login-menu" style="display:none;">
+<a href="#" onclick="$('#login-menu').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
 <div class="container login top-margin-50-mdlg" >
   <div class="row">
     <div class="col-md-12 column">
@@ -525,7 +459,6 @@ div.cookieFooter{
    </div>
   </div>
  </div>
-
 </div>
 <!-- End top of page -->
 
