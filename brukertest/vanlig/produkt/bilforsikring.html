@@ -28,6 +28,9 @@
     .col-md-8{
       padding-left: 0px; padding-right: 0px;
     }
+    .padding-adjustment{
+      padding-left: 15px; padding-right: 15px;
+    }
   }
 
  div.cookieFooter{
@@ -504,13 +507,14 @@
   <div class="container">
     <div class="row">
     <div class="col-md-8 top-margin-20 bottom-margin-20">
+      <div class="padding-adjustment">
       <h2>Våre bilforsikringer</h2>
       <p>
         I tabellen under kan du få en forenklet oversikt over de ulike bilforsikringene vi kan tilby.
         Når du har bestemt deg for hvilken som passer deg kan du sjekke pris og få et tilbud.
       </p>
       <button class="stb-btn stb-big-btn" onclick="event.preventDefault(); window.location.href='../dummy/sjekkprisbil.html'";><h3 class="">Sjekk pris og kjøp</h3></button>
-
+      </div>
       <table class="stb-table no-alt nude top-margin-20">
         <thead>
         <tr>
@@ -615,7 +619,9 @@
         </tr>
         </tbody>
       </table>
-     <a href="../artikkel/bilforsikring.html">Se fullstendige dekningsoversikt</a> eller <a href="../dummy/sjekkprisbil.html">sjekk pris og kjøp</a> 
+      <div class="padding-adjustment">
+        <a href="../artikkel/bilforsikring.html">Se fullstendige dekningsoversikt</a> eller <a href="../dummy/sjekkprisbil.html">sjekk pris og kjøp</a>
+      </div>
     </div>
     <div class="col-md-4 left-padding-5">
       <div class="stb-box top-margin-40 hidden-md hidden-lg left-padding-5 clickable" rel="tel:08880">
