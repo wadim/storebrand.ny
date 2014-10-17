@@ -47,6 +47,7 @@
     .theme-banner,
     .theme-image  {
       min-height: 405px;
+      height: 405px;
     }
    
     .theme-banner .heading{
@@ -486,25 +487,6 @@
 </div>
 </div>
 <!-- End mobile menu -->
-
-<div id="login-menu" style="display:none;">
-  <a href="#" onclick="$('#login-menu').slideToggle(200);" class="pull-right right-margin-20" style="margin-top: -24px;"><span class="stb-sprite-medium remove"></span></a>
-  <div class="container login top-margin-50-mdlg" >
-    <div class="row">
-      <div class="col-md-12 column">
-        <h1>Logg inn</h1>
-        <form id="start-login-form" class="stb-form-inline" role="form">
-          <label>Skriv inn ditt fødselsnummer </label><br>
-          <span class="help-block info-message"></span>
-          <div class="form-group stb-form-group">
-            <input type="tel" class="" name="birthNumber" style="width: 230px">
-            <button class="stb-btn stb-form is-submit">Logg inn</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- End top of page -->
 
 
@@ -531,7 +513,7 @@
       <div class="col-md-6 top-margin-50-mdlg ">
         <h2>Har du kjøpt bil eller tenker å kjøpe bil?</h2>
         <p>Hvis din arbeidsplass sparer til pensjon for deg i Storebrand Fordel får du 20 % rabatt på forsikringen til bilen eller andre kjøretøy.</p>
-        <button class="stb-btn top-margin-10 bottom-margin-20">Sjekk om du har fordeler</button>
+        <button class="stb-btn top-margin-10 bottom-margin-20" onclick="event.preventDefault(); window.location.href = '../tema3/kundefordeler.html';">Sjekk om du har fordeler</button>
       </div>
       <div class="col-md-6 visible-sm visible-xs">
         <img src="../../../images/skisseelementer/405x405Tom.png" class="center-block img-responsive" />
@@ -556,12 +538,12 @@
    </div>
     <div class="row top-margin-20 bottom-margin-20">
       <div class="col-md-6">
-        <img src="../../../images/placeholder192x108.png"/>
-        <h3><a href="#">Når uhellet er ute...</a></h3>
+        <img src="../../../images/skisseelementer/UT192x108CarBreakdown.png"/>
+        <h3><a href="../tema3/bilbaatmc.html">Når uhellet er ute...</a></h3>
         <p>Er uhellet ute og du trenger å melde skade? Eller er batteriet på bilen flatt og du trenger veihjelp? Vi hjelper deg.</p>
       </div>
       <div class="col-md-6">
-        <img src="../../../images/placeholder192x108.png"/>
+        <img src="../../../images/skisseelementer/UT192x108HouseGolf.png"/>
         <h3><a href="#">Husk Grønt kort på bilferien</a></h3>
         <p>Grønt kort er et bevis på at du har gyldig ansvarsforsikring når du er i utlandet.</p>
       </div>
