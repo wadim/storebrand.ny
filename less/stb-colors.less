@@ -17,13 +17,11 @@
 @stb-secondary-sand:     #efe8df;
 @stb-secondary-sky:      #b0dfdb;
 
-// BACKGROUND COLORS
-@stb-background-rose:    #fff0f0;
-@stb-background-mint:    #ecf2c2;
-
 // CHART COLORS
 @stb-chart-orange:       #faa61a;
 @stb-chart-peach:        #fff0d9;
+@stb-chart-rose:         #fff0f0;
+@stb-chart-mint:         #ecf2c2;
 
 // OUTLINE COLORS
 @stb-outline-pink:       #ffb3b3;
@@ -87,29 +85,6 @@
   }
 
 
-
-/* CHANGED AFTER NEW SPESIFICATION 
-
-// BACKGROUND COLORS (moss, lime, dust, nude, sand)
-.stbcolor-background {
-  &.first {
-    background-color: @stb-background-rose;
-  }
-  
-  &.second {
-    background-color: @stb-background-mint;
-  }
-
-  &.third {
-    background-color: @stb-primary-color;
-    a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
-      color: @stb-primary-white;
-      } 
-  }
-}
-
-*/
-
 /* BACKGROUND COLORS   */
 .stbcolor-background {
   &.first {
@@ -161,13 +136,12 @@
     } 
   }
 
-  &.eight {
+  &.eighth {
     background-color: @stb-outline-lime;
     a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
       color: @stb-secondary-charcoal;
     } 
   }
-  
   
 }
 
@@ -270,6 +244,14 @@
   &.second {
     background-color: @stb-chart-peach;    
   }
+
+  &.third {
+    background-color: @stb-chart-rose;    
+  }
+  
+  &.fourth {
+    background-color: @stb-chart-mint;    
+  }  
 }
 
 // BACKGROUNDS THAT ARE NOT PURE COLORS 
