@@ -23,6 +23,7 @@ $(document).ready(function(){
           left: d + "%"
         })
       }
+      changeCalculatedValue('laanekalkulator');
     },
     getPercentVal: function(a) {
       var b = a,
@@ -61,6 +62,7 @@ $(document).ready(function(){
           left: d + "%"
         })
       }
+      changeCalculatedValue('laanekalkulator');
     },
     getPercentVal: function(a) {
       var b = a,
@@ -74,6 +76,10 @@ $(document).ready(function(){
     }
   });
 
+  $('#lanebelop').change(function(){
+    changeCalculatedValue('laanekalkulator');
+  });
+
   $('#nedbetaling-input').change(function(){
     slider1.slider('value', $(this).val());
   });
@@ -81,10 +87,19 @@ $(document).ready(function(){
   $('#lanerente-input').change(function(){
     slider2.slider('value', $(this).val());
   });
-});/**
- * Created with IntelliJ IDEA.
- * User: runeblekenkulstad
- * Date: 26.09.14
- * Time: 13:05
- * To change this template use File | Settings | File Templates.
- */
+
+});
+
+var changeCalculatedValue = function(formId) {
+  var form = "#" + formId;
+  var previousValue = $(form).find(".calculated-value").text();
+  var principal = $(form).find("[name='loan-total']").val() || 0; //total loan
+ // console.log(principal);
+  var monthlyInterestRate = Math.ceil(($(form).find("[name='interest']").val() / 12)*100)/10000;
+ // console.log(monthlyInterestRate);
+  var numberOfMonthlyPayments = Math.ceil($(form).find("[name='years']").val() * 12) || 1;
+ // console.log(numberOfMonthlyPayments);
+  var calculatedValue = Math.ceil((monthlyInterestRate * principal)/(1 - Math.pow((1 + monthlyInterestRate), -numberOfMonthlyPayments))) || 0;
+ // console.log(calculatedValue);
+  $(form).find(".calculated-value").text(calculatedValue);
+}

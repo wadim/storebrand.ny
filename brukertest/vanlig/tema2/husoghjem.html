@@ -541,13 +541,13 @@
       </p>
     </div>
     <div class="col-md-6">
-      <form role="form">
+      <form id="laanekalkulator" role="form">
         <div class="row">
           <div class="col-md-4">
             <div class="stb-form-group">
               <label for="lanebelop">Lånebeløp</label>
               <div class="input-group">
-                <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
+                <input class="form-control" id="lanebelop" name="loan-total" type="text" placeholder="Beløp"/>
                 <div class="stb-input-group-addon">kr</div>
               </div>
             </div>
@@ -567,7 +567,7 @@
             <div class="stb-form-group top-margin-10">
               <label style="">Nedbetalingsperiode</label>
               <div>
-                <input id="nedbetaling-input" class="text-center" style="float: left; width: 60px;"><p class="unit">år</p>
+                <input id="nedbetaling-input" class="text-center" style="float: left; width: 60px;" name="years"><p class="unit">år</p>
                 <input id="stb-slider-nedbetaling" type="slider"  value="15"  name="stb-slider" value="0" />
               </div>
             </div>
@@ -576,7 +576,7 @@
             <div class="stb-form-group top-margin-10">
               <label>Lånerente</label>
               <div>
-                <input id="lanerente-input" class="text-center" style="float: left; width: 60px;"><p class="unit">%</p>
+                <input id="lanerente-input" class="text-center" style="float: left; width: 60px;" name="interest"><p class="unit">%</p>
                 <input id="stb-slider-lanerente" type="slider" value="3.25"  name="stb-slider" value="0" />
               </div>
             </div>
@@ -585,7 +585,7 @@
         <div class="row">
           <div class="stb-form-group top-margin-10">
             <div class="col-md-8 col-xs-12">
-              <p class="intro pull-left" style="border-bottom: 4px double #000;">10 899 kr i måneden</p>
+              <p class="intro pull-left" style="border-bottom: 4px double #000;"><span class="calculated-value">10 899</span> kr i måneden</p>
             </div>
             <div class="col-md-2 col-xs-12">
               <button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href = '../dummy/soklaan.html';">Søk om lån</button>
