@@ -24,14 +24,7 @@
 </head>
 
 <style>
-  @media (max-width: 768px){
-    .col-md-8{
-      padding-left: 0px; padding-right: 0px;
-    }
-    .padding-adjustment{
-      padding-left: 15px; padding-right: 15px;
-    }
-  }
+
 
  div.cookieFooter{
       background-color: #333333;
@@ -489,22 +482,28 @@
   <div class="container">
     <div class="row">
     <div class="col-md-8 top-margin-20 bottom-margin-20">
-      <div class="padding-adjustment">
       <h2>Våre bilforsikringer</h2>
       <p>
         I tabellen under ser du en forenklet oversikt over de ulike bilforsikringene vi kan tilby.
         Når du har bestemt deg for hvilken som passer deg kan du sjekke pris og få et tilbud.
       </p>
       <button class="stb-btn stb-big-btn" onclick="event.preventDefault(); window.location.href='../dummy/sjekkprisbil.html'";><h3 class="">Sjekk pris og kjøp</h3></button>
-      </div>
+      <div class="table-responsive">
       <table class="stb-table no-alt nude top-margin-20">
         <thead>
-        <tr>
+        <tr class="hidden-xs">
           <th >&nbsp;</th>
           <th class="text-center">Ansvar</th>
-          <th class="text-center hidden-xs">Delkasko</th> <th class="text-center visible-xs">Del-kasko</th>
+          <th class="text-center">Delkasko</th>
           <th class="text-center">Kasko</th>
           <th class="text-center">Super</th>
+        </tr>
+        <tr class="visible-xs">
+          <th >&nbsp;</th>
+          <th>Ansvar</th>
+          <th>Delkasko</th>
+          <th>Kasko</th>
+          <th>Super</th>
         </tr>
         </thead>
         <tbody>
@@ -530,7 +529,7 @@
           <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
         </tr>
         <tr>
-          <td class="hidden-xs">Glassruteskade</td><td class="visible-xs">Glassrute-skade</td>
+          <td class="">Glassruteskade</td>
           <td class="text-center"></td>
           <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
           <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
@@ -601,9 +600,8 @@
         </tr>
         </tbody>
       </table>
-      <div class="padding-adjustment">
-        <a href="../artikkel/bilforsikring.html">Se fullstendige dekningsoversikt</a> eller <a href="../dummy/sjekkprisbil.html">sjekk pris og kjøp</a>
       </div>
+      <a href="../artikkel/bilforsikring.html">Se fullstendige dekningsoversikt</a> eller <a href="../dummy/sjekkprisbil.html">sjekk pris og kjøp</a>
     </div>
     <div class="col-md-4 left-padding-5">
       <div class="stb-box top-margin-40 hidden-md hidden-lg left-padding-5 clickable" rel="tel:08880">

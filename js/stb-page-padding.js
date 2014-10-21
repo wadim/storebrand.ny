@@ -38,8 +38,14 @@ $(document).ready(function(){
 	//initialize the overlay to get the document's dimenstions
 	$("#overlay").css("width",$(document).width());
 	$("#overlay").css("height",$(document).height());
-	
 });
+
+$(window).resize(function() {
+  //Recalculate the overlay when window is resized
+  $("#overlay").css("width",$(document).width());
+  $("#overlay").css("height",$(document).height());
+});
+
 
 // Start prevent top menu clicks from running away with the page
 $(document).on('click', '.yamm .dropdown-menu', function(e) {
