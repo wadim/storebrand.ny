@@ -138,7 +138,7 @@ function initTypeahead(){
   });
 
   // Call checkSearch when clicking the submit button
-  $(".stb-form-inline button").click(function(event) {
+  $(".searchcontainer .stb-form-inline button").click(function(event) {
 	//alert($('input#main_search').val());
     checkSearch($('input#main_search').val());
     return false;
