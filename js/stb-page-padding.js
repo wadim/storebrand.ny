@@ -39,7 +39,17 @@ $(document).ready(function(){
     }
     $(this).find('span.marker').toggleClass('active');
   });
- 
+
+  $("#desktopmenu li:first a").click(function(){
+    $(".dropdown").removeClass('open');
+    $(".dropdown").trigger("hide.bs.dropdown");
+  });
+
+  $("#loginmenu li:first a").click(function(){
+    $(".dropdown").removeClass('open');
+    $(".dropdown").trigger("hide.bs.dropdown");
+  });
+
 });
 // End mobile top menu decoration
   
