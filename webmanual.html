@@ -48,14 +48,17 @@
     <div class="col-md-9">
       <h1 class="stb-font">Web Manual</h1>
       <p class="lead">
-        - A technical description of elements to be used when creating Web content.
+        - A technical description of elements to be used when creating Web content. 
       </p>
       <h3>How to use this</h3>
       <p>
-        Underneath each section on this page, we indicate how ready that section is for use by any project. Contact the storebrand.ny project for clarifications or requests for adding new elements. As of late August 2014 we still make minor visual adjustments, but the tag mark-up should remain unchanged. New elements will be added as needed.
+        Most elements on this page are now finalized and ready to use. Contact the storebrand.ny project for clarifications or requests for adding new elements. As of late October 2014 we may still make minor visual adjustments, but the tag mark-up should remain unchanged.
       </p>
       <p>
-        The design will be made available from a shared depository, probably on Amazon. The URL to use is <strong>not</strong> yet available. If you have any cross-site scripting issues, for now you must copy the items you need to your own project. We will establish the Amazon files as a .storebrand.no domain with SSL before launch of storebrand.ny, but it's not there yet.
+        Some form elements are not covered here, but on a separate <a href="formmanual.html">Web form manual</a> instead. These two manuals may be merged in the future, but right now people across different streams work on different manuals.
+      </p>
+      <p>
+        The design is available from a shared depository, on Amazon. The URL to use is http[s]://elements.storebrand.no/version-number/path/name. If you have any cross-site scripting issues we will try to resort them, but if you're in a hurry, you may have to copy the items you need to your own project. 
       </p>
       <p>
         Elements for user interaction should log activity to Google Analytics. This is in some cases not yet implemented. JavaScript for this will be available later.
@@ -98,24 +101,6 @@
           <script>$('#primary-second').popover();</script>
           <div id="primary-third" data-placement="top" data-trigger="hover" data-content="White" class="color-swatch stbcolor-primary third" style="border: 1px solid #c4c4c4"></div>
           <script>$('#primary-third').popover();</script>
-        </div>
-      </div>
-
-      <div class="col-md-1">
-      
-      </div>
-      
-      <div class="col-md-5">
-        <div class="row">
-          <p><strong>Background colors</strong> for various user interface elements. The background comes with preset border/outline colors.</p>
-          <p>Example use: Dialog boxes</p><br />
-          <code>Class: stbcolor-background first/second</code>
-        </div>
-        <div class="row">
-          <div id="background-first" data-placement="top" data-trigger="hover" data-content="Rose" class="color-swatch stbcolor-background first"></div>
-          <script>$('#background-first').popover();</script>
-          <div id="background-second" data-placement="auto" data-trigger="hover" data-content="Mint" class="color-swatch stbcolor-background second"></div>
-          <script>$('#background-second').popover();</script>
         </div>
       </div>
 
@@ -209,6 +194,10 @@
           <script>$('#visuals-first').popover();</script>
           <div id="visuals-second" data-placement="top" data-trigger="hover" data-content="Peach" class="color-swatch stbcolor-visuals second"></div>
           <script>$('#visuals-second').popover();</script>
+          <div id="visuals-third" data-placement="top" data-trigger="hover" data-content="Rose" class="color-swatch stbcolor-visuals third"></div>
+          <script>$('#visuals-third').popover();</script>
+          <div id="visuals-fourth" data-placement="auto" data-trigger="hover" data-content="Mint" class="color-swatch stbcolor-visuals fourth"></div>
+          <script>$('#visuals-fourth').popover();</script>          
         </div>
       </div>
 
@@ -510,72 +499,6 @@
 
   </div>
 </div> <!-- /Typography / Lists row -->
-
-<hr class="top-margin-30"/>
-
-<div class="row">
-  <div class="col-md-3">
-    <h2>Typography / Diamonds</h2>
-    (Do not use yet)
-  </div>
-  <div class="col-md-9">
-    <p>
-      The "diamond list" is purely a design thing, meant used in gods know what situations. Incidentally, these diamonds might possibly not last forever. They are different from the progress bars / step indicators in forms, but certainly share a bit of design with them.
-    </p>
-    <div class="row top-margin-20">
-
-      <div class="col-md-2">
-        <div class="numeric-diamond">
-          <span class="bg"></span>
-          <span class="count">Hello</span>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="numeric-diamond">
-          <span class="bg"></span>
-          <span class="count">World</span>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-
-      </div>
-
-      <div class="col-md-2">
-        <div class="numeric-diamond">
-          <span class="bg"></span>
-          <span class="count">1</span>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="numeric-diamond">
-          <span class="bg"></span>
-          <span class="count">2</span>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="numeric-diamond">
-          <span class="bg"></span>
-          <span class="count">3</span>
-        </div>
-      </div>
-
-    </div>
-
-    <p>
-      We'll hopefully add some instructions eventually about how these are to be used. If you use it, put only single digits inside the diamonds.
-    </p>
-    <strong>Code:</strong><br />
-          <pre class="prettyprint">
-&lt;div class="numeric-diamond"&gt;
-  &lt;span class="bg"&gt;&lt;/span&gt;
-  &lt;span class="count"&gt;x&lt/span&gt;
-&lt;/div&gt;</pre>
-  </div>
-</div> <!-- /Typography / Diamonds row -->
 
 <hr class="top-margin-30"/>
 
@@ -1253,7 +1176,7 @@
       </div> 
       <div class="row">
         <div class="col-md-12 top-margin-20">
-          <div class="msgText column pull-right stbcolor-background first">
+          <div class="msgText column pull-right stbcolor-visuals third">
             <h3>Error box</h3>
             <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
             <p>We apologize for the inconvenience</p>
@@ -1264,7 +1187,7 @@
       </div>  
       <div class="row">
         <div class="col-md-12 top-margin-20">
-          <div class="msgText column pull-right stbcolor-background second">
+          <div class="msgText column pull-right stbcolor-visuals fourth">
             <h3>Success box</h3>
             <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
             <p>Thank you for your purchase</p>
@@ -1321,7 +1244,7 @@
   
     <h3>Notifications that can be closed</h3>
     <p>
-    These "important messages" are placed in a "topMessages" div, usually located at the top of the page. The div should be hidden upon document.ready, and then become visible through a toggleDown slide one second later. (<a href="#" onclick="toggleMsg();return false">Demo/reset</a>)
+    These "important messages" are placed in a "topMessages" div, usually located at the top of the page. The div should be hidden upon document.ready, and then become visible through a toggleDown slide one second later. (<a href="#" onclick="toggleMsg();return false">Demo/Reset</a>)
     </p>
 
     <div class="top-padding-20 bottom-padding-20 commonmessage">
@@ -1343,7 +1266,7 @@
     <div class="top-padding-20 bottom-padding-20 errormessage">
       <div class="row">
         <div class="col-md-12">
-            <div class="msgText column pull-right stbcolor-background first">
+            <div class="msgText column pull-right stbcolor-visuals third">
                 <button data-dismiss="modal" onclick="hideErrorMsg();return false;" class="close" type="button">
                    <p class="pull-left">Close <span style="margin-right:10px;" class="stb-sprite-small remove"></span></p>
                 </button>
@@ -1854,1463 +1777,653 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 
 <div class="row"> <!-- Standard icons row -->
-<div class="col-md-3">
-  <h2>Icons</h2>
-  (Ready to use. More icons are coming.)
-</div>
-<div class="col-md-9">
-<div class="row">
-  <div class="col-md-12">
-    <p>
-      We have two sets of icons; one with a few icons with colors that are fixed and another with some other, more
-      general icons available in the colors charcoal, white and red, and in the sizes 16, 24, 32 and 48 pixels width and height. Sizes 32 and 48 to be used in retina displays
-    </p>
-    <p>
-      <strong>Note!</strong> The icons come in only two sizes, small and medium. On standard screens we use 16 and 24 pixel size icons. On retina screens we use 32 and 48 pixel size icons. 
-      We have just 2 classes "stb-sprite-small" and "stb-sprite-medium" to be used for size 16 and 24 in normal screens and for size 32 and 48 for retina displays with the help of media queries. 
-    </p>
-    <h3>Color icons</h3>
-    <strong class="top-margin-20">Code:</strong>
-              <pre class="prettyprint">
-&lt;span class=&quot;stb-color-sprite-[small|medium] [icon-name]&quot;&gt;&lt;/span&gt;</pre>
-    <p>
-      ok <br />
-      <span class="stb-color-sprite-small ok"></span>
-      <span class="stb-color-sprite-medium ok circle"></span>
-    </p>
-    <p>
-      ok-circle <br />
-      <span class="stb-color-sprite-small ok-circle"></span>
-      <span class="stb-color-sprite-medium ok-circle"></span>
-    </p>
-    <p>
-      warning <br />
-      <span class="stb-color-sprite-small warning"></span>
-      <span class="stb-color-sprite-medium warning circle"></span>
-    </p>
-    <p>
-      info <br />
-      <span class="stb-color-sprite-small info"></span>
-      <span class="stb-color-sprite-medium info"></span>
-    </p>
-    <p>
-      pdf <br />
-      <span class="stb-color-sprite-small pdf"></span>
-      <span class="stb-color-sprite-medium pdf"></span>
-    </p>
-    <p>
-      word <br />
-      <span class="stb-color-sprite-small word"></span>
-      <span class="stb-color-sprite-medium word"></span>
-    </p>
-    <p>
-      excel <br />
-      <span class="stb-color-sprite-small excel"></span>
-      <span class="stb-color-sprite-medium excel"></span>
-    </p>
-    <p>
-      powerpoint <br />
-      <span class="stb-color-sprite-small powerpoint"></span>
-      <span class="stb-color-sprite-medium powerpoint"></span>
-    </p>
+  <div class="col-md-3">
+    <h2>Icons</h2>
+    (Ready to use. More icons are coming.)
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          We have two sets of icons; one with a few icons with colors that are fixed and another with some other, more
+          general icons available in the colors charcoal, white and red, and in the sizes 16, 24, 32 and 48 pixels width and height. Sizes 32 and 48 to be used in retina displays
+        </p>
+        <p>
+          <strong>Note!</strong> The icons come in only two sizes, small and medium. On standard screens we use 16 and 24 pixel size icons. On retina screens we use 32 and 48 pixel size icons. 
+          We have just 2 classes "stb-sprite-small" and "stb-sprite-medium" to be used for size 16 and 24 in normal screens and for size 32 and 48 for retina displays with the help of media queries. 
+        </p>
+        <h3>Color icons</h3>
+        <strong class="top-margin-20">Code:</strong>
+                  <pre class="prettyprint">
+    &lt;span class=&quot;stb-color-sprite-[small|medium] [icon-name]&quot;&gt;&lt;/span&gt;</pre>
+        <p>
+          ok <br />
+          <span class="stb-color-sprite-small ok"></span>
+          <span class="stb-color-sprite-medium ok circle"></span>
+        </p>
+        <p>
+          ok-circle <br />
+          <span class="stb-color-sprite-small ok-circle"></span>
+          <span class="stb-color-sprite-medium ok-circle"></span>
+        </p>
+        <p>
+          warning <br />
+          <span class="stb-color-sprite-small warning"></span>
+          <span class="stb-color-sprite-medium warning circle"></span>
+        </p>
+        <p>
+          info <br />
+          <span class="stb-color-sprite-small info"></span>
+          <span class="stb-color-sprite-medium info"></span>
+        </p>
+        <p>
+          pdf <br />
+          <span class="stb-color-sprite-small pdf"></span>
+          <span class="stb-color-sprite-medium pdf"></span>
+        </p>
+        <p>
+          word <br />
+          <span class="stb-color-sprite-small word"></span>
+          <span class="stb-color-sprite-medium word"></span>
+        </p>
+        <p>
+          excel <br />
+          <span class="stb-color-sprite-small excel"></span>
+          <span class="stb-color-sprite-medium excel"></span>
+        </p>
+        <p>
+          powerpoint <br />
+          <span class="stb-color-sprite-small powerpoint"></span>
+          <span class="stb-color-sprite-medium powerpoint"></span>
+        </p>
 
-    <h3>General mono-color icons</h3>
-    <strong class="top-margin-20">Code:</strong>
-              <pre class="prettyprint">
-&lt;span class=&quot;stb-sprite-[small|medium] [icon-name] [red|white|(defaults to charcoal)]&quot;&gt;&lt;/span&gt;</pre>
-  </div>
-</div>
-<div class="col-md-4">
-<h4>Charcoal (default)</h4>
-<p>
-  pretzel <br />
-  <span class="stb-sprite-small pretzel"></span>
-  <span class="stb-sprite-medium pretzel"></span>
-</p>
-<p>
-  chevron-up <br />
-  <span class="stb-sprite-small chevron-up"></span>
-  <span class="stb-sprite-medium chevron-up"></span>
-</p>
-<p>
-  chevron-down <br />
-  <span class="stb-sprite-small chevron-down"></span>
-  <span class="stb-sprite-medium chevron-down"></span>
-</p>
-<p>
-  chevron-left <br />
-  <span class="stb-sprite-small chevron-left"></span>
-  <span class="stb-sprite-medium chevron-left"></span>
-</p>
-<p>
-  chevron-right <br />
-  <span class="stb-sprite-small chevron-right"></span>
-  <span class="stb-sprite-medium chevron-right"></span>
-</p>
-<p>
-  arrow-up <br />
-  <span class="stb-sprite-small arrow-up"></span>
-  <span class="stb-sprite-medium arrow-up"></span>
-</p>
-<p>
-  arrow-down <br />
-  <span class="stb-sprite-small arrow-down"></span>
-  <span class="stb-sprite-medium arrow-down"></span>
-</p>
-<p>
-  arrow-left <br />
-  <span class="stb-sprite-small arrow-left"></span>
-  <span class="stb-sprite-medium arrow-left"></span>
-</p>
-<p>
-  arrow-right <br />
-  <span class="stb-sprite-small arrow-right"></span>
-  <span class="stb-sprite-medium arrow-right"></span>
-</p>
-<p>
-  remove <br />
-  <span class="stb-sprite-small remove"></span>
-  <span class="stb-sprite-medium remove"></span>
-</p>
-<p>
-  pencil <br />
-  <span class="stb-sprite-small pencil"></span>
-  <span class="stb-sprite-medium pencil"></span>
-</p>
-<p>
-  edit <br />
-  <span class="stb-sprite-small edit"></span>
-  <span class="stb-sprite-medium edit"></span>
-</p>
-<p>
-  checkdot <br />
-  <span class="stb-sprite-small checkdot"></span>
-  <span class="stb-sprite-medium checkdot"></span>
-</p>
-<p>
-  menu-bars <br />
-  <span class="stb-sprite-small menu-bars"></span>
-  <span class="stb-sprite-medium menu-bars"></span></p>
-<p>
-  personal-menu <br />
-  <span class="stb-sprite-small personal-menu"></span>
-  <span class="stb-sprite-medium personal-menu"></span>
-</p>
-<p>
-  globe <br />
-  <span class="stb-sprite-small globe"></span>
-  <span class="stb-sprite-medium globe"></span>
-</p>
-<p>
-  search <br />
-  <span class="stb-sprite-small search"></span>
-  <span class="stb-sprite-medium search"></span>
-</p>
-<p>
-  phone <br />
-  <span class="stb-sprite-small phone"></span>
-  <span class="stb-sprite-medium phone"></span>
-</p>
-<p>
-  envelope <br />
-  <span class="stb-sprite-small envelope"></span>
-  <span class="stb-sprite-medium envelope"></span>
-</p>
-<p>
-  chat <br />
-  <span class="stb-sprite-small chat"></span>
-  <span class="stb-sprite-medium chat"></span>
-</p>
-<p>
-  bubble (general for contact) <br />
-  <span class="stb-sprite-small bubble"></span>
-  <span class="stb-sprite-medium bubble"></span>
-</p>
-<p>
-  employee <br />
-  <span class="stb-sprite-small employee"></span>
-  <span class="stb-sprite-medium employee"></span>
-</p>
-<p>
-  user <br />
-  <span class="stb-sprite-small user"></span>
-  <span class="stb-sprite-medium user"></span>
-</p>
-<p>
-  facebook <br />
-  <span class="stb-sprite-small facebook"></span>
-  <span class="stb-sprite-medium facebook"></span>
-</p>
-<p>
-  twitter <br />
-  <span class="stb-sprite-small twitter"></span>
-  <span class="stb-sprite-medium twitter"></span>
-</p>
-<p>
-  youtube <br />
-  <span class="stb-sprite-small youtube"></span>
-  <span class="stb-sprite-medium youtube"></span>
-</p>
-<p>
-  play <br />
-  <span class="stb-sprite-small play"></span>
-  <span class="stb-sprite-medium play"></span>
-</p>
-<p>
-  blog <br />
-  <span class="stb-sprite-small blog"></span>
-  <span class="stb-sprite-medium blog"></span>
-</p>
-<p>
-  calc <br />
-  <span class="stb-sprite-small calc"></span>
-  <span class="stb-sprite-medium calc"></span>
-</p>
-<p>
-  calendar <br />
-  <span class="stb-sprite-small calendar"></span>
-  <span class="stb-sprite-medium calendar"></span>
-</p>
-<p>
-  lock <br />
-  <span class="stb-sprite-small lock"></span>
-  <span class="stb-sprite-medium lock"></span>
-</p>
-<p>
-  trash <br />
-  <span class="stb-sprite-small trash"></span>
-  <span class="stb-sprite-medium trash"></span>
-</p>
-<p>
-  wrench <br />
-  <span class="stb-sprite-small wrench"></span>
-  <span class="stb-sprite-medium wrench"></span>
-</p>
+        <h3>General mono-color icons</h3>
+        <strong class="top-margin-20">Code:</strong>
+                  <pre class="prettyprint">
+    &lt;span class=&quot;stb-sprite-[small|medium] [icon-name] [red|white|(defaults to charcoal)]&quot;&gt;&lt;/span&gt;</pre>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h4>Charcoal (default)</h4>
+      <p>
+        pretzel <br />
+        <span class="stb-sprite-small pretzel"></span>
+        <span class="stb-sprite-medium pretzel"></span>
+      </p>
+      <p>
+        chevron-up <br />
+        <span class="stb-sprite-small chevron-up"></span>
+        <span class="stb-sprite-medium chevron-up"></span>
+      </p>
+      <p>
+        chevron-down <br />
+        <span class="stb-sprite-small chevron-down"></span>
+        <span class="stb-sprite-medium chevron-down"></span>
+      </p>
+      <p>
+        chevron-left <br />
+        <span class="stb-sprite-small chevron-left"></span>
+        <span class="stb-sprite-medium chevron-left"></span>
+      </p>
+      <p>
+        chevron-right <br />
+        <span class="stb-sprite-small chevron-right"></span>
+        <span class="stb-sprite-medium chevron-right"></span>
+      </p>
+      <p>
+        arrow-up <br />
+        <span class="stb-sprite-small arrow-up"></span>
+        <span class="stb-sprite-medium arrow-up"></span>
+      </p>
+      <p>
+        arrow-down <br />
+        <span class="stb-sprite-small arrow-down"></span>
+        <span class="stb-sprite-medium arrow-down"></span>
+      </p>
+      <p>
+        arrow-left <br />
+        <span class="stb-sprite-small arrow-left"></span>
+        <span class="stb-sprite-medium arrow-left"></span>
+      </p>
+      <p>
+        arrow-right <br />
+        <span class="stb-sprite-small arrow-right"></span>
+        <span class="stb-sprite-medium arrow-right"></span>
+      </p>
+      <p>
+        remove <br />
+        <span class="stb-sprite-small remove"></span>
+        <span class="stb-sprite-medium remove"></span>
+      </p>
+      <p>
+        pencil <br />
+        <span class="stb-sprite-small pencil"></span>
+        <span class="stb-sprite-medium pencil"></span>
+      </p>
+      <p>
+        edit <br />
+        <span class="stb-sprite-small edit"></span>
+        <span class="stb-sprite-medium edit"></span>
+      </p>
+      <p>
+        checkdot <br />
+        <span class="stb-sprite-small checkdot"></span>
+        <span class="stb-sprite-medium checkdot"></span>
+      </p>
+      <p>
+        menu-bars <br />
+        <span class="stb-sprite-small menu-bars"></span>
+        <span class="stb-sprite-medium menu-bars"></span></p>
+      <p>
+        personal-menu <br />
+        <span class="stb-sprite-small personal-menu"></span>
+        <span class="stb-sprite-medium personal-menu"></span>
+      </p>
+      <p>
+        globe <br />
+        <span class="stb-sprite-small globe"></span>
+        <span class="stb-sprite-medium globe"></span>
+      </p>
+      <p>
+        search <br />
+        <span class="stb-sprite-small search"></span>
+        <span class="stb-sprite-medium search"></span>
+      </p>
+      <p>
+        phone <br />
+        <span class="stb-sprite-small phone"></span>
+        <span class="stb-sprite-medium phone"></span>
+      </p>
+      <p>
+        envelope <br />
+        <span class="stb-sprite-small envelope"></span>
+        <span class="stb-sprite-medium envelope"></span>
+      </p>
+      <p>
+        chat <br />
+        <span class="stb-sprite-small chat"></span>
+        <span class="stb-sprite-medium chat"></span>
+      </p>
+      <p>
+        bubble (general for contact) <br />
+        <span class="stb-sprite-small bubble"></span>
+        <span class="stb-sprite-medium bubble"></span>
+      </p>
+      <p>
+        employee <br />
+        <span class="stb-sprite-small employee"></span>
+        <span class="stb-sprite-medium employee"></span>
+      </p>
+      <p>
+        user <br />
+        <span class="stb-sprite-small user"></span>
+        <span class="stb-sprite-medium user"></span>
+      </p>
+      <p>
+        facebook <br />
+        <span class="stb-sprite-small facebook"></span>
+        <span class="stb-sprite-medium facebook"></span>
+      </p>
+      <p>
+        twitter <br />
+        <span class="stb-sprite-small twitter"></span>
+        <span class="stb-sprite-medium twitter"></span>
+      </p>
+      <p>
+        youtube <br />
+        <span class="stb-sprite-small youtube"></span>
+        <span class="stb-sprite-medium youtube"></span>
+      </p>
+      <p>
+        play <br />
+        <span class="stb-sprite-small play"></span>
+        <span class="stb-sprite-medium play"></span>
+      </p>
+      <p>
+        blog <br />
+        <span class="stb-sprite-small blog"></span>
+        <span class="stb-sprite-medium blog"></span>
+      </p>
+      <p>
+        calc <br />
+        <span class="stb-sprite-small calc"></span>
+        <span class="stb-sprite-medium calc"></span>
+      </p>
+      <p>
+        calendar <br />
+        <span class="stb-sprite-small calendar"></span>
+        <span class="stb-sprite-medium calendar"></span>
+      </p>
+      <p>
+        lock <br />
+        <span class="stb-sprite-small lock"></span>
+        <span class="stb-sprite-medium lock"></span>
+      </p>
+      <p>
+        trash <br />
+        <span class="stb-sprite-small trash"></span>
+        <span class="stb-sprite-medium trash"></span>
+      </p>
+      <p>
+        wrench <br />
+        <span class="stb-sprite-small wrench"></span>
+        <span class="stb-sprite-medium wrench"></span>
+      </p>
 
-</div>
-<div class="col-md-4">
-<h4>Red (use with caution)</h4>
-<p>
-  pretzel <br />
-  <span class="stb-sprite-small red pretzel"></span>
-  <span class="stb-sprite-medium red pretzel"></span>
-</p>
-<p>
-  chevron-up <br />
-  <span class="stb-sprite-small red chevron-up"></span>
-  <span class="stb-sprite-medium red chevron-up"></span>
-</p>
-<p>
-  chevron-down <br />
-  <span class="stb-sprite-small red chevron-down"></span>
-  <span class="stb-sprite-medium red chevron-down"></span>
-</p>
-<p>
-  chevron-left <br />
-  <span class="stb-sprite-small red chevron-left"></span>
-  <span class="stb-sprite-medium red chevron-left"></span>
-</p>
-<p>
-  chevron-right <br />
-  <span class="stb-sprite-small red chevron-right"></span>
-  <span class="stb-sprite-medium red chevron-right"></span>
-</p>
-<p>
-  arrow-up <br />
-  <span class="stb-sprite-small red arrow-up"></span>
-  <span class="stb-sprite-medium red arrow-up"></span>
-</p>
-<p>
-  arrow-down <br />
-  <span class="stb-sprite-small red arrow-down"></span>
-  <span class="stb-sprite-medium red arrow-down"></span>
-</p>
-<p>
-  arrow-left <br />
-  <span class="stb-sprite-small red arrow-left"></span>
-  <span class="stb-sprite-medium red arrow-left"></span>
-</p>
-<p>
-  arrow-right <br />
-  <span class="stb-sprite-small red arrow-right"></span>
-  <span class="stb-sprite-medium red arrow-right"></span>
-</p>
-<p>
-  remove <br />
-  <span class="stb-sprite-small red remove"></span>
-  <span class="stb-sprite-medium red remove"></span>
-</p>
-<p>
-  pencil <br />
-  <span class="stb-sprite-small red pencil"></span>
-  <span class="stb-sprite-medium red pencil"></span>
-</p>
-<p>
-  edit <br />
-  <span class="stb-sprite-small red edit"></span>
-  <span class="stb-sprite-medium red edit"></span>
-</p>
-<p>
-  checkdot <br />
-  <span class="stb-sprite-small red checkdot"></span>
-  <span class="stb-sprite-medium red checkdot"></span>
-</p>
-<p>
-  menu-bars <br />
-  <span class="stb-sprite-small red menu-bars"></span>
-  <span class="stb-sprite-medium red menu-bars"></span>
-</p>
-<p>
-  personal-menu <br />
-  <span class="stb-sprite-small red personal-menu"></span>
-  <span class="stb-sprite-medium red personal-menu"></span>
-</p>
-<p>
-  globe <br />
-  <span class="stb-sprite-small red globe"></span>
-  <span class="stb-sprite-medium red globe"></span>
-</p>
-<p>
-  search <br />
-  <span class="stb-sprite-small red search"></span>
-  <span class="stb-sprite-medium red search"></span>
-</p>
-<p>
-  phone <br />
-  <span class="stb-sprite-small red phone"></span>
-  <span class="stb-sprite-medium red phone"></span>
-</p>
-<p>
-  envelope <br />
-  <span class="stb-sprite-small red envelope"></span>
-  <span class="stb-sprite-medium red envelope"></span>
-</p>
-<p>
-  chat <br />
-  <span class="stb-sprite-small red chat"></span>
-  <span class="stb-sprite-medium red chat"></span>
-</p>
-<p>
-  bubble (general for contact) <br />
-  <span class="stb-sprite-small red bubble"></span>
-  <span class="stb-sprite-medium red bubble"></span>
-</p>
-<p>
-  employee <br />
-  <span class="stb-sprite-small red employee"></span>
-  <span class="stb-sprite-medium red employee"></span>
-</p>
-<p>
-  user <br />
-  <span class="stb-sprite-small red user"></span>
-  <span class="stb-sprite-medium red user"></span>
-</p>
-<p>
-  facebook <br />
-  <span class="stb-sprite-small red facebook"></span>
-  <span class="stb-sprite-medium red facebook"></span>
-</p>
-<p>
-  twitter <br />
-  <span class="stb-sprite-small red twitter"></span>
-  <span class="stb-sprite-medium red twitter"></span>
-</p>
-<p>
-  youtube <br />
-  <span class="stb-sprite-small red youtube"></span>
-  <span class="stb-sprite-medium red youtube"></span>
-</p>
-<p>
-  play <br />
-  <span class="stb-sprite-small red play"></span>
-  <span class="stb-sprite-medium red play"></span>
-</p>
-<p>
-  blog <br />
-  <span class="stb-sprite-small red blog"></span>
-  <span class="stb-sprite-medium red blog"></span>
-</p>
-<p>
-  calc <br />
-  <span class="stb-sprite-small red calc"></span>
-  <span class="stb-sprite-medium red calc"></span>
-</p>
-<p>
-  calendar <br />
-  <span class="stb-sprite-small red calendar"></span>
-  <span class="stb-sprite-medium red calendar"></span>
-</p>
-<p>
-  lock <br />
-  <span class="stb-sprite-small red lock"></span>
-  <span class="stb-sprite-medium red lock"></span>
-</p>
-<p>
-  trash <br />
-  <span class="stb-sprite-small red trash"></span>
-  <span class="stb-sprite-medium red trash"></span>
-</p>
-<p>
-  wrench <br />
-  <span class="stb-sprite-small red wrench"></span>
-  <span class="stb-sprite-medium red wrench"></span>
-</p>
-</div>
-<div class="col-md-4">
-<h4>White</h4>
-<div class="stb-box second">
-<p>
-  pretzel <br />
-  <span class="stb-sprite-small white pretzel"></span>
-  <span class="stb-sprite-medium white pretzel"></span>
-</p>
-<p>
-  chevron-up <br />
-  <span class="stb-sprite-small white chevron-up"></span>
-  <span class="stb-sprite-medium white chevron-up"></span>
-</p>
-<p>
-  chevron-down <br />
-  <span class="stb-sprite-small white chevron-down"></span>
-  <span class="stb-sprite-medium white chevron-down"></span>
-</p>
-<p>
-  chevron-left <br />
-  <span class="stb-sprite-small white chevron-left"></span>
-  <span class="stb-sprite-medium white chevron-left"></span>
-</p>
-<p>
-  chevron-right <br />
-  <span class="stb-sprite-small white chevron-right"></span>
-  <span class="stb-sprite-medium white chevron-right"></span>
-</p>
-<p>
-  arrow-up <br />
-  <span class="stb-sprite-small white arrow-up"></span>
-  <span class="stb-sprite-medium white arrow-up"></span>
-</p>
-<p>
-  arrow-down <br />
-  <span class="stb-sprite-small white arrow-down"></span>
-  <span class="stb-sprite-medium white arrow-down"></span>
-</p>
-<p>
-  arrow-left <br />
-  <span class="stb-sprite-small white arrow-left"></span>
-  <span class="stb-sprite-medium white arrow-left"></span>
-</p>
-<p>
-  arrow-right <br />
-  <span class="stb-sprite-small white arrow-right"></span>
-  <span class="stb-sprite-medium white arrow-right"></span>
-</p>
-<p>
-  remove <br />
-  <span class="stb-sprite-small white remove"></span>
-  <span class="stb-sprite-medium white remove"></span>
-</p>
-<p>
-  pencil <br />
-  <span class="stb-sprite-small white pencil"></span>
-  <span class="stb-sprite-medium white pencil"></span>
-</p>
-<p>
-  edit <br />
-  <span class="stb-sprite-small white edit"></span>
-  <span class="stb-sprite-medium white edit"></span>
-</p>
-<p>
-  checkdot <br />
-  <span class="stb-sprite-small white checkdot"></span>
-  <span class="stb-sprite-medium white checkdot"></span>
-</p>
-<p>
-  menu-bars <br />
-  <span class="stb-sprite-small white menu-bars"></span>
-  <span class="stb-sprite-medium white menu-bars"></span>
-</p>
-<p>
-  personal-menu <br />
-  <span class="stb-sprite-small white personal-menu"></span>
-  <span class="stb-sprite-medium white personal-menu"></span>
-</p>
-<p>
-  globe <br />
-  <span class="stb-sprite-small white globe"></span>
-  <span class="stb-sprite-medium white globe"></span>
-</p>
-<p>
-  search <br />
-  <span class="stb-sprite-small white search"></span>
-  <span class="stb-sprite-medium white search"></span>
-</p>
-<p>
-  phone <br />
-  <span class="stb-sprite-small white phone"></span>
-  <span class="stb-sprite-medium white phone"></span>
-</p>
+    </div>
+    <div class="col-md-4">
+      <h4>Red (use with caution)</h4>
+      <p>
+        pretzel <br />
+        <span class="stb-sprite-small red pretzel"></span>
+        <span class="stb-sprite-medium red pretzel"></span>
+      </p>
+      <p>
+        chevron-up <br />
+        <span class="stb-sprite-small red chevron-up"></span>
+        <span class="stb-sprite-medium red chevron-up"></span>
+      </p>
+      <p>
+        chevron-down <br />
+        <span class="stb-sprite-small red chevron-down"></span>
+        <span class="stb-sprite-medium red chevron-down"></span>
+      </p>
+      <p>
+        chevron-left <br />
+        <span class="stb-sprite-small red chevron-left"></span>
+        <span class="stb-sprite-medium red chevron-left"></span>
+      </p>
+      <p>
+        chevron-right <br />
+        <span class="stb-sprite-small red chevron-right"></span>
+        <span class="stb-sprite-medium red chevron-right"></span>
+      </p>
+      <p>
+        arrow-up <br />
+        <span class="stb-sprite-small red arrow-up"></span>
+        <span class="stb-sprite-medium red arrow-up"></span>
+      </p>
+      <p>
+        arrow-down <br />
+        <span class="stb-sprite-small red arrow-down"></span>
+        <span class="stb-sprite-medium red arrow-down"></span>
+      </p>
+      <p>
+        arrow-left <br />
+        <span class="stb-sprite-small red arrow-left"></span>
+        <span class="stb-sprite-medium red arrow-left"></span>
+      </p>
+      <p>
+        arrow-right <br />
+        <span class="stb-sprite-small red arrow-right"></span>
+        <span class="stb-sprite-medium red arrow-right"></span>
+      </p>
+      <p>
+        remove <br />
+        <span class="stb-sprite-small red remove"></span>
+        <span class="stb-sprite-medium red remove"></span>
+      </p>
+      <p>
+        pencil <br />
+        <span class="stb-sprite-small red pencil"></span>
+        <span class="stb-sprite-medium red pencil"></span>
+      </p>
+      <p>
+        edit <br />
+        <span class="stb-sprite-small red edit"></span>
+        <span class="stb-sprite-medium red edit"></span>
+      </p>
+      <p>
+        checkdot <br />
+        <span class="stb-sprite-small red checkdot"></span>
+        <span class="stb-sprite-medium red checkdot"></span>
+      </p>
+      <p>
+        menu-bars <br />
+        <span class="stb-sprite-small red menu-bars"></span>
+        <span class="stb-sprite-medium red menu-bars"></span>
+      </p>
+      <p>
+        personal-menu <br />
+        <span class="stb-sprite-small red personal-menu"></span>
+        <span class="stb-sprite-medium red personal-menu"></span>
+      </p>
+      <p>
+        globe <br />
+        <span class="stb-sprite-small red globe"></span>
+        <span class="stb-sprite-medium red globe"></span>
+      </p>
+      <p>
+        search <br />
+        <span class="stb-sprite-small red search"></span>
+        <span class="stb-sprite-medium red search"></span>
+      </p>
+      <p>
+        phone <br />
+        <span class="stb-sprite-small red phone"></span>
+        <span class="stb-sprite-medium red phone"></span>
+      </p>
+      <p>
+        envelope <br />
+        <span class="stb-sprite-small red envelope"></span>
+        <span class="stb-sprite-medium red envelope"></span>
+      </p>
+      <p>
+        chat <br />
+        <span class="stb-sprite-small red chat"></span>
+        <span class="stb-sprite-medium red chat"></span>
+      </p>
+      <p>
+        bubble (general for contact) <br />
+        <span class="stb-sprite-small red bubble"></span>
+        <span class="stb-sprite-medium red bubble"></span>
+      </p>
+      <p>
+        employee <br />
+        <span class="stb-sprite-small red employee"></span>
+        <span class="stb-sprite-medium red employee"></span>
+      </p>
+      <p>
+        user <br />
+        <span class="stb-sprite-small red user"></span>
+        <span class="stb-sprite-medium red user"></span>
+      </p>
+      <p>
+        facebook <br />
+        <span class="stb-sprite-small red facebook"></span>
+        <span class="stb-sprite-medium red facebook"></span>
+      </p>
+      <p>
+        twitter <br />
+        <span class="stb-sprite-small red twitter"></span>
+        <span class="stb-sprite-medium red twitter"></span>
+      </p>
+      <p>
+        youtube <br />
+        <span class="stb-sprite-small red youtube"></span>
+        <span class="stb-sprite-medium red youtube"></span>
+      </p>
+      <p>
+        play <br />
+        <span class="stb-sprite-small red play"></span>
+        <span class="stb-sprite-medium red play"></span>
+      </p>
+      <p>
+        blog <br />
+        <span class="stb-sprite-small red blog"></span>
+        <span class="stb-sprite-medium red blog"></span>
+      </p>
+      <p>
+        calc <br />
+        <span class="stb-sprite-small red calc"></span>
+        <span class="stb-sprite-medium red calc"></span>
+      </p>
+      <p>
+        calendar <br />
+        <span class="stb-sprite-small red calendar"></span>
+        <span class="stb-sprite-medium red calendar"></span>
+      </p>
+      <p>
+        lock <br />
+        <span class="stb-sprite-small red lock"></span>
+        <span class="stb-sprite-medium red lock"></span>
+      </p>
+      <p>
+        trash <br />
+        <span class="stb-sprite-small red trash"></span>
+        <span class="stb-sprite-medium red trash"></span>
+      </p>
+      <p>
+        wrench <br />
+        <span class="stb-sprite-small red wrench"></span>
+        <span class="stb-sprite-medium red wrench"></span>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h4>White</h4>
+      <div class="stb-box second">
+        <p>
+          pretzel <br />
+          <span class="stb-sprite-small white pretzel"></span>
+          <span class="stb-sprite-medium white pretzel"></span>
+        </p>
+        <p>
+          chevron-up <br />
+          <span class="stb-sprite-small white chevron-up"></span>
+          <span class="stb-sprite-medium white chevron-up"></span>
+        </p>
+        <p>
+          chevron-down <br />
+          <span class="stb-sprite-small white chevron-down"></span>
+          <span class="stb-sprite-medium white chevron-down"></span>
+        </p>
+        <p>
+          chevron-left <br />
+          <span class="stb-sprite-small white chevron-left"></span>
+          <span class="stb-sprite-medium white chevron-left"></span>
+        </p>
+        <p>
+          chevron-right <br />
+          <span class="stb-sprite-small white chevron-right"></span>
+          <span class="stb-sprite-medium white chevron-right"></span>
+        </p>
+        <p>
+          arrow-up <br />
+          <span class="stb-sprite-small white arrow-up"></span>
+          <span class="stb-sprite-medium white arrow-up"></span>
+        </p>
+        <p>
+          arrow-down <br />
+          <span class="stb-sprite-small white arrow-down"></span>
+          <span class="stb-sprite-medium white arrow-down"></span>
+        </p>
+        <p>
+          arrow-left <br />
+          <span class="stb-sprite-small white arrow-left"></span>
+          <span class="stb-sprite-medium white arrow-left"></span>
+        </p>
+        <p>
+          arrow-right <br />
+          <span class="stb-sprite-small white arrow-right"></span>
+          <span class="stb-sprite-medium white arrow-right"></span>
+        </p>
+        <p>
+          remove <br />
+          <span class="stb-sprite-small white remove"></span>
+          <span class="stb-sprite-medium white remove"></span>
+        </p>
+        <p>
+          pencil <br />
+          <span class="stb-sprite-small white pencil"></span>
+          <span class="stb-sprite-medium white pencil"></span>
+        </p>
+        <p>
+          edit <br />
+          <span class="stb-sprite-small white edit"></span>
+          <span class="stb-sprite-medium white edit"></span>
+        </p>
+        <p>
+          checkdot <br />
+          <span class="stb-sprite-small white checkdot"></span>
+          <span class="stb-sprite-medium white checkdot"></span>
+        </p>
+        <p>
+          menu-bars <br />
+          <span class="stb-sprite-small white menu-bars"></span>
+          <span class="stb-sprite-medium white menu-bars"></span>
+        </p>
+        <p>
+          personal-menu <br />
+          <span class="stb-sprite-small white personal-menu"></span>
+          <span class="stb-sprite-medium white personal-menu"></span>
+        </p>
+        <p>
+          globe <br />
+          <span class="stb-sprite-small white globe"></span>
+          <span class="stb-sprite-medium white globe"></span>
+        </p>
+        <p>
+          search <br />
+          <span class="stb-sprite-small white search"></span>
+          <span class="stb-sprite-medium white search"></span>
+        </p>
+        <p>
+          phone <br />
+          <span class="stb-sprite-small white phone"></span>
+          <span class="stb-sprite-medium white phone"></span>
+        </p>
 
-<p>
-  envelope <br />
-  <span class="stb-sprite-small white envelope"></span>
-  <span class="stb-sprite-medium white envelope"></span>
-</p>
-<p>
-  chat <br />
-  <span class="stb-sprite-small white chat"></span>
-  <span class="stb-sprite-medium white chat"></span>
-</p>
-<p>
-  bubble (general for contact) <br />
-  <span class="stb-sprite-small white bubble"></span>
-  <span class="stb-sprite-medium white bubble"></span>
-</p>
-<p>
-  employee <br />
-  <span class="stb-sprite-small white employee"></span>
-  <span class="stb-sprite-medium white employee"></span>
-</p>
-<p>
-  user <br />
-  <span class="stb-sprite-small white user"></span>
-  <span class="stb-sprite-medium white user"></span>
-</p>
-<p>
-  facebook <br />
-  <span class="stb-sprite-small white facebook"></span>
-  <span class="stb-sprite-medium white facebook"></span>
-</p>
-<p>
-  twitter <br />
-  <span class="stb-sprite-small white twitter"></span>
-  <span class="stb-sprite-medium white twitter"></span>
-</p>
-<p>
-  youtube <br />
-  <span class="stb-sprite-small white youtube"></span>
-  <span class="stb-sprite-medium white youtube"></span>
-</p>
-<p>
-  play <br />
-  <span class="stb-sprite-small white play"></span>
-  <span class="stb-sprite-medium white play"></span>
-</p>
-<p>
-  blog <br />
-  <span class="stb-sprite-small white blog"></span>
-  <span class="stb-sprite-medium white blog"></span>
-</p>
-<p>
-  calc <br />
-  <span class="stb-sprite-small white calc"></span>
-  <span class="stb-sprite-medium white calc"></span>s
-</p>
-<p>
-  calendar <br />
-  <span class="stb-sprite-small white calendar"></span>
-  <span class="stb-sprite-medium white calendar"></span>
-</p>
-<p>
-  lock <br />
-  <span class="stb-sprite-small white lock"></span>
-  <span class="stb-sprite-medium white lock"></span>
-</p>
-<p>
-  trash <br />
-  <span class="stb-sprite-small white trash"></span>
-  <span class="stb-sprite-medium white trash"></span>
-</p>
-<p>
-  wrench <br />
-  <span class="stb-sprite-small white wrench"></span>
-  <span class="stb-sprite-medium white wrench"></span>
-</p>
-</div>
-</div>
+        <p>
+          envelope <br />
+          <span class="stb-sprite-small white envelope"></span>
+          <span class="stb-sprite-medium white envelope"></span>
+        </p>
+        <p>
+          chat <br />
+          <span class="stb-sprite-small white chat"></span>
+          <span class="stb-sprite-medium white chat"></span>
+        </p>
+        <p>
+          bubble (general for contact) <br />
+          <span class="stb-sprite-small white bubble"></span>
+          <span class="stb-sprite-medium white bubble"></span>
+        </p>
+        <p>
+          employee <br />
+          <span class="stb-sprite-small white employee"></span>
+          <span class="stb-sprite-medium white employee"></span>
+        </p>
+        <p>
+          user <br />
+          <span class="stb-sprite-small white user"></span>
+          <span class="stb-sprite-medium white user"></span>
+        </p>
+        <p>
+          facebook <br />
+          <span class="stb-sprite-small white facebook"></span>
+          <span class="stb-sprite-medium white facebook"></span>
+        </p>
+        <p>
+          twitter <br />
+          <span class="stb-sprite-small white twitter"></span>
+          <span class="stb-sprite-medium white twitter"></span>
+        </p>
+        <p>
+          youtube <br />
+          <span class="stb-sprite-small white youtube"></span>
+          <span class="stb-sprite-medium white youtube"></span>
+        </p>
+        <p>
+          play <br />
+          <span class="stb-sprite-small white play"></span>
+          <span class="stb-sprite-medium white play"></span>
+        </p>
+        <p>
+          blog <br />
+          <span class="stb-sprite-small white blog"></span>
+          <span class="stb-sprite-medium white blog"></span>
+        </p>
+        <p>
+          calc <br />
+          <span class="stb-sprite-small white calc"></span>
+          <span class="stb-sprite-medium white calc"></span>s
+        </p>
+        <p>
+          calendar <br />
+          <span class="stb-sprite-small white calendar"></span>
+          <span class="stb-sprite-medium white calendar"></span>
+        </p>
+        <p>
+          lock <br />
+          <span class="stb-sprite-small white lock"></span>
+          <span class="stb-sprite-medium white lock"></span>
+        </p>
+        <p>
+          trash <br />
+          <span class="stb-sprite-small white trash"></span>
+          <span class="stb-sprite-medium white trash"></span>
+        </p>
+        <p>
+          wrench <br />
+          <span class="stb-sprite-small white wrench"></span>
+          <span class="stb-sprite-medium white wrench"></span>
+        </p>
+      </div>
+    </div>
 
-<h3>Special icons with circle:</h3>
+    <h3>Special icons with circle:</h3>
 
-<div class="row">
-  <div class="col-md-2">
-    <p>phone</p>
-    <div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-small white phone"></span></div>
-    <div class="circle-24 stbcolor-secondary first pull-left"><span class="stb-sprite-medium white phone"></span></div>
-  </div>
-  <div class="col-md-2">
-    <p>chat</p>
-    <div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-small white chat"></span></div>
-    <div class="circle-24 stbcolor-secondary first pull-left"><span class="stb-sprite-medium white chat"></span></div>
-  </div>
-  <div class="col-md-2">
-    <p>envelope</p>
-    <div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-small white envelope"></span></div>
-    <div class="circle-24 stbcolor-secondary first pull-left"><span class="stb-sprite-medium white envelope"></span></div>
-  </div>
-  <div class="col-md-2">
-    <p>employee</p>
-    <div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-small white employee"></span></div>
-    <div class="circle-24 stbcolor-secondary first pull-left"><span class="stb-sprite-medium white employee"></span></div>
-  </div>
-</div>
+    <div class="row">
+      <div class="col-md-2">
+        <p>phone</p>
+        <div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-small white phone"></span></div>
+        <div class="circle-24 stbcolor-secondary first pull-left"><span class="stb-sprite-medium white phone"></span></div>
+      </div>
+      <div class="col-md-2">
+        <p>chat</p>
+        <div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-small white chat"></span></div>
+        <div class="circle-24 stbcolor-secondary first pull-left"><span class="stb-sprite-medium white chat"></span></div>
+      </div>
+      <div class="col-md-2">
+        <p>envelope</p>
+        <div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-small white envelope"></span></div>
+        <div class="circle-24 stbcolor-secondary first pull-left"><span class="stb-sprite-medium white envelope"></span></div>
+      </div>
+      <div class="col-md-2">
+        <p>employee</p>
+        <div class="circle-16 stbcolor-secondary first pull-left"><span class="stb-sprite-small white employee"></span></div>
+        <div class="circle-24 stbcolor-secondary first pull-left"><span class="stb-sprite-medium white employee"></span></div>
+      </div>
+    </div>
 
-<div class="row top-margin-10 ">
-  <div class="col-md-2">
-    <div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-small white phone"></span></div>
-    <div class="circle-24 stbcolor-secondary third pull-left"><span class="stb-sprite-medium white phone"></span></div>
-  </div>
-  <div class="col-md-2">
-    <div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-small white chat"></span></div>
-    <div class="circle-24 stbcolor-secondary third pull-left"><span class="stb-sprite-medium white chat"></span></div>
-  </div>
-  <div class="col-md-2">
-    <div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-small white envelope"></span></div>
-    <div class="circle-24 stbcolor-secondary third pull-left"><span class="stb-sprite-medium white envelope"></span></div>
-  </div>
-  <div class="col-md-2">
-    <div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-small white employee"></span></div>
-    <div class="circle-24 stbcolor-secondary third pull-left"><span class="stb-sprite-medium white employee"></span></div>
-  </div>
-</div>
+    <div class="row top-margin-10 ">
+      <div class="col-md-2">
+        <div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-small white phone"></span></div>
+        <div class="circle-24 stbcolor-secondary third pull-left"><span class="stb-sprite-medium white phone"></span></div>
+      </div>
+      <div class="col-md-2">
+        <div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-small white chat"></span></div>
+        <div class="circle-24 stbcolor-secondary third pull-left"><span class="stb-sprite-medium white chat"></span></div>
+      </div>
+      <div class="col-md-2">
+        <div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-small white envelope"></span></div>
+        <div class="circle-24 stbcolor-secondary third pull-left"><span class="stb-sprite-medium white envelope"></span></div>
+      </div>
+      <div class="col-md-2">
+        <div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-small white employee"></span></div>
+        <div class="circle-24 stbcolor-secondary third pull-left"><span class="stb-sprite-medium white employee"></span></div>
+      </div>
+    </div>
 
-<div class="row top-margin-10">
-  <div class="col-md-2">
-    <div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-small white phone"></span></div>
-    <div class="circle-24 stbcolor-gray third pull-left"><span class="stb-sprite-medium white phone"></span></div>
-  </div>
-  <div class="col-md-2">
-    <div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-small white chat"></span></div>
-    <div class="circle-24 stbcolor-gray third pull-left"><span class="stb-sprite-medium white chat"></span></div>
-  </div>
-  <div class="col-md-2">
-    <div class="circle-16 stbcolor-gray  third pull-left"><span class="stb-sprite-small white envelope"></span></div>
-    <div class="circle-24 stbcolor-gray  third pull-left"><span class="stb-sprite-medium white envelope"></span></div>
-  </div>
-  <div class="col-md-2">
-    <div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-small white employee"></span></div>
-    <div class="circle-24 stbcolor-gray third pull-left"><span class="stb-sprite-medium white employee"></span></div>
-  </div>
-</div>
+    <div class="row top-margin-10">
+      <div class="col-md-2">
+        <div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-small white phone"></span></div>
+        <div class="circle-24 stbcolor-gray third pull-left"><span class="stb-sprite-medium white phone"></span></div>
+      </div>
+      <div class="col-md-2">
+        <div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-small white chat"></span></div>
+        <div class="circle-24 stbcolor-gray third pull-left"><span class="stb-sprite-medium white chat"></span></div>
+      </div>
+      <div class="col-md-2">
+        <div class="circle-16 stbcolor-gray  third pull-left"><span class="stb-sprite-small white envelope"></span></div>
+        <div class="circle-24 stbcolor-gray  third pull-left"><span class="stb-sprite-medium white envelope"></span></div>
+      </div>
+      <div class="col-md-2">
+        <div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-small white employee"></span></div>
+        <div class="circle-24 stbcolor-gray third pull-left"><span class="stb-sprite-medium white employee"></span></div>
+      </div>
+    </div>
 
-
-
-</div>
-
+  </div>
 
 </div> <!-- /Icons row -->
 
-<hr class="top-margin-30">
-
-
-<div class="row bottom-margin-50"> <!-- Backgrounds section row -->
-  <div class="col-md-3">
-    <h2>Background playground</h2>
-    (NOT ready to use. Still being designed. Stick to simple white backgrounds for now.)
-  </div>
-  <div class="col-md-9">
-    <p>
-      The palette colors can be used to add a colored background in the entire width of the page or just the width of any given element. Additionally, we have a number of graphical backgrounds that also can be stretched across the entire width of a section of the page.
-    </p>
-    <p>
-      Below are some examples of backgrounds and combinations of what can be put on top of them.
-    </p>
-  </div>
-</div> <!-- /Backgrounds section row -->
-
-
-<div class="row"> 
-  <div class="col-md-12">
-    <p class="intro">Allowed background colors</p>
-  </div>
-</div> 
-<div class="row bottom-margin-20"> 
-  <div class="col-md-6 stbcolor-background first">
-    <p class="intro">Charcoal</p>
-    <p>&lt;stbcolor-background first&gt;</p>
-    <p>Fontcolor is set to white</p>
-  </div>
-  <div class="col-md-6 stbcolor-background second">
-    <p class="intro">Red</p>
-    <p>&lt;stbcolor-background second&gt;</p>
-    <p>Fontcolor is set to white</p>
-  </div>
-</div> 
-<div class="row bottom-margin-20"> 
-  <div class="col-md-6 stbcolor-background third">
-    <p class="intro">Moss</p>
-    <p>&lt;stbcolor-background third&gt;</p>
-    <p>Fontcolor is set to white</p>
-  </div>
-  <div class="col-md-6 stbcolor-background fourth">
-    <p class="intro">Dust dark</p>
-    <p>&lt;stbcolor-background fourth&gt;</p>
-    <p>Fontcolor is set to white</p>
-  </div>
-</div> 
-<div class="row bottom-margin-20"> 
-  <div class="col-md-6 stbcolor-background fifth">
-    <p class="intro">Gray 1</p>
-    <p>&lt;stbcolor-background fifth&gt;</p>
-    <p>Fontcolor is set to charcoal</p>
-  </div>
-  <div class="col-md-6 stbcolor-background sixth">
-    <p class="intro">Sand</p>
-    <p>&lt;stbcolor-background sixth&gt;</p>
-    <p>Fontcolor is set to charcoal</p>
-  </div>
-</div> 
-<div class="row bottom-margin-20"> 
-  <div class="col-md-6 stbcolor-background seventh">
-    <p class="intro">Sky</p>
-    <p>&lt;stbcolor-background seventh&gt;</p>
-    <p>Fontcolor is set to charcoal</p>
-  </div>
-  <div class="col-md-6 stbcolor-background eight">
-    <p class="intro">Light forest</p>
-    <p>&lt;stbcolor-background eight&gt;</p>
-    <p>Fontcolor is set to charcoal</p>
-  </div>
-</div> 
-
-
-</div> <!-- /container -->
-
-<!-- Full width backgrounds: -->
-
-<p>Example of "wooden" background:
-</p>
-<div class="background wood bottom-padding-30">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 top-padding-20">
-        <div class="stb-box first">
-          <h3>You can put text in a box here</h3>
-          <p>It may make sense for readability.</p>
-          <p>The contrast can be difficult to measure against universal design requirements when the background isn't uniform.</p>
-        </div>
-      </div>
-      <div class="col-md-6 top-padding-20">
-        <div class="stb-box fat red border">
-          <h3>This is straight onto the background</h3>
-          <p>Can you read it well enough?</p>
-          <p>Maybe. Maybe not.<br /><br /></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p class="top-margin-20">
-  Example of "blackboard" (charcoal) background:
-</p>
-<div class="stbcolor-secondary first">
-  <div class="container">
-    <div class="row" style="background: transparent url('images/chalkdust1.png') right top no-repeat;">
-      <div class="col-md-6 top-padding-20">
-        <div class="stb-box first">
-          <h3>You can put text in a box here</h3>
-          <p>It may make sense for readability.</p>
-          <p>The contrast can be difficult to measure against universal design requirements when the background isn't uniform.</p>
-        </div>
-      </div>
-      <div class="col-md-6 top-padding-20">
-        <div class="stb-box dark fat red border">
-          <h3>This is straight onto the background</h3>
-          <p>Can you see it well enough?</p>
-          <p>Maybe. Maybe not.<br /><br /></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="stbcolor-secondary sixth">
-  <p>
-    Sand
-  </p>
-  <div class="container">
-    <div class="row stbcolor-secondary fifth">
-      <div class="col-md-12">
-        <p>
-          Nude
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-secondary fourth">
-      <div class="col-md-12">
-        <p>
-          Dust
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 stbcolor-secondary third">
-        <p>
-          Forest
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-      <div class="col-md-6 stbcolor-secondary third darker">
-        <p>
-          Darker forest
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-secondary second">
-      <div class="col-md-12">
-        <p>
-          Moss
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-visuals first">
-      <div class="col-md-12">
-        <p>
-          Orange
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-visuals second">
-      <div class="col-md-12">
-        <p>
-          Peach
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-secondary first">
-      <div class="col-md-12">
-        <p>
-          Charcoal
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-
-    <div class="row stbcolor-primary first">
-      <div class="col-md-12">
-        <p>
-          Red
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-
-    <div class="row stbcolor-secondary seventh">
-      <div class="col-md-12">
-        <p>
-          Sky
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    &nbsp;
-  </div>
-</div>
-
-<div class="stbcolor-primary second">
-  <p>
-    Meet the Grays
-  </p>
-  <div class="container">
-    <div class="row stbcolor-primary third">
-      <div class="col-md-12">
-        <p>
-          White
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-gray first">
-      <div class="col-md-12">
-        <p>
-          Gray 1
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-gray second">
-      <div class="col-md-12">
-        <p>
-          Gray 2
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-gray third">
-      <div class="col-md-12">
-        <p>
-          Gray 3
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-gray fourth">
-      <div class="col-md-12">
-        <p>
-          Gray 4
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-gray fifth">
-      <div class="col-md-12">
-        <p>
-          Gray 5
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-    <div class="row stbcolor-secondary first">
-      <div class="col-md-12">
-        <p>
-          Charcoal
-        </p>
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-
-    &nbsp;
-  </div>
-</div>
-
 <hr class="top-margin-30" />
 
-
-<div class="container">
-<div class="row"> <!-- About forms -->
-  <div class="col-md-3">
-    <h2>Forms</h2>
-    (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
-  </div>
-  <div class="col-md-9">
-    <p>
-      We have barely started working with forms. There will be many changes before we have the form design elements ready for use.
-      The following sections should therefore not be used as specification for anything yet, but only as an indication of what might appear here eventually.
-    </p>
-  </div>
-</div>
-
-<hr class="top-margin-30" />
-
-<div class="row"> <!-- / General input fields row -->
-  <div class="col-md-3">
-    <h2>Forms: Text input fields</h2>
-    (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
-  </div>
-  <div class="col-md-9">
-    <p>
-      Forms are built using namespaced bootstrap-classes, stb-form-inline, stb-form-group, and so on. We have not over-ridden the standard Bootstrap focus indicator (a surrounding faint color gradient), because by now that is universally recognized as helpful to the general public.
-    </p>
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput1" style="width: 200px;">Standard with placeholder</label>
-        <input id="formInput1" type="text" class="" placeholder="Placeholder" style="width: 230px;">
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput2" style="width: 200px;">Input required <span class="input-required">*</span></label>
-        <input id="formInput2" type="text" class="" placeholder="Placeholder" style="width: 230px;">
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group" >
-        <label for="formInput3" style="width: 200px;">On hover</label>
-        <input id="formInput3" type="text" class="fauxInputHover" placeholder="Placeholder" style="width: 230px;">
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput4"  style="width: 200px;">On focus</label>
-        <input id="formInput4" type="text" class="fauxInputFocus" value="Show me some love|" style="width: 230px;">
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput5"  style="width: 200px;">Disabled</label>
-        <input id="formInput5" type="text" class="" style="width: 230px;" placeholder="Can't touch this" disabled>
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group" >
-        <label for="formInput6" style="width: 200px;">Error in field input</label>
-        <div class="error-message" ><span class="stb-color-sprite-small warning"></span><span class="input-faulty left-margin-10">Sounds about wrong!</span></div>
-        <input id="formInput6" type="text" class="input-fail" value="War is good for something" style="width: 230px;">
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group" >
-        <label for="formInput7" style="width: 200px;">Input becomes valid<span class="success-message stb-color-sprite-small ok left-margin-10"></span></label>
-        <input id="formInput7" type="text" class="input-success" value="I'll never be Beyonce..." style="width: 230px;">
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group" style="width: 250px">
-        <label for="formInput8">Textarea ("large input")</label>
-        <textarea id="formInput8" class="form-control" rows="4" cols="40" ></textarea>
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput9">With action button</label>
-        <input id="formInput9" type="text" class="has-submit" placeholder="Text..." style="width: 230px;">
-        <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput10">Hover with button</label>
-        <input id="formInput10" type="text" class="has-submit fauxInputHover" placeholder="Text..." style="width: 230px;">
-        <button type="submit" class="stb-btn stb-form is-submit fauxInputHover">Enter</button>
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput11">Focus with button</label>
-        <input id="formInput11" type="text" class="has-submit fauxInputFocus" value="Portveien|" style="width: 230px;">
-        <button type="submit" class="stb-btn stb-form is-submit fauxInputFocus">Enter</button>
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput12">Disabled</label>
-        <input id="formInput12" type="text" class="has-submit" placeholder="Fødselsnummer" style="width: 230px;" disabled>
-        <button type="submit" class="stb-btn stb-form is-submit" disabled>Enter</button>
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput13">Error in field input</label>
-        <div class="error-message"><span class="stb-color-sprite-small warning"></span> <span class="input-faulty">Sounds about wrong!</span></div>
-        <input id="formInput13" type="text" class="input-fail" value="Portveien 3" style="width: 230px;">
-        <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput13">Input becomes valid<span class="success-message stb-color-sprite-small ok left-margin-10"></span></label>
-        <input id="formInput13" type="text" class="input-success" value="Portveien 2" style="width: 230px;">
-        <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
-      </div>
-    </form>
-    
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="lanebelop" style="">Input with add-on</label>
-        <div class="input-group" style="width:230px;">
-          <input class="form-control" id="lanebelop" type="text" placeholder="Beløp"/>
-          <div class="stb-input-group-addon">kr</div>
-        </div>
-      </div>
-    </form>
-
-  </div> <!-- /col-md-9 -->
-</div> <!-- /row -->
-
-<div class="row">
-  <div class="col-md-9 col-md-offset-3">
-    <h4>form input elements</h4>
-          <pre class="prettyprint">
-&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
- &lt;div class=&quot;stb-form-group&quot;&gt;
-  &lt;label for=&quot;&quot; style=&quot;&quot;>Write label here&lt;/label&gt;
-  &lt;input id=&quot;&quot; type=&quot;text&quot; placeholder=&quot;Text...&quot; style=&quot;&quot;&gt;
- &lt;/div&gt;
-&lt;/form&gt;</pre>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-9 col-md-offset-3">
-    <h4>form input elements with action buttons</h4>
-          <pre class="prettyprint">
-&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
- &lt;div class=&quot;stb-form-group&quot;&gt;
-  &lt;label for="">Write label here&lt;/label&gt;
-  &lt;input id=&quot;&quot; type=&quot;text&quot; class=&quot;has-submit&quot; placeholder=&quot;Text...&quot; style=&quot;&quot;&gt;
-  &lt;button type=&quot;submit&quot; class=&quot;stb-btn stb-form is-submit&quot;&gt;Enter&lt;/button&gt;
- &lt;/div&gt;
-&lt;/form&gt;</pre>
-    </pre>
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-md-9 col-md-offset-3">
-      <h4>form input elements with add-on</h4>
-          <pre class="prettyprint">
-&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
-  &lt;div class=&quot;stb-form-group&quot;&gt;
-    &lt;label for=&quot;lanebelop&quot; style=&quot;&quot;&gt;Input with add-on&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot; style=&quot;width:230px;&quot;&gt;
-      &lt;input class=&quot;form-control&quot; id=&quot;lanebelop&quot; type=&quot;text&quot; placeholder=&quot;Beløp&quot;/&gt;
-      &lt;div class=&quot;stb-input-group-addon&quot;&gt;kr&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/form&gt;</pre>
-      </pre>
-    </div>
-
-
-</div> <!-- / General input fields row -->
-
-<hr class="top-margin-30" />
-
-
-<div class="row">
-  <div class="col-md-3">
-    <h2>Forms: Radio buttons and checkboxes</h2>
-    (Not finished, design will definitely change, but you can start using it anyway. Please consult storebrand.ny project.)
-  </div>
-
-  <div class="col-md-9">
-    <div class="row">
-      <form>
-        <div class="col-md-12">
-          <p>Standard html input functionality, only slightly styled:</p>
-        </div>
-        <div class="col-md-12">
-          <h3>Radio buttons</h3>
-          <p>
-            <strong>Choose wisely:</strong>
-          </p>
-          <p>
-            <input class="stb-radio" type="radio" id="radio1" name="stb-a" value="African swallow" /><label for="radio1">African swallow</label>
-            <input class="stb-radio" type="radio" id="radio2" name="stb-a" value="European Swallow" /><label for="radio2">European swallow</label>
-            <input class="stb-radio" type="radio" id="radio3" name="stb-a" value="Checked" checked /><label for="radio3">Chosen</label>
-            <input class="stb-radio" type="radio" id="radio4" name="stb-a" value="Can't touch this" disabled /><label for="radio4">Can't touch this (disabled)</label>
-          </p>
-        </div>
-      </form>
-    </div>
-    <div class="row">
-      <form>
-        <div class="col-md-12">
-          <h3>Checkboxes</h3>
-          <p>
-            <strong>This and/or that?</strong>
-          </p>
-          <div class="row">
-            <div class="col-md-12">
-              <p>
-                All in one row:
-              </p>
-              <p>
-                <input class="stb-checkbox" type="checkbox" id="checkbox1" name="stb-c" value="This" /><label for="checkbox1">This</label>
-                <input class="stb-checkbox" type="checkbox" id="checkbox2" name="stb-c" value="That" /><label for="checkbox2">That</label>
-                <input class="stb-checkbox" type="checkbox" id="checkbox3" name="stb-c" value="Chosen" checked /><label for="checkbox3">Chosen</label>
-                <input class="stb-checkbox" type="checkbox" id="checkbox4" name="stb-c" value="Can't touch this" disabled /><label for="checkbox4">Can't touch this (disabled)</label>
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <p>
-                Nice and orderly in rows:
-              </p>
-              <p>
-                <input class="stb-checkbox" type="checkbox" id="checkbox11" name="stb-d" value="This" /><label for="checkbox11" style="width: 280px;">This</label><br />
-                <input class="stb-checkbox" type="checkbox" id="checkbox12" name="stb-d" value="That" /><label for="checkbox12" style="width: 280px;">That</label><br />
-                <input class="stb-checkbox" type="checkbox" id="checkbox13" name="stb-d" value="Chosen" checked/><label for="checkbox13" style="width: 280px;">Chosen</label><br />
-                <input class="stb-checkbox" type="checkbox" id="checkbox14" name="stb-d" value="Can't touch this" disabled /><label for="checkbox14" style="width: 280px;">Can't touch this (disabled)</label><br />
-              </p>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <div class="row">
-      <div class="col-12-md">
-        <strong>Code:</strong> <br />
-              <pre class="prettyprint">
-&lt;form&gt;
-  &lt;h5&gt;Pick your poison&lt;/h5&gt;
-    &lt;!-- Radio buttons --&gt;
-    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;a&quot; value=&quot;a&quot; name=&quot;aorb&quot; /&gt;
-    &lt;label for=&quot;a&quot;&gt;I want poison A&lt;/label&gt;
-    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;b&quot; value=&quot;b&quot; name=&quot;aorb&quot; checked /&gt;
-    &lt;label for=&quot;b&quot;&gt;I want poison B&lt;/label&gt;
-    &lt;!-- Checkboxes --&gt;
-    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox1&quot; type=&quot;checkbox&quot; /&gt;
-    &lt;label for=&quot;checkbox1&quot;&gt;Check this out&lt;/label&gt;&lt;br&gt;
-    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox2&quot; type=&quot;checkbox&quot; /&gt;
-    &lt;label for=&quot;checkbox2&quot;&gt;Check that out&lt;/label&gt;&lt;br&gt;
-    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox3&quot; type=&quot;checkbox&quot; disabled /&gt;
-    &lt;label for=&quot;checkbox3&quot;&gt;Can't touch this (disabled)&lt;/label&gt;
-&lt;/form&gt;</pre>
-        <p>Be precise when using input+label; ID and for-attributes must match, and the order must be input, then label.</p>
-      </div>
-    </div>
-  </div>
-</div> <!-- /Radio button and checkbox row -->
-
-<hr class="top-margin-30" />
-
-
-<div class="row"> <!-- Dropdown select -->
-  <div class="col-md-3">
-    <h2>Dropdown / Select</h2>
-    (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
-  </div>
-  <div class="col-md-9">
-    <div class="row">
-      <div class="col-md-12">
-        <p>Increasingly, the best choice is to use native form elements. For advanced form elements, this is doubly so.</p>
-        <p>Consider what happens when your form is presented on a smart phone, a "smart-TV" or, theoretically, a Windows Phone. Manufacturers of these devices put a lot of work into creating the best possible user experience. Customizing form elements will generally obstruct that goal.
-        </p>
-      </div>
-      <div class="col-md-12">
-        <h3>Recommended default BS-style select</h3>
-        <select id="select-demo" class="form-control" style="width: 200px;">
-          <option value="">Pick a number</option>
-          <option value="1">Number one</option>
-          <option value="2">Number two</option>
-          <option value="3">Number three</option>
-          <option value="4">Number four</option>
-          <option value="4">Number five</option>
-        </select>
-              <pre class="prettyprint">
-&lt;select class="form-control"&gt;
-  &lt;option value="a">Select A&lt;/option&gt;
-  ...
-&lt;/select&gt;</pre>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h3>Custom style with autocomplete</h3>
-        <p>
-          <select data-widget="chosenSelect" class="form-control" data-placeholder="Pick a number" style="width: 400px;">
-            <option value="0"></option>
-            <option value="1">Number one</option>
-            <option value="2">Number two</option>
-            <option value="3">Number three</option>
-            <option value="4">Number four</option>
-            <option value="4">Number five</option>
-          </select>
-        </p>
-        <p><strong>Note:</strong> Type-ahead requires <a href="js/dist/chosen.jquery.js">chosen.jquery.js</a> + stb-chosen-less.<br /></p>
-              <pre class="prettyprint">&lt;select data-widget=&quot;chosenSelect&quot; class=&quot;form-control&quot; data-placeholder=&quot;Pick a number&quot;&gt;
-  &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
-  &lt;option value=&quot;1&quot;&gt;Number one&lt;/option&gt;
-  &lt;option value=&quot;2&quot;&gt;Number two&lt;/option&gt;
-  &lt;option value=&quot;3&quot;&gt;Number three&lt;/option&gt;
-  &lt;option value=&quot;4&quot;&gt;Number four&lt;/option&gt;
-  &lt;option value=&quot;4&quot;&gt;Number five&lt;/option&gt;
-&lt;/select&gt;
-&lt;script&gt;
-  $('select[data-widget=chosenSelect]').chosen();
-&lt;/script&gt;</pre>
-      </div>
-
-    </div> <!-- /inner-row -->
-  </div>
-</div> <!-- /Dropdown / Select -->
-
-<hr class="top-margin-30" />
-
-<div class="row"><!-- Sliders row -->
-  <div class="col-md-3">
-    <h2>Sliders</h2>
-    (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
-  </div>
-  <div class="col-md-9">
-    <div class="row">
-      <div class="col-md-12">
-        <p>
-          As we wait for browsers world-wide to deliver excellent sliders through the HTML5 range tag, we currently use a customized slider.
-        </p>
-        <p>
-          A slider must always be accompanied by a good old text input field, for universal design.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div style="width: 300px;">
-          Optional display of current value: <span id="stb-slider-value" class="stb-font-bold text-center" style="font-size: 24px;"></span>
-          <input id="stb-slider" type="slider" name="stb-slider" value="0" />
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <p><br /><strong>Note</strong>: Our slider is based on Egorkhmelev's jslider (see <a href="https://github.com/egorkhmelev/jslider">GitHub</a>for code with more options), stripped down and with a few improvements:</p>
-        <ul>
-          <li>Self-contained JS-file, all dependencies are included at the top of the file.</li>
-          <li>Improvements &amp; some pull-requests have been included (resize, redraw-functions ++)</li>
-          <li>Minor edits to the markup template</li>
-          <li>Customized styles/graphics</li>
-        </ul>
-        <p>
-          <strong>Required JS + CSS:</strong>
-        </p>
-        <ul>
-          <li><a href="js/dist/jquery.slider.all.js">jquery.slider.all.js</a></li>
-          <li><a href="less/stb-ui-slider.less">stb-ui-slider.less</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>  <!-- /Sliders row -->
-
-<hr class="top-margin-30" />
-
-<div class="row"><!-- Datepicker row -->
-  <div class="col-md-3">
-    <h2>Datepicker</h2>
-    (Not done! Likely to change to more or less standard Bootstrap!)
-  </div>
-  <div class="col-md-9">
-    <div class="row">
-      <div class="col-md-12">
-        <p>Increasingly, the best choice is to use native form elements. For datepickers, this is doubly so.</p>
-        <p>Consider what happens when your datepicker is used on a smart phone, a "smart-TV" or, theoretically, a Windows Phone. Manufacturers of these devices put a lot of work into creating the best possible user experience. Customizing the datepicker will generally obstruct that goal.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-
-      </div>
-    </div>
-    <div class="row">
-      <h3>Datepicker - jQuery UI, localized for Norway</h3>
-      Velg dato:
-      <input id="datepicker" data-widget="stb-datepicker" class="ui-dateinput"><label for="datepicker">&nbsp;</label>
-    </div>
-    <div class="row">
-      <strong class="top-margin-30">HTML:</strong><br />
-            <pre class="prettyprint">
-&lt;input id=&quot;datepicker&quot; data-widget=&quot;stb-datepicker&quot; class=&quot;ui-dateinput&quot;&gt;
-&lt;label for=&quot;datepicker&quot;&gt;&amp;nbsp;&lt;/label&gt;</pre>
-      <p>
-        See <a href="js/src/demo-datepicker.js">javascript-code</a> for usage instructions.
-      </p>
-      <p>
-        <strong>Note</strong>: Requires <a href="js/dist/jquery-ui-1.10.3.datepicker.js">jQuery UI Datepicker 1.10.3.</a>
-      <p>
-      <hr class="top-margin-30" />
-      <p>
-        HTML5 will eventually deliver a standard datepicker. This hasn't yet been implemented that well in all browsers. Here you can see the current state of it, with no styling at all:
-      </p>
-      <p>
-        Please date me: <input type="date" name="bday">
-      </p>
-    </div>
-  </div>
-</div>  <!-- /Datepicker row -->
-
-<hr class="top-margin-30" />
-
-
-<div class="row"> <!-- Progress bar row -->
-  <div class="col-md-3">
-    <h2>Progress bar</h2>
-    (Not ready to use, but if you need something like this, consult with storebrand.ny project.)
-  </div>
-
-  <div class="col-md-9">
-    <p>
-      For use cases where you can show a progress bar based on percentage (0-100), and not necessarily on a set number of steps, you can use this progress bar.
-    </p>
-    <p>
-      <button class="stb-btn" id="progressbar-trigger">Use this button</button> to see random progress jumps up and down the scales below:
-    </p>
-    <!-- Gray version -->
-    <div class="stb-progress gray">
-      <div class="stb-progress-bar" data-widget="progressExample" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-        <span class="sr-only">60% Complete</span>
-      </div>
-    </div>
-    <!-- Color version -->
-    <div class="stb-progress">
-      <div class="stb-progress-bar" data-widget="progressExample" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-        <span class="sr-only">60% Complete</span>
-      </div>
-    </div>
-    <p>
-      <strong>Code:</strong>
-    </p>
-          <pre class="prettyprint">
-&lt;div class=&quot;stb-progress&quot;&gt; &lt;!-- add class .gray for gray version --&gt;
-  &lt;div class=&quot;stb-progress-bar&quot; data-widget=&quot;progressExample&quot; role=&quot;progressbar&quot;
-    aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 60%;&quot;&gt;
-    &lt;span class=&quot;sr-only&quot;&gt;60% Complete&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;script&gt;
-  $('div.stb-progress div[data-widget=progressExample]').css({width: newPercentValue + '%'});
-&lt;/script&gt;
-          </pre>
-    <p>
-      The .sr-only class is used as a fallback for screen readers. Animation is done through css transitions.
-    </p>
-  </div>
-
-</div> <!-- /Progress bar row -->
-
-<!--Banner -->
-
-
-<hr class="top-margin-30" />
-
-<div class="row"> <!-- Progress bar row -->
+<div class="row"> <!-- Navigation tabs row -->
   <div class="col-md-3">
     <h2>Navigation tabs</h2>
-    </div>
+  </div>
 
   <div class="col-md-9">
    <p class="bottom-margin-30">Place the code below outside any container if you want the border bottom to strech to the entire screen </p>
@@ -3318,51 +2431,52 @@ $('ul[data-widget=stbFaq]').stbFaq();
    
    <!-- Desktop -->
     <div class="tab-container hidden-xs">
-    <div class="container">
-      <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
-        <li><a href="#company" data-toggle="tab">Bedrift</a></li>
-        <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
-        <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
-        <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
-      </ul>
-    </div>
-  </div> 
+      <div class="container">
+        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+          <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
+          <li><a href="#company" data-toggle="tab">Bedrift</a></li>
+          <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
+          <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
+          <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
+        </ul>
+      </div>
+    </div> 
 
-  <!--  Mobile  -->
-  <div class="container dropdown-tabs visible-xs top-margin-40">
-    <div class="dropdown" style="width: 100%">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="width: 100%">
-        <span class="heading pull-left"></span>
-        <span class="icon stb-sprite-small charcoal chevron-down pull-right"></span>
-      </button>
-      <ul class="dropdown-menu" data-tabs="tabs" style="width: 100%">
-        <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
-        <li><a href="#company" data-toggle="tab">Bedrift</a></li>
-        <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
-        <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
-        <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
-      </ul>
+    <!--  Mobile  -->
+    <div class="container dropdown-tabs visible-xs top-margin-40">
+      <div class="dropdown" style="width: 100%">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="width: 100%">
+          <span class="heading pull-left"></span>
+          <span class="icon stb-sprite-small charcoal chevron-down pull-right"></span>
+        </button>
+        <ul class="dropdown-menu" data-tabs="tabs" style="width: 100%">
+          <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
+          <li><a href="#company" data-toggle="tab">Bedrift</a></li>
+          <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
+          <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
+          <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
   
   <div id="my-tab-content" class="tab-content">
-   <div class="container top-padding-30 bottom-padding-30 tab-pane active" id="private">
-      <div class="row">
-      <div class="col-md-12 col-lg-4">
-          Privatgreier...
-        </div>
-      </div>
-  </div>
-    
-  <div class="container top-padding-30 bottom-padding-30 tab-pane" id="company">
-      <div class="row">
+    <div class="container top-padding-30 bottom-padding-30 tab-pane active" id="private">
+     <div class="row">
        <div class="col-md-12 col-lg-4">
+         Privatgreier...
+       </div>
+     </div>
+    </div>
+    
+    <div class="container top-padding-30 bottom-padding-30 tab-pane" id="company">
+      <div class="row">
+        <div class="col-md-12 col-lg-4">
           Bedriftsgreier...
         </div>
       </div>
     </div>
-  <div class="container top-padding-30 bottom-padding-30 tab-pane" id="press">
+    
+    <div class="container top-padding-30 bottom-padding-30 tab-pane" id="press">
       <div class="row">
     	  <div class="col-md-12 col-lg-4">
           Pressegreier...
@@ -3385,11 +2499,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
         </div>
       </div>
     </div>  
-    </div>
-    <p>
-      <strong>Code:</strong>
-    </p>
-          <pre class="prettyprint">
+  </div>
+  <p>
+    <strong>Code:</strong>
+  </p>
+  <pre class="prettyprint">
 &lt;!-- desktop --&gt;
 
 &lt;div class=&quot;tab-container hidden-xs&quot;&gt; 
@@ -3461,33 +2575,36 @@ $('ul[data-widget=stbFaq]').stbFaq();
     &lt;/div&gt; 
   &lt;/div&gt; 
 &lt;/div&gt;
-          </pre>
+  </pre>
           
         
   </div>
 
-</div> <!-- /Progress bar row -->
-<hr class="top-margin-30" />
-<div class="row">
-  <div class="col-md-3">
-    <h2>Banner</h2>
-    <p>Not visible correct in this manual.</p>
-  </div>
+</div><!-- /Navigation tabs row -->
+</div><!-- Ending container, in order to prepare for banners stretching to the edge of page in next section -->
 
-  <div class="col-md-9">
-    <p>
-      To be placed anywhere. In this manual it's not correct yet. The background should be all the way across the screen. Note that image left/right is different and the text is always on top on small devices. Push-pull columns.
-    </p>
+<div class="container">
+  <hr class="top-margin-30" />
+  <div class="row"><!-- Banner row -->
+    <div class="col-md-3">
+      <h2>Banners</h2>
+    </div>
+
+    <div class="col-md-9">
+      <p>
+        A banner will usually fill the entire width of the page, and not be constrained by the centered Bootstrap grid. The background color must stretch to the edge of the screen.
+      </p>
+    </div>
   </div>
-</div>
-</div> <!-- /End container-->
+</div><!-- Closing outer container, in order to stretch banner examples to the entire width of page -->
+
 <div class="banner stbcolor-secondary first">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <div class="stb-box">
           <h2>Ditt pensjonstall</h2>
-          <p class="intro">- Finn ditt pensjonstall. Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Dette er det du skal leve av som pensjonist.</p>
+          <p class="intro">- Finn ditt pensjonstall. Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Til sammen blir det inntekten din når du blir pensjonist.</p>
           <button class="stb-btn transparent">Finn ditt tall</button>
         </div>
       </div>
@@ -3497,6 +2614,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
     </div>
   </div>
 </div>
+
 <div class="banner stbcolor-secondary second">
   <div class="container">
     <div class="row">
@@ -3512,15 +2630,19 @@ $('ul[data-widget=stbFaq]').stbFaq();
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row top-margin-30">
     <div class="col-md-3">
-      <p>The left and right image placing differs in code
+      
     </div>
 
     <div class="col-md-9">
+      <p>
+        We use push and pull classes from Bootstrap to position the image to the left or right of the text. 
+      </p>
       <p><strong>Code:</strong></p>
-          <pre class="prettyprint">
+      <pre class="prettyprint">
 &lt;div class="banner stbcolor-secondary first"&gt;
     &lt;div class="row"&gt;
         &lt;div class="col-md-6"&gt;
@@ -3551,28 +2673,28 @@ $('ul[data-widget=stbFaq]').stbFaq();
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt; 
- 
-          </pre>
+      </pre>
     </div>
   </div>
+</div> <!-- /Container and /Banners row -->
 
-  <!-- End banner -->
 
+<div class="container">  
   <hr class="top-margin-30" />
-
-  <div class="row"> <!-- Video Banner row -->
+  <div class="row"> <!-- Video banners row -->
     <div class="col-md-3">
-      <h2>Video Banner</h2>
+      <h2>Video Banners</h2>
     </div>
 
     <div class="col-md-9">
       <p>
-        For use cases where a video will take up the whole width of a banner.
+        For use cases where a video fills the whole width of a banner.
       </p>
     </div>
   </div> <!-- /End Row-->
-</div> <!-- /End Container-->
-<!-- Start of page contents -->
+  
+</div> <!-- /End Container to show example of video on background color stretching to the edge of the screen -->
+
 <div class="stbcolor-secondary seventh top-margin-30 bottom-margin-30">
   <div class="container banner-video">
     <div class="video-text">
@@ -3593,11 +2715,13 @@ $('ul[data-widget=stbFaq]').stbFaq();
     </div>
   </div>
 </div>
-<div class="col-md-9 col-md-offset-3">
-  <p>
-    <strong>Code:</strong>
-  </p>
-          <pre class="prettyprint">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        <strong>Code:</strong>
+      </p>
+      <pre class="prettyprint">
            &lt;div class=&quot;container banner-video&quot;&gt;
              &lt;div class=&quot;video-text&quot;&gt;
                &lt;div class=&quot;col-md-6&quot;&gt;
@@ -3616,73 +2740,46 @@ $('ul[data-widget=stbFaq]').stbFaq();
                &lt;div id=&quot;player-banner&quot; class=&quot;video-player-banner&quot; data-youtube-id=&quot;_7Foh3T1gN4&quot;&gt;&lt;/div&gt;
              &lt;/div&gt;
            &lt;/div&gt;
-          </pre>
+      </pre>
+    </div>
+  </div>
 </div>
+
 <div class="container">
+  <hr class="top-margin-30" />
 
-<hr class="top-margin-30" />
-
-  <div class="row"> <!-- Video inline row -->
+  <div class="row"> <!-- In-line video row -->
     <div class="col-md-3">
-      <h2>Video Inline</h2>
+      <h2>Inline video</h2>
     </div>
 
     <div class="col-md-9">
       <p>
-        For use cases where a video will be displayed inline.
+        Video can be added anywhere in a suitable size relative to the page contents. 
       </p>
-      <h3>
-        Inline video with a span of 10.
-      </h3>
       <div class="row top-margin-20">
-        <div class="col-md-10">
-          <div class="video-container">
-            <button id="playVideoBtn-1" class="stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-medium white play"></span></button>
-            <div id="player-1" class="video-player-inline" data-youtube-id="_7Foh3T1gN4"></div>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <img src="images/sponge.png" class="hidden-xs center-block" />
-        </div>
-      </div>
-      <p>
-        <strong>Code:</strong>
-      </p>
-          <pre class="prettyprint">
-            &lt;div class=&quot;row top-margin-20&quot;&gt;
-              &lt;div class=&quot;col-md-10&quot;&gt;
-                &lt;div class=&quot;video-container&quot;&gt;
-                  &lt;button id=&quot;playVideoBtn-1&quot; class=&quot;stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs&quot;&gt;&lt;p class=&quot;pull-left&quot;&gt;Spill av video &nbsp&lt;/p&gt;&lt;span class=&quot;stb-sprite-medium white play&quot;&gt;&lt;/span&gt;&lt;/button&gt;
-                  &lt;div id=&quot;player-1&quot; class=&quot;video-player-inline&quot; data-youtube-id=&quot;_7Foh3T1gN4&quot;&gt;&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;col-md-2&quot;&gt;
-                &lt;img src=&quot;images/sponge.png&quot; class=&quot;hidden-xs center-block&quot; /&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          </pre>
-
-      <h3>
-        Inline video with a span of 8.
-      </h3>
-      <div class="row top-margin-20">
-        <div class="col-md-8">
+        <div class="col-md-6">
           <div class="video-container">
             <button id="playVideoBtn-2" class="stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-medium white play"></span></button>
             <div id="player-2" class="video-player-inline" data-youtube-id="_7Foh3T1gN4"></div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
+          <p>
+            And here's a sponge next to the video, for some reason.
+          </p>
           <img src="images/sponge.png" class="hidden-xs center-block" />
         </div>
       </div>
       <p>
         <strong>Code:</strong>
       </p>
-          <pre class="prettyprint">
+      <pre class="prettyprint">
            &lt;div class=&quot;col-md-8&quot;&gt;
              &lt;div class=&quot;video-container&quot;&gt;
-               &lt;button id=&quot;playVideoBtn-2&quot; class=&quot;stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs&quot;&gt;&lt;p class=&quot;pull-left&quot;&gt;Spill av video &nbsp&lt;/p&gt;&lt;span class=&quot;stb-sprite-medium white play&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+               &lt;button id=&quot;playVideoBtn-2&quot; class=&quot;stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs&quot;&gt;
+                 &lt;p class=&quot;pull-left&quot;&gt;Spill av video &nbsp&lt;/p&gt;
+               &lt;span class=&quot;stb-sprite-medium white play&quot;&gt;&lt;/span&gt;&lt;/button&gt;
                &lt;div id=&quot;player-2&quot; class=&quot;video-player-inline&quot; data-youtube-id=&quot;_7Foh3T1gN4&quot;&gt;&lt;/div&gt;
              &lt;/div&gt;
            &lt;/div&gt;
@@ -3690,66 +2787,87 @@ $('ul[data-widget=stbFaq]').stbFaq();
               &lt;img src=&quot;images/sponge.png&quot; class=&quot;hidden-xs center-block&quot; /&gt;
             &lt;/div&gt;
           </pre>
-      <h3>
-        Inline video with a span of 6.
-      </h3>
-      <div class="row top-margin-20">
-        <div class="col-md-6">
-          <div class="video-container">
-            <button id="playVideoBtn-3" class="stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-medium white play"></span></button>
-            <div id="player-3"  class="video-player-inline" data-youtube-id="_7Foh3T1gN4"></div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <img src="images/sponge.png" class="hidden-xs center-block" />
-        </div>
-      </div>
-      <p>
-        <strong>Code:</strong>
-      </p>
-          <pre class="prettyprint">
-            &lt;div class=&quot;col-md-6&quot;&gt;
-              &lt;div class=&quot;video-container&quot;&gt;
-                &lt;button id=&quot;playVideoBtn-3&quot; class=&quot;stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs&quot;&gt;&lt;p class=&quot;pull-left&quot;&gt;Spill av video &nbsp&lt;/p&gt;&lt;span class=&quot;stb-sprite-medium white play&quot;&gt;&lt;/span&gt;&lt;/button&gt;
-                &lt;div id=&quot;player-3&quot;  class=&quot;video-player-inline&quot; data-youtube-id=&quot;_7Foh3T1gN4&quot;&gt;&lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;col-md-6&quot;&gt;
-              &lt;img src=&quot;images/sponge.png&quot; class=&quot;hidden-xs center-block&quot; /&gt;
-            &lt;/div&gt;
-          </pre>
-      <h3>
-        Inline video with a span of 4.
-      </h3>
-      <div class="row top-margin-20">
-        <div class="col-md-4">
-          <div class="video-container">
-            <button id="playVideoBtn-4" class="stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs"><p class="pull-left"></p><span class="stb-sprite-medium white play"></span></button>
-            <div id="player-4" class="video-player-inline" data-youtube-id="_7Foh3T1gN4"></div>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <img src="images/sponge.png" class="hidden-xs center-block" />
-        </div>
-      </div>
-      <p>
-        <strong>Code:</strong>
-      </p>
-         <pre class="prettyprint">
-          &lt;div class=&quot;col-md-4&quot;&gt;
-            &lt;div class=&quot;video-container&quot;&gt;
-              &lt;button id=&quot;playVideoBtn-4&quot; class=&quot;stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs&quot;&gt;&lt;p class=&quot;pull-left&quot;&gt;&lt;/p&gt;&lt;span class=&quot;stb-sprite-medium white play&quot;&gt;&lt;/span&gt;&lt;/button&gt;
-              &lt;div id=&quot;player-4&quot; class=&quot;video-player-inline&quot; data-youtube-id=&quot;_7Foh3T1gN4&quot;&gt;&lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-            &lt;div class=&quot;col-md-8&quot;&gt;
-              &lt;img src=&quot;images/sponge.png&quot; class=&quot;hidden-xs center-block&quot; /&gt;
-            &lt;/div&gt;
-          </pre>
+      
+      
     </div>
-  </div> <!-- /Video banner row -->
-
+  </div> <!-- /In-line video row -->
 </div>
+
+<div class="container">
+
+  <div class="row bottom-margin-50"> <!-- Backgrounds section row -->
+    <hr class="top-margin-30" />
+    <div class="col-md-3">
+      <h2>Background playground</h2>
+    </div>
+    <div class="col-md-9">
+      <p>
+        The palette colors can be used to add a colored background to the entire width of the page or just the width of any given element. 
+      </p>
+      <p>
+        Below are all the allowed combinations of background colors and text colors to go on top of them.
+      </p>
+
+      <div class="row">
+        <div class="col-md-12 top-padding-10 stbcolor-background first">
+          <p class="intro">Background: charcoal</p>
+          <p>Text color: white</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12 top-padding-10 stbcolor-background second">
+          <p class="intro">Background: red</p>
+          <p>Text color: white</p>
+        </div>
+      </div>      
+      
+      <div class="row">
+        <div class="col-md-12 top-padding-10 stbcolor-background third">
+          <p class="intro">Background: moss</p>
+          <p>Text color: white</p>
+        </div>
+      </div>        
+
+      <div class="row">
+        <div class="col-md-12 top-padding-10 stbcolor-background fourth">
+          <p class="intro">Background: dust dark</p>
+          <p>Text color: white</p>
+        </div>
+      </div>       
+      
+      <div class="row">
+        <div class="col-md-12 top-padding-10 stbcolor-background fifth">
+          <p class="intro">Background: gray</p>
+          <p>Text color: charcoal</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12 top-padding-10 stbcolor-background sixth">
+          <p class="intro">Background: sand</p>
+          <p>Text color: charcoal</p>
+        </div>
+      </div>      
+      
+      <div class="row">
+        <div class="col-md-12 top-padding-10 stbcolor-background seventh">
+          <p class="intro">Background: sky</p>
+          <p>Text color: charcoal</p>
+        </div>
+      </div>  
+
+      <div class="row">
+        <div class="col-md-12 top-padding-10 stbcolor-background eighth">
+          <p class="intro">Background: light forest</p>
+          <p>Text color: charcoal</p>
+        </div>
+      </div>
+    </div>      
+  </div> 
+
+</div> 
+ 
 
 <div data-spy="affix" class="cookieNote" id="cookieNote">
   <div class="cookieClose">
