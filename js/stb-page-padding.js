@@ -689,37 +689,39 @@ $(document).ready(function(){
 	            return verifyIDNumber(value);
 	          }
 	        };
+          if($('#start-login-form, #start-login-form-mobile ').length != 0){
 
-	        $('#start-login-form, #start-login-form-mobile ').bootstrapValidator({
-	          message: 'This value is not valid',
-	          live: 'disabled',
-	          feedbackIcons: {
-	            valid: 'glyphicon glyphicon-ok',
-	            invalid: 'glyphicon glyphicon-remove',
-	            validating: 'glyphicon glyphicon-refresh'
-	          },
-	          fields: {
-	            birthNumber: {
-	              container: '.info-message',
-	              validators: {
-	                callback: idValidator,
-	                notEmpty: {
-	                  message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
-	                }
-	              }
+            $('#start-login-form, #start-login-form-mobile ').bootstrapValidator({
+              message: 'This value is not valid',
+              live: 'disabled',
+              feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+              },
+              fields: {
+                birthNumber: {
+                  container: '.info-message',
+                  validators: {
+                    callback: idValidator,
+                    notEmpty: {
+                      message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
+                    }
+                  }
 
-	            }
-	          }
-	        }).on('success.form.bv', function(e) {
-	                  // Prevent form submission
-	                  e.preventDefault();
+                }
+              }
+            }).on('success.form.bv', function(e) {
+                      // Prevent form submission
+                      e.preventDefault();
 
-	                  var $form        = $(e.target),
-	                          validator    = $form.data('bootstrapValidator'),
-	                          submitButton = validator.getSubmitButton();
+                      var $form        = $(e.target),
+                              validator    = $form.data('bootstrapValidator'),
+                              submitButton = validator.getSubmitButton();
 
-	                  window.location = absURL+"../brukertest/vanlig/login/login-step-faner.html"
-	        });
+                      window.location = absURL+"../brukertest/vanlig/login/login-step-faner.html"
+            });
+          }
 });
 
 $(document).ready(function(){
