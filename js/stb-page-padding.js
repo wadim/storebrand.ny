@@ -692,6 +692,8 @@ $(document).ready(function(){
 	          }
 	        };
 
+          try{
+
 	        $('#start-login-form, #start-login-form-mobile ').bootstrapValidator({
 	          message: 'This value is not valid',
 	          live: 'disabled',
@@ -722,6 +724,8 @@ $(document).ready(function(){
 
 	                  window.location = absURL+"../brukertest/vanlig/login/login-step-faner.html"
 	        });
+
+        }catch(err){}
 });
 
 $(document).ready(function(){
