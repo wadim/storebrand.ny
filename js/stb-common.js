@@ -235,6 +235,7 @@
   }
   /* ***** END TOGGLING "important messages" ***** */
 
+}(jQuery));
 
   /* ***** CREATE COOKIE ***** */
   function createCookie(n,value,days) {
@@ -266,4 +267,3 @@
     createCookie(name,"",-1);
   } 
 
-}(jQuery));
