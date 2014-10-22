@@ -202,6 +202,7 @@ function initExtendedSearch(){
   function maximizeSearch() {
     maximized = true;
 
+    //Hide overlay when search is focus
     $('#overlay').hide();
 
     // Save the animation state, and reset it once the animations complete
