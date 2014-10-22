@@ -1,4 +1,6 @@
-﻿// Start navigation padding
+﻿(function($){
+
+// Start navigation padding
 
 // Start mobile top menu decoration
 $(document).ready(function(){
@@ -747,3 +749,4 @@ function aksepterCookie(){
 
 
 
+}(jQuery));
