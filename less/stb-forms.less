@@ -156,17 +156,19 @@ input[type=radio].stb-radio {
     margin: -2px;
     padding: 8px 20px 8px 40px;
     border: solid 1px @stb-gray-second;
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
     background-position: -1px -160px;
+    font-weight: normal;
   }
 
   &:checked + label {
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-secondary-charcoal;
     background-position: -1px -200px;
+    color:@stb-primary-white;
   }
 
   &:disabled + label {
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-gray-second;
+    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-gray-second;
     background-position: -1px -160px;
     color: @stb-gray-fourth;
   }
@@ -176,19 +178,57 @@ input[type=radio].stb-radio {
     margin: -2px;
     padding: 8px 20px 8px 28px;
     border: solid 1px @stb-gray-second;
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
     background-position: -1px -160px;
   }
 
   &:checked + i + label {
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
     background-position: -1px -200px;
   }
 
   &:disabled + i +label {
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-gray-second;
+    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-gray-second;
     background-position: -1px -160px;
     color: @stb-gray-fourth;
+  }
+
+  @media
+  (min--moz-device-pixel-ratio: 2),
+  (-o-min-device-pixel-ratio: 2/1),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-device-pixel-ratio: 2) {
+
+    & + label {
+      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-primary-white;
+      // reduce to 1x size
+      background-size: 40px;
+    }
+    &:checked + label {
+      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-secondary-charcoal;
+      // reduce to 1x size
+      background-size: 40px;
+    }
+    &:disabled + label {
+      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-gray-second;
+      // reduce to 1x size
+      background-size: 40px;
+    }
+    & + i + label {
+      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-primary-white;
+      // reduce to 1x size
+      background-size: 40px;
+    }
+    &:checked + i + label {
+      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-primary-white;
+      // reduce to 1x size
+      background-size: 40px;
+    }
+    &:disabled + i +label {
+      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-gray-second;
+      // reduce to 1x size
+      background-size: 40px;
+    }
   }
 }
 
@@ -200,17 +240,18 @@ input[type=checkbox].stb-checkbox {
     margin: -2px;
     padding: 8px 20px 8px 40px;
     border: solid 1px @stb-gray-second;
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) -8px 0px no-repeat @stb-primary-white;
     background-position: -1px 0px;
+    font-weight: normal;
   }
   
   &:checked + label {
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) -8px 0px no-repeat @stb-primary-white;
     background-position: -1px -40px;
   }
   
   &:disabled + label {
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-gray-second;
+    background: url(../images/stb-sprites/ui-sprites.png) -8px 0px no-repeat @stb-gray-second;
     background-position: -1px 0px;
     color: @stb-gray-fourth;
   }
@@ -219,17 +260,17 @@ input[type=checkbox].stb-checkbox {
     margin: -2px;
     padding: 8px 20px 8px 28px;
     border: solid 1px @stb-gray-second;
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) -8px 0px no-repeat @stb-primary-white;
     background-position: -1px 0px;
   }
 
   &:checked + i + label {
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) -8px 0px no-repeat @stb-primary-white;
     background-position: -1px -40px;
   }
 
   &:disabled + i + label {
-    background: url(../images/stb-form-sprites-transparent.png) -8px 0px no-repeat @stb-gray-second;
+    background: url(../images/stb-sprites/ui-sprites.png) -8px 0px no-repeat @stb-gray-second;
     background-position: -1px 0px;
     color: @stb-gray-fourth;
   }
@@ -292,4 +333,10 @@ form.validateForm, form.validateFormMobile{
       color: @stb-primary-color;
     }
   }
+}
+
+select{
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px !important;
+  height: 48px !important;
 }
