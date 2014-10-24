@@ -1,5 +1,7 @@
 $(document).ready(function(){
-  var slider1 = $("#stb-slider-pensjon").slider({
+  var slider1 = $( "#stb-slider-pensjon");
+  var slider2 = $("#stb-slider-dagenslonn");
+  var slider1obj = {
     from: 62,
     to: 75,
     domNode: "#stb-slider",
@@ -34,8 +36,8 @@ $(document).ready(function(){
       }
       return d
     }
-  });
-  var slider2 = $("#stb-slider-dagenslonn").slider({
+  };
+  var slider2obj = {
     from: 40,
     to: 100,
     step: 0.1,
@@ -72,14 +74,9 @@ $(document).ready(function(){
       }
       return d
     }
-  });
+  };
 
-  $('#pensjon-input').change(function(){
-    slider1.slider('value', $(this).val());
-  });
-
-  $('#dagenslonn-input').change(function(){
-    slider2.slider('value', $(this).val());
-  });
+  initiateSlider(slider1, slider1obj, "år", "pensjonnaar");
+  initiateSlider(slider2, slider2obj, "%", "dagenslonn");
 
 });

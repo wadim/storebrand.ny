@@ -1,5 +1,8 @@
 $(document).ready(function(){
-  var slider1 = $("#stb-slider-nedbetaling").slider({
+
+  var slider1 = $("#stb-slider-nedbetaling");
+  var slider2 = $("#stb-slider-lanerente");
+  var slider1obj = {
     from: 0,
     to: 30,
     domNode: "#stb-slider",
@@ -35,14 +38,14 @@ $(document).ready(function(){
       }
       return d
     }
-  });
-  var slider2 = $("#stb-slider-lanerente").slider({
+  };
+  var slider2obj = {
     from: 0,
     to: 20,
-    step: 0.1,
-    round: 1,
     domNode: "#stb-slider",
     valueElem: "#stb-slider-value",
+    step: 0.1,
+    round: 1,
     dimension: '&nbsp;%',
     calculate: function(a) {
       return $(this.domNode).siblings(this.valueElem).val(a), a
@@ -74,21 +77,16 @@ $(document).ready(function(){
       }
       return d
     }
-  });
+  };
+
+  initiateSlider(slider1, slider1obj, "år", "years");
+  initiateSlider(slider2, slider2obj, "%", "interest");
 
   $('#lanebelop').change(function(){
     changeCalculatedValue('laanekalkulator');
   });
-
-  $('#nedbetaling-input').change(function(){
-    slider1.slider('value', $(this).val());
-  });
-
-  $('#lanerente-input').change(function(){
-    slider2.slider('value', $(this).val());
-  });
-
 });
+
 
 var changeCalculatedValue = function(formId) {
   var form = "#" + formId;

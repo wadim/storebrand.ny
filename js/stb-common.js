@@ -201,6 +201,8 @@
   }
   /* ***** END TOGGLING "important messages" ***** */
 
+
+
 }(jQuery));
 
   /* ***** CREATE COOKIE ***** */
@@ -264,3 +266,16 @@
   }
   /* ***** END Loop through list, showing li elements with summary class and hide all other li elements ***** */
 
+/* ***** Function for intitiating a slider with a input element on the side ***** */
+function initiateSlider(sliderEl, sliderObj, unit, name){
+
+  var sliderInput = '<input id="'+name+'" class="text-center sliderInput" style="float: left; width: 60px;" name="'+name+'">';
+  sliderEl.parent().prepend(sliderInput+'<p class="unit">'+unit+'</p>');
+  sliderEl.slider(sliderObj);
+
+  $('#'+name).on('change',function(){
+    sliderEl.slider('value', $(this).val());
+  });
+}
+
+/* ***** End of slider function ***** */
