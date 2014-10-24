@@ -1,7 +1,6 @@
 (function($){
 
 
-
   /*
    * Common functions for general use
   /*
@@ -182,39 +181,6 @@
   }
   /* ***** END Functions for chat choice on minibox ***** */
 
-
-  /* ***** START Make lists expandable ***** */
-  function makeExpandableList(selector){
-    initialExpandable(selector);
-
-    var showMore = selector.find('.showMore');
-
-    showMore.click(function() {
-      if(showMore.hasClass('open')){
-        initialExpandable(selector);
-        showMore.find('span').toggleClass('chevron-up red chevron-down');
-      }else{
-        selector.children('li').show(400);
-        showMore.find('span').toggleClass('chevron-up red chevron-down');
-      }
-      showMore.find("span.show-detail, span.hide-detail").toggle();
-      showMore.toggleClass('open');
-    });
-  }
-  /* ***** END Make lists expandable ***** */
-
-
-  /* ***** START Loop through list, showing li elements with summary class and hide all other li elements ***** */
-  function initialExpandable(selector){
-    selector.children('li').each(function(index){
-      if(!$(this).is('.summary, .showMore')){
-        $(this).hide(400);
-      }
-    });
-  }
-  /* ***** END Loop through list, showing li elements with summary class and hide all other li elements ***** */
-
-
   /* ***** START TOGGLING "important messages" ***** */
   function showErrorMsg() {
     $('.errormessage').slideDown('slow');
@@ -265,5 +231,36 @@
   /* ***** ERASE COOKIE ***** */
   function eraseCookie(name) {
     createCookie(name,"",-1);
-  } 
+  }
+
+
+  /* ***** START Make lists expandable ***** */
+  function makeExpandableList(selector){
+    initialExpandable(selector);
+
+    var showMore = selector.find('.showMore');
+
+    showMore.click(function() {
+      if(showMore.hasClass('open')){
+        initialExpandable(selector);
+        showMore.find('span').toggleClass('chevron-up red chevron-down');
+      }else{
+        selector.children('li').show(400);
+        showMore.find('span').toggleClass('chevron-up red chevron-down');
+      }
+      showMore.find("span.show-detail, span.hide-detail").toggle();
+      showMore.toggleClass('open');
+    });
+  }
+  /* ***** END Make lists expandable ***** */
+
+  /* ***** START Loop through list, showing li elements with summary class and hide all other li elements ***** */
+  function initialExpandable(selector){
+    selector.children('li').each(function(index){
+      if(!$(this).is('.summary, .showMore')){
+        $(this).hide(400);
+      }
+    });
+  }
+  /* ***** END Loop through list, showing li elements with summary class and hide all other li elements ***** */
 
