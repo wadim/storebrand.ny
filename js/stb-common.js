@@ -270,12 +270,12 @@
 /* ***** Function for intitiating a slider with a input element on the side ***** */
 function initiateSlider(sliderEl, sliderObj, unit, name){
 
-  var sliderInput = '<input id="'+name+'" class="text-center sliderInput" style="float: left; width: 60px;" name="'+name+'">';
+  var sliderInput = '<input id="'+name+'" class="text-center sliderInput" name="'+name+'"/>';
   sliderEl.parent().prepend(sliderInput+'<p class="unit">'+unit+'</p>');
   sliderEl.slider(sliderObj);
 
   $('#'+name).on('change',function(){
-    sliderEl.slider('value', $(this).val());
+   sliderEl.slider('value', $(this).val());
   });
 }
 /* ***** End of slider function ***** */

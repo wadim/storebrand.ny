@@ -49,13 +49,13 @@ $(document).ready(function() {
             yearSuffix: ""
         }, $.datepicker.setDefaults($.datepicker.regional.no), $("input[data-widget=stb-datepicker]").datepicker().children().show()
     }), $(document).ready(function() {
-        $("#stb-slider").slider({
+        var sliderObj = {
             from: 0,
             to: 100,
             domNode: "#stb-slider",
             valueElem: "#stb-slider-value",
             calculate: function(a) {
-                return $(this.domNode).siblings(this.valueElem).text(a), a
+                return $(this.domNode).siblings(this.valueElem).val(a), a
             },
             complete: function() {},
             onstatechange: function() {
@@ -83,7 +83,10 @@ $(document).ready(function() {
                 }
                 return d
             }
-        })
+        };
+        var sliderEl = $("#stb-slider");
+        initiateSlider(sliderEl, sliderObj, "år", "percent");
+
     }), $("document").ready(function() {
         $("#progressbar-trigger").on("click", function() {
             var a = Math.floor(101 * Math.random()) + 0;
