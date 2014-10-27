@@ -270,7 +270,7 @@
 /* ***** Function for intitiating a slider with a input element on the side ***** */
 function initiateSlider(sliderEl, sliderObj, unit, name){
 
-  var sliderInput = '<input id="'+name+'" class="text-center sliderInput" name="'+name+'"/>';
+  var sliderInput = '<input id="'+name+'" type="number" class="text-center sliderInput" name="'+name+'"/>';
   sliderEl.parent().prepend(sliderInput+'<p class="unit">'+unit+'</p>');
   sliderEl.slider(sliderObj);
 
