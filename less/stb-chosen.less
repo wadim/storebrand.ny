@@ -40,7 +40,6 @@
     border: 1px solid @chosen-drop-border;
     border-top-color: lighten(@chosen-drop-border, 25%);
     .box-shadow(@chosen-drop-box-shadow);
-    margin-top: -1px;
     position: absolute;
     top: 100%;
     left: -9000px;
@@ -109,6 +108,10 @@
       background: @stb-gray-second;
       display: list-item;
     }
+
+    :hover{
+      cursor: pointer;
+    }
   }
 
   .chosen-results-scroll {
@@ -159,7 +162,8 @@
     position: relative;
     text-decoration: none;
     white-space: nowrap;
-    border: 1px solid @stb-primary-black;
+    border: 1px solid @stb-gray-fourth;
+
 
     span {
       display: block;
@@ -177,9 +181,7 @@
       top: (@chosen-height - 10px) / 2;
       width: 12px;
 
-      &:hover {
-        background-position: right -11px;
-      }
+
     }
 
     &.chosen-disabled .chosen-single abbr:hover {
@@ -195,12 +197,16 @@
       // width: 18px;
       width: 15%;
 
+      :hover{
+        cursor: pointer;
+      }
+
       b {
         // background: url("@{chosen-sprite-path}") no-repeat 0 7px;
         .stb-glyphicon();
         .glyphicon-chevron-down();
 
-        border-left: 1px solid @stb-primary-black;
+        border-left: 1px solid @stb-gray-fourth;
         color: @stb-primary-black;
         display: block;
         height: 100%;
@@ -208,6 +214,7 @@
         padding-top: 7px;
         padding-left: 10px;
         top: 0;
+
       }
     }
   }
@@ -235,7 +242,6 @@
   }
 
   .chosen-drop {
-    margin-top: -1px;
     -webkit-background-clip: padding-box;
        -moz-background-clip: padding;
             background-clip: padding-box;
@@ -354,6 +360,7 @@
   &.chosen-with-drop .chosen-single {
     background-color: @gray-lighter;
     .transition(@chosen-focus-transition);
+    border: 1px solid @stb-primary-black;
 
     div {
       background: transparent;
@@ -361,6 +368,7 @@
 
       b {
         // background-position: -18px 7px;
+        border-left: 1px solid @stb-primary-black;
       }
     }
   }
