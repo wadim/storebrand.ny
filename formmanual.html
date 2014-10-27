@@ -375,16 +375,14 @@
     <div class="row">
       <div class="col-md-12">
         <h3>Custom style with autocomplete</h3>
-        <p>
-          <select data-widget="chosenSelect" class="form-control" data-placeholder="Pick a number" style="width: 400px;">
-            <option value="0"></option>
-            <option value="1">Number one</option>
-            <option value="2">Number two</option>
-            <option value="3">Number three</option>
-            <option value="4">Number four</option>
-            <option value="4">Number five</option>
-          </select>
-        </p>
+        <select data-widget="chosenSelect" class="form-control" data-placeholder="Pick a number" style="width: 300px;">
+          <option value="0"></option>
+          <option value="1">Number one</option>
+          <option value="2">Number two</option>
+          <option value="3">Number three</option>
+          <option value="4">Number four</option>
+          <option value="4">Number five</option>
+        </select>
         <p><strong>Note:</strong> Type-ahead requires <a href="js/dist/chosen.jquery.js">chosen.jquery.js</a> + stb-chosen-less.<br /></p>
               <pre class="prettyprint">&lt;select data-widget=&quot;chosenSelect&quot; class=&quot;form-control&quot; data-placeholder=&quot;Pick a number&quot;&gt;
   &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
@@ -423,10 +421,11 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div style="width: 300px;">
-          Optional display of current value: <span id="stb-slider-value" class="stb-font-bold text-center" style="font-size: 24px;"></span>
-          <input id="stb-slider" type="slider" name="stb-slider" value="0" />
+        <form>
+        <div class="stb-form-group top-margin-10" style="width: 300px;">
+           <input id="stb-slider" type="slider" name="stb-slider" value="0" />
         </div>
+        </form>
       </div>
     </div>
     <div class="row">
@@ -537,6 +536,77 @@
       <p>
         Please date me: <input type="date" name="bday">
       </p>
+    </div>
+  </div>
+</div>  <!-- /Datepicker row -->
+<hr class="top-margin-30" />
+
+<div class="row"><!-- Datepicker row -->
+
+  <div class="col-md-3">
+    <h2>Progress tracker</h2>
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-12">
+        <p>Progress tracker to be usen in forms</p>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="progressBar-circle hidden-xs hidden-sm">
+        <ol class="progtrckr">
+          <li id="step-kontoopplysninger" class="prog-done  prog-clickable">
+            <div class="circle-12 pull-left">
+              <p class="step">1</p>
+              <a href="#" class="steplabel" style="margin-left:-42px;">Kontoopplysninger</a>
+              <h4 class="steplabel" style="margin-left: -60px;">Kontoopplysninger</h4>
+            </div>
+          </li>
+          <li id="step-personopplysninger" class="prog-todo prog-active" style="margin-left: 149px">
+            <div class="circle-12 pull-left">
+              <p class="step">2</p>
+              <a href="#" class="steplabel" style="margin-left:-48px;">Personopplysninger</a>
+              <h4 class="steplabel" style="margin-left: -60px;">Personopplysninger</h4>
+            </div>
+          </li>
+          <li id="step-kvittering" class="prog-todo" style="margin-left: 149px">
+            <div class="circle-12 pull-left">
+              <p class="step">3</p>
+              <a href="#" class="steplabel" style="margin-left:-15px;">Kvittering</a>
+              <h4 class="steplabel" style="margin-left: -25px;">Kvittering</h4>
+            </div>
+          </li>
+        </ol>
+      </div>
+      
+      <pre class="prettyprint top-margin-50">
+&lt;div class=&quot;progressBar-circle hidden-xs hidden-sm&quot;&gt;
+  &lt;ol class=&quot;progtrckr&quot;&gt;
+    &lt;li id=&quot;step-kontoopplysninger&quot; class=&quot;prog-done  prog-clickable&quot;&gt;
+      &lt;div class=&quot;circle-12 pull-left&quot;&gt;
+        &lt;p class=&quot;step&quot;&gt;1&lt;/p&gt;
+        &lt;a href=&quot;#&quot; class=&quot;steplabel&quot; style=&quot;margin-left:-42px;&quot;&gt;Kontoopplysninger&lt;/a&gt;
+        &lt;h4 class=&quot;steplabel&quot; style=&quot;margin-left: -60px;&quot;&gt;Kontoopplysninger&lt;/h4&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;step-personopplysninger&quot; class=&quot;prog-todo prog-active&quot; style=&quot;margin-left: 149px&quot;&gt;
+      &lt;div class=&quot;circle-12 pull-left&quot;&gt;
+        &lt;p class=&quot;step&quot;&gt;2&lt;/p&gt;
+        &lt;a href=&quot;#&quot; class=&quot;steplabel&quot; style=&quot;margin-left:-48px;&quot;&gt;Personopplysninger&lt;/a&gt;
+        &lt;h4 class=&quot;steplabel&quot; style=&quot;margin-left: -60px;&quot;&gt;Personopplysninger&lt;/h4&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;step-kvittering&quot; class=&quot;prog-todo&quot; style=&quot;margin-left: 149px&quot;&gt;
+      &lt;div class=&quot;circle-12 pull-left&quot;&gt;
+        &lt;p class=&quot;step&quot;&gt;3&lt;/p&gt;
+        &lt;a href=&quot;#&quot; class=&quot;steplabel&quot; style=&quot;margin-left:-15px;&quot;&gt;Kvittering&lt;/a&gt;
+        &lt;h4 class=&quot;steplabel&quot; style=&quot;margin-left: -25px;&quot;&gt;Kvittering&lt;/h4&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+      </pre>
     </div>
   </div>
 </div>  <!-- /Datepicker row -->

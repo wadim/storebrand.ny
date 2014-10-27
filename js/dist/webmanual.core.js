@@ -49,13 +49,14 @@ $(document).ready(function() {
             yearSuffix: ""
         }, $.datepicker.setDefaults($.datepicker.regional.no), $("input[data-widget=stb-datepicker]").datepicker().children().show();
     }), $(document).ready(function() {
-        $("#stb-slider").slider({
+        var sliderObj = {
             from: 0,
             to: 100,
             domNode: "#stb-slider",
             valueElem: "#stb-slider-value",
             calculate: function(a) {
                 return $(this.domNode).siblings(this.valueElem).text(a), a;
+
             },
             complete: function() {},
             onstatechange: function() {
@@ -83,7 +84,10 @@ $(document).ready(function() {
                 }
                 return d;
             }
-        });
+        };
+        var sliderEl = $("#stb-slider");
+        initiateSlider(sliderEl, sliderObj, "år", "percent");
+
     }), $("document").ready(function() {
         $("#progressbar-trigger").on("click", function() {
             var a = Math.floor(101 * Math.random()) + 0;
@@ -99,7 +103,7 @@ $(document).ready(function() {
         }), $("document").ready(function(){
           
         	  // Prepare the row that contains the table of contents
-            var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">Jump down to <span class="stb-sprite-medium chevron-down pull-right"></span></p><ul class="items"></ul></div></div>';
+            var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">Jump down to <span class="stb-sprite-medium chevron-up red  pull-right"></span></p><ul class="items"></ul></div></div>';
             var tocHeaders= null;
             // Place the table of content on the top and find the top headings 
             $(toclist).insertAfter($('p.lead')); 

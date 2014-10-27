@@ -1813,7 +1813,7 @@ var Hashtable = (function() {
             limits[0] = false;
 
           // MODIFIED: adding widthHack to cope with labels being hidden too early with big slider-handles
-          var widthHack = (this.style_ == "round_big") ? 0 : 60;
+          var widthHack = 30;// (this.style_ == "round_big") ? 0 : 60;
 
           var limit = this.o.limits[1];
           if( label_left + label.o.outerWidth() > (this.sizes.domWidth+widthHack) - limit.outerWidth() ) {
