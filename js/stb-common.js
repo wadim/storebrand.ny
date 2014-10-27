@@ -181,29 +181,30 @@
   }
   /* ***** END Functions for chat choice on minibox ***** */
 
+
+
+
+}(jQuery));
+
   /* ***** START TOGGLING "important messages" ***** */
   function showErrorMsg() {
     $('.errormessage').slideDown('slow');
   }
 
-  function hideErrorMsg() {
-    $('.errormessage').slideUp('slow');
-    createCookie('errorMessageRead','Yes'); 
+  function hideErrorMsg(element) {
+    $(element).closest('.errormessage').slideUp('slow');
+    createCookie('errorMessageRead','Yes');
   }
 
   function showCommonMsg() {
     $('.commonmessage').slideDown('slow');
   }
 
-  function hideCommonMsg() {
-    $('.commonmessage').slideUp('slow');
-    createCookie('commonMessageRead','Yes'); 
+  function hideCommonMsg(element) {
+    $(element).closest('.commonmessage').slideUp('slow');
+    createCookie('commonMessageRead','Yes');
   }
   /* ***** END TOGGLING "important messages" ***** */
-
-
-
-}(jQuery));
 
   /* ***** CREATE COOKIE ***** */
   function createCookie(n,value,days) {
@@ -277,5 +278,15 @@ function initiateSlider(sliderEl, sliderObj, unit, name){
     sliderEl.slider('value', $(this).val());
   });
 }
-
 /* ***** End of slider function ***** */
+
+/* ***** Function for making the icons red when hovering links ***** */
+function hoverIcons(linkEl){
+  linkEl.hover(function(){
+    $(this).find('span').addClass("red");
+  },function(){
+    $(this).find('span').removeClass("red");
+  });
+}
+
+/* ***** End of hoverIcons function  ***** */

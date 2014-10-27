@@ -192,11 +192,16 @@
 }
 
 /* Change default look for button with class "close" */
-button.close {
-  opacity: 1;
-  text-shadow: none;
-  span.remove{
-    margin-right: 10px;
+a.closeLink {
+   span.remove{
+     margin-right: 10px;
+   }
+   border-bottom: none !important;
+}
+
+a.closeLink:hover {
+  p{
+    color: @stb-primary-color;
   }
 }
 

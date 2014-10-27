@@ -751,6 +751,12 @@
     jQuery('#cookieFooter').hide('slow');
   }
 
+  $(document).ready(function(){
+    var closeLinks = $('a.closeLink');
+    if(closeLinks.length > 0){
+      hoverIcons(closeLinks);
+    }
+  });
 
 
 }(jQuery));
