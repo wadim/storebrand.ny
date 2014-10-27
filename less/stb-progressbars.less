@@ -124,6 +124,7 @@
   .circle-12 p.step {
     font-size: 16px;
     font-family: "Open Sans Bold";
+    margin: 0 0 0 0;
   }
 
   ol.progtrckr {
@@ -150,7 +151,8 @@
     }
 
     div{
-      background-color: @stb-gray-third;
+      background-color: @stb-primary-white;
+      border: 1px solid @stb-secondary-charcoal;
     }
   }
 
@@ -165,8 +167,10 @@
     }
 
     div {
-      background-color: @stb-secondary-forest;
+      background-color: @stb-primary-white;
+      color: @stb-primary-black;
       cursor: pointer;
+      border: 1px solid @stb-secondary-charcoal;
     }
   }
 
@@ -192,8 +196,12 @@
       display: none;
     }
     div{
-      background-color: @stb-secondary-charcoal;
+      background-color: @stb-secondary-forest !important;
       cursor: default;
+      border: none;
+    }
+    p.step{
+      color: @stb-primary-white !important;
     }
 
     h4.steplabel {
