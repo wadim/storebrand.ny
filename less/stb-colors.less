@@ -142,7 +142,6 @@
       color: @stb-secondary-charcoal;
     } 
   }
-  
 }
 
 
@@ -160,6 +159,7 @@
     a, p, ul, ol, h1, h2, h3, h4, h5, h6 {
       color: @stb-primary-white;
     } 
+
   }
 
   &.third {
@@ -198,6 +198,11 @@
     }
   }
   
+  // Emergency fix for accordions inside background elements.
+  ul.accordion p {
+    color: @stb-secondary-charcoal;
+  }  
+    
  }
  
 // GRAY COLORS
