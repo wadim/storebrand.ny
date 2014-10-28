@@ -30,7 +30,6 @@
   
   </script>
   <!-- End of JavaScript for this page only -->
-
 </head>
 
 <body>
@@ -78,52 +77,45 @@
       Forms are built using namespaced bootstrap-classes, stb-form-inline, stb-form-group, and so on. We have not over-ridden the standard Bootstrap focus indicator (a surrounding faint color gradient), because by now that is universally recognized as helpful to the general public.
     </p>
     <form class="stb-form-inline" role="form">
+      <label for="formInput1" style="width: 200px;">Standard with placeholder</label>
       <div class="stb-form-group">
-        <label for="formInput1" style="width: 200px;">Standard with placeholder</label>
         <input id="formInput1" type="text" class="" placeholder="Placeholder" style="width: 230px;">
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
+      <label for="formInput2" style="width: 200px;">Input required <span class="input-required">*</span></label>
       <div class="stb-form-group">
-        <label for="formInput2" style="width: 200px;">Input required <span class="input-required">*</span></label>
         <input id="formInput2" type="text" class="" placeholder="Placeholder" style="width: 230px;">
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
+      <label for="formInput3" style="width: 200px;">On hover</label>
       <div class="stb-form-group" >
-        <label for="formInput3" style="width: 200px;">On hover</label>
         <input id="formInput3" type="text" class="fauxInputHover" placeholder="Placeholder" style="width: 230px;">
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
+      <label for="formInput4"  style="width: 200px;">On focus</label>
       <div class="stb-form-group">
-        <label for="formInput4"  style="width: 200px;">On focus</label>
         <input id="formInput4" type="text" class="fauxInputFocus" value="Show me some love|" style="width: 230px;">
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput5"  style="width: 200px;">Disabled</label>
-        <input id="formInput5" type="text" class="" style="width: 230px;" placeholder="Can't touch this" disabled>
+      <label for="formInput5" style="width: 200px;">Error in field input</label>
+      <span class="help-block navn-message has-error"><small class="help-block" data-bv-validator="regexp" data-bv-for="navn" data-bv-result="INVALID" style="display: block;"><span class="stb-color-sprite-small warning circle"></span> Sounds about wrong</small></span>
+      <div class="stb-form-group has-feedback has-error">
+        <input id="formInput5" name="formInput5" type="text" class="" value="War is good for something" data-bv-field="navn" style="width: 230px"><i class="form-control-feedback glyphicon glyphicon-remove" data-bv-icon-for="navn" style="top: 0px; display: block;"></i>
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
-      <div class="stb-form-group" >
-        <label for="formInput6" style="width: 200px;">Error in field input</label>
-        <div class="error-message" ><span class="stb-color-sprite-small warning"></span><span class="input-faulty left-margin-10">Sounds about wrong!</span></div>
-        <input id="formInput6" type="text" class="input-fail" value="War is good for something" style="width: 230px;">
-      </div>
-    </form>
-
-    <form class="stb-form-inline" role="form">
-      <div class="stb-form-group" >
-        <label for="formInput7" style="width: 200px;">Input becomes valid<span class="success-message stb-color-sprite-small ok left-margin-10"></span></label>
-        <input id="formInput7" type="text" class="input-success" value="I'll never be Beyonce..." style="width: 230px;">
+      <label for="formInput7" style="width: 200px;">Input becomes valid</label>
+      <div class="stb-form-group has-feedback has-success">
+        <input id="formInput7" name="navn" type="text" class="" placeholder="Navn" data-bv-field="navn" style="width: 230px;"><i class="form-control-feedback glyphicon glyphicon-ok" data-bv-icon-for="navn" style="top: 0px; display: block;"></i>
       </div>
     </form>
 
@@ -135,50 +127,50 @@
     </form>
 
     <form class="stb-form-inline" role="form">
+      <label for="formInput10">Hover with button</label>
       <div class="stb-form-group">
-        <label for="formInput9">With action button</label>
         <input id="formInput9" type="text" class="has-submit" placeholder="Text..." style="width: 230px;">
         <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
+      <label for="formInput10">Hover with button</label>
       <div class="stb-form-group">
-        <label for="formInput10">Hover with button</label>
         <input id="formInput10" type="text" class="has-submit fauxInputHover" placeholder="Text..." style="width: 230px;">
         <button type="submit" class="stb-btn stb-form is-submit fauxInputHover">Enter</button>
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
+      <label for="formInput11">Focus with button</label>
       <div class="stb-form-group">
-        <label for="formInput11">Focus with button</label>
         <input id="formInput11" type="text" class="has-submit fauxInputFocus" value="Portveien|" style="width: 230px;">
         <button type="submit" class="stb-btn stb-form is-submit fauxInputFocus">Enter</button>
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
+      <label for="formInput12">Disabled</label>
       <div class="stb-form-group">
-        <label for="formInput12">Disabled</label>
         <input id="formInput12" type="text" class="has-submit" placeholder="Fødselsnummer" style="width: 230px;" disabled>
         <button type="submit" class="stb-btn stb-form is-submit" disabled>Enter</button>
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput13">Error in field input</label>
-        <div class="error-message"><span class="stb-color-sprite-small warning"></span> <span class="input-faulty">Sounds about wrong!</span></div>
-        <input id="formInput13" type="text" class="input-fail" value="Portveien 3" style="width: 230px;">
+      <label for="formInput5" style="width: 200px;">Error in field input</label>
+      <span class="help-block navn-message has-error"><small class="help-block" data-bv-validator="regexp" data-bv-for="navn" data-bv-result="INVALID" style="display: block;"><span class="stb-color-sprite-small warning circle"></span> Sounds about wrong</small></span>
+      <div class="stb-form-group with-submit has-feedback has-error">
+        <input id="formInput13" name="formInput13" type="text" class="" value="War is good for something" data-bv-field="navn" style="width: 230px"><i class="form-control-feedback glyphicon glyphicon-remove" data-bv-icon-for="navn" style="top: 0px; display: block;"></i>
         <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
-      <div class="stb-form-group">
-        <label for="formInput13">Input becomes valid<span class="success-message stb-color-sprite-small ok left-margin-10"></span></label>
-        <input id="formInput13" type="text" class="input-success" value="Portveien 2" style="width: 230px;">
+      <label for="formInput13">Input becomes valid</label>
+      <div class="stb-form-group with-submit has-feedback has-success">
+        <input id="formInput13" name="formInput13" type="text" class="" value="Portveien 2" data-bv-field="navn" style="width: 230px;"><i class="form-control-feedback glyphicon glyphicon-ok" data-bv-icon-for="navn" style="top: 0px; display: block;"></i>
         <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
       </div>
     </form>
@@ -198,6 +190,7 @@
 
 <div class="row">
   <div class="col-md-9 col-md-offset-3">
+    <h3>Without validation</h3>
     <h4>Form input elements</h4>
           <pre class="prettyprint">
 &lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
@@ -237,6 +230,42 @@
   &lt;/div&gt;
 &lt;/form&gt;</pre>
   </div>
+  <div class="row">
+  <div class="col-md-9 col-md-offset-3">
+    <h3>With validation</h3>
+    <h4>Form input elements</h4>
+    <pre class="prettyprint">
+&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
+ &lt;label for=&quot;navn&quot; style=&quot;width: 200px;&quot;&gt;Write label here&lt;span class=&quot;input-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+ &lt;span class=&quot;help-block navn-message&quot;&gt;&lt;/span&gt;
+ &lt;div class=&quot;stb-form-group&quot;&gt;
+  &lt;input id=&quot;id here&quot; name=&quot;the name corresponds to valitator object&quot; type=&quot;text&quot; class=&quot;&quot; placeholder=&quot;&quot;&gt;
+ &lt;/div&gt;
+&lt;/form&gt;</pre>
+    <h4>Form input elements with action buttons</h4>
+   <pre class="prettyprint">
+&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
+ &lt;label for="">Write label here&lt;/label&gt;
+ &lt;span class=&quot;help-block navn-message&quot;&gt;&lt;/span&gt;
+ &lt;div class=&quot;stb-form-group&quot;&gt;
+  &lt;input id=&quot;&quot; name=&quot;the name corresponds to valitator object&quot; type=&quot;text&quot; class=&quot;has-submit&quot; placeholder=&quot;&quot; style=&quot;&quot;&gt;
+  &lt;button type=&quot;submit&quot; class=&quot;stb-btn stb-form is-submit&quot;&gt;Enter&lt;/button&gt;
+ &lt;/div&gt;
+&lt;/form&gt;</pre>
+    <h4>Form input elements with add-on</h4>
+      <pre class="prettyprint">
+&lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
+ &lt;label for=&quot;lanebelop&quot; style=&quot;&quot;&gt;Input with add-on&lt;/label&gt;
+ &lt;span class=&quot;help-block navn-message&quot;&gt;&lt;/span&gt;
+ &lt;div class=&quot;stb-form-group&quot;&gt;
+   &lt;div class=&quot;input-group&quot; style=&quot;width:230px;&quot;&gt;
+     &lt;input class=&quot;form-control&quot; id=&quot;lanebelop&quot; name=&quot;name corresponds to valitator object&quot; type=&quot;text&quot; placeholder=&quot;&quot;/&gt;
+     &lt;div class=&quot;stb-input-group-addon&quot;&gt;kr&lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/form&gt;</pre>
+  </div>
+ </div>
 </div> <!-- / General input fields row -->
 
 <hr class="top-margin-30" />
@@ -258,24 +287,27 @@
           <p>
             <strong>Choose wisely:</strong>
           </p>
-          <p>
-            All in one row:
-          </p>
-          <p>
-            <input class="stb-radio" type="radio" id="radio1" name="stb-a" value="African swallow" /><label for="radio1">African swallow</label>
-            <input class="stb-radio" type="radio" id="radio2" name="stb-a" value="European Swallow" /><label for="radio2">European swallow</label>
-            <input class="stb-radio" type="radio" id="radio3" name="stb-a" value="Checked" checked /><label for="radio3">Chosen</label>
-            <input class="stb-radio" type="radio" id="radio4" name="stb-a" value="Can't touch this" disabled /><label for="radio4">Can't touch this (disabled)</label>
-          </p>
+          <div class="visible-lg visible-md">
+            <p>
+              All in one row:
+            </p>
+            <div class="radiobuttons">
+              <input class="stb-radio" type="radio" id="radio1" name="stb-a" value="African swallow" /><label for="radio1">African swallow</label>
+              <input class="stb-radio" type="radio" id="radio2" name="stb-a" value="European Swallow" /><label for="radio2">European swallow</label>
+              <input class="stb-radio" type="radio" id="radio3" name="stb-a" value="Checked" checked /><label for="radio3">Chosen</label>
+              <input class="stb-radio" type="radio" id="radio4" name="stb-a" value="Can't touch this" disabled /><label for="radio4">Can't touch this (disabled)</label>
+            </div>
+          </div>
           <p>
             Nice and orderly in rows:
           </p>
-          <p>
+
+          <div class="radiobuttons">
             <input class="stb-radio" type="radio" id="radio5" name="stb-b" value="African swallow" /><label for="radio5" style="width: 280px;">African swallow</label><br>
             <input class="stb-radio" type="radio" id="radio6" name="stb-b" value="European Swallow" /><label for="radio6" style="width: 280px;">European swallow</label><br>
             <input class="stb-radio" type="radio" id="radio7" name="stb-b" value="Checked" checked /><label for="radio7" style="width: 280px;">Chosen</label><br>
             <input class="stb-radio" type="radio" id="radio8" name="stb-b" value="Can't touch this" disabled /><label for="radio8" style="width: 280px;">Can't touch this (disabled)</label>
-          </p>
+          </div>
         </div>
       </form>
     </div>
@@ -287,16 +319,16 @@
             <strong>This and/or that?</strong>
           </p>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 visible-lg visible-md">
               <p>
                 All in one row:
               </p>
-              <p>
+              <div class="checkboxes">
                 <input class="stb-checkbox" type="checkbox" id="checkbox1" name="stb-c" value="This" /><label for="checkbox1">This</label>
                 <input class="stb-checkbox" type="checkbox" id="checkbox2" name="stb-c" value="That" /><label for="checkbox2">That</label>
                 <input class="stb-checkbox" type="checkbox" id="checkbox3" name="stb-c" value="Chosen" checked /><label for="checkbox3">Chosen</label>
                 <input class="stb-checkbox" type="checkbox" id="checkbox4" name="stb-c" value="Can't touch this" disabled /><label for="checkbox4">Can't touch this (disabled)</label>
-              </p>
+              </div>
             </div>
           </div>
           <div class="row">
@@ -304,12 +336,12 @@
               <p>
                 Nice and orderly in rows:
               </p>
-              <p>
+              <div class="checkboxes">
                 <input class="stb-checkbox" type="checkbox" id="checkbox11" name="stb-d" value="This" /><label for="checkbox11" style="width: 280px;">This</label><br />
                 <input class="stb-checkbox" type="checkbox" id="checkbox12" name="stb-d" value="That" /><label for="checkbox12" style="width: 280px;">That</label><br />
                 <input class="stb-checkbox" type="checkbox" id="checkbox13" name="stb-d" value="Chosen" checked/><label for="checkbox13" style="width: 280px;">Chosen</label><br />
                 <input class="stb-checkbox" type="checkbox" id="checkbox14" name="stb-d" value="Can't touch this" disabled /><label for="checkbox14" style="width: 280px;">Can't touch this (disabled)</label><br />
-              </p>
+              </div>
             </div>
           </div>
         </div>
