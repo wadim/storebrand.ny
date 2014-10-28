@@ -25,7 +25,19 @@
   <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
   <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
-
+  <style>
+    .toc-list ul.items>li { 
+   	  float: left;
+ 	  margin-right: 20px;
+ 	  margin-top: 0 !important;
+ 	  margin-bottom: 10px;
+    }
+    
+    ul.items>li a {
+     font-size: 16px;
+ 	 font-weight: bold;
+   }
+  </style>
 </head>
 
 <body>
@@ -45,7 +57,7 @@
       <p class="lead">
         - A technical description of elements to be used when creating Web content.
       </p>
-      <h3>How to use this</h3>
+      <h3 class="top-margin-20">How to use this</h3>
       <p>
         Most elements on this page are now finalized and ready to use. Contact the storebrand.ny project for clarifications or requests for adding new elements. As of late October 2014 we may still make minor visual adjustments, but the tag mark-up should remain unchanged.
       </p>
@@ -72,11 +84,11 @@
 </div>
 <hr />
 
-<div class="container">
+<div class="container main">
 
 <div class="row"><!-- Colors Row -->
   <div class="col-md-3" id="index-nav" role="navigation">
-    <h2>Colors</h2>
+    <h2 class="toc-header">Colors</h2>
   </div>
 
   <div class="col-md-9" id="webfarger">
@@ -206,7 +218,7 @@
 
 <div class="row"> <!-- Typography Headers row-->
   <div class="col-md-3">
-    <h2>Typography / Headers</h2>
+    <h2 class="toc-header">Typography / Headers</h2>
   </div>
   <div class="col-md-9">
     <p><strong>Signa</strong> is the standard header font on storebrand.no for h1 (light), h2 (light) and h3 (book). For h4, h5 and h6 we use <strong>Open Sans Bold</strong>. Arial is the preferred fallback in all cases.</p>
@@ -236,7 +248,7 @@
 
 <div class="row">
   <div class="col-md-3">
-    <h2>Typography / Text</h2>
+    <h2 class="toc-header">Typography / Text</h2>
   </div>
   <div class="col-md-9">
     <h3>Lead paragraph</h3>
@@ -284,7 +296,7 @@
 
 <div class="row" id="typography-links">
   <div class="col-md-3">
-    <h2>Typography / Links</h2>
+    <h2 class="toc-header">Typography / Links</h2>
   </div>
   <div class="col-md-9">
     <div class="row">
@@ -477,7 +489,7 @@
 
 <div class="row">
   <div class="col-md-3">
-    <h2>Typography / Lists</h2>
+    <h2 class="toc-header">Typography / Lists</h2>
   </div>
   <div class="col-md-9">
     <p>We don't do much with lists, only adjusting the font sizing somewhat to improve responsive readability.</p>
@@ -503,7 +515,7 @@
 
 <div class="row"><!-- Spacing row -->
   <div class="col-md-3">
-    <h2>Layout / Spacing</h2>
+    <h2 class="toc-header">Layout / Spacing</h2>
   </div>
   <div class="col-md-9">
     <p>
@@ -550,7 +562,7 @@
 
 <div class="row"><!-- Tables row -->
   <div class="col-md-3">
-    <h2>Tables</h2>
+    <h2 class="toc-header">Tables</h2>
   </div>
   <div class="col-md-9">
     <p>
@@ -740,7 +752,7 @@
 <!-- List Group Row -->
 <div class="row">
   <div class="col-md-3">
-    <h2>List group</h2>
+    <h2 class="toc-header">List group</h2>
   </div>
   <div class="col-md-9">
     <p>
@@ -856,7 +868,7 @@
 
 <div class="row"> <!-- Boxes row -->
 <div class="col-md-3">
-  <h2>Boxes</h2>
+  <h2 class="toc-header">Boxes</h2>
 </div>
 <div class="col-md-9">
 <div class="row">
@@ -1135,7 +1147,7 @@
 
 <div class="row"> <!-- Notification row -->
   <div class="col-md-3">
-    <h2>Notification</h2>
+    <h2 class="toc-header">Notification</h2>
     (To be reviewed)
   </div>
   <div class="col-md-9">
@@ -1310,7 +1322,7 @@
 
 <div class="row"> <!-- FAQ row -->
   <div class="col-md-3">
-    <h2>FAQ</h2>
+    <h2 class="toc-header">FAQ</h2>
   </div>
   <div class="col-md-9">
     <h3>Frequently Asked Questions ("Accordion")</h3>
@@ -1387,7 +1399,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <div class="row">
   <div class="col-md-3">
-    <h2>Modals</h2>
+    <h2 class="toc-header">Modals</h2>
     (Needs styling, otherwise ready to use)
   </div>
   <div class="col-md-9">
@@ -1453,7 +1465,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <div class="row">
   <div class="col-md-3">
-    <h2>Cookie Notice</h2>
+    <h2 class="toc-header">Cookie Notice</h2>
   </div>
   <div class="col-md-9">
     <div class="row">
@@ -1491,7 +1503,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <div class="row">
 <div class="col-md-3">
-  <h2>Buttons</h2>
+  <h2 class="toc-header">Buttons</h2>
 </div>
 <div class="col-md-9">
 <div class="row">
@@ -1723,7 +1735,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <div class="row"> <!-- Image row -->
   <div class="col-md-3">
-    <h2>Image with caption</h2>
+    <h2 class="toc-header">Image with caption</h2>
   </div>
   <div class="col-md-9">
     <p>
@@ -1759,7 +1771,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <div class="row"> <!-- Standard icons row -->
 <div class="col-md-3">
-  <h2>Icons</h2>
+  <h2 class="toc-header">Icons</h2>
   (Additional icons to be added when needed.)
 </div>
 <div class="col-md-9">
@@ -2425,7 +2437,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <div class="row"> <!-- Navigation tabs row -->
   <div class="col-md-3">
-    <h2>Navigational tabs</h2>
+    <h2 class="toc-header">Navigational tabs</h2>
   </div>
 
   <div class="col-md-9">
