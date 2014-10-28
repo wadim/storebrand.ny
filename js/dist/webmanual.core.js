@@ -55,7 +55,7 @@ $(document).ready(function() {
             domNode: "#stb-slider",
             valueElem: "#stb-slider-value",
             calculate: function(a) {
-                return $(this.domNode).siblings(this.valueElem).text(a), a;
+                return $(this.domNode).siblings(this.valueElem).val(a), a;
 
             },
             complete: function() {},
