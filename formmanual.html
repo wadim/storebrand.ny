@@ -250,10 +250,14 @@
   <div class="row">
   <div class="col-md-9 col-md-offset-3">
     <h3>With validation</h3>
+    <p>We use the <a href="http://bootstrapvalidator.com/">bootstrapvalidator</a> for validating forms. The documentation is found on <a href="http://bootstrapvalidator.com/">bootstrapvalidator.com</a>.<br>
+    NB! Please note that the label has been moved outside of the stb-form-group container. This is a customization, since we want the error message to be displayed between the label
+    and input field.
+    </p>
     <h4>Form input elements</h4>
     <pre class="prettyprint">
 &lt;form class=&quot;stb-form-inline&quot; role=&quot;form&quot;&gt;
- &lt;label for=&quot;navn&quot; style=&quot;width: 200px;&quot;&gt;Write label here&lt;span class=&quot;input-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+ &lt;label for=&quot;navn&quot; style=&quot;&quot;&gt;Write label here&lt;span class=&quot;input-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
  &lt;span class=&quot;help-block navn-message&quot;&gt;&lt;/span&gt;
  &lt;div class=&quot;stb-form-group&quot;&gt;
   &lt;input id=&quot;id here&quot; name=&quot;the name corresponds to valitator object&quot; type=&quot;text&quot; class=&quot;&quot; placeholder=&quot;&quot;&gt;
@@ -471,7 +475,7 @@
     <div class="row">
       <div class="col-md-12">
         <form>
-        <div class="stb-form-group top-margin-10" style="width: 300px;">
+        <div class="stb-form-group top-margin-10" style="width: 500px;">
            <input id="stb-slider" type="slider" name="stb-slider" value="0" />
         </div>
         </form>
