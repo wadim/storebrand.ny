@@ -58,6 +58,15 @@
     }
     
   </style>
+  
+  <!-- Temporary JS to toggle the chevron icons ( Can be removed when it is decided to have default opened article list or not) -->
+  <script>
+    $(document).ready(function(){
+    	if($('.toc-list ul.items').css("display") == "block") {
+    		 $('.toc-list p span').toggleClass("chevron-down red chevron-up");
+    	}
+    });
+  </script>
 
 </head>
 

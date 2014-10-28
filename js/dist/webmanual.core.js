@@ -103,7 +103,7 @@ $(document).ready(function() {
         }), $("document").ready(function(){
           
         	  // Prepare the row that contains the table of contents
-            var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">Jump down to <span class="stb-sprite-medium chevron-up red  pull-right"></span></p><ul class="items"></ul></div></div>';
+            var toclist ='<div class="row"><div class="col-md-12 toc-list top-margin-20 top-padding-10 border-top-and-bottom"><p class="intro stb-font">Jump down to <span class="stb-sprite-medium chevron-up red pull-right"></span></p><ul class="items"></ul></div></div>';
             var tocHeaders= null;
             // Place the table of content on the top and find the top headings 
             $(toclist).insertAfter($('p.lead')); 
