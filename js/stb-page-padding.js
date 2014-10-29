@@ -520,15 +520,15 @@
       var btnTxt = $(this).html();
       var path = window.location.pathname;
       //console.log(btnTxt);
-      //console.log(page);
+      //console.log(path);
       ga('send', 'event', path , 'Klikk på knappen', btnTxt);
     });
 
     $('a').bind( "click", function() {
       var linkTxt = $(this).html();
       var path = window.location.pathname;
-      //console.log(btnTxt);
-      //console.log(page);
+      //console.log(linkTxt);
+      //console.log(path;
       ga('send', 'event', path , 'Klikk på lenke', linkTxt);
     });
 
@@ -777,9 +777,9 @@
       if(window.location.href.indexOf("brukertest") > -1){
         if($(this).attr('href') == '#' && $(this).attr('data-toggle') == undefined && $(this).attr('onclick') == undefined && $(this).children('span.remove').length == 0 && !$(this).hasClass('twister')){
           if(document.title == "Forside" || document.title == "Contact Us" || document.title == "Contact Us"  || document.title == "Sitemap" || document.title == "Search Results"){
-            window.location = "dummy/standard404.html";
+            window.location = "dummy/standardprototype.html";
           }else{
-            window.location = "../dummy/standard404.html";
+            window.location = "../dummy/standardprototype.html";
           }
         }
       }
