@@ -202,7 +202,7 @@
       $(headerTag).attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/\-/g,'').replace(/ /g,"-").toLowerCase()); // generating id for the h3
       var headerId = $(headerTag).attr("id").replace(/\W/g, ''); // set the id
       //create the link and return it
-      return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
+      return '<li class="col-md-3"><a href="#'+headerId+'">'+headerText+'</a></li>';
     }
 
   });
