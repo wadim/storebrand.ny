@@ -777,9 +777,9 @@
       if(window.location.href.indexOf("brukertest") > -1){
         if($(this).attr('href') == '#' && $(this).attr('data-toggle') == undefined && $(this).attr('onclick') == undefined && $(this).children('span.remove').length == 0 && !$(this).hasClass('twister')){
           if(document.title == "Forside" || document.title == "Contact Us" || document.title == "Contact Us"  || document.title == "Sitemap" || document.title == "Search Results"){
-            window.location = "dummy/standard404.html";
+            window.location = "dummy/standardprototype.html";
           }else{
-            window.location = "../dummy/standard404.html";
+            window.location = "../dummy/standardprototype.html";
           }
         }
       }
