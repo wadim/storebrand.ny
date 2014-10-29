@@ -524,6 +524,14 @@
       ga('send', 'event', path , 'Klikk på knappen', btnTxt);
     });
 
+    $('a').bind( "click", function() {
+      var linkTxt = $(this).html();
+      var path = window.location.pathname;
+      //console.log(btnTxt);
+      //console.log(page);
+      ga('send', 'event', path , 'Klikk på lenke', linkTxt);
+    });
+
     $('.mini.clickable').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
@@ -752,10 +760,31 @@
   }
 
   $(document).ready(function(){
-    var closeLinks = $('a.closeLink');
+    var closeLinks = $('a').filter(function(index){
+      return $(this).find('span.remove').length > 0;
+    });
+
     if(closeLinks.length > 0){
       hoverIcons(closeLinks);
     }
+  });
+
+
+  //All empty links need to redirect to a standard dummy page.
+  $(document).ready(function(){
+
+    $('a').bind('click', function(){
+      if(window.location.href.indexOf("brukertest") > -1){
+        if($(this).attr('href') == '#' && $(this).attr('data-toggle') == undefined && $(this).attr('onclick') == undefined && $(this).children('span.remove').length == 0 && !$(this).hasClass('twister')){
+          if(document.title == "Forside" || document.title == "Contact Us" || document.title == "Contact Us"  || document.title == "Sitemap" || document.title == "Search Results"){
+            window.location = "dummy/standard404.html";
+          }else{
+            window.location = "../dummy/standard404.html";
+          }
+        }
+      }
+    })
+
   });
 
 
