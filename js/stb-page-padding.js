@@ -520,15 +520,15 @@
       var btnTxt = $(this).html();
       var path = window.location.pathname;
       //console.log(btnTxt);
-      //console.log(page);
+      //console.log(path);
       ga('send', 'event', path , 'Klikk på knappen', btnTxt);
     });
 
     $('a').bind( "click", function() {
       var linkTxt = $(this).html();
       var path = window.location.pathname;
-      //console.log(btnTxt);
-      //console.log(page);
+      //console.log(linkTxt);
+      //console.log(path;
       ga('send', 'event', path , 'Klikk på lenke', linkTxt);
     });
 
