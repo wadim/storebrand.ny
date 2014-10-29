@@ -69,6 +69,7 @@ var typeaheads = {
       {"name": "Lær mer om fondsparing","url":"http://www.storebrand.no/site/stb.nsf/pages/fond_sparing.html"},
       {"name": "Bærekraft","url":"http://www.storebrand.no/site/stb.nsf/Pages/forsidebarekraft.html"},
       {"name": "Kjøp fond","url":"https://www2.storebrand.no/fondweb/productinfo.html"},
+      {"name": "Sparing i  fond","url":"https://www2.storebrand.no/fondweb/productinfo.html"},
       {"name": "Våre anbefalte fond","url":"https://www2.storebrand.no/spareveileder/general.html"},
       {"name": "Delphi","url":"https://www.delphi.no/site/delphino.nsf/Pages/hjem.html"}
     ],
@@ -77,11 +78,13 @@ var typeaheads = {
       {"name": "Lær om pensjon","url" : absURL+"../brukertest/vanlig/kategori/pensjon.html"},
       {"name": "Pensjonskalkulator","url":absURL+"../brukertest/vanlig/verktoy/pensjonstall.html"},
       {"name": "Pensjonssparing","url":absURL+"../brukertest/vanlig/artikkel/pensjonssparing.html"},
+      {"name": "Sparing til pensjon","url":absURL+"../brukertest/vanlig/artikkel/pensjonssparing.html"},
       {"name": "Egen sparing pensjon","url":absURL+"../brukertest/vanlig/produkt/egensparingpensjon.html"}
     ],
   "Bank" :
     [
       {"name": "Banksparing","url" : absURL+"../brukertest/vanlig/kategori/sparing.html"},
+      {"name": "Sparing i bank","url" : absURL+"../brukertest/vanlig/kategori/sparing.html"},
       {"name": "Bank og LÅn","url":absURL+"../brukertest/vanlig/kategori/bankoglaan.html"},
       {"name": "Bolig lån","url":absURL+"../brukertest/vanlig/produkt/boliglaan.html"},
       {"name": "Bolig lån for unge","url":absURL+"../brukertest/vanlig/produkt/boliglaanunge.html"},
@@ -93,6 +96,7 @@ var typeaheads = {
   "Forsikring" :
     [
       {"name": "Tips om forsikring","url":absURL+"../brukertest/vanlig/kategori/forsikring.html"},
+      {"name": "Spar penger på forsikring","url":absURL+"../brukertest/vanlig/kategori/forsikring.html"},
       {"name": "Bilforsikring","url":absURL+"../brukertest/vanlig/produkt/bilforsikring.html"},
       {"name": "Bil og kjøretøy","url" : absURL+"../brukertest/vanlig/tema2/bilogkjoretoy.html"},
       {"name": "Hus og hjem","url" : absURL+"../brukertest/vanlig/tema2/husoghjem.html"},

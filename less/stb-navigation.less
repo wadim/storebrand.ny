@@ -58,6 +58,10 @@
   .desktop .navbar-nav {
     background-color: @stb-primary-color-darker;
   }
+  
+  .desktop .navbar-nav>li.group:hover {
+  	background-color: @stb-primary-color;
+  } 
 
   .desktop .rightColor{
     padding-right: 0px;
@@ -177,6 +181,9 @@
     color: @stb-secondary-charcoal ;
     font-weight: normal;
   }
+  .navbar .dropdown-menu>li ul li h4 a {
+  	font-size: 16px;
+  }
 
   .dropdown-menu>li h4 {
     height: 35px;
@@ -188,9 +195,22 @@
     background: url("../images/calc.png") -6px -5px no-repeat;
   }
 
+  .dropdown-menu .sidelinks li {
+     margin-bottom: 20px;  	
+  }
   .dropdown-menu .sidelinks a {
   	 font-family: "open sans bold";
+  	 text-decoration: none;
   }
+  
+ .navbar-default .navbar-nav .dropdown-menu li.sidelinks a:hover {
+  	 border-bottom: 0 !important;
+  
+    span:last-child {
+  	  border-bottom: 1px solid @stb-primary-color;
+    }
+  }
+   
   .extraLinks {
     display: inline-block;
     clear: both;
@@ -211,10 +231,9 @@
   	font-family: @font-family-sans-serif-bold;
     font-weight: bold;
     color: @stb-secondary-charcoal;
-    font-size: 16px;
+    font-size: 16px ;
     display: block;
   }
-
   .dropdown-menu .extraLinks .roadAssistance {
     background: url("../images/roadassistance.png") left bottom no-repeat;
   }
