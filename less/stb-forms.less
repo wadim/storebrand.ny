@@ -14,8 +14,8 @@ form {
       // tweak the default BS transition-speed:
       .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
       border-radius: 0px;
-	    height: 48px;
-	    margin-bottom: 24px;
+      height: 48px;
+      margin-bottom: 24px;
 
       &:hover {
         color: @stb-secondary-charcoal;
@@ -30,6 +30,10 @@ form {
     	  // Color from Bootstrap ( We dont have this color defined in our palette.)
       }
 
+      font-size: 16px;
+      @media (max-width: @screen-sm-min) {
+        font-size: 14px;
+      }
 
     }
 
