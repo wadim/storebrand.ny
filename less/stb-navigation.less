@@ -192,9 +192,22 @@
     background: url("../images/calc.png") -6px -5px no-repeat;
   }
 
+  .dropdown-menu .sidelinks li {
+     margin-bottom: 20px;  	
+  }
   .dropdown-menu .sidelinks a {
   	 font-family: "open sans bold";
+  	 text-decoration: none;
   }
+  
+ .navbar-default .navbar-nav .dropdown-menu li.sidelinks a:hover {
+  	 border-bottom: 0 !important;
+  
+    span:last-child {
+  	  border-bottom: 1px solid @stb-primary-color;
+    }
+  }
+   
   .extraLinks {
     display: inline-block;
     clear: both;
