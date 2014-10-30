@@ -21,9 +21,9 @@
   <script type="text/javascript" src="../../js/stb-page-padding.js"></script>
   <script type="text/javascript" src="../../js/dist/bootstrapValidator-0.5.0.js"></script>
   <script type="text/javascript" src="../../js/src/stb-video.js"></script>
-  
+
   <style>
-div.cookieFooter{
+    div.cookieFooter{
       background-color: #333333;
       height: auto;
       opacity: 0.7;
@@ -58,36 +58,36 @@ div.cookieFooter{
   <script>
 
     $(document).ready(function(){
-        var accept = readCookie('acceptCookie');
-        if(accept=='Yes'){
-          jQuery('#cookieFooter').hide();
-        }
+      var accept = readCookie('acceptCookie');
+      if(accept=='Yes'){
+        jQuery('#cookieFooter').hide();
+      }
 
-        /* Verify National Identity Number ***********************************************/
-        function verifyIDNumber(nr) {
-          var pn = new Array();
-          var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
-          var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
-          for(var i=0; i<nr.length; i++) {
-            pn[i] = nr.charAt(i);
-          }
-          var k1=0;
-          for(var i=0; i<v1.length; i++) {
-            k1 += pn[i]*v1[i];
-          }
-          var k2=0;
-          for(var i=0; i<v2.length; i++) {
-            k2 += pn[i]*v2[i];
-          }
-          if (k1%11==0 && k2%11==0 ) {
-            return true;
-          } else {
-            return false;
-          }
+      /* Verify National Identity Number ***********************************************/
+      function verifyIDNumber(nr) {
+        var pn = new Array();
+        var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
+        var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+        for(var i=0; i<nr.length; i++) {
+          pn[i] = nr.charAt(i);
         }
+        var k1=0;
+        for(var i=0; i<v1.length; i++) {
+          k1 += pn[i]*v1[i];
+        }
+        var k2=0;
+        for(var i=0; i<v2.length; i++) {
+          k2 += pn[i]*v2[i];
+        }
+        if (k1%11==0 && k2%11==0 ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
 
-      });
-  
+    });
+
   </script>
 </head>
 
@@ -173,7 +173,7 @@ div.cookieFooter{
                           <span class="stb-theme-sprites house" style="margin-bottom: -20px; margin-right: 10px;"></span>
                           <span>Hus & Hjem</span>
                         </a>
-                  
+
                       </li>
                       <li>
                         <a href="tema2/bilogkjoretoy.html">
@@ -205,7 +205,7 @@ div.cookieFooter{
               </li>
             </ul>
           </li>
-          <li class="company col-md-3 group"><a href="dummy/dummybedriftside.html"  class="dropdown-toggle">Bedrift</a></li>
+          <li class="company col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
           <li class="login col-md-3 yamm-fw group dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a>
             <ul class="dropdown-menu" id="loginmenu">
               <li class="clearfix"><a href="#" class="pull-right right-margin-20 top-margin-10" ><span class="stb-sprite-medium remove"></span></a></li>
@@ -495,29 +495,29 @@ div.cookieFooter{
     </div>
     <div class="col-md-6">
       <center><img class="img-responsive" src="../../images/skisseelementer/UT432x243TomTown.png" alt="category banner image" title="category bannner image"/></center>
-        <p class="top-margin-10" style="text-align: center">For mange er pensjon noe som skjer langt der fremme. Derfor er vi så opptatt av bærekraftig investering. </p>
-        <p class="stb-font-bold"  style="font-size: 12px;text-align: center">Tom Beltesprekke, pensjonsrådgiver</p>
+      <p class="top-margin-10" style="text-align: center">For mange er pensjon noe som skjer langt der fremme. Derfor er vi så opptatt av bærekraftig investering. </p>
+      <p class="stb-font-bold"  style="font-size: 12px;text-align: center">Tom Beltesprekke, pensjonsrådgiver</p>
     </div>
   </div>
 </div>
 
 <div class="stbcolor-secondary seventh ">
   <div class="container">
-  <div class="row bottom-padding-40 top-padding-30">
-    <div class="col-md-6 top-margin-50 visible-sm visible-xs">
-      <h2>Bedre pensjon.<br> Helt enkelt.</h2>
-      <p class="intro">Det er mange ting du kan utsette. Å spare til pensjon bør ikke være en av de tingene. Bruk noen minutter på å komme i gang i dag.</p>
-      <button class="stb-btn transparent light top-margin-20" onclick="event.preventDefault(); window.location.href = 'produkt/egensparingpensjon.html';">Kom igang med din pensjon</button>
+    <div class="row bottom-padding-40 top-padding-30">
+      <div class="col-md-6 top-margin-50 visible-sm visible-xs">
+        <h2>Bedre pensjon.<br> Helt enkelt.</h2>
+        <p class="intro">Det er mange ting du kan utsette. Å spare til pensjon bør ikke være en av de tingene. Bruk noen minutter på å komme i gang i dag.</p>
+        <button class="stb-btn transparent light top-margin-20" onclick="event.preventDefault(); window.location.href = 'produkt/egensparingpensjon.html';">Kom igang med din pensjon</button>
+      </div>
+      <div class="col-md-6">
+        <img class="img-responsive" src="../../images/skisseelementer/UT405x405VictoriaBubbles.png" alt="category banner image" title="category bannner image"/>
+      </div>
+      <div class="col-md-6 top-margin-50 hidden-sm hidden-xs">
+        <h2>Bedre pensjon.<br> Helt enkelt.</h2>
+        <p class="intro">Det er mange ting du kan utsette. Å spare til pensjon bør ikke være en av de tingene. Bruk noen minutter på å komme i gang i dag.</p>
+        <button class="stb-btn transparent light top-margin-20" onclick="event.preventDefault(); window.location.href = 'produkt/egensparingpensjon.html';">Kom igang med din pensjon</button>
+      </div>
     </div>
-    <div class="col-md-6">
-      <img class="img-responsive" src="../../images/skisseelementer/UT405x405VictoriaBubbles.png" alt="category banner image" title="category bannner image"/>
-    </div>
-    <div class="col-md-6 top-margin-50 hidden-sm hidden-xs">
-       <h2>Bedre pensjon.<br> Helt enkelt.</h2>
-      <p class="intro">Det er mange ting du kan utsette. Å spare til pensjon bør ikke være en av de tingene. Bruk noen minutter på å komme i gang i dag.</p>
-       <button class="stb-btn transparent light top-margin-20" onclick="event.preventDefault(); window.location.href = 'produkt/egensparingpensjon.html';">Kom igang med din pensjon</button>
-    </div>
-  </div>
   </div>
 </div>
 
@@ -548,11 +548,11 @@ div.cookieFooter{
 <div class="container">
   <div class="row top-margin-20 bottom-margin-20">
     <div class="col-md-4 top-margin-20">
-     <img class="img-responsive" src="../../images/skisseelementer/UT63x63Windmill.png"/>
-     <h3>Bilforsikring</h3>
-     <p>Du kan spare mange penger på å velge rett bilforsikring. Se våre ulike typer og sjekk pris for din bil.</p>
-     <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'produkt/bilforsikring.html';">Bilforsikring</button><br><br>
-     <a href="kategori/forsikring.html">Alle våre forsikringer</a>
+      <img class="img-responsive" src="../../images/skisseelementer/UT63x63Windmill.png"/>
+      <h3>Bilforsikring</h3>
+      <p>Du kan spare mange penger på å velge rett bilforsikring. Se våre ulike typer og sjekk pris for din bil.</p>
+      <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'produkt/bilforsikring.html';">Bilforsikring</button><br><br>
+      <a href="kategori/forsikring.html">Alle våre forsikringer</a>
     </div>
     <div class="col-md-4 top-margin-20">
       <img height="63px" width="63px" class="img-responsive" src="../../images/skisseelementer/112x112IlluCash_2x.png"/>
@@ -572,18 +572,18 @@ div.cookieFooter{
 
 <!-- End actual page contents -->
 
-  <!-- Start Cookie notice -->
-  <div data-spy="affix" class="cookieNote" id="cookieNote">
-    <div class="cookieClose">
-      &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-small white remove"></span><br />(Lukk)</a>
-    </div>
-    <div class="cookieInfo">
-      <div class="info">
-        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
-      </div>
+<!-- Start Cookie notice -->
+<div data-spy="affix" class="cookieNote" id="cookieNote">
+  <div class="cookieClose">
+    &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-small white remove"></span><br />(Lukk)</a>
+  </div>
+  <div class="cookieInfo">
+    <div class="info">
+      På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
     </div>
   </div>
-  <!-- End Cookie notice -->
+</div>
+<!-- End Cookie notice -->
 
 <!-- Start responsive footer -->
 <footer class="stbcolor-primary first stb-footer  visible-sm visible-md visible-lg">
