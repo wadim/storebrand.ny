@@ -97,6 +97,14 @@ form {
         border: 1px solid @stb-primary-color-darker;
       }
     }
+
+    select.form-control{
+      height: 48px;
+      font-size: 16px;
+      @media (max-width: @screen-sm-min) {
+        font-size: 14px;
+      }
+    }
   } //end:stb-form-group
 
  
@@ -179,6 +187,9 @@ form {
 
 .radiobuttons, .checkboxes{
   font-size: 16px;
+  @media (max-width: @screen-sm-min) {
+    font-size: 14px;
+  }
   line-height: 24px;
   color: #404040;
   font-family: "Open Sans",Arial,ArialMT,sans-serif;
