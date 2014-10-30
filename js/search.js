@@ -67,7 +67,6 @@ function initPromotion() {
 function initTypeahead(){
   // Categorized JSON object. This will be served from CMS eventually. For now it is hardcoded.
   // Raw data is currently available as global variable typeaheads in searchdata.js, will be dynamically updated by CMS or other admin system later
-  
   // Set up the category config object. First set some general parameters, such as the limit for how many typeahead suggestions to show.
   var categoryConfig = [{
     hint: true,
@@ -89,21 +88,18 @@ function initTypeahead(){
     });
 
     category.initialize();
-
-   // var header = '<h3 class="headline-search">&nbsp;<span class="stb-sprite-16 search"></span> ' + index + '<span style="font-size: 16px;"> Anbefalte Søkeresultater</span></h3>';
+   // var header = '<h3 class="headline-search">&nbsp;<span class="stb-sprite-16 search"></span> ' + index + '<span style="font-size: 16px;"> Anbefalte Søkeresultater</span></h3>';   
+   //var header = '<h3 class="headline-search"><span class="stb-sprite-16 search"></span>Gå direkte til:</h3>';
     
-    var header = '<h3 class="headline-search"><span class="stb-sprite-16 search"></span>Gå direkte til: </h3>';
-
-    if (index == "Anbefalte") {
-      header = '<h2 class="headline-search" style="margin:0; padding:0;"><span class="stb-color-sprite-16 ok"></span></h2>';
-    }
+    //if (index == "Anbefalte") {
+    //  header = '<h2 class="headline-search" style="margin:0; padding:0;"><span class="stb-color-sprite-16 ok"></span></h2>';
+    //}
     
     var catObj = {
       name : index,
       displayKey: 'name',
       source: category.ttAdapter(),
       templates: {
-        header: header
       }
     };
     categoryConfig.push(catObj);
