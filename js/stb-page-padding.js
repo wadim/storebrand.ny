@@ -52,11 +52,6 @@
       $(".dropdown").trigger("hide.bs.dropdown");
     });
 
-    //For KL user test, needs to be removed
-    $('.nav li.company a').click(function(){
-      event.stopPropagation();
-    });
-
     if($('.nav .company').hasClass("current")) {
     	$('.nav .private').css("background-image","none");
     }
