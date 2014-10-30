@@ -51,7 +51,11 @@
       $(".dropdown").removeClass('open');
       $(".dropdown").trigger("hide.bs.dropdown");
     });
-
+    
+    
+    if($('.nav .company').hasClass("current")) {
+    	$('.nav .private').css("background-image","none");
+    }
   });
 // End mobile top menu decoration
 
