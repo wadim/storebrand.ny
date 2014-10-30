@@ -90,10 +90,12 @@ function initTypeahead(){
 
     category.initialize();
 
-    var header = '<h3 class="headline-search">&nbsp;<span class="stb-sprite-16 search"></span> ' + index + '<span style="font-size: 16px;"> - Direktevalg</span></h3>';
+   // var header = '<h3 class="headline-search">&nbsp;<span class="stb-sprite-16 search"></span> ' + index + '<span style="font-size: 16px;"> Anbefalte Søkeresultater</span></h3>';
+    
+    var header = '<h3 class="headline-search"><span class="stb-sprite-16 search"></span>Gå direkte til: </h3>';
 
     if (index == "Anbefalte") {
-      header = '<h3 class="headline-search">&nbsp;<span class="stb-color-sprite-16 ok"></span> Forslag til s&oslash;keord </h3>';
+      header = '<h2 class="headline-search" style="margin:0; padding:0;"><span class="stb-color-sprite-16 ok"></span></h2>';
     }
     
     var catObj = {
