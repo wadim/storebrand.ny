@@ -14,7 +14,6 @@
   display: inline-block;
 }
 
-
 .stb-theme-sprites{
   background: url("../images/stb-sprites/theme-sprites.png") no-repeat;
   width: 64px;
@@ -381,6 +380,16 @@
       background-position: -200px -3200px;
     }
   }   
+
+  &.postpone {
+    background-position: 0px -3300px;
+    &.white {
+      background-position: -100px -3300px;
+    }
+    &.red {
+      background-position: -200px -3300px;
+    }
+  } 
   
 }
 
@@ -716,6 +725,16 @@
     }
     &.red {
       background-position: -500px -3200px;
+    }
+  }  
+
+  &.postpone {
+    background-position: -300px -3300px;
+    &.white {
+      background-position: -400px -3300px;
+    }
+    &.red {
+      background-position: -500px -3300px;
     }
   }  
   
