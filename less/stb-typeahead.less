@@ -80,17 +80,39 @@
   text-decoration: underline;
 }
 
-.search h3.headline-search {
+.search .tt-dataset-Anbefalte .tt-suggestions .tt-suggestion:last-child {
+	margin:0;
+	padding: 0;
+	border-bottom: 1px solid @stb-gray-third;
+}
+
+.search .tt-dataset-Anbefalte .tt-suggestions .tt-suggestion:last-child p {
+	padding: 0px 15px;
+}
+
+.search .tt-dataset-Anbefalte::after {
+	content: "Gå direkte til";
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+	padding-top: 10px;
+	//border-top: 1px solid @stb-gray-third;
+	font-family: "open sans bold";
+}
+
+
+.search h3.headline-search{
   text-align: center;
   margin: 10px 0px 5px 0px;
   //background-color: @stb-gray-first;
   //border-bottom: 1px solid @stb-gray-third;
-  border-top: 1px solid @stb-gray-third;
+ // border-top: 1px solid @stb-gray-third;
   padding: 0 !important;
   //color: @stb-gray-fifth;
   font-size: 14px;
   font-family: "open sans bold"
 }
+
 .search .headline-search span {
 	margin: 0;
 	padding: 0;
