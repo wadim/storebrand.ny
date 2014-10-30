@@ -60,7 +60,7 @@
   }
   
   .desktop .navbar-nav>li.group:hover {
-  	background-color: @stb-primary-color;
+  	background-color:@stb-primary-color-even-darker
   } 
 
   .desktop .rightColor{
@@ -122,12 +122,18 @@
     position: absolute;
     top: 25%;
   }
+  
+  .desktop .navbar-nav.nav li.open {
+	background-color: @stb-primary-color;
+  }
+  
+  
   .nav .private {
     background: @stb-primary-color-darker url("../images/private.png") 20% 50% no-repeat;
   }
 
   .nav .private.open {
-    background: @stb-primary-color url("../images/private.png") 20% 50% no-repeat;
+    background: @stb-primary-color url("../images/private.png") 20% 50% no-repeat !important;
   }
 
   .nav .login {
