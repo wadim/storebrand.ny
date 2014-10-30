@@ -12,7 +12,7 @@
 @chosen-focus-border: rgba(82, 168, 236, .1);
 @chosen-focus-box-shadow: ~"0 1px 1px rgba(0, 0, 0, .075) inset, 0 0 8px rgba(82, 168, 236, .6)";
 @chosen-focus-transition: ~"border linear .2s, box-shadow linear .2s";
-@chosen-height: @input-height-base;
+@chosen-height: 48px;
 @chosen-multi-height: @input-height-base + 6px;
 @chosen-sprite-path: "../images/chosen-sprite.png";
 
@@ -31,7 +31,11 @@
 
 .chosen-container {
   display: inline-block;
-  font-size: @font-size-base;
+  font-size: 16px;
+  @media (max-width: @screen-sm-min) {
+    font-size: 14px;
+  }
+
   position: relative;
   vertical-align: middle;
 
@@ -211,7 +215,7 @@
         display: block;
         height: 100%;
         width: 100% !important;
-        padding-top: 7px;
+        padding-top: 14px;
         padding-left: 10px;
         top: 0;
 
