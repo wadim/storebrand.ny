@@ -6,6 +6,7 @@
     padding-top: 80px;
   }
 }
+
 // Navigation at the top of page
 #top-menu-nav{
 
@@ -170,7 +171,6 @@
     padding: 0;
     color: @stb-secondary-charcoal;
     line-height: 18px;
-    border: 0;
     &:hover {
       border-bottom: 1px solid @stb-primary-color !important;
     }
@@ -190,8 +190,10 @@
     color: @stb-secondary-charcoal ;
     font-weight: normal;
   }
-  .navbar .dropdown-menu>li ul li h4 a {
+  
+  .navbar-default .navbar-nav .dropdown-menu>li ul li h4 a {
   	font-size: 16px;
+  	border-bottom: 1px solid;
   }
 
   .dropdown-menu>li h4 {
@@ -469,7 +471,7 @@
 
 @media screen and (min-width: 1200px) {
   #verktoy{
-    padding: 10px 0 10px 15%;
+    padding: 10px 0 10px 0px;
   }
 }
 
@@ -485,7 +487,7 @@
 
   a{
     color: @stb-secondary-charcoal;
-    border-bottom: none !important;
+    border-bottom: none;
     >span.stb-sprite-medium{
       margin-right: 0;
     }
@@ -498,7 +500,7 @@
 
   a{
     color: @stb-secondary-charcoal;
-    border-bottom: none !important;
+   
   }
 
   li{
@@ -510,9 +512,7 @@
     clear: both;
     padding-top: 15px;
   }
-  #verktoy span {
-    margin: 0 4px -4px 0
-  }
+
 }
 
 #loginmenu{
@@ -651,6 +651,19 @@
     width: 99%;
     border: 2px solid #404040;
   }
+  
+  
+  @media screen and (max-width: 768px) { 
+	
+    #themelinks {
+  	  padding: 0;
+    }
+    
+    #themelinks div {
+      margin-bottom: 10px;
+    }
+  }
+  
 
 }
 

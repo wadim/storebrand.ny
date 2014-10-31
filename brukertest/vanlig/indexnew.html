@@ -1,42 +1,96 @@
 <!doctype html>
 <html>
 <head>
-  <title>storebrand.ny 0.42</title>
-  <meta name="robots" content="noindex, nofollow">
+  <title>Forside: (New Menu)</title>
+  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/stb-main.css">
-  <link rel="stylesheet" type="text/css" href="css/yamm.css">
-  <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.color-2.1.2.min.js"></script>
-  <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
-  <script type="text/javascript" src="js/dist/jquery-ui-1.11.0.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
-  <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/dist/typeahead.bundle.min.js"></script>
-  <script type="text/javascript" src="data/searchdata.js"></script>
-  <script type="text/javascript" src="js/search.js"></script>
-  <script type="text/javascript" src="js/stb-common.js"></script>  
-  <script type="text/javascript" src="js/stb-page-padding.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/stb-main.css">
+  <link rel="stylesheet" type="text/css" href="../../css/yamm.css">
+  <script type="text/javascript" src="../../js/dist/modernizr.custom.js"></script>
+  <script type="text/javascript" src="../../js/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../js/dist/jquery.color-2.1.2.min.js"></script>
+  <script type="text/javascript" src="../../js/src/jquery.eqheight.js"></script>
+  <script type="text/javascript" src="../../js/dist/jquery-ui-1.11.0.js"></script>
+  <script type="text/javascript" src="../../js/dist/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="../../js/dist/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../js/dist/typeahead.bundle.min.js"></script>
+  <script type="text/javascript" src="../../data/searchdata.js"></script>
+  <script type="text/javascript" src="../../js/search.js"></script>
+  <script type="text/javascript" src="../../js/stb-common.js"></script>
+  <script type="text/javascript" src="../../js/stb-page-padding.js"></script>
+  <script type="text/javascript" src="../../js/dist/bootstrapValidator-0.5.0.js"></script>
+  <script type="text/javascript" src="../../js/src/stb-video.js"></script>
   
-  <!-- Halloween special edition -->
   <style>
-    body, p, p.intro {
-      background: #000;
-      color: #f6981e;
+div.cookieFooter{
+      background-color: #333333;
+      height: auto;
+      opacity: 0.7;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 400;
+      color: white;
+    }
+    div.cookieFooter .contentinfo {
+      color: #FFFFFF;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px;
+      width: 60%;
     }
 
-    body {
-      background-image: url("images/bloody.jpg");
+    div.cookieFooter.affix-bottom {
+      position: static;
     }
-    
-    h1, h2, ul li, ul li a, ul li a:visited, a, p a, p a:visited {
-      color: #f6981e;
+
+    .nav-tabs.nav-justified>li>a{
+      border: 1px solid #FFFFFF;
+      line-height: 2;
     }
+    .nav-tabs.nav-justified>li.active>a,.nav-tabs.nav-justified>li.active>a:hover {
+      background-color: #E6E6E6 !important;
+      border: 1px solid #E6E6E6;
+    }
+
   </style>
+  <script>
+
+    $(document).ready(function(){
+        var accept = readCookie('acceptCookie');
+        if(accept=='Yes'){
+          jQuery('#cookieFooter').hide();
+        }
+
+        /* Verify National Identity Number ***********************************************/
+        function verifyIDNumber(nr) {
+          var pn = new Array();
+          var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
+          var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+          for(var i=0; i<nr.length; i++) {
+            pn[i] = nr.charAt(i);
+          }
+          var k1=0;
+          for(var i=0; i<v1.length; i++) {
+            k1 += pn[i]*v1[i];
+          }
+          var k2=0;
+          for(var i=0; i<v2.length; i++) {
+            k2 += pn[i]*v2[i];
+          }
+          if (k1%11==0 && k2%11==0 ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+      });
+  
+  </script>
 </head>
- 
+
 <body>
 
 <!-- Start top of page -->
@@ -45,8 +99,8 @@
   <!-- Start desktop menu -->
   <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
     <div class="container yamm">
-      <div class="navbar-header col-md-4" style="height: 80px;">
-        <a href="index.html" style="border-bottom: none;"><img src="images/logo.png" title="logo image" class="logo"></a>
+      <div class="navbar-header col-md-4">
+        <a href="index.html" style="border-bottom: none;"><img src="../../images/logo.png" title="logo image" class="logo"></a>
       </div>
       <div id="navbar-collapse-grid" class="navbar-collapse collapse">
         <ul class="nav navbar-nav col-md-8">
@@ -115,11 +169,10 @@
                   <li class="col-md-4 sidelinks">
                     <ul>
                       <li>
-                        <a href="tema2/husoghjem.html">
+                         <a href="tema2/husoghjem.html">
                           <span class="stb-theme-sprites house" style="margin-bottom: -20px; margin-right: 10px;"></span>
                           <span>Hus & Hjem</span>
-                        </a>
-                  
+                 		 </a>
                       </li>
                       <li>
                         <a href="tema2/bilogkjoretoy.html">
@@ -139,19 +192,27 @@
                           <span>Ferie & Fritid</span>
                         </a>
                       </li>
+                       <li>
+                        <a href="#">
+                          <span class="stb-theme-sprites medal" style="margin-bottom: -20px; margin-right: 10px;"></span>
+                          <span>Fordeler</span>
+                        </a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              <li id="verktoy" class="row stbcolor-gray second">
-                <div class="col-md-3 col-lg-2 col-lg-offset-1"><h4><span class="stb-sprite-medium wrench"></span><a href="#"> Veihjelp</a></h4></div>
-                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium edit"></span><a href="tema3/meldskade.html"> Meld skade</a></h4></div>
-                <div class="col-md-3 col-lg-2" style="padding-left: 0;"><h4><span class="stb-sprite-medium pretzel"></span><a href="tema3/kundefordeler.html"> Kundefordeler</a></h4></div>
-                <div class="col-md-3 col-lg-2"><h4><span class="stb-sprite-medium bubble"></span><a href="contactus.html"> Kontakt oss</a></h4></div>
+              <li id="verktoy" class="row">
+               <div class="container">
+                  <div class="col-md-2 col-md-offset-1 col-lg-offset-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'";>Veihjlep</button></div>
+                  <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'";>Meld skade</button></div>
+                  <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'";>Sperr kort</button></div>
+                  <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='contactus.html'";>Kontakt oss</button></div>
+               </div>
               </li>
             </ul>
           </li>
-          <li class="company col-md-3 group"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bedrift</a></li>
+          <li class="company col-md-3 group"><a href="dummy/dummybedriftside.html"  class="dropdown-toggle">Bedrift</a></li>
           <li class="login col-md-3 yamm-fw group dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a>
             <ul class="dropdown-menu" id="loginmenu">
               <li class="clearfix"><a href="#" class="pull-right right-margin-20 top-margin-10" ><span class="stb-sprite-medium remove"></span></a></li>
@@ -196,7 +257,7 @@
   <nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
     <div class="row stbcolor-primary third">
       <div class="navbar-header col-xs-6 logo">
-        <a href="index.html" style="border-bottom: none;"><img class="stb-logo-mobile img-responsive left-padding-10 pull-right" src="images/logo.png" title="storebrand logo"/></a>
+        <a href="index.html" style="border-bottom: none;"><img class="stb-logo-mobile img-responsive left-padding-10 pull-right" src="../../images/logo.png" title="storebrand logo"/></a>
       </div>
       <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-5 col-xs-offset-1" style="padding-left: 6px;">
         <ul class="nav navbar">
@@ -378,134 +439,108 @@
     </div>
   </div>
 </div>
-<div id="themelinks" class="row top-margin-10 bottom-margin-40" style="margin-left: 0; margin-right: 0;">
-  <div class="col-xs-6 col-sm-3 top-padding-20" style="padding-left: 0; padding-right: 0;">
-    <p style="text-align: center">
-      <a href="tema2/husoghjem.html">
-        <span class="stb-theme-sprites house" style="margin-bottom: -20px;"></span>Hus & Hjem
-      </a>
-    </p>
-  </div>
-  <div class="col-xs-6 col-sm-3 top-padding-20" style="padding-left: 0; padding-right: 0;">
-    <p style="text-align: center">
-      <a href="tema2/bilogkjoretoy.html">
-        <span class="stb-theme-sprites car" style="margin-bottom: -20px;"></span>Bil & Kjøretøy
-      </a>
-    </p>
-  </div>
-  <div class="col-xs-6 col-sm-3 top-padding-20" style="padding-left: 0; padding-right: 0;">
-    <p style="text-align: center">
-      <a href="#">
-        <span class="stb-theme-sprites couple" style="margin-bottom: -20px;"></span>Liv & Helse
-      </a>
-    </p>
-  </div>
-  <div class="col-xs-6 col-sm-3 top-padding-20" style="padding-left: 0; padding-right: 0;">
-    <p style="text-align: center">
-      <a href="tema2/ferieogfritid.html">
-        <span class="stb-theme-sprites bike" style="margin-bottom: -20px;"></span>Ferie & Fritid
-      </a>
-    </p>
-  </div>
-</div>
-<div class="row top-margin-10 stbcolor-gray first top-padding-10 bottom-padding-10" style="margin-left: 0; margin-right: 0;">
-  <div class="col-xs-6 col-sm-3" style="text-align: center">
-    <h4><span class="stb-sprite-medium wrench" style="margin-bottom: -4px;"></span><a href="#"> Veihjelp</a></h4>
-  </div>
-  <div class="col-xs-6 col-sm-3" style="text-align: center">
-    <h4><span class="stb-sprite-medium edit" style="margin-bottom: -4px;"></span><a href="tema3/meldskade.html"> Meld skade</a></h4>
-  </div>
-  <div class="col-xs-6 col-sm-3" style="text-align: center; padding-left: 0; padding-right: 0;">
-    <h4><span class="stb-sprite-medium pretzel" style="margin-bottom: -4px;"></span><a href="tema3/kundefordeler.html"> Kundefordeler</a></h4>
-  </div>
-  <div class="col-xs-6 col-sm-3" style="text-align: center">
-    <h4><span class="stb-sprite-medium bubble" style="margin-bottom: -4px;"></span><a href="contactus.html"> Kontakt oss</a></h4>
-  </div>
+<div id="themelinks" class="row top-margin-10 bottom-margin-30" style="margin-left: 0; margin-right: 0;">
+  <div class=" col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'";>Veihjlep</button></div>
+  <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'";>Meld skade</button></div>
+  <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'";>Sperr kort</button></div>
+  <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='contactus.html'";>Kontakt oss</button></div>
 </div>
 </div>
 <!-- End mobile menu -->
-<!-- End top of page -->
 
-  <!-- Start actual page contents -->
-  <div class="container">   
-    <div class="row">
-      <div class="col-md-12 column">
-        <div class="stb-box banner">
-          <div class="text">
-            <h2>Storebrand.ny - Version 0.42</h2>
+<!-- Start actual page contents -->
+<div class="container">
+  <div class="row bottom-padding-40 top-padding-40">
+    <div class="col-md-6 top-margin-50">
+      <h3 class="top-margin-50">Kundeinnlogging</h3>
+      <form id="start-login-form" class="stb-form-inline" role="form">
+        <label class="stb-font-bold" >Fødselsnummer </label><br>
+        <span class="help-block info-message"></span>
+        <div class="form-group stb-form-group">
+          <input type="tel" class="" name="birthNumber" style="width: 230px">
+          <button class="stb-btn stb-form is-submit">Logg inn</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <center><img class="img-responsive" src="../../images/skisseelementer/UT432x243TomTown.png" alt="category banner image" title="category bannner image"/></center>
+        <p class="top-margin-10" style="text-align: center">For mange er pensjon noe som skjer langt der fremme. Derfor er vi så opptatt av bærekraftig investering. </p>
+        <p class="stb-font-bold"  style="font-size: 12px;text-align: center">Tom Beltesprekke, pensjonsrådgiver</p>
+    </div>
+  </div>
+</div>
 
-            <p class="intro">
-              Web manual as of <strong>Halloween</strong> 2014
-            </p>
-            <p>
-              Mostly small fixes this week. The usability test went fairly well, although the testing was generally all about the big things and general navigation, not the tiny details. We have, however, made some changes to the visual experience when performing a site search.
-            </p>
-            <div class="row">
-              <div class="col-md-6">
-                <p class="top-padding-20"><strong><a href="webmanual.html">Web manual</a> updates:</strong></p>
-                <ul class="stb">
-                  <li>Introducing a shortcut section at the top of the manual, allowing for easier navigation to the part you're interested in!</li>
-                  <li>Several (minor) CSS changes to various elements, based on updated design decisions.</li>
-                </ul>
-                <p class="top-padding-20"><strong>Web <a href="formmanual.html">form manual</a> updates:</strong></p>
-                <ul class="stb">
-                  <li>Progress tracker</li>
-                  <li>Slider</li>
-                  <li>New sprite for visual part of radio buttons and checkboxes</li>
-                  <li>Correct markup for using Bootstrap Validator on manual fields</li>
-                </ul>                
-                <p class="top-padding-20">
-                  <strong>Relevant pages this week</strong>
-                </p>
-                <ul class="stb">
-                  <li><a href="webmanual.html">Web manual</a></li>
-                  <li><a href="formmanual.html">Form manual</a></li>
-                  <li>The new design was used as a base for creating a new site for the <a href="http://www.storebrand.no/akademikarane">Akademikerne</a> project.</li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <p class="top-padding-20"><strong>Some updated pages on Enonic:</strong></p>
-                <ul class="stb">
-                  <li><a href="http://client.stb.intra/cms/site/4/privat/forsikring">Category page for "Forsikring"</a></li>
-                  <li><a href="http://client.stb.intra/cms/site/4/privat/pensjon/ekstrapensjon">Product page for "Ekstrapensjon"</a></li>
-                </ul>
-              </div>
-            </div>       
-            <p class="top-padding-20">
-               No way! Way!
-            </p>
+<div class="stbcolor-secondary seventh ">
+  <div class="container">
+  <div class="row bottom-padding-40 top-padding-30">
+    <div class="col-md-6 top-margin-50 visible-sm visible-xs">
+      <h2>Bedre pensjon.<br> Helt enkelt.</h2>
+      <p class="intro">Det er mange ting du kan utsette. Å spare til pensjon bør ikke være en av de tingene. Bruk noen minutter på å komme i gang i dag.</p>
+      <button class="stb-btn transparent light top-margin-20" onclick="event.preventDefault(); window.location.href = 'produkt/egensparingpensjon.html';">Kom igang med din pensjon</button>
+    </div>
+    <div class="col-md-6">
+      <img class="img-responsive" src="../../images/skisseelementer/UT405x405VictoriaBubbles.png" alt="category banner image" title="category bannner image"/>
+    </div>
+    <div class="col-md-6 top-margin-50 hidden-sm hidden-xs">
+       <h2>Bedre pensjon.<br> Helt enkelt.</h2>
+      <p class="intro">Det er mange ting du kan utsette. Å spare til pensjon bør ikke være en av de tingene. Bruk noen minutter på å komme i gang i dag.</p>
+       <button class="stb-btn transparent light top-margin-20" onclick="event.preventDefault(); window.location.href = 'produkt/egensparingpensjon.html';">Kom igang med din pensjon</button>
+    </div>
+  </div>
+  </div>
+</div>
 
-            <hr />
-            <p>
-              Previous versions:
-            </p>
-            <ul class="stb">
-              <li><a href="../0.40/index.html">0.40</a></li>
-              <li><a href="../0.38/index.html">0.38</a></li>
-              <li><a href="../0.37/index.html">0.37</a></li>
-              <li><a href="../0.36/index.html">0.36</a></li>
-            </ul>
-            <p>
-            <br />
-              Older: <a href="../0.34/index.html">0.34</a>, 
-              <a href="../0.33/index.html">0.33</a>, 
-              <a href="../0.32/index.html">0.32</a>, 
-              <a href="../0.314159265358979/index.html">0.314159265358979</a>, 
-              <a href="../0.31/index.html">0.31</a>, 
-              <a href="../0.29/index.html">0.29</a>, 
-              <a href="../0.28/index.html">0.28</a>, 
-              <a href="../0.25/index.html">0.25</a>, 
-              <a href="../0.2/index.html">0.2</a>
-            </p>
-          </div>
-          
+
+<!-- Start of page contents -->
+<div class="stbcolor-secondary third lighter">
+  <div class="container banner-video">
+    <div class="row video-text bottom-margin-40">
+      <div class="col-md-6 top-margin-50">
+        <div class="stb-banner">
+          <h1>Spar penger på den smarte måten</h1>
+          <p class="intro">Det er mange måter å spare på. Vår spareguru Kim forteller deg hva som er smartest.</p>
+          <button class="stb-btn transparent light playVideoBtn">Spill av video <span class="glyphicon glyphicon-play"></span></button>
+          <br><br><a href="kategori/sparing.html">Alle våre spareprodukter</a>
         </div>
       </div>
+      <div class="col-md-6">
+        <img class="img-responsive" src="../../images/skisseelementer/UT405x405KimDrawing.png" alt="category banner image" title="category bannner image"/>
+      </div>
     </div>
-
+    <div class="video-container" style="display: none;">
+      <button class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-medium remove white"></span></button>
+      <div id="player-banner" class="video-player-banner" data-youtube-id="_7Foh3T1gN4"></div>
+    </div>
   </div>
-  <!-- End actual page contents -->  
-  
+</div>
+
+<div class="container">
+  <div class="row top-margin-20 bottom-margin-20">
+    <div class="col-md-4 top-margin-20">
+     <img class="img-responsive" src="../../images/skisseelementer/UT63x63Windmill.png"/>
+     <h3>Bilforsikring</h3>
+     <p>Du kan spare mange penger på å velge rett bilforsikring. Se våre ulike typer og sjekk pris for din bil.</p>
+     <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'produkt/bilforsikring.html';">Bilforsikring</button><br><br>
+     <a href="kategori/forsikring.html">Alle våre forsikringer</a>
+    </div>
+    <div class="col-md-4 top-margin-20">
+      <img height="63px" width="63px" class="img-responsive" src="../../images/skisseelementer/112x112IlluCash_2x.png"/>
+      <h3>Kundefordeler</h3>
+      <p>Har du tjenestepensjon i Storebrand?  Da får du mange fordeler og rabatter hos oss. </p>
+      <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'tema3/kundefordeler.html';">Kundefordeler</button>
+    </div>
+    <div class="col-md-4 top-margin-20">
+      <img height="63px" width="63px" class="img-responsive" src="../../images/skisseelementer/112x112IlluPiggy_2x.png"/>
+      <h3>Finn ditt pensjonstall</h3>
+      <p>Vår pensjonskalkulator gir deg raskt god oversikt over hva du kan forvente å få i pensjon. </p>
+      <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'verktoy/pensjonstall.html';">Finn ditt pensjonstall</button><br><br>
+      <a href="artikkel/pensjonssparing.html">Forstå pensjon</a>
+    </div>
+  </div>
+</div>
+
+<!-- End actual page contents -->
+
   <!-- Start Cookie notice -->
   <div data-spy="affix" class="cookieNote" id="cookieNote">
     <div class="cookieClose">
@@ -654,18 +689,16 @@
 
 </footer>
 <!-- End responsive footer -->
-  
-  <!-- Google Analytics -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	  ga('create', 'UA-41882079-4', 'storebrand.no');
-	  ga('set', 'anonymizeIp', true);
-	  ga('send', 'pageview');
-  </script>   
-  <!-- / Google Analytics -->  
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41882079-4', {'cookieDomain': 'none'});
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
 
 </body>
 </html>
