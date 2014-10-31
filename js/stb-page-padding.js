@@ -779,7 +779,7 @@
     $('a').bind('click', function(){
       if(window.location.href.indexOf("brukertest") > -1){
         if($(this).attr('href') == '#' && $(this).attr('data-toggle') == undefined && $(this).attr('onclick') == undefined && $(this).children('span.remove').length == 0 && !$(this).hasClass('twister') && document.title != "Bedrift"){
-          if(document.title == "Forside" || document.title == "Contact Us" || document.title == "Contact Us"  || document.title == "Sitemap" || document.title == "Search Results"){
+          if(document.title == "Forside" || document.title == "Forside: (New Menu)" || document.title == "Contact Us" || document.title == "Contact Us"  || document.title == "Sitemap" || document.title == "Search Results"){
             window.location = "dummy/standardprototype.html";
           }else{
             window.location = "../dummy/standardprototype.html";
