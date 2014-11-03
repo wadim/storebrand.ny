@@ -26,13 +26,6 @@ function hexc(a) {
   return color = "#" + b.join("");
 }
 
-$("document").ready(function(){
-  $(".row .column").matchHeight(true);
-});
-    
-$(window).resize(function() {
-  $(".row .column").matchHeight(true);
-});
 
 //Code for toogle demonstration of Notification boxes
 function toggleMsg(){
