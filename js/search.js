@@ -10,6 +10,7 @@ var animSpeed;
 var searchIsRunning=false;
 var hitcounter=0;
 var hasURL= false;
+var urlParams;
 
 $(document).ready(function(){
   // Make search in menu header visible 
@@ -18,22 +19,22 @@ $(document).ready(function(){
   // Perform search only on the search results page (add other pages if necessary)
   if ( window.location.href.indexOf("search-results.html") != -1 ){
 	  //Get the search term from the URL
-    get = getQuery();
+    urlParams = getQuery();
     searchIsRunning=false;
 
     start = 0; // Start from the first group of search results from Google
 	
     //If the start parameter is something else than nothing, get the new starting point for the up-coming Google search
-    if (get['start']!=undefined && get['start'].length > 0 ) { 
-      start = get['start'];
+    if (urlParams.start!==undefined && urlParams.start.length > 0 ) { 
+      start = urlParams.start;
     }
 	
     // If there is a search term to use, perform the search
-    if ( get['q'] != undefined && get['q'].length > 0 ) {	
-      $("form.stb-form-inline input.searchbox").val(get['q']);
+    if ( urlParams.q!==undefined && urlParams.q.length > 0 ) {	
+      $("form.stb-form-inline input.searchbox").val(urlParams.q);
       getPromotions();
-      searchQuery(get['q'], start);
-    };
+      searchQuery(urlParams.q, start);
+    }
   }
 });
 
@@ -57,12 +58,9 @@ function checkSearch(query) {
   query = query.replace(reg1, "");
   query = query.replace(reg2, "");
   query = query.replace(reg3, "");
+  //absURL is defined elsewhere so not initialized here again
   window.location = absURL+"../brukertest/vanlig/search-results.html?action=search&q=" + query; // link to the search result page
 }
-
-function initPromotion() {
-  // Data is available as global variable promotions in searchdata.js
-};
 
 function initTypeahead(){
   // Categorized JSON object. This will be served from CMS eventually. For now it is hardcoded.
@@ -159,7 +157,7 @@ function initExtendedSearch(){
   // Check when the document is clicked anywhere outside the search input field
   $(document).click(function() {
     // If the search field is in focus and not animating
-    if(maximized == true && animating==false) {
+    if(maximized===true && animating===false) {
 
       // Do not minimize if there is text in the search field
       if(!$('.navbar-nav .typeahead.tt-input').val()){
@@ -187,7 +185,7 @@ function initExtendedSearch(){
     $('.navbar-nav .typeahead').focus();
 
     // If it's currently minimized and not animating, maximize it.
-    if (maximized == false && animating == false) {
+    if (maximized===false && animating===false) {
       maximizeSearch();
     }
 
@@ -210,7 +208,7 @@ function initExtendedSearch(){
     },animSpeed);
 
     // Store the current width
-    searchParentWidth = $('.navbar-nav > li.search').css('width');
+    var searchParentWidth = $('.navbar-nav > li.search').css('width');
     backgroundColor = $('.navbar-nav .typeahead').css('background-color');
     // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
     searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
@@ -245,7 +243,7 @@ function initExtendedSearch(){
     },animSpeed);
   }
 
-  function minimizeSearch() {
+ function minimizeSearch() {
     // Save the animating state, and reset it once the animations complete
     animating = true;
     setTimeout(function(){
@@ -285,26 +283,26 @@ function initExtendedSearch(){
     }, animSpeed);
 
   }
-};
+}
 
 function getQuery(){
   // Get the query from the location URL
 	var get = [];
-	decodeurl = decodeURI(location.search);
+	var decodeurl = decodeURI(location.search);
 	decodeurl.replace('?', '').split('&').forEach(function (val) {
-	  split = val.split("=", 2);
+	  var split = val.split("=", 2);
 	  get[split[0]] = split[1];
   });
   return get;
 }
 
 // AJAX search call to Google
-function searchQuery( query, start ) {
+function searchQuery( inputQuery, start ) {
   // loader image
   $(".searchresults").append("<row><div class='col-12 top-margin-30' style='text-align: center;'><img id='loadingimage' src='../../images/ajax-loader.gif'></div></div>");
   searchIsRunning = true;
 
-  var query = encodeURI( encodeURI( query ) ); // Used because of the yahoo api. Replace with Storebrand proxy later.
+  var query = encodeURI( encodeURI( inputQuery ) ); // Used because of the yahoo api. Replace with Storebrand proxy later.
   $.ajax({
     type: "GET",
 	  url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dutf-8%26oe%3Dutf-8%26q%3D"+query+"'&diagnostics=false",
@@ -315,10 +313,9 @@ function searchQuery( query, start ) {
 
 function getPromotions() {
   // Populate the promotion area
-  if (start == 0){
-    initPromotion();
+  if (start===0){
     $.each(promotions,function(value) {
-      if (value.toLowerCase() == get['q'].toLowerCase()){ 
+      if (value.toLowerCase() == urlParams.q.toLowerCase()){ 
         $(".searchresults").append('<div class="top-margin-20 bottom-margin-20 promotion' + '"><h3>'+promotions[value].header + '<' + '/h3><' + 'p class="description">' + promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + promotions[value].url + '">' + promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
       }
      });
@@ -330,13 +327,13 @@ function getPromotions() {
 function xmlParser(xml) { 
   $("#loadingimage").remove();
   searchIsRunning = false;
-  noresult = false;
+  var noresult = false;
   
   // If this is the first set of results to be parsed
-  if(start == 0){
+  if(start===0){
 	  
     // Prepare the result summary for populating the status of the search result ( found or not)
-    resultSummary = '<div class="resultsummary row"><div class="col-sm-12"></div></div>';
+    var resultSummary = '<div class="resultsummary row"><div class="col-sm-12"></div></div>';
     $(resultSummary).insertAfter($('.stb-form-inline .searchbox').closest('form').parent().parent());
     
     // Show search suggestions
@@ -347,7 +344,7 @@ function xmlParser(xml) {
     });
     
     // If we don't get anything initially, show corresponding message 
-    if ($(xml).find("R").length == 0 && $(xml).find("Spelling").length== 0 ) {
+    if ($(xml).find("R").length===0 && $(xml).find("Spelling").length===0 ) {
     $(".resultsummary div").append('<div class="nogo"' + '>Fant ingen treff ved s&oslash;k etter <' + 'strong>'+ $(xml).find("Q").text()+'<' + '/strong>.<' + '/div>');
       noresult=true;
     }
@@ -357,8 +354,7 @@ function xmlParser(xml) {
 
     // Populate the result summary for the search result (search term and total number of results)
     if (!noresult) {
-      foundresult= '<p>Ditt s&oslash;k etter &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+(hitcounter>100?" mer enn 100 " : hitcounter)+' treff.</p>';
-      $(".resultsummary div").append(foundresult);  
+      $(".resultsummary div").append('<p>Ditt s&oslash;k etter &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+(hitcounter>100?" mer enn 100 " : hitcounter)+' treff.</p>');  
     }
   }
   
@@ -369,80 +365,64 @@ function xmlParser(xml) {
 }
 
 function displaySearchResult(xml) {
-  // Parse the results element
+  // Parse the results elements
   $(xml).find("R").each(function () {
-    // Display any "promotion" result first
-    if ($(this).find("SL_MAIN").length > 0) {
-      // Show promo
-      var promoURL = $(this).find("IMAGE_SOURCE").text();
-      var promoPic = "";
-      if (promoURL!="" && promoURL!= null) {
-        promoPic = "<img src='" + promoURL + "' />";
-      }
-      $(".searchresults").append('<div class="lookatwhatifound' + '"><div class="promotering"' + '>' + promoPic + '<div class="title"' + '><a href="'  + $(this).find("SL_MAIN").find("U").text() + '">' +  $(this).find("BLOCK").find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + $(this).find("S").text() + '<' + '/div><' + '/div><'+ '/div>');
-    } else {
-      // Shorten the search result item URL
-      var strippedS = $(this).find("S").text();
-      var stripRE = new RegExp("<br>", "g");
-      strippedS = strippedS.replace(stripRE, "");
-      var showU = $(this).find("U").text();
-      var strippedU = showU;
-      var stripU = new RegExp("http://www.", "g");
-      strippedU = strippedU.replace(stripU, "");
-      stripU = new RegExp("https://www.", "g");
-      strippedU = strippedU.replace(stripU, "");
-      if(strippedU.length > 85) {
-        var shortenedU =  strippedU.substring(0,35) + "..." + strippedU.substring(strippedU.length-40, strippedU.length);
-      } else {
-        var shortenedU = strippedU;
-      }
+    //Get the search result item's string and sanitize it
+	var strippedS = $(this).find("S").text();
+    var stripRE = new RegExp("<br>", "g");
+    strippedS = strippedS.replace(stripRE, "");
     
-     //get the index of the last / in the url
-      lastSlashIndex = shortenedU.lastIndexOf("/");  
-      //if the last / was at the end of the URL, for example in storebrand.no/bank/
-      if( lastSlashIndex+1 == shortenedU.length ) {
-        //remove the last /
-        shortenedU = shortenedU.substr( 0, shortenedU.length-1 );
-        //now look for the new last /
-        lastSlashIndex = shortenedU.lastIndexOf("/", lastSlashIndex);
-      }
-      //if no slash was found, reset it to 0
-      if( lastSlashIndex == -1 ) {
-        lastSlashIndex = 0;
-      }
-      //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
-      var numOfSlashes = (shortenedU.split("/").length - 1);
-      shortenedU = decodeURI(( numOfSlashes > 1?"/...":"" ) + shortenedU.substr( lastSlashIndex ));
-      
-      //Setup any special classes to identify result type
-      var linkDecoration = "";
-      if (strippedU.indexOf(".pdf") > 0) {
-        linkDecoration = ' class="pdf_document" ';
-      }
-
-      //Prepare and display the result markup
-      var resultMarkup = "";
-      if (strippedS.indexOf("reutzer") > 0) {
-        resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
-        $(".searchresults").append(resultMarkup);
-      } else {
-        resultMarkup = '<div class="top-margin-50' + '"><h4 class=""' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
-        $(".searchresults").append(resultMarkup);
-      }    
+    //Get the search result item's page URL and shorten it
+    var showU = $(this).find("U").text();
+    var strippedU = showU;
+    var stripU = new RegExp("http://www.", "g");
+    strippedU = strippedU.replace(stripU, "");
+    stripU = new RegExp("https://www.", "g");
+    strippedU = strippedU.replace(stripU, "");
+    var shortenedU = "";
+    if(strippedU.length > 85) {
+      shortenedU =  strippedU.substring(0,35) + "..." + strippedU.substring(strippedU.length-40, strippedU.length);
+    } else {
+      shortenedU = strippedU;
     }
-  });
+    //get the index of the last / in the url
+    var lastSlashIndex = shortenedU.lastIndexOf("/");  
+    //if the last / was at the end of the URL, for example in storebrand.no/bank/
+    if( lastSlashIndex+1 == shortenedU.length ) {
+      //remove the last /
+      shortenedU = shortenedU.substr( 0, shortenedU.length-1 );
+      //now look for the new last /
+      lastSlashIndex = shortenedU.lastIndexOf("/", lastSlashIndex);
+    }
+    //if no slash was found, reset it to 0
+    if( lastSlashIndex == -1 ) {
+      lastSlashIndex = 0;
+    }
+    //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
+    var numOfSlashes = (shortenedU.split("/").length - 1);
+    shortenedU = decodeURI(( numOfSlashes > 1?"/...":"" ) + shortenedU.substr( lastSlashIndex ));
+  
+    //Setup any special classes to identify result type
+    var linkDecoration = "";
+    if (strippedU.indexOf(".pdf") > 0) {
+      linkDecoration = ' class="pdf_document" ';
+    }
 
+    //Prepare and display the result markup
+    var resultMarkup = '<div class="top-margin-50' + '"><h4 class=""' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
+    $(".searchresults").append(resultMarkup);
+  });
 }
 
 //Detect page scrolling to load new search results
-$(document).scroll(function(e){
+$(document).scroll(function(event){
   // Prevent the scroll from searching again while the search is still running, or if the search result limit has been reached
-  if ( searchIsRunning == true || (start+20)>hitcounter ) {
+  if ( searchIsRunning===true || (start+20)>hitcounter ) {
     return false;
   }
 
   // If the page has search query and the user has scrolled to the bottom of the page, load more search results
-  if((get['q'].length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
+  if((urlParams.q!==undefined && urlParams.q.length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
     // Show message after searching 40 items
     if(start>=40) {
       $(".searchresults").append("<row><div class='col-12 top-margin-30' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");
@@ -452,6 +432,6 @@ $(document).scroll(function(e){
     
    //Start from the next 20 search results  
    start = start + 20;   
-   searchQuery(get['q'], start);
+   searchQuery(urlParams.q, start);
   }
 });
