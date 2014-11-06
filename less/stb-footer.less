@@ -2,44 +2,78 @@ footer .toTop{
 	margin-right: 0;
 }
 
-.stb-footer a.stb-footer-link {
-  text-decoration: none;
-  border: 0;
-}
-	
-.stb-footer ul li {
-  list-style-type: none;
-  padding-bottom: 15px;	
-}
- 
-.stb-footer.stb-footer ul.stb {
-  margin: 0;
+.stb-footer{
+  a.stb-footer-link {
+    text-decoration: none;
+    border: 0;
+  }
+
+  ul li {
+    list-style-type: none;
+    padding-bottom: 15px;
+  }
+
+  .info ul.stb {
+    padding-top: 12px;
+  }
+
+  .contact ul.stb {
+    padding-top: 6px;
+  }
+
+  .contact .earphone {
+    color: @stb-primary-white;
+  }
+
+  .content {
+    margin-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  h4 {
+    color: @stb-primary-white;
+    padding: 12px 10px 10px 0;
+  }
+
+  ul.stb {
+    margin: 0;
+  }
+
+  ul.stb a.small-icons {
+    display: inline-block;
+  }
+
 }
 
-.stb-footer.stb-footer ul.stb a.small-icons {
-  display: inline-block;
-}
+.mobilefooter{
 
-.stb-footer .info ul.stb {
-  padding-top: 12px;
-}
+  &.first a {
+    border-bottom: 1px solid @stb-primary-white;
+    text-decoration: none;
+  }
+  &.first a:hover {
+    border-bottom: none;
+  }
 
-.stb-footer .contact ul.stb {
-  padding-top: 6px;
-}
+  .info li {
+    margin-bottom: 20px;
+  }
 
-.stb-footer .contact .earphone {
-  color: @stb-primary-white;
-}
+  .toTop a, .mobilefooter .social a {
+    border-bottom: 0;
+  }
 
-.stb-footer .content {
-  margin-top: 24px; 
-  padding-bottom: 24px;
-}
+  .contact {
+    text-align: center;
+  }
 
-.stb-footer h4 {
-  color: @stb-primary-white;
-  padding: 12px 10px 10px 0;
+  .contact span.icon {
+    margin-left: -24px;
+  }
+
+  .social div {
+    text-align: center;
+  }
 }
 
 #footerTopLinkText, #footerTopLinkTextMobile {
@@ -48,34 +82,6 @@ footer .toTop{
 
 #footerTopLinkIcon, #footerTopLinkIconMobile {
   margin-bottom: -5px;
-}
-
-.mobilefooter .info li {
-  margin-bottom: 20px;
-}
-  
-.mobilefooter.first a {
-  border-bottom: 1px solid @stb-primary-white;
-  text-decoration: none;
-}
-
-.mobilefooter.first a:hover {
-  border-bottom: none;
-}
-.mobilefooter .toTop a, .mobilefooter .social a {
-  border-bottom: 0;
-}
-  
-.mobilefooter .contact {
-  text-align: center;
-}
-  
-.mobilefooter .contact span.icon {
-  margin-left: -24px;
-}
-
-.mobilefooter .social div {
-  text-align: center;
 }
 
 @media (max-width: 767px) {
