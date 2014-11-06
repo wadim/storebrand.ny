@@ -2,110 +2,113 @@
 
 .tab-container {
   border-bottom: 2px solid @stb-secondary-sand;
-}
-  
-.tab-container ul {
-  border: none;
-}
-  
-.tab-container .nav-tabs>li {
-  background-color: @stb-secondary-sand;
-  margin-right: 2px;
-  margin-bottom: -2px;
-}
-  
-.tab-container .nav-tabs>li.active {
-  border-color: @stb-secondary-sand;
-}
- 
-.tab-container .nav-tabs>li>a {
-  margin-right: 0;
-  display: inline-block;
-  height: 100%; 
-}
-  
-.tab-container .nav-tabs>li>a:hover{
-  background-color: @stb-primary-white;
-  padding-bottom: 10px;
-  color: #000;
-}
-  
-.dropdown-tabs .dropdown-menu {
-  width: 100%;
-  border-radius: 0;
-  background-color: @stb-gray-first;
-}
+  ul {
+    border: none;
+  }
 
-.dropdown-tabs .dropdown button {
-  width: 100%;
-  text-align: left;
-  font-family: @font-family-sans-serif-bold;
-  border-radius: 0;
-  height: 40px;
-}
+  .nav-tabs>li {
+    background-color: @stb-secondary-sand;
+    margin-right: 2px;
+    margin-bottom: -2px;
+  }
 
-.dropdown-tabs .dropdown a{
-  border-bottom: none;
-  padding: 10px 20px;
-  color: @stb-primary-black;
-}
+  .nav-tabs>li.active {
+    border-color: @stb-secondary-sand;
+  }
 
-.dropdown-tabs .dropdown a:hover{
-  border-bottom: none;
-  padding: 10px 20px;
-  background: 0 0;
-  background-color: @stb-gray-second;
-}
+  .nav-tabs>li>a {
+    margin-right: 0;
+    display: inline-block;
+    height: 100%;
+  }
 
-.dropdown-tabs .dropdown li.active a {
-	background-color: @stb-gray-second;
-}
-.dropdown-tabs .dropdown li.active a:hover {
-  color: @stb-primary-black;	
+  .nav-tabs>li>a:hover{
+    background-color: @stb-primary-white;
+    padding-bottom: 10px;
+    color: #000;
+  }
+
 }
   
-.dropdown-tabs .dropdown .btn-default:hover, .dropdown-tabs .dropdown .btn-default:focus, .dropdown-tabs .dropdown .btn-default:active {
-  background-color: @stb-primary-white;
+.dropdown-tabs{
+  .dropdown-menu {
+    width: 100%;
+    border-radius: 0;
+    background-color: @stb-gray-first;
+  }
+
+  .dropdown button {
+    width: 100%;
+    text-align: left;
+    font-family: @font-family-sans-serif-bold;
+    border-radius: 0;
+    height: 40px;
+  }
+
+  .dropdown a{
+    border-bottom: none;
+    padding: 10px 20px;
+    color: @stb-primary-black;
+  }
+
+  .dropdown a:hover{
+    border-bottom: none;
+    padding: 10px 20px;
+    background: 0 0;
+    background-color: @stb-gray-second;
+  }
+
+  .dropdown li.active a {
+    background-color: @stb-gray-second;
+  }
+
+  .dropdown li.active a:hover {
+    color: @stb-primary-black;
+  }
+
+  .dropdown .btn-default:hover, .dropdown .btn-default:focus, .dropdown .btn-default:active {
+    background-color: @stb-primary-white;
+  }
 }
 
 .toggletabs {
-      float: left;
-}
-    
-.toggletabs li{
   float: left;
-  margin-right: 10px;
-  list-style-type: none;
-  color: #fff;
-  font-family: "Times new Roman";
+
+  li{
+    float: left;
+    margin-right: 10px;
+    list-style-type: none;
+    color: #fff;
+    font-family: "Times new Roman";
+  }
+
+  li a {
+    padding: 15px 24px;
+    background-color: #ccc;
+    color: #000;
+    border-bottom: none;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: background-color, color;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    padding: 15px 24px;
+    background-color: #E6E6E6;
+    border-bottom: none;
+    color: #000;
+  }
 }
 
-.toggletabs li a {
-  padding: 15px 24px;
-  background-color: #ccc;
-  color: #000;
-  border-bottom: none;
-  font-size: 16px;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  transition-property: background-color, color;
-  text-decoration: none;
-  
-}
-
-.login .toggletabs li.active a, .login .toggletabs li a:focus{
-  background-color: #666;
-  color: #fff;
-  border-bottom: none;
-}
-
-
-.toggletabs li a:hover {
-  padding: 15px 24px;
-  background-color: #E6E6E6;
-  border-bottom: none;
-  color: #000;
+.login{
+  .toggletabs li.active a, .toggletabs li a:focus{
+    background-color: #666;
+    color: #fff;
+    border-bottom: none;
+  }
 }
 
 .tab-content {
