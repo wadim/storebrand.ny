@@ -790,5 +790,27 @@
 
   });
 
+  $(document).ready(function(){
+    if($('.datePicker').length > 0){
+      $('.datePicker').datetimepicker(
+        {language: 'nb',
+         pickTime: false
+        }
+      );
+      $('.datePicker')
+          .on('dp.change dp.show', function(e) {
+            var name = $(e.target).find('input').attr('name');
+            // Validate the date when user change it
+            $(this).parents('form.validateForm')
+              // Get the bootstrapValidator instance
+                .data('bootstrapValidator')
+              // Mark the field as not validated, so it'll be re-validated when the user change date
+                .updateStatus(name, 'NOT_VALIDATED', null)
+              // Validate the field
+                .validateField(name);
+          });
+    }
+  });
+
 
 }(jQuery));
