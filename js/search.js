@@ -57,7 +57,7 @@ function checkSearch(query) {
   query = query.replace(reg1, "");
   query = query.replace(reg2, "");
   query = query.replace(reg3, "");
-  window.location = absURL+"../brukertest/vanlig/search-results.html?action=search&q=" + query;
+  window.location = absURL+"../brukertest/vanlig/search-results.html?action=search&q=" + query; // link to the search result page
 }
 
 function initPromotion() {
@@ -325,98 +325,55 @@ function getPromotions() {
   }
 }
 
+// parse the search result coming from google
+
 function xmlParser(xml) { 
   $("#loadingimage").remove();
   searchIsRunning = false;
   noresult = false;
   
+  // If this is the first set of results to be parsed
   if(start == 0){
+	  
     // Prepare the result summary for populating the status of the search result ( found or not)
     resultSummary = '<div class="resultsummary row"><div class="col-sm-12"></div></div>';
     $(resultSummary).insertAfter($('.stb-form-inline .searchbox').closest('form').parent().parent());
     
-    // Forslag til annen stavem�te
+    // Show search suggestions
     $(xml).find("Spelling").each(function() {
-    var suggestedSpelling = $(this).find("Suggestion").attr("q");
-    //$(".searchsummary").append('<div id="suggestion"' + '>Vi har f� eller ingen treff p� det s�keordet, men pr�v <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
-    $(".resultsummary div").append('<div id="suggestion"' + '>Vi har f&aring; eller ingen treff p&aring; det s&oslash;keordet, men pr&oslash;v <a href="/site/stb.nsf/frmgugl-bootstrap.html?ReadForm&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
-    noresult= true;
+      var suggestedSpelling = $(this).find("Suggestion").attr("q");
+      $(".resultsummary div").append('<div id="suggestion"' + '>Vi har f&aring; eller ingen treff p&aring; det s&oslash;keordet, men pr&oslash;v <a href="?action=search&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+      noresult= true;
     });
-    // Hvis vi ikke finner noe som helst m� vi jo si ifra om det f�rst:
+    
+    // If we don't get anything initially, show corresponding message 
     if ($(xml).find("R").length == 0 && $(xml).find("Spelling").length== 0 ) {
     $(".resultsummary div").append('<div class="nogo"' + '>Fant ingen treff ved s&oslash;k etter <' + 'strong>'+ $(xml).find("Q").text()+'<' + '/strong>.<' + '/div>');
       noresult=true;
     }
-    // Men hvis vi finner noe, s� kan vi vise treff
-    // F�rst antall treff, og s� kan vi ogs� legge p� lenke til neste/forrige gjeng sider, hvis vi vil.
+
+    // Store number of results
     hitcounter = parseInt($(xml).find("M").text());
 
-    if (hitcounter > 10) {
-    //$(".searchsummary").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for s�k p� "' + $(xml).find("Q").text() + '".<' + 'br />');
-    //$(".searchFooter").append('Viser treff ' + $(xml).find("RES").attr("SN") + '-' + $(xml).find("RES").attr("EN") + ' av totalt ' + hitcounter + ' for s�k p� "' + $(xml).find("Q").text() + '".<' + 'br />');
-    //$('.currentsearch .number').text(hitcounter);
-    var statpos = 0;
-    var urlNow = window.location.href;
-    if ($(xml).find("PU").length > 0) {
-      var nextCounter = parseInt($(xml).find("RES").attr("SN")) - 11;
-      statpos = urlNow.indexOf("&start=");
-      var urlNewPrev = urlNow;
-      if (statpos != -1) {
-      urlNewPrev = window.location.href.substring(0,statpos)
-      }
-     // $(".searchsummary").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 20<' + '/a> - ');
-      //$(".searchFooter").append('<a href="' + urlNewPrev +  '&start=' + nextCounter + '">Forrige 20<' + '/a> - ');
-    }
-    if ($(xml).find("NU").length > 0) {
-      var nextCounter = parseInt($(xml).find("RES").attr("SN")) + 9;
-      statpos = urlNow.indexOf("&start=");
-      var urlNewNext = urlNow;
-      if (statpos != -1) {
-      urlNewNext = window.location.href.substring(0,statpos)
-      }
-      //$(".searchsummary").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 20<' + '/a><br' + '/>');
-      //$(".searchFooter").append('<a href="' + urlNewNext +  '&start=' + nextCounter + '">Neste 20<' + '/a><br' + '/>');
-    }
-    }
-    else if (hitcounter > 2) {
-    //$(".searchsummary").append('Viser alle ' + hitcounter + ' treff for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
-    $(".searchFooter").append('Viser alle ' + hitcounter + ' treff for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
-    }
-    else if (hitcounter == 2) {
-    //$(".searchsummary").append('Viser de to treffene vi fant for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
-    //$(".searchFooter").append('Viser de to treffene vi fant for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
-    }
-    else if (hitcounter == 1) {
-    //$(".searchsummary").append('Viser det enslige treffet vi fant for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
-    //$(".searchFooter").append('Viser det enslige treffet vi fant for s&oslash;k p&aring; "' + $(xml).find("Q").text() + '".<' + 'br />');
-    }
-    else {
-    //$(".searchsummary").append('');
-    //$(".searchFooter").append('');
+    // Populate the result summary for the search result (search term and total number of results)
+    if (!noresult) {
+      foundresult= '<p>Ditt s&oslash;k etter &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+(hitcounter>100?" mer enn 100 " : hitcounter)+' treff.</p>';
+      $(".resultsummary div").append(foundresult);  
     }
   }
- 
- displaySearchResult(xml);
- 
-  // Til slutt kan vi vise frem resultatet.
-  //$(".lookatwhatifound").fadeIn(1000);
   
-  // Populate the result summary for the search result ( search term and total number of results)
-  if (noresult==false && start==0) {
-    foundresult= '<p>Ditt s&oslash;k etter &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+(hitcounter>100?" mer enn 100 " : hitcounter)+' treff.</p>';
-  //$('.stb-form-inline .searchbox').closest('form').parent().parent().insertAfter(resultSummary);
-  $(".resultsummary div").append(foundresult);  
+  // Display the results
+  if(!noresult) {
+    displaySearchResult(xml);
   }
-  
 }
 
 function displaySearchResult(xml) {
-  // N� skal vi vise selve treffene
+  // Parse the results element
   $(xml).find("R").each(function () {
-    // Vi behandler "promotions" spesielt, og resten p� en annen m�te
-    // F� inn promotions, som alltid kommer f�rst, hvis de kommer i det hele tatt.
+    // Display any "promotion" result first
     if ($(this).find("SL_MAIN").length > 0) {
-      // Vise promotion
+      // Show promo
       var promoURL = $(this).find("IMAGE_SOURCE").text();
       var promoPic = "";
       if (promoURL!="" && promoURL!= null) {
@@ -424,7 +381,7 @@ function displaySearchResult(xml) {
       }
       $(".searchresults").append('<div class="lookatwhatifound' + '"><div class="promotering"' + '>' + promoPic + '<div class="title"' + '><a href="'  + $(this).find("SL_MAIN").find("U").text() + '">' +  $(this).find("BLOCK").find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + $(this).find("S").text() + '<' + '/div><' + '/div><'+ '/div>');
     } else {
-      // S�ke-promotions (som vanligvis er det som kommer)
+      // Shorten the search result item URL
       var strippedS = $(this).find("S").text();
       var stripRE = new RegExp("<br>", "g");
       strippedS = strippedS.replace(stripRE, "");
@@ -439,68 +396,61 @@ function displaySearchResult(xml) {
       } else {
         var shortenedU = strippedU;
       }
-      
-     // shorten the URL's
-      
-      var mobileU = shortenedU;
-      
+    
      //get the index of the last / in the url
-      lastSlashIndex = mobileU.lastIndexOf("/");
-      
+      lastSlashIndex = shortenedU.lastIndexOf("/");  
       //if the last / was at the end of the URL, for example in storebrand.no/bank/
-      if( lastSlashIndex+1 == mobileU.length ) {
-     //remove the last /
-        mobileU = mobileU.substr( 0, mobileU.length-1 );
-     //now look for the new last /
-     lastSlashIndex = mobileU.lastIndexOf("/", lastSlashIndex);
+      if( lastSlashIndex+1 == shortenedU.length ) {
+        //remove the last /
+        shortenedU = shortenedU.substr( 0, shortenedU.length-1 );
+        //now look for the new last /
+        lastSlashIndex = shortenedU.lastIndexOf("/", lastSlashIndex);
       }
-      
       //if no slash was found, reset it to 0
       if( lastSlashIndex == -1 ) {
-           lastSlashIndex = 0;
+        lastSlashIndex = 0;
       }
-      
       //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
-      var numOfSlashes = (mobileU.split("/").length - 1);
-      mobileU = decodeURI(( numOfSlashes > 1?"/...":"" ) + mobileU.substr( lastSlashIndex ));
+      var numOfSlashes = (shortenedU.split("/").length - 1);
+      shortenedU = decodeURI(( numOfSlashes > 1?"/...":"" ) + shortenedU.substr( lastSlashIndex ));
       
-      
+      //Setup any special classes to identify result type
       var linkDecoration = "";
       if (strippedU.indexOf(".pdf") > 0) {
         linkDecoration = ' class="pdf_document" ';
       }
 
+      //Prepare and display the result markup
       var resultMarkup = "";
-
       if (strippedS.indexOf("reutzer") > 0) {
-        resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + mobileU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
+        resultMarkup = '<div class="lookatwhatifound' + '"><img src="/site/stb.nsf/minidar.png" width="52" height="73"' + '/><div class="title"' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' +  $(this).find("T").text() + '<' + '/a><' + '/div><' + 'div class="description">' + strippedS + '<br' + ' /><div class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/div>' + '<' + '/div><' + '/div>';
         $(".searchresults").append(resultMarkup);
       } else {
-        resultMarkup = '<div class="top-margin-50' + '"><h4 class=""' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + mobileU + '<' + '/a><' + '/p><' + '/div>';
+        resultMarkup = '<div class="top-margin-50' + '"><h4 class=""' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
         $(".searchresults").append(resultMarkup);
-      }
-      
-    
+      }    
     }
   });
 
 }
 
+//Detect page scrolling to load new search results
 $(document).scroll(function(e){
   // Prevent the scroll from searching again while the search is still running, or if the search result limit has been reached
   if ( searchIsRunning == true || (start+20)>hitcounter ) {
     return false;
   }
 
-  // If the user has scrolled to the bottom of the page
-  if($(window).scrollTop() + $(window).height() == $(document).height()) {
-    // Show message after searching 100 items (now 40)
+  // If the page has search query and the user has scrolled to the bottom of the page, load more search results
+  if((get['q'].length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
+    // Show message after searching 40 items
     if(start>=40) {
       $(".searchresults").append("<row><div class='col-12 top-margin-30' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");
       hitcounter = 0;
       return false;
     }
-  
+    
+   //Start from the next 20 search results  
    start = start + 20;   
    searchQuery(get['q'], start);
   }
