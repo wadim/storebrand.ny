@@ -10,7 +10,10 @@
 
   <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
   <script type="text/javascript" src="js/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="js/dist/jquery-ui-1.10.3.datepicker.js"></script>
+  <script type="text/javascript" src="js/dist/moment.min.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrap-datetimepicker.nb.js"></script>
+  <script type="text/javascript" src="js/dist/bootstrapValidator-0.5.0.js"></script>
   <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
   <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
@@ -23,7 +26,6 @@
   <script type="text/javascript" src="js/src/stb-video.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
-  <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
   <!-- Start JavaScript for this page only -->
   <script>
@@ -574,34 +576,74 @@
       </div>
     </div>
     <div class="row">
-      <h3>Datepicker - jQuery UI, localized for Norway</h3>
-      Velg dato:
-      <input id="datepicker" data-widget="stb-datepicker" class="ui-dateinput"><label for="datepicker">&nbsp;</label>
+      <h3>Datepicker - Bootstrap datepicker, localized for Norway</h3>
+      <div class="col-xs-4">
+        <form>
+        <div class="stb-form-group al">
+          <div class='input-group date datePicker' data-date-format="DD/MM/YYYY">
+            <input type='text' class="form-control" name="dateTravelTo"/>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
+        </div>
+        </form>
+      </div>
     </div>
     <div class="row">
       <strong class="top-margin-30">HTML:</strong><br />
       <pre class="prettyprint">
-&lt;input id=&quot;datepicker&quot; data-widget=&quot;stb-datepicker&quot; class=&quot;ui-dateinput&quot;&gt;
-&lt;label for=&quot;datepicker&quot;&gt;&amp;nbsp;&lt;/label&gt;</pre>
+&lt;form&gt;
+ &lt;div class=&quot;stb-form-group al&quot;&gt;
+   &lt;div class='input-group date datePicker' data-date-format=&quot;DD/MM/YYYY&quot;&gt;
+     &lt;input type='text' class=&quot;form-control&quot; name=&quot;dateTravelTo&quot;/&gt;
+     &lt;span class=&quot;input-group-addon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-calendar&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/form&gt;</pre>
       <p>
-        See <a href="js/src/demo-datepicker.js">javascript-code</a> for usage instructions.
+        Documentation can be found on the website for the <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">datetimepicker</a>. <br> See <a href="js/src/demo-datepicker.js">javascript-code</a> for usage instructions.
       </p>
       <p>
-        <strong>Note</strong>: Requires <a href="js/dist/jquery-ui-1.10.3.datepicker.js">jQuery UI Datepicker 1.10.3.</a>
+        <strong>Note</strong>: Requires <a href="js/dist/bootstrap-datetimepicker.min.js">Bootstrap datetime picker v.3</a>, <a href="js/dist/moment.min.js">Moment 2.8.3</a> and the norwegian <a href="js/dist/bootstrap-datetimepicker.nb.js">localization</a>
       </p>
+
+      <p>
+        Here is an example with validation:</p>
+      <div class="row">
+        <div class="col-xs-4">
+          <form id="validateDate" class="stb-form validateForm">
+              <span id="date-message" class="help-block"></span>
+              <div class="stb-form-group al dateContainer">
+                <div class='input-group date datePicker' data-date-format="DD/MM/YYYY">
+                  <input type='text' class="form-control" name="date"/>
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+      <br>
+            <pre class="prettyprint">
+&lt;form id=&quot;validateDate&quot; class=&quot;stb-form validateForm&quot;&gt;
+ &lt;span id=&quot;date-message&quot; class=&quot;help-block&quot;&gt;&lt;/span&gt;
+ &lt;div class=&quot;stb-form-group al dateContainer&quot;&gt;
+   &lt;div class='input-group date datePicker' data-date-format=&quot;DD/MM/YYYY&quot;&gt;
+     &lt;input type='text' class=&quot;form-control&quot; name=&quot;date&quot;/&gt;
+     &lt;span class=&quot;input-group-addon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-calendar&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/form&gt;</pre>
       <hr class="top-margin-30" />
       <p>
         HTML5 will eventually deliver a standard datepicker. This hasn't yet been implemented that well in all browsers. Here you can see the current state of it, with no styling at all:
       </p>
-      <p>
-        Please date me: <input type="date" name="bday">
-      </p>
+      <p>Please date me: <input type="date" name="bday"></p>
+
     </div>
   </div>
 </div>  <!-- /Datepicker row -->
 <hr class="top-margin-30" />
 
-<div class="row"><!-- Datepicker row -->
+<div class="row">
 
   <div class="col-md-3">
     <h2 class="toc-header">Progress tracker</h2>

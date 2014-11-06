@@ -36,7 +36,7 @@ function toggleMsg(){
     showCommonMsg();
   }, 1000);
 }
-
+/*
 $(document).ready(function() {
   $.datepicker.regional.no = {
     closeText: "Lukk",
@@ -56,7 +56,7 @@ $(document).ready(function() {
     yearSuffix: ""
   }, $.datepicker.setDefaults($.datepicker.regional.no), $("input[data-widget=stb-datepicker]").datepicker().children().show();
 });
-
+*/
 $(document).ready(function() {
   var sliderObj = {
     from: 0,
@@ -184,4 +184,37 @@ $(document).ready( function(){
     $('.toc-list p span').toggleClass("chevron-down red chevron-up");
   });
 });
-// End code for Web Manual Table of Contents 
+// End code for Web Manual Table of Contents
+
+
+$(document).ready(function(){
+  $('#validateDate').bootstrapValidator({
+    message: 'This value is not valid',
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+    group: '.stb-form-group',
+    fields: {
+        date: {
+          trigger: 'blur',
+          container: '#date-message',
+          message: 'Oppgi en gyldig dato',
+          validators: {
+          callback: dateValidator
+        }
+    }
+  }
+  }).on('success.form.bv', function(e) {
+        // Prevent form submission
+        e.preventDefault();
+
+        var $form        = $(e.target),
+        validator    = $form.data('bootstrapValidator'),
+        submitButton = validator.getSubmitButton();
+
+        // Do whatever you want here ...
+  });
+
+})
