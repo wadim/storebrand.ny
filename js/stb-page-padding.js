@@ -1,5 +1,4 @@
 ﻿(function($){
-
 // Start navigation padding
 
 // Start mobile top menu decoration
@@ -667,13 +666,11 @@
     $('.chatBankOpen').removeClass('chatBankOpen');
   }
 
-// login
-  $(document).ready(function(){
-    /* Verify National Identity Number ***********************************************/
-    function verifyIDNumber(nr) {
-      var pn = new Array();
-      var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
-      var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+  
+  function verifyIDNumber(nr) {
+	  var pn = new Array();
+	  var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
+  	  var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
       for(var i=0; i<nr.length; i++) {
         pn[i] = nr.charAt(i);
       }
@@ -691,7 +688,6 @@
         return false;
       }
     }
-
     var idValidator = {
       message: '<span class="stb-color-sprite-small warning"></span> Fødselsnummeret er ikke gyldig!',
       callback: function(value, validor){
@@ -699,6 +695,11 @@
       }
     };
 
+  
+// login
+  $(document).ready(function(){
+    /* Verify National Identity Number ***********************************************/
+   
     try{
 
       $('#start-login-form, #start-login-form-mobile ').bootstrapValidator({
@@ -733,8 +734,110 @@
           });
 
     }catch(err){}
+   
   });
 
+  
+  // Fastrenteinskudd ( Preparing validation fields )
+  
+  $(document).ready(function(){
+	  validationFields = {
+			    onsketSparebelop : {
+			      container: '.onsketSparebelop-message',
+			      trigger: 'blur',
+			      validators: {
+			        notEmpty: {
+			          message: '<span class="stb-color-sprite-medium warning circle"></span><span class="input-faulty left-margin-10">Oppgi ønsket sparebeløp</span> '
+			        },
+			        between: {
+			          min: 100000 ,
+			          max: 5000000,
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Beløpet må være mellom 100 000 og 5 000 000 kr'
+			        }
+			      }
+			    },
+			    periode : {
+			      container: '.periode-message',
+			      validators: {
+			        notEmpty: {
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi periode'
+			        }
+			      }
+			    },
+			    navn : {
+			      container: '.navn-message',
+			      trigger: 'blur',
+			      validators: {
+			        notEmpty: {
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi navn'
+			        },
+			        regexp: {
+			          regexp: /^[a-z\s]+$/i,
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Et navn kan kun bestå av bokstaver fra alfabetet.'
+			        }
+			      }
+			    },
+			    postnr : {
+			      container: '.postnr-message',
+			      trigger: 'blur',
+			      validators: {
+			        notEmpty: {
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi postnummer'
+			        },
+			        regexp: {
+			          regexp: /^\d{4}$/,
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Postnummeret må bestå av 4 siffer.'
+			        }
+			      }
+			    },
+			    poststed : {
+			      container: '.poststed-message',
+			      trigger: 'blur',
+			      validators: {
+			        notEmpty: {
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi poststed'
+			        },
+			        regexp: {
+			          regexp: /^[a-z\s]+$/i,
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Et stedsnavn kan kun bestå av bokstaver fra alfabetet.'
+			        }
+			      }
+			    },
+			    fodselsnummer: {
+			      trigger: 'blur',
+			      container: '.fodselsnummer-message',
+			      validators: {
+			        callback: idValidator
+			      }
+			    },
+			    mobilnummer: {
+			      trigger: 'blur',
+			      container: '.mobilnummer-message',
+			      validators: {
+			        notEmpty: {
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi mobilnummer'
+			        },
+			        digits: {
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Telefonnummeret må bestå av kun siffer.'
+			        }
+
+			      }
+			    },
+			    epost : {
+			      trigger: 'blur',
+			      container: '.epost-message',
+			      validators: {
+			        notEmpty: {
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi epost'
+			        },
+			        emailAddress: {
+			          message: '<span class="stb-color-sprite-medium warning circle"></span> Detter er ikke en gyldig epost adresse.'
+			        }
+			      }
+			    }
+			  }  
+  });
+  
   $(document).ready(function(){
     var accept = readCookie('acceptCookie');
     if(accept=='Yes'){
