@@ -1,26 +1,3 @@
-/* Verify National Identity Number ***********************************************/
-function verifyID(nr) {
-  var pn = new Array();
-  var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
-  var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
-  for(var i=0; i<nr.length; i++) {
-    pn[i] = nr.charAt(i);
-  }
-  var k1=0;
-  for(var i=0; i<v1.length; i++) {
-    k1 += pn[i]*v1[i];
-  }
-  var k2=0;
-  for(var i=0; i<v2.length; i++) {
-    k2 += pn[i]*v2[i];
-  }
-  if (k1%11==0 && k2%11==0 ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
 function findBootstrapEnvironment() {
   var envs = ['xs', 'sm', 'md', 'lg'];
 
@@ -37,13 +14,6 @@ function findBootstrapEnvironment() {
     }
   };
 }
-
-var idValidator = {
-  message: '<span class="stb-color-sprite-medium warning circle"></span> Fødselsnummeret er ikke gyldig!',
-  callback: function(value, validor){
-    return verifyID(value);
-  }
-};
 
 $("document").ready(function(){
 
@@ -72,9 +42,6 @@ $("document").ready(function(){
           var $form = $(e.target),
           validator = $form.data('bootstrapValidator'),
           submitButton = validator.getSubmitButton();
-
-
-
         });
 
     $('#backButton').click(function(){
