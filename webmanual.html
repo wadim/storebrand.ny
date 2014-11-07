@@ -23,7 +23,6 @@
   <script type="text/javascript" src="js/src/stb-video.js"></script>
   <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
-  <script type="text/javascript" src="js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="js/dist/webmanual.core.js"></script>
   <style>
     .toc-list ul.items {
@@ -1446,10 +1445,9 @@ $('ul[data-widget=stbFaq]').stbFaq();
               </p>
               <p>
                 You can close it with style up in the corner there, or just submit the thing with the button below.
+                Add the class "morph-close" to clickable elements which should close the modal.
               </p>
-              <form>
-                <button class="stb-btn">Ok, let's move on</button>
-              </form>
+                <button class="stb-btn morph-close" onclick="event.preventDefault(); window.open('https://www.storebrand.no/site/stb.nsf/Pages/kritisksykdom.html?opendocument');">Ok, let's move on</button>
             </div>
           </div>
         </div>
@@ -1470,7 +1468,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
           You can close it with style up in the corner there.
         &lt;/p&gt;
         &lt;form&gt;
-          &lt;button class="stb-btn"&gt;Ok, let's move on&lt;/button&gt;
+          &lt;button class="stb-btn morph-close"&gt;Ok, let's move on&lt;/button&gt;
         &lt;/form&gt;
       &lt;/div&gt;
     &lt;/div&gt;

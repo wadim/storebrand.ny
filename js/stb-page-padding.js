@@ -308,7 +308,7 @@
     }
 
     UIMorphingButton.prototype.options = {
-      closeEl : '',
+      closeEl : 'stb-btn',
       onBeforeOpen : function() { return false; },
       onAfterOpen : function() { return false; },
       onBeforeClose : function() { return false; },
@@ -334,15 +334,16 @@
       } );
       // close
       if( this.options.closeEl !== '' ) {
-        var closeEl = this.el.querySelector( this.options.closeEl );
+        var closeEl =  this.options.closeEl;
         if( closeEl ) {
-          closeEl.addEventListener( 'click', function() { self.toggle(); } );
+          closeEl.addEventListener( 'click', function() {
+            self.toggle();
+          } );
         }
       }
     }
 
     UIMorphingButton.prototype.toggle = function() {
-      if( this.isAnimating ) return false;
 
       // callback
       if( this.expanded ) {
@@ -449,32 +450,34 @@
       scrollFn();
 
       $('.stb-modal-full').each(function(index, el){
-        new UIMorphingButton( el, {
-          closeEl : '.close',
-          onBeforeOpen : function() {
-            // Do not allow scrolling in opened modal
-            noScroll();
-          },
-          onAfterOpen : function() {
-            // Allow scrolling again
-            canScroll();
-            // Add class "noscroll" to body
-            $(document.body).addClass('noscroll');
-            // Add scroll class to main el
-            $(el).addClass('scroll');
-          },
-          onBeforeClose : function() {
-            // Remove class "noscroll" to body
-            $(document.body).removeClass('noscroll');
-            // Remove scroll class from main el
-            $(el).removeClass('scroll');
-            // Do not allow scrolling during closing of modal
-            noScroll();
-          },
-          onAfterClose : function() {
-            // Allow scrolling again
-            canScroll();
-          }
+        $(el).find('.morph-close').each(function(index,closeElem){
+          new UIMorphingButton( el, {
+            closeEl : closeElem,
+            onBeforeOpen : function() {
+              // Do not allow scrolling in opened modal
+              noScroll();
+            },
+            onAfterOpen : function() {
+              // Allow scrolling again
+              canScroll();
+              // Add class "noscroll" to body
+              $(document.body).addClass('noscroll');
+              // Add scroll class to main el
+              $(el).addClass('scroll');
+            },
+            onBeforeClose : function() {
+              // Remove class "noscroll" to body
+              $(document.body).removeClass('noscroll');
+              // Remove scroll class from main el
+              $(el).removeClass('scroll');
+              // Do not allow scrolling during closing of modal
+              noScroll();
+            },
+            onAfterClose : function() {
+              // Allow scrolling again
+              canScroll();
+            }
+          });
         });
       });
 

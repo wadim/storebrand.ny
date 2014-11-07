@@ -188,33 +188,34 @@ $(document).ready( function(){
 
 
 $(document).ready(function(){
-  $('#validateDate').bootstrapValidator({
-    message: 'This value is not valid',
-    feedbackIcons: {
-      valid: 'glyphicon glyphicon-ok',
-      invalid: 'glyphicon glyphicon-remove',
-      validating: 'glyphicon glyphicon-refresh'
-    },
-    group: '.stb-form-group',
-    fields: {
+  if($('#validateDate').length > 0){
+    $('#validateDate').bootstrapValidator({
+      message: 'This value is not valid',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      group: '.stb-form-group',
+      fields: {
         date: {
           trigger: 'blur',
           container: '#date-message',
           message: 'Oppgi en gyldig dato',
           validators: {
-          callback: dateValidator
+            callback: dateValidator
+          }
         }
-    }
-  }
-  }).on('success.form.bv', function(e) {
-        // Prevent form submission
-        e.preventDefault();
+      }
+    }).on('success.form.bv', function(e) {
+          // Prevent form submission
+          e.preventDefault();
 
-        var $form        = $(e.target),
-        validator    = $form.data('bootstrapValidator'),
-        submitButton = validator.getSubmitButton();
+          var $form        = $(e.target),
+              validator    = $form.data('bootstrapValidator'),
+              submitButton = validator.getSubmitButton();
 
-        // Do whatever you want here ...
-  });
-
+          // Do whatever you want here ...
+        });
+  };
 })
