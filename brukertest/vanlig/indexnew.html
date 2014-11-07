@@ -54,6 +54,7 @@ div.cookieFooter{
       border: 1px solid #E6E6E6;
     }
 
+
   </style>
   <script>
 
@@ -62,30 +63,6 @@ div.cookieFooter{
         if(accept=='Yes'){
           jQuery('#cookieFooter').hide();
         }
-
-        /* Verify National Identity Number ***********************************************/
-        function verifyIDNumber(nr) {
-          var pn = new Array();
-          var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
-          var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
-          for(var i=0; i<nr.length; i++) {
-            pn[i] = nr.charAt(i);
-          }
-          var k1=0;
-          for(var i=0; i<v1.length; i++) {
-            k1 += pn[i]*v1[i];
-          }
-          var k2=0;
-          for(var i=0; i<v2.length; i++) {
-            k2 += pn[i]*v2[i];
-          }
-          if (k1%11==0 && k2%11==0 ) {
-            return true;
-          } else {
-            return false;
-          }
-        }
-
       });
   
   </script>
@@ -204,7 +181,7 @@ div.cookieFooter{
               </li>
               <li id="verktoy" class="row" style="padding-left: 0;">
                <div class="container">
-                  <div class="col-md-2 col-md-offset-1 col-lg-offset-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'";>Veihjlep</button></div>
+                  <div class="col-md-2 col-md-offset-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'";>Veihjlep</button></div>
                   <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'";>Meld skade</button></div>
                   <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'";>Sperr kort</button></div>
                   <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='contactus.html'";>Kontakt oss</button></div>
@@ -479,11 +456,11 @@ div.cookieFooter{
   </div>
 </div>
 
-<div id="verktoynew" class="row top-margin-10 bottom-margin-30" style="margin-left: 0; margin-right: 0; padding-left: 0;">
-  <div class=" col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'";>Veihjlep</button></div>
-  <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'";>Meld skade</button></div>
-  <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'";>Sperr kort</button></div>
-  <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='contactus.html'";>Kontakt oss</button></div>
+<div id="verktoymobile" class="row top-margin-10 bottom-margin-30" style="margin-left: 0; margin-right: 0; padding-left: 0;">
+  <div class=" col-xs-6 col-sm-3" style="text-align: center"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'">Veihjelp</button></div>
+  <div class="col-xs-6 col-sm-3" style="text-align: center"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'">Meld skade</button></div>
+  <div class="col-xs-6 col-sm-3" style="text-align: center"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'">Sperr kort</button></div>
+  <div class="col-xs-6 col-sm-3" style="text-align: center"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='contactus.html'">Kontakt oss</button></div>
 </div>
 </div>
 <!-- End mobile menu -->

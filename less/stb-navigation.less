@@ -164,17 +164,6 @@
       border: none;
       padding: 0;
 
-      //Side links with illustrations
-      .sidelinks {
-        li {
-          margin-bottom: 20px;
-        }
-        a {
-          font-family: "open sans bold";
-          text-decoration: none;
-        }
-      }
-
       > li{
 
         h4 {
@@ -186,10 +175,8 @@
           padding: 0;
           color: @stb-secondary-charcoal;
           line-height: 18px;
-          &:hover {
-            border-bottom: 1px solid @stb-primary-color;
-          }
         }
+
         ul {
           list-style-type: none;
           padding: 0; margin: 0;
@@ -232,7 +219,7 @@
         }
 
         &:hover{
-          color: #da291c !important;
+          color: @stb-primary-color;
           background-color: transparent;
           border-bottom: 1px solid @stb-primary-color;
         }
@@ -242,10 +229,31 @@
         padding-bottom: 12px;
       }
 
+      //Side links with illustrations
+      .sidelinks {
+        li {
+          margin-bottom: 20px;
+        }
+        a {
+          font-family: "open sans bold";
+          text-decoration: none;
+          &:hover {
+            border-bottom: none;
+            span:last-child{
+              border-bottom: 1px solid @stb-primary-color;
+            }
+          }
+
+        }
+      }
+
       #verktoy {
         margin: 0;
         clear: both;
         padding-top: 15px;
+        button{
+          width: 160px;
+        }
       }
     }
 
@@ -423,19 +431,31 @@
     width: 99%;
     border: 2px solid #404040;
   }
-  
-  
-  @media screen and (max-width: 768px) { 
-	
-    #verktoynew {
-  	  padding: 0;
-    }
-    
-    #verktoynew div {
+
+
+  #verktoymobile {
+    padding: 0;
+    div {
       margin-bottom: 10px;
     }
+    button{
+      width: 160px;
+    }
   }
-}
+
+  @media screen and (max-width: 768px) { 
+	
+    #verktoymobile {
+  	  padding: 0;
+      div {
+        margin-bottom: 10px;
+      }
+      button{
+        width: 120px;
+      }
+    }
+    }
+  }
 
 #start-login-form, #start-login-form-mobile {
 	
