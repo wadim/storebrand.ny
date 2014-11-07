@@ -123,7 +123,6 @@
 
     // Iterate through all the top level headings (h3)
     for(var i=0; i<tocHeaders.length; i++) {
-      listMade = false;
       var h3tag = tocHeaders[i];
 
       $(h3tag).attr('name', h3tag.textContent.replace(/\W/g, '').toLowerCase());
@@ -134,22 +133,7 @@
       var allh4 = $(h3tag).nextUntil('h3','h4');
 
       // Check if there are any h4 elements. If there are none, we should not run the code below.
-      if(allh4.length == 0) continue;
-      // Prepare a list mark-up for all sub-headings in the table of contents
-      var h4list = '<ul style="margin-left: 20px">';
-
-      // Iterate through these sub headings
-      /*for( var j=0; j<allh4.length;j++) {
-       var h4tag = allh4[j];
-       $(h4tag).attr('name', h3tag.textContent.replace(/\W/g, '').toLowerCase() + h4tag.textContent.replace(/\W/g, '').toLowerCase());
-       // adding the sub headings to the subheading list
-       h4list = h4list + prepareTocLink(h4tag, $(h3tag).text());
-       }
-       h4list = h4list+'</ul>';
-
-       //append sub-heading list to the table of contents
-       $('.toc-list .items').append(h4list);
-       */
+      if(allh4.length === 0) continue;
     }
 
     //check if URL already has a hash and scroll to the correct heading
@@ -185,7 +169,7 @@
       var target = $(hash);
       target = target.length ? target : $('[name=' + hash.slice(1) +']');
       if (target.length) {
-        scrollToPosition = target.offset().top;
+        var scrollToPosition = target.offset().top;
         // Checking if the navigation header is fixed. If yes, set the scrollto position by subtracting the height of the fixed header
         if($('.navbar-fixed-top').css("display") == "block") {
           scrollToPosition -= $('.navbar-fixed-top').height();
@@ -245,7 +229,7 @@
 //Adding link visibility to contents in first column in clickable rows in tables
   $(document).ready(function() {
     $('tr.clickable td:first-child').each(function() {
-      $(this).html('<a href="#"' + '>' + $(this).text() + '</' + 'a>')
+      $(this).html('<a href="#"' + '>' + $(this).text() + '</' + 'a>');
     });
   });
 
@@ -313,7 +297,7 @@
       onAfterOpen : function() { return false; },
       onBeforeClose : function() { return false; },
       onAfterClose : function() { return false; }
-    }
+    };
 
     UIMorphingButton.prototype._init = function() {
       // the button
@@ -324,7 +308,7 @@
       this.contentEl = this.el.querySelector( '.morph-content' );
       // init events
       this._initEvents();
-    }
+    };
 
     UIMorphingButton.prototype._initEvents = function() {
       var self = this;
@@ -341,7 +325,7 @@
           } );
         }
       }
-    }
+    };
 
     UIMorphingButton.prototype.toggle = function() {
 
@@ -406,7 +390,7 @@
           }, 25 );
         }
       }, 25 );
-    }
+    };
 
     // Add to global namespace
     window.UIMorphingButton = UIMorphingButton;
@@ -440,12 +424,12 @@
           didScroll = true;
           setTimeout( function() { scrollPage(); }, 60 );
         }
-      };
+      }
 
       function scrollPage() {
         scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
         didScroll = false;
-      };
+      }
 
       scrollFn();
 
@@ -587,10 +571,10 @@
             '</form>' +
             '</div>' +
             '</div>' +
-            '</div>';
+            '</div>' +
         '</div>';
 
-        if($('#dialogModal').length == 0){
+        if($('#dialogModal').length === 0){
           $('body').append(markup);
         }
 
@@ -598,7 +582,7 @@
         $('#dialogModal').modal();
       }
     }
-  }
+  };
 
 // Script for populating the dropdown with the selected tab link
   $(document).ready(function() {
@@ -685,11 +669,11 @@
         pn[i] = nr.charAt(i);
       }
       var k1=0;
-      for(var i=0; i<v1.length; i++) {
+      for(i=0; i<v1.length; i++) {
         k1 += pn[i]*v1[i];
       }
       var k2=0;
-      for(var i=0; i<v2.length; i++) {
+      for(i=0; i<v2.length; i++) {
         k2 += pn[i]*v2[i];
       }
       if (k1%11==0 && k2%11==0 ) {
@@ -736,7 +720,7 @@
                 validator    = $form.data('bootstrapValidator'),
                 submitButton = validator.getSubmitButton();
 
-            window.location = absURL+"../brukertest/vanlig/login/login-step-faner.html"
+            window.location = absURL+"../brukertest/vanlig/login/login-step-faner.html";
           });
 
     }catch(err){}
@@ -781,7 +765,7 @@
 
     $('a').bind('click', function(){
       if(window.location.href.indexOf("brukertest") > -1){
-        if($(this).attr('href') == '#' && $(this).attr('data-toggle') == undefined && $(this).attr('onclick') == undefined && $(this).children('span.remove').length == 0 && !$(this).hasClass('twister') && document.title != "Bedrift"){
+        if($(this).attr('href') == '#' && $(this).attr('data-toggle') === undefined && $(this).attr('onclick') === undefined && $(this).children('span.remove').length === 0 && !$(this).hasClass('twister') && document.title != "Bedrift"){
           if(document.title == "Forside" || document.title == "Forside: (New Menu)" || document.title == "Contact Us" || document.title == "Contact Us"  || document.title == "Sitemap" || document.title == "Search Results"){
             window.location = "dummy/standardprototype.html";
           }else{
@@ -789,7 +773,7 @@
           }
         }
       }
-    })
+    });
 
   });
 
