@@ -69,6 +69,15 @@
     //Recalculate the overlay when window is resized
     $("#overlay").css("width",$(document).width());
     $("#overlay").css("height",$(document).height());
+
+    var bootstrapEnv = findBootstrapEnvironment();
+    if(bootstrapEnv == "xs" || bootstrapEnv == "sm"){
+      $("#overlay").css("display","none");
+    }else{
+      if($('#desktop-menu .navbar-nav .dropdown').hasClass("open")){
+        $("#overlay").css("display","block");
+      }
+    }
   });
 
 
