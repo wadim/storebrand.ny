@@ -2,6 +2,11 @@
 table.stb-table {
   .table();
 
+  // Fix to get tables with sum in last cell in footer aligned with body cells with text-right
+  tr td:last-child {
+    padding-right: 8px;
+  }
+  
   // Set borders & colors to stb-style:
   border: 0;
   border-bottom-color: @stb-secondary-nude;
