@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Produkt- Boliglån</title>
+  <title>Produkt - Mal med innhold</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -10,7 +10,6 @@
   <script type="text/javascript" src="../../../js/dist/modernizr.custom.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery.color-2.1.2.min.js"></script>
-  <script type="text/javascript" src="../../../js/src/jquery.eqheight.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery-ui-1.11.0.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="../../../js/dist/bootstrap.min.js"></script>
@@ -22,40 +21,7 @@
   <script type="text/javascript" src="../../../js/dist/jquery.slider.all.js"></script>
   <script type="text/javascript" src="../../../js/src/laanekalkulator.js"></script>
   <script type="text/javascript" src="../../../js/dist/bootstrapValidator-0.5.0.js"></script>
-  <style>
-    
-   div.cookieFooter{
-      background-color: #333333;
-      height: auto;
-      opacity: 0.7;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 400;
-      color: white;
-    }
-    div.cookieFooter .contentinfo {
-      color: #FFFFFF;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 15px;
-      width: 60%;
-    }
 
-    div.cookieFooter.affix-bottom {
-      position: static;
-    }
-
-    .nav-tabs.nav-justified>li>a{
-      border: 1px solid #FFFFFF;
-      line-height: 2;
-    }
-    .nav-tabs.nav-justified>li.active>a,.nav-tabs.nav-justified>li.active>a:hover {
-      background-color: #E6E6E6 !important;
-      border: 1px solid #E6E6E6;
-    }
-
-  </style>
 </head>
 
 <body>
@@ -237,7 +203,7 @@
   </nav>
 </div>
 
-<div id="mobilemenu" class="top-margin-10 bottom-margin-30 hidden-md hidden-lg" style="display: none; background-color:#fff; z-index:2; position:relative; top:0; left:0;">
+<div id="mobilemenu" class="top-margin-10 bottom-padding-30 hidden-md hidden-lg" style="display: none; background-color:#fff; z-index:2; position:relative; top:0; left:0;">
 <div class="row" style="margin-right: 0; margin-left: 0;">
   <div class="col-xs-12" style="padding-left: 0; padding-right: 0;">
     <ul class="nav nav-tabs">
@@ -459,39 +425,142 @@
 <div class="container">
   <div class="row top-margin-30-mdlg bottom-margin-30-mdlg">
     <div class="col-md-8">
-      <h1>Boliglån</h1>
+      <h1>Bilforsikring </h1>
       <p class="intro">
-        Hos oss får du en av markedets beste renter på boliglån. Vi hjelper deg
-        med å realisere boligdrømmen.
+        Vi har bilforsikringen som dekker ditt behov. Her kan du raskt beregne pris og finner den typen du trenger - til én eller flere av dine biler.
       </p>
     </div>
     <div class="col-md-4 top-margin-10">
-      <img src="../../../images/skisseelementer/UT432x243Boliglan.png" class="center-block banner-image img-responsive" />
+      <img src="../../../images/skisseelementer/CircleCar142x142.png" class="center-block img-responsive" alt="Illustrasjon av en bil." />
     </div>
   </div>
 </div>
 
 <div class="stbcolor-secondary sixth">
   <div class="container">
-   <div class="row top-margin-20 bottom-margin-20">
+    <div class="row top-margin-20 bottom-margin-20">
       <div class="col-md-8">
-        <h2 class="">Søk lån – raskt og enkelt</h2>
-        <p class="visible-lg visible-md">
-          Du må sende oss en lånesøknad for at vi skal kunne gi deg et konkret lånebeløp. Hvis
-          du ønsker en pekepinn på hva du kan forvente, kan du prøve lånekalkulatoren vår
-          under.
+        <h2>Våre bilforsikringer</h2>
+        <p>
+          I tabellen under ser du en forenklet oversikt over de ulike bilforsikringene vi kan tilby.
+          Når du har bestemt deg for hvilken som passer deg kan du sjekke pris og få et tilbud.
         </p>
-        <ul class="stb">
-          <li>Du kan låne inntil 85 prosent av boligens verdi</li>
-          <li>Nedbetaling på opptil 40 år</li>
-          <li>Avdragsfrihet på inntil 10 år</li>
-          <li>Flytende rente</li>
-        </ul>
+        <button class="stb-btn stb-big-btn" onclick="event.preventDefault(); window.location.href='../dummy/sjekkprisbil.html'";><h3 class="">Sjekk pris og kjøp</h3></button>
 
-        <button class="stb-btn stb-big-btn" onclick="event.preventDefault(); window.location.href = '../dummy/soklaan.html';"><h3>Søk om lån</h3></button>
-        <p class="top-margin-10">
-          <a href="../artikkel/vilkaarboliglaan.html">Se fullstendige vilkår for boliglån</a>
-        </p>
+        <div class="table-responsive top-margin-40">
+          <table class="stb-table no-alt nude">
+            <thead>
+            <tr class="hidden-xs">
+              <th >&nbsp;</th>
+              <th class="text-center">Ansvar</th>
+              <th class="text-center">Delkasko</th>
+              <th class="text-center">Kasko</th>
+              <th class="text-center">Super</th>
+            </tr>
+            <tr class="visible-xs">
+              <th >&nbsp;</th>
+              <th>Ansvar</th>
+              <th>Delkasko</th>
+              <th>Kasko</th>
+              <th>Super</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Ansvar</td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></span></td>
+            </tr>
+            <tr>
+              <td>Brannskade</td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Tyveri</td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td class="">Glassruteskade</td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Veihjelp i Norden</td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Skade på eget kjøretøy</td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Skade utover kollisjon</td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Bil-/veihjelp Europa</td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Bagasje</td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Leiebil</td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-sprite-medium checkdot hidden-xs"></span><span class="stb-sprite-small checkdot visible-xs"></span></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Bedre erstatning</td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Motor og girkasse</td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            <tr>
+              <td>Oppgradert leiebil</td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+              <td class="text-center"><span class="stb-color-sprite-medium ok hidden-xs"></span><span class="stb-color-sprite-small ok visible-xs"></span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="../artikkel/bilforsikring.html">Se fullstendige dekningsoversikt</a> eller <a href="../dummy/sjekkprisbil.html">sjekk pris og kjøp</a>
         <h2 class=" top-margin-20">Hva vil lånet koste?</h2>
         <p>Med vår lånekalkulator får du en pekepinn på hvor mye du kan låne og hva du må betale hver måned med dagens renter</p>
         <form id="laanekalkulator" role="form">
@@ -532,8 +601,8 @@
                 </div>
               </div>
             </div>
-        </div>
-        <div class="row">
+          </div>
+          <div class="row">
             <div class="stb-form-group top-margin-10">
               <div class="col-md-8 col-xs-12">
                 <p class="intro pull-left" style="border-bottom: 4px double #000;"><span class="calculated-value">10 899</span> kr i måneden</p>
@@ -542,31 +611,16 @@
                 <button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href = '../verktoy/laanekalkulator.html';">Detaljert låneberegning</button>
               </div>
             </div>
-        </div>
+          </div>
         </form>
       </div>
-      <div class="col-md-4 top-margin-10">
-        <div class="stb-box first noBorder">
-          <h3>Boliglånsrente fra</h3>
-          <h2 class="big">3,45%</h2>
-          <p class="petit"> Har du tjenestepensjon i Storebrand får du nominell rente fra 3,45% (effektiv 3,54%)</p>
-          <p class="petit"> Er du helkunde får du nominell rente fra 3,65% (effektiv 3,76%)</p>
-          <button class="stb-btn maxWidth transparent light" onclick="event.preventDefault(); window.location.href = '../artikkel/dagenslaanerenter.html';">Se alle dagens renter</button>
+      <div class="col-md-4">
+        <div class="stb-box" rel="../tema3/meldskade.html">
+          <h3 class="">Meld skade</h3>
+          <p>Det er viktig å melde skaden så raskt som mulig når uhellet først er ute.</p>
+          <button class="stb-btn transparent light">Meld skade</button>
         </div>
-      
-       <div class="stb-box big clickable" rel="../artikkel/sokeboliglaan.html">
-          <div class="row">
-            <div class="col-sm-6 col-md-12">
-              <img class="img-responsive" src="../../../images/skisseelementer/UT63x63House.png">
-            </div>
-            <div class="col-sm-6 col-md-12">
-              <h3 class="box"><a href="#">Dette bør du vite når du søker boliglån</a></h3>
-                  <p>Det er mange ting du bør tenke på når du skal kjøpe bolig. Vi har samlet noe av det viktigste for deg.</p>
-            </div>
-          </div>
-       </div>
-     
-        <div class="stb-box clickable left-padding-5" rel="tel:08880">
+        <div class="stb-box" rel="tel:08880">
           <h3 class="">Kontakt oss</h3>
           <div>
             <a href="tel:08880">
@@ -585,85 +639,126 @@
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white chat"></span>
             </span>
-            <span class="iconCompanion">Chat med oss</span>
+              <span class="iconCompanion">Chat med oss</span>
             </a> <div class="iconInfo">
             <p class="petit">Hverdager 8-16</p>
           </div>
+          </div>
+        </div>
+        <div class="stb-box first noBorder">
+          <h3>Boliglånsrente fra</h3>
+          <h2 class="big">3,45%</h2>
+          <p class="petit"> Har du tjenestepensjon i Storebrand får du nominell rente fra 3,45% (effektiv 3,54%)</p>
+          <p class="petit"> Er du helkunde får du nominell rente fra 3,65% (effektiv 3,76%)</p>
+          <button class="stb-btn maxWidth transparent light" onclick="event.preventDefault(); window.location.href = '../artikkel/dagenslaanerenter.html';">Se alle dagens renter</button>
+        </div>
+        <div class="stb-box big clickable" rel="../artikkel/sokeboliglaan.html">
+          <div class="row">
+            <div class="col-sm-6 col-md-12">
+              <img class="img-responsive" src="../../../images/skisseelementer/UT63x63House.png">
+            </div>
+            <div class="col-sm-6 col-md-12">
+              <h3 class="box"><a href="#">Dette bør du vite når du søker boliglån</a></h3>
+              <p>Det er mange ting du bør tenke på når du skal kjøpe bolig. Vi har samlet noe av det viktigste for deg.</p>
+            </div>
+          </div>
+        </div>
+        <div class="stb-box mini clickable" rel="tel:08880">
+          <div class="row">
+            <div class="col-sm-6 col-md-12">
+              <img src="../../../images/skisseelementer/UT112x112ManSafe.png">
+            </div>
+            <div class="col-sm-6 col-md-12">
+              <h3 class="box">Vi hjelper deg igang</h3>
+              <h3  class="box"><a href="#">Ring 22 31 20 00</a></h3>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-      
-   </div>
+    </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row top-margin-20">
-    
-    <div class="col-md-6">
-      <h3 class="">Dette bør du også tenke på</h3>
+    <div class="col-md-6 top-padding-10">
+      <h3 class="">Ofte stilte spørsmål</h3>
+      <ul class="accordion" data-widget="stbFaq">
+        <li>
+          <a href="#" class="twister"><span class="question">Hva er bonus?</span>
+            <span class="expander"></span>
+          </a>
+          <div class="initial-hide answer">
+            <p>Bonus er en "belønning" du får i form av redusert forsikringspris dersom du ikke bruker bilforsikringen. Du får høyere
+              bonus for hvert år du kjører skadefritt.</p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister"><span class="question">Hvorfor bør jeg velge Super på ny bil?</span>
+            <span class="expander"></span>
+          </a>
+          <div class="initial-hide answer">
+            <p>På helt nye biler er mye dekket av garantien, men med Super får du for eksempel bedre erstatning ved totalskade,
+              samt leiebil i 45 dager. For mange er det dessuten liten prisforskjell mellom Super og Kasko.
+            </p>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="twister"><span class="question">Hvordan får jeg bonus på bil nummer to?</span>
+            <span class="expander"></span>
+          </a>
+          <div class="initial-hide answer">
+            <p>I kjøpsløsningen spør vi om hvor vi skal hente bonus på den nye bilen fra. Du oppgir da registreringsnummer på den
+              bilen som allerede er forsikret hos oss, så ordner vi resten. Bil nummer to kan få samme inntil 50 prosent i bonus.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6 top-padding-10">
+      <h3><a href="../tema3/kundefordeler.html">Har du kundefordeler hos oss?</a></h3>
+      <p>
+        Du får lavere pris hvis du:
+      </p>
+      <ol class="stb">
+        <li>Samler tre eller flere forsikringer hos oss.</li>
+        <li>Er ansatt i en bedrift som har inngått fordelsavtale for sine ansatte med Storebrand eller du som privatperson har et et eksisterende kundeforhold til Storebrand som gir fordelspriser</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row top-margin-20">
+    <div class="col-md-6 top-padding-10">
+      <h3>Andre forsikringer</h3>
       <div class="stb-list-group" >
-        <a class="list-group-item" href="#">Uføreforsikring</a>
-        <a class="list-group-item" href="#">Gjeldsforsikring</a>
+        <a class="list-group-item" href="#">Tilhengerforsikring </a>
+        <a class="list-group-item" href="#">Campingvognforsikring </a>
+        <a class="list-group-item" href="#">Veterankjøretøyforsikring</a>
       </div>
     </div>
-     <div class="col-md-6">
-      <h3 class=" ">Flere låneprodukter</h3>
-      <div class="stb-list-group" >
-        <a class="list-group-item" href="../produkt/boliglaanunge.html">Boliglån for Unge(BLU)</a>
-        <a class="list-group-item" href="#">Fastrentelån </a>
-        <a class="list-group-item" href="#">Boligkreditt </a>
-        <a class="list-group-item" href="#">Byggekreditt </a>
+    <div class="col-md-6 top-padding-10">
+      <div class="stb-box mini clickable" rel="tel:08880">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <img width="63px" height="63px" src="../../../images/skisseelementer/UT112x112ManSafe.png">
+          </div>
+          <div class="col-sm-6 col-md-8">
+            <h3 class="box">Enkelt å bytte- vi ordner alt</h3>
+            <h3  class="box"><a href="#">Ring 08880</a></h3>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="row bottom-margin-40">
-    <div class="col-md-6 top-margin-10">
-      <h3 class="">Ofte stilte spørsmål</h3>
-      <div>
-        <ul class="accordion" data-widget="stbFaq">
-          <li>
-            <a href="#" class="twister"><span class="question">Hvor mye koster lånet?</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-              <p>Med lånekalkulatoren kan du "leke med tall", og på den måten skaffe deg et bilde av
-                hvor mye lånet vil koste. Vær forberedt på at renten kan gå både opp og ned. For å
-                være på den sikre siden, bør du ha mulighet til en renteøkning på 3-4 prosentpoeng.</p>
-            </div>
-          </li>
-          <li>
-            <a href="#" class="twister"><span class="question">Hvor mye kan jeg låne?</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-              <p>
-                Med dagens lave rentenivå, vil et grovt anslag si at du totalt kan låne 4 ganger årlig
-                inntekt. Er dere 2 om lånet, tar du med partnerens inntekt også.Ta høyde for alle
-                planlagte endringer som vil påvirke dine inntekter og utgifter. For eksempel at du
-                planlegger å få barn, eller at du snart blir pensjonist.
-              </p>
-            </div>
-          </li>
-          <li>
-            <a href="#" class="twister"><span class="question">Hva kreves av dokumentasjon i en lånesøknad?</span>
-              <span class="expander"></span>
-            </a>
-            <div class="initial-hide answer">
-              <p>
-                Hvis du legger ved selvangivelsen og din siste lønnslipp, kan vi behandle søknaden
-                din raskere. Du kan laste opp dokumentene i den elektroniske lånesøknanden. Det
-                er en helt sikker løsning for sending av dokumenter, og de vil kun bli håndtert av
-                Storebrand Bank.
-              </p>
-            </div>
-          </li>
-        </ul>
+  <div class="row top-margin-20">
+    <div class="col-md-6 top-padding-10">
+      <div class="stb-box transparent dashed info">
+        <span class="pull-left infoIcon" ></span>
+        <div class="left-padding-60">
+          <h4>Angrerett</h4>
+          <p>Du har 30 dagers angrerett. Skjema og mer informasjon ligger sammen med forsikringspapirene du mottar fra oss i posten.</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 <!-- End actual page contents -->
 
 <!-- Start Cookie notice -->
