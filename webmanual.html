@@ -70,7 +70,8 @@
         The design is available from a shared depository, on Amazon. The URL to use is http[s]://elements.storebrand.no/version-number/path/name. If you have any cross-site scripting issues we will try to resort them, but if you're in a hurry, you may have to copy the items you need to your own project.
       </p>
       <p>
-        Elements for user interaction should log activity to Google Analytics. This is in some cases not yet implemented. JavaScript for this will be available later.
+        Elements for user interaction should log activity to Google Analytics. To enable analytics for a clickable element a "analyze" class needs to be added to the element.
+        (This is in some cases not yet implemented. JavaScript for this will be available later.)
       </p>
       <h3>Grid and breakpoints</h3>
       <p>
@@ -327,7 +328,7 @@
           <a href="#3" class="visited">http://www.storebrand.no/</a> (dust)
         </p>
         <p class="top-margin-20">
-          <strong>Code:</strong> Nothing special, just the usual <code>&lt;a href="..."&gt;...&lt;/a&gt;</code>
+          <strong>Code:</strong> Nothing special, just the usual <code>&lt;a href="..." class="[analyze]"&gt;...&lt;/a&gt;</code>, and you can enable google analytics by adding the "analyze" class.
         </p>
       </div>
     </div>
@@ -342,7 +343,7 @@
       <div class="col-md-6">
         <h4>Single links:</h4>
         <div class="bottom-margin-10">
-          <a href="tel:08880">
+          <a href="tel:08880" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white phone"></span>
             </span>
@@ -351,7 +352,7 @@
         </div>
         <p>Another one:</p>
         <div class="bottom-margin-10">
-          <a href="http://www.storebrand.no">
+          <a href="http://www.storebrand.no" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white employee"></span>
             </span>
@@ -361,7 +362,7 @@
 
         <p>With text:</p>
         <div>
-          <a href="tel:08880">
+          <a href="tel:08880" class="analyze">
           <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white phone"></span>
           </span>
@@ -394,7 +395,7 @@
         <h3>Kontakt oss</h3>
 
         <div  class="bottom-margin-10">
-          <a href="http://www.storebrand.no">
+          <a href="http://www.storebrand.no" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white envelope"></span>
             </span>
@@ -402,7 +403,7 @@
           </a>
         </div>
         <div class="chatOpen bottom-margin-10">
-          <a href="http://www.storebrand.no/site/stb.nsf/chooseChat?readForm" onclick="window.open(this.href, '','height=500,width=560');return false;">
+          <a href="http://www.storebrand.no/site/stb.nsf/chooseChat?readForm" class="analyze" onclick="window.open(this.href, '','height=500,width=560');return false;">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white chat"></span>
             </span>
@@ -410,7 +411,7 @@
           </a>
         </div>
         <div class="bottom-margin-10">
-          <a href="http://www.storebrand.no">
+          <a href="http://www.storebrand.no" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white employee"></span>
             </span>
@@ -418,7 +419,7 @@
           </a>
         </div>
         <div class="bottom-margin-10">
-          <a href="tel:08880">
+          <a href="tel:08880" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white phone"></span>
             </span>
@@ -489,7 +490,7 @@ $(document).ready(function() {
         <h4>Code:</h4>
               <pre class="prettyprint">
   &lt;div class="bottom-margin-10"&gt;
-    &lt;a href="tel:08880"&gt;
+    &lt;a href="tel:08880" class="analyze"&gt;
       &lt;span class="circle-16 stbcolor-secondary third/first pull-left"&gt;
         &lt;span class="stb-sprite-small white phone/chat/envelope"&gt;&lt;/span&gt;
       &lt;/span&gt;
@@ -704,6 +705,7 @@ $(document).ready(function() {
     <h3>Table with clickable rows</h3>
     <p>
       Make the rows clickable by adding the class "clickable" to the row tag. What happens upon a click is defined by what you add to the rel attribute of each particular row tag.
+      By adding the class "analyze" google analytics is enabled.
     </p>
     <table class="stb-table no-alt hoverable nude">
       <thead>
@@ -714,7 +716,7 @@ $(document).ready(function() {
       </tr>
       </thead>
       <tbody>
-      <tr class="clickable" rel="#index-nav">
+      <tr class="clickable analyze" rel="#index-nav">
         <td>Storebrand Barnespar</td>
         <td class="text-right">1,50%</td>
         <td class="text-right">0</td>
@@ -746,7 +748,7 @@ $(document).ready(function() {
 
     <strong>Code:</strong> <br />
           <pre class="prettyprint">
-&lt;table class=&quot;stb-table [hoverable] [clickable] [noalt]&quot;&gt;
+&lt;table class=&quot;stb-table [hoverable] [clickable] [noalt] [analyze] &quot;&gt;
   &lt;thead&gt;
     &lt;tr class="clickable" rel="#index-nav"&gt;
       &lt;th&gt;Aksjefond&lt;/th&gt;
@@ -777,6 +779,7 @@ $(document).ready(function() {
   <div class="col-md-9">
     <p>
       A list group is a bit like a one-column table, a flexible component for displaying both simple lists of elements and complex lists with custom content.
+      By adding the class "analyze" google analytics is enabled.
     </p>
 
     <div class="row">
@@ -785,9 +788,9 @@ $(document).ready(function() {
         <h3>A list of links in a list-group</h3>
         </p>
         <div class="stb-list-group" >
-          <a class="list-group-item" href="#">Bilforsikring </a>
+          <a class="list-group-item analyze" href="#">Bilforsikring </a>
           <a class="list-group-item" href="#">Motorsykkelforsikring </a>
-          <a class="list-group-item" href="#">Traktorforsikring </a>
+          <a class="list-group-item analyze" href="#">Traktorforsikring </a>
         </div>
       </div>
     </div>
@@ -796,9 +799,9 @@ $(document).ready(function() {
     <br />
           <pre class="prettyprint">
 &lt;div class="stb-list-group" &gt;
-    &lt;a class="list-group-item" href="#"&gt;Bilforsikring &lt;/a&gt;
-    &lt;a class="list-group-item" href="#"&gt;Motorsykkelforsikring &lt;/a&gt;
-    &lt;a class="list-group-item" href="#"&gt;Traktorforsikring &lt;/a&gt;
+    &lt;a class="list-group-item [analyze]" href="#"&gt;Bilforsikring &lt;/a&gt;
+    &lt;a class="list-group-item [analyze]" href="#"&gt;Motorsykkelforsikring &lt;/a&gt;
+    &lt;a class="list-group-item [analyze]" href="#"&gt;Traktorforsikring &lt;/a&gt;
 &lt;/div&gt;</pre>
 
     <div class="row">
@@ -810,6 +813,7 @@ $(document).ready(function() {
         </p>
         <p>
           You can make a list group item clickable by adding "class="clickable" and a specifying a URL in the rel-attribute. If you do this, the list group item must not contain any additional links.
+          By adding the class "analyze" google analytics is enabled.
         </p>
       </div>
     </div>
@@ -817,7 +821,7 @@ $(document).ready(function() {
       <div class="col-md-10">
         <ul class="stb-list-group">
           <li class="list-group-item header">Lorem ipsum</li>
-          <li class="list-group-item clickable" rel="http://www.storebrand.no">Terra scriptum delta echo verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum grimt delta scriptum sierra alpha verso grimt delta scriptum sierra </li>
+          <li class="list-group-item clickable analyze" rel="">Terra scriptum delta echo verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum grimt delta scriptum sierra alpha verso grimt delta scriptum sierra </li>
           <li class="list-group-item header">Alpha echo</li>
           <li class="list-group-item"> Sierra alpha terra scriptum delta echo verso grimt delta <a href="#">webmanual</a> sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra scriptum delta echo verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha verso grimt delta scriptum sierra alpha terra</li>
           <li class="list-group-item header">Post Scriptum</li>
@@ -829,9 +833,9 @@ $(document).ready(function() {
           <pre class="prettyprint">
 &lt;ul class="list-group"&gt;
     &lt;li class="list-group-item header"&gt;Lorem ipsum&lt;/li&gt;
-    &lt;li class="list-group-item"&gt;...content &lt;/li&gt;    
+    &lt;li class="list-group-item [analyze]"&gt;...content &lt;/li&gt;
     &lt;li class="list-group-item header&gt;Lorem ipsum&lt;/li&gt;
-    &lt;li class="list-group-item clickable" rel="http://www.storebrand.no/ny""&gt;...content &lt;/li&gt; 
+    &lt;li class="list-group-item clickable [analyze]" rel="http://www.storebrand.no/ny""&gt;...content &lt;/li&gt;
 &lt;/ul&gt;                          
 </pre>
     <div class="row">
@@ -998,10 +1002,11 @@ $(document).ready(function() {
   <p>
     Grouped and framed element with a small amount of contents, usually an image and a short text. The image goes above the text when the screen width is xs and lg, and to the left of the text on screen widths sm and md. By adding the class "clickable", the whole div is clickable with the action retrieved from the rel attribute.
     <br/><strong> The images are always square formats and always 63 x 63 px </strong>
+     By adding the class "analyze" google analytics is enabled.
   </p>
 
   <div class="col-md-4 col-xs-12">
-    <div class="stb-box mini clickable" rel="tel:08880">
+    <div class="stb-box mini clickable " rel="tel:08880">
       <div class="row">
         <div class="col-sm-6 col-md-12">
           <img src="images/placeholder63x63.png">
@@ -1020,7 +1025,7 @@ $(document).ready(function() {
   <div class="col-md-10">
     <h4>Code:</h4>
               <pre class="prettyprint">
- &lt;div class="stb-box mini clickable" rel="tel:08880"&gt;
+ &lt;div class="stb-box mini clickable [analyze]" rel="tel:08880"&gt;
    &lt;div class="row"&gt;
      &lt;div class="col-sm-6 col-md-12"&gt;
        &lt;img src="images/contactus.png"&gt;
@@ -1039,8 +1044,9 @@ $(document).ready(function() {
   <h3>Big box</h3>
   <p>
     Clickable element containing more than just a tiny bit of contents. The element can contain an image that goes above the text on screen widths xs and lg, but to the left of the text on screen widths sm and md.
-    <br/><strong> The images in square formats are  112 x 112 px </strong>
-    <strong> The images in 16:9 formats are  192 x 108 px </strong>
+    <br/><strong> The images in square formats are  112 x 112 px .</strong>
+    <strong> The images in 16:9 formats are  192 x 108 px .</strong>
+    By adding the class "analyze" google analytics is enabled.
   </p>
 
   <div class="col-md-12 col-lg-4">
@@ -1085,7 +1091,7 @@ $(document).ready(function() {
     <div class="col-md-10">
       <h4>Code:</h4>
                 <pre class="prettyprint">
-  &lt;div class="stb-box big clickable" rel=""&gt;
+  &lt;div class="stb-box big clickable [analyze]" rel=""&gt;
     &lt;div class="row"&gt;
       &lt;div class="col-sm-6 col-md-12"&gt;
         &lt;img src="images/contactus.png"&gt;
@@ -1348,6 +1354,7 @@ $(document).ready(function() {
     <h3>Frequently Asked Questions ("Accordion")</h3>
     <p>
       The FAQ "accordion" can be used to initially hide substantial contents on pages that might otherwise seem overwhelming at first glance. (For use only in cases where it's really not possible to reduce the amount of text, of course.)
+      By adding the class "analyze" google analytics is enabled.
     </p>
     <p>
       Example:
@@ -1397,7 +1404,7 @@ $(document).ready(function() {
           <pre class="prettyprint">
 &lt;ul class="accordion" data-widget="stbFaq"&gt;
   &lt;li&gt;
-    &lt;a href="#" class="twister"&gt;Question here
+    &lt;a href="#" class="twister [analyze]"&gt;Question here
       &lt;span class="expander"&gt;&lt;span&gt;
     &lt;/a&gt;
     &lt;div class="answer"&gt; Answer-text here (a,b,i,ul,ol allowed) &lt;/div&gt;
@@ -1536,6 +1543,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       Width: 100-200px<br />
       Font: 16px Open Sans Bold<br />
       <br />
+      By adding the class "analyze" google analytics is enabled.
     </p>
     <p><strong>Missing description:</strong> When to use a button vs when to use a text link.</p>
   </div>
@@ -1545,7 +1553,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 <div class="row">
   <div class="col-md-6">
     <strong>Usage:</strong> <br />
-    <pre class="prettyprint"> &lt;button class="stb-btn"&gt;Standard&lt;/button&gt; </pre>
+    <pre class="prettyprint"> &lt;button class="stb-btn [analyze]"&gt;Standard&lt;/button&gt; </pre>
   </div>
 </div>
 
@@ -1739,7 +1747,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
     <div class="col-md-12">
       <strong>Code:</strong> <br />
         <pre class="prettyprint"> 
-&lt;button class="stb-btn stb-big-btn"&gt;&lt;h3&gt;Kjøp spareavtale&lt;/h3&gt;&lt;/button&gt; 
+&lt;button class="stb-btn stb-big-btn [analyze]"&gt;&lt;h3&gt;Kjøp spareavtale&lt;/h3&gt;&lt;/button&gt;
         </pre>
     </div>
   </div>
@@ -2477,6 +2485,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
   <div class="col-md-9">
     <p>
       This element will either be replaced or supplemented by another more button-based tab-like element, "Toggle buttons". Just you wait and see. Do not use this element yet without consulting with storebrand.ny team first.
+      By adding the class "analyze" to the link in the tab, google analytics is enabled.
     </p>
     <p class="bottom-margin-30">Place the code below outside any container if you want the border bottom to strech to the entire screen </p>
     <p>Please note that navigation tabs requires including the bootstrap.min.js script on the page.</p>
@@ -2562,10 +2571,10 @@ $('ul[data-widget=stbFaq]').stbFaq();
   &lt;div class=&quot;container&quot;&gt;
     &lt;ul id=&quot;tabs&quot; class=&quot;nav nav-tabs&quot; data-tabs=&quot;tabs&quot;&gt;
       &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#private&quot; data-toggle=&quot;tab&quot;&gt;Privat&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#company&quot; data-toggle=&quot;tab&quot;&gt;Bedrift&lt;/a&gt;&lt;/li&gt; 
-      &lt;li&gt;&lt;a href=&quot;#press&quot; data-toggle=&quot;tab&quot;&gt;Presse og IR&lt;/a&gt;&lt;/li&gt; 
-      &lt;li&gt;&lt;a href=&quot;#real-estate&quot; data-toggle=&quot;tab&quot;&gt;Eiendom&lt;/a&gt;&lt;/li&gt; 
-      &lt;li&gt;&lt;a href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot;&gt;Asset management&lt;/a&gt;&lt;/li&gt; 
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#company&quot; data-toggle=&quot;tab&quot;&gt;Bedrift&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#press&quot; data-toggle=&quot;tab&quot;&gt;Presse og IR&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#real-estate&quot; data-toggle=&quot;tab&quot;&gt;Eiendom&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot;&gt;Asset management&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt; 
   &lt;/div&gt; 
 &lt;/div&gt;
@@ -2580,10 +2589,10 @@ $('ul[data-widget=stbFaq]').stbFaq();
     &lt;/button&gt;
     &lt;ul class=&quot;dropdown-menu&quot; data-tabs=&quot;tabs&quot; &gt;
       &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#private&quot; data-toggle=&quot;tab&quot;&gt;Privat&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#company&quot; data-toggle=&quot;tab&quot;&gt;Bedrift&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#press&quot; data-toggle=&quot;tab&quot;&gt;Presse og IR&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#real-estate&quot; data-toggle=&quot;tab&quot;&gt;Eiendom&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot;&gt;Asset management&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#company&quot; data-toggle=&quot;tab&quot;&gt;Bedrift&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#press&quot; data-toggle=&quot;tab&quot;&gt;Presse og IR&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#real-estate&quot; data-toggle=&quot;tab&quot;&gt;Eiendom&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot;&gt;Asset management&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;

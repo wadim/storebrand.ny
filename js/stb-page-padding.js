@@ -237,7 +237,11 @@
 //Adding link visibility to contents in first column in clickable rows in tables
   $(document).ready(function() {
     $('tr.clickable td:first-child').each(function() {
-      $(this).html('<a href="#"' + '>' + $(this).text() + '</' + 'a>');
+      if($(this).parent().hasClass('analyze')){
+        $(this).html('<a href="#"' + ' class="analyze">' + $(this).text() + '</' + 'a>');
+      }else{
+        $(this).html('<a href="#"' + '>' + $(this).text() + '</' + 'a>');
+      }
     });
   });
 
@@ -512,9 +516,10 @@
 
 
 // Google Analytics event tagging - automated for various design elements
+// To enable analytics the element needs a 'analyze' class
   $(document).ready(function(){
 
-    $('button').bind( "click", function() {
+    $('button.analyze').bind( "click", function() {
       var btnTxt = $(this).html();
       var path = window.location.pathname;
       //console.log(btnTxt);
@@ -522,7 +527,7 @@
       ga('send', 'event', path , 'Klikk på knappen', btnTxt);
     });
 
-    $('a').bind( "click", function() {
+    $('a.analyze').bind( "click", function() {
       var linkTxt = $(this).html();
       var path = window.location.pathname;
       //console.log(linkTxt);
@@ -530,7 +535,7 @@
       ga('send', 'event', path , 'Klikk på lenke', linkTxt);
     });
 
-    $('.mini.clickable').bind( "click", function() {
+    $('.mini.clickable.analyze').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
       //console.log(boxId);
@@ -538,9 +543,25 @@
       ga('send', 'event', path , 'Klikk på boksen ', boxId);
     });
 
-    $('.twister').bind( "click", function() {
-      console.log('faq');
+    $('.big.clickable.analyze').bind( "click", function() {
+      var boxId = $(this).attr('alt');
+      var path = window.location.pathname;
+      //console.log(boxId);
+      //console.log(path);
+      ga('send', 'event', path , 'Klikk på boksen ', boxId);
+    });
+
+    $('.twister.analyze').bind( "click", function() {
+      //console.log('faq');
       var q = $(this).html();
+      var path = window.location.pathname;
+      //console.log(q);
+      //console.log(path);
+      ga('send', 'event', path , 'Klikk på boksen ', q);
+    });
+
+    $('.list-group-item.analyze').bind( "click", function() {
+      var q = $(this).prev('.header').html();
       var path = window.location.pathname;
       //console.log(q);
       //console.log(path);
