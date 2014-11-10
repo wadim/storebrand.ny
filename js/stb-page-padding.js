@@ -118,30 +118,31 @@
 
 // End adding triggers for showing additional info
 
-// Handling automatic generation of toc lists on article pages
+// Handling automatic generation of TOC lists on article pages
   $(document).ready(function() {
     // Prepare the row that contains the table of contents
-    var toclist ='<div class="row"><div class="col-md-8 toc-list top-margin-20 top-padding-10 border-top-and-bottom stbcolor-background fifth"><p class="intro stb-font">G&aring; direkte til<span class="stb-sprite-medium chevron-down pull-right"></span></p><ul class="items"></ul></div></div>';
+    var tocList ='<div class="row"><div class="col-md-8 toc-list top-margin-20 top-padding-10 border-top-and-bottom stbcolor-background fifth"><p class="intro stb-font">G&aring; direkte til<span class="stb-sprite-medium chevron-down pull-right"></span></p><ul class="items"></ul></div></div>';
 
     // Place the table of content above the first h3.toc-header
-    $(toclist).insertBefore( $('h3.toc-header:first').closest("div.row") );
+    $(tocList).insertBefore( $('h3.toc-header:first').closest("div.row") );
 
-    // Find all the top level toc headings (h3)
+    // Find all the top level TOC headings (h3)
     var tocHeaders= $('h3.toc-header');
 
     // Iterate through all the top level headings (h3)
     for(var i=0; i<tocHeaders.length; i++) {
-      var h3tag = tocHeaders[i];
+      var heading = tocHeaders[i];
 
-      $(h3tag).attr('name', h3tag.textContent.replace(/\W/g, '').toLowerCase());
-      // Appending heading text to table to contents
-      $('.toc-list .items').append( prepareTocLink(h3tag, "") );
+      $(heading).attr('name', heading.textContent.replace(/\W/g, '').toLowerCase());
+      
+      // Appending heading text to table to contents and also preparing links
+      $('.toc-list .items').append( prepareTocLink(heading, "") );
 
       // Find all sub-headings(h4) inside each heading(h3)
-      var allh4 = $(h3tag).nextUntil('h3','h4');
+      var subHeading = $(heading).nextUntil('h3','h4');
 
       // Check if there are any h4 elements. If there are none, we should not run the code below.
-      if(allh4.length === 0) continue;
+      if(subHeading.length === 0) continue;
     }
 
     //check if URL already has a hash and scroll to the correct heading
@@ -152,6 +153,7 @@
     if (window.location.hash.length > 0) {
       try {
         var hashId = window.location.hash;
+        alert(hashId);
         //if a matching h3 or h4 has the hash ID, then scroll to it.
         if($("h3"+hashId).length > 0 || $("h4"+hashId).length > 0) {
           scrollToHash( hashId );
