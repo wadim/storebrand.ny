@@ -1,29 +1,18 @@
 ﻿(function($){
 // Start navigation padding
-
-// Start mobile top menu decoration
+	
   $(document).ready(function(){
-    $('#nav .panel-group').on('show.bs.collapse', function (event) {
-      $(event.target).prev().find('span:first').toggleClass('chevron-down chevron-right');
-    });
-
-    $('#nav .panel-group').on('hide.bs.collapse', function () {
-      $('.panel-collapse.collapse.in').prev().find('span:first').toggleClass('chevron-down chevron-right');
-    });
-
     $(".dropdown").on("hide.bs.dropdown", function(){
       if( $(this).find('.dropdown-menu') ) {
         $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
         if( $(this).closest('#top-menu-nav').length ) {
           $("#overlay").css("display","none");
-          if(window.location.href.indexOf("login") > -1) {
-            $(this).parent().find('li.login').addClass('current');
-          }else{
+          if(!($('.nav .company').hasClass('current'))) {
+            $('.current').removeClass("current");
             $(this).parent().find('li.private').addClass('current');
           }
         }
       }
-      $(this).find('span.marker').toggleClass('active');
     });
 
     $(".dropdown").on("show.bs.dropdown", function(){
@@ -31,35 +20,24 @@
         $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
         if( $(this).closest('#top-menu-nav').length ) {
           $("#overlay").css("display","block");
-          if(window.location.href.indexOf("login") > -1) {
-            $(this).parent().find('li.login').removeClass('current');
-          }else{
-            $(this).parent().find('li.private').removeClass('current');
-          }
+          $('.current').removeClass("current");
+          $(this).addClass("current");
         }
       }
-      $(this).find('span.marker').toggleClass('active');
     });
 
-    $("#desktopmenu li:first a").click(function(){
+    // Slide up the dropdown on clicking the remove icon 
+    $("#desktopmenu li:first a, #loginmenu li:first a").click(function(){
       $(".dropdown").removeClass('open');
       $(".dropdown").trigger("hide.bs.dropdown");
     });
 
-    $("#loginmenu li:first a").click(function(){
-      $(".dropdown").removeClass('open');
-      $(".dropdown").trigger("hide.bs.dropdown");
-    });
-
-    if($('.nav .company').hasClass("current")) {
-    	$('.nav .private').css("background-image","none");
-    }
-  });
-// End mobile top menu decoration
-
+    
+  }); 
+  
 // Showing the hiding the overlay on clicking the dropdown toggle
   $(document).ready(function(){
-    //initialize the overlay to get the document's dimenstions
+    //initialize the overlay to get the document's dimensions
     $("#overlay").css("width",$(document).width());
     $("#overlay").css("height",$(document).height());
   });
