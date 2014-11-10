@@ -146,24 +146,21 @@
     }
 
     //check if URL already has a hash and scroll to the correct heading
-    /**
-     * @todo Clean this up, must be more robust! Do not assume that all hash URLS are links to headings, sanitize and add tests. Angular uses hash URLs to simulate page navigation
-     *
-     */
-    if (window.location.hash.length > 0) {
-      try {
-        var hashId = window.location.hash;
-        alert(hashId);
-        //if a matching h3 or h4 has the hash ID, then scroll to it.
-        if($("h3"+hashId).length > 0 || $("h4"+hashId).length > 0) {
-          scrollToHash( hashId );
-        }
-
-      } catch(e) {
-        // Don't do a thing!
+       
+    if( window.location.hash.length > 0 && window.location.hash.indexOf("/") == -1 ) {  // only do scrolling now, since the has tag is present and it does not have a / which is for angular JS
+	  try {
+	    var hashId = window.location.hash;
+	    //if a matching heading has the hash ID, then scroll to it.
+	    
+	    if( $(hashId).length > 0 ){
+	      scrollToHash( hashId );
+	    }
+	
+	    } catch(e) {
+	      // Don't do a thing!
+	    }  	 
       }
-    }
-
+   
     // Perform a smooth page scroll to an anchor on the same page.
     $(function() {
       $('.toc-list .items a[href*=#]:not([href=#])').click(function(event) {
@@ -201,24 +198,20 @@
       //create the link and return it
       return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
     }
-
-  });
-
-  $(document).ready(function(){
-
+    
     // small chevron icon in mobile view
-
     if( $( window ).width() <= 768){
       $('.toc-list p span').toggleClass("stb-sprite-small stb-sprite-medium");
     }
+    
     // hide and show articles list
     $('.toc-list p').click(function() {
       // if the media screen width is large, then don't do anything
       // the following will apply for mobile view
       $('.toc-list .items').slideToggle();
       $('.toc-list p span').toggleClass("chevron-down red chevron-up");
-
     });
+
   });
 
 // End of automatic generation of toc lists on article pages
