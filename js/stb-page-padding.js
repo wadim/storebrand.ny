@@ -491,7 +491,7 @@
 // Google Analytics event tagging - automated for various design elements
 // To enable analytics the element needs a 'analyze' class
   $(document).ready(function(){
-
+    //Analytics for buttons
     $('button.analyze').bind( "click", function() {
       var btnTxt = $(this).html();
       var path = window.location.pathname;
@@ -499,7 +499,7 @@
       //console.log(path);
       ga('send', 'event', path , 'Klikk på knappen', btnTxt);
     });
-
+    //Analytics for links
     $('a.analyze').bind( "click", function() {
       var linkTxt = $(this).html();
       var path = window.location.pathname;
@@ -507,48 +507,41 @@
       //console.log(path;
       ga('send', 'event', path , 'Klikk på lenke', linkTxt);
     });
-
+    //Analytics for miniboxes
     $('.mini.clickable.analyze').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
       //console.log(boxId);
       //console.log(path);
-      ga('send', 'event', path , 'Klikk på boksen ', boxId);
+      ga('send', 'event', path , 'Klikk på miniboks', boxId);
     });
-
+    //Analytics for big boxes
     $('.big.clickable.analyze').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
       //console.log(boxId);
       //console.log(path);
-      ga('send', 'event', path , 'Klikk på boksen ', boxId);
+      ga('send', 'event', path , 'Klikk på store boks ', boxId);
     });
-
+    //Analytics for accordion
     $('.twister.analyze').bind( "click", function() {
       //console.log('faq');
       var q = $(this).html();
       var path = window.location.pathname;
       //console.log(q);
       //console.log(path);
-      ga('send', 'event', path , 'Klikk på boksen ', q);
+      ga('send', 'event', path , 'Klikk på accordion ', q);
     });
 
-    $('.list-group-item.analyze').bind( "click", function() {
-      var q = $(this).prev('.header').html();
-      var path = window.location.pathname;
-      //console.log(q);
-      //console.log(path);
-      ga('send', 'event', path , 'Klikk på boksen ', q);
-    });
-
+   //Analytics for list group
     $('.list-group-item.analyze').bind( "click", function() {
         var q = $(this).prev('.header').html();
         var path = window.location.pathname;
         //console.log(q);
         //console.log(path);
-        ga('send', 'event', path , 'Klikk på boksen ', q);
+        ga('send', 'event', path , 'Klikk på list group ', q);
       });
-
+    //Analytics for radio buttons and checkboxes
     $('label.analyze').bind( "click", function() {
         var parent = $(this).parent()
         var q = $(this).html();
@@ -562,7 +555,7 @@
             ga('send', 'event', path , 'Checkbox: '+label+' checked', q);
         }
       });
-
+     //Analytics for select
      $('select.analyze').bind( "change", function() {
             var q = $(this).val();
             var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
@@ -571,6 +564,16 @@
             //console.log(path);
             ga('send', 'event', path , 'Dropdown:'+label+' endret valg.', q);
      });
+    //Analytics for datepicker
+      $('.datePicker.analyze').bind('dp.change dp.show', function(){
+            var q = $(this).find('input').val();
+            var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
+            var path = window.location.pathname;
+            //console.log(q);
+            //console.log(path);
+            ga('send', 'event', path , 'Date changed for: '+label, q);
+
+      });
 
   });
 

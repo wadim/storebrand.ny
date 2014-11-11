@@ -447,15 +447,20 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <h3>Custom style with autocomplete</h3>
-        <select data-widget="chosenSelect" class="form-control" data-placeholder="Pick a number" style="width: 300px;">
-          <option value="0"></option>
-          <option value="1">Number one</option>
-          <option value="2">Number two</option>
-          <option value="3">Number three</option>
-          <option value="4">Number four</option>
-          <option value="4">Number five</option>
-        </select>
+        <form>
+          <div class="stb-form-group">
+            <h3>Custom style with autocomplete</h3>
+            <label for="select-demo2">Pick a number</label>
+            <select id="select-demo2" data-widget="chosenSelect" class="form-control" data-placeholder="Pick a number" style="width: 300px;">
+              <option value="0"></option>
+              <option value="1">Number one</option>
+              <option value="2">Number two</option>
+              <option value="3">Number three</option>
+              <option value="4">Number four</option>
+              <option value="4">Number five</option>
+            </select>
+          </div>
+        </form>
         <p><strong>Note:</strong> Type-ahead requires <a href="js/dist/chosen.jquery.js">chosen.jquery.js</a> + stb-chosen-less.<br /></p>
               <pre class="prettyprint">&lt;select data-widget=&quot;chosenSelect&quot; class=&quot;form-control&quot; data-placeholder=&quot;Pick a number&quot;&gt;
   &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
@@ -591,7 +596,8 @@
       <div class="col-xs-4">
         <form>
         <div class="stb-form-group al">
-          <div class='input-group date datePicker' data-date-format="DD/MM/YYYY">
+          <label>Date</label>
+          <div class='input-group date datePicker analyze' data-date-format="DD/MM/YYYY">
             <input type='text' class="form-control" name="dateTravelTo"/>
             <span class="input-group-addon stbcolor-secondary third"><span class="stb-sprite-small white calendar"></span></span>
           </div>
@@ -622,6 +628,7 @@
       <div class="row">
         <div class="col-xs-4">
           <form id="validateDate" class="stb-form validateForm">
+              <label>Date</label>
               <span id="date-message" class="help-block"></span>
               <div class="stb-form-group al dateContainer">
                 <div class='input-group date datePicker' data-date-format="DD/MM/YYYY">
@@ -635,6 +642,7 @@
       <br>
             <pre class="prettyprint">
 &lt;form id=&quot;validateDate&quot; class=&quot;stb-form validateForm&quot;&gt;
+&lt;label&gt;Date&lt;/label&gt;
  &lt;span id=&quot;date-message&quot; class=&quot;help-block&quot;&gt;&lt;/span&gt;
  &lt;div class=&quot;stb-form-group al dateContainer&quot;&gt;
    &lt;div class='input-group date datePicker' data-date-format=&quot;DD/MM/YYYY&quot;&gt;
