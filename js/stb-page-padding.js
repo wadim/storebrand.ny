@@ -541,6 +541,37 @@
       ga('send', 'event', path , 'Klikk på boksen ', q);
     });
 
+    $('.list-group-item.analyze').bind( "click", function() {
+        var q = $(this).prev('.header').html();
+        var path = window.location.pathname;
+        //console.log(q);
+        //console.log(path);
+        ga('send', 'event', path , 'Klikk på boksen ', q);
+      });
+
+    $('label.analyze').bind( "click", function() {
+        var parent = $(this).parent()
+        var q = $(this).html();
+        var label = $(this).parent().prev('label').length > 0 ? $(this).parent().prev('label').html() : "" ;
+        var path = window.location.pathname;
+        //console.log(q);
+        //console.log(path);
+        if(parent.hasClass('radiobuttons')){
+            ga('send', 'event', path , 'Radiobutton: '+label+' checked', q);
+        }else if(parent.hasClass('checkboxes')){
+            ga('send', 'event', path , 'Checkbox: '+label+' checked', q);
+        }
+      });
+
+     $('select.analyze').bind( "change", function() {
+            var q = $(this).val();
+            var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
+            var path = window.location.pathname;
+            //console.log(q);
+            //console.log(path);
+            ga('send', 'event', path , 'Dropdown:'+label+' endret valg.', q);
+     });
+
   });
 
 //Options example object.
@@ -887,20 +918,25 @@
     if($('.datePicker').length > 0){
       $('.datePicker').datetimepicker(
         {language: 'nb',
-         pickTime: false
+         pickTime: false,
+          icons: {
+          date: 'stb-sprite-small white calendar'
+          }
         }
       );
       $('.datePicker')
           .on('dp.change dp.show', function(e) {
             var name = $(e.target).find('input').attr('name');
             // Validate the date when user change it
-            $(this).parents('form.validateForm')
-              // Get the bootstrapValidator instance
-                .data('bootstrapValidator')
-              // Mark the field as not validated, so it'll be re-validated when the user change date
-                .updateStatus(name, 'NOT_VALIDATED', null)
-              // Validate the field
-                .validateField(name);
+            if($(this).parents('form.validateForm').length > 0){
+                 $(this).parents('form.validateForm')
+                // Get the bootstrapValidator instance
+                  .data('bootstrapValidator')
+                // Mark the field as not validated, so it'll be re-validated when the user change date
+                  .updateStatus(name, 'NOT_VALIDATED', null)
+                // Validate the field
+                  .validateField(name);
+            }
           });
     }
   });

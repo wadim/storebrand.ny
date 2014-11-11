@@ -317,8 +317,9 @@
             <p>
               All in one row:
             </p>
-            <div class="radiobuttons">
-              <input class="stb-radio" type="radio" id="radio1" name="stb-a" value="African swallow" /><label for="radio1">African swallow</label>
+            <label for="radiobuttons1">Birds</label>
+            <div class="radiobuttons" id="radiobuttons1">
+              <input class="stb-radio" type="radio" id="radio1" name="stb-a" value="African swallow" /><label class="analyze" for="radio1">African swallow</label>
               <input class="stb-radio" type="radio" id="radio2" name="stb-a" value="European Swallow" /><label for="radio2">European swallow</label>
               <input class="stb-radio" type="radio" id="radio3" name="stb-a" value="Checked" checked /><label for="radio3">Chosen</label>
               <input class="stb-radio" type="radio" id="radio4" name="stb-a" value="Can't touch this" disabled /><label for="radio4">Can't touch this (disabled)</label>
@@ -327,8 +328,8 @@
           <p>
             Nice and orderly in rows:
           </p>
-
-          <div class="radiobuttons">
+          <label for="radiobuttons2">Birds</label>
+          <div class="radiobuttons" id="radiobuttons2">
             <input class="stb-radio" type="radio" id="radio5" name="stb-b" value="African swallow" /><label for="radio5" style="width: 280px;">African swallow</label><br>
             <input class="stb-radio" type="radio" id="radio6" name="stb-b" value="European Swallow" /><label for="radio6" style="width: 280px;">European swallow</label><br>
             <input class="stb-radio" type="radio" id="radio7" name="stb-b" value="Checked" checked /><label for="radio7" style="width: 280px;">Chosen</label><br>
@@ -349,7 +350,8 @@
               <p>
                 All in one row:
               </p>
-              <div class="checkboxes">
+              <label for="checkboxes1">Checkboxes</label>
+              <div class="checkboxes" id="checkboxes1">
                 <input class="stb-checkbox" type="checkbox" id="checkbox1" name="stb-c" value="This" /><label for="checkbox1">This</label>
                 <input class="stb-checkbox" type="checkbox" id="checkbox2" name="stb-c" value="That" /><label for="checkbox2">That</label>
                 <input class="stb-checkbox" type="checkbox" id="checkbox3" name="stb-c" value="Chosen" checked /><label for="checkbox3">Chosen</label>
@@ -362,7 +364,8 @@
               <p>
                 Nice and orderly in rows:
               </p>
-              <div class="checkboxes">
+              <label for="checkboxes2">Checkboxes</label>
+              <div class="checkboxes" id="checkboxes2">
                 <input class="stb-checkbox" type="checkbox" id="checkbox11" name="stb-d" value="This" /><label for="checkbox11" style="width: 280px;">This</label><br />
                 <input class="stb-checkbox" type="checkbox" id="checkbox12" name="stb-d" value="That" /><label for="checkbox12" style="width: 280px;">That</label><br />
                 <input class="stb-checkbox" type="checkbox" id="checkbox13" name="stb-d" value="Chosen" checked/><label for="checkbox13" style="width: 280px;">Chosen</label><br />
@@ -379,21 +382,25 @@
         <strong>Code:</strong> <br />
               <pre class="prettyprint">
 &lt;form&gt;
-  &lt;h5&gt;Pick your poison&lt;/h5&gt;
-    &lt;!-- Radio buttons --&gt;
-    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;a&quot; value=&quot;a&quot; name=&quot;aorb&quot; /&gt;
-    &lt;label for=&quot;a&quot;&gt;I want poison A&lt;/label&gt;
-    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;b&quot; value=&quot;b&quot; name=&quot;aorb&quot; checked /&gt;
-    &lt;label for=&quot;b&quot;&gt;I want poison B&lt;/label&gt;
-    &lt;!-- Checkboxes --&gt;
-    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox1&quot; type=&quot;checkbox&quot; /&gt;
-    &lt;label for=&quot;checkbox1&quot;&gt;Check this out&lt;/label&gt;&lt;br&gt;
-    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox2&quot; type=&quot;checkbox&quot; /&gt;
-    &lt;label for=&quot;checkbox2&quot;&gt;Check that out&lt;/label&gt;&lt;br&gt;
-    &lt;input class=&quot;stb-checkbox&quot; id=&quot;checkbox3&quot; type=&quot;checkbox&quot; disabled /&gt;
-    &lt;label for=&quot;checkbox3&quot;&gt;Can't touch this (disabled)&lt;/label&gt;
+&lt;h5&gt;Pick your poison&lt;/h5&gt
+&lt;!-- Radio buttons --&gt;
+&lt;label for=&quot;radiobuttons1&quot;&gt;Birds&lt;/label&gt;
+  &lt;div class=&quot;radiobuttons&quot; id=&quot;radiobuttons1&quot;&gt;
+    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;stb-a&quot; value=&quot;African swallow&quot; /&gt;&lt;label class=&quot;analyze&quot; for=&quot;radio1&quot;&gt;African swallow&lt;/label&gt;
+    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;radio2&quot; name=&quot;stb-a&quot; value=&quot;European Swallow&quot; /&gt;&lt;label for=&quot;radio2&quot;&gt;European swallow&lt;/label&gt;
+    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;radio3&quot; name=&quot;stb-a&quot; value=&quot;Checked&quot; checked /&gt;&lt;label for=&quot;radio3&quot;&gt;Chosen&lt;/label&gt;
+    &lt;input class=&quot;stb-radio&quot; type=&quot;radio&quot; id=&quot;radio4&quot; name=&quot;stb-a&quot; value=&quot;Can't touch this&quot; disabled /&gt;&lt;label for=&quot;radio4&quot;&gt;Can't touch this (disabled)&lt;/label&gt;
+  &lt;/div&gt;
+&lt;!-- Checkboxes --&gt;
+&lt;label for=&quot;checkboxes1&quot;&gt;Checkboxes&lt;/label&gt;
+  &lt;div class=&quot;checkboxes&quot; id=&quot;checkboxes1&quot;&gt;
+    &lt;input class=&quot;stb-checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox1&quot; name=&quot;stb-c&quot; value=&quot;This&quot; /&gt;&lt;label for=&quot;checkbox1&quot;&gt;This&lt;/label&gt;
+    &lt;input class=&quot;stb-checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox2&quot; name=&quot;stb-c&quot; value=&quot;That&quot; /&gt;&lt;label for=&quot;checkbox2&quot;&gt;That&lt;/label&gt;
+    &lt;input class=&quot;stb-checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox3&quot; name=&quot;stb-c&quot; value=&quot;Chosen&quot; checked /&gt;&lt;label for=&quot;checkbox3&quot;&gt;Chosen&lt;/label&gt;
+    &lt;input class=&quot;stb-checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox4&quot; name=&quot;stb-c&quot; value=&quot;Can't touch this&quot; disabled /&gt;&lt;label for=&quot;checkbox4&quot;&gt;Can't touch this (disabled)&lt;/label&gt;
+  &lt;/div&gt;
 &lt;/form&gt;</pre>
-        <p>Be precise when using input+label; ID and for-attributes must match, and the order must be input, then label.</p>
+        <p>Be precise when using input+label; ID and for-attributes must match, and the order must be input, then label. By adding the class "analyze" to a label google analytics is enabled.</p>
       </div>
     </div>
   </div>
@@ -412,12 +419,15 @@
         <p>Increasingly, the best choice is to use native form elements. For advanced form elements, this is doubly so.</p>
         <p>Consider what happens when your form is presented on a smart phone, a "smart-TV" or, theoretically, a Windows Phone. Manufacturers of these devices put a lot of work into creating the best possible user experience. Customizing form elements will generally obstruct that goal.
         </p>
+        <p>By adding the class "analyze" google analytics is enabled.
+        </p>
       </div>
       <div class="col-md-12">
         <form>
         <div class="stb-form-group">
         <h3>Recommended default BS-style select</h3>
-        <select id="select-demo" class="form-control" style="width: 200px;">
+          <label for="select-demo">Pick a number</label>
+        <select name="picknumber" id="select-demo" class="form-control analyze" style="width: 200px;">
           <option value="">Pick a number</option>
           <option value="1">Number one</option>
           <option value="2">Number two</option>
@@ -428,8 +438,9 @@
         </div>
         </form><br>
               <pre class="prettyprint">
-&lt;select class="form-control"&gt;
-  &lt;option value="a">Select A&lt;/option&gt;
+&lt;label for=&quot;select-demo&quot;&gt;Pick a number&lt;/label&gt;
+&lt;select class=&quot;form-control [analyze]&quot; id=&quot;select-demo&quot;&gt;
+  &lt;option value=&quot;a&quot;&gt;Select A&lt;/option&gt;
   ...
 &lt;/select&gt;</pre>
       </div>
@@ -582,7 +593,7 @@
         <div class="stb-form-group al">
           <div class='input-group date datePicker' data-date-format="DD/MM/YYYY">
             <input type='text' class="form-control" name="dateTravelTo"/>
-            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            <span class="input-group-addon stbcolor-secondary third"><span class="stb-sprite-small white calendar"></span></span>
           </div>
         </div>
         </form>
@@ -615,7 +626,7 @@
               <div class="stb-form-group al dateContainer">
                 <div class='input-group date datePicker' data-date-format="DD/MM/YYYY">
                   <input type='text' class="form-control" name="date"/>
-                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                  <span class="input-group-addon stbcolor-secondary third"><span class="stb-sprite-small white calendar"></span></span>
                 </div>
               </div>
           </form>
