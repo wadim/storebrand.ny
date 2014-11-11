@@ -192,18 +192,20 @@
 }
 
 /* Change default look for button with class "close" */
-a.closeLink {
+.msgText, .stb-modal .modal-dialog{
+ a.closeLink {
    span.remove{
      margin-right: 10px;
    }
-   border-bottom: none !important;
+   border-bottom: none;
+   text-decoration: none;
 }
 
 a.closeLink:hover {
   p{
     color: @stb-primary-color;
   }
+ }
 }
-
 
 

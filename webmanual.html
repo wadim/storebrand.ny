@@ -1431,6 +1431,148 @@ $('ul[data-widget=stbFaq]').stbFaq();
   </div>
   <div class="col-md-9">
     <div class="row">
+      <h3>Basic modals</h3>
+      <p>The basic modals are based on twitter bootstrap modals. For mobile device screen sizes, the modal is fullscreen. By adding the class "analyze" google analytics is enabled.</p>
+      <button class="stb-btn transparent light" data-toggle="modal" data-target="#infoSpan6">Info</button>
+      <div class="modal stb-modal fade" id="infoSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header stbcolor-secondary fifth">
+              <a class="pull-right closeLink"  data-dismiss="modal" href="#">
+                <p>Lukk <span class="stb-sprite-small remove"></span></p>
+              </a>
+              <h4 class="modal-title"><span class="stb-color-sprite-medium info"></span></h4>
+            </div>
+            <div class="modal-body">
+              <h3>Type gjenstand (merke og modell)</h3>
+              <p>F.eks. Canon EOS 500D dersom det er digitalt speilreflekskamera av merke Canon og modell EOS 500D.</p>
+              <p>Husker du ikke merke og modell?</p>
+              <ul>
+                <li>Se på kvitteringen din fra den gangen du kjøpte produktet.</li>
+                <li>Få hjelp av noen venner til å huske hva slags produkt det var.</li>
+                <li>Om du ikke klarer å komme på det må du forsøke å beskrive produktet så godt det lar seg gjøre. I eksempelet med kameraet ovenfor måtte du f.eks.
+                  ha skrevet <b>Digitalt speilreflekskamera med zoomobjektiv.</b></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="stb-btn alarm" data-toggle="modal" data-target="#warningSpan6">Warning</button>
+      <div class="modal stb-modal fade" id="warningSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header stbcolor-primary first lighter">
+              <a class="pull-right closeLink"  data-dismiss="modal" href="#">
+                <p>Lukk <span class="stb-sprite-small remove"></span></p>
+              </a>
+              <h4 class="modal-title"><span class="stb-color-sprite-medium warning"></span></h4>
+            </div>
+            <div class="modal-body">
+              <h3>Dette er en advarsel</h3>
+              <p>Du har kanskje foretatt deg noe som gjør at vi bare er nødt til å si ifra.
+                Det kan for eksempel være at vi tror at du ikke har fått med deg noe viktig, så vi
+                må be deg trykke på en knapp for å bekrefte at du har forstått.</p>
+              <button class="stb-btn alarm" data-dismiss="modal"> Bekreft</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="stb-btn" data-toggle="modal" data-target="#successSpan6">Success</button>
+      <div class="modal stb-modal fade" id="successSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header stbcolor-visuals fourth">
+              <a class="pull-right closeLink"  data-dismiss="modal" href="#">
+                <p>Lukk <span class="stb-sprite-small remove"></span></p>
+              </a>
+              <h4 class="modal-title"><span class="stb-color-sprite-medium ok-circle"></span></h4>
+            </div>
+            <div class="modal-body">
+              <h3>Så flink du er :)</h3>
+              <p>Dette gikk aldeles strålende og alter er superbra!
+                Nå kan du bare klikke på knappen under her, så kan resten av denne glimrende dagen begynne.</p>
+              <button class="stb-btn" data-dismiss="modal"> Bekreft</button>
+            </div>
+          </div>
+        </div>
+      </div><br><br>
+      <p>Code needed:</p>
+      <pre class="prettyprint">
+&lt;!-- Information modal: --&gt;
+
+&lt;button class=&quot;stb-btn transparent light [analyze]&quot; data-toggle=&quot;modal&quot; data-target=&quot;#infoSpan6&quot;&gt;Info&lt;/button&gt;
+&lt;div class=&quot;modal stb-modal fade&quot; id=&quot;infoSpan6&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+&lt;div class=&quot;modal-dialog&quot;&gt;
+  &lt;div class=&quot;modal-content&quot;&gt;
+    &lt;div class=&quot;modal-header stbcolor-secondary fifth&quot;&gt;
+      &lt;a class=&quot;pull-right closeLink&quot;  data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;
+        &lt;p&gt;Lukk &lt;span class=&quot;stb-sprite-small remove&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+      &lt;/a&gt;
+      &lt;h4 class=&quot;modal-title&quot;&gt;&lt;span class=&quot;stb-color-sprite-medium info&quot;&gt;&lt;/span&gt;&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+      &lt;h3&gt;Type gjenstand (merke og modell)&lt;/h3&gt;
+      &lt;p&gt;F.eks. Canon EOS 500D dersom det er digitalt speilreflekskamera av merke Canon og modell EOS 500D.&lt;/p&gt;
+      &lt;p&gt;Husker du ikke merke og modell?&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Se på kvitteringen din fra den gangen du kjøpte produktet.&lt;/li&gt;
+        &lt;li&gt;Få hjelp av noen venner til å huske hva slags produkt det var.&lt;/li&gt;
+        &lt;li&gt;Om du ikke klarer å komme på det må du forsøke å beskrive produktet så godt det lar seg gjøre. I eksempelet med kameraet ovenfor måtte du f.eks.
+          ha skrevet &lt;b&gt;Digitalt speilreflekskamera med zoomobjektiv.&lt;/b&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Error modal: --&gt;
+
+&lt;button class=&quot;stb-btn alarm [analyze]&quot; data-toggle=&quot;modal&quot; data-target=&quot;#warningSpan6&quot;&gt;Warning&lt;/button&gt;
+&lt;div class=&quot;modal stb-modal fade&quot; id=&quot;warningSpan6&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+&lt;div class=&quot;modal-dialog&quot;&gt;
+  &lt;div class=&quot;modal-content&quot;&gt;
+    &lt;div class=&quot;modal-header stbcolor-primary first lighter&quot;&gt;
+      &lt;a class=&quot;pull-right closeLink&quot;  data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;
+        &lt;p&gt;Lukk &lt;span class=&quot;stb-sprite-small remove&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+      &lt;/a&gt;
+      &lt;h4 class=&quot;modal-title&quot;&gt;&lt;span class=&quot;stb-color-sprite-medium warning&quot;&gt;&lt;/span&gt;&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+      &lt;h3&gt;Dette er en advarsel&lt;/h3&gt;
+      &lt;p&gt;Du har kanskje foretatt deg noe som gjør at vi bare er nødt til å si ifra.
+        Det kan for eksempel være at vi tror at du ikke har fått med deg noe viktig, så vi
+        må be deg trykke på en knapp for å bekrefte at du har forstått.&lt;/p&gt;
+      &lt;button class=&quot;stb-btn alarm&quot; data-dismiss=&quot;modal&quot;&gt; Bekreft&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Success modal: --&gt;
+
+&lt;button class=&quot;stb-btn [analyze]&quot; data-toggle=&quot;modal&quot; data-target=&quot;#id-here&quot;&gt;Success&lt;/button&gt;
+&lt;div class=&quot;modal stb-modal fade&quot; id=&quot;id-here&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+
+&lt;div class=&quot;modal-dialog&quot;&gt;
+  &lt;div class=&quot;modal-content&quot;&gt;
+    &lt;div class=&quot;modal-header stbcolor-visuals fourth&quot;&gt;
+      &lt;a class=&quot;pull-right closeLink&quot;  data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;
+        &lt;p&gt;Lukk &lt;span class=&quot;stb-sprite-small remove&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+      &lt;/a&gt;
+      &lt;h4 class=&quot;modal-title&quot;&gt;&lt;span class=&quot;stb-color-sprite-medium ok-circle&quot;&gt;&lt;/span&gt;&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+      &lt;h3&gt;Så flink du er :)&lt;/h3&gt;
+      &lt;p&gt;Dette gikk aldeles strålende og alter er superbra!
+        Nå kan du bare klikke på knappen under her, så kan resten av denne glimrende dagen begynne.&lt;/p&gt;
+      &lt;button class=&quot;stb-btn&quot; data-dismiss=&quot;modal&quot;&gt; Bekreft&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+
+      <h3>Fullscreen modal</h3>
       <p>
         This modal takes up the entire screen, to be used in cases where you really want to make sure that your user sees your message.
       </p>
