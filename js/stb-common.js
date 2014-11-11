@@ -1,5 +1,3 @@
-(function($){
-
 
   /*
    * Common functions for general use
@@ -168,6 +166,10 @@
      return false;
   }
   /* ***** END Accept only numbers and nothing else in the input field ***** */
+
+
+(function($){
+
 
 
   /* ***** START Functions for chat choice on minibox ***** */
