@@ -90,130 +90,105 @@
 <div class="container main">
 
 <div class="row"><!-- Colors Row -->
-  <div class="col-md-3" id="index-nav" role="navigation">
+  <div class="col-xs-12 col-sm-3" id="index-nav" role="navigation">
     <h2 class="toc-header">Colors</h2>
   </div>
 
-  <div class="col-md-9" id="webfarger">
+  <div class="col-xs-12 col-sm-9" id="webfarger">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <p><strong>Primary colors</strong> should be used on elements that are linked to the Storebrand branding and are assumed to be lasting colours, currently red ("Storebrand Red"), black and white.</p>
+        <p>Example use: Logos, banners, top-menus, text</p>
+        <p>
+          Please note: Except for logo/branding, black is <strong>not</strong> to be used. Use charcoal instead.
+        </p>
+        <code>Class: stbcolor-primary first/second/third</code>
+        <br />
+        <div id="primary-first" data-placement="top" data-trigger="hover" data-content="Storebrand Red" class="color-swatch stbcolor-primary first"></div>
+        <script>$('#primary-first').popover();</script>
+        <div id="primary-second" data-placement="top" data-trigger="hover" data-content="Black" class="color-swatch stbcolor-primary second"></div>
+        <script>$('#primary-second').popover();</script>
+        <div id="primary-third" data-placement="top" data-trigger="hover" data-content="White" class="color-swatch stbcolor-primary third" style="border: 1px solid #c4c4c4"></div>
+        <script>$('#primary-third').popover();</script>
+      </div>
+    </div> <!-- /row -->
+    <hr />
 
     <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <p><strong>Primary colors</strong> should be used on elements that are linked to the Storebrand branding and are assumed to be lasting colours, currently red ("Storebrand Red"), black and white.</p>
-          <p>Example use: Logos, banners, top-menus, text</p>
-          <p>
-            Please note: Except for logo/branding, black is <strong>not</strong> to be used. Use charcoal instead.
-          </p>
-          <code>Class: stbcolor-primary first/second/third</code>
-        </div>
-        <div class="row">
-          <div id="primary-first" data-placement="top" data-trigger="hover" data-content="Storebrand Red" class="color-swatch stbcolor-primary first"></div>
-          <script>$('#primary-first').popover();</script>
-          <div id="primary-second" data-placement="top" data-trigger="hover" data-content="Black" class="color-swatch stbcolor-primary second"></div>
-          <script>$('#primary-second').popover();</script>
-          <div id="primary-third" data-placement="top" data-trigger="hover" data-content="White" class="color-swatch stbcolor-primary third" style="border: 1px solid #c4c4c4"></div>
-          <script>$('#primary-third').popover();</script>
-        </div>
+      <div class="col-xs-12">
+        <p><strong>Secondary colors</strong> are used on important elements besides branding.</p>
+        <p>Example use: Buttons, links, messages, errors</p>
+        <code>Class:<br />stbcolor-secondary first/second/third/fourth/fifth/sixth/seventh</code>
+        <br />
+        <div id="secondary-first" data-placement="top" data-trigger="hover" data-content="Charcoal" class="color-swatch stbcolor-secondary first"></div>
+        <script>$('#secondary-first').popover();</script>
+        <div id="secondary-second" data-placement="top" data-trigger="hover" data-content="Moss" class="color-swatch stbcolor-secondary second"></div>
+        <script>$('#secondary-second').popover();</script>
+        <div id="secondary-third" data-placement="top" data-trigger="hover" data-content="Forest" class="color-swatch stbcolor-secondary third"></div>
+        <script>$('#secondary-third').popover();</script>
+        <div id="secondary-fourth" data-placement="auto" data-trigger="hover" data-content="Dust" class="color-swatch stbcolor-secondary fourth"></div>
+        <script>$('#secondary-fourth').popover();</script>
+        <div id="secondary-fifth" data-placement="top" data-trigger="hover" data-content="Nude" class="color-swatch stbcolor-secondary fifth"></div>
+        <script>$('#secondary-fifth').popover();</script>
+        <div id="secondary-sixth" data-placement="top" data-trigger="hover" data-content="Sand" class="color-swatch stbcolor-secondary sixth"></div>
+        <script>$('#secondary-sixth').popover();</script>
+        <div id="secondary-seventh" data-placement="top" data-trigger="hover" data-content="Sky" class="color-swatch stbcolor-secondary seventh"></div>
+        <script>$('#secondary-seventh').popover();</script>
       </div>
-
-    </div> <!-- /row -->
+    </div>
+    <hr />
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <p><strong>Support colors</strong> used for hover effects and more</p>
+        <code>Class: -darker|-lighter varieties</code>
+        <br />
+        <div id="primarycolor-first-darker" data-placement="top" data-trigger="hover" data-content="Darker Storebrand Red" class="color-swatch stbcolor-primary first darker"></div>
+        <script>$('#primarycolor-first-darker').popover();</script>
+        <div id="primarycolor-first-lighter" data-placement="top" data-trigger="hover" data-content="Lighter Storebrand Red" class="color-swatch stbcolor-primary first lighter"></div>
+        <script>$('#primarycolor-first-lighter').popover();</script>
+        <div id="secondarycolor-third-darker" data-placement="top" data-trigger="hover" data-content="Darker Forest" class="color-swatch stbcolor-secondary third darker"></div>
+        <script>$('#secondarycolor-third-darker').popover();</script>
+        <div id="secondarycolor-third-lighter" data-placement="top" data-trigger="hover" data-content="Lighter Forest" class="color-swatch stbcolor-secondary third lighter"></div>
+        <script>$('#secondarycolor-third-lighter').popover();</script>
+      </div>
+    </div>
 
     <hr />
 
     <div class="row">
-      <div class="col-md-6">
-        <div class="row">
-          <p><strong>Secondary colors</strong> are used on important elements besides branding.</p>
-          <p>Example use: Buttons, links, messages, errors</p>
-          <code>Class:<br />stbcolor-secondary first/second/third/fourth/fifth/sixth/seventh</code>
-        </div>
-        <div class="row">
-          <div id="secondary-first" data-placement="top" data-trigger="hover" data-content="Charcoal" class="color-swatch stbcolor-secondary first"></div>
-          <script>$('#secondary-first').popover();</script>
-          <div id="secondary-second" data-placement="top" data-trigger="hover" data-content="Moss" class="color-swatch stbcolor-secondary second"></div>
-          <script>$('#secondary-second').popover();</script>
-          <div id="secondary-third" data-placement="top" data-trigger="hover" data-content="Forest" class="color-swatch stbcolor-secondary third"></div>
-          <script>$('#secondary-third').popover();</script>
-          <div id="secondary-fourth" data-placement="auto" data-trigger="hover" data-content="Dust" class="color-swatch stbcolor-secondary fourth"></div>
-          <script>$('#secondary-fourth').popover();</script>
-          <div id="secondary-fifth" data-placement="top" data-trigger="hover" data-content="Nude" class="color-swatch stbcolor-secondary fifth"></div>
-          <script>$('#secondary-fifth').popover();</script>
-          <div id="secondary-sixth" data-placement="top" data-trigger="hover" data-content="Sand" class="color-swatch stbcolor-secondary sixth"></div>
-          <script>$('#secondary-sixth').popover();</script>
-          <div id="secondary-seventh" data-placement="top" data-trigger="hover" data-content="Sky" class="color-swatch stbcolor-secondary seventh"></div>
-          <script>$('#secondary-seventh').popover();</script>
-        </div>
+      <div class="col-xs-12 col-md-6">
+        <p><strong>Gray colors</strong> used for subtlety</p>
+        <p>Example use: Lots of places</p><br />
+        <code>Class: stbcolor-gray first/second/third/fourth/fifth</code>
+        <br />
+        <div id="gray-first" data-placement="top" data-trigger="hover" data-content="Gray 1" class="color-swatch stbcolor-gray first"></div>
+        <script>$('#gray-first').popover();</script>
+        <div id="gray-second" data-placement="top" data-trigger="hover" data-content="Gray 2" class="color-swatch stbcolor-gray second"></div>
+        <script>$('#gray-second').popover();</script>
+        <div id="gray-third" data-placement="top" data-trigger="hover" data-content="Gray 3" class="color-swatch stbcolor-gray third"></div>
+        <script>$('#gray-third').popover();</script>
+        <div id="gray-fourth" data-placement="top" data-trigger="hover" data-content="Gray 4" class="color-swatch stbcolor-gray fourth"></div>
+        <script>$('#gray-fourth').popover();</script>
+        <div id="gray-fifth" data-placement="top" data-trigger="hover" data-content="Gray 5" class="color-swatch stbcolor-gray fifth"></div>
+        <script>$('#gray-fifth').popover();</script>
       </div>
-      
-      <div class="col-md-1">
-      
-      </div>
-      
-      <div class="col-md-5">
-        <div class="row">
-          <p><strong>Support colors</strong> used for hover effects and more</p>
-          <code>Class: -darker|-lighter varieties</code>
-        </div>
-        <div class="row">
-          <div id="primarycolor-first-darker" data-placement="top" data-trigger="hover" data-content="Darker Storebrand Red" class="color-swatch stbcolor-primary first darker"></div>
-          <script>$('#primarycolor-first-darker').popover();</script>
-          <div id="primarycolor-first-lighter" data-placement="top" data-trigger="hover" data-content="Lighter Storebrand Red" class="color-swatch stbcolor-primary first lighter"></div>
-          <script>$('#primarycolor-first-lighter').popover();</script>
-          <div id="secondarycolor-third-darker" data-placement="top" data-trigger="hover" data-content="Darker Forest" class="color-swatch stbcolor-secondary third darker"></div>
-          <script>$('#secondarycolor-third-darker').popover();</script>
-          <div id="secondarycolor-third-lighter" data-placement="top" data-trigger="hover" data-content="Lighter Forest" class="color-swatch stbcolor-secondary third lighter"></div>
-          <script>$('#secondarycolor-third-lighter').popover();</script>
-        </div>
-      </div>
-
-    </div> <!-- /row -->
-
-    <hr />
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="row">
-          <p><strong>Gray colors</strong> used for subtlety</p>
-          <p>Example use: Lots of places</p><br />
-          <code>Class: stbcolor-gray first/second/third/fourth/fifth</code>
-        </div>
-        <div class="row">
-          <div id="gray-first" data-placement="top" data-trigger="hover" data-content="Gray 1" class="color-swatch stbcolor-gray first"></div>
-          <script>$('#gray-first').popover();</script>
-          <div id="gray-second" data-placement="top" data-trigger="hover" data-content="Gray 2" class="color-swatch stbcolor-gray second"></div>
-          <script>$('#gray-second').popover();</script>
-          <div id="gray-third" data-placement="top" data-trigger="hover" data-content="Gray 3" class="color-swatch stbcolor-gray third"></div>
-          <script>$('#gray-third').popover();</script>
-          <div id="gray-fourth" data-placement="top" data-trigger="hover" data-content="Gray 4" class="color-swatch stbcolor-gray fourth"></div>
-          <script>$('#gray-fourth').popover();</script>
-          <div id="gray-fifth" data-placement="top" data-trigger="hover" data-content="Gray 5" class="color-swatch stbcolor-gray fifth"></div>
-          <script>$('#gray-fifth').popover();</script>
-        </div>
-      </div> <!-- /col-md-6 -->
-      
-      <div class="col-md-1">
-      
+      <div class="hidden-xs col-md-1">      
       </div>      
-
-      <div class="col-md-5">
-        <div class="row">
-          <p><strong>Presentation colors</strong> used for graphs, charts and other visual presentations</p>
-          <p>Example use: Bar charts, pie diagrams, ...</p>
-          <code>Class: stbcolor-visual third/fourth</code>
-        </div>
-        <div class="row">
-          <div id="visuals-third" data-placement="top" data-trigger="hover" data-content="Rose" class="color-swatch stbcolor-visuals third"></div>
-          <script>$('#visuals-third').popover();</script>
-          <div id="visuals-fourth" data-placement="auto" data-trigger="hover" data-content="Mint" class="color-swatch stbcolor-visuals fourth"></div>
-          <script>$('#visuals-fourth').popover();</script>          
-          <br clear="all" /><p>(Colors "orange" and "peach" have been retired. Additional presentation colors may be added later, if needed.)</p>  
-        </div>
+      <div class="col-xs-12 col-md-5">
+        <p><strong>Presentation colors</strong> used for graphs, charts and other visual presentations</p>
+        <p>Example use: Bar charts, pie diagrams, ...</p>
+        <code>Class: stbcolor-visual third/fourth</code>
+        <br />
+        <div id="visuals-third" data-placement="top" data-trigger="hover" data-content="Rose" class="color-swatch stbcolor-visuals third"></div>
+        <script>$('#visuals-third').popover();</script>
+        <div id="visuals-fourth" data-placement="auto" data-trigger="hover" data-content="Mint" class="color-swatch stbcolor-visuals fourth"></div>
+        <script>$('#visuals-fourth').popover();</script>
+        <br clear="all" />
+        <p>(Colors "orange" and "peach" have been retired. Additional presentation colors may be added later, if needed.)</p>  
       </div>
-
     </div> <!-- /row -->
-
   </div>
-
 </div> <!-- /Colors Row -->
 
 
@@ -895,16 +870,21 @@ $(document).ready(function() {
   <h2 class="toc-header">Boxes</h2>
 </div>
 <div class="col-md-9">
-<div class="row">
-  <p>We're still working on a number of predefined boxes that <strong>always</strong> should look the same, like "Contact us". The boxes will appear here as soon as they have been defined. In the meantime, what you see here is correct markup for general boxes.
-  </p>
-  <p>
-    Boxes (a div with the class "stb-box") can be used to group/frame contents of various kinds. Use of visible borders around a box must follow (strict) guidelines for when it's okay to use them. Generally, boxes that may appear next to each other should look (be framed) similar to each other.
-  </p>
-  <h3>Basic box</h3>
-  <p>
-    Simple contents with no background colour. You can give the box a border by adding the class "border". The border color is charcoal by default, but this can be overridden by adding classes "red" or "gray".
-  </p>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>
+        We're still working on a number of predefined boxes that <strong>always</strong> should look the same, like "Contact us". The boxes will appear here as soon as they have been defined. In the meantime, what you see here is correct markup for general boxes.
+      </p>
+      <p>
+        Boxes (a div with the class "stb-box") can be used to group/frame contents of various kinds. Use of visible borders around a box must follow (strict) guidelines for when it's okay to use them. Generally, boxes that may appear next to each other should look (be framed) similar to each other.
+      </p>
+      <h3>Basic box</h3>
+      <p>
+        Simple contents with no background colour. You can give the box a border by adding the class "border". The border color is charcoal by default, but this can be overridden by adding classes "red" or "gray".
+      </p>
+    </div>
+  </div>
+  <div class="row">
   <div class="col-md-6">
     <div class="stb-box gray fat border">
       <h3>Important stuff</h3>
@@ -1179,43 +1159,45 @@ $(document).ready(function() {
   <div class="col-md-9">
 
     <div class="row">
-      <p>
-        ("Under construction". The "success box" does not have the correct colors yet.)
-      </p>
-      <p>
-        This element is used to display something important on a page. It comes in two versions, one that stays on the page no matter what, and one that can be closed by clicking an icon in the corner. The latter is typically used to convey particularly important messages upon loading of a page.
-      </p>
-      <h3>Notifications that can not be closed</h3>
-      <div class="row">
-        <div class="col-md-12 top-margin-20 eqheight-row">
-          <div class="msgIcon column stbcolor-secondary fifth"><span class="stb-color-sprite-medium info"></span>
-          </div>
-          <div class="msgText column stbcolor-secondary sixth">
-            <h3>Information box</h3>
-            <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
-            <p>Thank you for your patience</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 top-margin-20 eqheight-row">
-          <div class="msgIcon column stbcolor-primary first lighter"><span class="stb-color-sprite-medium warning"></span>
-          </div>
-          <div class="msgText column stbcolor-visuals third">
-            <h3>Error box</h3>
-            <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
-            <p>We apologize for the inconvenience</p>
+      <div class="col-xs-12">
+        <p>
+          ("Under construction". The "success box" does not have the correct colors yet.)
+        </p>
+        <p>
+          This element is used to display something important on a page. It comes in two versions, one that stays on the page no matter what, and one that can be closed by clicking an icon in the corner. The latter is typically used to convey particularly important messages upon loading of a page.
+        </p>
+        <h3>Notifications that can not be closed</h3>
+        <div class="row">
+          <div class="col-md-12 top-margin-20 eqheight-row">
+            <div class="msgIcon column stbcolor-secondary fifth"><span class="stb-color-sprite-medium info"></span>
+            </div>
+            <div class="msgText column stbcolor-secondary sixth">
+              <h3>Information box</h3>
+              <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
+              <p>Thank you for your patience</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 top-margin-20 eqheight-row">
-          <div class="msgIcon column stbcolor-secondary third lighter"><span class="stb-color-sprite-medium ok-circle"></span>
+        <div class="row">
+          <div class="col-md-12 top-margin-20 eqheight-row">
+            <div class="msgIcon column stbcolor-primary first lighter"><span class="stb-color-sprite-medium warning"></span>
+            </div>
+            <div class="msgText column stbcolor-visuals third">
+              <h3>Error box</h3>
+              <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
+              <p>We apologize for the inconvenience</p>
+            </div>
           </div>
-          <div class="msgText column stbcolor-visuals fourth">
-            <h3>Success box</h3>
-            <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
-            <p>Thank you for your purchase</p>
+        </div>
+        <div class="row">
+          <div class="col-md-12 top-margin-20 eqheight-row">
+            <div class="msgIcon column stbcolor-secondary third lighter"><span class="stb-color-sprite-medium ok-circle"></span>
+            </div>
+            <div class="msgText column stbcolor-visuals fourth">
+              <h3>Success box</h3>
+              <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
+              <p>Thank you for your purchase</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1431,73 +1413,74 @@ $('ul[data-widget=stbFaq]').stbFaq();
   </div>
   <div class="col-md-9">
     <div class="row">
-      <h3>Basic modals</h3>
-      <p>The basic modals are based on twitter bootstrap modals. For mobile device screen sizes, the modal is fullscreen. By adding the class "analyze" google analytics is enabled.</p>
-      <button class="stb-btn transparent light" data-toggle="modal" data-target="#infoSpan6">Info</button>
-      <div class="modal stb-modal fade" id="infoSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header stbcolor-secondary fifth">
-              <a class="pull-right closeLink"  data-dismiss="modal" href="#">
-                <p>Lukk <span class="stb-sprite-small remove"></span></p>
-              </a>
-              <h4 class="modal-title"><span class="stb-color-sprite-medium info"></span></h4>
-            </div>
-            <div class="modal-body">
-              <h3>Type gjenstand (merke og modell)</h3>
-              <p>F.eks. Canon EOS 500D dersom det er digitalt speilreflekskamera av merke Canon og modell EOS 500D.</p>
-              <p>Husker du ikke merke og modell?</p>
-              <ul>
-                <li>Se på kvitteringen din fra den gangen du kjøpte produktet.</li>
-                <li>Få hjelp av noen venner til å huske hva slags produkt det var.</li>
-                <li>Om du ikke klarer å komme på det må du forsøke å beskrive produktet så godt det lar seg gjøre. I eksempelet med kameraet ovenfor måtte du f.eks.
+      <div class="col-xs-12">
+        <h3>Basic modals</h3>
+        <p>The basic modals are based on twitter bootstrap modals. For mobile device screen sizes, the modal is fullscreen. By adding the class "analyze" google analytics is enabled.</p>
+        <button class="stb-btn transparent light" data-toggle="modal" data-target="#infoSpan6">Info</button>
+        <div class="modal stb-modal fade" id="infoSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header stbcolor-secondary fifth">
+                <a class="pull-right closeLink"  data-dismiss="modal" href="#">
+                  <p>Lukk <span class="stb-sprite-small remove"></span></p>
+                </a>
+                <h4 class="modal-title"><span class="stb-color-sprite-medium info"></span></h4>
+              </div>
+              <div class="modal-body">
+                <h3>Type gjenstand (merke og modell)</h3>
+                <p>F.eks. Canon EOS 500D dersom det er digitalt speilreflekskamera av merke Canon og modell EOS 500D.</p>
+                <p>Husker du ikke merke og modell?</p>
+                <ul>
+                  <li>Se på kvitteringen din fra den gangen du kjøpte produktet.</li>
+                  <li>Få hjelp av noen venner til å huske hva slags produkt det var.</li>
+                  <li>Om du ikke klarer å komme på det må du forsøke å beskrive produktet så godt det lar seg gjøre. I eksempelet med kameraet ovenfor måtte du f.eks.
                   ha skrevet <b>Digitalt speilreflekskamera med zoomobjektiv.</b></li>
-              </ul>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <button class="stb-btn alarm" data-toggle="modal" data-target="#warningSpan6">Warning</button>
-      <div class="modal stb-modal fade" id="warningSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header stbcolor-primary first lighter">
-              <a class="pull-right closeLink"  data-dismiss="modal" href="#">
-                <p>Lukk <span class="stb-sprite-small remove"></span></p>
-              </a>
-              <h4 class="modal-title"><span class="stb-color-sprite-medium warning"></span></h4>
-            </div>
-            <div class="modal-body">
-              <h3>Dette er en advarsel</h3>
-              <p>Du har kanskje foretatt deg noe som gjør at vi bare er nødt til å si ifra.
-                Det kan for eksempel være at vi tror at du ikke har fått med deg noe viktig, så vi
-                må be deg trykke på en knapp for å bekrefte at du har forstått.</p>
-              <button class="stb-btn alarm" data-dismiss="modal"> Bekreft</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="stb-btn" data-toggle="modal" data-target="#successSpan6">Success</button>
-      <div class="modal stb-modal fade" id="successSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header stbcolor-visuals fourth">
-              <a class="pull-right closeLink"  data-dismiss="modal" href="#">
-                <p>Lukk <span class="stb-sprite-small remove"></span></p>
-              </a>
-              <h4 class="modal-title"><span class="stb-color-sprite-medium ok-circle"></span></h4>
-            </div>
-            <div class="modal-body">
-              <h3>Så flink du er :)</h3>
-              <p>Dette gikk aldeles strålende og alter er superbra!
-                Nå kan du bare klikke på knappen under her, så kan resten av denne glimrende dagen begynne.</p>
-              <button class="stb-btn" data-dismiss="modal"> Bekreft</button>
+        <button class="stb-btn alarm" data-toggle="modal" data-target="#warningSpan6">Warning</button>
+        <div class="modal stb-modal fade" id="warningSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header stbcolor-primary first lighter">
+                <a class="pull-right closeLink"  data-dismiss="modal" href="#">
+                  <p>Lukk <span class="stb-sprite-small remove"></span></p>
+                </a>
+                <h4 class="modal-title"><span class="stb-color-sprite-medium warning"></span></h4>
+              </div>
+              <div class="modal-body">
+                <h3>Dette er en advarsel</h3>
+                <p>Du har kanskje foretatt deg noe som gjør at vi bare er nødt til å si ifra.
+                  Det kan for eksempel være at vi tror at du ikke har fått med deg noe viktig, så vi
+                  må be deg trykke på en knapp for å bekrefte at du har forstått.</p>
+                <button class="stb-btn alarm" data-dismiss="modal"> Bekreft</button>
+              </div>
             </div>
           </div>
         </div>
-      </div><br><br>
-      <p>Code needed:</p>
-      <pre class="prettyprint">
+        <button class="stb-btn" data-toggle="modal" data-target="#successSpan6">Success</button>
+        <div class="modal stb-modal fade" id="successSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header stbcolor-visuals fourth">
+                <a class="pull-right closeLink"  data-dismiss="modal" href="#">
+                  <p>Lukk <span class="stb-sprite-small remove"></span></p>
+                </a>
+                <h4 class="modal-title"><span class="stb-color-sprite-medium ok-circle"></span></h4>
+              </div>
+              <div class="modal-body">
+                <h3>Så flink du er :)</h3>
+                <p>Dette gikk aldeles strålende og alter er superbra!
+                  Nå kan du bare klikke på knappen under her, så kan resten av denne glimrende dagen begynne.</p>
+                <button class="stb-btn" data-dismiss="modal"> Bekreft</button>
+              </div>
+            </div>
+          </div>
+        </div><br /><br />
+        <p>Code needed:</p>
+        <pre class="prettyprint">
 &lt;!-- Information modal: --&gt;
 
 &lt;button class=&quot;stb-btn transparent light [analyze]&quot; data-toggle=&quot;modal&quot; data-target=&quot;#infoSpan6&quot;&gt;Info&lt;/button&gt;
@@ -1571,37 +1554,36 @@ $('ul[data-widget=stbFaq]').stbFaq();
 &lt;/div&gt;
 &lt;/div&gt;</pre>
 
-
-      <h3>Fullscreen modal</h3>
-      <p>
-        This modal takes up the entire screen, to be used in cases where you really want to make sure that your user sees your message.
-      </p>
-      <p>
-        You need to include Modernizr and jQueryUI to use this, but if you want to help us rewrite it to make it independent of Modernizr, you're welcome to do so!
-      <p>
-      <p>
+        <h3>Fullscreen modal</h3>
+        <p>
+          This modal takes up the entire screen, to be used in cases where you really want to make sure that your user sees your message.
+        </p>
+        <p>
+          You need to include Modernizr and jQueryUI to use this, but if you want to help us rewrite it to make it independent of Modernizr, you're welcome to do so!
+        </p>
+        <p>
         Click the icon below to see an example of how it can work. You will probably have to do a bit of styling and additional scripting to get exactly the behavior you need, but this should be a good base for most sitations:
-      </p>
-      <div class="stb-modal-full">
-        <span class="stb-color-sprite-medium ok-circle stb-modal-btn"></span>
-        <div class="morph-content stbcolor-background second">
-          <div>
-            <div class="content-style-overlay">
-              <span type="button" class="stb-sprite-medium remove close morph-close"></span>
-              <h2>Boy, oh boy!</h2>
-              <p>
-                This little modal sure knows how to make a space for itself, huh?
-              </p>
-              <p>
-                You can close it with style up in the corner there, or just submit the thing with the button below.
-                Add the class "morph-close" to clickable elements which should close the modal.
-              </p>
-                <button class="stb-btn morph-close">Ok, let's move on</button>
+        </p>
+        <div class="stb-modal-full">
+          <span class="stb-color-sprite-medium ok-circle stb-modal-btn"></span>
+          <div class="morph-content stbcolor-background second">
+            <div>
+              <div class="content-style-overlay">
+                <span type="button" class="stb-sprite-medium remove close morph-close"></span>
+                <h2>Boy, oh boy!</h2>
+                <p>
+                  This little modal sure knows how to make a space for itself, huh?
+                </p>
+                <p>
+                  You can close it with style up in the corner there, or just submit the thing with the button below.
+                  Add the class "morph-close" to clickable elements which should close the modal.
+                </p>
+                  <button class="stb-btn morph-close">Ok, let's move on</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <p>Code needed:</p>
+        <p>Code needed:</p>
 <pre class="prettyprint">
 &lt;div class="stb-modal-full"&gt;
   &lt;span class="stb-color-sprite-medium ok-circle stb-modal-btn">&lt;/span&gt;
@@ -1624,7 +1606,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-
+      </div>
     </div>
   </div>
 </div>
@@ -1637,19 +1619,20 @@ $('ul[data-widget=stbFaq]').stbFaq();
   </div>
   <div class="col-md-9">
     <div class="row">
-      <p>
-        This is a very specific element that in theory should be on all pages where a customer is likely to enter our site. It is NOT necessary on pages that require authentication, as the notification will have been given prior to reaching them.
-      <p>
-        The notification needs the script acceptCookies() from stb-page-padding.js to function. As long as a cookie "acceptCookies" does not exist and contain the value "Yes", the notification will be displayed upon document.ready.
-      </p>
-      <p>
-        <button class="stb-btn" onclick="$('#cookieNote').toggle('slow');">Toggle notification</button>
-        <script type="text/javascript">
-          createCookie('acceptCookies','Yes', '1000');
-        </script>
-      </p>
+      <div class="col-xs-12">
+        <p>
+          This is a very specific element that in theory should be on all pages where a customer is likely to enter our site. It is NOT necessary on pages that require authentication, as the notification will have been given prior to reaching them.
+        <p>
+          The notification needs the script acceptCookies() from stb-page-padding.js to function. As long as a cookie "acceptCookies" does not exist and contain the value "Yes", the notification will be displayed upon document.ready.
+        </p>
+        <p>
+          <button class="stb-btn" onclick="$('#cookieNote').toggle('slow');">Toggle notification</button>
+          <script type="text/javascript">
+            createCookie('acceptCookies','Yes', '1000');
+          </script>
+        </p>
 
-      <p>Code needed, placed near bottom of page outside any container:</p>
+        <p>Code needed, placed near bottom of page outside any container:</p>
 <pre class="prettyprint">
   &lt;div data-spy="affix" class="cookieNote" id="cookieNote"&gt;
     &lt;div class="cookieClose"&gt;
@@ -1663,6 +1646,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
   &lt;/div&gt;
 </pre>
 
+      </div>
     </div>
   </div>
 </div>
