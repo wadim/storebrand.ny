@@ -95,6 +95,19 @@
   });
 
 // End adding triggers for showing additional info
+  
+  
+// Achieve Equal height columns
+  
+  $("document").ready(function(){
+	  $(".row .column").matchHeight(true);
+	});
+	    
+	$(window).resize(function() {
+	  $(".row .column").matchHeight(true);
+	});
+
+// End achieve Equal heights
 
 // Handling automatic generation of TOC lists on article pages
   $(document).ready(function() {
