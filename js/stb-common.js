@@ -198,12 +198,16 @@
     createCookie('errorMessageRead','Yes');
   }
 
-  function showCommonMsg() {
-    $('.commonmessage').slideDown('slow');
+  function showCommonMsg(element) {
+    if(element != undefined){
+      $(element).parent().next('.commonmessage').slideToggle('fast');
+    }else{
+      $('.commonmessage').slideDown('fast');
+    }
   }
 
   function hideCommonMsg(element) {
-    $(element).closest('.commonmessage').slideUp('slow');
+    $(element).closest('.commonmessage').slideUp('fast');
     createCookie('commonMessageRead','Yes');
   }
   /* ***** END TOGGLING "important messages" ***** */

@@ -114,7 +114,6 @@ form {
     }
   } //end:stb-form-group
 
- 
   input:disabled {
   	background-color: @stb-gray-second;
     color: @stb-gray-third;
@@ -137,6 +136,20 @@ form {
     border: none;
     background: none;
     font-size: 18px;
+  }
+
+  label.with-help{
+    span{
+      margin-left: 12px;
+      margin-bottom: -6px;
+      cursor: pointer;
+    }
+  }
+
+  .commonmessage, .errormessage, .successmessage{
+    .msgText, .msgIcon{
+      min-height: 169px;
+    }
   }
 }
 
