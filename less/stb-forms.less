@@ -172,11 +172,6 @@ form {
     }
   }
 
-  input[type=checkbox].stb-checkbox {
-    display: block !important;
-    visibility: hidden;
-  }
-
   >label {
     margin-bottom: 6px;
     display: block;
@@ -204,7 +199,16 @@ form {
 }
 
 input[type=radio].stb-radio {
-  visibility: hidden;
+  //visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  left: -10000px;
+
+  &:focus{
+      +label{
+        box-shadow: 0 0 10px #66afe9;
+      }
+  }
 
   & + label {
     display: inline-block;
@@ -288,7 +292,16 @@ input[type=radio].stb-radio {
 }
 
 input[type=checkbox].stb-checkbox {
-  display: none; 
+  //display: none;
+  position: absolute;
+  opacity: 0;
+  left: -10000px;
+
+  &:focus{
+    +label{
+      box-shadow: 0 0 10px #66afe9;
+    }
+  }
 
   & + label {
     display: inline-block; 
@@ -381,20 +394,30 @@ input[type=checkbox].stb-checkbox {
 
 form{
   /* Override feedback icon position */
-  .has-feedback i.form-control-feedback {
-    top: 8px !important ;
-  }
 
-  .has-feedback.with-submit i.form-control-feedback {
-    right: 106px;
-  }
+  .has-feedback{
 
-  .has-feedback.checkbox i.glyphicon-ok{
-    top: 8px;
-  }
+    i.form-control-feedback {
+      top: 8px !important;
+    }
 
-  .has-feedback.checkbox i.glyphicon-remove{
-    top: 8px;
+    &.with-submit input+i.form-control-feedback, &.with-unit i.form-control-feedback {
+      right: -30px;
+    }
+
+    .radiobuttons + i.form-control-feedback{
+      top: 4px !important;
+      right: -30px;
+    }
+    .checkboxes + i.form-control-feedback{
+      top: 4px !important;
+      right: -30px;
+    }
+    .selectContainer i.form-control-feedback{
+      top: 4px !important;
+      right: -30px;
+    }
+
   }
 
   .dateContainer .form-control-feedback{

@@ -26,14 +26,6 @@ function hexc(a) {
   return color = "#" + b.join("");
 }
 
-$("document").ready(function(){
-  $(".row .column").matchHeight(true);
-});
-    
-$(window).resize(function() {
-  $(".row .column").matchHeight(true);
-});
-
 //Code for toogle demonstration of Notification boxes
 function toggleMsg(){
   hideErrorMsg();
@@ -211,6 +203,185 @@ $(document).ready(function(){
           message: 'Oppgi en gyldig dato',
           validators: {
             callback: dateValidator
+          }
+        },
+        periode : {
+          container: '.periode-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi periode'
+            }
+          }
+        }
+      }
+    }).on('success.form.bv', function(e) {
+          // Prevent form submission
+          e.preventDefault();
+
+          var $form        = $(e.target),
+              validator    = $form.data('bootstrapValidator'),
+              submitButton = validator.getSubmitButton();
+
+          // Do whatever you want here ...
+        });
+  };
+
+  if($('#validateRadiobuttons').length > 0){
+    $('#validateRadiobuttons').bootstrapValidator({
+      message: 'This value is not valid',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      group: '.stb-form-group',
+      fields: {
+        birds : {
+          container: '.bird-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi Fugler'
+            }
+          }
+        }
+      }
+    }).on('success.form.bv', function(e) {
+          // Prevent form submission
+          e.preventDefault();
+
+          var $form        = $(e.target),
+              validator    = $form.data('bootstrapValidator'),
+              submitButton = validator.getSubmitButton();
+
+          // Do whatever you want here ...
+        });
+  };
+
+  if($('#validateCheckboxes').length > 0){
+    $('#validateCheckboxes').bootstrapValidator({
+      message: 'This value is not valid',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      group: '.stb-form-group',
+      fields: {
+          checkers: {
+          container: '.checker-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi en checked'
+            }
+          }
+        }
+      }
+    }).on('success.form.bv', function(e) {
+          // Prevent form submission
+          e.preventDefault();
+
+          var $form        = $(e.target),
+              validator    = $form.data('bootstrapValidator'),
+              submitButton = validator.getSubmitButton();
+
+          // Do whatever you want here ...
+        });
+  };
+
+
+  if($('#validateSelect').length > 0){
+    $('#validateSelect').bootstrapValidator({
+      message: 'This value is not valid',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      group: '.stb-form-group',
+      fields: {
+        picknumber: {
+          container: '.select-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi en select'
+            }
+          }
+        }
+      }
+    }).on('success.form.bv', function(e) {
+          // Prevent form submission
+          e.preventDefault();
+
+          var $form        = $(e.target),
+              validator    = $form.data('bootstrapValidator'),
+              submitButton = validator.getSubmitButton();
+
+          // Do whatever you want here ...
+        });
+  };
+
+  if($('#validateChosen').length > 0){
+    $('#validateChosen').bootstrapValidator({
+      excluded: ':disabled',
+      message: 'This value is not valid',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      group: '.stb-form-group',
+      fields: {
+        picknumber: {
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi en select'
+            }
+          }
+        }
+      }
+    }).on('success.form.bv', function(e) {
+          // Prevent form submission
+          e.preventDefault();
+
+          var $form        = $(e.target),
+              validator    = $form.data('bootstrapValidator'),
+              submitButton = validator.getSubmitButton();
+
+          // Do whatever you want here ...
+        });
+  };
+  if($('#validateInputs').length > 0){
+    $('#validateInputs').bootstrapValidator({
+      message: 'This value is not valid',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      group: '.stb-form-group',
+      fields: {
+        input1: {
+          container: '.input1-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi input'
+            }
+          }
+        },
+        input2: {
+          container: '.input2-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi input'
+            }
+          }
+        },
+        input3: {
+          container: '.input3-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi input'
+            }
           }
         }
       }
