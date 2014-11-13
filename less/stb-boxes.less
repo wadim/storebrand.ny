@@ -1,5 +1,5 @@
 .stb-box {
-  padding: 12px 24px 24px 24px;
+  padding: 24px 24px 24px 24px;
   margin-bottom: 20px;
   border: 1px solid transparent;  
   
@@ -95,7 +95,33 @@
       padding: 12px;
     }
     outline: 1px solid @stb-gray-fifth;
-   
+    
+    @media (max-width: @screen-sm-max) {
+      &.narrow .image {
+        float: left;
+		margin-right: 20px;
+	  }
+    }
+    
+     @media (min-width: @screen-md-min){ 
+     	&.narrow img {
+     		padding-bottom: 20px;
+     	}
+     }
+     
+    h3 {
+      padding-top: 0;
+    }
+    
+    &.wide{
+      margin-left:0;
+      margin-right: 0;
+      .image {
+        float: left;
+	    padding-right: 20px;
+	    height: 100%
+      }
+    }  
   }
 
   &.mini:hover {
