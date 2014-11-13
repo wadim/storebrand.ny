@@ -1,5 +1,5 @@
 .stb-box {
-  padding: 24px 24px 24px 24px;
+  padding: 24px 24px 12px 24px;
   margin-bottom: 20px;
   border: 1px solid transparent;  
   
@@ -94,8 +94,7 @@
     @media screen and (max-width: 768px) {
       padding: 12px;
     }
-    outline: 1px solid @stb-gray-fifth;
-    
+     
     @media (max-width: @screen-sm-max) {
       &.narrow .image {
         float: left;
@@ -128,24 +127,20 @@
     @media screen and (max-width: 768px) {
       padding: 12px;
     }
-    outline: 2px solid @stb-primary-color;
-  
   }
 
   &.big{
-    background-color: @stb-primary-white;
+    background-color: @stb-gray-first;
     padding: 24px;
     @media screen and (max-width: 768px) {
       padding: 12px;
     }
-    outline: 1px solid @stb-primary-color;
   }
 
   &.big:hover {
     @media screen and (max-width: 768px) {
       padding: 12px;
     }
-    outline: 2px solid @stb-primary-color;
   }
 
 }
