@@ -243,7 +243,15 @@ $(document).ready(function(){
               message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi Fugler'
             }
           }
+        },
+      birds2 : {
+        container: '.bird-message',
+        validators: {
+          notEmpty: {
+            message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi Fugler'
+          }
         }
+      }
       }
     }).on('success.form.bv', function(e) {
           // Prevent form submission
@@ -272,9 +280,17 @@ $(document).ready(function(){
           validators: {
             notEmpty: {
               message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi en checked'
+             }
+            }
+          },
+          checkers2: {
+            container: '.checker-message',
+            validators: {
+              notEmpty: {
+                message: '<span class="stb-color-sprite-medium warning circle"></span> Oppgi en checked'
+              }
             }
           }
-        }
       }
     }).on('success.form.bv', function(e) {
           // Prevent form submission

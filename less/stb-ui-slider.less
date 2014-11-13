@@ -22,23 +22,21 @@
 
   .jslider-bg {
     position: relative;
-  }
-
-  .jslider-bg i {
-    height: 12px;
-    position: absolute;
-    font-size: 0;
-    top: 0;
-    background: #FFF;
-  }
-
-  .jslider-bg .v {
-    position: absolute;
-    width: 60%;
-    left: 20%;
-    top: 0;
-    height: 5px;
-    background-position: 0 -20px
+    i {
+      height: 12px;
+      position: absolute;
+      font-size: 0;
+      top: 0;
+      background: #FFF;
+    }
+    .v {
+      position: absolute;
+      width: 60%;
+      left: 20%;
+      top: 0;
+      height: 5px;
+      background-position: 0 -20px
+    }
   }
 
   .jslider-pointer {
@@ -113,22 +111,24 @@
     color: @stb-secondary-charcoal;
   }
 
-   .jslider-bg i {
-    height: 6px;
-  }
+   .jslider-bg{
+     i {
+       height: 6px;
+     }
 
-  .jslider-bg .l {
-    height: 6px;
-    background-color: @stb-gray-fifth;
-    border:none;
-  }
+     .l {
+       height: 6px;
+       background-color: @stb-gray-fifth;
+       border:none;
+     }
 
-   .jslider-bg .r {
-    height: 6px;
-    background-color: @stb-gray-second;
-    border:none;
-    .box-shadow(none);
-  }
+     .r {
+       height: 6px;
+       background-color: @stb-gray-second;
+       border:none;
+       .box-shadow(none);
+     }
+   }
 
    .jslider-pointer {
     top: -20px;

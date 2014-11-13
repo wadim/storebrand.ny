@@ -7,6 +7,10 @@ form {
 
   	.form-group(); //Adds sane margins
 
+    //Datepicker
+    &.dateContainer{
+      width: 250px;
+    }
     .input-group.datePicker{
       height: 48px;
       .input-group-addon{
@@ -151,49 +155,50 @@ form {
       min-height: 169px;
     }
   }
-}
 
 
-.stb-form-inline {
+  &.stb-form-inline {
 
-  .form-inline();
-  .stb-form-group {
-    display: inline-block;
-    input {
-      float: left;
+    .form-inline();
+    .stb-form-group {
+      display: inline-block;
+      input {
+        float: left;
+      }
     }
-  }
-  >label {
-    margin-bottom: 6px;
-    display: block;
-    font-family: "open sans bold";
-    font-size: 16px;
-    @media (max-width: @screen-sm-min) {
-      font-size: 14px;
-    }
-  }
-}
-
-.stb-form {
-  button:disabled {
-    background-color: @stb-gray-third !important;
-    color: @stb-primary-black;
-    cursor: not-allowed;
-
-    &:hover, &:active, &:focus {
-      // No change for disabled buttons
+    label {
+      margin-bottom: 6px;
+      display: block;
+      font-family: "open sans bold";
+      font-size: 16px;
+      @media (max-width: @screen-sm-min) {
+        font-size: 14px;
+      }
     }
   }
 
-  >label {
-    margin-bottom: 6px;
-    display: block;
-    font-family: "open sans bold";
-    font-size: 16px;
-    @media (max-width: @screen-sm-min) {
-      font-size: 14px;
+  &.stb-form {
+    button:disabled {
+      background-color: @stb-gray-third !important;
+      color: @stb-primary-black;
+      cursor: not-allowed;
+
+      &:hover, &:active, &:focus {
+        // No change for disabled buttons
+      }
+    }
+
+    label {
+      margin-bottom: 6px;
+      display: block;
+      font-family: "open sans bold";
+      font-size: 16px;
+      @media (max-width: @screen-sm-min) {
+        font-size: 14px;
+      }
     }
   }
+
 }
 
 /***************************************************
@@ -207,8 +212,10 @@ form {
   }
   line-height: 24px;
   color: #404040;
-  font-family: "Open Sans",Arial,ArialMT,sans-serif;
   margin: 0 0 10px;
+  input+label{
+    font-family: "Open Sans",Arial,ArialMT,sans-serif;
+  }
 }
 
 input[type=radio].stb-radio {
@@ -430,7 +437,6 @@ form{
       top: 4px !important;
       right: -30px;
     }
-
   }
 
   .dateContainer .form-control-feedback{

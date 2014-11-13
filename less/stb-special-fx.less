@@ -15,10 +15,9 @@ div.cookieNote {
     margin-right: auto;
     padding: 15px;
     width: 65%;
-  }
-
-  .cookieInfo a {
-    color: @stb-primary-white;
+    a {
+      color: @stb-primary-white;
+    }
   }
 
   .cookieClose {
@@ -27,16 +26,16 @@ div.cookieNote {
     margin-right: 10%;
     margin-top: 1%;
     color: @stb-primary-white;
-  }
 
-  .cookieClose a {
-    color: @stb-primary-white;
-    text-decoration: none;
-    border: 0;
-  }
+    a {
+      color: @stb-primary-white;
+      text-decoration: none;
+      border: 0;
+    }
 
-  .cookieClose span {
-    margin-left: 10px;
+    span {
+      margin-left: 10px;
+    }
   }
 }
 /*** End of cookie usage notification ***/
@@ -46,9 +45,7 @@ div.cookieNote {
   pointer-events: none;
 }
 
-.stb-modal-full.open .morph-content {
-  pointer-events: auto;
-}
+
 
 /* Common styles for overlay and modal type (fixed morph) */
 .stb-modal-full,
@@ -66,6 +63,7 @@ div.cookieNote {
 }
 
 .stb-modal-full.open .morph-content {
+  pointer-events: auto;
   opacity: 1;
 }
 

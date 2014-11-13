@@ -219,18 +219,18 @@
     </form>
 
     <form class="stb-form-inline" role="form">
-      <label for="formInput5" style="width: 200px;">Error in field input</label>
+      <label for="formInput14" style="width: 200px;">Error in field input</label>
       <span class="help-block navn-message has-error"><small class="help-block" data-bv-validator="regexp" data-bv-for="navn" data-bv-result="INVALID" style="display: block;"><span class="stb-color-sprite-small warning circle"></span> Sounds about wrong</small></span>
       <div class="stb-form-group with-submit has-feedback has-error">
-        <input id="formInput13" name="formInput13" type="text" class="" value="War is good for something" data-bv-field="navn" style="width: 230px"><i class="form-control-feedback glyphicon glyphicon-remove" data-bv-icon-for="navn" style="top: 0px; display: block;"></i>
+        <input id="formInput14" name="formInput13" type="text" class="" value="War is good for something" data-bv-field="navn" style="width: 230px"><i class="form-control-feedback glyphicon glyphicon-remove" data-bv-icon-for="navn" style="top: 0px; display: block;"></i>
         <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
       </div>
     </form>
 
     <form class="stb-form-inline" role="form">
-      <label for="formInput13">Input becomes valid</label>
+      <label for="formInput15">Input becomes valid</label>
       <div class="stb-form-group with-submit has-feedback has-success">
-        <input id="formInput13" name="formInput13" type="text" class="" value="Portveien 2" data-bv-field="navn" style="width: 230px;"><i class="form-control-feedback glyphicon glyphicon-ok" data-bv-icon-for="navn" style="top: 0px; display: block;"></i>
+        <input id="formInput15" name="formInput13" type="text" class="" value="Portveien 2" data-bv-field="navn" style="width: 230px;"><i class="form-control-feedback glyphicon glyphicon-ok" data-bv-icon-for="navn" style="top: 0px; display: block;"></i>
         <button type="submit" class="stb-btn stb-form is-submit">Enter</button>
       </div>
     </form>
@@ -410,7 +410,7 @@
                   </div>
                 </div>
                 <p>
-                  Nice and orderly in rows:
+                  Nice and orderly in rows (Mobile):
                 </p>
                 <label for="radiobuttons2">Birds</label>
                 <div class="radiobuttons" id="radiobuttons2">
@@ -423,7 +423,8 @@
                 <p>
                   With validation:
                 </p>
-                <label>Periode</label>
+              <div class="visible-lg visible-md">
+                <label>Birds</label>
                 <span class="help-block bird-message"></span>
                 <div class="stb-form-group al">
                   <div class="radiobuttons">
@@ -433,6 +434,19 @@
                     <input class="stb-radio" type="radio" id="radio13" name="stb-a" value="Can't touch this" disabled /><label for="radio13">Can't touch this (disabled)</label>
                   </div>
                 </div>
+              </div>
+              <div class="visible-xs visible-sm">
+                <label>Birds</label>
+                <span class="help-block bird-message"></span>
+                <div class="stb-form-group al">
+                  <div class="radiobuttons">
+                    <input class="stb-radio" id="radio14" type="radio" name="birds2" value="African swallow" /><label class="analyze" for="radio14" style="width: 280px;">African swallow</label><br>
+                    <input class="stb-radio" id="radio15" type="radio" name="birds2" value="European Swallow" /><label for="radio15" style="width: 280px;">European swallow</label><br>
+                    <input class="stb-radio" id="radio16" type="radio" name="birds2" value="Checked"/><label for="radio16" style="width: 280px;">Chosen</label><br>
+                    <input class="stb-radio" id="radio17" type="radio" name="stb-a" value="Can't touch this" disabled /><label for="radio17" style="width: 280px;">Can't touch this (disabled)</label>
+                  </div>
+                </div>
+              </div>
                 <p>The javascript for this examples can be found in <a href="js/dist/webmanual.core.js">webmanual.core.js</a></p>
             </form>
           </div>
@@ -478,7 +492,7 @@
       <div class="col-md-12">
         <h3>Checkboxes</h3>
         <div class="row">
-          <div class="col-xs-8">
+          <div class="col-md-9">
             <form id="validateCheckboxes" class="stb-form validateForm">
                 <p>
                   <strong>This and/or that?</strong>
@@ -496,7 +510,7 @@
                   </div>
                 </div>
                 <p>
-                  Nice and orderly in rows:
+                  Nice and orderly in rows (Mobile):
                 </p>
                 <label for="checkboxes2">Checkboxes</label>
                 <div class="checkboxes" id="checkboxes2">
@@ -506,15 +520,28 @@
                   <input class="stb-checkbox" type="checkbox" id="checkbox14" name="stb-d" value="Can't touch this" disabled /><label for="checkbox14" style="width: 280px;">Can't touch this (disabled)</label><br />
                 </div>
                 <p>With validation: </p>
-
-                <label>Checkers</label>
-                <span class="help-block checker-message"></span>
-                <div class="stb-form-group al">
-                  <div class="checkboxes">
-                    <input class="stb-checkbox" type="checkbox" id="checkbox15" name="checkers" value="This" /><label for="checkbox15">This</label>
-                    <input class="stb-checkbox" type="checkbox" id="checkbox16" name="checkers" value="That" /><label for="checkbox16">That</label>
-                    <input class="stb-checkbox" type="checkbox" id="checkbox17" name="checkers" value="Chosen" /><label for="checkbox17">Chosen</label>
-                    <input class="stb-checkbox" type="checkbox" id="checkbox18" name="checkers" value="Can't touch this" disabled /><label for="checkbox18">Can't touch this (disabled)</label>
+                <div class="visible-lg visible-md">
+                  <label>Checkers</label>
+                  <span class="help-block checker-message"></span>
+                  <div class="stb-form-group al">
+                    <div class="checkboxes">
+                      <input class="stb-checkbox" type="checkbox" id="checkbox15" name="checkers" value="This" /><label for="checkbox15">This</label>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox16" name="checkers" value="That" /><label for="checkbox16">That</label>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox17" name="checkers" value="Chosen" /><label for="checkbox17">Chosen</label>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox18" name="checkers" value="Can't touch this" disabled /><label for="checkbox18">Can't touch this (disabled)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="visible-xs visible-sm">
+                  <label>Checkers</label>
+                  <span class="help-block checker-message"></span>
+                  <div class="stb-form-group al">
+                    <div class="checkboxes">
+                      <input class="stb-checkbox" type="checkbox" id="checkbox19" name="checkers2" value="This" /><label for="checkbox19" style="width: 280px;">This</label><br>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox20" name="checkers2" value="That" /><label for="checkbox20" style="width: 280px;">That</label><br>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox21" name="checkers2" value="Chosen" /><label for="checkbox21" style="width: 280px;">Chosen</label><br>
+                      <input class="stb-checkbox" type="checkbox" id="checkbox22" name="checkers2" value="Can't touch this" disabled /><label for="checkbox22" style="width: 280px;">Can't touch this (disabled)</label>
+                    </div>
                   </div>
                 </div>
               <p>The javascript for this examples can be found in <a href="js/dist/webmanual.core.js">webmanual.core.js</a></p>
@@ -573,18 +600,14 @@
     (Not finished, but you can start using it anyway. Please consult storebrand.ny project.)
   </div>
   <div class="col-md-9">
-    <div class="row">
-      <div class="col-md-12">
         <p>Increasingly, the best choice is to use native form elements. For advanced form elements, this is doubly so.</p>
         <p>Consider what happens when your form is presented on a smart phone, a "smart-TV" or, theoretically, a Windows Phone. Manufacturers of these devices put a lot of work into creating the best possible user experience. Customizing form elements will generally obstruct that goal.
         </p>
         <p>By adding the class "analyze" google analytics is enabled.
         </p>
-      </div>
-      <div class="col-md-12">
         <h3>Recommended default BS-style select</h3>
         <div class="row">
-          <div class="col-xs-4">
+          <div class="col-md-4 col-sm-6">
             <form>
               <label for="select-demo">Pick a number</label>
               <div class="stb-form-group">
@@ -604,12 +627,12 @@
         </div><br>
         <p> With validation:</p>
         <div class="row">
-          <div class="col-xs-4">
+          <div class="col-md-4 col-sm-6">
             <form id="validateSelect" class="stb-form validateForm">
                 <label for="select-demo">Pick a number</label>
                 <div class="stb-form-group" >
                      <div class="selectContainer">
-                      <select name="picknumber" id="select-demo3" class="form-control analyze">
+                      <select name="picknumber" id="select-demo2" class="form-control analyze">
                         <option value="">Pick a number</option>
                         <option value="1">Number one</option>
                         <option value="2">Number two</option>
@@ -658,19 +681,13 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/form&gt;</pre>
-        
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
+
         <h3>Custom style with autocomplete</h3>
-        <div class="row">
-          <div class="col-xs-5">
             <form class="stb-form">
               <label for="select-demo2">Pick a number</label>
-              <div class="stb-form-group">
+              <div class="stb-form-group selectContainerChosen">
                   <div class="selectContainer">
-                    <select id="select-demo2" data-widget="chosenSelect" class="form-control" name="picknumber" data-placeholder="Pick a number">
+                    <select id="select-demo3" data-widget="chosenSelect" class="form-control" name="picknumber" data-placeholder="Pick a number">
                       <option value="0"></option>
                       <option value="1">Number one</option>
                       <option value="2">Number two</option>
@@ -681,18 +698,14 @@
                   </div>
               </div>
             </form>
-          </div>
-        </div>
         <p><strong>Note:</strong> Type-ahead requires <a href="js/dist/chosen.jquery.js">chosen.jquery.js</a> + stb-chosen-less.<br /></p>
         <br>
         <p>With validation: </p>
-        <div class="row">
-          <div class="col-xs-5">
             <form id="validateChosen" class="stb-form validateForm">
               <label for="select-demo2">Pick a number</label>
-              <div class="stb-form-group">
+              <div class="stb-form-group selectContainerChosen">
                   <div class="selectContainer">
-                    <select id="select-demo2" data-widget="chosenSelect" class="form-control" name="picknumber" data-placeholder="Pick a number">
+                    <select id="select-demo4" data-widget="chosenSelect" class="form-control" name="picknumber" data-placeholder="Pick a number">
                       <option value="0"></option>
                       <option value="1">Number one</option>
                       <option value="2">Number two</option>
@@ -703,8 +716,6 @@
                   </div>
               </div>
             </form>
-          </div>
-        </div>
         <p>The javascript for this examples can be found in <a href="js/dist/webmanual.core.js">webmanual.core.js</a></p>
         <br>
               <pre class="prettyprint">
@@ -743,9 +754,7 @@
 &lt;/form&gt;
         
 </pre>
-      </div>
 
-    </div> <!-- /inner-row -->
   </div>
 </div> <!-- /Dropdown / Select -->
 
@@ -854,18 +863,12 @@
     (Not done! Likely to change to more or less standard Bootstrap!)
   </div>
   <div class="col-md-9">
-    <div class="row">
-      <div class="col-md-12">
         <p>Increasingly, the best choice is to use native form elements. For datepickers, this is doubly so.</p>
         <p>Consider what happens when your datepicker is used on a smart phone, a "smart-TV" or, theoretically, a Windows Phone. Manufacturers of these devices put a lot of work into creating the best possible user experience. Customizing the datepicker will generally obstruct that goal.
         </p>
-      </div>
-    </div>
-    <div class="row">
-      <h3>Datepicker - Bootstrap datepicker, localized for Norway</h3>
-      <div class="col-xs-4">
+    <h3>Datepicker - Bootstrap datepicker, localized for Norway</h3>
         <form>
-          <div class="stb-form-group al">
+          <div class="stb-form-group al dateContainer">
             <label>Date</label>
             <div class='input-group date datePicker analyze' data-date-format="DD/MM/YYYY">
               <input type='text' class="form-control" name="dateTravelTo"/>
@@ -873,13 +876,10 @@
             </div>
           </div>
         </form>
-      </div>
-    </div>
-    <div class="row">
       <strong class="top-margin-30">HTML:</strong><br />
       <pre class="prettyprint">
 &lt;form&gt;
- &lt;div class=&quot;stb-form-group al&quot;&gt;
+ &lt;div class=&quot;stb-form-group al dateContainer&quot;&gt;
    &lt;div class='input-group date datePicker' data-date-format=&quot;DD/MM/YYYY&quot;&gt;
      &lt;input type='text' class=&quot;form-control&quot; name=&quot;dateTravelTo&quot;/&gt;
      &lt;span class=&quot;input-group-addon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-calendar&quot;&gt;&lt;/span&gt;&lt;/span&gt;
@@ -895,8 +895,6 @@
 
       <p>
         With validation:</p>
-      <div class="row">
-        <div class="col-xs-4">
           <form id="validateDate" class="stb-form validateForm">
             <label>Date</label>
             <span id="date-message" class="help-block"></span>
@@ -907,8 +905,6 @@
               </div>
             </div>
           </form>
-        </div>
-      </div>
       <p>The javascript for this examples can be found in <a href="js/dist/webmanual.core.js">webmanual.core.js</a></p>
       <br>
             <pre class="prettyprint">
@@ -929,7 +925,6 @@
       <p>Please date me: <input type="date" name="bday"></p>
 
     </div>
-  </div>
 </div>  <!-- /Datepicker row -->
 <hr class="top-margin-30" />
 
@@ -939,13 +934,8 @@
     <h2 class="toc-header">Progress tracker</h2>
   </div>
   <div class="col-md-9">
-    <div class="row">
-      <div class="col-md-12">
         <p>Progress tracker to be used in forms</p>
         </p>
-      </div>
-    </div>
-    <div class="row">
       <div class="progressBar-circle hidden-xs hidden-sm">
         <ol class="progtrckr">
           <li id="step-kontoopplysninger" class="prog-done  prog-clickable">
@@ -1000,7 +990,6 @@
 &lt;/div&gt;
       </pre>
     </div>
-  </div>
 </div>  <!-- /Datepicker row -->
 
 </div> <!-- /End Container-->
