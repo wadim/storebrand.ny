@@ -669,6 +669,8 @@
       $(this).find('a').css('color', '#404040');
       $(this).find('a').css('border-color', '#404040');
     });
+    
+    $('.stbcolor-secondary.sixth .stb-box.mini,.stbcolor-secondary.sixth .stb-box.big').css('background-color', '#fff');
   });
 
   function openChatPension(){
