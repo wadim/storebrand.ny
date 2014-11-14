@@ -56,11 +56,11 @@
     </div>
 
     <div class="col-md-9">
-      <h1 class="stb-font">Web Manual</h1>
+      <h1>Web Manual</h1>
       <p class="lead">
         - A technical description of elements to be used when creating Web content.
       </p>
-      <h3 class="top-margin-20">How to use this</h3>
+      <h3>How to use this</h3>
       <p>
         Most elements on this page are now finalized and ready to use. Contact the storebrand.ny project for clarifications or requests for adding new elements. As of late October 2014 we may still make minor visual adjustments, but the tag mark-up should remain unchanged.
       </p>
@@ -203,20 +203,21 @@
     <p><strong>Signa</strong> is the standard header font on storebrand.no for h1 (light), h2 (light) and h3 (book). For h4, h5 and h6 we use <strong>Open Sans Bold</strong>. Arial is the preferred fallback in all cases.</p>
     <p><strong>Note:</strong> Italics across platforms is not the strongest quality of the Open Sans font family. Please avoid exposing this.</p>
     <h1>Header 1</h1>
-    <code>Desktop: font-size 40px; line-height: 46px; padding: 14px;</code><br />
-    <code>Mobile: font-size: 24px; line-height: 30px;</code>
+    <code>Desktop: font-size 40px; line-height: 46px; margin: 0 12px 12px 0;</code><br />
+    <code>Mobile: font-size: 24px; line-height: 30px; margin: 0 9px 9px 0;</code>
     <h2>Header 2</h2>
-    <code>Desktop: font-size 40px; line-height: 46px; padding: 12px;</code><br />
-    <code>Mobile: font-size: 24px; line-height: 30px;</code>
+    <code>Desktop: font-size 40px; line-height: 46px; margin: 48px 12px 6px 0; </code><br />
+    <code>Mobile: font-size: 24px; line-height: 30px; margin: 36px 9px 6px 0;</code>
     <h3>Header 3</h3>
-    <code>Desktop: font-size 24px; line-height: 30px; padding: 12px;</code><br />
-    <code>Mobile: font-size: 16px; line-height: 22px;</code>
+    <code>Desktop: font-size 24px; line-height: 30px; margin: 48px 6px 6px 0;</code><br />
+    <code>Mobile: font-size: 18px; line-height: 22px; margin: 36px 6px 6px 0;</code>
     <h4>Header 4</h4>
-    <code>font-size 16px; line-height: 22px; padding: 10px;</code>
+    <code>Desktop: font-size 16px; line-height: 22px; margin: margin: 24px 9px 6px 0;</code><br />
+    <code>Mobile: font-size 14px; line-height: 20px; margin: 18px 6px 6px 0;</code>
     <h5>Header 5</h5>
-    <code>font-size 16px; line-height: 18px; padding: 10px;</code>
+    <code>font-size 16px; line-height: 18px;   margin: 9px 9px 6px 0;</code>
     <h6>Header 6</h6>
-    <code>font-size 14px; line-height: 16px; padding: 10px;</code><br />
+    <code>font-size 14px; line-height: 16px;  margin: 9px 9px 6px 0;</code><br />
     <br />
     <strong>Code:</strong> <code>&lt;h1-h6&gt;</code>
   </div>
@@ -233,13 +234,15 @@
     <h3>Lead paragraph</h3>
     <p class="intro">Lead paragraph (intro): This is bolder. This is where the author grabs the attention of the reader. Lead paragraphs usually include brief answers to all main questions answered by the following text when it comes to who, what, why, when, where, and how.</p>
     <strong>Code:</strong> <code>&lt;p class="intro"&gt;...&lt;/&gt;</code><br />
-    <code>font-size: 24px; line-height: 30px; font-weight: 700;</code>
+    <code>Desktop: font-size: 24px; line-height: 30px; font-weight: 700; margin: 0 0 12px;</code><br/>
+    <code>Mobile: font-size: 18px; line-height: 24px; font-weight: 700; margin: 0 0 9px;</code>
     <br /><br />
     <h3>General paragraph</h3>
     <p>A paragraph is a <strong>passage</strong> in a section of text that is about a different subject from the preceding text section, marked by commencing on a new line.</p>
     <p>And then the next paragraph follows. It's about <a href="#">something</a> else. The line-height may seem a bit excessive, but it's needed to create sufficient space below characters for the link indicator line, see above.</p>
     <strong>Code:</strong> <code>&lt;p&gt;...&lt;/p&gt;</code><br />
-    <code>font-size: 16px; line-height: 24px;</code>
+    <code>Desktop: font-size: 16px; line-height: 24px; margin: 0 0 9px;</code><br />
+    <code>Mobile: font-size: 14px; line-height: 20px; margin: 0 0 6px;</code>
     <br /><br />
     <h3>Small print</h3>
     <p>
@@ -247,7 +250,7 @@
       <small>This part of the text is small and not very important, but still possible to read.</small>
     </p>
     <br /><strong>Code:</strong> <code>&lt;small&gt;</code> or <code>&lt;span/p/div class="petit"&gt;</code><br />
-    <code>font-size: 12px; line-height: 16px;</code>
+    <code>font-size: 12px; line-height: 16px; margin-bottom: 12px;</code>
     <br />
     <br />
     <h3>Blockquote</h3>
@@ -318,23 +321,23 @@
       </div>
       <div class="col-md-6">
         <h4>Single links:</h4>
-        <div class="bottom-margin-10">
+        <div>
           <a href="tel:08880" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white phone"></span>
             </span>
             <span class="iconCompanion">Ring 08880</span>
           </a>
-        </div>
+        </div><br>
         <p>Another one:</p>
-        <div class="bottom-margin-10">
+        <div>
           <a href="http://www.storebrand.no" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white employee"></span>
             </span>
             <span class="iconCompanion">Avtal rådgivningstime</span>
           </a>
-        </div>
+        </div><br>
 
         <p>With text:</p>
         <div>
@@ -370,14 +373,14 @@
 
         <h3>Kontakt oss</h3>
 
-        <div  class="bottom-margin-10">
+        <div>
           <a href="http://www.storebrand.no" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white envelope"></span>
             </span>
             <span class="iconCompanion">Skriv til oss</span>
           </a>
-        </div>
+        </div><br>
         <div class="chatOpen bottom-margin-10">
           <a href="http://www.storebrand.no/site/stb.nsf/chooseChat?readForm" class="analyze" onclick="window.open(this.href, '','height=500,width=560');return false;">
             <span class="circle-16 stbcolor-secondary third pull-left">
@@ -385,16 +388,16 @@
             </span>
             <span class="iconCompanion">Chat med oss</span>
           </a>
-        </div>
-        <div class="bottom-margin-10">
+        </div> <br>
+        <div> <br>
           <a href="http://www.storebrand.no" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white employee"></span>
             </span>
             <span class="iconCompanion">Avtal rådgivningstime</span>
           </a>
-        </div>
-        <div class="bottom-margin-10">
+        </div><br>
+        <div>
           <a href="tel:08880" class="analyze">
             <span class="circle-16 stbcolor-secondary third pull-left">
               <span class="stb-sprite-small white phone"></span>
@@ -438,7 +441,7 @@ $(document).ready(function() {
 
 
 
-    <div class="row top-margin-30">
+    <div class="row">
       <div class="col-md-6">
         <p>Chat shown as open/closed </p>
          <div class="chatContainer">
@@ -455,7 +458,7 @@ $(document).ready(function() {
       </div>
     </div>
 
-    <div class="row top-margin-30">
+    <div class="row">
       <div class="col-md-12">
         <a href="#" onclick="window.open('file:///C:/GITHUB/GitHub/storebrand.ny/chatAll.html', '','height=650,width=650')"; return false;>Open chat where user must choose channel</a>
       </div>
@@ -465,7 +468,7 @@ $(document).ready(function() {
       <div class="col-md-10">
         <h4>Code:</h4>
               <pre class="prettyprint">
-  &lt;div class="bottom-margin-10"&gt;
+  &lt;div&gt;
     &lt;a href="tel:08880" class="analyze"&gt;
       &lt;span class="circle-16 stbcolor-secondary third/first pull-left"&gt;
         &lt;span class="stb-sprite-small white phone/chat/envelope"&gt;&lt;/span&gt;
@@ -986,7 +989,7 @@ $(document).ready(function() {
   <div class="row">
     <div class="col-md-4">
       <div class="stb-box third noBorder">
-        <h3 class="box">Boliglånsrente fra</h3>
+        <h3>Boliglånsrente fra</h3>
         <h2 class="big">3,45%</h2>
         <p class="petit"> Har du tjenestepensjon i Storebrand får du nominell rente fra 3,45% (effektiv 3,54%)</p>
         <p class="petit"> Er du helkunde får du nominell rente fra 3,65% (effektiv 3,76%)</p>
@@ -995,7 +998,7 @@ $(document).ready(function() {
     </div>
     <div class="col-md-4">
       <div class="stb-box first noBorder">
-        <h3 class="box">Boliglånsrente fra</h3>
+        <h3>Boliglånsrente fra</h3>
         <h2 class="big">3,45%</h2>
         <p class="petit"> Har du tjenestepensjon i Storebrand får du nominell rente fra 3,45% (effektiv 3,54%)</p>
         <p class="petit"> Er du helkunde får du nominell rente fra 3,65% (effektiv 3,76%)</p>
@@ -1010,7 +1013,7 @@ $(document).ready(function() {
                 <pre class="prettyprint">
 &lt;!-- Special box with gray background: --&gt;
 &lt;div class="stb-box third noBorder"&gt;
-  &lt;h3 class="box"&gt;..headline&lt;/h3&gt;
+  &lt;h3&gt;..headline&lt;/h3&gt;
   &lt;h2 class="big"&gt;3,45%&lt;/h2&gt;
   &lt;p class="petit"&gt; ..content&lt;/p&gt;
   &lt;p class="petit"&gt;..content&lt;/p&gt;
@@ -1042,8 +1045,8 @@ $(document).ready(function() {
             <img src="images/testminibox/MiniBoxImageNarrow63x32.png">
           </div>
           <div>
-            <h3 class="box">Vi hjelper deg igang</h3>
-            <h3 class="box"><a href="#">Ring 08880</a></h3>
+            <h3>Vi hjelper deg igang</h3>
+            <h3><a href="#">Ring 08880</a></h3>
           </div>
       </div>
     </div>
@@ -1053,8 +1056,8 @@ $(document).ready(function() {
             <img src="images/testminibox/MiniBoxImageSquare63x63.png">
           </div>
           <div>
-            <h3 class="box">Vi hjelper deg igang</h3>
-            <h3 class="box"><a href="#">Ring 08880</a></h3>
+            <h3>Vi hjelper deg igang</h3>
+            <h3><a href="#">Ring 08880</a></h3>
           </div>
         </div>
     </div>
@@ -1065,8 +1068,8 @@ $(document).ready(function() {
             <img src="images/testminibox/MiniBoxImageWide63x94.png">
           </div>
           <div>
-            <h3 class="box">Vi hjelper deg igang</h3>
-            <h3 class="box"><a href="#">Ring 08880</a></h3>
+            <h3>Vi hjelper deg igang</h3>
+            <h3><a href="#">Ring 08880</a></h3>
           </div>
         </div>
     
@@ -1085,8 +1088,8 @@ $(document).ready(function() {
       &lt;img src="images/testminibox/MiniBoxImageWide63x94.png"&gt;
     &lt;/div&gt;
     &lt;div class="text column"&gt;
-      &lt;h3 class="box"&gt;Vi hjelper deg i gang&lt;/h3&gt;
-      &lt;h3  class="box"&gt;&lt;a href="#"&gt;Ring 08880&lt;/a&gt;&lt;/h3&gt;
+      &lt;h3&gt;Vi hjelper deg i gang&lt;/h3&gt;
+      &lt;h3&gt;&lt;a href="#"&gt;Ring 08880&lt;/a&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1104,8 +1107,8 @@ $(document).ready(function() {
         <img src="images/testminibox/MiniBoxImageNarrow63x32.png">
       </div>
       <div class="text column">
-        <h3 class="box">Vi hjeleper deg i gang</h3>
-        <h3 class="box"><a href="#">Ring 08880</a></h3>
+        <h3>Vi hjelper deg i gang</h3>
+        <h3><a href="#">Ring 08880</a></h3>
       </div>
     </div>
   </div>
@@ -1116,8 +1119,8 @@ $(document).ready(function() {
         <img src="images/testminibox/MiniBoxImageSquare63x63.png">
       </div>
 	   <div class="text column">
-	     <h3 class="box">Kontakt oss</h3>
-	     <h3 class="box"><a href="#">Ring 08880</a></h3>
+	     <h3>Kontakt oss</h3>
+	     <h3><a href="#">Ring 08880</a></h3>
 	   </div>
      </div>
    </div>
@@ -1132,8 +1135,8 @@ $(document).ready(function() {
          <img src="images/testminibox/MiniBoxImageWide63x94.png">
        </div>
        <div class="text column">
-         <h3 class="box">Vi hjeleper deg i gang</h3>
-         <h3 class="box"><a href="#">Ring 08880</a></h3>
+         <h3>Vi hjelper deg i gang</h3>
+         <h3><a href="#">Ring 08880</a></h3>
        </div>
      </div>
    </div>
@@ -1150,8 +1153,8 @@ $(document).ready(function() {
       &lt;img src="images/testminibox/MiniBoxImageWide63x94.png"&gt;
     &lt;/div&gt;
     &lt;div class="text column"&gt;
-      &lt;h3 class="box"&gt;Vi hjelper deg i gang&lt;/h3&gt;
-      &lt;h3  class="box"&gt;&lt;a href="#"&gt;Ring 08880&lt;/a&gt;&lt;/h3&gt;
+      &lt;h3&gt;Vi hjelper deg i gang&lt;/h3&gt;
+      &lt;h3&gt;&lt;a href="#"&gt;Ring 08880&lt;/a&gt;&lt;/h3&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1179,7 +1182,7 @@ $(document).ready(function() {
           <img src="images/placeholder112x112.png">
         </div>
         <div class="col-sm-6 col-md-12">
-          <h3 class="box"><a href="#">Tjenestepensjon</a></h3>
+          <h3><a href="#">Tjenestepensjon</a></h3>
           <p>
             En god pensjonsordning er et viktig personalgode som har stor verdi for de ansatte og som bidrar til at bedriftene stiller sterkere i kampen om å tiltrekke seg og beholde de beste medarbeiderne.
           </p>
@@ -1199,7 +1202,7 @@ $(document).ready(function() {
           <img src="images/placeholder192x108.png">
         </div>
         <div class="col-sm-6 col-md-12">
-          <h3 class="box"><a href="#">Tjenestepensjon</a></h3>
+          <h3><a href="#">Tjenestepensjon</a></h3>
           <p>
             En god pensjonsordning er et viktig personalgode som har stor verdi for de ansatte og som bidrar til at bedriftene stiller sterkere i kampen om å tiltrekke seg og beholde de beste medarbeiderne.
           </p>
@@ -1220,7 +1223,7 @@ $(document).ready(function() {
         &lt;img src="images/contactus.png"&gt;
       &lt;/div&gt;
       &lt;div class="col-sm-6 col-md-12"&gt;
-        &lt;h3 class="box"&gt;&lt;a href="#"&gt;Tjenestepensjon&lt;/a&gt;&lt;/h3&gt;
+        &lt;h3&gt;&lt;a href="#"&gt;Tjenestepensjon&lt;/a&gt;&lt;/h3&gt;
         ..content
       &lt;/div&gt;
     &lt;/div&gt;
@@ -1301,7 +1304,6 @@ $(document).ready(function() {
   </div>
   <div class="col-md-9">
 
-    <div class="row">
       <p>
         ("Under construction". The "success box" does not have the correct colors yet.)
       </p>
@@ -1310,7 +1312,7 @@ $(document).ready(function() {
       </p>
       <h3>Notifications that can not be closed</h3>
       <div class="row">
-        <div class="col-md-12 top-margin-20">
+        <div class="col-md-12">
           <div class="msgText column pull-right stbcolor-secondary sixth">
             <h3>Information box</h3>
             <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
@@ -1321,7 +1323,7 @@ $(document).ready(function() {
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 top-margin-20">
+        <div class="col-md-12">
           <div class="msgText column pull-right stbcolor-visuals third">
             <h3>Error box</h3>
             <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
@@ -1332,7 +1334,7 @@ $(document).ready(function() {
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 top-margin-20">
+        <div class="col-md-12">
           <div class="msgText column pull-right stbcolor-visuals fourth">
             <h3>Success box</h3>
             <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
@@ -1342,15 +1344,11 @@ $(document).ready(function() {
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-10">
         <h4>Code:</h4>
       <pre class="prettyprint">
 &lt;!-- Information box: --&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-md-12 top-margin-20"&gt;
+  &lt;div class="col-md-12"&gt;
     &lt;div class="msgText column pull-right stbcolor-secondary sixth"&gt;
       &lt;h3&gt;Information box&lt;/h3&gt;
       &lt;p&gt;..content&lt;/p&gt;
@@ -1362,7 +1360,7 @@ $(document).ready(function() {
 &lt;/div&gt;
 &lt;!-- Error box: --&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-md-12 top-margin-20"&gt;
+  &lt;div class="col-md-12"&gt;
    &lt;div class="msgText column pull-right stbcolor-background first"&gt;
       &lt;h3&gt;Error box&lt;/h3&gt;
       &lt;p&gt;..content&lt;/p&gt;
@@ -1374,7 +1372,7 @@ $(document).ready(function() {
 &lt;/div&gt;  
 &lt;!-- Success box: --&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-md-12 top-margin-20"&gt;
+  &lt;div class="col-md-12"&gt;
     &lt;div class="msgText column pull-right stbcolor-background second"&gt;
       &lt;h3&gt;Success box&lt;/h3&gt;
       &lt;p&gt;..content&lt;/p&gt;
@@ -1385,15 +1383,12 @@ $(document).ready(function() {
    &lt;/div&gt;
 &lt;/div&gt;  
 </pre>
-      </div>
-    </div>
-
     <h3>Notifications that can be closed</h3>
     <p>
       These "important messages" are placed in a "topMessages" div, usually located at the top of the page. The div should be hidden upon document.ready, and then become visible through a toggleDown slide one second later. (<a href="#" onclick="toggleMsg();return false">Demo/Reset</a>)
     </p>
 
-    <div class="top-padding-20 bottom-padding-20 commonmessage">
+    <div class="commonmessage">
       <div class="row">
         <div class="col-md-12">
           <div class="msgText column pull-right stbcolor-secondary sixth">
@@ -1409,7 +1404,7 @@ $(document).ready(function() {
       </div>
     </div>
 
-    <div class="top-padding-20 bottom-padding-20 errormessage">
+    <div class="errormessage">
       <div class="row">
         <div class="col-md-12">
           <div class="msgText column pull-right stbcolor-visuals third">
@@ -1424,16 +1419,12 @@ $(document).ready(function() {
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-9 col-md-offset-3">
       <strong>Code:</strong>
         <pre class="prettyprint">
 
 &lt;!-- Common Message: --&gt;
 
-&lt;div class="top-padding-20 bottom-padding-20 commonmessage" style="display: none;"&gt;
+&lt;div class="commonmessage"&gt;
   &lt;div class="row"&gt;
     &lt;div class="col-md-12"&gt;
       &lt;div class="msgText pull-right stbcolor-secondary sixth"&gt;
@@ -1450,7 +1441,7 @@ $(document).ready(function() {
 
 &lt;!-- Error Message: --&gt;
 
-&lt;div class="top-padding-20 bottom-padding-20 errormessage" style=""&gt;
+&lt;div class="errormessage""&gt;
   &lt;div class="row"&gt;
     &lt;div class="col-md-12"&gt;
       &lt;div class="msgText column pull-right stbcolor-visuals third"&gt;
@@ -1466,7 +1457,6 @@ $(document).ready(function() {
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-    </div>
   </div>
 </div><!-- /Notification row -->
 
@@ -2676,7 +2666,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
   </div>
 </div>
 
-<div class="row top-margin-10 ">
+<div class="row">
   <div class="col-md-2">
     <div class="circle-16 stbcolor-secondary third pull-left"><span class="stb-sprite-small white phone"></span></div>
     <div class="circle-24 stbcolor-secondary third pull-left"><span class="stb-sprite-medium white phone"></span></div>
@@ -2695,7 +2685,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
   </div>
 </div>
 
-<div class="row top-margin-10">
+<div class="row">
   <div class="col-md-2">
     <div class="circle-16 stbcolor-gray third pull-left"><span class="stb-sprite-small white phone"></span></div>
     <div class="circle-24 stbcolor-gray third pull-left"><span class="stb-sprite-medium white phone"></span></div>
@@ -2714,9 +2704,9 @@ $('ul[data-widget=stbFaq]').stbFaq();
   </div>
 </div>
 
-<h3 class="top-margin-20">Icons with text</h3>
+<h3>Icons with text</h3>
 
-<div class="row top-margin-10">
+<div class="row">
   <div class="col-md-4">
     <a href="#">
       <span class="stb-color-sprite-medium pdf pull-left"></span>
@@ -2957,7 +2947,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 </div>
 
 <div class="container">
-  <div class="row top-margin-30">
+  <div class="row">
     <div class="col-md-3">
 
     </div>
@@ -3125,7 +3115,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
     <div class="col-md-3">
       <h2 class="toc-header">Background playground</h2>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 background-playground">
       <p>
         The palette colors can be used to add a colored background to the entire width of the page or just the width of any given element.
       </p>
