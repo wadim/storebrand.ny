@@ -91,8 +91,27 @@
   
   &.mini{
     background-color: @stb-gray-first;
+
+    &.row{
+      padding-bottom: 24px;
+    }
+
     @media screen and (max-width: 768px) {
-      padding: 12px;
+      padding: 12px 12px 6px;
+      &.row{
+        padding-bottom: 12px;
+      }
+
+      &:hover {
+        padding: 12px 12px 6px;
+      }
+
+      &.wide{
+        &:hover {
+          padding: 12px;
+        }
+      }
+
     }
      
     @media (max-width: @screen-sm-max) {
@@ -110,8 +129,10 @@
      
     h3 {
       padding-top: 0;
+      margin: 0 12px 12px 0;
     }
-    
+
+
     &.wide{
       margin-left:0;
       margin-right: 0;
@@ -120,12 +141,6 @@
 	    padding-right: 20px;
 	    height: 100%
       }
-    }  
-  }
-
-  &.mini:hover {
-    @media screen and (max-width: 768px) {
-      padding: 12px;
     }
   }
 
@@ -135,11 +150,28 @@
     @media screen and (max-width: 768px) {
       padding: 12px;
     }
+    h3{
+      margin: 12px 12px 12px 0;
+    }
+    &:hover {
+      @media screen and (max-width: 768px) {
+        padding: 12px;
+      }
+    }
+    .row{
+      padding-bottom: 0;
+    }
   }
 
-  &.big:hover {
-    @media screen and (max-width: 768px) {
-      padding: 12px;
+
+
+
+
+  h3{
+    font-weight: normal;
+    font-family: @font-family-signa-light;
+    a, a:hover {
+      padding-bottom: 0px;
     }
   }
 
@@ -212,4 +244,19 @@ a + div.iconInfo{
     p{
       margin-top: -10px;
     }
+}
+
+.commonmessage, .errormessage, .successmessage{
+  padding-top: 24px;
+  padding-bottom: 24px;
+  .row{
+    padding-bottom: 0;
+  }
+
+  h3{
+    margin: 12px 12px 12px 0;
+  }
+  .msgText, .msgIcon{
+    min-height: 169px;
+  }
 }

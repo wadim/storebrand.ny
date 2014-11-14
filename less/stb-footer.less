@@ -3,6 +3,7 @@ footer .toTop{
 }
 
 .stb-footer{
+  margin-top: 48px;
   a.stb-footer-link {
     text-decoration: none;
     border: 0;
@@ -17,12 +18,14 @@ footer .toTop{
     padding-top: 12px;
   }
 
-  .contact ul.stb {
-    padding-top: 6px;
-  }
+  .contact{
+    ul.stb {
+      padding-top: 6px;
+    }
 
-  .contact .earphone {
-    color: @stb-primary-white;
+    .earphone {
+      color: @stb-primary-white;
+    }
   }
 
   .content {
@@ -37,12 +40,11 @@ footer .toTop{
 
   ul.stb {
     margin: 0;
-  }
 
-  ul.stb a.small-icons {
-    display: inline-block;
+    a.small-icons {
+      display: inline-block;
+    }
   }
-
 }
 
 .mobilefooter{
@@ -50,9 +52,9 @@ footer .toTop{
   &.first a {
     border-bottom: 1px solid @stb-primary-white;
     text-decoration: none;
-  }
-  &.first a:hover {
-    border-bottom: none;
+    a:hover {
+      border-bottom: none;
+    }
   }
 
   .info li {
@@ -85,8 +87,12 @@ footer .toTop{
 }
 
 @media (max-width: 767px) {
-  .stb-footer h4{
-    padding: 24px 10px 10px 0;
+
+  .stb-footer{
+    margin-top: 24px;
+    h4{
+      padding: 24px 10px 10px 0;
+    }
   }
 }
 
