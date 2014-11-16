@@ -12,6 +12,7 @@
   <script type="text/javascript" src="../../../js/dist/jquery.color-2.1.2.min.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery-ui-1.11.0.js"></script>
   <script type="text/javascript" src="../../../js/dist/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="../../../js/dist/jquery.eqheight.js"></script>
   <script type="text/javascript" src="../../../js/dist/bootstrap.min.js"></script>
   <script type="text/javascript" src="../../../js/dist/typeahead.bundle.min.js"></script>
   <script type="text/javascript" src="../../../data/searchdata.js"></script>
@@ -423,14 +424,14 @@
 
 <!-- Start actual page contents -->
 <div class="container">
-  <div class="row top-margin-30-mdlg bottom-margin-30-mdlg">
+  <div class="row">
     <div class="col-md-8">
       <h1>Bilforsikring </h1>
       <p class="intro">
         Vi har bilforsikringen som dekker ditt behov. Her kan du raskt beregne pris og finner den typen du trenger - til én eller flere av dine biler.
       </p>
     </div>
-    <div class="col-md-4 top-margin-10 bottom-margin-10">
+    <div class="col-md-4">
       <img src="../../../images/skisseelementer/CircleCar142x142.png" class="center-block img-responsive" alt="Illustrasjon av en bil." />
     </div>
   </div>
@@ -438,7 +439,7 @@
 
 <div class="stbcolor-secondary sixth">
 <div class="container">
-<div class="row top-margin-20 bottom-margin-20">
+<div class="row">
 <div class="col-md-8">
   <h2>Våre bilforsikringer</h2>
   <p>
@@ -447,7 +448,7 @@
   </p>
   <button class="stb-btn stb-big-btn" onclick="event.preventDefault(); window.location.href='../dummy/sjekkprisbil.html'";><h3 class="">Sjekk pris og kjøp</h3></button>
 
-  <div class="table-responsive top-margin-40">
+  <div class="table-responsive">
     <table class="stb-table no-alt nude">
       <thead>
       <tr class="hidden-xs">
@@ -561,7 +562,7 @@
     </table>
   </div>
   <a href="../artikkel/bilforsikring.html">Se fullstendige dekningsoversikt</a> eller <a href="../dummy/sjekkprisbil.html">sjekk pris og kjøp</a>
-  <h2 class="top-margin-20">Hva vil lånet koste?</h2>
+  <h2>Hva vil lånet koste?</h2>
   <p>Med vår lånekalkulator får du en pekepinn på hvor mye du kan låne og hva du må betale hver måned med dagens renter</p>
   <form id="laanekalkulator" role="form">
     <div class="row">
@@ -586,7 +587,7 @@
     </div>
     <div class="row">
       <div class="col-xs-9 col-md-12">
-        <div class="stb-form-group top-margin-10">
+        <div class="stb-form-group">
           <label style="">Nedbetalingsperiode</label>
           <div>
             <input id="stb-slider-nedbetaling" type="slider" name="stb-slider" value="15" />
@@ -594,7 +595,7 @@
         </div>
       </div>
       <div class="col-xs-9 col-md-12">
-        <div class="stb-form-group top-margin-10">
+        <div class="stb-form-group">
           <label>Lånerente</label>
           <div>
             <input id="stb-slider-lanerente" type="slider" name="stb-slider" value="3.5" />
@@ -603,7 +604,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="stb-form-group top-margin-10">
+      <div class="stb-form-group">
         <div class="col-md-8 col-xs-12">
           <p class="intro pull-left" style="border-bottom: 4px double #000;"><span class="calculated-value">10 899</span> kr i måneden</p>
         </div>
@@ -658,20 +659,19 @@
         <img class="img-responsive" src="../../../images/skisseelementer/UT63x63House.png" alt="Illustrasjon av et hus">
       </div>
       <div class="col-sm-6 col-md-12">
-        <h3 class="box"><a href="#">Dette bør du vite når du søker boliglån</a></h3>
+        <h3><a href="#">Dette bør du vite når du søker boliglån</a></h3>
         <p>Det er mange ting du bør tenke på når du skal kjøpe bolig. Vi har samlet noe av det viktigste for deg.</p>
       </div>
     </div>
   </div>
-  <div class="stb-box mini clickable" rel="tel:08880">
-    <div class="row">
-      <div class="col-sm-6 col-md-12">
-        <img src="../../../images/skisseelementer/UT112x112ManSafe.png"  alt="Illustrasjon av høreteleloner" >
-      </div>
-      <div class="col-sm-6 col-md-12">
-        <h3 class="box">Vi hjelper deg igang</h3>
-        <h3 class="box"><a href="#">Ring 22 31 20 00</a></h3>
-      </div>
+
+  <div class="stb-box mini narrow clickable" rel="tel:08880">
+    <div class="image">
+      <img src="../../../images/testminibox/MiniBoxImageWide63x94.png">
+    </div>
+    <div class="text">
+      <h3>Vi hjelper deg i gang</h3>
+      <h3><a href="#">Ring 22 31 20 00</a></h3>
     </div>
   </div>
 </div>
@@ -679,8 +679,8 @@
 </div>
 </div>
 <div class="container">
-  <div class="row top-margin-20">
-    <div class="col-md-6 top-padding-10">
+  <div class="row">
+    <div class="col-md-6">
       <h3 class="">Ofte stilte spørsmål</h3>
       <ul class="accordion" data-widget="stbFaq">
         <li>
@@ -713,7 +713,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-md-6 top-padding-10">
+    <div class="col-md-6">
       <h3><a href="../tema3/kundefordeler.html">Har du kundefordeler hos oss?</a></h3>
       <p>
         Du får lavere pris hvis du:
@@ -724,8 +724,8 @@
       </ol>
     </div>
   </div>
-  <div class="row top-margin-20">
-    <div class="col-md-6 top-padding-10">
+  <div class="row">
+    <div class="col-md-6">
       <h3>Andre forsikringer</h3>
       <div class="stb-list-group" >
         <a class="list-group-item" href="#">Tilhengerforsikring </a>
@@ -733,22 +733,20 @@
         <a class="list-group-item" href="#">Veterankjøretøyforsikring</a>
       </div>
     </div>
-    <div class="col-md-6 top-padding-10">
-      <div class="stb-box mini clickable" rel="tel:08880">
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <img width="63px" height="63px" src="../../../images/skisseelementer/UT112x112ManSafe.png"  alt="Illustrasjon av høreteleloner">
-          </div>
-          <div class="col-sm-6 col-md-8">
-            <h3 class="box">Enkelt å bytte- vi ordner alt</h3>
-            <h3  class="box"><a href="#">Ring 08880</a></h3>
-          </div>
+    <div class="col-md-6">
+      <div class="stb-box mini wide clickable row" rel="tel:08880">
+        <div class="image column">
+          <img src="../../../images/skisseelementer/UT112x112ManSafe.png"  alt="Illustrasjon av høreteleloner">
+        </div>
+        <div class="text column">
+          <h3>Enkelt å bytte- vi ordner alt</h3>
+          <h3><a href="#">Ring 08880</a></h3>
         </div>
       </div>
     </div>
   </div>
-  <div class="row top-margin-20">
-    <div class="col-md-6 top-padding-10">
+  <div class="row">
+    <div class="col-md-6">
       <div class="stb-box transparent dashed info">
         <span class="pull-left infoIcon" ></span>
         <div class="left-padding-60">
@@ -757,14 +755,14 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 top-padding-10">
+    <div class="col-md-6">
       <div class="stb-box big clickable" rel="../artikkel/pensjonssparing.html">
         <div class="row">
-          <div>
+          <div class="col-sm-6 col-md-12">
             <img src="../../../images/skisseelementer/ManGolf192x108.png" alt="Illustrasjon av mann som spiller golf">
           </div>
           <div class="col-sm-6 col-md-12">
-            <h3 class="box"><a href="">Dette bør du vite om pensjon </a></h3>
+            <h3><a href="">Dette bør du vite om pensjon </a></h3>
             <p>Vet du hva du får i pensjon?</p>
             <p>Vi hjelper deg med å samle pensjonsavtalene dine, og gir deg gode råd om pensjonsparing. Her har vi samlet noen få, men viktige ting du bør vite om pensjon. </p>
           </div>
