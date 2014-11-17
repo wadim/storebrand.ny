@@ -95,10 +95,6 @@ h3 {
   }
 }
 
-h3:first-child{
-  margin: 12px 6px 6px 0;
-}
-
 h4 {
   font-size: 16px;
   line-height: 22px;
@@ -135,6 +131,8 @@ h6 {
   }
 }
 
+
+/* Header margin exceptions */
 h2 + h3 {
   margin: 12px 6px 6px 0;
 }
@@ -143,6 +141,27 @@ h3 + h4, img + h3{
   margin: 6px 6px 6px 0;
 }
 
+div.row > div{
+  > h3:first-child {
+    margin: 0 6px 6px 0;
+  }
+
+  > div:first-child > h3:first-child {
+    margin: 0 6px 6px 0;
+  }
+
+  > h2:first-child {
+    margin: 0 12px 6px 0;
+  }
+}
+
+div.row.video-text > div{
+  >h2:first-child{
+    margin-top: 48px;
+  }
+}
+
+/* End of header margin exceptions */
 
 h1.link,
 h2.link,
