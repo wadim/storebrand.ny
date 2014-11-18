@@ -3,7 +3,7 @@
 // tablet and mobile styling 
 @media screen and (max-width: 991px) {
   body {
-    padding-top: 80px;
+    padding-top: 48px;
   }
 }
 
@@ -286,28 +286,44 @@
       #nav .navbar {
         border: 0px;
         border-radius: 0px;
-        min-height: 80px;
+        min-height: 48px;
         margin-bottom: 0px;
-      }
+        .nav{
+          >li{
+            height: 48px;
+            a:hover,
+            a:active {
+              background: none;
+            }
+          > a {
+            position: relative;
+            border-radius: 0px;
+            display: block;
+            padding-left: 10px;
+            padding-top: 20px;
+            border: none;
 
+            // This fixes the v-align of tablet menu, but messes up Creuna mobile menu top -> margin-top: 12px;
+            p{
+              font-size: 16px;
+              color: @stb-primary-white;
+              font-family: "Open Sans Bold",Arial,ArialMT,sans-serif;
+              position: absolute;
+              margin-top: -11px;
+              margin-left: 38px;
+            }
+          }
+          a:hover,
+          a:active {
+            background: none;
+          }
+          }
+        }
+      }
+     #nav-toggle{
+       padding-left: 38% !important;
+     }
       .stb-logo-mobile {
-        padding-top: 12px;
-      }
-
-      #nav .navbar .nav{
-        > li a:hover,
-        > li a:active {
-          background: none;
-        }
-        > li > a {
-          position: relative;
-          border-radius: 0px;
-          display: block;
-          padding-left: 10px;
-          padding-top: 12px;
-          border: none;
-          // This fixes the v-align of tablet menu, but messes up Creuna mobile menu top -> margin-top: 12px;
-        }
       }
    }
    // Ending tablet styling
@@ -318,16 +334,30 @@
       margin-bottom: 0px;
       border-radius: 0px;
     }
+    #nav .navbar {
+      .nav >li > a p{
+        margin-top: -9px;
+      }
+    }
+    #nav-toggle{
+      padding-left: 33% !important;
+    }
+
   }
 
   @media screen and (max-width: 400px) {
 
     .stb-logo-mobile {
       width: 170px;
-      padding-top: 18px;
+      padding-top: 6px;
+    }
+    #nav-toggle{
+      padding-left: 30% !important;
     }
 
   }
+
+
   // Ending mobile styling
 }
 
@@ -554,6 +584,37 @@
     }
   }
 
+//First
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 3px;
+  width: 30px;
+  background: @stb-primary-white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: -9px;
+}
+#nav-toggle span:after {
+  bottom: -9px;
+}
 
-
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 400ms ease-in-out;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
 
