@@ -291,7 +291,7 @@
       }
 
       .stb-logo-mobile {
-        padding-top: 24px;
+        padding-top: 12px;
       }
 
       #nav .navbar .nav{
@@ -304,6 +304,8 @@
           border-radius: 0px;
           display: block;
           padding-left: 10px;
+          padding-top: 12px;
+          border: none;
           // This fixes the v-align of tablet menu, but messes up Creuna mobile menu top -> margin-top: 12px;
         }
       }
@@ -317,19 +319,52 @@
       border-radius: 0px;
     }
   }
+
+  @media screen and (max-width: 400px) {
+
+    .stb-logo-mobile {
+      width: 170px;
+      padding-top: 18px;
+    }
+
+  }
   // Ending mobile styling
 }
 
 //Mobile menu styling
 #mobilemenu{
+  margin-bottom: 30px;
+  background-color:@stb-primary-white;
+  z-index:2;
+  position:relative;
+  top:0;
+  left:0;
+  display: none;
+
+  >div.row{
+    margin-right: 0; margin-left: 0;
+    &:first-child{
+      padding-bottom: 0;
+    }
+    > div.col-xs-12{
+      padding-left: 0; padding-right: 0;
+    }
+  }
 
   border-bottom: solid 2px @stb-secondary-charcoal;
   a{
     border: none;
   }
 
+  .panel-group{
+    margin-top: 12px;
+  }
+
   .panel {
     border: none;
+    &:first-child{
+      border-top: 1px solid @stb-secondary-charcoal;
+    }
   }
 
   .panel-heading {
@@ -341,7 +376,7 @@
   }
 
   h4.panel-title{
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
     padding: 9px 9px 9px 0;
     a{
@@ -354,9 +389,7 @@
   }
 
   .panel.active{
-    &:first-child{
-      border-top: 1px solid @stb-secondary-charcoal;
-    }
+
     .panel-heading{
       border: none;
     }
@@ -375,42 +408,58 @@
     font-family: 'SignaWeb-Light';
   }
 
-  li{
-    background: @stb-gray-fourth;
-    height: 50px;
-
-    a{
-      color: white;
-      border: none;
-      padding: 10px 0px;
-    }
-
-    &.active{
-      background: @stb-secondary-charcoal;
-      border: none;
-    }
-
-    &.tab-box{
-      font-family: "Open Sans Bold",Arial,ArialMT,sans-serif;
-      font-size: 16px;
-      text-align: center;
-      padding-left: 2px;
-      padding-top: 4px;
-      border-left: 2px solid white;
-    }
-
-    &.tab-box:first-child{
-      border-left: none;
-    }
-
-    &.active a{
-      background: @stb-secondary-charcoal;
-      border: none;
-    }
-  }
-
   .nav a:hover{
-    background-color: transparent !important;
+    background-color: @stb-gray-second;
+    border-radius: 0;
+  }
+  ul.nav-tabs{
+    background: @stb-gray-second;
+    height: 60px;
+    li{
+
+      a{
+        color: @stb-secondary-charcoal;
+        border: none;
+        padding: 17px 0px;
+      }
+
+      &.active{
+        // background: @stb-secondary-charcoal;
+        // border: none;
+      }
+
+      &.tab-box{
+        font-family: "Open Sans Bold",Arial,ArialMT,sans-serif;
+        font-size: 14px;
+        text-align: center;
+        padding-top: 6px;
+        width: 27%;
+        //border-left: 2px solid white;
+        &:first-child{
+          padding-left: 9px;
+        }
+        &:last-child{
+          padding-right: 9px;
+          width: 19%;
+          a{
+            padding: 13px 12px;
+          }
+        }
+      }
+
+      &.tab-box:first-child{
+        border-left: none;
+      }
+
+      &.active a{
+        background: @stb-primary-white;
+        border-radius: 0;
+
+        &:hover{
+          background: @stb-primary-white;
+        }
+      }
+    }
   }
 
   .panel-body{
@@ -432,13 +481,35 @@
     color: #404040;
   }
 
+  #searchMobile{
+    >div.row{
+      margin-right: 0;
+      margin-left: 0;
+      padding-bottom: 0;
+      width: 80%;
+      display: inline-block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      .col-xs-11, .col-xs-1{
+        padding-left: 0; padding-right: 0;
+      }
+    }
+
+    .stb-btn{
+      display: block;
+      position: relative;
+      padding-left: 6px;
+      min-width: 80px;
+    }
+  }
+
   .twitter-typeahead{
     width: 99%;
   }
 
   .twitter-typeahead .typeahead{
     width: 99%;
-    border: 2px solid #404040;
+    border: 1px solid @stb-secondary-charcoal;
   }
 
 
@@ -450,6 +521,7 @@
       padding-right: 0;
     }
    p{
+     font-family: "Open Sans Bold",Arial,ArialMT,sans-serif;
      text-align: center;
    }
   span{
@@ -459,19 +531,19 @@
   }
 
   #verktoymobile {
-    padding: 0;
-    div {
+    > div {
       margin-bottom: 10px;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
     }
     button{
       width: 160px;
     }
   }
 
-  @media screen and (max-width: 768px) { 
-	
+  @media screen and (max-width: 768px) {
     #verktoymobile {
-  	  padding: 0;
       div {
         margin-bottom: 10px;
       }
@@ -481,14 +553,6 @@
     }
     }
   }
-
-#start-login-form, #start-login-form-mobile {
-	
- .form-control-feedback {
-	  top: 8px !important;
-	  right: 120px;
- }
-} 
 
 
 
