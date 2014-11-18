@@ -239,7 +239,7 @@ div.cookieFooter{
       <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6" style="padding-left: 6px;">
         <ul class="nav navbar">
           <li style="width:100%; text-align: center">
-            <a id="nav-toggle" href="#"  onclick="$('#mobilemenu').slideToggle(200); $(this).toggleClass('active');"><span></span><p>Meny</p></a>
+            <a href="#" onclick="$('#mobilemenu').slideToggle(200); $(this).children('span').toggleClass('menu-bars remove');"><span class="stb-sprite-medium white menu-bars top-margin-10" style="vertical-align: text-bottom;"></span> Meny</a>
           </li>
         </ul>
       </div>
@@ -464,106 +464,29 @@ div.cookieFooter{
 
 <!-- Start actual page contents -->
 <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h3>Kundeinnlogging</h3>
-      <form id="start-login-form" class="stb-form-inline" role="form">
-        <label class="stb-font-bold" >Fødselsnummer </label><br>
-        <span class="help-block info-message"></span>
-        <div class="form-group stb-form-group">
-          <input type="tel" class="" name="birthNumber" style="width: 230px">
-          <button class="stb-btn stb-form is-submit">Logg inn</button>
-        </div>
-      </form>
-    </div>
-    <div class="col-md-6">
-      <img class="img-responsive" style="margin-left: auto; margin-right: auto;"  src="../../images/skisseelementer/UT432x243TomTown.png" alt="category banner image" title="category bannner image"/>
-      <p style="text-align: center">For mange er pensjon noe som skjer langt der fremme. Derfor er vi så opptatt av bærekraftig investering. </p>
-      <p class="stb-font-bold"  style="font-size: 12px;text-align: center">Tom Beltesprekke, pensjonsrådgiver</p>
-    </div>
+  <div style="height: 500px">
+    <h1> This page contains the latest top menu and footer</h1>
   </div>
+  
 </div>
 
-<div class="banner stbcolor-secondary seventh ">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 visible-sm visible-xs">
-        <h2>Bedre pensjon.<br> Helt enkelt.</h2>
-        <p class="intro">Det er mange ting du kan utsette. Å spare til pensjon bør ikke være en av de tingene. Bruk noen minutter på å komme i gang i dag.</p>
-        <button class="stb-btn transparent light top-margin-20" onclick="event.preventDefault(); window.location.href = 'produkt/egensparingpensjon.html';">Kom igang med din pensjon</button>
-      </div>
-      <div class="col-md-6">
-        <img class="img-responsive" src="../../images/skisseelementer/UT405x405VictoriaBubbles.png" alt="category banner image" title="category bannner image"/>
-      </div>
-      <div class="col-md-6 hidden-sm hidden-xs">
-        <h2>Bedre pensjon.<br> Helt enkelt.</h2>
-        <p class="intro">Det er mange ting du kan utsette. Å spare til pensjon bør ikke være en av de tingene. Bruk noen minutter på å komme i gang i dag.</p>
-        <button class="stb-btn transparent light top-margin-20" onclick="event.preventDefault(); window.location.href = 'produkt/egensparingpensjon.html';">Kom igang med din pensjon</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Start of page contents -->
-<div class="banner stbcolor-secondary third lighter">
-  <div class="container banner-video">
-    <div class="row video-text">
-      <div class="col-md-6">
-        <h2>Spar penger på den smarte måten</h2>
-        <p class="intro">Det er mange måter å spare på. Vår spareguru Kim forteller deg hva som er smartest.</p>
-        <button class="stb-btn transparent light playVideoBtn">Spill av video <span class="glyphicon glyphicon-play"></span></button>
-        <br><br><a href="kategori/sparing.html">Alle våre spareprodukter</a>
-      </div>
-      <div class="col-md-6">
-        <img class="img-responsive" src="../../images/skisseelementer/UT405x405KimDrawing.png" alt="category banner image" title="category bannner image"/>
-      </div>
-    </div>
-    <div class="video-container" style="display: none;">
-      <button class="stb-btn alarm video-close"><p class="pull-left">Lukk &nbsp</p><span class="stb-sprite-medium remove white"></span></button>
-      <div id="player-banner" class="video-player-banner" data-youtube-id="_7Foh3T1gN4"></div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <img class="img-responsive" src="../../images/skisseelementer/UT63x63Windmill.png"/>
-      <h3>Bilforsikring</h3>
-      <p>Du kan spare mange penger på å velge rett bilforsikring. Se våre ulike typer og sjekk pris for din bil.</p>
-      <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'produkt/bilforsikring.html';">Bilforsikring</button><br><br>
-      <a href="kategori/forsikring.html">Alle våre forsikringer</a>
-    </div>
-    <div class="col-md-4">
-      <img class="img-responsive" src="../../images/skisseelementer/112x112IlluCash_2x.png"/>
-      <h3>Kundefordeler</h3>
-      <p>Har du tjenestepensjon i Storebrand?  Da får du mange fordeler og rabatter hos oss. </p>
-      <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'tema3/kundefordeler.html';">Kundefordeler</button>
-    </div>
-    <div class="col-md-4">
-      <img class="img-responsive" src="../../images/skisseelementer/112x112IlluPiggy_2x.png"/>
-      <h3>Finn ditt pensjonstall</h3>
-      <p>Vår pensjonskalkulator gir deg raskt god oversikt over hva du kan forvente å få i pensjon. </p>
-      <button class="stb-btn" onclick="event.preventDefault(); window.location.href = 'verktoy/pensjonstall.html';">Finn ditt pensjonstall</button><br><br>
-      <a href="artikkel/pensjonssparing.html">Forstå pensjon</a>
-    </div>
-  </div>
-</div>
 
 <!-- End actual page contents -->
 
-  <!-- Start Cookie notice -->
-  <div data-spy="affix" class="cookieNote" id="cookieNote">
-    <div class="cookieClose">
-      &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-small white remove"></span><br />(Lukk)</a>
-    </div>
-    <div class="cookieInfo">
-      <div class="info">
-        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
-      </div>
+<!-- Start Cookie notice -->
+<div data-spy="affix" class="cookieNote" id="cookieNote">
+  <div class="cookieClose">
+    &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false"><span class="stb-sprite-small white remove"></span><br />(Lukk)</a>
+  </div>
+  <div class="cookieInfo">
+    <div class="info">
+      På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
     </div>
   </div>
-  <!-- End Cookie notice -->
+</div>
+
+<!-- End Cookie notice -->
 
 <!-- Start responsive footer -->
 <!-- New desktop footer -->
