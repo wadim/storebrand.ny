@@ -3,12 +3,8 @@ footer .toTop{
 }
 
 .stb-footer{
+	padding-bottom: 70px;
   //margin-top: 48px;
-  a.stb-footer-link {
-    text-decoration: none;
-    border: 0;
-  }
-
   ul li {
     list-style-type: none;
     padding-bottom: 15px;
@@ -44,6 +40,28 @@ footer .toTop{
     a.small-icons {
       display: inline-block;
     }
+  }
+  
+  a {
+  	 border-color: #fff;
+      text-decoration: none !important;
+      font-family:'Open Sans Bold'
+  }
+  
+  .toTop {
+  	a {
+  	  border-bottom: 0;	
+  	}
+  }
+  
+  .petit {
+  	a {
+      font-size: 14px;
+  	}
+  }
+  
+  .social {
+  	 margin-top: 48px;
   }
 }
 
@@ -98,14 +116,11 @@ footer .toTop{
 @media (min-width: 767px) {
   .border-left{
     border-left: medium solid @stb-primary-color-darker;
-    margin-left: 20%;
-    padding-left: 30%;
     height: 100%;
   }
 
   .border-right {
     border-right: medium solid @stb-primary-color-darker;
-    margin-right: 10%;
     height: 100%;
   }
 }

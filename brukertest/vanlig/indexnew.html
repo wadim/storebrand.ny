@@ -23,6 +23,7 @@
   <script type="text/javascript" src="../../js/src/stb-video.js"></script>
   
   <style>
+  
 div.cookieFooter{
       background-color: #333333;
       height: auto;
@@ -53,7 +54,6 @@ div.cookieFooter{
       background-color: #E6E6E6 !important;
       border: 1px solid #E6E6E6;
     }
-
 
   </style>
   <script>
@@ -566,81 +566,81 @@ div.cookieFooter{
   <!-- End Cookie notice -->
 
 <!-- Start responsive footer -->
-<footer class="stbcolor-primary first stb-footer  visible-sm visible-md visible-lg">
-  <div class="row toTop">
-    <div class="col-sm-8 col-sm-offset-4 col-xs-12 stbcolor-primary first darker top-padding-10">
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" style="line-height: 2;">Til toppen <span class="stb-sprite-medium white arrow-up" style="margin-bottom: -5px;"></span></a>
-      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" style="line-height: 2;">Til toppen <span class="stb-sprite-medium white arrow-up" style="margin-bottom: -5px;"></span></a>
+<!-- New desktop footer -->
+<footer class="desktopfooter stbcolor-primary first stb-footer visible-sm visible-md visible-lg">
+ 
+    <div class="row toTop">
+    <div class="col-sm-7 col-sm-offset-5 stbcolor-primary first darker top-padding-10 bottom-padding-10">
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link hidden-xs" id="footerTopLinkText">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIcon"></span></a>
+      <a href="#" onclick="$('html, body').animate({ scrollTop: 0}, 500); return false;" class="stb-footer-link visible-xs pull-right" id="footerTopLinkTextMobile">Til toppen <span class="stb-sprite-medium white arrow-up" id="footerTopLinkIconMobile"></span></a>
     </div>
+  
   </div>
-
   <div class="container">
-
-    <div class="row content">
-      <div class="col-sm-3 column info">
-        <div class="border-right">
-          <ul class="stb">
-            <li><span class="stb-sprite-medium white globe"></span> <a class="stb-footer-link petit" href="#">In&nbsp;English</a></li>
-            <li><span class="stb-sprite-medium white search"></span> <a class="stb-footer-link petit" href="#">Søk</a></li>
-            <li><span class="stb-sprite-medium white lock"></span> <a class="stb-footer-link petit" href="#">Logg&nbsp;inn</a></li>
-          </ul>
-          <h4>Alt innhold</h4>
-          <p class="petit">
-            <a class="stb-footer-link" href="#">A til Å / Kategorisert</a>
-          </p>
-        </div>
+    <div class="row top-margin-20 info">
+      <div class="col-sm-3 column border-right">
+      
+        <ul>
+          <li><a href="#">Information in English</a></li>
+          <li><a href="#">Alt innhold</a></li>
+          <li><a href="#">Personvern</a></li>
+        </ul>
+    
       </div>
 
-      <div class="col-sm-3 column contact">
-        <h4>Lurer du på noe?</h4>
-        <div class="row">
-          <div class="col-xs-6">
-            <p class="petit">Vi er tilgjengelige:</p>
-            <p class="petit">Mandag-fredag<br />08-16, bank til 20</p>
-            <p class="petit">Lørdag (kun bank)<br />09-15</p>
+      <div class="col-sm-3 column">
+      
+        <ul>
+          <li><a href="#">Om Storebrand</a></li>
+          <li><a href="#">Eiendom</a></li>
+          <li><a href="#">Asset Management</a></li>
+        </ul>
+      
+      </div>
+      
+      <div class="col-sm-3 column border-left">
+       
+          <div class="circle-16 stbcolor-primary third pull-left"><span class="stb-sprite-small red phone"></span></div>
+          <div class="pull-left"><h3><a href="#">Ring 08880</a></h3></div>
+          <div style="clear: both">
+            <p class="petit">Mandag-fredag<br />08-16 (bank 8-20)<br/>Lørdag 9-15 (kun bank)</p>
+            <p class="petit">Fra utlandet<br /><a href="#">ring +47 915 08880</a></p>
           </div>
-          <div class="col-xs-6">
-            <p class="petit">
-              <span class="stb-sprite-small white phone"></span>
-              &nbsp;Ring:&nbsp;<a class="stb-footer-link hidden-xs hidden-sm" href="tel:08880"><span>08880</span></a>
-              <a class="visible-xs visible-sm" style="display: inline-block!important;" href="tel:08880"><span class="visible-xs visible-sm stbcolor-primary first darker badge">08880</span></a>
-              <br/>
-              Fra&nbsp;utlandet:<br />
-              <a class="stb-footer-link hidden-xs hidden-sm" href="tel:+4791508880"><span>+47&nbsp;915&nbsp;08880</span></a>
-              <a class="visible-xs visible-sm" href="tel:+4791508880"><span class="stbcolor-primary first darker badge ">+47&nbsp;915&nbsp;08880</span></a>
-            </p>
-            <ul class="stb">
-              <li><span class="stb-sprite-small white envelope"></span><a class="stb-footer-link petit" href="#">&nbsp;E-post</a></li>
-              <li><span class="stb-sprite-small white chat"></span><a class="stb-footer-link petit"  href="#">&nbsp;Chat</a></li>
-            </ul>
-          </div>
-        </div>
+       
       </div>
+      
+      <div class="col-sm-3 column">
+         <div class="circle-16 stbcolor-primary third pull-left"><span class="stb-sprite-small red chat"></span></div>
+         <div class="pull-left"><h3><a href="#" style="line-height: 24px">Chat</a></h3></div>
+         <div style="clear: both">
+           <a href="#">Andre<br/> kontaktmuligheter</a>
+         </div>
+      </div>
+      
+    </div>
 
-      <div class="col-sm-3 col-xs-6 column social">
-        <div class="border-left">
-          <h4>Sosiale&nbsp;medier</h4>
-          <ul class="stb">
-            <li><span class="stb-sprite-medium white facebook"></span><a class="stb-footer-link petit" href="#"> Facebook</a></li>
-            <li><span class="stb-sprite-medium white twitter"></span><a class="stb-footer-link petit"  href="#"> Twitter</a></li>
-            <li><span class="stb-sprite-medium white youtube"></span><a class="stb-footer-link petit"  href="#"> YouTube</a></li>
-            <li><span class="stb-sprite-medium white employee"></span><a class="stb-footer-link petit"  href="#"> Blogg</a></li>
-          </ul>
-        </div>
+
+    <div class="row social">
+    <div class="col-sm-6">
+       <div class="col-sm-3" style="text-align:center">
+        <span class="stb-sprite-medium white facebook"></span><p><a class="stb-footer-link" href="#"> Facebook</a></p>
       </div>
-      <div class="col-sm-3 col-xs-6 column more">
-        <div class="border-left">
-          <h4>Mer&nbsp;Storebrand</h4>
-          <ul class="stb">
-            <li><a class="stb-footer-link petit"  href="#"> Om Storebrand </a></li>
-            <li><a class="stb-footer-link petit"  href="#"> Eiendom</a></li>
-            <li><a class="stb-footer-link petit"  href="#"> Asset Management</a></li>
-            <li><a class="stb-footer-link petit"  href="#"> Personvern og cookies</a></li>
-          </ul>
-        </div>
+      <div class="col-sm-3"  style="text-align:center">
+        <span class="stb-sprite-medium white twitter"></span><p><a class="stb-footer-link" href="#"> Twitter</a></p>
+      </div>
+      <div class="col-sm-3"  style="text-align:center">
+        <span class="stb-sprite-medium white youtube"></span><p><a class="stb-footer-link" href="#"> YouTube</a></p>
+      </div>
+      <div class="col-sm-3"  style="text-align:center">
+        <span class="stb-sprite-medium white blog"></span><p><a class="stb-footer-link" href="#"> Blogg</a></p>
       </div>
     </div>
+     
+    
+    </div>
+
   </div>
+
 </footer>
 
 <footer class="mobilefooter stbcolor-primary first stb-footer visible-xs">
