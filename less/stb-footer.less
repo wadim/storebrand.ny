@@ -3,11 +3,15 @@ footer .toTop{
 }
 
 .stb-footer{
-	padding-bottom: 70px;
+  padding-bottom: 70px;
   //margin-top: 48px;
   ul li {
     list-style-type: none;
     padding-bottom: 15px;
+  }
+  
+  ul li:last-child {
+  	padding-bottom: 0;
   }
 
   .info ul.stb {
@@ -64,6 +68,10 @@ footer .toTop{
   	 margin-top: 48px;
   }
   
+  .copyright {
+  	margin-top: 24px;
+  }
+  
   h3 {
   	margin-top: 12px;
   	margin-bottom: 15px;
@@ -71,6 +79,43 @@ footer .toTop{
 }
 
 .mobilefooter{
+	
+  &.stb-footer {
+  	padding-bottom: 48px;
+  }
+  
+  .container {
+  	 padding-top: 24px;
+  	
+  .row {
+  	padding: 24px 0px;
+  }
+  
+  .row:first-child {
+  	padding-top: 0;
+  }
+  
+  .row:last-child{
+  	padding-bottom: 0;
+  }
+  }
+  
+  ul {
+  	margin: 0;
+  	padding: 0;
+  	
+  }
+  
+  .toTop {
+  	height: 48px;
+  	padding-top: 12px;
+  	
+  	a ,div{
+  		display: inline-block;
+  		height: 100%;
+  	}
+  }
+
 
   &.first a {
     border-bottom: 1px solid @stb-primary-white;
@@ -79,26 +124,53 @@ footer .toTop{
       border-bottom: none;
     }
   }
-
-  .info li {
-    margin-bottom: 20px;
-  }
-
+  
   .toTop a, .mobilefooter .social a {
     border-bottom: 0;
   }
-
+  
   .contact {
+  	
     text-align: center;
+    .inline-block {
+    	display: inline-block;
+    }
+    
+    .petit {
+  	padding: 12px 0px;
+  	margin: 0;
   }
-
+ 
+  .petit:last-child{
+  	padding-bottom: 24px;
+  }
+   
+  }
+  
+  .contact:first-child{
+  	
+  }
+  
   .contact span.icon {
     margin-left: -24px;
   }
 
+  .social {
+  	margin-top: 0;
+  }
   .social div {
     text-align: center;
   }
+  
+  .copyright {
+  	margin-top: 0;
+  	
+  .petit {
+  	margin: 0;
+  	padding: 0;
+  }
+  }
+  
 }
 
 #footerTopLinkText, #footerTopLinkTextMobile {
