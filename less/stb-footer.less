@@ -1,10 +1,33 @@
-footer .toTop{
-	margin-right: 0;
-}
+
+// Generic footer
 
 .stb-footer{
-  padding-bottom: 70px;
-  //margin-top: 48px;
+	
+  padding-bottom: 48px;
+ 
+  .toTop {
+  	margin-right: 0;
+    height: 48px;
+  	a,div {
+  	  border-bottom: 0;
+  	  display: inline-block;
+  	  height: 100%;
+  	}
+  }
+  
+  a {
+    border-color: #fff;
+    text-decoration: none !important;
+    font-family:'Open Sans Bold'
+  }
+  
+  .container {
+  	 padding-top: 24px;
+  	
+  .row {
+  	padding: 24px 0px;
+  }
+  
   ul li {
     list-style-type: none;
     padding-bottom: 15px;
@@ -46,17 +69,8 @@ footer .toTop{
     }
   }
   
-  a {
-  	 border-color: #fff;
-      text-decoration: none !important;
-      font-family:'Open Sans Bold'
-  }
+ 
   
-  .toTop {
-  	a {
-  	  border-bottom: 0;	
-  	}
-  }
   
   .petit {
   	a {
@@ -64,10 +78,7 @@ footer .toTop{
   	}
   }
   
-  .social {
-  	 margin-top: 48px;
-  }
-  
+ 
   .copyright {
   	margin-top: 24px;
   }
@@ -78,45 +89,57 @@ footer .toTop{
   }
 }
 
+
+#footerTopLinkText, #footerTopLinkTextMobile {
+  line-height: 2;
+  margin-top: 12px;
+}
+
+#footerTopLinkIcon, #footerTopLinkIconMobile {
+  margin-bottom: -5px;
+}
+
+.border-left{
+  border-left: medium solid @stb-primary-color-darker;
+  height: 100%;
+}
+
+.border-right {
+  border-right: medium solid @stb-primary-color-darker;
+  height: 100%;
+}
+}
+
+// Mobile footer styling
+
 .mobilefooter{
-	
-  &.stb-footer {
-  	padding-bottom: 48px;
+
+   .toTop {
+  	height: 48px;
+  	a ,div{
+  		display: inline-block;
+  		height: 100%;
+  	}
   }
   
   .container {
-  	 padding-top: 24px;
   	
-  .row {
-  	padding: 24px 0px;
-  }
+  	 padding-bottom: 0;
+    .row:first-child {
+  	  padding-top: 0;
+    }
   
-  .row:first-child {
-  	padding-top: 0;
-  }
+    .row:last-child{
+  	  padding-bottom: 0;
+    }
   
-  .row:last-child{
-  	padding-bottom: 0;
-  }
-  }
-  
+   
   ul {
   	margin: 0;
   	padding: 0;
   	
   }
   
-  .toTop {
-  	height: 48px;
-  	padding-top: 12px;
-  	
-  	a ,div{
-  		display: inline-block;
-  		height: 100%;
-  	}
-  }
-
-
   &.first a {
     border-bottom: 1px solid @stb-primary-white;
     text-decoration: none;
@@ -125,9 +148,6 @@ footer .toTop{
     }
   }
   
-  .toTop a, .mobilefooter .social a {
-    border-bottom: 0;
-  }
   
   .contact {
   	
@@ -136,7 +156,7 @@ footer .toTop{
     	display: inline-block;
     }
     
-    .petit {
+   .petit {
   	padding: 12px 0px;
   	margin: 0;
   }
@@ -145,10 +165,6 @@ footer .toTop{
   	padding-bottom: 24px;
   }
    
-  }
-  
-  .contact:first-child{
-  	
   }
   
   .contact span.icon {
@@ -170,34 +186,6 @@ footer .toTop{
   	padding: 0;
   }
   }
-  
+ }
 }
 
-#footerTopLinkText, #footerTopLinkTextMobile {
-  line-height: 2;
-}
-
-#footerTopLinkIcon, #footerTopLinkIconMobile {
-  margin-bottom: -5px;
-}
-
-@media (max-width: 767px) {
-
-  .stb-footer{
-    h4{
-      padding: 24px 10px 10px 0;
-    }
-  }
-}
-
-@media (min-width: 767px) {
-  .border-left{
-    border-left: medium solid @stb-primary-color-darker;
-    height: 100%;
-  }
-
-  .border-right {
-    border-right: medium solid @stb-primary-color-darker;
-    height: 100%;
-  }
-}
