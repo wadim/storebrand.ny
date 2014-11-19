@@ -146,10 +146,10 @@ div.cookieFooter{
                   <li class="col-md-4 sidelinks">
                     <ul>
                       <li>
-                         <a href="tema2/husoghjem.html">
+                        <a href="tema2/husoghjem.html">
                           <span class="stb-theme-sprites house"></span>
                           <span>Hus & Hjem</span>
-                 		 </a>
+                        </a>
                       </li>
                       <li>
                         <a href="tema2/bilogkjoretoy.html">
@@ -169,7 +169,7 @@ div.cookieFooter{
                           <span>Ferie & Fritid</span>
                         </a>
                       </li>
-                       <li>
+                      <li>
                         <a href="tema3/kundefordeler.html">
                           <span class="stb-theme-sprites medal"></span>
                           <span>Fordeler</span>
@@ -180,12 +180,12 @@ div.cookieFooter{
                 </ul>
               </li>
               <li id="verktoy" class="row" style="padding-left: 0;">
-               <div class="container">
+                <div class="container">
                   <div class="col-md-2 col-md-offset-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'">Veihjelp</button></div>
                   <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'">Meld skade</button></div>
                   <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'">Sperr kort</button></div>
                   <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='contactus.html'">Kontakt oss</button></div>
-               </div>
+                </div>
               </li>
             </ul>
           </li>
@@ -239,7 +239,7 @@ div.cookieFooter{
       <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6" style="padding-left: 6px;">
         <ul class="nav navbar">
           <li style="width:100%; text-align: center">
-            <a href="#" onclick="$('#mobilemenu').slideToggle(200); $(this).children('span').toggleClass('menu-bars remove');"><span class="stb-sprite-medium white menu-bars top-margin-10" style="vertical-align: text-bottom;"></span> Meny</a>
+            <a id="nav-toggle" href="#"  onclick="$('#mobilemenu').slideToggle(200); $(this).toggleClass('active');"><span></span><p>Meny</p></a>
           </li>
         </ul>
       </div>
@@ -394,19 +394,19 @@ div.cookieFooter{
       <div class="tab-pane fade" id="tab-search">
         <div class="container" >
           <div class="row">
-              <div class="col-md-12">
-                    <form id="searchMobile" class="search tt-mobile">
-                      <div class="row">
-                        <div class="col-xs-11">
-                          <input type="text" class="typeahead searchbox" placeholder="Søk i sidene"/>
-                        </div>
-                        <div class="col-xs-1">
-                          <button class="stb-btn" onclick="event.preventDefault(); checkSearch($('#searchMobile input.tt-input').val())"><span class="stb-sprite-medium search white"></span></span></button>
-                        </div>
-                      </div>
-                    </form>
-              </div>
+            <div class="col-md-12">
+              <form id="searchMobile" class="search tt-mobile">
+                <div class="row">
+                  <div class="col-xs-11">
+                    <input type="text" class="typeahead searchbox" placeholder="Søk i sidene"/>
+                  </div>
+                  <div class="col-xs-1">
+                    <button class="stb-btn" onclick="event.preventDefault(); checkSearch($('#searchMobile input.tt-input').val())"><span class="stb-sprite-medium search white"></span></span></button>
+                  </div>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
         <hr>
       </div>
@@ -458,7 +458,7 @@ div.cookieFooter{
   <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'">Meld skade</button></div>
   <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'">Sperr kort</button></div>
   <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='contactus.html'">Kontakt oss</button></div>
-  </div>
+</div>
 </div>
 <!-- End mobile menu -->
 
