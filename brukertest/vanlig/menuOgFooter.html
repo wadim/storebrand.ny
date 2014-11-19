@@ -84,8 +84,8 @@ div.cookieFooter{
           <li class="private current col-md-3 yamm-fw group dropdown" id="menuheader-private">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
             <ul class="dropdown-menu" id="desktopmenu">
-              <li><a href="#" class="pull-right right-margin-20 top-margin-10" ><span class="stb-sprite-medium remove"></span></a></li>
-              <li style="margin: 50px 0 0 15%">
+              <li><a href="#" class="pull-right " ><span class="stb-sprite-medium remove"></span></a></li>
+              <li id="menulinks">
                 <ul>
                   <li class="col-md-2">
                     <h4><a href="kategori/pensjon.html">Pensjon</a></h4>
@@ -179,7 +179,7 @@ div.cookieFooter{
                   </li>
                 </ul>
               </li>
-              <li id="verktoy" class="row" style="padding-left: 0;">
+              <li id="verktoy" class="row">
                 <div class="container">
                   <div class="col-md-2 col-md-offset-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'">Veihjelp</button></div>
                   <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'">Meld skade</button></div>
@@ -192,13 +192,12 @@ div.cookieFooter{
           <li class="company col-md-3 group"><a href="dummy/dummybedriftside.html"  class="dropdown-toggle">Bedrift</a></li>
           <li class="login col-md-3 yamm-fw group dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a>
             <ul class="dropdown-menu" id="loginmenu">
-              <li class="clearfix"><a href="#" class="pull-right right-margin-20 top-margin-10" ><span class="stb-sprite-medium remove"></span></a></li>
+              <li class="clearfix"><a href="#" class="pull-right" ><span class="stb-sprite-medium remove"></span></a></li>
               <li>
-                <div id="login-start" style="background-color: #fff">
+                <div id="login-start">
                   <div class="container">
-                    <div class="row" style="margin: 0;">
-                      <div class="col-md-4"></div>
-                      <div class="col-md-8 login-section">
+                    <div class="row">
+                      <div class="col-md-8 col-md-offset-4 login-section">
                         <h1>Logg inn</h1>
                         <form id="start-login-form" class="stb-form-inline" role="form">
                           <p>Skriv inn ditt fødselsnummer</label></p><br>
@@ -215,10 +214,10 @@ div.cookieFooter{
               </li>
             </ul>
           </li>
-          <li class="search col-md-3" style="display: none;">
-            <div class="stb-sprite-small remove white pull-left top-margin-10" style="display:none; cursor: pointer"></div>
+          <li class="search col-md-3">
+            <div class="stb-sprite-small remove white pull-left"></div>
             <form>
-              <label style="width: 95%"> <input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-small search white"></span></span>
+              <label><input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-small search white"></span></span>
               </label>
             </form>
 
@@ -251,7 +250,7 @@ div.cookieFooter{
 <div class="row">
   <div class="col-xs-12">
     <ul class="nav nav-tabs">
-      <li class="active tab-box" style=""><a id="tabheader-privat" href="#tab-privat" data-toggle="tab">Privat</a></li>
+      <li class="active tab-box"><a id="tabheader-privat" href="#tab-privat" data-toggle="tab">Privat</a></li>
       <li class="tab-box"><a id="tabheader-bedrift" href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
       <li class="tab-box"><a id="tabheader-login" href="#tab-login" data-toggle="tab">Logg inn</a></li>
       <li class="tab-box"><a id="tabheader-search" href="#tab-search" data-toggle="tab"><span class="stb-sprite-medium search"></span></a></li>
