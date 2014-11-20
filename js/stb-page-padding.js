@@ -27,7 +27,7 @@
     });
 
     // Slide up the dropdown on clicking the remove icon 
-    $("#desktopmenu li:first a, #loginmenu li:first a").click(function(){
+    $(".dropdown-menu > li > a").click(function(){
       $(".dropdown").removeClass('open');
       $(".dropdown").trigger("hide.bs.dropdown");
     });
