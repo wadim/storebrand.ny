@@ -45,6 +45,16 @@
     }
 
   </style>
+  
+  <script>
+  $(document).ready(function(){
+	  $('.jj').click(function(){
+	    	$('.private .active').removeClass("active")
+	    });
+  });
+   
+  </script>
+  
 </head>
 
 <body>
@@ -444,14 +454,19 @@
 <div class="container">
   <h1>Alt innhold</h1>
 </div>
+
+
+<!-- Navigation tabs for desktop  -->
 <div class="tab-container hidden-xs">
   <div class="container">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-      <li class="active"><a href="#category" data-toggle="tab">Kategorisert</a></li>
-      <li><a href="#alphabetical" data-toggle="tab">Alfabetisk</a></li>
+      <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
+      <li class="jj"><a href="#company" data-toggle="tab">Bedrift</a></li>
     </ul>
   </div>
 </div>
+
+<!-- Navigation tabs for mobile  -->
 
 <div class="container dropdown-tabs visible-xs">
   <div class="dropdown" style="width: 100%">
@@ -460,47 +475,62 @@
       <span class="icon stb-sprite-small charcoal chevron-down pull-right"></span>
     </button>
     <ul class="dropdown-menu" data-tabs="tabs" style="width: 100%">
-      <li class="active"><a href="#category" data-toggle="tab">Kategorisert</a></li>
-      <li><a href="#alphabetical" data-toggle="tab">Alfabetisk</a></li>
+      <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
+      <li><a href="#company" data-toggle="tab">Bedrift</a></li>
     </ul>
   </div>
 </div>
 
-<div id="my-tab-content" class="tab-content sitemap">
-<div class="container tab-pane active" id="category">
-  <div class="row">
-    <div class="col-md-3">
-      <h3><a href="#">Bank og lån</a></h3>
-      <ul class="stb">
-        <li><a href="tema3/blibankkunde.html">Bli bankkunde</a></li>
-        <li><a href="produkt/boliglaan.html">Boliglån</a></li>
-        <li><a href="verktoy/laanekalkulator.html">Lånekalkulator</a></li>
-        <li><a href="produkt/boliglaanunge.html">Boliglån for unge</a></li>
-        <li><a href="#">Kortsikkerhet</a></li>
-        <li><a href="#">Brukskonto</a></li>
-        <li><a href="#">Visa-kort</a></li>
-        <li><a href="#">Kredittkort</a></li>
-        <li><a href="#">Ungdomskonto</a></li>
-        <li><a href="#">Renter og priser</a></li>
-        <li><a href="#">Nettbank</a></li>
-      </ul>
-    </div>
 
-    <div class="col-md-3">
-      <h3><a href="kategori/forsikring.html">Forsikring</a></h3>
-      <ul class="stb">
-        <li><a href="produkt/bilforsikring.html">Bilforsikring</a></li>
-        <li><a href="#">Barneforsikring</a></li>
-        <li><a href="#">Reiseforsikring</a></li>
-        <li><a href="#">Uføreforsikring</a></li>
-        <li><a href="#">Husforsikring</a></li>
-        <li><a href="produkt/innboforsikring.html">Innboforsikring</a></li>
-        <li><a href="#">Hund- og kattforsikring</a></li>
-        <li><a href="#">Behovsveileder</a></li>
-        <li><a href="#">Personforsikringer</a></li>
-        <li><a href="#">MC-forsikring</a></li>
-        <li><a href="#">Båtforsikring</a></li>
-      </ul>
+
+<!--  Tab contents -->
+
+<div id="my-tab-content" class="tab-content">
+  <div class="container tab-pane active" id="private">
+  
+  <div class="row">
+    <ul class="toggletabs">
+      <li class="active"><a href="#category" role="tab" data-toggle="tab">Kategorisert</a></li>
+      <li><a href="#alphabetical" role="tab" data-toggle="tab">Alfabetisk</a></li>
+    </ul>
+  </div>
+    
+  <div class="row">
+    <div id="tab-content" class="tab-content sitemap">
+      <div class="tab-pane active" id="category">
+        <div class="row">
+          <div class="col-md-3">
+            <h3><a href="#">Bank og lån</a></h3>
+            <ul class="stb">
+	          <li><a href="tema3/blibankkunde.html">Bli bankkunde</a></li>
+	          <li><a href="produkt/boliglaan.html">Boliglån</a></li>
+	          <li><a href="verktoy/laanekalkulator.html">Lånekalkulator</a></li>
+	          <li><a href="produkt/boliglaanunge.html">Boliglån for unge</a></li>
+	          <li><a href="#">Kortsikkerhet</a></li>
+	          <li><a href="#">Brukskonto</a></li>
+	          <li><a href="#">Visa-kort</a></li>
+	          <li><a href="#">Kredittkort</a></li>
+	          <li><a href="#">Ungdomskonto</a></li>
+	          <li><a href="#">Renter og priser</a></li>
+	          <li><a href="#">Nettbank</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h3><a href="kategori/forsikring.html">Forsikring</a></h3>
+	        <ul class="stb">
+		        <li><a href="produkt/bilforsikring.html">Bilforsikring</a></li>
+		        <li><a href="#">Barneforsikring</a></li>
+		        <li><a href="#">Reiseforsikring</a></li>
+		        <li><a href="#">Uføreforsikring</a></li>
+		        <li><a href="#">Husforsikring</a></li>
+		        <li><a href="produkt/innboforsikring.html">Innboforsikring</a></li>
+		        <li><a href="#">Hund- og kattforsikring</a></li>
+		        <li><a href="#">Behovsveileder</a></li>
+		        <li><a href="#">Personforsikringer</a></li>
+		        <li><a href="#">MC-forsikring</a></li>
+		        <li><a href="#">Båtforsikring</a></li>
+	        </ul>
     </div>
 
     <div class="col-md-3">
@@ -529,7 +559,7 @@
     </div>
   </div>
 </div>
-<div class="container tab-pane" id="alphabetical">
+<div class="tab-pane" id="alphabetical">
 
   <div class="row">
     <div class="col-md-4">
@@ -630,61 +660,38 @@
     </div>
   </div>
 </div>
-<div class="container tab-pane" id="brukertest">
+
+</div>
+</div>
+  </div>
+
+  <div class="container tab-pane" id="company">
   <div class="row">
-    <div class="col-md-4">
-      <h3><a href="#">Artikkel</a></h3>
-      <ul class="stb" id="sort-list">
-        <li><a href="artikkel/bonuskjoretoy.html">Bonus på kjøretøy</a></li>
-        <li><a href="artikkel/dagenslaanerenter.html">Dagens lånerenter</a></li>
-        <li><a href="artikkel/bilforsikring.html">Dekningsgrad(bilforsikring)</a></li>
-        <li><a href="artikkel/vilkaarboliglaan.html">Vilkår for boliglån</a></li>
-        <li><a href="artikkel/sokeboliglaan.html">Søke boliglån</a></li>
-        <li><a href="artikkel/pensjonssparing.html">Pensjonssparing</a></li>
+    <ul class="toggletabs">
+        <li class="active"><a href="#company-category" role="tab" data-toggle="tab">Kategorisert</a></li>
+        <li><a href="#company-alphabetical" role="tab" data-toggle="tab">Alfabetisk</a></li>
       </ul>
-
-      <h3><a href="#">Kategori</a></h3>
-      <ul class="stb">
-        <li><a href="kategori/bankoglaan.html">Bank & lån</a></li>
-        <li><a href="kategori/forsikring.html">Forsikring</a></li>
-        <li><a href="kategori/pensjon.html">Pensjon</a></li>
-        <li><a href="kategori/sparing.html">Sparing</a></li>
-      </ul>
-    </div>
-
-    <div class="col-md-4">
-      <h3><a href="#">Produkt</a></h3>
-      <ul class="stb">
-        <li><a href="produkt/bilforsikring.html">Bilforsikring</a></li>
-        <li><a href="produkt/boliglaan.html">Boliglån</a></li>
-        <li><a href="produkt/boliglaanunge.html">Boliglån for unge</a></li>
-        <li><a href="produkt/egensparingpensjon.html">Egensparing til pensjon</a></li>
-      </ul>
-
-      <h3><a href="#">Tema2</a></h3>
-      <ul class="stb">
-        <li><a href="tema2/bilogkjoretoy.html">Bil og kjøretøy</a></li>
-        <li><a href="tema2/husoghjem.html">Hus og hjem</a></li>
-      </ul>
-
-      <h3><a href="#">Tema3</a></h3>
-      <ul class="stb">
-        <li><a href="tema3/meldskade.html">Meld skade</a></li>
-        <li><a href="tema3/kundefordeler.html">Kundefordeler</a></li>
-        <li><a href="tema3/sperrkort.html">Sperr kort</a></li>
-      </ul>
-    </div>
-
-    <div class="col-md-4">
-      <h3><a href="#">Verktøy</a></h3>
-      <ul class="stb">
-        <li><a href="verktoy/laanekalkulator.html">Lånekalkulator</a></li>
-        <li><a href="verktoy/pensjonstall.html">Mitt pensjonstall</a></li>
-      </ul>
+  </div>    
+      
+  <div class="row">
+    <div id="tab-content" class="tab-content sitemap">
+      <div class="tab-pane active" id="company-category">
+        <div class="row">
+          <div class="col-sm-12"><h4>Bedrift: Links placed categorically here</h4></div>
+        </div>
+      </div>
+      <div class="tab-pane" id="company-alphabetical">
+        <div class="row">
+          <div class="col-sm-12"><h4>Bedrift: Links placed alphabetically here</h4></div>
+        </div>
+      </div>
     </div>
   </div>
+  </div>
 </div>
-</div>
+
+
+
 <!-- End actual page contents -->
 
 <!-- Start Cookie notice -->
