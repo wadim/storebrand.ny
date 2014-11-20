@@ -1,28 +1,45 @@
 // CSS for the tabs ( both desktop and mobile)
 
 .tab-container {
-  border-bottom: 2px solid @stb-secondary-sand;
+  border-bottom: 1px solid @stb-secondary-charcoal;
   ul {
     border: none;
   }
 
   .nav-tabs>li {
-    background-color: @stb-secondary-sand;
+    background-color: @stb-primary-white;
     margin-right: 2px;
-    margin-bottom: -2px;
-    &.active {
-      border-color: @stb-secondary-sand;
-    }
-
-    >a {
+    margin-bottom: -1px;
+     >a {
       margin-right: 0;
       display: inline-block;
       height: 100%;
+      border: 1px solid #404040;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      border-bottom-color: transparent;
     }
     >a:hover{
-      background-color: @stb-primary-white;
+      background-color: @stb-gray-second;
       padding-bottom: 10px;
       color: #000;
+    }
+    
+    >a:focus {
+    	background-color: @stb-primary-white;
+    }
+    
+      
+    &.active {
+      border-color: @stb-secondary-charcoal;
+      a{
+      	 border: 1px solid #404040;
+      	 border-bottom-color: transparent;
+      	 background-color: @stb-primary-white;
+      	
+      }
     }
   }
 
