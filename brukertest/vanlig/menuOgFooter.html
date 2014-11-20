@@ -74,18 +74,18 @@ div.cookieFooter{
 <div id="overlay"></div>
 <div id="top-menu-nav">
   <!-- Start desktop menu -->
-  <div id="desktop-menu" class="navbar navbar-default hidden-xs hidden-sm desktop">
+  <div class="navbar desktop navbar-default hidden-xs hidden-sm">
     <div class="container yamm">
       <div class="navbar-header col-md-4">
-        <a href="index.html" style="border-bottom: none;"><img src="../../images/logo.png" title="logo image" class="logo"></a>
+        <a href="index.html"><img src="../../images/logo.png" title="logo image" class="logo"></a>
       </div>
-      <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+      <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav col-md-8">
-          <li class="private current col-md-3 yamm-fw group dropdown" id="menuheader-private">
+          <li class="private current col-md-3 yamm-fw group dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle" >Privat</a>
-            <ul class="dropdown-menu" id="desktopmenu">
+            <ul class="dropdown-menu privatemenu">
               <li><a href="#" class="pull-right " ><span class="stb-sprite-medium remove"></span></a></li>
-              <li id="menulinks">
+              <li class="menulinks">
                 <ul>
                   <li class="col-md-2">
                     <h4><a href="kategori/pensjon.html">Pensjon</a></h4>
@@ -179,7 +179,7 @@ div.cookieFooter{
                   </li>
                 </ul>
               </li>
-              <li id="verktoy" class="row">
+              <li class="verktoy" class="row">
                 <div class="container">
                   <div class="col-md-2 col-md-offset-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'">Veihjelp</button></div>
                   <div class="col-md-2"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'">Meld skade</button></div>
@@ -191,10 +191,9 @@ div.cookieFooter{
           </li>
           <li class="company col-md-3 group"><a href="dummy/dummybedriftside.html"  class="dropdown-toggle">Bedrift</a></li>
           <li class="login col-md-3 yamm-fw group dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Logg&nbsp;inn</a>
-            <ul class="dropdown-menu" id="loginmenu">
+            <ul class="dropdown-menu loginmenu">
               <li class="clearfix"><a href="#" class="pull-right" ><span class="stb-sprite-medium remove"></span></a></li>
               <li>
-                <div id="login-start">
                   <div class="container">
                     <div class="row">
                       <div class="col-md-8 col-md-offset-4 login-section">
@@ -202,7 +201,7 @@ div.cookieFooter{
                         <form id="start-login-form" class="stb-form-inline" role="form">
                           <p>Skriv inn ditt fødselsnummer</label></p><br>
                           <span class="help-block info-message"></span>
-                          <div class="form-group stb-form-group">
+                          <div class="form-group stb-form-group with-submit">
                             <input type="tel" class="" name="birthNumber" style="width: 230px">
                             <button class="stb-btn stb-form is-submit">Logg inn</button>
                           </div>
@@ -210,7 +209,6 @@ div.cookieFooter{
                       </div>
                     </div>
                   </div>
-                </div>
               </li>
             </ul>
           </li>
@@ -220,7 +218,7 @@ div.cookieFooter{
               <label><input type="text" class="typeahead searchbox tt-desktop"/><span class="search-icon"><span class="stb-sprite-small search white"></span></span>
               </label>
             </form>
-
+          </li>
         </ul>
       </div>
     </div>
@@ -230,14 +228,14 @@ div.cookieFooter{
 
   <!-- End desktop menu -->
   <!-- Start mobile menu -->
-  <nav id="nav" class="navbar yamm navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
-    <div class="row stbcolor-primary third">
-      <div class="navbar-header col-xs-6 logo">
-        <a href="index.html" style="border-bottom: none;"><img class="stb-logo-mobile left-padding-10" src="../../images/logo.png" title="storebrand logo"/></a>
+  <nav class="navbar mobile navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
+    <div class="row">
+      <div class="col-xs-6">
+        <a href="index.html"><img class="stb-logo-mobile" src="../../images/logo.png" title="storebrand logo"/></a>
       </div>
-      <div id="navbar-collapse-grid" class="navbar fullwidth col-xs-6" style="padding-left: 6px;">
-        <ul class="nav navbar">
-          <li style="width:100%; text-align: center">
+      <div class="col-xs-6">
+        <ul class="nav">
+          <li>
             <a id="nav-toggle" href="#"  onclick="$('#mobilemenu').slideToggle(200); $(this).toggleClass('active');"><span></span><p>Meny</p></a>
           </li>
         </ul>
@@ -250,10 +248,10 @@ div.cookieFooter{
 <div class="row">
   <div class="col-xs-12">
     <ul class="nav nav-tabs">
-      <li class="active tab-box"><a id="tabheader-privat" href="#tab-privat" data-toggle="tab">Privat</a></li>
-      <li class="tab-box"><a id="tabheader-bedrift" href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
-      <li class="tab-box"><a id="tabheader-login" href="#tab-login" data-toggle="tab">Logg inn</a></li>
-      <li class="tab-box"><a id="tabheader-search" href="#tab-search" data-toggle="tab"><span class="stb-sprite-medium search"></span></a></li>
+      <li class="active tab-box"><a href="#tab-privat" data-toggle="tab">Privat</a></li>
+      <li class="tab-box"><a href="#tab-bedrift" data-toggle="tab">Bedrift</a></li>
+      <li class="tab-box"><a href="#tab-login" data-toggle="tab">Logg inn</a></li>
+      <li class="tab-box"><a href="#tab-search" data-toggle="tab"><span class="stb-sprite-medium search"></span></a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane fade in active" id="tab-privat">
@@ -278,7 +276,6 @@ div.cookieFooter{
                   <a class="menu-item" href="#">Pensjonsskolen</a>
                   <a class="menu-item" href="#">Pensjonskapitalbevis</a>
                   <a class="menu-item" href="#">Fripolise</a>
-
                 </div>
               </div>
             </div>
@@ -304,7 +301,6 @@ div.cookieFooter{
                   <a class="menu-item" href="#">Plasseringskonto</a>
                   <a class="menu-item" href="#">Fondskonto</a>
                   <a class="menu-item" href="#">Fond i gave</a>
-
                 </div>
               </div>
             </div>
@@ -371,7 +367,6 @@ div.cookieFooter{
         <h3>Bedrift her</h3>
         <hr></div>
       <div class="tab-pane fade" id="tab-login">
-        <div id="login-start">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
@@ -387,7 +382,6 @@ div.cookieFooter{
               </div>
             </div>
           </div>
-        </div>
         <hr>
       </div>
       <div class="tab-pane fade" id="tab-search">
@@ -413,7 +407,7 @@ div.cookieFooter{
   </div>
 </div>
 
-<div id="themelinks" class="row">
+<div class="row themelinks">
   <div class="col-xs-4 col-sm-2 col-sm-offset-1">
     <p>
       <a href="tema2/husoghjem.html">
@@ -452,7 +446,7 @@ div.cookieFooter{
   </div>
 </div>
 
-<div id="verktoymobile" class="row">
+<div class="row verktoymobile">
   <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'">Veihjelp</button></div>
   <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='tema3/meldskade.html'">Meld skade</button></div>
   <div class="col-xs-6 col-sm-3"><button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='#'">Sperr kort</button></div>
