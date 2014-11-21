@@ -234,9 +234,12 @@ input[type=radio].stb-radio {
     margin: -1px;
     padding: 8px 20px 8px 40px;
     border: solid 1px @stb-gray-second;
-    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
     background-position: -1px -160px;
     font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &:checked + label {
@@ -278,7 +281,7 @@ input[type=radio].stb-radio {
   (min-device-pixel-ratio: 2) {
 
     & + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-primary-white;
+      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       // reduce to 1x size
       background-size: 40px;
     }
@@ -327,9 +330,12 @@ input[type=checkbox].stb-checkbox {
     margin: -2px;
     padding: 8px 20px 8px 40px;
     border: solid 1px @stb-gray-second;
-    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
+    background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
     background-position: -1px 0px;
     font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   
   &:checked + label {
@@ -367,7 +373,7 @@ input[type=checkbox].stb-checkbox {
   (-webkit-min-device-pixel-ratio: 2),
   (min-device-pixel-ratio: 2) {
     & + label {
-      background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
+      background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
       // reduce to 1x size
       background-size: 40px;
     }
