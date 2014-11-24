@@ -90,33 +90,23 @@
       width: 25%;
 
       //Different icons with background color
-      &.private {
-        background: @stb-primary-color-darker url("../images/private.png") 20% 50% no-repeat;
-      }
-
-      &.company.current {
+      &.current {
         background: @stb-primary-color url("../images/private.png") 20% 50% no-repeat;
+        &:hover{
+          background-color:@stb-primary-color-even-darker;
+        }
       }
 
-      &.private.open {
-        background: @stb-primary-color url("../images/private.png") 20% 50% no-repeat !important;
-      }
-
-      &.login {
+      &.login{
         background: @stb-primary-color-darker url("../images/login.png") 25% 48% no-repeat;
-      }
 
-      &.login.open {
-        background: @stb-primary-color url("../images/login.png") 25% 48% no-repeat;
       }
 
       &.login .login-section {
         padding: 0;
       }
 
-      &.current {
-        background-color: @stb-primary-color;
-      }
+
 
       > a {
         color: @stb-primary-white;

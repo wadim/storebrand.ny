@@ -7,10 +7,7 @@
         $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
         if( $(this).closest('#top-menu-nav').length ) {
           $("#overlay").css("display","none");
-          if(!($('.nav .company').hasClass('current'))) {
-            $('.current').removeClass("current");
-            $(this).parent().find('li.private').addClass('current');
-          }
+          $('.current').css("background-color", "#da291c;");
         }
       }
     });
@@ -20,8 +17,9 @@
         $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
         if( $(this).closest('#top-menu-nav').length ) {
           $("#overlay").css("display","block");
-          $('.current').removeClass("current");
-          $(this).addClass("current");
+          if(!$(this).is($('.current'))){
+            $('.current').css("background-color", "#bb1b18");
+          }
         }
       }
     });
