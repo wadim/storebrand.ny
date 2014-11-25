@@ -299,7 +299,7 @@ function getQuery(){
 // AJAX search call to Google
 function searchQuery( inputQuery, start ) {
   // loader image
-  $(".searchresults").append("<row><div class='col-12 top-margin-30' style='text-align: center;'><img id='loadingimage' src='../../images/ajax-loader.gif'></div></div>");
+  $(".searchresults").append("<row><div class='col-12' style='text-align: center;'><img id='loadingimage' src='../../images/ajax-loader.gif'></div></div>");
   searchIsRunning = true;
 
   var query = encodeURI( encodeURI( inputQuery ) ); // Used because of the yahoo api. Replace with Storebrand proxy later.
@@ -316,7 +316,7 @@ function getPromotions() {
   if (start===0){
     $.each(promotions,function(value) {
       if (value.toLowerCase() == urlParams.q.toLowerCase()){ 
-        $(".searchresults").append('<div class="top-margin-20 bottom-margin-20 promotion' + '"><h3>'+promotions[value].header + '<' + '/h3><' + 'p class="description">' + promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + promotions[value].url + '">' + promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
+        $(".searchresults").append('<div class="promotion' + '"><h3>'+promotions[value].header + '<' + '/h3><' + 'p class="description">' + promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + promotions[value].url + '">' + promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
       }
      });
   }
@@ -409,7 +409,7 @@ function displaySearchResult(xml) {
     }
 
     //Prepare and display the result markup
-    var resultMarkup = '<div class="top-margin-50' + '"><h4 class=""' + '><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
+    var resultMarkup = '<div><h4><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
     $(".searchresults").append(resultMarkup);
   });
 }
@@ -425,7 +425,7 @@ $(document).scroll(function(event){
   if((urlParams.q!==undefined && urlParams.q.length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
     // Show message after searching 40 items
     if(start>=40) {
-      $(".searchresults").append("<row><div class='col-12 top-margin-30' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");
+      $(".searchresults").append("<row><div class='col-12' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");
       hitcounter = 0;
       return false;
     }
