@@ -370,40 +370,40 @@
 
       <div class="col-md-6">
         <h4>Group of links:</h4>
-
-        <h3>Kontakt oss</h3>
-
-        <div>
-          <a href="http://www.storebrand.no" class="analyze">
-            <span class="circle-16 stbcolor-secondary third pull-left">
-              <span class="stb-sprite-small white envelope"></span>
-            </span>
-            <span class="iconCompanion">Skriv til oss</span>
-          </a>
-        </div><br>
-        <div class="chatOpen">
-          <a href="http://www.storebrand.no/site/stb.nsf/chooseChat?readForm" class="analyze" onclick="window.open(this.href, '','height=500,width=560');return false;">
-            <span class="circle-16 stbcolor-secondary third pull-left">
-              <span class="stb-sprite-small white chat"></span>
-            </span>
-            <span class="iconCompanion">Chat med oss</span>
-          </a>
-        </div><br>
-        <div>
-          <a href="http://www.storebrand.no" class="analyze">
-            <span class="circle-16 stbcolor-secondary third pull-left">
-              <span class="stb-sprite-small white employee"></span>
-            </span>
-            <span class="iconCompanion">Avtal rådgivningstime</span>
-          </a>
-        </div><br>
-        <div>
-          <a href="tel:08880" class="analyze">
-            <span class="circle-16 stbcolor-secondary third pull-left">
-              <span class="stb-sprite-small white phone"></span>
-            </span>
-            <span class="iconCompanion">Ring 08880</span>
-          </a>
+        <div class="stb-link-group">
+          <h3>Kontakt oss</h3>
+          <div>
+            <a href="http://www.storebrand.no" class="analyze">
+              <span class="circle-16 stbcolor-secondary third pull-left">
+                <span class="stb-sprite-small white envelope"></span>
+              </span>
+              <span class="iconCompanion">Skriv til oss</span>
+            </a>
+          </div><br>
+          <div class="chatOpen">
+            <a href="http://www.storebrand.no/site/stb.nsf/chooseChat?readForm" class="analyze" onclick="window.open(this.href, '','height=500,width=560');return false;">
+              <span class="circle-16 stbcolor-secondary third pull-left">
+                <span class="stb-sprite-small white chat"></span>
+              </span>
+              <span class="iconCompanion">Chat med oss</span>
+            </a>
+          </div><br>
+          <div>
+            <a href="http://www.storebrand.no" class="analyze">
+              <span class="circle-16 stbcolor-secondary third pull-left">
+                <span class="stb-sprite-small white employee"></span>
+              </span>
+              <span class="iconCompanion">Avtal rådgivningstime</span>
+            </a>
+          </div><br>
+          <div>
+            <a href="tel:08880" class="analyze">
+              <span class="circle-16 stbcolor-secondary third pull-left">
+                <span class="stb-sprite-small white phone"></span>
+              </span>
+              <span class="iconCompanion">Ring 08880</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -468,16 +468,52 @@ $(document).ready(function() {
       <div class="col-md-10">
         <h4>Code:</h4>
               <pre class="prettyprint">
-  &lt;div&gt;
-    &lt;a href="tel:08880" class="analyze"&gt;
-      &lt;span class="circle-16 stbcolor-secondary third/first pull-left"&gt;
-        &lt;span class="stb-sprite-small white phone/chat/envelope"&gt;&lt;/span&gt;
-      &lt;/span&gt;
-      &lt;span class="iconCompanion"&gt;
-        Ring 08880
-      &lt;/span&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;             
+&lt;div&gt;
+  &lt;a href="tel:08880" class="analyze"&gt;
+    &lt;span class="circle-16 stbcolor-secondary third/first pull-left"&gt;
+      &lt;span class="stb-sprite-small white phone/chat/envelope"&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class="iconCompanion"&gt;
+      Ring 08880
+    &lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+                
+&lt;div class=&quot;stb-link-group&quot;&gt;
+ &lt;h3&gt;Kontakt oss&lt;/h3&gt;
+ &lt;div&gt;
+  &lt;a href=&quot;http://www.storebrand.no&quot; class=&quot;analyze&quot;&gt;
+    &lt;span class=&quot;circle-16 stbcolor-secondary third pull-left&quot;&gt;
+     &lt;span class=&quot;stb-sprite-small white envelope&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;iconCompanion&quot;&gt;Skriv til oss&lt;/span&gt;
+   &lt;/a&gt;
+ &lt;/div&gt;&lt;br&gt;
+ &lt;div class=&quot;chatOpen&quot;&gt;
+   &lt;a href=&quot;http://www.storebrand.no/site/stb.nsf/chooseChat?readForm&quot; class=&quot;analyze&quot; onclick=&quot;window.open(this.href, '','height=500,width=560');return false;&quot;&gt;
+    &lt;span class=&quot;circle-16 stbcolor-secondary third pull-left&quot;&gt;
+    &lt;span class=&quot;stb-sprite-small white chat&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;iconCompanion&quot;&gt;Chat med oss&lt;/span&gt;
+   &lt;/a&gt;
+ &lt;/div&gt;&lt;br&gt;
+ &lt;div&gt;
+   &lt;a href=&quot;http://www.storebrand.no&quot; class=&quot;analyze&quot;&gt;
+    &lt;span class=&quot;circle-16 stbcolor-secondary third pull-left&quot;&gt;
+    &lt;span class=&quot;stb-sprite-small white employee&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;iconCompanion&quot;&gt;Avtal rådgivningstime&lt;/span&gt;
+   &lt;/a&gt;
+ &lt;/div&gt;&lt;br&gt;
+ &lt;div&gt;
+   &lt;a href=&quot;tel:08880&quot; class=&quot;analyze&quot;&gt;
+     &lt;span class=&quot;circle-16 stbcolor-secondary third pull-left&quot;&gt;
+     &lt;span class=&quot;stb-sprite-small white phone&quot;&gt;&lt;/span&gt;
+     &lt;/span&gt;
+     &lt;span class=&quot;iconCompanion&quot;&gt;Ring 08880&lt;/span&gt;
+   &lt;/a&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 </pre>
       </div>
     </div>
