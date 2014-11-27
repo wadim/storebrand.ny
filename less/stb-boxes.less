@@ -194,8 +194,9 @@
   padding: 24px;
 }
 
-@media screen and (max-width: 992px) {
-  .msgText {
+
+@media (max-width: @screen-sm-min) {
+	.msgText {
     width: 100%;
     padding: 12px;
   }
@@ -205,6 +206,7 @@
     text-align: left;
   }
 }
+
 
 &.infoIcon {
 	background: transparent url("../images/InfoShoutout.png") left top no-repeat;
@@ -254,20 +256,6 @@ a + div.iconInfo{
     }
 }
 
-.commonmessage, .errormessage, .successmessage{
-  padding-top: 24px;
-  padding-bottom: 24px;
-  .row{
-    padding-bottom: 0;
-  }
-
-  h3{
-    margin: 12px 12px 12px 0;
-  }
-  .msgText, .msgIcon{
-    min-height: 169px;
-  }
-}
 
 .stb-link-group{
  h3{

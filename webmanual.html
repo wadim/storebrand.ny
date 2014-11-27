@@ -1344,30 +1344,30 @@ $(document).ready(function() {
       <p> The below code will give expected styles irrespective of the different columns they are put in </p>
       <h3>Notifications that can not be closed</h3>
       <div class="row">
-        <div class="col-md-2 msgIcon column stbcolor-secondary fifth">
+        <div class="col-sm-2 msgIcon column stbcolor-secondary fifth">
           <span class="stb-color-sprite-medium info"></span>
         </div>
-        <div class="col-md-10 pull-right msgText column stbcolor-secondary sixth">
+        <div class="col-sm-10 pull-right msgText column stbcolor-secondary sixth">
           <h3>Information box</h3>
           <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
           <p>Thank you for your patience</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 msgIcon column stbcolor-primary first lighter">
+        <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
           <span class="stb-color-sprite-medium warning"></span>
         </div>
-        <div class="col-md-10 msgText column pull-right stbcolor-visuals third">
+        <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
           <h3>Error box</h3>
           <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
           <p>We apologize for the inconvenience</p>
         </div>    
       </div>
       <div class="row">
-         <div class="col-md-2 msgIcon column stbcolor-secondary third lighter">
+         <div class="col-sm-2 msgIcon column stbcolor-secondary third lighter">
           <span class="stb-color-sprite-medium ok-circle"></span>
         </div>
-        <div class="col-md-10 msgText column pull-right stbcolor-visuals fourth">
+        <div class="col-sm-10 msgText column pull-right stbcolor-visuals fourth">
           <h3>Success box</h3>
           <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
           <p>Thank you for your purchase</p>
@@ -1377,35 +1377,36 @@ $(document).ready(function() {
       <pre class="prettyprint">
 &lt;!-- Information box: --&gt;
 
+  &lt;div class="col-md-2 msgIcon column stbcolor-secondary fifth"&gt;
+    &lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;
+  &lt;/div&gt; 
   &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary sixth"&gt;
     &lt;h3&gt;Information box&lt;/h3&gt;
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
-  &lt;div class="col-md-2 msgIcon column stbcolor-secondary fifth"&gt;
-    &lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;
-  &lt;/div&gt; 
-
-
+  
 &lt;!-- Error box: --&gt;
 
+  &lt;div class="col-md-2 msgIcon column stbcolor-primary first lighter"&gt;
+    &lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;
+  &lt;/div&gt; 
   &lt;div class="col-md-10 msgText column pull-right stbcolor-background first"&gt;
     &lt;h3&gt;Error box&lt;/h3&gt;
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
-  &lt;div class="col-md-2 msgIcon column stbcolor-primary first lighter"&gt;
-    &lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;
-  &lt;/div&gt; 
+ 
 
 
 &lt;!-- Success box: --&gt;
 
+   &lt;div class="col-md-2 msgIcon column stbcolor-secondary third lighter"&gt;
+    &lt;span class="stb-color-sprite-medium ok-circle"&gt;&lt;/span&gt;
+  &lt;/div&gt; 
   &lt;div class="col-md-10 msgText column pull-right stbcolor-background second"&gt;
     &lt;h3&gt;Success box&lt;/h3&gt;
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
-  &lt;div class="col-md-2 msgIcon column stbcolor-secondary third lighter"&gt;
-    &lt;span class="stb-color-sprite-medium ok-circle"&gt;&lt;/span&gt;
-  &lt;/div&gt; 
+ 
 
 </pre>
     <h3>Notifications that can be closed</h3>
@@ -1413,8 +1414,9 @@ $(document).ready(function() {
       These "important messages" are placed in a "topMessages" div, usually located at the top of the page. The div should be hidden upon document.ready, and then become visible through a toggleDown slide one second later. (<a href="#" onclick="toggleMsg();return false">Demo/Reset</a>)
     </p>
       <div class="row">
-          <div class="col-md-2 msgIcon column stbcolor-secondary fifth"><span class="stb-color-sprite-medium info"></span></div>
-          <div class="col-md-10 msgText column pull-right stbcolor-secondary sixth">
+          <div class="commonmessage">
+          <div class="col-sm-2 msgIcon column stbcolor-secondary fifth"><span class="stb-color-sprite-medium info"></span></div>
+          <div class="col-sm-10 msgText column pull-right stbcolor-secondary sixth">
             <a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;">
               <p>Close <span class="stb-sprite-small remove"></span></p>
             </a>
@@ -1422,10 +1424,12 @@ $(document).ready(function() {
             <p>Due to sausage fingers, we have trouble posting our quarterly reports. We're working on it and will post them as soon as soon as possible.</p>
             <p>Thank you for your patience.</p>
           </div>
+          </div>
       </div>
       <div class="row">
-          <div class="col-md-2 msgIcon column stbcolor-primary first lighter"><span class="stb-color-sprite-medium warning"></span></div>
-          <div class="col-md-10 msgText column pull-right stbcolor-visuals third">
+          <div class="errormessage">
+          <div class="col-sm-2 msgIcon column stbcolor-primary first lighter"><span class="stb-color-sprite-medium warning"></span></div>
+          <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
             <a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;">
               <p>Close <span class="stb-sprite-small remove"></span></p>
             </a>
@@ -1433,45 +1437,38 @@ $(document).ready(function() {
             <p>We are experiencing network problems. At the moment you can't log on. Please try again later.</p>
             <p>We apologize for the inconvenience</p>
           </div>
+          </div>
       </div>
    
       <strong>Code:</strong>
         <pre class="prettyprint">
 
 &lt;!-- Common Message: --&gt;
-
 &lt;div class="commonmessage"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-md-12"&gt;
-      &lt;div class="msgText pull-right stbcolor-secondary sixth"&gt;
-        &lt;a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;"&gt;
-          &lt;p&gt;Close &lt;span class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
-        &lt;/a&gt;
-        &lt;h3&gt;Headline..&lt;/h3&gt;
-        &lt;p&gt;Content...&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class="msgIcon stbcolor-secondary fifth"&gt;&lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;&lt;/div&gt;
-    &lt;/div&gt;
+  &lt;div class="col-md-2 msgIcon column stbcolor-secondary fifth"&gt;&lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary sixth"&gt;
+    &lt;a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;"&gt;
+      &lt;p&gt;Close &lt;span class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
+    &lt;/a&gt;
+    &lt;h3&gt;Headline..&lt;/h3&gt;
+    &lt;p&gt;Content...&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-
+      
 &lt;!-- Error Message: --&gt;
-
-&lt;div class="errormessage""&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-md-12"&gt;
-      &lt;div class="msgText column pull-right stbcolor-visuals third"&gt;
-        &lt;a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;"&gt;
-          &lt;p&gt;Close &lt;span class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
-        &lt;/a&gt;
-        &lt;h3&gt;Error&lt;/h3&gt;
-        &lt;p&gt;We are experiencing network problems. At the moment you can't log on. Please try again later.&lt;/p&gt;
-        &lt;p&gt;We apologize for the inconvenience&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class="msgIcon column stbcolor-primary first lighter"&gt;&lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;&lt;/div&gt;
-    &lt;/div&gt;
+&lt;div class="errormessage"&gt;
+  &lt;div class="col-md-2 msgIcon column stbcolor-primary first lighter"&gt;&lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="col-md-12 msgText column pull-right stbcolor-visuals third"&gt;
+    &lt;a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;"&gt;
+      &lt;p&gt;Close &lt;span class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
+    &lt;/a&gt;
+    &lt;h3&gt;Error&lt;/h3&gt;
+    &lt;p&gt;We are experiencing network problems. At the moment you can't log on. Please try again later.&lt;/p&gt;
+    &lt;p&gt;We apologize for the inconvenience&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+    
+ 
 </pre>
   </div>
 </div><!-- /Notification row -->
