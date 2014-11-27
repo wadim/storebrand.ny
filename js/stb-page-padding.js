@@ -535,11 +535,11 @@
       ga('send', 'event', path , 'Klikk på store boks ', boxId);
     });
     //Analytics for accordion
-    $('.twister.analyze').bind( "click", function() {
+    $('.accordion.analyze a').bind( "click", function() {
       //console.log('faq');
-      var q = $(this).html();
+      var q = $(this).find('.question').html();
       var path = window.location.pathname;
-      //console.log(q);
+      console.log(q);
       //console.log(path);
       ga('send', 'event', path , 'Klikk på accordion ', q);
     });
