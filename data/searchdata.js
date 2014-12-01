@@ -56,14 +56,11 @@ var typeaheads = {
       {"name": "Banksparing"},
       {"name": "Forsikring"},
       {"name": "Bilhenger"},
-      {"name": "Pensjon"}
+      {"name": "Pensjon"},
+      {"name": "Apekatt"}
     ],
-    "Storebrand" :
-    [
-      {"name": "Kundefordeler","url":absURL+"../brukertest/vanlig/tema3/kundefordeler.html"}
-    ],
-  "Fond" :
-    [
+    "Typeaheads" : [
+      {"name": "Kundefordeler","url":absURL+"../brukertest/vanlig/tema3/kundefordeler.html"},
       {"name": "Fond","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Fondslister","url":"http://www.storebrand.no/site/stb.nsf/Pages/fondsliste-utvalgte-fond.html"},
       {"name": "Lær mer om fondsparing","url":"http://www.storebrand.no/site/stb.nsf/pages/fond_sparing.html"},
@@ -71,18 +68,12 @@ var typeaheads = {
       {"name": "Kjøp fond","url":"https://www2.storebrand.no/fondweb/productinfo.html"},
       {"name": "Sparing i  fond","url":"https://www2.storebrand.no/fondweb/productinfo.html"},
       {"name": "Våre anbefalte fond","url":"https://www2.storebrand.no/spareveileder/general.html"},
-      {"name": "Delphi","url":"https://www.delphi.no/site/delphino.nsf/Pages/hjem.html"}
-    ],
-  "Pensjon" :
-    [
+      {"name": "Delphi","url":"https://www.delphi.no/site/delphino.nsf/Pages/hjem.html"} ,
       {"name": "Lær om pensjon","url" : absURL+"../brukertest/vanlig/kategori/pensjon.html"},
       {"name": "Pensjonskalkulator","url":absURL+"../brukertest/vanlig/verktoy/pensjonstall.html"},
       {"name": "Pensjonssparing","url":absURL+"../brukertest/vanlig/artikkel/pensjonssparing.html"},
       {"name": "Sparing til pensjon","url":absURL+"../brukertest/vanlig/artikkel/pensjonssparing.html"},
-      {"name": "Egen sparing pensjon","url":absURL+"../brukertest/vanlig/produkt/egensparingpensjon.html"}
-    ],
-  "Bank" :
-    [
+      {"name": "Egen sparing pensjon","url":absURL+"../brukertest/vanlig/produkt/egensparingpensjon.html"},
       {"name": "Banksparing","url" : absURL+"../brukertest/vanlig/kategori/sparing.html"},
       {"name": "Sparing i bank","url" : absURL+"../brukertest/vanlig/kategori/sparing.html"},
       {"name": "Bank og LÅn","url":absURL+"../brukertest/vanlig/kategori/bankoglaan.html"},
@@ -91,19 +82,13 @@ var typeaheads = {
       {"name": "Lånekalkulator","url":absURL+"../brukertest/vanlig/verktoy/laanekalkulator.html"},
       {"name": "Dagens Lånerenter","url":absURL+"../brukertest/vanlig/artikkel/dagenslaanerenter.html"},
       {"name": "Søke boliglån","url":absURL+"../brukertest/vanlig/artikkel/sokeboliglaan.html"},
-      {"name": "Vilkår for boliglån","url":absURL+"../brukertest/vanlig/artikkel/vilkaarboliglaan.html"}
-    ],
-  "Forsikring" :
-    [
+      {"name": "Vilkår for boliglån","url":absURL+"../brukertest/vanlig/artikkel/vilkaarboliglaan.html"},
       {"name": "Tips om forsikring","url":absURL+"../brukertest/vanlig/kategori/forsikring.html"},
       {"name": "Spar penger på forsikring","url":absURL+"../brukertest/vanlig/kategori/forsikring.html"},
       {"name": "Bilforsikring","url":absURL+"../brukertest/vanlig/produkt/bilforsikring.html"},
       {"name": "Bil og kjøretøy","url" : absURL+"../brukertest/vanlig/tema2/bilogkjoretoy.html"},
       {"name": "Hus og hjem","url" : absURL+"../brukertest/vanlig/tema2/husoghjem.html"},
       {"name": "At om bilforsikring","url" : absURL+"../brukertest/vanlig/artikkel/bilforsikring.html"},
-      {"name": "Bonus på Kjøretøy","url" : absURL+"../brukertest/vanlig/artikkel/bonuskjoretoy.html"},
-    ],
-  "Minside" :
-    [
-    ]
+      {"name": "Bonus på Kjøretøy","url" : absURL+"../brukertest/vanlig/artikkel/bonuskjoretoy.html"}
+     ]
 };

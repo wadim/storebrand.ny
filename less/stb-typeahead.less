@@ -85,14 +85,15 @@
   .tt-dataset-Anbefalte .tt-suggestions .tt-suggestion:last-child {
     margin:0;
     padding: 0;
-    border-bottom: 1px solid @stb-gray-third;
   }
 
   .tt-dataset-Anbefalte .tt-suggestions .tt-suggestion:last-child p {
     padding: 0px 15px;
   }
 
-  .tt-dataset-Anbefalte::after {
+
+
+  .tt-dropdown-menu > div:not(.tt-dataset-Anbefalte):not(:empty)::before {
     content: "Gå direkte til";
     text-align: center;
     width: 100%;
