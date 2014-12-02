@@ -1373,6 +1373,42 @@ $(document).ready(function() {
           <p>Thank you for your purchase</p>
         </div> 
       </div>
+      
+      <div class="row stbcolor-secondary sixth top-padding-40">
+      
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+        <div class="col-sm-2 msgIcon column stbcolor-secondary fifth">
+          <span class="stb-color-sprite-medium info"></span>
+        </div>
+        <div class="col-sm-10 pull-right msgText column stbcolor-secondary sixth">
+          <h3>Information box</h3>
+          <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
+          <p>Thank you for your patience</p>
+        </div>
+      </div>
+        <div class="row">
+        <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
+          <span class="stb-color-sprite-medium warning"></span>
+        </div>
+        <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
+          <h3>Error box</h3>
+          <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
+          <p>We apologize for the inconvenience</p>
+        </div>    
+      </div>
+      <div class="row">
+         <div class="col-sm-2 msgIcon column stbcolor-secondary third lighter">
+          <span class="stb-color-sprite-medium ok-circle"></span>
+        </div>
+        <div class="col-sm-10 msgText column pull-right stbcolor-visuals fourth">
+          <h3>Success box</h3>
+          <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
+          <p>Thank you for your purchase</p>
+        </div> 
+      </div>
+        </div>
+      </div>
         <h4>Code:</h4>
       <pre class="prettyprint">
 &lt;!-- Information box: --&gt;
@@ -1438,6 +1474,40 @@ $(document).ready(function() {
             <p>We apologize for the inconvenience</p>
           </div>
           </div>
+      </div>
+      
+       <div class="row stbcolor-secondary sixth top-padding-40">
+      
+        <div class="col-md-8 col-md-offset-2">
+         <div class="row">
+         <div class="commonmessage">
+          <div class="col-sm-2 msgIcon column stbcolor-secondary fifth"><span class="stb-color-sprite-medium info"></span></div>
+          <div class="col-sm-10 msgText column pull-right stbcolor-secondary sixth">
+            <a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;">
+              <p>Close <span class="stb-sprite-small remove"></span></p>
+            </a>
+            <h3 style="margin:0;">Quarterly reports</h3>
+            <p>Due to sausage fingers, we have trouble posting our quarterly reports. We're working on it and will post them as soon as soon as possible.</p>
+            <p>Thank you for your patience.</p>
+          </div>
+          </div>
+          </div>
+          <div class="row">
+          <div class="errormessage">
+          <div class="col-sm-2 msgIcon column stbcolor-primary first lighter"><span class="stb-color-sprite-medium warning"></span></div>
+          <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
+            <a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;">
+              <p>Close <span class="stb-sprite-small remove"></span></p>
+            </a>
+            <h3 style="margin: 0">Error</h3>
+            <p>We are experiencing network problems. At the moment you can't log on. Please try again later.</p>
+            <p>We apologize for the inconvenience</p>
+          </div>
+          </div>
+          </div>
+      
+      
+        </div>
       </div>
    
       <strong>Code:</strong>

@@ -669,6 +669,8 @@
     });
     
     $('.stbcolor-secondary.sixth .stb-box.mini,.stbcolor-secondary.sixth .stb-box.big').css('background-color', '#fff');
+    
+    $('.stbcolor-secondary.sixth .msgText').css('background-color', '#fff');
   });
 
   function openChatPension(){
