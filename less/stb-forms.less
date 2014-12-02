@@ -299,7 +299,6 @@ input[type=radio].stb-radio {
       background-position: -1px -160px;
       font-size: 16px;
     }
-    color: @stb-gray-fourth;
   }
 
   @media
@@ -363,41 +362,73 @@ input[type=checkbox].stb-checkbox {
   & + label {
     display: inline-block; 
     margin: -2px;
-    padding: 8px 20px 8px 40px;
+    padding: 8px 20px 8px 6px;
     border: solid 1px @stb-gray-second;
-    background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
-    background-position: -1px 0px;
+    span{
+      background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
+      background-position: -1px 0px;
+      padding-left: 40px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
     font-weight: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+    //white-space: nowrap
   }
   
   &:checked + label {
-    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
-    background-position: -1px -40px;
+    span{
+      background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
+      background-position: -1px -40px;
+      padding-left: 40px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
   }
   
   &:disabled + label {
-    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-gray-second;
-    background-position: -1px 0px;
+    span{
+      background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
+      background-position: -1px 0px;
+      padding-left: 40px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
+    background-color: @stb-gray-second;
     color: @stb-gray-fourth;
   }
   & + i + label {
     display: inline-block;
     margin: -2px;
     padding: 8px 20px 8px 28px;
-    border: solid 1px @stb-gray-second;
-    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
-    background-position: -1px 0px;
+    span{
+      background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
+      background-position: -1px 0px;
+      padding-left: 40px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
   }
 
   &:checked + i + label {
-    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
-    background-position: -1px -40px;
+    span{
+      background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
+      background-position: -1px -40px;
+      padding-left: 40px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
   }
 
   &:disabled + i + label {
+    span{
+      background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
+      background-position: -1px -40px;
+      padding-left: 40px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
     background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-gray-second;
     background-position: -1px 0px;
     color: @stb-gray-fourth;
