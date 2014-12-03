@@ -2,7 +2,7 @@
 // The search.js needs typeahead.bundle.min.js to function.
 // It also needs some data to function. It is for now stored in data/searchdata.js as global variables.
 
-var search = {
+var s,search = {
 
   settings : {
     start : 0,
@@ -28,6 +28,7 @@ var search = {
   typeaheads : "",
 
   init : function(){
+    s = this;
 
     $.ajax({
       url: $('input.searchbox.tt-desktop').attr('data-searchdata-url'),
@@ -57,21 +58,21 @@ var search = {
     // Perform search only on the search results page (add other pages if necessary)
     if ( window.location.href.indexOf($('input.searchbox.tt-input.tt-desktop').attr('data-search-url')) != -1 ){
       //Get the search term from the URL
-      search.settings.urlParams = this.getQuery();
-      search.settings.searchIsRunning=false;
+      s.urlParams = this.getQuery();
+      s.searchIsRunning=false;
 
-      search.settings.start = 0; // Start from the first group of search results from Google
+      s.start = 0; // Start from the first group of search results from Google
 
       //If the start parameter is something else than nothing, get the new starting point for the up-coming Google search
-      if (search.settings.urlParams.start!==undefined && search.settings.urlParams.start.length > 0 ) {
-        search.settings.start = search.settings.urlParams.start;
+      if (s.urlParams.start!==undefined && s.urlParams.start.length > 0 ) {
+        s.start = s.urlParams.start;
       }
 
       // If there is a search term to use, perform the search
-      if (search.settings.urlParams.q!==undefined && search.settings.urlParams.q.length > 0 ) {
-        $("form.stb-form-inline input.searchbox").val(search.settings.urlParams.q);
+      if (s.urlParams.q!==undefined && s.urlParams.q.length > 0 ) {
+        $("form.stb-form-inline input.searchbox").val(s.urlParams.q);
         search.getPromotions();
-        search.searchQuery(search.settings.urlParams.q, search.settings.start);
+        search.searchQuery(s.urlParams.q, s.start);
       }
     }
   },
@@ -106,7 +107,7 @@ var search = {
       }
       if (data.url) {
         //Go to the defined URL for the current search keyword
-        search.settings.hasURL = true;
+        s.hasURL = true;
         window.location.href = data.url;
       }
       $('.typeahead').typeahead('close');
@@ -118,7 +119,7 @@ var search = {
 
     // Call checkSearch when hitting Enter while in the input area
     $("input.searchbox").keydown(function(event){
-      if(!search.settings.hasURL){
+      if(!s.hasURL){
         if(event.which == 13){
           search.checkSearch( this.value );
           return false;
@@ -171,18 +172,18 @@ var search = {
   initExtendedSearch : function() {
 
     // Save the state of the search box. The search box is not in focus by default.
-    search.settings.maximized=false;
+    s.maximized=false;
 
     // Save the animation state, whether the element is being animated or not.
-    search.settings.animating=false;
+    s.animating=false;
 
     // Animation speed
-    search.settings.animSpeed = 800;
+    s.animSpeed = 800;
 
     // Check when the document is clicked anywhere outside the search input field
     $(document).click(function() {
       // If the search field is in focus and not animating
-      if(search.settings.maximized===true &&  search.settings.animating===false) {
+      if(s.maximized===true &&  s.animating===false) {
 
         // Do not minimize if there is text in the search field
         if(!$('.navbar-nav .typeahead.tt-input').val()){
@@ -210,7 +211,7 @@ var search = {
       $('.navbar-nav .typeahead').focus();
 
       // If it's currently minimized and not animating, maximize it.
-      if (search.settings.maximized===false &&  search.settings.animating===false) {
+      if (s.maximized===false &&  s.animating===false) {
         maximizeSearch();
       }
 
@@ -221,22 +222,22 @@ var search = {
 
 
     function maximizeSearch() {
-      search.settings. maximized = true;
+      s. maximized = true;
 
       //Hide overlay when search is focus
       $('#overlay').hide();
 
       // Save the animation state, and reset it once the animations complete
-      search.settings.animating = true;
+      s.animating = true;
       setTimeout(function(){
-        search.settings.animating = false;
-      }, search.settings.animSpeed);
+        s.animating = false;
+      }, s.animSpeed);
 
       // Store the current width
       var searchParentWidth = $('.navbar-nav > li.search').css('width');
-      search.settings.backgroundColor = $('.navbar-nav .typeahead').css('background-color');
+      s.backgroundColor = $('.navbar-nav .typeahead').css('background-color');
       // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
-      search.settings.searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
+      s.searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 
       // Give the text element a fixed size
       $('.navbar-nav .typeahead').css('width',searchParentWidth);
@@ -247,50 +248,50 @@ var search = {
       $('.navbar-nav > li.search').css('width','95%');
 
       // Fade out the white search icon
-      $('.navbar-nav .search-icon .search').fadeOut( search.settings.animSpeed/4);
+      $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
 
       // After fading out icon, fade in inverted (charcoal) icon with new background
       setTimeout(function(){
-        $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(search.settings.animSpeed/2);
-      }, search.settings.animSpeed/4);
+        $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(s.animSpeed/2);
+      }, s.animSpeed/4);
 
-      $('.navbar-nav .search-icon').animate({backgroundColor:'"fff'}, search.settings.animSpeed);
+      $('.navbar-nav .search-icon').animate({backgroundColor:'"fff'}, s.animSpeed);
 
       // Animate span parent container to 100 %
-      $('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, search.settings.animSpeed);
+      $('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
 
       // Animate the text box
-      $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, search.settings.animSpeed);
+      $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
 
       // Show the "Close search" icon
       setTimeout(function(){
         $('.navbar-nav li.search .remove').toggle();
-      }, search.settings.animSpeed);
+      }, s.animSpeed);
     }
 
     function minimizeSearch() {
       // Save the animating state, and reset it once the animations complete
-      search.settings.animating = true;
+      s.animating = true;
       setTimeout(function(){
-        search.settings.animating = false;
-      }, search.settings.animSpeed);
+        s.animating = false;
+      }, s.animSpeed);
 
       // Hide the remove icon
       $('.navbar-nav li.search .remove').toggle();
 
       // Reset the searchParent to the original width. The text box will fit on its own as its width is 100 %.
-      $('.navbar-nav > li.search').animate({width: search.settings.searchParentWidthPercent+'%'},  search.settings.animSpeed);
-      $('.navbar-nav .typeahead').animate({backgroundColor: search.settings.backgroundColor,color:"#fff"},  search.settings.animSpeed);
+      $('.navbar-nav > li.search').animate({width: s.searchParentWidthPercent+'%'},  s.animSpeed);
+      $('.navbar-nav .typeahead').animate({backgroundColor: s.backgroundColor,color:"#fff"},  s.animSpeed);
 
       // Fade out the white search icon
-      $('.navbar-nav .search-icon .search').fadeOut( search.settings.animSpeed/4);
+      $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
 
       // After half the animation time has passed, fade in the inverted icon
       setTimeout(function(){
-        $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn( search.settings.animSpeed/2);
+        $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn( s.animSpeed/2);
       }, animSpeed/4);
 
-      $('.navbar-nav .search-icon').animate({backgroundColor: search.settings.backgroundColor}, search.settings.animSpeed);
+      $('.navbar-nav .search-icon').animate({backgroundColor: s.backgroundColor}, s.animSpeed);
 
       // Reset all the states after the animations complete
       setTimeout(function(){
@@ -301,11 +302,11 @@ var search = {
         $('.navbar-nav .typeahead').blur();
 
         // Save the new state
-        search.settings.maximized = false;
+        s.maximized = false;
 
         // Reset the span container to initial value
         $('.navbar-nav .twitter-typeahead').css('width','initial');
-      },  search.settings.animSpeed);
+      },  s.animSpeed);
 
     }
   },
@@ -322,7 +323,7 @@ var search = {
   searchQuery : function ( inputQuery, start ) {
     // loader image
     $(".searchresults").append("<row><div class='col-12' style='text-align: center;'><img id='loadingimage' src='../../images/ajax-loader.gif'></div></div>");
-    search.settings.searchIsRunning = true;
+    s.searchIsRunning = true;
 
     var query = encodeURI( encodeURI( inputQuery ) ); // Used because of the yahoo api. Replace with Storebrand proxy later.
     $.ajax({
@@ -334,9 +335,9 @@ var search = {
   },
   getPromotions : function () {
     // Populate the promotion area
-    if (search.settings.start===0){
+    if (s.start===0){
       $.each(search.promotions,function(value) {
-        if (value.toLowerCase() == search.settings.urlParams.q.toLowerCase()){
+        if (value.toLowerCase() == s.urlParams.q.toLowerCase()){
           if(search.promotions[value].length > 1){
             $(search.promotions[value]).each(function(index, promo) {
               $(".searchresults").append('<div class="promotion' + '"><h3>'+promo.header + '<' + '/h3><' + 'p class="description">' + promo.text + '</p' + ' ><p class="showurl"' + '><a href="' + promo.url + '">' +promo.name + '<' + '/a><' + '/p><' + '/div>');
@@ -350,11 +351,11 @@ var search = {
   },
   xmlParser : function (xml) {
     $("#loadingimage").remove();
-    search.settings.searchIsRunning = false;
+    s.searchIsRunning = false;
     var noresult = false;
 
     // If this is the first set of results to be parsed
-    if(search.settings.start===0){
+    if(s.start===0){
 
       // Prepare the result summary for populating the status of the search result ( found or not)
       var resultSummary = '<div class="resultsummary row"><div class="col-sm-12"></div></div>';
@@ -374,11 +375,11 @@ var search = {
       }
 
       // Store number of results
-      search.settings.hitcounter = parseInt($(xml).find("M").text());
+      s.hitcounter = parseInt($(xml).find("M").text());
 
       // Populate the result summary for the search result (search term and total number of results)
       if (!noresult) {
-        $(".resultsummary div").append('<p>Ditt s&oslash;k etter &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+( search.settings.hitcounter>100?" mer enn 100 " :  search.settings.hitcounter)+' treff.</p>');
+        $(".resultsummary div").append('<p>Ditt s&oslash;k etter &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+( s.hitcounter>100?" mer enn 100 " :  s.hitcounter)+' treff.</p>');
       }
     }
 
@@ -386,57 +387,77 @@ var search = {
     if(!noresult) {
       search.displaySearchResult(xml);
     }
-},
+  },
   displaySearchResult : function (xml) {
-  // Parse the results elements
-  $(xml).find("R").each(function () {
-    //Get the search result item's string and sanitize it
-    var strippedS = $(this).find("S").text();
-    var stripRE = new RegExp("<br>", "g");
-    strippedS = strippedS.replace(stripRE, "");
+    // Parse the results elements
+    $(xml).find("R").each(function () {
+      //Get the search result item's string and sanitize it
+      var strippedS = $(this).find("S").text();
+      var stripRE = new RegExp("<br>", "g");
+      strippedS = strippedS.replace(stripRE, "");
 
-    //Get the search result item's page URL and shorten it
-    var showU = $(this).find("U").text();
-    var strippedU = showU;
-    var stripU = new RegExp("http://www.", "g");
-    strippedU = strippedU.replace(stripU, "");
-    stripU = new RegExp("https://www.", "g");
-    strippedU = strippedU.replace(stripU, "");
-    var shortenedU = "";
-    if(strippedU.length > 85) {
-      shortenedU =  strippedU.substring(0,35) + "..." + strippedU.substring(strippedU.length-40, strippedU.length);
-    } else {
-      shortenedU = strippedU;
-    }
-    //get the index of the last / in the url
-    var lastSlashIndex = shortenedU.lastIndexOf("/");
-    //if the last / was at the end of the URL, for example in storebrand.no/bank/
-    if( lastSlashIndex+1 == shortenedU.length ) {
-      //remove the last /
-      shortenedU = shortenedU.substr( 0, shortenedU.length-1 );
-      //now look for the new last /
-      lastSlashIndex = shortenedU.lastIndexOf("/", lastSlashIndex);
-    }
-    //if no slash was found, reset it to 0
-    if( lastSlashIndex == -1 ) {
-      lastSlashIndex = 0;
-    }
-    //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
-    var numOfSlashes = (shortenedU.split("/").length - 1);
-    shortenedU = decodeURI(( numOfSlashes > 1?"/...":"" ) + shortenedU.substr( lastSlashIndex ));
+      //Get the search result item's page URL and shorten it
+      var showU = $(this).find("U").text();
+      var strippedU = showU;
+      var stripU = new RegExp("http://www.", "g");
+      strippedU = strippedU.replace(stripU, "");
+      stripU = new RegExp("https://www.", "g");
+      strippedU = strippedU.replace(stripU, "");
+      var shortenedU = "";
+      if(strippedU.length > 85) {
+        shortenedU =  strippedU.substring(0,35) + "..." + strippedU.substring(strippedU.length-40, strippedU.length);
+      } else {
+        shortenedU = strippedU;
+      }
+      //get the index of the last / in the url
+      var lastSlashIndex = shortenedU.lastIndexOf("/");
+      //if the last / was at the end of the URL, for example in storebrand.no/bank/
+      if( lastSlashIndex+1 == shortenedU.length ) {
+        //remove the last /
+        shortenedU = shortenedU.substr( 0, shortenedU.length-1 );
+        //now look for the new last /
+        lastSlashIndex = shortenedU.lastIndexOf("/", lastSlashIndex);
+      }
+      //if no slash was found, reset it to 0
+      if( lastSlashIndex == -1 ) {
+        lastSlashIndex = 0;
+      }
+      //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
+      var numOfSlashes = (shortenedU.split("/").length - 1);
+      shortenedU = decodeURI(( numOfSlashes > 1?"/...":"" ) + shortenedU.substr( lastSlashIndex ));
 
-    //Setup any special classes to identify result type
-    var linkDecoration = "";
-    if (strippedU.indexOf(".pdf") > 0) {
-      linkDecoration = ' class="pdf_document" ';
+      //Setup any special classes to identify result type
+      var linkDecoration = "";
+      if (strippedU.indexOf(".pdf") > 0) {
+        linkDecoration = ' class="pdf_document" ';
+      }
+
+      //Prepare and display the result markup
+      var resultMarkup = '<div><h4><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
+      $(".searchresults").append(resultMarkup);
+    });
+  },
+  scroll : function(){
+    // Prevent the scroll from searching again while the search is still running, or if the search result limit has been reached
+    if (s.searchIsRunning===true || (s.start+20)> s.hitcounter ) {
+      return false;
     }
 
-    //Prepare and display the result markup
-    var resultMarkup = '<div><h4><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
-    $(".searchresults").append(resultMarkup);
-  });
-}
-};sss
+    // If the page has search query and the user has scrolled to the bottom of the page, load more search results
+    if((s.urlParams.q!==undefined &&  s.urlParams.q.length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
+      // Show message after searching 40 items
+      if(s.start>=40) {
+        $(".searchresults").append("<row><div class='col-12' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");
+        s.hitcounter = 0;
+        return false;
+      }
+
+      //Start from the next 20 search results
+      s.start =  s.start + 20;
+      search.searchQuery( s.urlParams.q , s.start);
+    }
+  }
+};
 
 $(document).ready(function(){
   search.init();
@@ -444,23 +465,5 @@ $(document).ready(function(){
 
 //Detect page scrolling to load new search results
 $(document).scroll(function(event){
-
-  // Prevent the scroll from searching again while the search is still running, or if the search result limit has been reached
-  if (search.settings.searchIsRunning===true || (search.settings.start+20)> search.settings.hitcounter ) {
-    return false;
-  }
-
-  // If the page has search query and the user has scrolled to the bottom of the page, load more search results
-  if((search.settings.urlParams.q!==undefined &&  search.settings.urlParams.q.length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
-    // Show message after searching 40 items
-    if(search.settings.start>=40) {
-      $(".searchresults").append("<row><div class='col-12' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");
-      search.settings.hitcounter = 0;
-      return false;
-    }
-    
-   //Start from the next 20 search results  
-    search.settings.start =  search.settings.start + 20;
-    search.searchQuery( search.settings.urlParams.q , search.settings.start);
-  }
+  search.scroll();
 });
