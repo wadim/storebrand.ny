@@ -1,98 +1,153 @@
 // This Javascript file contains functions required for the site search function with type-ahead
 // The search.js needs typeahead.bundle.min.js to function.
 // It also needs some data to function. It is for now stored in data/searchdata.js as global variables.
-var start=0;
-var searchParentWidthPercent;
-var backgroundColor;
-var maximized;
-var animating;
-var animSpeed;
-var searchIsRunning=false;
-var hitcounter=0;
-var hasURL= false;
-var urlParams;
 
-$(document).ready(function(){
-  // Make search in menu header visible 
-  activateSearch();
-  
-  // Perform search only on the search results page (add other pages if necessary)
-  if ( window.location.href.indexOf("search-results.html") != -1 ){
-	  //Get the search term from the URL
-    urlParams = getQuery();
-    searchIsRunning=false;
+var search = {
 
-    start = 0; // Start from the first group of search results from Google
-	
-    //If the start parameter is something else than nothing, get the new starting point for the up-coming Google search
-    if (urlParams.start!==undefined && urlParams.start.length > 0 ) { 
-      start = urlParams.start;
-    }
-	
-    // If there is a search term to use, perform the search
-    if ( urlParams.q!==undefined && urlParams.q.length > 0 ) {	
-      $("form.stb-form-inline input.searchbox").val(urlParams.q);
-      getPromotions();
-      searchQuery(urlParams.q, start);
-    }
-  }
-});
+  settings : {
+    start : 0,
+    searchParentWidthPercent : "",
+    backgroundColor : "",
+    maximized : "",
+    animating : "",
+    animSpeed : "",
+    searchIsRunning : false,
+    hitcounter : 0,
+    hasURL :  false,
+    urlParams : undefined
+  },
 
-// Activate and display the search field in the top menu for desktop 
-// (On mobile we will always show the search icon.)
-function activateSearch() {
-  $('#desktop-menu ul.nav li.search').show();
-  
-  // The search field on desktop must be made extendable upon click
-  initExtendedSearch();
-
-  // Prepare for type-ahead  
-  initTypeahead();
-}
-
-// Remove certain special characters from search, in order to not break the Google search URL
-function checkSearch(query) {
-  var reg1 = new RegExp("\"","g"); 
-  var reg2 = new RegExp("'", "g");
-  var reg3 = new RegExp("<", "g");
-  query = query.replace(reg1, "");
-  query = query.replace(reg2, "");
-  query = query.replace(reg3, "");
-  //absURL is defined elsewhere so not initialized here again
-  window.location = absURL+"../brukertest/vanlig/search-results.html?action=search&q=" + query; // link to the search result page
-}
-
-function initTypeahead(){
-  // Categorized JSON object. This will be served from CMS eventually. For now it is hardcoded.
-  // Raw data is currently available as global variable typeaheads in searchdata.js, will be dynamically updated by CMS or other admin system later
-  // Set up the category config object. First set some general parameters, such as the limit for how many typeahead suggestions to show.
-  var categoryConfig = [{
+  categoryConfig : [{
     hint: true,
     highlight: true,
     minLength: 3,
     limit: 10
-  }];
+    }],
 
-  // Loop through the category data, create multiple datasets (one per category), and add it to the category config.
-  $.each(typeaheads, function(index) {
+  promotions : "",
+  typeaheads : "",
+
+  init : function(){
+
+    $.ajax({
+      url: $('input.searchbox.tt-desktop').attr('data-searchdata-url'),
+      type: 'GET',
+      dataType: "json",
+      success: function(searchData){
+        search.promotions = searchData.search.promotion;
+        search.typeaheads = searchData.search.typeahead;
+
+        //typeaheads['anbefalte'] = anbefalte;
+        // Make search in menu header visible
+        search.activateSearch();
+        // Perform the search
+        search.performSearch();
+      },
+      error: function(data) {
+        search.promotions = searchData.search.promotion;
+        search.typeaheads = searchData.search.typeahead;
+        // Make search in menu header visible
+        search.activateSearch();
+        // Perform the search
+        search.performSearch();
+      }
+    });
+  },
+  performSearch : function(){
+    // Perform search only on the search results page (add other pages if necessary)
+    if ( window.location.href.indexOf($('input.searchbox.tt-input.tt-desktop').attr('data-search-url')) != -1 ){
+      //Get the search term from the URL
+      search.settings.urlParams = this.getQuery();
+      search.settings.searchIsRunning=false;
+
+      search.settings.start = 0; // Start from the first group of search results from Google
+
+      //If the start parameter is something else than nothing, get the new starting point for the up-coming Google search
+      if (search.settings.urlParams.start!==undefined && search.settings.urlParams.start.length > 0 ) {
+        search.settings.start = search.settings.urlParams.start;
+      }
+
+      // If there is a search term to use, perform the search
+      if (search.settings.urlParams.q!==undefined && search.settings.urlParams.q.length > 0 ) {
+        $("form.stb-form-inline input.searchbox").val(search.settings.urlParams.q);
+        search.getPromotions();
+        search.searchQuery(search.settings.urlParams.q, search.settings.start);
+      }
+    }
+  },
+  activateSearch : function () {
+    $('#desktop-menu ul.nav li.search').show();
+
+    // The search field on desktop must be made extendable upon click
+    search.initExtendedSearch();
+
+    // Prepare for type-ahead
+    if(search.typeaheads != ""){
+      search.initTypeahead();
+    }
+  },
+  initTypeahead : function(){
+
+    //Make sure to initiate anbefalte søkeord first
+    if("anbefalte" in this.typeaheads){
+      this.createDatasets("anbefalte");
+    }
+    if("direkte" in typeaheads){
+      this.createDatasets("direkte");
+    }
+
+    // Call  the typeahead with the category config
+    $.fn.typeahead.apply( $('.searchbox.typeahead'), this.categoryConfig);
+
+    $('input.searchbox').bind('typeahead:selected', function(event,data) {
+      //Check whether Google Analytics is initialized, and if so, send event logging there
+      if( typeof(ga) === 'function' ) {
+        ga('send', 'event', 'search', 'selected', 'Search for: '+data.name);
+      }
+      if (data.url) {
+        //Go to the defined URL for the current search keyword
+        search.settings.hasURL = true;
+        window.location.href = data.url;
+      }
+      $('.typeahead').typeahead('close');
+    });
+
+    $('.tt-mobile .search-icon').click(function(){
+      window.location = "search-results.html?q="+$('.tt-mobile .typeahead.tt-input').typeahead('val');
+    });
+
+    // Call checkSearch when hitting Enter while in the input area
+    $("input.searchbox").keydown(function(event){
+      if(!search.settings.hasURL){
+        if(event.which == 13){
+          search.checkSearch( this.value );
+          return false;
+        }
+      }
+    });
+
+    // Call checkSearch when clicking the submit button
+    $(".searchcontainer .stb-form-inline button").click(function(event) {
+      //alert($('input#main_search').val());
+      search.checkSearch($('input#main_search').val());
+      return false;
+
+    });
+  },
+  createDatasets : function (index){
+
     // Make use of the Bloodhound suggestion engine in order to use an array of datums(js objects)
     var category =  new Bloodhound( {
       // A function with the signature (datum) that transforms a datum into an array of string tokens.
-      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('query'),
       // A function with the signature (query) that transforms a query into an array of string tokens.
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       // An array of datums
-      local: typeaheads[index]
+      local: this.typeaheads[index]
     });
 
     category.initialize();
-   // var header = '<h3 class="headline-search">&nbsp;<span class="stb-sprite-16 search"></span> ' + index + '<span style="font-size: 16px;"> Anbefalte Søkeresultater</span></h3>';   
-   //var header = '<h3 class="headline-search"><span class="stb-sprite-16 search"></span>Gå direkte til:</h3>';
-    
-    //if (index == "Anbefalte") {
-    //  header = '<h2 class="headline-search" style="margin:0; padding:0;"><span class="stb-color-sprite-16 ok"></span></h2>';
-    //}
-    
+
     var catObj = {
       name : index,
       displayKey: 'name',
@@ -100,278 +155,246 @@ function initTypeahead(){
       templates: {
       }
     };
-    categoryConfig.push(catObj);
-  });
+    this.categoryConfig.push(catObj);
+  },
+  // Remove certain special characters from search, in order to not break the Google search URL
+  checkSearch : function (query) {
+    var reg1 = new RegExp("\"","g");
+    var reg2 = new RegExp("'", "g");
+    var reg3 = new RegExp("<", "g");
+    query = query.replace(reg1, "");
+    query = query.replace(reg2, "");
+    query = query.replace(reg3, "");
+    //absURL is defined elsewhere so not initialized here again
+    window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + query;  // link to the search result page
+  },
+  initExtendedSearch : function() {
 
-  // Call  the typeahead with the category config
-  $.fn.typeahead.apply( $('.searchbox.typeahead'), categoryConfig);
+    // Save the state of the search box. The search box is not in focus by default.
+    search.settings.maximized=false;
 
-  $('input.searchbox').bind('typeahead:selected', function(event,data) {
-    //Check whether Google Analytics is initialized, and if so, send event logging there
-    if( typeof(ga) === 'function' ) {
-      ga('send', 'event', 'search', 'selected', 'Search for: '+data.name);
-    }
-    if (data.url) {
-      //Go to the defined URL for the current search keyword
-      hasURL = true;
-      window.location.href = data.url;
-    }
-    $('.typeahead').typeahead('close');
-  });
+    // Save the animation state, whether the element is being animated or not.
+    search.settings.animating=false;
 
-  $('.tt-mobile .search-icon').click(function(){
-    window.location = "search-results.html?q="+$('.tt-mobile .typeahead.tt-input').typeahead('val');
-  });
+    // Animation speed
+    search.settings.animSpeed = 800;
 
-  // Call checkSearch when hitting Enter while in the input area
-  $("input.searchbox").keydown(function(event){
-	if(!hasURL){
-      if(event.which == 13){   
-        checkSearch( this.value );
-        return false;
+    // Check when the document is clicked anywhere outside the search input field
+    $(document).click(function() {
+      // If the search field is in focus and not animating
+      if(search.settings.maximized===true &&  search.settings.animating===false) {
+
+        // Do not minimize if there is text in the search field
+        if(!$('.navbar-nav .typeahead.tt-input').val()){
+          minimizeSearch();
+        }
       }
-	}
-  });
+    });
 
-  // Call checkSearch when clicking the submit button
-  $(".searchcontainer .stb-form-inline button").click(function(event) {
-	//alert($('input#main_search').val());
-    checkSearch($('input#main_search').val());
-    return false;
-	
-  });
-}
-
-//Make the search field extend on focus
-function initExtendedSearch(){
-
-  // Save the state of the search box. The search box is not in focus by default.
-  maximized=false;
-
-  // Save the animation state, whether the element is being animated or not.
-  animating=false;
-
-  // Animation speed
-  animSpeed = 800;
-
-  // Check when the document is clicked anywhere outside the search input field
-  $(document).click(function() {
-    // If the search field is in focus and not animating
-    if(maximized===true && animating===false) {
-
-      // Do not minimize if there is text in the search field
-      if(!$('.navbar-nav .typeahead.tt-input').val()){
+    // Close search if Escape button is pressed
+    $("input.searchbox").keydown(function(event){
+      if(event.which == 27){
         minimizeSearch();
+        $(this).blur();
       }
-    }
-  });
-  
-  // Close search if Escape button is pressed
-  $("input.searchbox").keydown(function(event){
-    if(event.which == 27){
+    });
+
+    // Close search if close icon is clicked
+    $('.navbar-nav .search .remove').click(function(){
       minimizeSearch();
-      $(this).blur();
-    }
-  });  
-  
-  // Close search if close icon is clicked
-  $('.navbar-nav .search .remove').click(function(){
-    minimizeSearch();
-  });
+    });
 
-  // If the search icon or the input element itself gets clicked, do not pass the click event to the document.
-  $(".navbar-nav .typeahead.tt-desktop, .search-icon").click(function(e) {
-    // Give it focus
-    $('.navbar-nav .typeahead').focus();
+    // If the search icon or the input element itself gets clicked, do not pass the click event to the document.
+    $(".navbar-nav .typeahead.tt-desktop, .search-icon").click(function(e) {
+      // Give it focus
+      $('.navbar-nav .typeahead').focus();
 
-    // If it's currently minimized and not animating, maximize it.
-    if (maximized===false && animating===false) {
-      maximizeSearch();
-    }
+      // If it's currently minimized and not animating, maximize it.
+      if (search.settings.maximized===false &&  search.settings.animating===false) {
+        maximizeSearch();
+      }
 
-    // This will prevent the minimizeSearch from being called too early.
-    e.stopPropagation();
-    return false;
-  });
-  
+      // This will prevent the minimizeSearch from being called too early.
+      e.stopPropagation();
+      return false;
+    });
 
-  function maximizeSearch() {
-    maximized = true;
 
-    //Hide overlay when search is focus
-    $('#overlay').hide();
+    function maximizeSearch() {
+      search.settings. maximized = true;
 
-    // Save the animation state, and reset it once the animations complete
-    animating = true;
-    setTimeout(function(){
-      animating = false;
-    },animSpeed);
+      //Hide overlay when search is focus
+      $('#overlay').hide();
 
-    // Store the current width
-    var searchParentWidth = $('.navbar-nav > li.search').css('width');
-    backgroundColor = $('.navbar-nav .typeahead').css('background-color');
-    // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
-    searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
+      // Save the animation state, and reset it once the animations complete
+      search.settings.animating = true;
+      setTimeout(function(){
+        search.settings.animating = false;
+      }, search.settings.animSpeed);
 
-    // Give the text element a fixed size
-    $('.navbar-nav .typeahead').css('width',searchParentWidth);
-    // Hide the menu
-    $('.navbar-nav > li.group').toggle();
+      // Store the current width
+      var searchParentWidth = $('.navbar-nav > li.search').css('width');
+      search.settings.backgroundColor = $('.navbar-nav .typeahead').css('background-color');
+      // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
+      search.settings.searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 
-    // Expand the search parent to take 95 % of the available width
-    $('.navbar-nav > li.search').css('width','95%');
-
-    // Fade out the white search icon
-    $('.navbar-nav .search-icon .search').fadeOut(animSpeed/4);
-
-    // After fading out icon, fade in inverted (charcoal) icon with new background
-    setTimeout(function(){
-      $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(animSpeed/2);
-    }, animSpeed/4);
-
-    $('.navbar-nav .search-icon').animate({backgroundColor:'"fff'},animSpeed);
-
-    // Animate span parent container to 100 %
-    $('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
-    
-    // Animate the text box
-    $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"},animSpeed);
-
-    // Show the "Close search" icon
-    setTimeout(function(){
-      $('.navbar-nav li.search .remove').toggle();
-    },animSpeed);
-  }
-
- function minimizeSearch() {
-    // Save the animating state, and reset it once the animations complete
-    animating = true;
-    setTimeout(function(){
-      animating = false;
-    },animSpeed);
-
-    // Hide the remove icon
-    $('.navbar-nav li.search .remove').toggle();
-
-    // Reset the searchParent to the original width. The text box will fit on its own as its width is 100 %.
-    $('.navbar-nav > li.search').animate({width:searchParentWidthPercent+'%'}, animSpeed);
-    $('.navbar-nav .typeahead').animate({backgroundColor:backgroundColor,color:"#fff"}, animSpeed);
-
-    // Fade out the white search icon
-    $('.navbar-nav .search-icon .search').fadeOut(animSpeed/4);
-
-    // After half the animation time has passed, fade in the inverted icon
-    setTimeout(function(){
-      $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn(animSpeed/2);
-    }, animSpeed/4);
-
-    $('.navbar-nav .search-icon').animate({backgroundColor:backgroundColor},animSpeed);
-
-    // Reset all the states after the animations complete
-    setTimeout(function(){
-      // Show the menu
+      // Give the text element a fixed size
+      $('.navbar-nav .typeahead').css('width',searchParentWidth);
+      // Hide the menu
       $('.navbar-nav > li.group').toggle();
 
-      // Remove the focus from the smaller search box in case the user clicked on it during the animation
-      $('.navbar-nav .typeahead').blur();
+      // Expand the search parent to take 95 % of the available width
+      $('.navbar-nav > li.search').css('width','95%');
 
-      // Save the new state
-      maximized = false;
+      // Fade out the white search icon
+      $('.navbar-nav .search-icon .search').fadeOut( search.settings.animSpeed/4);
 
-      // Reset the span container to initial value
-      $('.navbar-nav .twitter-typeahead').css('width','initial');
-    }, animSpeed);
+      // After fading out icon, fade in inverted (charcoal) icon with new background
+      setTimeout(function(){
+        $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(search.settings.animSpeed/2);
+      }, search.settings.animSpeed/4);
 
-  }
-}
+      $('.navbar-nav .search-icon').animate({backgroundColor:'"fff'}, search.settings.animSpeed);
 
-function getQuery(){
-  // Get the query from the location URL
-	var get = [];
-	var decodeurl = decodeURI(location.search);
-	decodeurl.replace('?', '').split('&').forEach(function (val) {
-	  var split = val.split("=", 2);
-	  get[split[0]] = split[1];
-  });
-  return get;
-}
+      // Animate span parent container to 100 %
+      $('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, search.settings.animSpeed);
 
-// AJAX search call to Google
-function searchQuery( inputQuery, start ) {
-  // loader image
-  $(".searchresults").append("<row><div class='col-12' style='text-align: center;'><img id='loadingimage' src='../../images/ajax-loader.gif'></div></div>");
-  searchIsRunning = true;
+      // Animate the text box
+      $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, search.settings.animSpeed);
 
-  var query = encodeURI( encodeURI( inputQuery ) ); // Used because of the yahoo api. Replace with Storebrand proxy later.
-  $.ajax({
-    type: "GET",
-	  url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dutf-8%26oe%3Dutf-8%26q%3D"+query+"'&diagnostics=false",
-    dataType: "xml",
-	  success: xmlParser
-	});
-}
+      // Show the "Close search" icon
+      setTimeout(function(){
+        $('.navbar-nav li.search .remove').toggle();
+      }, search.settings.animSpeed);
+    }
 
-function getPromotions() {
-  // Populate the promotion area
-  if (start===0){
-    $.each(promotions,function(value) {
-      if (value.toLowerCase() == urlParams.q.toLowerCase()){ 
-        $(".searchresults").append('<div class="promotion' + '"><h3>'+promotions[value].header + '<' + '/h3><' + 'p class="description">' + promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + promotions[value].url + '">' + promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
-      }
-     });
-  }
-}
+    function minimizeSearch() {
+      // Save the animating state, and reset it once the animations complete
+      search.settings.animating = true;
+      setTimeout(function(){
+        search.settings.animating = false;
+      }, search.settings.animSpeed);
 
-// parse the search result coming from google
+      // Hide the remove icon
+      $('.navbar-nav li.search .remove').toggle();
 
-function xmlParser(xml) { 
-  $("#loadingimage").remove();
-  searchIsRunning = false;
-  var noresult = false;
-  
-  // If this is the first set of results to be parsed
-  if(start===0){
-	  
-    // Prepare the result summary for populating the status of the search result ( found or not)
-    var resultSummary = '<div class="resultsummary row"><div class="col-sm-12"></div></div>';
-    $(resultSummary).insertAfter($('.stb-form-inline .searchbox').closest('form').parent().parent());
-    
-    // Show search suggestions
-    $(xml).find("Spelling").each(function() {
-      var suggestedSpelling = $(this).find("Suggestion").attr("q");
-      $(".resultsummary div").append('<div id="suggestion"' + '>Vi har f&aring; eller ingen treff p&aring; det s&oslash;keordet, men pr&oslash;v <a href="?action=search&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
-      noresult= true;
+      // Reset the searchParent to the original width. The text box will fit on its own as its width is 100 %.
+      $('.navbar-nav > li.search').animate({width: search.settings.searchParentWidthPercent+'%'},  search.settings.animSpeed);
+      $('.navbar-nav .typeahead').animate({backgroundColor: search.settings.backgroundColor,color:"#fff"},  search.settings.animSpeed);
+
+      // Fade out the white search icon
+      $('.navbar-nav .search-icon .search').fadeOut( search.settings.animSpeed/4);
+
+      // After half the animation time has passed, fade in the inverted icon
+      setTimeout(function(){
+        $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn( search.settings.animSpeed/2);
+      }, animSpeed/4);
+
+      $('.navbar-nav .search-icon').animate({backgroundColor: search.settings.backgroundColor}, search.settings.animSpeed);
+
+      // Reset all the states after the animations complete
+      setTimeout(function(){
+        // Show the menu
+        $('.navbar-nav > li.group').toggle();
+
+        // Remove the focus from the smaller search box in case the user clicked on it during the animation
+        $('.navbar-nav .typeahead').blur();
+
+        // Save the new state
+        search.settings.maximized = false;
+
+        // Reset the span container to initial value
+        $('.navbar-nav .twitter-typeahead').css('width','initial');
+      },  search.settings.animSpeed);
+
+    }
+  },
+  getQuery : function (){
+    // Get the query from the location URL
+    var get = [];
+    var decodeurl = decodeURI(location.search);
+    decodeurl.replace('?', '').split('&').forEach(function (val) {
+      var split = val.split("=", 2);
+      get[split[0]] = split[1];
     });
-    
-    // If we don't get anything initially, show corresponding message 
-    if ($(xml).find("R").length===0 && $(xml).find("Spelling").length===0 ) {
-    $(".resultsummary div").append('<div class="nogo"' + '>Fant ingen treff ved s&oslash;k etter <' + 'strong>'+ $(xml).find("Q").text()+'<' + '/strong>.<' + '/div>');
-      noresult=true;
+    return get;
+  },
+  searchQuery : function ( inputQuery, start ) {
+    // loader image
+    $(".searchresults").append("<row><div class='col-12' style='text-align: center;'><img id='loadingimage' src='../../images/ajax-loader.gif'></div></div>");
+    search.settings.searchIsRunning = true;
+
+    var query = encodeURI( encodeURI( inputQuery ) ); // Used because of the yahoo api. Replace with Storebrand proxy later.
+    $.ajax({
+      type: "GET",
+      url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dutf-8%26oe%3Dutf-8%26q%3D"+query+"'&diagnostics=false",
+      dataType: "xml",
+      success: search.xmlParser
+    });
+  },
+  getPromotions : function () {
+    // Populate the promotion area
+    if (search.settings.start===0){
+      $.each(search.promotions,function(value) {
+        if (value.toLowerCase() == search.settings.urlParams.q.toLowerCase()){
+          if(search.promotions[value].length > 1){
+            $(search.promotions[value]).each(function(index, promo) {
+              $(".searchresults").append('<div class="promotion' + '"><h3>'+promo.header + '<' + '/h3><' + 'p class="description">' + promo.text + '</p' + ' ><p class="showurl"' + '><a href="' + promo.url + '">' +promo.name + '<' + '/a><' + '/p><' + '/div>');
+            });
+          }else{
+            $(".searchresults").append('<div class="promotion' + '"><h3>'+search.promotions[value].header + '<' + '/h3><' + 'p class="description">' + search.promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + search.promotions[value].url + '">' + search.promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
+          }
+        }
+      });
+    }
+  },
+  xmlParser : function (xml) {
+    $("#loadingimage").remove();
+    search.settings.searchIsRunning = false;
+    var noresult = false;
+
+    // If this is the first set of results to be parsed
+    if(search.settings.start===0){
+
+      // Prepare the result summary for populating the status of the search result ( found or not)
+      var resultSummary = '<div class="resultsummary row"><div class="col-sm-12"></div></div>';
+      $(resultSummary).insertAfter($('.stb-form-inline .searchbox').closest('form').parent().parent());
+
+      // Show search suggestions
+      $(xml).find("Spelling").each(function() {
+        var suggestedSpelling = $(this).find("Suggestion").attr("q");
+        $(".resultsummary div").append('<div id="suggestion"' + '>Vi har f&aring; eller ingen treff p&aring; det s&oslash;keordet, men pr&oslash;v <a href="?action=search&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+        noresult= true;
+      });
+
+      // If we don't get anything initially, show corresponding message
+      if ($(xml).find("R").length===0 && $(xml).find("Spelling").length===0 ) {
+        $(".resultsummary div").append('<div class="nogo"' + '>Fant ingen treff ved s&oslash;k etter <' + 'strong>'+ $(xml).find("Q").text()+'<' + '/strong>.<' + '/div>');
+        noresult=true;
+      }
+
+      // Store number of results
+      search.settings.hitcounter = parseInt($(xml).find("M").text());
+
+      // Populate the result summary for the search result (search term and total number of results)
+      if (!noresult) {
+        $(".resultsummary div").append('<p>Ditt s&oslash;k etter &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+( search.settings.hitcounter>100?" mer enn 100 " :  search.settings.hitcounter)+' treff.</p>');
+      }
     }
 
-    // Store number of results
-    hitcounter = parseInt($(xml).find("M").text());
-
-    // Populate the result summary for the search result (search term and total number of results)
-    if (!noresult) {
-      $(".resultsummary div").append('<p>Ditt s&oslash;k etter &laquo;'+$(xml).find("Q").text()+'&raquo; gav '+(hitcounter>100?" mer enn 100 " : hitcounter)+' treff.</p>');  
+    // Display the results
+    if(!noresult) {
+      search.displaySearchResult(xml);
     }
-  }
-  
-  // Display the results
-  if(!noresult) {
-    displaySearchResult(xml);
-  }
-}
-
-function displaySearchResult(xml) {
+},
+  displaySearchResult : function (xml) {
   // Parse the results elements
   $(xml).find("R").each(function () {
     //Get the search result item's string and sanitize it
-	var strippedS = $(this).find("S").text();
+    var strippedS = $(this).find("S").text();
     var stripRE = new RegExp("<br>", "g");
     strippedS = strippedS.replace(stripRE, "");
-    
+
     //Get the search result item's page URL and shorten it
     var showU = $(this).find("U").text();
     var strippedU = showU;
@@ -386,7 +409,7 @@ function displaySearchResult(xml) {
       shortenedU = strippedU;
     }
     //get the index of the last / in the url
-    var lastSlashIndex = shortenedU.lastIndexOf("/");  
+    var lastSlashIndex = shortenedU.lastIndexOf("/");
     //if the last / was at the end of the URL, for example in storebrand.no/bank/
     if( lastSlashIndex+1 == shortenedU.length ) {
       //remove the last /
@@ -401,7 +424,7 @@ function displaySearchResult(xml) {
     //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
     var numOfSlashes = (shortenedU.split("/").length - 1);
     shortenedU = decodeURI(( numOfSlashes > 1?"/...":"" ) + shortenedU.substr( lastSlashIndex ));
-  
+
     //Setup any special classes to identify result type
     var linkDecoration = "";
     if (strippedU.indexOf(".pdf") > 0) {
@@ -413,25 +436,31 @@ function displaySearchResult(xml) {
     $(".searchresults").append(resultMarkup);
   });
 }
+};sss
+
+$(document).ready(function(){
+  search.init();
+});
 
 //Detect page scrolling to load new search results
 $(document).scroll(function(event){
+
   // Prevent the scroll from searching again while the search is still running, or if the search result limit has been reached
-  if ( searchIsRunning===true || (start+20)>hitcounter ) {
+  if (search.settings.searchIsRunning===true || (search.settings.start+20)> search.settings.hitcounter ) {
     return false;
   }
 
   // If the page has search query and the user has scrolled to the bottom of the page, load more search results
-  if((urlParams.q!==undefined && urlParams.q.length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
+  if((search.settings.urlParams.q!==undefined &&  search.settings.urlParams.q.length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
     // Show message after searching 40 items
-    if(start>=40) {
+    if(search.settings.start>=40) {
       $(".searchresults").append("<row><div class='col-12' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");
-      hitcounter = 0;
+      search.settings.hitcounter = 0;
       return false;
     }
     
    //Start from the next 20 search results  
-   start = start + 20;   
-   searchQuery(urlParams.q, start);
+    search.settings.start =  search.settings.start + 20;
+    search.searchQuery( search.settings.urlParams.q , search.settings.start);
   }
 });

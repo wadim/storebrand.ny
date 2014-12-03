@@ -8,7 +8,7 @@ var absURL = scripts[scripts.length-1].src;
 //remove the JS file name
 absURL = absURL.substring(0,absURL.lastIndexOf("/")+1);
 
-var promotions = {
+var promotion = {
   "banksparing" : {"header": "Det er lurt å spare i bank!",
             "text": "Da får du nemlig rente på pengene dine!", 
             "name": "Den som sparer, han har!", 
@@ -48,7 +48,7 @@ var promotions = {
 };
 
 var typeaheads = {
-  "Anbefalte" :
+  "anbefalte" :
     [    
       {"name": "Fond"},
       {"name": "Fondssparing"},    
@@ -59,7 +59,7 @@ var typeaheads = {
       {"name": "Pensjon"},
       {"name": "Apekatt"}
     ],
-    "Typeaheads" : [
+    "direkte" : [
       {"name": "Kundefordeler","url":absURL+"../brukertest/vanlig/tema3/kundefordeler.html"},
       {"name": "Fond","url" : "http://www.storebrand.no/site/stb.nsf/Pages/forsideperson.html"},
       {"name": "Fondslister","url":"http://www.storebrand.no/site/stb.nsf/Pages/fondsliste-utvalgte-fond.html"},
@@ -92,3 +92,102 @@ var typeaheads = {
       {"name": "Bonus på Kjøretøy","url" : absURL+"../brukertest/vanlig/artikkel/bonuskjoretoy.html"}
      ]
 };
+
+var searchData ={
+  search: {
+    typeahead: {
+      direkte: [
+        {
+          query: "sparing",
+          name: "Alt du trenger å vite om sparing",
+          url: "/site/3/privat/sparing"
+        },
+        {
+          query: "Pensjon",
+          name: "Hovedside for pensjon",
+          url: "/site/3/privat/pensjon"
+        },
+        {
+          query: "bank",
+          name: "Bank og lån",
+          url: "/site/3/privat/bank-l%C3%A5n"
+        },
+        {
+          query: "lån",
+          name: "Bank og lån",
+          url: "/site/3/privat/bank-l%C3%A5n"
+        },
+        {
+          query: "Pensjon",
+          name: "Pensjon med stor P",
+          url: "/site/3/search"
+        },
+        {
+          query: "forsikring",
+          name: "Forsikring er også bra",
+          url: "/site/3/test/min-f%C3%B8rste-artikkelside"
+        },
+        {
+          query: "pensjon",
+          name: "Lær mer om pensjon",
+          url: "/site/3/test/min-f%C3%B8rste-artikkelside"
+        },
+        {
+          query: "pensjon",
+          name: "Pensjon med liten p",
+          url: "/site/3/menyer/test/desktop/toppmeny/privat/produkter/bank-og-l%C3%A5n"
+        },
+        {
+          query: "pensjonssparing",
+          name: "Pensjonssparing",
+          url: "/site/3/menyer/test/desktop/toppmeny/privat/produkter/bank-og-l%C3%A5n"
+        },
+        {
+          query: "Veihjelp",
+          name: "Veihjelp",
+          url: "/site/3/privat/verkt%C3%B8ylinje"
+        },
+        {
+          query: "Meldskade",
+          name: "Meld skade",
+          url: "/site/3/privat/verkt%C3%B8ylinje"
+        },
+        {
+          query: "apekatt",
+          name: "Meld skade",
+          url: "/site/3/privat/verkt%C3%B8ylinje"
+        }
+      ]
+    },
+    promotion: {
+      pensjon: [
+        {
+          header: "Hovedside for pensjon",
+          text: "Her finner du svar og informasjon til alt du trenger å vite om pensjon",
+          name: "Lær alt om pensjon",
+          url: "/site/3/privat/pensjon"
+        },
+        {
+          header: "Det er lurt å spare i bank!",
+          text: "Da får du nemlig rente på pengene dine!",
+          name: "Den som sparer, han har!",
+          url: "/site/3/test/min-f%C3%B8rste-artikkelside"
+        }
+      ],
+      pensjonssparing: [
+        {
+          header: "Det er lurt å spare i bank!",
+          text: "Da får du nemlig rente på pengene dine!",
+          name: "Den som sparer, han har!",
+          url: "/site/3/test/min-f%C3%B8rste-artikkelside"
+        },
+        {
+          header: "Det er lurt å spare til pensjon!",
+          text: "Da får du mer å rutte med når du blir gammel",
+          name: "Start pensjonssparing her",
+          url: "/site/3/menyer/test/desktop/toppmeny/privat/produkter/bank-og-l%C3%A5n"
+        }
+      ]
+    }
+  }
+}
