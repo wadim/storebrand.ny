@@ -233,7 +233,7 @@ input[type=radio].stb-radio {
     display: inline-block;
     margin: -1px;
     padding: 8px 20px 8px 6px;
-    border: solid 1px @stb-gray-second;
+    border: solid 1px @stb-gray-third;
     span{
       background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
       background-position: -1px -160px;
@@ -275,7 +275,7 @@ input[type=radio].stb-radio {
     display: inline-block;
     margin: -2px;
     padding: 8px 20px 8px 28px;
-    border: solid 1px @stb-gray-second;
+    border: solid 1px @stb-gray-third;
     span{
       background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
       background-position: -1px -160px;
@@ -362,8 +362,9 @@ input[type=checkbox].stb-checkbox {
   & + label {
     display: inline-block; 
     margin: -2px;
+
     padding: 8px 20px 8px 6px;
-    border: solid 1px @stb-gray-second;
+    border: solid 1px @stb-gray-third;
     span{
       background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
       background-position: -1px 0px;
@@ -402,6 +403,9 @@ input[type=checkbox].stb-checkbox {
     display: inline-block;
     margin: -2px;
     padding: 8px 20px 8px 28px;
+    border: solid 1px @stb-gray-third;
+    background: url(../images/stb-sprites/ui-sprites.png) no-repeat @stb-primary-white;
+    background-position: -1px 0px;
     span{
       background: url(../images/stb-sprites/ui-sprites.png) no-repeat transparent;
       background-position: -1px 0px;
@@ -409,6 +413,7 @@ input[type=checkbox].stb-checkbox {
       padding-top: 10px;
       font-size: 16px;
     }
+
   }
 
   &:checked + i + label {
