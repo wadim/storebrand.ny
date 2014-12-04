@@ -90,10 +90,10 @@ var s,search = {
   initTypeahead : function(){
 
     //Make sure to initiate anbefalte søkeord first
-    if("anbefalte" in this.typeaheads){
+    if("anbefalte" in search.typeaheads){
       this.createDatasets("anbefalte");
     }
-    if("direkte" in typeaheads){
+    if("direkte" in search.typeaheads){
       this.createDatasets("direkte");
     }
 
