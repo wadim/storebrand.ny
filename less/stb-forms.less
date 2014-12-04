@@ -308,41 +308,60 @@ input[type=radio].stb-radio {
   (min-device-pixel-ratio: 2) {
 
     & + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
+    	span {
+    		   background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       // reduce to 1x size
       background-position: -1px -155px;
       background-size: 40px;
+    	}
+   
 
     }
     &:checked + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-secondary-charcoal;
+    	span {
+    		 background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       // reduce to 1x size
       background-position: -1px -195px;
       background-size: 40px;
+    	}
     }
     &:disabled + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-gray-second;
+    	
+      span {
+      	  background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       // reduce to 1x size
       background-position: -1px -155px;
       background-size: 40px;
+      }
+    
     }
     & + i + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-primary-white;
+      
+      span {
+      	  background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       // reduce to 1x size
       background-position: -1px -155px;
       background-size: 40px;
+      }
+    
     }
     &:checked + i + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-primary-white;
+    	span {
+    		  background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       // reduce to 1x size
       background-position: -1px -195px;
       background-size: 40px;
+    	}
+    
     }
     &:disabled + i +label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-gray-second;
+    	span {
+    		   background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       // reduce to 1x size
       background-size: 40px;
       background-position: -1px -155px;
+    	}
+   
     }
   }
 }
@@ -444,44 +463,62 @@ input[type=checkbox].stb-checkbox {
   (-webkit-min-device-pixel-ratio: 2),
   (min-device-pixel-ratio: 2) {
     & + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
+      span {
+        background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       background-position: -1px 5px;
       // reduce to 1x size
-      background-size: 40px;
+      background-size: 40px;	
+      }
+      
     }
 
     &:checked + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-primary-white;
+      span {
+      	background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       background-position: -1px -35px;
       // reduce to 1x size
       background-size: 40px;
+      }
+      
     }
 
     &:disabled + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-gray-second;
+    	span {
+    		 background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       background-position: -1px 5px;
       // reduce to 1x size
       background-size: 40px;
+    	}
+     
     }
     & + i + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-primary-white;
+    	span {
+    		background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       background-position: -1px 5px;
       // reduce to 1x size
       background-size: 40px;
+    	}
+      
     }
 
     &:checked + i + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-primary-white;
+    	span {
+    		   background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat transparent;
       background-position: -1px -35px;
       // reduce to 1x size
       background-size: 40px;
+    	}
+   
     }
 
     &:disabled + i + label {
-      background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-gray-second;
+    	span {
+    		  background: url(../images/stb-sprites/ui-sprites-2x.png) no-repeat @stb-gray-second;
       background-position: -1px 5px;
       // reduce to 1x size
       background-size: 40px;
+    	}
+    
     }
   }
 }
