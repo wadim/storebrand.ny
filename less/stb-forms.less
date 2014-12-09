@@ -540,10 +540,6 @@ form{
       top: 8px !important;
     }
 
-    &.with-submit input+i.form-control-feedback, &.with-unit i.form-control-feedback {
-      right: 0px;
-    }
-
     .radiobuttons + i.form-control-feedback{
       top: 4px !important;
       right: -30px;
@@ -608,4 +604,18 @@ form{
 
   }
 
+}
+
+form.login{
+  .stb-form-group{
+    width: 400px;
+  }
+  @media (max-width: @screen-xs-min) {
+    .stb-form-group{
+      width: 200px;
+      i.form-control-feedback{
+        right: -30px;
+      }
+    }
+  }
 }
