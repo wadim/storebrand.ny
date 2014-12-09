@@ -218,8 +218,8 @@ small, .petit {
 
 }
 
-p.petit + p{
-  margin-bottom: 24px;
+p + button{
+  margin-top: 12px;
 }
 
 blockquote {
@@ -349,7 +349,6 @@ ul.stb,ol.stb {
     font-size: 16px;
     line-height: 22px;
     padding-bottom: 9px;
-
     //Special handling for double-nested lists
     ul.stb,ol.stb {
       //margin: 8px 10px 0px 10px;
@@ -362,6 +361,15 @@ ul.stb,ol.stb {
   } //end:li
   li:last-child{
     padding-bottom: 0;
+  }
+
+  &.petit{
+    li {
+      font-size: 12px;
+      line-height: 16px;
+      font-style: normal;
+      font-family: @font-family-sans-serif;
+    }
   }
 
 } //end:ul.stb
