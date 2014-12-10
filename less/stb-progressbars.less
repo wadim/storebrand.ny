@@ -30,7 +30,6 @@
   background-size: 100px;
   background-position: 0 -10px;
   margin: 0 5%;
-  width: 380px;
 
   .circle-12 p.step {
     font-size: 16px;
@@ -46,38 +45,54 @@
   ol.progtrckr li {
     display: inline-block;
     text-align: center;
-    line-height: 3em;
+  }
+
+  div.steplabel{
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  div.circle{
+    margin-left: 96px;
+    margin-right: 96px;
+  }
+
+  h4{
+    margin: 0;
   }
   li.prog-todo {
-    a.steplabel {
-      color: @stb-gray-third !important;
-      padding-top: 10px;
-      cursor: default;
-      text-decoration: none !important;
-      border-bottom: none;
+    div.steplabel{
+      a{
+        color: @stb-gray-third !important;
+        padding-top: 10px;
+        cursor: default;
+        text-decoration: none !important;
+        border-bottom: none;
+      }
+
+      h4{
+        display: none;
+      }
     }
 
-    h4.steplabel {
-      display: none;
-    }
-
-    div{
+    div.circle{
       background-color: @stb-primary-white;
       border: 1px solid @stb-secondary-charcoal;
     }
   }
 
   li.prog-done {
-    a.steplabel {
-      color: @stb-primary-black !important;
-      padding-top: 10px;
+    div.steplabel{
+      a{
+        color: @stb-primary-black !important;
+        padding-top: 10px;
+      }
+
+      h4 {
+        display: none;
+      }
     }
 
-    h4.steplabel {
-      display: none;
-    }
-
-    div {
+    div.circle {
       background-color: @stb-primary-white;
       color: @stb-primary-black;
       cursor: pointer;
@@ -86,41 +101,43 @@
   }
 
   li.prog-clickable {
-    a.steplabel {
-      color: @stb-primary-black !important;
-      padding-top: 10px;
-      cursor: pointer;
-      border-bottom: 1px solid #404040;
-      padding-bottom: 1px;
-    }
-    div {
-      cursor: pointer;
+    div.steplabel{
+      a {
+        color: @stb-primary-black !important;
+        padding-top: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #404040;
+        padding-bottom: 1px;
+      }
+      h4{
+        display: none;
+      }
     }
 
-    h4.steplabel {
-      display: none;
+    div.circle {
+      cursor: pointer;
     }
   }
 
   li.prog-active {
-    a.steplabel {
+    div.steplabel{
+      a{
       display: none;
-    }
-    div{
-      background-color: @stb-secondary-forest !important;
-      cursor: default;
-      border: none;
+      }
+      h4 {
+        color: @stb-primary-black !important;
+        display: block;
+      }
     }
     p.step{
       color: @stb-primary-white !important;
     }
-
-    h4.steplabel {
-      color: @stb-primary-black !important;
-      display: block;
+    div.circle{
+      background-color: @stb-secondary-forest !important;
+      cursor: default;
+      border: none;
     }
   }
-
 }
 .panel.panel-default {
 
