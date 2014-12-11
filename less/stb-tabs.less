@@ -110,13 +110,21 @@
       transition-property: background-color, color;
       text-decoration: none;
       font-family: "Open Sans Bold";
+      &:hover{
+          padding: 15px 24px;
+          background-color: #E6E6E6;
+          border-bottom: none;
+          color: #000;
+      }
     }
 
-    a:hover {
-      padding: 15px 24px;
-      background-color: #E6E6E6;
-      border-bottom: none;
-      color: #000;
+    @media (max-width: @screen-xs-min) {
+     a{
+       padding: 12px 6px;
+       &:hover{
+         padding: 12px 6px;
+       }
+     }
     }
   }
 }
