@@ -42,9 +42,17 @@
     padding: 0;
     list-style-type: none;
   }
-  ol.progtrckr li {
-    display: inline-block;
-    text-align: center;
+  ol.progtrckr{
+    li {
+      display: inline-block;
+      text-align: center;
+      &:first-child{
+        margin-left: -80px;
+      }
+      &:last-child{
+        margin-right: -80px;
+      }
+    }
   }
 
   div.steplabel{
@@ -52,9 +60,11 @@
     margin-right: 12px;
   }
   div.circle{
-    margin-left: 96px;
-    margin-right: 96px;
+    margin-left: 80px;
+    margin-right: 80px;
   }
+
+
 
   h4{
     margin: 0;
