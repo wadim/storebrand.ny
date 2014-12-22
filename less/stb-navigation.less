@@ -59,9 +59,22 @@
         background-color: @stb-primary-color-darker;
       }
 
-      .navbar-nav>li.group:hover {
-        background-color:@stb-primary-color-even-darker
+      .navbar-nav>li.group:hover{
+        background-color: @stb-primary-color-even-darker;
       }
+
+      .navbar-nav>li.group:hover,.navbar-nav>li.group{
+        &.private a:focus{
+          background: @stb-primary-color-even-darker url("../images/private.png") 20% 50% no-repeat;
+        }
+        &.company a:focus{
+          background: @stb-primary-color-even-darker;
+        }
+        &.login a:focus{
+          background: @stb-primary-color-even-darker url("../images/login.png") 25% 48% no-repeat;
+        }
+      }
+
 
       .rightColor{
         padding-right: 0px;
