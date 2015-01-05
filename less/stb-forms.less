@@ -197,7 +197,6 @@ form {
       }
     }
   }
-
 }
 
 /***************************************************
@@ -607,12 +606,19 @@ form{
 }
 
 form.login{
+  h3{
+    margin: 12px 12px 12px 0;
+  }
+
   .stb-form-group.with-submit{
     width: 400px;
         @media (max-width: @screen-xs-min) {
          width: 200px;
-            i.form-control-feedback{
+         i.form-control-feedback{
               right: -30px;
+         }
+         input{
+          width: 160px;
          }
       }
   }
