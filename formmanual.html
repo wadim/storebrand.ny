@@ -124,20 +124,26 @@
 
     <form class="stb-form-inline" role="form">
       <label class="with-help" for="formInputHelp" style="width: 200px;">Input with help<span class="stb-color-sprite-medium info" onclick="showCommonMsg(this);return false;"></span></label>
-      <div class="top-padding-20 bottom-padding-20 commonmessage" style="display: none;">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="msgText pull-right stbcolor-secondary sixth">
-              <a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;">
-                <p>Close <span class="stb-sprite-small remove"></span></p>
-              </a>
-              <h3>Headline..</h3>
-              <p>Content...</p>
+
+        <div class="commonmessage" style="display: none;">
+
+          <div class="row info-message-wrapper">
+            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 info-message">
+              <div class="msgText">
+
+                <h3>Headline..</h3>
+                <p>Content...</p>
+
+                <button onclick="hideCommonMsg(this);return false;" class="close" type="button">
+                  <span class="close-text">Close </span><span class="stb-sprite-medium remove"></span>
+                </button>
+
+              </div>
             </div>
-            <div class="msgIcon stbcolor-secondary fifth"><span class="stb-color-sprite-medium info"></span></div>
           </div>
+
         </div>
-      </div>
+
       <div class="stb-form-group">
         <input id="formInputHelp" type="text" class="" placeholder="Placeholder" style="width: 230px;">
       </div>
