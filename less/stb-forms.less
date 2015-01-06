@@ -20,14 +20,21 @@ form {
 
     vertical-align: middle;
     margin-bottom: 0;
+
+    .input-group{
+      width: 230px;
+      input.form-control{
+        width: 230px;
+      }
+    }
   	input {
       .form-control();
       // tweak the default BS transition-speed:
       .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
+      width: 230px;
       border-radius: 0px;
       height: 48px;
       margin-bottom: 24px;
-
       &:hover {
         color: @stb-secondary-charcoal;
         border-color: @stb-secondary-charcoal;
@@ -61,7 +68,6 @@ form {
     }
 
     // input and buttons line up with no spacing:
- 
     button.is-submit {
       height: 48px;
       float: left;
@@ -79,6 +85,16 @@ form {
       }
     }
 
+    &.with-submit{
+      i.form-control-feedback{
+        right: -30px;
+      }
+    }
+    &.with-unit{
+      i.form-control-feedback{
+        right: -30px;
+      }
+    }
 
     >label {
       margin-bottom: 6px;
