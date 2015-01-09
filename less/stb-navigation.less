@@ -63,7 +63,7 @@
         background-color: @stb-primary-color-even-darker;
       }
 
-      .navbar-nav>li.group:hover,.navbar-nav>li.group{
+      .navbar-nav>li.group{
         &.current > a{
           background: @stb-primary-color url("../images/private.png") 20% 50% no-repeat;
         }
@@ -74,9 +74,18 @@
           background-position: 20% 48%;
         }
 
+        &.open{
+          > a{
+            background-color: @stb-primary-color-even-darker;
+          }
+        }
+
         > a{
           background: @stb-primary-color-darker;
           &:focus{
+            background-color: @stb-primary-color-even-darker;
+          }
+          &:hover{
             background-color: @stb-primary-color-even-darker;
           }
         }
