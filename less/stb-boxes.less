@@ -9,26 +9,26 @@
       color: @stb-primary-black;
     }
   }
-  
+
   &.second {
     .stbcolor-secondary.sixth;
     a {
       font-weight: strong;
     }
   }
-  
+
   &.third {
     .stbcolor-gray .first;
     border: 1px solid @stb-gray-third;
   }
-  
+
   &.fourth {
     .stbcolor-background .first;
-  }  
+  }
 
   &.fifth {
     .stbcolor-background .second;
-  }    
+  }
 
   &.sixth {
     .stbcolor-background .third;
@@ -41,28 +41,28 @@
   &.noBorder{
     border: none;
   }
-  
+
   &.dark {
     color: @stb-primary-white;
     & h1, h2, h3, h4, h5, h6, p {
       color: @stb-primary-white;
     }
-  }  
+  }
 
   // Forcing solid border
   &.border {
     border: 1px solid;
     border-color: @stb-secondary-charcoal;
-    
+
     &.red {
     	border-color: @stb-primary-color;
     }
-    
+
 	  &.gray {
 	    border-color: @stb-gray-second;
     }
   }
-	
+
   // Adding possibility of thicker border
   &.fat {
 		border: 2px solid;
@@ -120,20 +120,20 @@
       }
 
     }
-     
+
     @media (max-width: @screen-sm-max) {
       &.narrow .image {
         float: left;
 		margin-right: 20px;
 	  }
     }
-    
-     @media (min-width: @screen-md-min){ 
+
+     @media (min-width: @screen-md-min){
      	&.narrow img {
      		padding-bottom: 20px;
      	}
      }
-     
+
     .text{
       h2,h3 {
         padding-top: 0;
@@ -175,13 +175,14 @@
 
   h3{
     font-weight: normal;
-    font-family: @font-family-signa-light;
+    font-family: @font-family-signa-extralight;
     margin: 0 6px 6px 0;
     a, a:hover {
       padding-bottom: 0px;
+      border-bottom: 0;
+      text-decoration: underline;
     }
   }
-
 }
 
 /* Notification boxes */
