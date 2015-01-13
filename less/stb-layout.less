@@ -3,30 +3,26 @@
   padding-top: 48px;
 }
 .row{
-  padding-bottom: 48px;
+  .ColumnPaddingBottom(48px);
 }
 
 .banner{
-  img{
-    margin-bottom: -48px;
-  }
+
   h2{
     margin: 0 12px 6px 0;
   }
+  .ColumnPaddingBottom(0);
 }
 
 @media (max-width: @screen-sm-min) {
   .container{
     padding-top: 24px;
   }
-  .row{
-    padding-bottom: 24px;
-  }
+
+  .ColumnPaddingBottom(24px);
 
   .banner{
-    img{
-      margin-bottom: -24px;
-    }
+    .ColumnPaddingBottom(0);
   }
 }
 
@@ -40,10 +36,8 @@ footer{
 }
 
 #top-menu-nav{
-  .row{
-    padding-bottom: 0;
-  }
 
+  .ColumnPaddingBottom(0);
 
 }
 
