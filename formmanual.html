@@ -128,7 +128,7 @@
         <div class="commonmessage" style="display: none;">
 
           <div class="row info-message-wrapper">
-            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 info-message">
+            <div class="col-xs-12 info-message">
               <div class="msgText">
                 <p>Content...</p>
                 <button onclick="hideCommonMsg(this);return false;" class="close" type="button">
@@ -899,7 +899,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-9 col-md-12">
+      <div class="col-xs-9 col-md-12 slider">
         <form>
           <div class="stb-form-group top-margin-10">
             <input id="stb-slider" type="slider" name="stb-slider" value="0" />
@@ -909,6 +909,15 @@
     </div>
     <div class="row">
       <div class="col-md-12">
+        
+         <pre class="prettyprint">
+&lt;div class="col-xs-9 col-md-12 slider"&gt;
+ &lt;form&gt;
+   &lt;div class="stb-form-group top-margin-10"&gt;
+     &lt;input id="stb-slider" type="slider" name="stb-slider" value="0" /&gt;
+   &lt;/div&gt;
+ &lt;/form&gt;
+&lt;/div&gt;</pre>
         <p><br /><strong>Note</strong>: Our slider is based on Egorkhmelev's jslider (see <a href="https://github.com/egorkhmelev/jslider">GitHub</a>for code with more options), stripped down and with a few improvements:</p>
         <ul>
           <li>Self-contained JS-file, all dependencies are included at the top of the file.</li>
