@@ -36,16 +36,6 @@
     animation-name: shimmerGreen 2s ease-in-out 0s infinite;
   }
   
-  &.disabled {
-    background-color: @stb-gray-third;
-    color: @stb-secondary-charcoal;
-    cursor: not-allowed;
-    
-    &:hover, &:active, &:focus {
-      // No change for disabled buttons
-    }
-  }
-  
   &.transparent {
     background: transparent;
     border-style: solid;
@@ -125,7 +115,7 @@
   margin-right: -12px;
   }
 
-  &.stb-btn.stb-big-btn {
+  &.stb-big-btn {
    position: relative;
    padding-left: 84px;
    padding-right: 24px;
@@ -144,6 +134,26 @@
   }
 
 /*End stb-big-btn */
+  &.disabled {
+    background-color: @stb-gray-fourth;
+    cursor: not-allowed;
+    opacity: 1;
+    &:hover, &:active, &:focus {
+      // No change for disabled buttons
+    }
+    color: @stb-gray-second;
+    &.transparent{
+      background:transparent;
+      color: @stb-gray-fourth;
+    }
+
+    &.stb-big-btn{
+      background-color: @stb-gray-fourth;
+      &:after{
+        background-color: @stb-gray-third;
+      }
+    }
+  }
 
 } /* End stb.btn */
 
