@@ -17,18 +17,23 @@
        margin: 0 0 6px;
     }
   }
-  .ColumnMarginBottom(0);
+  .row{
+    .ColumnMarginBottom(0);
+  }
 }
 
 @media (max-width: @screen-sm-min) {
   .container{
     padding-top: 24px;
   }
-
-  .ColumnMarginBottom(24px);
+  .row{
+    .ColumnMarginBottom(24px);
+  }
 
   .banner{
-    .ColumnMarginBottom(0);
+    .row{
+      .ColumnMarginBottom(0);
+    }
   }
 }
 
@@ -40,13 +45,6 @@ footer{
     padding-bottom: 0;
   }
 }
-
-#top-menu-nav{
-
-  .ColumnMarginBottom(0);
-
-}
-
 
 /*End of general margins and paddings in layout*/
 

@@ -15,6 +15,7 @@
 
   .row{
     background: @stb-primary-white;
+    .ColumnMarginBottom(0);
   }
   h4{
    margin: 6px 9px 6px 0;
@@ -397,8 +398,9 @@
 
 //Mobile menu styling
 #mobilemenu{
-
-  .ColumnMarginBottom(0);
+  .row{
+    .ColumnMarginBottom(0);
+  }
 
   background-color:@stb-primary-white;
   z-index:2;
