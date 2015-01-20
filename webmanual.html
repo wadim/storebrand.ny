@@ -6,6 +6,7 @@
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap3.3.1/dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/stb-main.css">
 
   <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
@@ -1077,13 +1078,12 @@ $(document).ready(function() {
    
 <h4 class="bottom-margin-10"> 1. Narrow mini boxes: Image and text in different row alltogether. Except for small and extra small screens where they are next to each other</h4>
 <div class="row">
-  <div class="col-md-12">
     <div class="col-md-4">
       <div class="stb-box mini narrow clickable" rel="tel:08880">
-          <div class="image">
+          <div class="image column">
             <img src="images/testminibox/MiniBoxImageNarrow63x32.png">
           </div>
-          <div class="text">
+          <div class="text column">
             <h3>Vi hjelper deg igang</h3>
             <h3><a href="#">Ring 08880</a></h3>
           </div>
@@ -1091,10 +1091,10 @@ $(document).ready(function() {
     </div>
     <div class="col-md-4">
       <div class="stb-box mini narrow clickable" rel="tel:08880">
-          <div class="image">
+          <div class="image column ">
             <img src="images/testminibox/MiniBoxImageSquare63x63.png">
           </div>
-          <div class="text">
+          <div class="text column">
             <h3>Vi hjelper deg igang</h3>
             <h3><a href="#">Ring 08880</a></h3>
           </div>
@@ -1103,17 +1103,16 @@ $(document).ready(function() {
     
     <div class="col-md-4">
       <div class="stb-box mini narrow" rel="tel:08880">
-          <div class="image">
+          <div class="image column">
             <img src="images/testminibox/MiniBoxImageWide63x94.png">
           </div>
-          <div class="text">
+          <div class="text column">
             <h3>Vi hjelper deg igang</h3>
             <h3><a href="#">Ring 08880</a></h3>
           </div>
         </div>
     
     </div>
- </div>
 </div>
 
 
@@ -1123,10 +1122,10 @@ $(document).ready(function() {
               <pre class="prettyprint">
 &lt;div class="col-md-4"&gt;
   &lt;div class="stb-box mini narrow clickable" rel="tel:08880"&gt;
-    &lt;div class="image"&gt;
+    &lt;div class="image column"&gt;
       &lt;img src="images/testminibox/MiniBoxImageWide63x94.png"&gt;
     &lt;/div&gt;
-    &lt;div class="text"&gt;
+    &lt;div class="text column"&gt;
       &lt;h3&gt;Vi hjelper deg i gang&lt;/h3&gt;
       &lt;h3&gt;&lt;a href="#"&gt;Ring 08880&lt;/a&gt;&lt;/h3&gt;
     &lt;/div&gt;
@@ -1139,46 +1138,38 @@ $(document).ready(function() {
 <h4 class="top-margin-20 bottom-margin-10"> 2. Wide mini boxes: Image and text next to each other (Always)</h4>
 
 <div class="row">
-<div class="col-md-12">
-  <div class="col-md-6">
-    <div class="stb-box mini wide clickable row" rel="tel:08880">
-      <div class="image column">
-        <img src="images/testminibox/MiniBoxImageNarrow63x32.png">
-      </div>
-      <div class="text column">
-        <h3>Vi hjelper deg i gang</h3>
-        <h3><a href="#">Ring 08880</a></h3>
-      </div>
+<div class="col-md-6">
+  <div class="stb-box mini wide clickable row" rel="tel:08880">
+    <div class="image column">
+      <img src="images/testminibox/MiniBoxImageNarrow63x32.png">
+    </div>
+    <div class="text column">
+      <h3>Vi hjelper deg i gang</h3>
+      <h3><a href="#">Ring 08880</a></h3>
     </div>
   </div>
-        
-  <div class="col-md-6">
-    <div class="stb-box mini wide clickable row" rel="tel:08880">
-      <div class="image column">
+</div>
+<div class="col-md-6">
+  <div class="stb-box mini wide clickable row" rel="tel:08880">
+     <div class="image column">
         <img src="images/testminibox/MiniBoxImageSquare63x63.png">
-      </div>
-	   <div class="text column">
-	     <h3>Kontakt oss</h3>
-	     <h3><a href="#">Ring 08880</a></h3>
-	   </div>
      </div>
-   </div>
-</div>
-</div>
- 
-<div class="row">
-<div class="col-md-12">
-   <div class="col-md-6">
-     <div class="stb-box mini wide clickable row" rel="tel:08880">
-       <div class="image column">
-         <img src="images/testminibox/MiniBoxImageWide63x94.png">
-       </div>
-       <div class="text column">
-         <h3>Vi hjelper deg i gang</h3>
-         <h3><a href="#">Ring 08880</a></h3>
-       </div>
+     <div class="text column">
+       <h3>Kontakt oss</h3>
+       <h3><a href="#">Ring 08880</a></h3>
      </div>
+  </div>
+ </div>
+<div class="col-md-6">
+ <div class="stb-box mini wide clickable row" rel="tel:08880">
+   <div class="image column">
+     <img src="images/testminibox/MiniBoxImageWide63x94.png">
    </div>
+   <div class="text column">
+     <h3>Vi hjelper deg i gang</h3>
+     <h3><a href="#">Ring 08880</a></h3>
+   </div>
+ </div>
 </div>
 </div>
 
