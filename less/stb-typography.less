@@ -260,8 +260,17 @@ div a{
   }
 }
 
-p a:hover,
-div a:hover {
+a {
+  color: @stb-secondary-charcoal;
+}
+
+a:visited {
+  color: @stb-secondary-dust;
+}
+
+a:hover,
+a:focus,
+a:active{
   text-decoration: none;
   color: @stb-primary-color;
   border-bottom: 1px solid @stb-primary-color;
@@ -275,13 +284,7 @@ div a:hover {
   }
 }
 
-a, a:hover {
-  color: @stb-secondary-charcoal;
-}
 
-a:visited {
-  color: @stb-secondary-dust;
-}
 
 
 //For the webmanual examples

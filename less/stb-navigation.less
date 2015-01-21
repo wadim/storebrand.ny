@@ -235,7 +235,7 @@
           margin-right: 0;
         }
 
-        &:hover{
+        &:hover,&:focus,&:active{
           color: @stb-primary-color;
           background-color: transparent;
           border-bottom: 1px solid @stb-primary-color;
@@ -420,9 +420,6 @@
   }
 
   border-bottom: solid 2px @stb-secondary-charcoal;
-  a{
-    border: none;
-  }
 
   .panel-group{
     margin-top: 12px;
@@ -540,18 +537,27 @@
     padding-bottom: 0px;
   }
 
-  a.menu-item{
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    border-left: none;
-    border-right: none;
-    border-radius: 0px;
-    font-size: 16px;
-    font-family: 'SignaWeb-Light';
+
+  a{
     border: none;
-    color: @stb-secondary-charcoal;
+    &.menu-item{
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      margin-bottom: -1px;
+      border-left: none;
+      border-right: none;
+      border-radius: 0px;
+      font-size: 16px;
+      font-family: 'SignaWeb-Light';
+      color: @stb-secondary-charcoal;
+      &:hover,
+      &:focus,
+      &:active{
+        text-decoration: none;
+        color: @stb-primary-color;
+      }
+    }
   }
 
   #searchMobile{
