@@ -56,6 +56,7 @@ ul.accordion {
         background-position: 0 -3500px;
         display: inline-block;
         float: right;
+        margin-left: 6px;
       }
       
       &.open {
@@ -115,9 +116,17 @@ ul.accordion {
 
   }
   
-   @media (max-width: @screen-sm-min) {
+   @media (max-width: @screen-sm-max) {
 	  li {
-	    font-size: 14px;
+        font-size: 14px;
+        a.twister, div.answer{
+          font-size: 14px;
+          ul,ol{
+            li{
+              font-size: 14px;
+            }
+          }
+        }
 	 }
     }
 }
