@@ -104,7 +104,7 @@
       padding-bottom: 24px;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: @screen-sm-min) {
       padding: 12px 12px 6px;
       &.row{
         padding-bottom: 12px;
@@ -118,14 +118,14 @@
 
     }
 
-    @media (max-width: @screen-sm-max) {
+    @media (max-width: @screen-sm-min) {
       &.narrow .image {
         float: left;
 		margin-right: 20px;
 	  }
     }
 
-     @media (min-width: @screen-md-min){
+     @media (min-width: @screen-sm-min){
      	&.narrow img {
      		padding-bottom: 20px;
      	}
