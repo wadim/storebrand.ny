@@ -305,8 +305,32 @@
 
   // Beginning tablet styling
  @media screen and (max-width: 991px) {
+
+
      .navbar.mobile {
-       >div>div>div>a{
+      .rightColor{
+          padding-right: 0px;
+          padding-left: 0px;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          width: 50%;
+          height: 48px;
+          background-color: @stb-primary-color-darker;
+          z-index: -10;
+       }
+       .leftColor{
+          padding-right: 0px;
+          padding-left: 0px;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 50%;
+          height: 48px;
+          background-color: @stb-primary-white;
+          z-index: -10;
+        }
+       >div>div>a{
          border-bottom: none;
        }
         border: none;
@@ -327,13 +351,13 @@
             position: relative;
             border-radius: 0px;
             display: block;
-            padding-left: 10px;
-            padding-right: 108px;
+            padding-left: 0;
+            padding-right: 72px;
             padding-top: 22px;
             border: none;
 
             &:focus{
-              background-color: @stb-primary-color;
+              background-color: @stb-primary-color-darker;
             }
 
             // This fixes the v-align of tablet menu, but messes up Creuna mobile menu top -> margin-top: 12px;
