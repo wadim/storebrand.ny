@@ -1,13 +1,28 @@
 
 <!doctype html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js csstransitions"><head>
 <head>
   <title>Technical Web Design Manual for Storebrand</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+
+  <title>Privat</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Enonic CMS">
+  <meta name="author" content="Enonic">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="canonical" href="/cms/privat">
+  <meta charset="utf-8">
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap3.3.1/dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+  <link rel="stylesheet" type="text/css" href="css/yamm.css">
+  <link rel="shortcut icon" href="images/favicon.ico?_ts=14b16a09a58">
+  <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-128x128-precomposed.png? ts=14b2b8c3968">
 
   <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
   <script type="text/javascript" src="js/dist/jquery.min.js"></script>
@@ -3155,37 +3170,37 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
     <div class="col-md-9">
       <p>
-        Video can be added anywhere in a suitable size relative to the page contents.
+        Videos can be added inline. Be sure to check if the video is in 16:9 or 4:3 format and add either
+        embed-responsive-16by9 or embed-responsive-4by3 according to the respectable format.
       </p>
       <div class="row top-margin-20">
         <div class="col-md-6">
-          <div class="video-container inline">
-            <button id="playVideoBtn-2" class="stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-medium white play"></span></button>
+          <h3>For videos in 16:9 format</h3>
+          <div class="embed-responsive embed-responsive-16by9">
             <div id="player-2" class="video-player-inline" data-youtube-id="_7Foh3T1gN4"></div>
           </div>
         </div>
         <div class="col-md-6">
-          <p>
-            And here's a sponge next to the video, for some reason.
-          </p>
-          <img src="images/sponge.png" class="hidden-xs center-block" />
+          <h3>For videos in 4:3 format</h3>
+          <div class="embed-responsive embed-responsive-4by3">
+            <div id="player-3" class="video-player-inline" data-youtube-id="mM5_T-F1Yn4"></div>
+          </div>
         </div>
       </div>
       <p>
         <strong>Code:</strong>
       </p>
       <pre class="prettyprint">
- &lt;div class=&quot;col-md-8&quot;&gt;
-   &lt;div class=&quot;video-container&quot;&gt;
-     &lt;button id=&quot;playVideoBtn-2&quot; class=&quot;stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs&quot;&gt;
-       &lt;p class=&quot;pull-left&quot;&gt;Spill av video &nbsp&lt;/p&gt;
-     &lt;span class=&quot;stb-sprite-medium white play&quot;&gt;&lt;/span&gt;&lt;/button&gt;
-     &lt;div id=&quot;player-2&quot; class=&quot;video-player-inline&quot; data-youtube-id=&quot;_7Foh3T1gN4&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
+&lt;div class="col-md-6"&gt;
+ &lt;div class="embed-responsive embed-responsive-16by9"&gt;
+   &lt;div id="player-2" class="video-player-inline" data-youtube-id="_7Foh3T1gN4"&gt;&lt;/div&gt;
  &lt;/div&gt;
-  &lt;div class=&quot;col-md-4&quot;&gt;
-    &lt;img src=&quot;images/sponge.png&quot; class=&quot;hidden-xs center-block&quot; /&gt;
-  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-md-6"&gt;
+  &lt;div class="embed-responsive embed-responsive-4by3"&gt;
+  &lt;div id="player-3" class="video-player-inline" data-youtube-id="_7Foh3T1gN4"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
           </pre>
 
 
