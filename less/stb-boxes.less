@@ -59,15 +59,15 @@
     	border-color: @stb-primary-color;
     }
 
-	  &.gray {
+    &.gray {
 	    border-color: @stb-gray-second;
     }
   }
 
   // Adding possibility of thicker border
   &.fat {
-		border: 2px solid;
-	}
+	border: 2px solid;
+  }
 
   // Forcing dotted border
   &.dotted {
@@ -78,7 +78,6 @@
     border: 1px dashed;
   }
 
-
   ul.stb,ol.stb {
     padding-bottom: 0;
   }
@@ -88,7 +87,7 @@
     h4{
       margin: 6px 9px 6px 0;
     }
-    @media screen and (max-width: 768px) {
+    @media (max-width: @screen-sm-min) {
       padding: 12px;
     }
   }
@@ -153,12 +152,12 @@
   &.big{
     background-color: @stb-gray-first;
     padding: 24px;
-    @media screen and (max-width: 768px) {
+    @media(max-width: @screen-sm-min) {
       padding: 12px;
     }
 
     &:hover {
-      @media screen and (max-width: 768px) {
+      @media(max-width: @screen-sm-min) {
         padding: 12px;
       }
     }
@@ -264,15 +263,6 @@ a + div.iconInfo{
  h3{
    margin: 12px 12px 12px 0;
  }
-}
-
-.stb-white-box{
-  height:inherit;
-  background-color: @stb-primary-white;
-  padding:24px 24px;
-  @media (max-width: @screen-xs-min) {
-     padding:12px 12px;
-  }
 }
 
 .banner{
