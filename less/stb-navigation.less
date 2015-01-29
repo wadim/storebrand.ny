@@ -1,7 +1,7 @@
 @mobile-dropdown-color : @stb-primary-white;
 
 // tablet and mobile styling 
-@media screen and (max-width: 991px) {
+@media(max-width:@screen-sm-max) {
   body {
     padding-top: 48px;
   }
@@ -204,8 +204,7 @@
         }
       }
     }
-
-    @media screen and (min-width: 992px) {
+    @media(min-width:@screen-md-min) {
       .verktoy{
         padding: 10px 0 10px 10%;
       }
@@ -304,9 +303,8 @@
   // Ending desktop styling
 
   // Beginning tablet styling
- @media screen and (max-width: 991px) {
 
-
+ @media(max-width: @screen-sm-max) {
      .navbar.mobile {
       .rightColor{
           padding-right: 0px;
@@ -394,7 +392,7 @@
    // Ending tablet styling
 
   // Beginning mobile styling
-  @media screen and (max-width: 768px) {
+  @media(max-width: @screen-sm-min) {
     .navbar {
       margin-bottom: 0px;
       border-radius: 0px;
@@ -625,7 +623,7 @@
     left: 0;
   }
   span, span:before, span:after{
-    transition: all 300ms ease-in-out;
+    transition: all 200ms  ease-in-out;
   }
 
   &.active span {
@@ -635,11 +633,13 @@
     }
 
     &:before{
+      -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
 
     &:after{
+      -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
     }
