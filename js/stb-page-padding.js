@@ -962,12 +962,13 @@
   $(document).ready(function(){
     $('.table-responsive').each(function(){
       if($(this).hasScrollBar()){
-        $(this).addClass('scrollable');
+        $(this).addClass('scrollable').before('<span class="stb-sprite-medium scroll scroll-indicator"></span>');
       }
     });
     $('.table-responsive-pinned').each(function(){
        if($(this).hasScrollBar()){
-         $(this).addClass('scrollable');
+         $(this).addClass('scrollable').before('<span class="stb-sprite-medium scroll scroll-indicator"></span>');
+
        }
     });
     makeTableScrollable();
