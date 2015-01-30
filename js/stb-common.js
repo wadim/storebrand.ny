@@ -380,7 +380,6 @@ function makeTableScrollable(){
     tr.each(function (index) {
       var self = $(this),
           tx = self.find('th, td');
-
       tx.each(function () {
         var height = $(this).outerHeight(true);
         heights[index] = heights[index] || 0;
@@ -391,8 +390,11 @@ function makeTableScrollable(){
 
     tr_copy.each(function (index) {
       //Integration with boostrap fix
-      $(this).height(heights[index]-1);
+      $(this).height(heights[index]);
     });
+    tr.each(function (index){
+      $(this).height(heights[index]);
+    })
   }
 }
 /* ***** End of Function for making tables responsive ***** */
