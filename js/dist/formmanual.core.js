@@ -94,11 +94,11 @@ $(document).ready(function() {
       return d;
     }
   };
-  //var sliderEl = $("#stb-slider");
-  //initiateSlider(sliderEl, sliderObj, "år", "percent");
+  var sliderEl = $("#stb-slider");
+  initiateSlider(sliderEl, sliderObj, "år", "percent");
 });
 
-/*$("document").ready(function() {
+$("document").ready(function() {
   $("#progressbar-trigger").on("click", function() {
     var a = Math.floor(101 * Math.random()) + 0;
     $(".stb-progress div[data-widget=progressExample]").css({
@@ -112,7 +112,6 @@ $(document).ready(function() {
     $(this).append('<div class="color-code">' + b + "</div>");
   })
 });
-*/
 
 // Begin code for Web Manual Table of Contents 
 $("document").ready(function(){

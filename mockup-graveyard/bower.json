@@ -1,0 +1,7 @@
+{
+  "name": "stb-web-manual",
+  "version": "0.666",
+  "main": [
+    "css/stb-all-min.css"
+  ]
+}

@@ -1,7 +1,0 @@
-{
-  "name": "stb-webmanual",
-  "version": "0.38",
-  "main": [
-    "/dist/stb-main.css"
-  ]
-}

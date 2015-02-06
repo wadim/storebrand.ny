@@ -18,29 +18,21 @@
   <meta charset="utf-8">
   <meta name="google" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/stb-all-min.css">
   <link rel="shortcut icon" href="images/favicon.ico">
+  
+  <!-- Universal references useful everywhere -->
   <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-128x128-precomposed.png">
-  <link rel="stylesheet" type="text/css" href="css/stb-main.css">
-  <link rel="stylesheet" type="text/css" href="css/yamm.css">
-  <script type="text/javascript" src="javascript/modernizr.custom.js"></script>
-  <script type="text/javascript" src="javascript/jquery.min.js"></script>
-  <script type="text/javascript" src="javascript/jquery.eqheight.js"></script>
-  <script type="text/javascript" src="javascript/jquery-ui-1.11.0.js"></script>
-  <script type="text/javascript" src="javascript/jquery.hotkeys.js"></script>
-  <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
-  <script type="text/javascript" src="javascript/typeahead.bundle.min.js"></script>  
-  <script type="text/javascript" src="javascript/search.js"></script>  
-  <script type="text/javascript" src="javascript/stb-common.js"></script>
-  <script type="text/javascript" src="javascript/stb-page-padding.js"></script>
-  <script type="text/javascript" src="javascript/stb-video.js"></script>
-  <script type="text/javascript" src="javascript/bootstrapValidator-0.5.2.js"></script>
+  <script type="text/javascript" src="javascript/stb-all.min.js"></script>
+  <!-- End of universally useful references -->
 
-  <!-- Stuff just for the web manual... -->
-  <link rel="stylesheet" type="text/css" href="css/manual-presentation.css"> 
-  <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
+  <!-- References only useful for web manual -->  
+  <link rel="stylesheet" type="text/css" href="css/manual-presentation.css">  
   <script type="text/javascript" src="javascript/webmanual.core.js"></script>
-  <!-- End of just for the web manual -->
+  <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
+  <!-- End of references only for web manual -->  
   <style>
+    /* Styling especially for web manual */
     .toc-list ul.items {
       display: block;
     }
@@ -50,7 +42,6 @@
  	  margin-top: 0 !important;
  	  margin-bottom: 10px;
     }
-    
     ul.items>li a {
      font-size: 16px;
  	 font-weight: bold;
@@ -891,7 +882,7 @@ $(document).ready(function() {
           </thead>
           <tbody>
           <tr>
-            <td><a href="#">This is a normal link in a table</a></td>
+            <td><a href="#">A link in a table</a></td>
             <td class="text-right">1,25%</td>
             <td class="text-right">0</td>
             <td class="text-right">1,50%</td>
