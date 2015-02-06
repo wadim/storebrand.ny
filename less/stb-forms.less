@@ -20,14 +20,21 @@ form {
 
     vertical-align: middle;
     margin-bottom: 0;
+
+    .input-group{
+      width: 230px;
+      input.form-control{
+        width: 230px;
+      }
+    }
   	input {
       .form-control();
       // tweak the default BS transition-speed:
       .transition(~"all ease-in-out .025s, box-shadow ease-in-out .025s");
+      width: 230px;
       border-radius: 0px;
       height: 48px;
       margin-bottom: 24px;
-
       &:hover {
         color: @stb-secondary-charcoal;
         border-color: @stb-secondary-charcoal;
@@ -61,7 +68,6 @@ form {
     }
 
     // input and buttons line up with no spacing:
- 
     button.is-submit {
       height: 48px;
       float: left;
@@ -79,6 +85,16 @@ form {
       }
     }
 
+    &.with-submit{
+      i.form-control-feedback{
+        right: -30px;
+      }
+    }
+    &.with-unit{
+      i.form-control-feedback{
+        right: -30px;
+      }
+    }
 
     >label {
       margin-bottom: 6px;
@@ -197,7 +213,6 @@ form {
       }
     }
   }
-
 }
 
 /***************************************************
@@ -523,14 +538,6 @@ input[type=checkbox].stb-checkbox {
   }
 }
 
-.formSection{
-  margin: 48px 0 48px 0;
-  display:none;
-}
-.formSection.active{
-  display:block;
-}
-
 form{
   /* Override feedback icon position */
 
@@ -555,20 +562,7 @@ form{
   }
 
   .dateContainer .form-control-feedback{
-    right: -30px;
-  }
-
-  .stb-form-group .col-xs-1, .col-sm-1, .col-md-1,
-  .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,
-  .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4,
-  .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5,
-  .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6,
-  .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7,
-  .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9,
-  .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10,
-  .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11,
-  .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
-    padding-right: 0;
+    right: -50px;
   }
 
   .panel-default{
@@ -584,12 +578,12 @@ form{
     font-size: 24px;
     a{
      border-bottom: none;
-    }
-    a:visited{
-      color : @stb-primary-black;
-    }
-    a:hover{
-      color: @stb-primary-color;
+      &:visited{
+        color : @stb-primary-black;
+      }
+      &:hover{
+        color: @stb-primary-color;
+      }
     }
   }
 
@@ -604,22 +598,70 @@ form{
 
   }
 
+  .row.info-message-wrapper {
+    padding-bottom: 0px;
+    .ColumnMarginBottom(0);
+    .info-message {
+      margin-bottom: 0;
+
+      .msgText {
+        width: 100%;
+        border-left: 1px solid black;
+        padding: 0 0 0 24px;
+        margin-bottom: 12px;
+        display: block;
+
+        p {
+          margin: 0;
+        }
+
+        button.close {
+          float: none;
+          opacity: .8;
+          filter: alpha(opacity=80);
+          margin-top: 24px;
+          font-size: 18px;
+          font-family: "Open Sans Bold",Arial,ArialMT,sans-serif;
+
+          &:focus, &:hover {
+            opacity: .5;
+            filter: alpha(opacity=50);
+          }
+
+          .close-text {
+            display: inline-block;
+            margin-left: 0;
+            margin-bottom: 5px;
+          }
+
+          .remove {
+            margin-left: 5px;
+            margin-bottom: -5px;
+          }
+        }
+      }
+    }
+  }
 }
 
 form.login{
+  h3{
+    margin: 12px 12px 12px 0;
+  }
+
   .stb-form-group.with-submit{
-    width: 400px;
-        @media (max-width: @screen-xs-min) {
-         width: 200px;
-            i.form-control-feedback{
-              right: -30px;
-         }
-      }
+    width: inherit;
+    input{
+      width: 166px;
+    }
+     i.form-control-feedback{
+                  right: -30px;
+     }
   }
   .stb-form-group{
          width: 200px;
          input{
            width: 200px;
          }
-      }
+  }
 }

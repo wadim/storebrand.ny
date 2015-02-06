@@ -88,10 +88,8 @@ h2 {
   font-family: @font-family-signa-extralight;
   &.dark {
     color: @stb-primary-white;
-  }  
-  &.big {
-    font-size: 60px;
   }
+
 }
 h3 {
   font-size: 24px;
@@ -104,6 +102,7 @@ h3 {
   }
   &.toc-header {
     padding-bottom: 0;
+    margin-top: 24px;
   }
 }
 
@@ -143,6 +142,9 @@ h6 {
   }
 }
 
+b, strong{
+  font-family: @font-family-sans-serif-bold;
+}
 
 /* Header margin exceptions */
 h2 + h3 {
@@ -153,13 +155,23 @@ h3 + h4, img + h3{
   margin: 6px 6px 6px 0;
 }
 
-div.row > div{
+figure + h3{
+  margin: 24px 6px 6px 0;
+}
+
+div.row div{
   > h3:first-child {
     margin: 0 6px 6px 0;
+    &.toc-header{
+          margin: 24px 6px 6px 0;
+    }
   }
 
-  > div:first-child > h3:first-child {
+  div:first-child > h3:first-child {
     margin: 0 6px 6px 0;
+    &.toc-header{
+      margin: 24px 6px 6px 0;
+    }
   }
 
   > h2:first-child {
@@ -183,6 +195,10 @@ h5.link {
   text-decoration:underline;
 }
 
+body{
+  -webkit-font-smoothing: antialiased;
+}
+
 p {
   font-size: 16px;
   line-height: 24px;
@@ -193,6 +209,13 @@ p {
     font-size: 24px;
     line-height: 30px;
     margin: 0 0 12px;
+  }
+  &.interest-rate{
+    line-height: 46px;
+    color: @stb-secondary-charcoal;
+    font-family: @font-family-signa-extralight;
+    font-size: 60px;
+    margin: 18px 12px 12px 0;
   }
 }
 
@@ -218,8 +241,10 @@ small, .petit {
 
 }
 
-p + button{
-  margin-top: 12px;
+ol,ul,p {
+  ~ button{
+    margin-top: 12px;
+  }
 }
 
 blockquote {
@@ -249,8 +274,18 @@ div a{
   }
 }
 
-p a:hover,
-div a:hover {
+a {
+  color: @stb-secondary-charcoal;
+  cursor: pointer;
+}
+
+a:visited {
+  color: @stb-secondary-dust;
+}
+
+a:hover,
+a:focus,
+a:active{
   text-decoration: none;
   color: @stb-primary-color;
   border-bottom: 1px solid @stb-primary-color;
@@ -264,13 +299,7 @@ div a:hover {
   }
 }
 
-a, a:hover {
-  color: @stb-secondary-charcoal;
-}
 
-a:visited {
-  color: @stb-secondary-dust;
-}
 
 
 //For the webmanual examples
@@ -383,7 +412,7 @@ ul.stb,ol.stb {
   h1 {
     font-size: 24px;
     line-height: 30px;
-    margin: 0 9px 9px 0;
+    margin: 24px 9px 9px 0;
   }
   
   h2 {

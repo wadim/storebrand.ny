@@ -1,12 +1,28 @@
 
 <!doctype html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js csstransitions"><head>
 <head>
   <title>Technical Web Design Manual for Storebrand</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+
+  <title>Privat</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Enonic CMS">
+  <meta name="author" content="Enonic">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="canonical" href="/cms/privat">
+  <meta charset="utf-8">
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap3.3.1/dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/stb-main.css">
+  <link rel="stylesheet" type="text/css" href="css/yamm.css">
+  <link rel="shortcut icon" href="images/favicon.ico?_ts=14b16a09a58">
+  <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-128x128-precomposed.png? ts=14b2b8c3968">
 
   <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
   <script type="text/javascript" src="js/dist/jquery.min.js"></script>
@@ -43,7 +59,7 @@
   </style>
 </head>
 
-<body>
+<body ontouchstart="">
 
 <div class="container">
 
@@ -618,167 +634,453 @@ $(document).ready(function() {
     <p>
       The table head always has room for two lines of text, even if there is only one line of text. This is to make it easy to see where a table ends and begins, especially important on pages with two or more tables placed near each other.
     </p>
+    <p>There are two types of responsive tables:
+    <ol class="stb">
+      <li>
+        The standard responsive <a href="http://getbootstrap.com/css/#tables">Bootstrap table</a>
+      </li>
+      <li>
+        The pinned left column responsive table based on <a href="http://zurb.com/playground/responsive-tables">Zurb responsive tables</a>
+      </li>
+    </ol></p>
+
 
     <h3>Standard table</h3>
-    <table class="stb-table">
-      <thead>
-      <tr>
-        <th>Aksjefond</th>
-        <th class="text-right">Forvaltningshonorar</th>
-        <th class="text-right">Andre gebyrer</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><a href="#">This is a normal link in a table</a></td>
-        <td class="text-right">1,25%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr>
-        <td>Storebrand Barnespar</td>
-        <td class="text-right">1,50%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr>
-        <td>Storebrand Aksjespar</td>
-        <td class="text-right">1,50%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr>
-        <td>Storebrand Global</td>
-        <td class="text-right">2,00%</td>
-        <td class="text-right">0</td>
-      </tr>
-      </tbody>
-    </table>
+    <h4>Standard responsive boostrap table:</h4>
+    <div class="table-responsive">
+      <table class="stb-table">
+        <thead>
+        <tr>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="#">This is a normal link in a table</a></td>
+          <td class="text-right">1,25%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        <tr>
+          <td>Storebrand Barnespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        <tr>
+          <td>Storebrand Aksjespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        <tr>
+          <td>Storebrand Global</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <h4>Locked left column table:</h4>
+    <div class="table-responsive-pinned">
+      <table class="responsive stb-table">
+        <thead>
+        <tr>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="#">This is a normal link in a table</a></td>
+          <td class="text-right">1,25%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        <tr>
+          <td>Storebrand Barnespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        <tr>
+          <td>Storebrand Aksjespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        <tr>
+          <td>Storebrand Global</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h3>Table with hover effect in rows</h3>
     <p>
       Add a hover effect on the table rows by adding the class "hoverable" to the table.
     </p>
-    <table class="stb-table hoverable">
-      <thead>
-      <tr>
-        <th>Aksjefond</th>
-        <th class="text-right">Forvaltningshonorar</th>
-        <th class="text-right">Andre gebyrer</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>Storebrand Barnespar</td>
-        <td class="text-right">1,50%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr>
-        <td>Storebrand Aksjespar</td>
-        <td class="text-right">1,50%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr>
-        <td>Storebrand Global</td>
-        <td class="text-right">2,00%</td>
-        <td class="text-right">0</td>
-      </tr>
-
-      </tbody>
-    </table>
-
+    <h4>Standard responsive boostrap table:</h4>
+    <div class="table-responsive">
+      <table class="stb-table hoverable">
+        <thead>
+        <tr>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Storebrand Barnespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr>
+          <td>Storebrand Aksjespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr>
+          <td>Storebrand Global</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <h4>Locked left column table:</h4>
+    <div class="table-responsive-pinned">
+      <table class="responsive stb-table hoverable">
+        <thead>
+        <tr>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Storebrand Barnespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr>
+          <td>Storebrand Aksjespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr>
+          <td>Storebrand Global</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h3>Table without alternating rows</h3>
     <p>
       Remove alternating rows by adding the class "noalt" to the table.
     </p>
-    <table class="stb-table no-alt hoverable nude">
-      <thead>
-      <tr>
-        <th>Aksjefond</th>
-        <th class="text-right">Forvaltningshonorar</th>
-        <th class="text-right">Andre gebyrer</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>Storebrand Barnespar</td>
-        <td class="text-right">1,50%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr>
-        <td>Storebrand Aksjespar</td>
-        <td class="text-right">1,50%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr>
-        <td>Storebrand Global</td>
-        <td class="text-right">2,00%</td>
-        <td class="text-right">0</td>
-      </tr>
-      </tbody>
-    </table>
-
+    <h4>Standard responsive boostrap table:</h4>
+    <div class="table-responsive">
+      <table class="stb-table no-alt hoverable nude">
+        <thead>
+        <tr>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="#">This is a normal link in a table</a></td>
+          <td class="text-right">1,25%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        <tr>
+          <td>Storebrand Barnespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        <tr>
+          <td>Storebrand Aksjespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        <tr>
+          <td>Storebrand Global</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <h4>Locked left column table:</h4>
+    <div class="table-responsive-pinned">
+        <table class="responsive stb-table no-alt hoverable nude">
+          <thead>
+          <tr>
+            <th>Aksjefond</th>
+            <th class="text-right">Forvaltningshonorar</th>
+            <th class="text-right">Andre gebyrer</th>
+            <th>Aksjefond</th>
+            <th class="text-right">Forvaltningshonorar</th>
+            <th class="text-right">Andre gebyrer</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><a href="#">This is a normal link in a table</a></td>
+            <td class="text-right">1,25%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+          </tr>
+          <tr>
+            <td>Storebrand Barnespar</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+          </tr>
+          <tr>
+            <td>Storebrand Aksjespar</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+          </tr>
+          <tr>
+            <td>Storebrand Global</td>
+            <td class="text-right">2,00%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     <h3>Table with clickable rows</h3>
     <p>
       Make the rows clickable by adding the class "clickable" to the row tag. What happens upon a click is defined by what you add to the rel attribute of each particular row tag.
       By adding the class "analyze" Google Analytics tracking of clicking is enabled.
     </p>
-    <table class="stb-table no-alt hoverable nude">
-      <thead>
-      <tr>
-        <th>Aksjefond</th>
-        <th class="text-right">Forvaltningshonorar</th>
-        <th class="text-right">Andre gebyrer</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr class="clickable analyze" rel="#index-nav">
-        <td>Storebrand Barnespar</td>
-        <td class="text-right">1,50%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr class="clickable" rel="#index-nav">
-        <td>Storebrand Aksjespar</td>
-        <td class="text-right">1,50%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr class="clickable" rel="#index-nav">
-        <td>Storebrand Global</td>
-        <td class="text-right">2,00%</td>
-        <td class="text-right">0</td>
-      </tr>
-      <tr class="clickable" rel="#index-nav">
-        <td>Storebrand Norge</td>
-        <td class="text-right">2,00%</td>
-        <td class="text-right">0</td>
-      </tr>
-      </tbody>
-      <tfoot>
-      <tr>
-        <th>And that's all of them</th>
-        <th class="text-right">Forvaltningshonorar</th>
-        <th class="text-right">Andre gebyrer</th>
-      </tr>
-      </tfoot>
-    </table>
-
+    <h4>Standard responsive boostrap table:</h4>
+    <div class="table-responsive">
+        <table class="stb-table no-alt hoverable nude">
+          <thead>
+          <tr>
+            <th>Aksjefond</th>
+            <th class="text-right">Forvaltningshonorar</th>
+            <th class="text-right">Andre gebyrer</th>
+            <th class="text-right">Forvaltningshonorar</th>
+            <th class="text-right">Andre gebyrer</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="clickable analyze" rel="#index-nav">
+            <td>Storebrand Barnespar</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+          </tr>
+          <tr class="clickable" rel="#index-nav">
+            <td>Storebrand Aksjespar</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">0</td>
+          </tr>
+          <tr class="clickable" rel="#index-nav">
+            <td>Storebrand Global</td>
+            <td class="text-right">2,00%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">2,00%</td>
+            <td class="text-right">0</td>
+          </tr>
+          <tr class="clickable" rel="#index-nav">
+            <td>Storebrand Norge</td>
+            <td class="text-right">2,00%</td>
+            <td class="text-right">0</td>
+            <td class="text-right">2,00%</td>
+            <td class="text-right">0</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <th>And that's all of them</th>
+            <th class="text-right">Forvaltningshonorar</th>
+            <th class="text-right">Andre gebyrer</th>
+            <th class="text-right">Forvaltningshonorar</th>
+            <th class="text-right">Andre gebyrer</th>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+    <h4>Locked left column table:</h4>
+    <div class="table-responsive-pinned">
+      <table class="responsive stb-table no-alt hoverable nude">
+        <thead>
+        <tr>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="clickable analyze" rel="#index-nav">
+          <td>Storebrand Barnespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr class="clickable" rel="#index-nav">
+          <td>Storebrand Aksjespar</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">1,50%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr class="clickable" rel="#index-nav">
+          <td>Storebrand Global</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr class="clickable" rel="#index-nav">
+          <td>Storebrand Norge</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+          <td class="text-right">2,00%</td>
+          <td class="text-right">0</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <th>And that's all of them</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
     <strong>Code:</strong> <br />
           <pre class="prettyprint">
-&lt;table class=&quot;stb-table [hoverable] [clickable] [noalt] [analyze] &quot;&gt;
-  &lt;thead&gt;
-    &lt;tr class="clickable" rel="#index-nav"&gt;
-      &lt;th&gt;Aksjefond&lt;/th&gt;
-      &lt;th class=&quot;text-right&quot;&gt;Forvaltningshonorar&lt;/th&gt;
-      &lt;th class=&quot;text-right&quot;&gt;Andre gebyrer&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr class="clickable" rel="#index-nav"&gt;
-      &lt;td&gt;Storebrand Barnespar&lt;/td&gt;
-      &lt;td class=&quot;text-right&quot;&gt;1,50%&lt;/td&gt;
-      &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
-      ...
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</pre>
+&lt;!-- Standard responsive table --&gt;
+&lt;div class="table-responsive"&gt;
+  &lt;table class=&quot;stb-table [hoverable] [clickable] [noalt] [analyze] &quot;&gt;
+    &lt;thead&gt;
+      &lt;tr class="clickable" rel="#index-nav"&gt;
+        &lt;th&gt;Aksjefond&lt;/th&gt;
+        &lt;th class=&quot;text-right&quot;&gt;Forvaltningshonorar&lt;/th&gt;
+        &lt;th class=&quot;text-right&quot;&gt;Andre gebyrer&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr class="clickable" rel="#index-nav"&gt;
+        &lt;td&gt;Storebrand Barnespar&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;1,50%&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
+        ...
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;!-- Table with a pinned left column --&gt;
+&lt;div class="table-responsive-pinned"&gt;
+  &lt;table class=&quot;responsive stb-table [hoverable] [clickable] [noalt] [analyze] &quot;&gt;
+    &lt;thead&gt;
+      &lt;tr class="clickable" rel="#index-nav"&gt;
+        &lt;th&gt;Aksjefond&lt;/th&gt;
+        &lt;th class=&quot;text-right&quot;&gt;Forvaltningshonorar&lt;/th&gt;
+        &lt;th class=&quot;text-right&quot;&gt;Andre gebyrer&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr class="clickable" rel="#index-nav"&gt;
+        &lt;td&gt;Storebrand Barnespar&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;1,50%&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
+        ...
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+          </pre>
   </div>
 </div> <!-- /Tables row -->
 
@@ -1025,7 +1327,7 @@ $(document).ready(function() {
     <div class="col-md-4">
       <div class="stb-box third noBorder">
         <h3>Boliglånsrente fra</h3>
-        <h2 class="big">3,45%</h2>
+        <p class="interest-rate">3,45%</p>
         <p class="petit"> Har du tjenestepensjon i Storebrand får du nominell rente fra 3,45% (effektiv 3,54%)</p>
         <p class="petit"> Er du helkunde får du nominell rente fra 3,65% (effektiv 3,76%)</p>
         <button class="stb-btn maxWidth transparent light">Se dagens renter</button>
@@ -1034,7 +1336,7 @@ $(document).ready(function() {
     <div class="col-md-4">
       <div class="stb-box first noBorder">
         <h3>Boliglånsrente fra</h3>
-        <h2 class="big">3,45%</h2>
+        <p class="interest-rate">3,45%</p>
         <p class="petit"> Har du tjenestepensjon i Storebrand får du nominell rente fra 3,45% (effektiv 3,54%)</p>
         <p class="petit"> Er du helkunde får du nominell rente fra 3,65% (effektiv 3,76%)</p>
         <button class="stb-btn maxWidth transparent light">Se dagens renter</button>
@@ -1049,7 +1351,7 @@ $(document).ready(function() {
 &lt;!-- Special box with gray background: --&gt;
 &lt;div class="stb-box third noBorder"&gt;
   &lt;h3&gt;..headline&lt;/h3&gt;
-  &lt;h2 class="big"&gt;3,45%&lt;/h2&gt;
+  &lt;p class="interest-rate"&gt;3,45%&lt;/p&gt;
   &lt;p class="petit"&gt; ..content&lt;/p&gt;
   &lt;p class="petit"&gt;..content&lt;/p&gt;
   &lt;button class="stb-btn transparent light"&gt;..text&lt;/button&gt;
@@ -1071,45 +1373,42 @@ $(document).ready(function() {
   </p>
  
    
-<h4 class="bottom-margin-10"> 1. Narrow mini boxes: Image and text in different row alltogether. Except for small and extra small screens where they are next to each other</h4>
+<h4 class="bottom-margin-10"> 1. Narrow mini boxes: Image and text in different row alltogether. Except for extra small screens where they are next to each other</h4>
 <div class="row">
-  <div class="col-md-12">
-    <div class="col-md-4">
-      <div class="stb-box mini narrow clickable" rel="tel:08880">
-          <div class="image">
+    <div class="col-sm-4">
+      <div class="stb-box mini narrow clickable row" rel="tel:08880">
+          <div class="image column">
             <img src="images/testminibox/MiniBoxImageNarrow63x32.png">
           </div>
-          <div class="text">
+          <div class="text column">
             <h3>Vi hjelper deg igang</h3>
             <h3><a href="#">Ring 08880</a></h3>
           </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="stb-box mini narrow clickable" rel="tel:08880">
-          <div class="image">
-            <img src="images/testminibox/MiniBoxImageSquare63x63.png">
+    <div class="col-sm-4">
+      <div class="stb-box mini narrow clickable row" rel="tel:08880">
+          <div class="image column ">
+              <img src="images/testminibox/MiniBoxImageSquare63x63.png">
           </div>
-          <div class="text">
+          <div class="text column">
             <h3>Vi hjelper deg igang</h3>
             <h3><a href="#">Ring 08880</a></h3>
           </div>
         </div>
     </div>
     
-    <div class="col-md-4">
-      <div class="stb-box mini narrow" rel="tel:08880">
-          <div class="image">
+    <div class="col-sm-4">
+      <div class="stb-box mini narrow clickable row" rel="tel:08880">
+          <div class="image column">
             <img src="images/testminibox/MiniBoxImageWide63x94.png">
           </div>
-          <div class="text">
+          <div class="text column">
             <h3>Vi hjelper deg igang</h3>
             <h3><a href="#">Ring 08880</a></h3>
           </div>
-        </div>
-    
+      </div>
     </div>
- </div>
 </div>
 
 
@@ -1117,12 +1416,12 @@ $(document).ready(function() {
   <div class="col-md-10">
     <h4>Code:</h4>
               <pre class="prettyprint">
-&lt;div class="col-md-4"&gt;
-  &lt;div class="stb-box mini narrow clickable" rel="tel:08880"&gt;
-    &lt;div class="image"&gt;
+&lt;div class="col-sm-4"&gt;
+  &lt;div class="stb-box mini narrow clickable row" rel="tel:08880"&gt;
+    &lt;div class="image column"&gt;
       &lt;img src="images/testminibox/MiniBoxImageWide63x94.png"&gt;
     &lt;/div&gt;
-    &lt;div class="text"&gt;
+    &lt;div class="text column"&gt;
       &lt;h3&gt;Vi hjelper deg i gang&lt;/h3&gt;
       &lt;h3&gt;&lt;a href="#"&gt;Ring 08880&lt;/a&gt;&lt;/h3&gt;
     &lt;/div&gt;
@@ -1135,46 +1434,38 @@ $(document).ready(function() {
 <h4 class="top-margin-20 bottom-margin-10"> 2. Wide mini boxes: Image and text next to each other (Always)</h4>
 
 <div class="row">
-<div class="col-md-12">
-  <div class="col-md-6">
-    <div class="stb-box mini wide clickable row" rel="tel:08880">
-      <div class="image column">
-        <img src="images/testminibox/MiniBoxImageNarrow63x32.png">
-      </div>
-      <div class="text column">
-        <h3>Vi hjelper deg i gang</h3>
-        <h3><a href="#">Ring 08880</a></h3>
-      </div>
+<div class="col-sm-6">
+  <div class="stb-box mini wide clickable row" rel="tel:08880">
+    <div class="image column">
+      <img src="images/testminibox/MiniBoxImageNarrow63x32.png">
+    </div>
+    <div class="text column">
+      <h3>Vi hjelper deg i gang</h3>
+      <h3><a href="#">Ring 08880</a></h3>
     </div>
   </div>
-        
-  <div class="col-md-6">
-    <div class="stb-box mini wide clickable row" rel="tel:08880">
-      <div class="image column">
+</div>
+<div class="col-sm-6">
+  <div class="stb-box mini wide clickable row" rel="tel:08880">
+     <div class="image column">
         <img src="images/testminibox/MiniBoxImageSquare63x63.png">
-      </div>
-	   <div class="text column">
-	     <h3>Kontakt oss</h3>
-	     <h3><a href="#">Ring 08880</a></h3>
-	   </div>
      </div>
-   </div>
-</div>
-</div>
- 
-<div class="row">
-<div class="col-md-12">
-   <div class="col-md-6">
-     <div class="stb-box mini wide clickable row" rel="tel:08880">
-       <div class="image column">
-         <img src="images/testminibox/MiniBoxImageWide63x94.png">
-       </div>
-       <div class="text column">
-         <h3>Vi hjelper deg i gang</h3>
-         <h3><a href="#">Ring 08880</a></h3>
-       </div>
+     <div class="text column">
+       <h3>Kontakt oss</h3>
+       <h3><a href="#">Ring 08880</a></h3>
      </div>
+  </div>
+ </div>
+<div class="col-sm-6">
+ <div class="stb-box mini wide clickable row" rel="tel:08880">
+   <div class="image column">
+     <img src="images/testminibox/MiniBoxImageWide63x94.png">
    </div>
+   <div class="text column">
+     <h3>Vi hjelper deg i gang</h3>
+     <h3><a href="#">Ring 08880</a></h3>
+   </div>
+ </div>
 </div>
 </div>
 
@@ -1182,7 +1473,7 @@ $(document).ready(function() {
   <div class="col-md-10">
     <h4>Code:</h4>
               <pre class="prettyprint">
-&lt;div class="col-md-6"&gt;
+&lt;div class="col-sm-6"&gt;
   &lt;div class="stb-box mini wide clickable row" rel="tel:08880"&gt;
     &lt;div class="image column"&gt;
       &lt;img src="images/testminibox/MiniBoxImageWide63x94.png"&gt;
@@ -1213,10 +1504,10 @@ $(document).ready(function() {
   <div class="col-md-12 col-lg-4">
     <div class="stb-box big clickable" rel="">
       <div class="row">
-        <div class="col-sm-6 col-md-12">
+        <div class="col-xs-12">
           <img src="images/placeholder112x112.png">
         </div>
-        <div class="col-sm-6 col-md-12">
+        <div class="col-xs-12">
           <h3><a href="#">Tjenestepensjon</a></h3>
           <p>
             En god pensjonsordning er et viktig personalgode som har stor verdi for de ansatte og som bidrar til at bedriftene stiller sterkere i kampen om å tiltrekke seg og beholde de beste medarbeiderne.
@@ -1233,10 +1524,10 @@ $(document).ready(function() {
   <div class="col-md-12 col-lg-4">
     <div class="stb-box big clickable" rel="">
       <div class="row">
-        <div class="col-sm-6 col-md-12">
+        <div class="col-xs-12">
           <img src="images/placeholder192x108.png">
         </div>
-        <div class="col-sm-6 col-md-12">
+        <div class="col-xs-12">
           <h3><a href="#">Tjenestepensjon</a></h3>
           <p>
             En god pensjonsordning er et viktig personalgode som har stor verdi for de ansatte og som bidrar til at bedriftene stiller sterkere i kampen om å tiltrekke seg og beholde de beste medarbeiderne.
@@ -1254,10 +1545,10 @@ $(document).ready(function() {
                 <pre class="prettyprint">
   &lt;div class="stb-box big clickable [analyze]" rel=""&gt;
     &lt;div class="row"&gt;
-      &lt;div class="col-sm-6 col-md-12"&gt;
+      &lt;div class="col-xs-12"&gt;
         &lt;img src="images/contactus.png"&gt;
       &lt;/div&gt;
-      &lt;div class="col-sm-6 col-md-12"&gt;
+      &lt;div class="col-xs-12"&gt;
         &lt;h3&gt;&lt;a href="#"&gt;Tjenestepensjon&lt;/a&gt;&lt;/h3&gt;
         ..content
       &lt;/div&gt;
@@ -1642,6 +1933,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <div class="col-xs-12">
         <h3>Basic modals</h3>
         <p>The basic modals are based on twitter bootstrap modals. For mobile device screen sizes, the modal is fullscreen. By adding the class "analyze" google analytics is enabled.</p>
+        <div id="not-a-p-tag"></div>
         <button class="stb-btn transparent light" data-toggle="modal" data-target="#infoSpan6">Info</button>
         <div class="modal stb-modal fade" id="infoSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -2157,6 +2449,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
       powerpoint <br />
       <span class="stb-color-sprite-small powerpoint"></span>
       <span class="stb-color-sprite-medium powerpoint"></span>
+    </p>
+    <p>
+      question <br />
+      <span class="stb-color-sprite-small question"></span>
+      <span class="stb-color-sprite-medium question"></span>
     </p>
 
     <h3>General mono-color icons</h3>
@@ -3009,14 +3306,12 @@ $('ul[data-widget=stbFaq]').stbFaq();
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <div class="stb-box">
           <h2>Ditt pensjonstall</h2>
           <p class="intro">- Finn ditt pensjonstall. Pensjonstallet er summen av folketrygden, tjenestepensjon og egen sparing. Til sammen blir det inntekten din når du blir pensjonist.</p>
           <button class="stb-btn transparent">Finn ditt tall</button>
-        </div>
       </div>
       <div class="col-md-6">
-        <img class="img-responsive" src="images/categorybannerimage.png" alt="category banner image" title="category banner image"/>
+        <img class="img-responsive center-block" src="images/categorybannerimage.png" alt="category banner image" title="category banner image"/>
       </div>
     </div>
   </div>
@@ -3026,13 +3321,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-push-4">
-        <div class="stb-box">
           <h2>Asset Management</h2>
           <p class="intro">- kunnskap og erfaring satt i system</p>
-        </div>
       </div>
       <div class="col-md-4 col-md-pull-8">
-        <img class="img-responsive" src="images/leaning-man.png" alt="category banner image" title="category banner image"/>
+        <img class="img-responsive center-block" src="images/leaning-man.png" alt="category banner image" title="category banner image"/>
       </div>
     </div>
   </div>
@@ -3053,11 +3346,9 @@ $('ul[data-widget=stbFaq]').stbFaq();
 &lt;div class="banner stbcolor-secondary first"&gt;
     &lt;div class="row"&gt;
         &lt;div class="col-md-6"&gt;
-            &lt;div class="stb-box"&gt;
-                &lt;h2&gt;Ditt pensjonstall&lt;/h2&gt;
-                &lt;p class="intro"&gt;..content&lt;/p&gt;
-                &lt;button class="stb-btn transparent"&gt;..text&lt;/button&gt;  
-            &lt;/div&gt;
+              &lt;h2&gt;Ditt pensjonstall&lt;/h2&gt;
+              &lt;p class="intro"&gt;..content&lt;/p&gt;
+              &lt;button class="stb-btn transparent"&gt;..text&lt;/button&gt;
         &lt;/div&gt;
         &lt;div class="col-md-6"&gt;
             &lt;img class="img-responsive" src="xx.png" alt="..." title=".."/&gt;
@@ -3069,10 +3360,8 @@ $('ul[data-widget=stbFaq]').stbFaq();
     &lt;div class="container"&gt;
         &lt;div class="row"&gt;
             &lt;div class="col-md-8 col-md-push-4"&gt;
-                &lt;div class="stb-box"&gt;
-                    &lt;h2&gt;Asset Management&lt;/h2&gt;
-                    &lt;p class="intro"&gt;..content&lt;/p&gt;
-                &lt;/div&gt;
+                &lt;h2&gt;Asset Management&lt;/h2&gt;
+                &lt;p class="intro"&gt;..content&lt;/p&gt;
             &lt;/div&gt;
             &lt;div class="col-md-4 col-md-pull-8"&gt;
                 &lt;img class="img-responsive" src="xx.png" alt="..." title="..."/&gt;
@@ -3095,7 +3384,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
     <div class="col-md-9">
       <p>
-        For use cases where a video fills the whole width of a banner.
+        For use cases where a video element fills the whole width of a banner.
       </p>
     </div>
   </div> <!-- /End Row-->
@@ -3163,37 +3452,40 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
     <div class="col-md-9">
       <p>
-        Video can be added anywhere in a suitable size relative to the page contents.
+        Videos can be added inline. Be sure to check if the video is in 16:9 or 4:3 format and add either
+        embed-responsive-16by9 or embed-responsive-4by3 according to the respectable format.
       </p>
       <div class="row top-margin-20">
         <div class="col-md-6">
-          <div class="video-container inline">
-            <button id="playVideoBtn-2" class="stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs"><p class="pull-left">Spill av video &nbsp</p><span class="stb-sprite-medium white play"></span></button>
+          <h3>For videos in 16:9 format</h3>
+          <div class="embed-responsive embed-responsive-16by9">
             <div id="player-2" class="video-player-inline" data-youtube-id="_7Foh3T1gN4"></div>
           </div>
         </div>
         <div class="col-md-6">
-          <p>
-            And here's a sponge next to the video, for some reason.
-          </p>
-          <img src="images/sponge.png" class="hidden-xs center-block" />
+          <h3>For videos in 4:3 format</h3>
+          <div class="embed-responsive embed-responsive-4by3">
+            <div id="player-3" class="video-player-inline" data-youtube-id="mM5_T-F1Yn4"></div>
+          </div>
         </div>
       </div>
       <p>
         <strong>Code:</strong>
       </p>
       <pre class="prettyprint">
- &lt;div class=&quot;col-md-8&quot;&gt;
-   &lt;div class=&quot;video-container&quot;&gt;
-     &lt;button id=&quot;playVideoBtn-2&quot; class=&quot;stb-btn stbcolor-primary second yt-play hidden-sm hidden-xs&quot;&gt;
-       &lt;p class=&quot;pull-left&quot;&gt;Spill av video &nbsp&lt;/p&gt;
-     &lt;span class=&quot;stb-sprite-medium white play&quot;&gt;&lt;/span&gt;&lt;/button&gt;
-     &lt;div id=&quot;player-2&quot; class=&quot;video-player-inline&quot; data-youtube-id=&quot;_7Foh3T1gN4&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
+
+&lt;div class="col-md-6"&gt;
+ &lt;!-- 16:9 aspect ratio --&gt;
+ &lt;div class="embed-responsive embed-responsive-16by9"&gt;
+   &lt;div id="player-2" class="video-player-inline" data-youtube-id="_7Foh3T1gN4"&gt;&lt;/div&gt;
  &lt;/div&gt;
-  &lt;div class=&quot;col-md-4&quot;&gt;
-    &lt;img src=&quot;images/sponge.png&quot; class=&quot;hidden-xs center-block&quot; /&gt;
-  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-md-6"&gt;
+  &lt;!-- 4:3 aspect ratio --&gt;
+  &lt;div class="embed-responsive embed-responsive-4by3"&gt;
+  &lt;div id="player-3" class="video-player-inline" data-youtube-id="_7Foh3T1gN4"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
           </pre>
 
 

@@ -1,7 +1,7 @@
 @mobile-dropdown-color : @stb-primary-white;
 
 // tablet and mobile styling 
-@media screen and (max-width: 991px) {
+@media(max-width:@screen-sm-max) {
   body {
     padding-top: 48px;
   }
@@ -15,6 +15,7 @@
 
   .row{
     background: @stb-primary-white;
+    .ColumnMarginBottom(0);
   }
   h4{
    margin: 6px 9px 6px 0;
@@ -63,15 +64,31 @@
         background-color: @stb-primary-color-even-darker;
       }
 
-      .navbar-nav>li.group:hover,.navbar-nav>li.group{
-        &.private a:focus{
-          background: @stb-primary-color-even-darker url("../images/private.png") 20% 50% no-repeat;
+      .navbar-nav>li.group{
+        &.current > a{
+          background: @stb-primary-color url("../images/private.png") 20% 50% no-repeat;
         }
-        &.company a:focus{
-          background: @stb-primary-color-even-darker;
+
+        &.login > a{
+          background-image:url("../images/login.png");
+          background-repeat:no-repeat;
+          background-position: 20% 48%;
         }
-        &.login a:focus{
-          background: @stb-primary-color-even-darker url("../images/login.png") 25% 48% no-repeat;
+
+        &.open{
+          > a{
+            background-color: @stb-primary-color-even-darker;
+          }
+        }
+
+        > a{
+          background: @stb-primary-color-darker;
+          &:focus{
+            background-color: @stb-primary-color-even-darker;
+          }
+          &:hover{
+            background-color: @stb-primary-color-even-darker;
+          }
         }
       }
 
@@ -101,24 +118,6 @@
       height: 80px;
       padding: 0px;
       width: 25%;
-
-      //Different icons with background color
-      &.current {
-        background: @stb-primary-color url("../images/private.png") 20% 50% no-repeat;
-        &:hover{
-          background-color:@stb-primary-color-even-darker;
-        }
-      }
-
-      &.login{
-        background: @stb-primary-color-darker url("../images/login.png") 25% 48% no-repeat;
-      }
-
-      &.login .login-section {
-        padding: 0;
-      }
-
-
 
       > a {
         color: @stb-primary-white;
@@ -153,7 +152,9 @@
           right:0;
           height:40px;
           width:100%;
-          max-width:30px;
+          max-width: 40px;
+          padding-left: 12px;
+          cursor: pointer;
           border:0;
           background-color: @stb-primary-color;
           //background:@stb-primary-color url(../images/search.png) center 8px no-repeat;
@@ -205,8 +206,7 @@
         }
       }
     }
-
-    @media screen and (min-width: 992px) {
+    @media(min-width:@screen-md-min) {
       .verktoy{
         padding: 10px 0 10px 10%;
       }
@@ -236,7 +236,7 @@
           margin-right: 0;
         }
 
-        &:hover{
+        &:hover,&:focus,&:active{
           color: @stb-primary-color;
           background-color: transparent;
           border-bottom: 1px solid @stb-primary-color;
@@ -262,7 +262,7 @@
             clear: both;
             padding-top: 15px;
             button{
-              width: 160px;
+              width: 190px;
             }
           }
 
@@ -305,8 +305,31 @@
   // Ending desktop styling
 
   // Beginning tablet styling
- @media screen and (max-width: 991px) {
+
+ @media(max-width: @screen-sm-max) {
      .navbar.mobile {
+      .rightColor{
+          padding-right: 0px;
+          padding-left: 0px;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          width: 50%;
+          height: 48px;
+          background-color: @stb-primary-color-darker;
+          z-index: -10;
+       }
+       .leftColor{
+          padding-right: 0px;
+          padding-left: 0px;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 50%;
+          height: 48px;
+          background-color: @stb-primary-white;
+          z-index: -10;
+        }
        >div>div>a{
          border-bottom: none;
        }
@@ -328,13 +351,13 @@
             position: relative;
             border-radius: 0px;
             display: block;
-            padding-left: 10px;
-            padding-right: 78px;
+            padding-left: 0;
+            padding-right: 72px;
             padding-top: 22px;
             border: none;
 
             &:focus{
-              background-color: @stb-primary-color;
+              background-color: @stb-primary-color-darker;
             }
 
             // This fixes the v-align of tablet menu, but messes up Creuna mobile menu top -> margin-top: 12px;
@@ -371,7 +394,7 @@
    // Ending tablet styling
 
   // Beginning mobile styling
-  @media screen and (max-width: 768px) {
+  @media(max-width: @screen-sm-min) {
     .navbar {
       margin-bottom: 0px;
       border-radius: 0px;
@@ -384,6 +407,9 @@
 
   }
 
+  .stb-logo-mobile {
+    padding-top: 5px;
+  }
   @media screen and (max-width: 400px) {
 
     .stb-logo-mobile {
@@ -399,6 +425,10 @@
 
 //Mobile menu styling
 #mobilemenu{
+  .row{
+    .ColumnMarginBottom(0);
+  }
+
   background-color:@stb-primary-white;
   z-index:2;
   position:relative;
@@ -417,57 +447,6 @@
   }
 
   border-bottom: solid 2px @stb-secondary-charcoal;
-  a{
-    border: none;
-  }
-
-  .panel-group{
-    margin-top: 12px;
-  }
-
-  .panel {
-    border: none;
-    &:first-child{
-      border-top: 1px solid @stb-secondary-charcoal;
-    }
-  }
-
-  .panel-heading {
-    border-bottom: 1px solid @stb-secondary-charcoal;
-  }
-
-  .panel-default>.panel-heading{
-    background-color: @stb-primary-white;
-  }
-
-  h4.panel-title{
-    font-size: 18px;
-    margin: 0;
-    padding: 9px 9px 9px 0;
-    a{
-      border-bottom: none;
-    }
-  }
-
-  .panel.active, .panel.active .panel-heading, .panel.active .panel-body, .panel.active .menu-item{
-    background: @stb-gray-first;
-  }
-
-  .panel.active{
-
-    .panel-heading{
-      border: none;
-    }
-
-    .panel-body{
-      border: none;
-      border-bottom: 1px solid @stb-secondary-charcoal;
-    }
-  }
-
-  .panel-group .panel+.panel {
-    margin-top: 0;
-  }
 
   .stb-list-group a.menu-item{
     font-family: 'SignaWeb-Light';
@@ -532,23 +511,27 @@
     }
   }
 
-  .panel-body{
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
 
-  a.menu-item{
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    border-left: none;
-    border-right: none;
-    border-radius: 0px;
-    font-size: 16px;
-    font-family: 'SignaWeb-Light';
+  a{
     border: none;
-    color: @stb-secondary-charcoal;
+    &.menu-item{
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      margin-bottom: -1px;
+      border-left: none;
+      border-right: none;
+      border-radius: 0px;
+      font-size: 16px;
+      font-family: 'SignaWeb-Light';
+      color: @stb-secondary-charcoal;
+      &:hover,
+      &:focus,
+      &:active{
+        text-decoration: none;
+        color: @stb-primary-color;
+      }
+    }
   }
 
   #searchMobile{
@@ -595,6 +578,8 @@
   }
 
   .verktoymobile {
+    margin-left: 0;
+    margin-right: 0;
     > div {
       margin-bottom: 10px;
       text-align: center;
@@ -602,7 +587,7 @@
       padding-right: 0;
     }
     button{
-      width: 160px;
+      width: 190px;
     }
   }
 
@@ -612,7 +597,7 @@
         margin-bottom: 10px;
       }
       button{
-        width: 120px;
+        width: 150px;
       }
     }
     }
@@ -640,7 +625,7 @@
     left: 0;
   }
   span, span:before, span:after{
-    transition: all 300ms ease-in-out;
+    transition: all 200ms  ease-in-out;
   }
 
   &.active span {
@@ -650,10 +635,14 @@
     }
 
     &:before{
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
 
     &:after{
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
     }
   }

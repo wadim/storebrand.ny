@@ -539,7 +539,7 @@
       //console.log('faq');
       var q = $(this).find('.question').html();
       var path = window.location.pathname;
-      console.log(q);
+      //console.log(q);
       //console.log(path);
       ga('send', 'event', path , 'Klikk på accordion ', q);
     });
@@ -748,6 +748,7 @@
       $('#start-login-form, #start-login-form-mobile ').bootstrapValidator({
         message: 'This value is not valid',
         live: 'disabled',
+        group: '.stb-form-group',
         feedbackIcons: {
           valid: 'glyphicon glyphicon-ok',
           invalid: 'glyphicon glyphicon-remove',
@@ -958,6 +959,26 @@
           });
     }
   });
+  $(document).ready(function(){
+    $('.table-responsive').each(function(){
+      if($(this).hasScrollBar()){
+        $(this).addClass('scrollable').before('<span class="stb-sprite-medium scroll scroll-indicator"></span>');
+      }
+    });
+    $('.table-responsive-pinned').each(function(){
+       if($(this).hasScrollBar()){
+         $(this).addClass('scrollable').before('<span class="stb-sprite-medium scroll scroll-indicator"></span>');
 
+       }
+    });
+    makeTableScrollable();
+  });
 
 }(jQuery));
+
+
+(function($) {
+  $.fn.hasScrollBar = function() {
+    return this.get(0).scrollWidth > this.get(0).clientWidth;
+  }
+})(jQuery);

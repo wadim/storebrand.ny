@@ -3,26 +3,42 @@
   padding-top: 48px;
 }
 .row{
-  padding-bottom: 48px;
+  .ColumnMarginBottom(48px);
 }
 
-.banner{
-  img{
-    margin-bottom: -48px;
+.container.article{
+  .row{
+    .ColumnMarginBottom(24px);
   }
 }
 
-@media (max-width: @screen-sm-min) {
+.banner{
+
+  h2,h1{
+    margin: 0 12px 0 0;
+  }
+
+  @media (max-width: @screen-md-max) {
+    p.intro{
+       margin: 0 0 6px;
+    }
+  }
+  .row{
+    .ColumnMarginBottom(0);
+  }
+}
+
+@media (max-width: @screen-sm-max) {
   .container{
     padding-top: 24px;
   }
   .row{
-    padding-bottom: 24px;
+    .ColumnMarginBottom(24px);
   }
 
   .banner{
-    img{
-      margin-bottom: -24px;
+    .row{
+      .ColumnMarginBottom(0);
     }
   }
 }
@@ -36,57 +52,7 @@ footer{
   }
 }
 
-#top-menu-nav{
-  .row{
-    padding-bottom: 0;
-  }
-
-
-}
-
-
 /*End of general margins and paddings in layout*/
-
-
-.stb-row {
-  margin-left: 0px;
-  margin-right: 0px;
-  padding: 12px 10px 10px 10px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;  
-   
-   &.innerBox{
-    margin-left: 10px;
-    margin-right: 10px;
-  } 
- 
-  &.first {
-    .stbcolor-primary .third;
-  }
-  
-  &.second {
-    margin-left: 0px;
-    margin-right: 0px;
-    .stbcolor-secondary.sixth;
-    a {
-      font-weight: strong;
-    }
-  }
-  
-  &.third {
-    .stbcolor-gray .first;
-    border: 1px solid @stb-gray-third;
-  }
-  
-  &.fourth {
-    .stbcolor-background .first;
-  }  
-
-  &.fifth {
-    .stbcolor-background .second;
-  }   
-
- }
 
 // Class for stuff that should be hidden initially
 .initial-hide {
@@ -109,10 +75,12 @@ footer{
 // Fix for TinyMCE formatting 
 img.editor-image-right {
   .pull-right();
+   margin-left: 24px;
 }
 
 img.editor-image-left {
   .pull-left();
+  margin-right: 24px;
 } 
 
 
@@ -342,7 +310,7 @@ img.editor-image-left {
 }
 
 
-@media screen and (max-width:992px) {
+@media(max-width:@screen-md-min) {
   
 .top-margin-50-mdlg {
   margin-top: 0px;
@@ -510,7 +478,7 @@ img.editor-image-left {
   padding-right: 24px;
 }
 
-@media screen and (max-width:992px) {
+@media(max-width:@screen-md-min) {
   .left-padding-5-mdlg {
     padding-left: 0px;
   }
@@ -573,7 +541,7 @@ img.editor-image-left {
 }
 
 
-@media screen and (max-width:992px) {
+@media(max-width:@screen-md-min) {
   .width-75-mdlg {
     width: 100%;
   }

@@ -56,6 +56,7 @@ ul.accordion {
         background-position: 0 -3500px;
         display: inline-block;
         float: right;
+        margin-left: 6px;
       }
       
       &.open {
@@ -115,9 +116,73 @@ ul.accordion {
 
   }
   
-   @media (max-width: @screen-sm-min) {
+   @media (max-width: @screen-sm-max) {
 	  li {
-	    font-size: 14px;
+        font-size: 14px;
+        a.twister, div.answer{
+          font-size: 14px;
+          ul,ol{
+            li{
+              font-size: 14px;
+            }
+          }
+        }
 	 }
     }
+}
+
+//Based on bootstraps accordion
+.stb-accordion{
+  &.panel-group{
+    margin-top: 12px;
+    .panel + .panel {
+      margin-top: 0;
+    }
+  }
+
+  .panel {
+    border: none;
+    &:first-child{
+      border-top: 1px solid @stb-secondary-charcoal;
+      margin-top: 12px;
+    }
+  }
+
+  .panel-heading {
+    border-bottom: 1px solid @stb-secondary-charcoal;
+  }
+
+  .panel-default>.panel-heading{
+    background-color: @stb-primary-white;
+  }
+
+  h4.panel-title{
+    font-size: 18px;
+    margin: 0;
+    padding: 9px 9px 9px 0;
+    a{
+      border-bottom: none;
+    }
+  }
+
+  .panel.active, .panel.active .panel-heading, .panel.active .panel-body, .panel.active .menu-item{
+    background: @stb-gray-first;
+  }
+
+  .panel.active{
+
+    .panel-heading{
+      border: none;
+    }
+
+    .panel-body{
+      border: none;
+      border-bottom: 1px solid @stb-secondary-charcoal;
+    }
+  }
+
+  .panel-body{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 }

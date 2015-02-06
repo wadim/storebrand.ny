@@ -1,34 +1,35 @@
 .stb-box {
   padding: 24px 24px 12px 24px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;  
-  
+  border: 1px solid transparent;
+  &.row, .row{
+    .ColumnMarginBottom(0px);
+  }
   &.first {
     .stbcolor-primary .third;
     > p {
       color: @stb-primary-black;
     }
   }
-  
+
   &.second {
     .stbcolor-secondary.sixth;
     a {
       font-weight: strong;
     }
   }
-  
+
   &.third {
     .stbcolor-gray .first;
     border: 1px solid @stb-gray-third;
   }
-  
+
   &.fourth {
     .stbcolor-background .first;
-  }  
+  }
 
   &.fifth {
     .stbcolor-background .second;
-  }    
+  }
 
   &.sixth {
     .stbcolor-background .third;
@@ -41,32 +42,32 @@
   &.noBorder{
     border: none;
   }
-  
+
   &.dark {
     color: @stb-primary-white;
     & h1, h2, h3, h4, h5, h6, p {
       color: @stb-primary-white;
     }
-  }  
+  }
 
   // Forcing solid border
   &.border {
     border: 1px solid;
     border-color: @stb-secondary-charcoal;
-    
+
     &.red {
     	border-color: @stb-primary-color;
     }
-    
-	  &.gray {
+
+    &.gray {
 	    border-color: @stb-gray-second;
     }
   }
-	
+
   // Adding possibility of thicker border
   &.fat {
-		border: 2px solid;
-	}
+	border: 2px solid;
+  }
 
   // Forcing dotted border
   &.dotted {
@@ -77,7 +78,6 @@
     border: 1px dashed;
   }
 
-
   ul.stb,ol.stb {
     padding-bottom: 0;
   }
@@ -87,13 +87,9 @@
     h4{
       margin: 6px 9px 6px 0;
     }
-    @media screen and (max-width: 768px) {
+    @media (max-width: @screen-xs-max) {
       padding: 12px;
     }
-  }
-
-  h3+h2{
-    margin: 18px 12px 12px 0;
   }
 
   &.mini{
@@ -103,14 +99,10 @@
       padding-bottom: 24px;
     }
 
-    @media screen and (max-width: 768px) {
+    @media (max-width: @screen-xs-max) {
       padding: 12px 12px 6px;
       &.row{
         padding-bottom: 12px;
-      }
-
-      &:hover {
-        padding: 12px 12px 6px;
       }
 
       &.wide{
@@ -120,20 +112,20 @@
       }
 
     }
-     
-    @media (max-width: @screen-sm-max) {
+
+    @media (max-width: @screen-xs-max) {
       &.narrow .image {
         float: left;
 		margin-right: 20px;
 	  }
     }
-    
-     @media (min-width: @screen-md-min){ 
+
+     @media (min-width: @screen-sm-min){
      	&.narrow img {
      		padding-bottom: 20px;
      	}
      }
-     
+
     .text{
       h2,h3 {
         padding-top: 0;
@@ -141,6 +133,10 @@
       }
     }
 
+    &.narrow{
+      margin-left:0;
+      margin-right: 0;
+    }
 
     &.wide{
       margin-left:0;
@@ -156,17 +152,16 @@
   &.big{
     background-color: @stb-gray-first;
     padding: 24px;
-    @media screen and (max-width: 768px) {
+    @media(max-width: @screen-sm-min) {
       padding: 12px;
     }
 
     &:hover {
-      @media screen and (max-width: 768px) {
+      @media(max-width: @screen-sm-min) {
         padding: 12px;
       }
     }
     .row{
-      padding-bottom: 0;
       h2,h3{
         margin: 12px 12px 12px 0;
       }
@@ -175,12 +170,19 @@
 
   h3{
     font-weight: normal;
-    font-family: @font-family-signa-light;
+    font-family: @font-family-signa-extralight;
+    margin: 0 6px 6px 0;
     a, a:hover {
       padding-bottom: 0px;
+      border-bottom: 0;
+      text-decoration: underline;
     }
   }
+}
 
+//For non white backgrounds
+.stbcolor-secondary .stb-box.third{
+  background-color: @stb-primary-white;
 }
 
 /* Notification boxes */
@@ -195,7 +197,7 @@
 }
 
 
-@media (max-width: @screen-sm-min) {
+@media (max-width: @screen-xs-max) {
 	.msgText {
     width: 100%;
     padding: 12px;
@@ -212,7 +214,7 @@
 	background: transparent url("../images/InfoShoutout.png") left top no-repeat;
 	width: 48px;
 	height: 48px;
-    @media screen and (max-width: 768px) {
+    @media (max-width: @screen-xs-max) {
       margin-left: 4px;
     }
 }
@@ -259,6 +261,31 @@ a + div.iconInfo{
 
 .stb-link-group{
  h3{
-   margin: 12px 12px 12px 0;
+   margin: 0 12px 12px 0;
  }
+}
+
+.banner{
+  .stb-box{
+    padding: 24px 24px 0 24px;
+    margin-bottom: 0;
+  }
+}
+
+.important-notice{
+  .row{
+    .ColumnMarginBottom(24px);
+  }
+}
+
+@media (max-width: @screen-sm-max) {
+ .important-notice{
+   .row{
+     .ColumnMarginBottom(0px);
+   }
+ }
+}
+
+.column-element{
+  margin-bottom: 48px;
 }
