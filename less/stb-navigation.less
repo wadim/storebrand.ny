@@ -66,13 +66,16 @@
 
       .navbar-nav>li.group{
         &.current > a{
-          background: @stb-primary-color url("../images/private.png") 20% 50% no-repeat;
+          background: @stb-primary-color;
+          >span{
+            margin-bottom: -6px;
+          }
         }
 
         &.login > a{
-          background-image:url("../images/login.png");
-          background-repeat:no-repeat;
-          background-position: 20% 48%;
+          >span{
+            margin-bottom: -6px;
+          }
         }
 
         &.open{
@@ -128,7 +131,7 @@
         font-weight: bold;
         display: inline-block;
         text-decoration: none;
-        padding-left: 38%;
+        text-align: center;
         width:100%;
         height:100%;
       }
