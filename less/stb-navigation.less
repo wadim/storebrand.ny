@@ -196,7 +196,7 @@
 
         ul {
           list-style-type: none;
-          padding: 0; margin: 0;
+          padding: 0;
 
           li {
             padding-bottom: 12px;
@@ -227,7 +227,11 @@
         &:first-child{
           a{
             margin-right: 24px;
-            margin-top: 12px;
+            margin-top: 9px;
+
+            &:hover,&:focus,&:active{
+                     border-bottom: none;
+            }
           }
         }
       }
@@ -237,6 +241,9 @@
         border-bottom: none;
         >span.stb-sprite-medium{
           margin-right: 0;
+          width:32px;
+          height: 32px;
+          margin-bottom: -14px !important;
         }
 
         &:hover,&:focus,&:active{
@@ -255,8 +262,7 @@
         li{
 
           &.menulinks{
-            margin: 50px 0 0 15%;
-
+            margin: 24px 0 0 15%;
           }
 
           &.verktoy {
@@ -282,7 +288,7 @@
         //Side links with illustrations
         .sidelinks {
           li {
-            margin-bottom: 20px;
+            margin-bottom: 6px;
           }
           a {
             font-family: "open sans bold";
@@ -290,7 +296,7 @@
             span:first-child{
               margin-bottom: -10px; margin-right: 10px;
             }
-            &:hover {
+            &:hover, &:active, &:focus {
               border-bottom: none;
               span:last-child{
                 border-bottom: 1px solid @stb-primary-color;
@@ -413,7 +419,7 @@
   .stb-logo-mobile {
     padding-top: 5px;
   }
-  @media screen and (max-width: 400px) {
+  @media (max-width: 400px) {
 
     .stb-logo-mobile {
       width: 120px;
@@ -430,6 +436,42 @@
 #mobilemenu{
   .row{
     .ColumnMarginBottom(0);
+  }
+  .panel-default>.panel-heading{
+    a{
+      color: @stb-primary-color;
+    }
+  }
+
+
+  .stb-accordion .panel.active, .stb-accordion .panel.active .panel-heading, .stb-accordion .panel.active .panel-body, .stb-accordion .panel.active .menu-item {
+    background: @stb-primary-white;
+  }
+
+  .stb-accordion .panel:first-child{
+    border-top: none;
+    margin-top: 0;
+  }
+
+  .stb-accordion .panel{
+     border-bottom: 2px solid @stb-gray-second;
+  }
+
+  .stb-accordion.panel-group {
+    margin-top: 0;
+   }
+
+  .stb-accordion .panel-heading {
+    border-bottom: none;
+  }
+
+  .stb-accordion .panel.active .panel-body {
+    border: none;
+    border-bottom: none;
+  }
+
+  .panel-group {
+    margin-bottom: 0;
   }
 
   background-color:@stb-primary-white;
@@ -449,14 +491,14 @@
     }
   }
 
-  border-bottom: solid 2px @stb-secondary-charcoal;
+  border-bottom: solid 2px @stb-gray-second;
 
   .stb-list-group a.menu-item{
     font-family: 'SignaWeb-Light';
   }
 
   .nav a:hover{
-    background-color: @stb-gray-second;
+    background-color: transparent;
     border-radius: 0;
   }
   ul.nav-tabs{
@@ -468,7 +510,7 @@
         color: @stb-secondary-charcoal;
         border: none;
         padding-top: 18px;
-        padding-bottom: 17px;
+        padding-bottom: 16px;
         padding-left: 0;
         padding-right: 0;
       }
@@ -480,7 +522,7 @@
 
       &.tab-box{
         font-family: "Open Sans Bold",Arial,ArialMT,sans-serif;
-        font-size: 14px;
+        font-size: 16px;
         text-align: center;
         padding-top: 6px;
         width: 27%;
@@ -493,9 +535,12 @@
           width: 19%;
           a{
             padding-top: 14px;
-            padding-bottom: 12px;
+            padding-bottom: 11px;
             padding-left: 4px;
           }
+        }
+        @media(max-width: @screen-xs-max) {
+         font-size: 14px;
         }
       }
 
@@ -562,36 +607,28 @@
     padding-bottom: 24px;
   }
 
-  .themelinks{
-    margin-left: 0;
-    margin-right: 0;
-    > div{
-      padding-top: 24px;
-      padding-left: 0;
-      padding-right: 0;
-    }
-   p{
-     font-family: "Open Sans Bold",Arial,ArialMT,sans-serif;
-     text-align: center;
-   }
-  span{
-    margin-bottom: -10px;
-    margin-right: 10px;
-  }
-  }
+  .sidelinks{
+     &.row{
+          margin-left:0;
+          margin-right:0;
+     }
+     ul{
+        list-style-type: none;
+        a span:first-child{
+          margin-bottom: -10px; margin-right: 10px;
+        }
+     }
 
-  .verktoymobile {
-    margin-left: 0;
-    margin-right: 0;
-    > div {
-      margin-bottom: 10px;
-      text-align: center;
-      padding-left: 0;
-      padding-right: 0;
-    }
-    button{
-      width: 190px;
-    }
+     >div{
+       margin-bottom: 24px;
+     }
+
+     span.stb-sprite-medium{
+              margin-right: 0;
+              width:32px;
+              height: 32px;
+              margin-bottom: -14px !important;
+     }
   }
 
   @media screen and (max-width: 768px) {
