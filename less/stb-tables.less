@@ -115,23 +115,26 @@ table.stb-table {
   cursor: pointer;
 }
 
-.table-responsive {
+.table-responsive, .table-responsive-pinned {
   border: none;
+  margin-bottom: 24px;
+  margin-top: 48px;
+  table.stb-table {
+    margin-top:0;
+    margin-bottom:0;
+  }
 }
 
 @media (max-width: @screen-sm-min) {
   .table-responsive.scrollable {
+    margin-top: 48px;
     border-left: 1px dashed @stb-secondary-charcoal;
     border-right: 1px dashed @stb-secondary-charcoal;
-    table.stb-table {
-      margin-top: 0;
-      margin-bottom:0;
-    }
   }
 }
 
 .scroll-indicator{
-  display: block !important;
+  display: none;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 6px;
@@ -162,8 +165,6 @@ table td, table th { padding: 9px 10px; text-align: left; }
   .table-responsive-pinned.scrollable{
     border-left: 1px dashed @stb-secondary-charcoal;
     border-right: 1px dashed @stb-secondary-charcoal;
-    table.responsive { margin-bottom: 0; }
-    table.responsive.stb-table, .pinned table.stb-table {margin-top: 0;}
 
     .pinned { position: absolute; left: 0; top: 0; background: #fff; width: 35%; overflow: hidden; overflow-x: scroll; }
     .pinned table { border-right: none; border-left: none; width: 100%; }

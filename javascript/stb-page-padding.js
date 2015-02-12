@@ -480,19 +480,18 @@ if(accept=='Yes'){
 });
 
 $(document).ready(function() {
-  var img = '<img src="../images/PictoScrollTable@2x.gif" />';
   if(!isHighDensity()){
-    img = '<img src="../images/PictoScrollTable@2x.gif" width="48" height="24"/>';
+     $('.scroll-indicator img').attr('height','24');
   }
 
   $('.table-responsive').each(function() {
     if($(this).hasScrollBar()) {
-      $(this).addClass('scrollable').before('<p class="pull-right">Tabellen kan sveipes '+img+'</p><br>');
+      $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
     }
   });
   $('.table-responsive-pinned').each(function() {
     if($(this).hasScrollBar()) {
-      $(this).addClass('scrollable').before('<p class="pull-right" style="margin-top: -10px;">Tabellen kan sveipes '+img+'</p><br>');
+      $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
    }
   });
   makeTableScrollable();
@@ -553,7 +552,6 @@ function makeTableScrollable(){
   function setCellHeights(original, copy) {
     var tr = original.find('tr'),
         tr_copy = copy.find('tr'),
-        heights = [];
 
     tr.each(function (index) {
       var self = $(this),
