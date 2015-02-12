@@ -479,22 +479,6 @@ if(accept=='Yes'){
 }
 });
 
-
-
-$(document).ready(function(){
-    $('.table-responsive').each(function(){
-      if($(this).hasScrollBar()){
-        $(this).addClass('scrollable').before('<span class="stb-sprite-medium scroll scroll-indicator"></span>');
-      }
-    });
-    $('.table-responsive-pinned').each(function(){
-       if($(this).hasScrollBar()){
-         $(this).addClass('scrollable').before('<span class="stb-sprite-medium scroll scroll-indicator"></span>');
-       }
-    });
-    makeTableScrollable();
-});
-
 $(document).ready(function() {
   var img = '<img src="../images/PictoScrollTable@2x.gif" />';
   if(!isHighDensity()){
