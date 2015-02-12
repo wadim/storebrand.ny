@@ -1,6 +1,6 @@
 // This Javascript file contains functions required for the site search function with type-ahead
-// search.js needs typeahead.bundle.min.js to function.
-// It also needs some data to function. These are served by the CMS as global variables on the page
+// The search.js needs typeahead.bundle.min.js to function.
+// It also needs some data to function. It is for now stored in data/searchdata.js as global variables.
 
 var s,search = {
 
@@ -23,14 +23,14 @@ var s,search = {
     highlight: true,
     minLength: 3,
     limit: 10
-  }],
+   }],
 
   promotions : "",
   typeaheads : {},
 
   init : function(){
     s = this.settings;
-    
+
     if (typeof enonicSearchData === 'undefined') {
       //console.log("Could not find searchdata for autocomplete and typeahead. Search will have less functionality on this page.");
       return;
@@ -38,26 +38,26 @@ var s,search = {
       //console.log("Search data was empty. Typeahead and autocomplete will not work.");
       return;
     }
-    
+
     search.promotions = enonicSearchData.search.promotion;
 
     if(enonicSearchData.search.autocomplete != undefined && enonicSearchData.search.autocomplete.anbefalt != undefined){
-      search.typeaheads.anbefalte = enonicSearchData.search.autocomplete.anbefalt;
+       search.typeaheads.anbefalte = enonicSearchData.search.autocomplete.anbefalt;
     }
 
     if(enonicSearchData.search.typeahead != undefined && enonicSearchData.search.typeahead.direkte != undefined){
-      search.typeaheads.direkte = enonicSearchData.search.typeahead.direkte;
+       search.typeaheads.direkte = enonicSearchData.search.typeahead.direkte;
     }
 
-    // typeaheads['anbefalte'] = anbefalte;
+    //typeaheads['anbefalte'] = anbefalte;
     // Make search in menu header visible
     search.activateSearch();
     // Perform the search
     search.performSearch();
   },
-  performSearch : function() {
+  performSearch : function(){
     // Perform search only on the search results page (add other pages if necessary)
-    if ($('#main_search').length > 0 ) {
+    if ($('#main_search').length > 0 ){
       //Get the search term from the URL
       s.urlParams = this.getQuery();
       s.searchIsRunning=false;
@@ -69,7 +69,7 @@ var s,search = {
         s.start = s.urlParams.start;
       }
 
-      // If there is a search term to use, retrieve promotions and then perform the search
+      // If there is a search term to use, perform the search
       if (s.urlParams.q!==undefined && s.urlParams.q.length > 0 ) {
         $("form.stb-form-inline input.searchbox").val(s.urlParams.q);
         search.getPromotions();
@@ -81,19 +81,20 @@ var s,search = {
     $('#desktop-menu ul.nav li.search').show();
 
     // Prepare for type-ahead
-    if(search.typeaheads != "") {
+    if(search.typeaheads != ""){
       search.initTypeahead();
     }
     // The search field on desktop must be made extendable upon click
     search.initExtendedSearch();
 
   },
-  initTypeahead : function() {
-    //Make sure to initiate recommended search terms first
-    if("anbefalte" in search.typeaheads) {
+  initTypeahead : function(){
+
+    //Make sure to initiate anbefalte søkeord first
+    if("anbefalte" in search.typeaheads){
       this.createDatasets("anbefalte");
     }
-    if("direkte" in search.typeaheads) {
+    if("direkte" in search.typeaheads){
       this.createDatasets("direkte");
     }
 
@@ -113,35 +114,45 @@ var s,search = {
       $('.typeahead').typeahead('close');
     });
 
-    $('.tt-mobile .search-icon').click(function() {
-      window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-mobile .typeahead.tt-input').typeahead('val');
-    });
-
     // Call checkSearch when hitting Enter while in the input area
-    $("input.searchbox").keydown(function(event) {
-      if(!s.hasURL) {
-        if(event.which == 13 && this.value.trim()) {
-          search.checkSearch( this.value );
-          return false;
+    $("input.searchbox").keydown(function(event){
+      if(!s.hasURL){
+        if(event.which == 13 && this.value.trim()){
+             search.checkSearch( this.value );
+             return false;
+
         }
       }
     });
 
-    $('.search-icon').on('click',function(event) {
-      if(s.maximized && $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()) {
-        window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-desktop.typeahead.tt-input').typeahead('val');
-      } else {
-        setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
+    $('.search-icon').on('click',function(event){
+      if($(event.target).closest('form').is('#searchMobile')){
+          if($('.tt-mobile .typeahead.tt-input').typeahead('val').trim()){
+           event.preventDefault();
+           //window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-mobile .typeahead.tt-input').typeahead('val');
+           search.checkSearch($('.tt-mobile .typeahead.tt-input').typeahead('val'));
+          }else{
+           event.preventDefault();
+          }
+      }else{
+        if(s.maximized && $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()){
+          //window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-desktop.typeahead.tt-input').typeahead('val');
+          search.checkSearch($('.tt-desktop.typeahead.tt-input').typeahead('val'));
+        }else{
+          setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
+        }
       }
     });
 
     // Call checkSearch when clicking the submit button
-    $(".searchcontainer .stb-form-inline button").click(function(event) {
+    $(".searchcontainer .stb-form-inline button[type=submit]").click(function(event) {
+      //alert($('input#main_search').val());
       search.checkSearch($('input#main_search').val());
       return false;
+
     });
   },
-  createDatasets : function (index) {
+  createDatasets : function (index){
 
     // Make use of the Bloodhound suggestion engine in order to use an array of datums(js objects)
     var category =  new Bloodhound( {
@@ -202,7 +213,7 @@ var s,search = {
     });
 
     // Close search if Escape button is pressed
-    $("input.searchbox").keydown(function(event) {
+    $("input.searchbox").keydown(function(event){
       if(event.which == 27){
         minimizeSearch();
         $(this).blur();
@@ -210,7 +221,7 @@ var s,search = {
     });
 
     // Close search if close icon is clicked
-    $('.navbar-nav .search .remove').click(function() {
+    $('.navbar-nav .search .remove').click(function(){
       minimizeSearch();
     });
 
@@ -236,7 +247,7 @@ var s,search = {
 
       // Save the animation state, and reset it once the animations complete
       s.animating = true;
-      setTimeout(function() {
+      setTimeout(function(){
         s.animating = false;
       }, s.animSpeed);
 
@@ -246,6 +257,8 @@ var s,search = {
       // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
       s.searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 
+      // Give the text element a fixed size
+      //$('.navbar-nav .typeahead').css('width',searchParentWidth);
       // Hide the menu
       $('.navbar-nav > li.group').toggle();
 
@@ -256,7 +269,7 @@ var s,search = {
       $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
 
       // After fading out icon, fade in inverted (charcoal) icon with new background
-      setTimeout(function() {
+      setTimeout(function(){
         $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(s.animSpeed/2);
       }, s.animSpeed/4);
 
@@ -269,15 +282,15 @@ var s,search = {
       $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
 
       // Show the "Close search" icon
-      setTimeout(function() {
+      setTimeout(function(){
         $('.navbar-nav li.search .remove').toggle();
       }, s.animSpeed);
     }
 
     function minimizeSearch() {
-      // Save the animating state, and reset it once the animation is complete
+      // Save the animating state, and reset it once the animations complete
       s.animating = true;
-      setTimeout(function() {
+      setTimeout(function(){
         s.animating = false;
       }, s.animSpeed);
 
@@ -292,14 +305,14 @@ var s,search = {
       $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
 
       // After half the animation time has passed, fade in the inverted icon
-      setTimeout(function() {
+      setTimeout(function(){
         $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn( s.animSpeed/2);
       }, s.animSpeed/4);
 
       $('.navbar-nav .search-icon').animate({backgroundColor: s.backgroundColor}, s.animSpeed);
 
-      // Reset all the states after the animation is complete
-      setTimeout(function() {
+      // Reset all the states after the animations complete
+      setTimeout(function(){
         // Show the menu
         $('.navbar-nav > li.group').toggle();
 
@@ -315,7 +328,7 @@ var s,search = {
 
     }
   },
-  getQuery : function () {
+  getQuery : function (){
     // Get the query from the location URL
     var get = [];
     var decodeurl = decodeURI(location.search);
@@ -326,12 +339,12 @@ var s,search = {
     return get;
   },
   searchQuery : function ( inputQuery, start ) {
-    // Loader image
+    // loader image
     $(".searchresults").append("<row><div class='col-12' style='text-align: center;'><img id='loadingimage' src='./_public/theme-storebrand.ny/images/ajax-loader.gif'></div></div>");
     s.searchIsRunning = true;
 
     var query = encodeURI( encodeURI( inputQuery ) ); // Used because of the yahoo api. Replace with Storebrand proxy later.
-    // Internet explorer ajax fix
+    //Internet explorer ajax fix
     jQuery.support.cors = true;
     $.ajax({
       type: "GET",
@@ -339,7 +352,7 @@ var s,search = {
       url: "//query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dutf-8%26oe%3Dutf-8%26q%3D"+query+"'&diagnostics=false",
       dataType: "xml",
       success: search.xmlParser,
-      error: function(error) {
+      error: function(error){
         //console.log(JSON.stringify(error));
       }
     });
@@ -348,12 +361,12 @@ var s,search = {
     // Populate the promotion area
     if (s.start===0){
       $.each(search.promotions,function(value) {
-        if (value.toLowerCase() == s.urlParams.q.toLowerCase()) {
-          if(search.promotions[value].length > 1) {
+        if (value.toLowerCase() == s.urlParams.q.toLowerCase()){
+          if(search.promotions[value].length > 1){
             $(search.promotions[value]).each(function(index, promo) {
               $(".searchresults").append('<div class="promotion' + '"><h3>'+promo.header + '<' + '/h3><' + 'p class="description">' + promo.text + '</p' + ' ><p class="showurl"' + '><a href="' + promo.url + '">' +promo.name + '<' + '/a><' + '/p><' + '/div>');
             });
-          } else {
+          }else{
             $(".searchresults").append('<div class="promotion' + '"><h3>'+search.promotions[value].header + '<' + '/h3><' + 'p class="description">' + search.promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + search.promotions[value].url + '">' + search.promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
           }
         }
@@ -402,12 +415,12 @@ var s,search = {
   displaySearchResult : function (xml) {
     // Parse the results elements
     $(xml).find("R").each(function () {
-      // Get the search result item's string and sanitize it
+      //Get the search result item's string and sanitize it
       var strippedS = $(this).find("S").text();
       var stripRE = new RegExp("<br>", "g");
       strippedS = strippedS.replace(stripRE, "");
 
-      // Get the search result item's page URL and shorten it
+      //Get the search result item's page URL and shorten it
       var showU = $(this).find("U").text();
       var strippedU = showU;
       var stripU = new RegExp("http://www.", "g");
@@ -420,36 +433,36 @@ var s,search = {
       } else {
         shortenedU = strippedU;
       }
-      // Get the index of the last / in the url
+      //get the index of the last / in the url
       var lastSlashIndex = shortenedU.lastIndexOf("/");
-      // If the last / was at the end of the URL, for example in storebrand.no/bank/
+      //if the last / was at the end of the URL, for example in storebrand.no/bank/
       if( lastSlashIndex+1 == shortenedU.length ) {
-        // Remove the last /
+        //remove the last /
         shortenedU = shortenedU.substr( 0, shortenedU.length-1 );
-        // Now look for the new last /
+        //now look for the new last /
         lastSlashIndex = shortenedU.lastIndexOf("/", lastSlashIndex);
       }
-      // If no slash was found, reset it to 0
+      //if no slash was found, reset it to 0
       if( lastSlashIndex == -1 ) {
         lastSlashIndex = 0;
       }
-      // If there is more than 1 slash, then we want to add "/..." to the start of the short URL
+      //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
       var numOfSlashes = (shortenedU.split("/").length - 1);
-      shortenedU = decodeURI(( numOfSlashes > 1?"/...":"" ) + shortenedU.substr( lastSlashIndex ));
+      shortenedU = decodeURI(unescape(( numOfSlashes > 1?"/...":"" ) + shortenedU.substr( lastSlashIndex )));
 
-      // Setup any special classes to identify result type
+      //Setup any special classes to identify result type
       var linkDecoration = "";
       if (strippedU.indexOf(".pdf") > 0) {
         linkDecoration = ' class="pdf_document" ';
       }
 
-      // Prepare and display the result markup
+      //Prepare and display the result markup
       var resultMarkup = '<div><h4><a ' + linkDecoration + ' href="'  + $(this).find("U").text() + '">' + $(this).find("T").text() + '<' + '/a><' + '/h1><' + 'p class="description">' + strippedS + '</p' + ' ><p class="showurl"' + '><a href="' + showU + '">' + shortenedU + '<' + '/a><' + '/p><' + '/div>';
       $(".searchresults").append(resultMarkup);
     });
   },
   scroll : function(){
-   if ($('#main_search').length > 0 ) {
+   if ($('#main_search').length > 0 ){
       // Prevent the scroll from searching again while the search is still running, or if the search result limit has been reached
       if (s.searchIsRunning===true || (s.start+20)> s.hitcounter ) {
         return false;
@@ -472,11 +485,11 @@ var s,search = {
   }
 };
 
-$(document).ready(function() {
+$(document).ready(function(){
   search.init();
 });
 
-// Detect page scrolling to load new search results
-$(document).scroll(function(event) {
+//Detect page scrolling to load new search results
+$(document).scroll(function(event){
   search.scroll();
 });
