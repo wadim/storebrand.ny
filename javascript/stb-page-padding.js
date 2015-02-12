@@ -450,14 +450,19 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+  var img = '<img src="../images/PictoScrollTable@2x.gif" />';
+  if(!isHighDensity()){
+    img = '<img src="../images/PictoScrollTable@2x.gif" width="48" height="24"/>';
+  }
+
   $('.table-responsive').each(function() {
     if($(this).hasScrollBar()) {
-      $(this).addClass('scrollable').before('<span class="stb-sprite-medium scroll scroll-indicator"></span>');
+      $(this).addClass('scrollable').before('<p class="pull-right">Tabellen kan sveipes '+img+'</p><br>');
     }
   });
   $('.table-responsive-pinned').each(function() {
     if($(this).hasScrollBar()) {
-      $(this).addClass('scrollable').before('<span class="stb-sprite-medium scroll scroll-indicator"></span>');
+      $(this).addClass('scrollable').before('<p class="pull-right" style="margin-top: -10px;">Tabellen kan sveipes '+img+'</p><br>');
    }
   });
   makeTableScrollable();
