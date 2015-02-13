@@ -1,5 +1,4 @@
-﻿(function($){
-// Start navigation padding
+﻿(function($){// Start navigation padding
 
   $(document).ready(function(){
     $(".dropdown").on("hide.bs.dropdown", function(){
