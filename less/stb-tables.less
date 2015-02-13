@@ -118,23 +118,20 @@ table.stb-table {
 .table-responsive, .table-responsive-pinned {
   border: none;
   margin-bottom: 24px;
-  margin-top: 48px;
   table.stb-table {
     margin-top:0;
     margin-bottom:0;
   }
 }
 
-@media (max-width: @screen-sm-min) {
-  .table-responsive.scrollable {
-    margin-top: 48px;
-    border-left: 1px dashed @stb-secondary-charcoal;
-    border-right: 1px dashed @stb-secondary-charcoal;
-  }
+.table-responsive.scrollable {
+  border-left: 1px dashed @stb-secondary-charcoal;
+  border-right: 1px dashed @stb-secondary-charcoal;
 }
 
 .scroll-indicator{
   display: none;
+  text-align:center;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 6px;
@@ -160,24 +157,23 @@ table th { font-weight: bold; }
 table td, table th { padding: 9px 10px; text-align: left; }
 
 /* Mobile */
-@media (max-width: @screen-xs-max){
+.table-responsive-pinned.scrollable{
+  margin-right: -24px;
+  margin-left: -24px;
+  border-left: 1px dashed @stb-secondary-charcoal;
+  border-right: 1px dashed @stb-secondary-charcoal;
 
-  .table-responsive-pinned.scrollable{
-    border-left: 1px dashed @stb-secondary-charcoal;
-    border-right: 1px dashed @stb-secondary-charcoal;
+  .pinned { position: absolute; left: 0; top: 0; background: #fff; width: 35%; overflow: hidden; overflow-x: scroll; }
+  .pinned table { border-right: none; border-left: none; width: 100%; }
+  .pinned table th, .pinned table td { white-space: nowrap;}
+  .pinned td:last-child { border-bottom: 0; }
 
-    .pinned { position: absolute; left: 0; top: 0; background: #fff; width: 35%; overflow: hidden; overflow-x: scroll; }
-    .pinned table { border-right: none; border-left: none; width: 100%; }
-    .pinned table th, .pinned table td { white-space: nowrap;}
-    .pinned td:last-child { border-bottom: 0; }
+  div.table-wrapper { position: relative; margin-bottom: 20px; overflow: hidden;}
+  div.table-wrapper div.scrollable { margin-left: 35%; border-left: solid 1px @stb-gray-fifth }
+  div.table-wrapper div.scrollable { overflow: scroll; overflow-y: hidden; }
 
-    div.table-wrapper { position: relative; margin-bottom: 20px; overflow: hidden;}
-    div.table-wrapper div.scrollable { margin-left: 35%; border-left: solid 1px @stb-gray-fifth }
-    div.table-wrapper div.scrollable { overflow: scroll; overflow-y: hidden; }
-
-    table.responsive td{ position: relative; white-space: nowrap; overflow: hidden; }
-    table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
-  }
+  table.responsive td{ position: relative; white-space: nowrap; overflow: hidden; }
+  table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
 }
 
 
