@@ -149,7 +149,7 @@
   /* ***** END OF GET URL PARAMETER BY NAME ***** */
 
   /* ***** START TOGGLING "important messages" ***** */
-
+ 
   function showImportantNotice() {
     $('.important-notice').each(function() {
       if (readCookie($(this).attr('id')) === null) {
@@ -163,6 +163,28 @@
     $(notice).slideUp('fast');
     createCookie($(notice).attr('id'),'true');
   }
+  
+  function showCommonMsg(element) {
+    if(element != undefined){
+      $(element).parent().next('.commonmessage').slideToggle('fast');
+    }else{
+      $('.commonmessage').slideDown('fast');
+    }
+  }
+
+  function hideCommonMsg(element) {
+    $(element).closest('.commonmessage').slideUp('fast');
+    createCookie('commonMessageRead','Yes');
+  }  
+  
+  function showErrorMsg() {
+    $('.errormessage').slideDown('slow');
+  }
+
+  function hideErrorMsg(element) {
+    $(element).closest('.errormessage').slideUp('slow');
+    createCookie('errorMessageRead','Yes');
+  }  
   /* ***** END TOGGLING "important messages" ***** */
 
   /* ***** CREATE COOKIE ***** */
