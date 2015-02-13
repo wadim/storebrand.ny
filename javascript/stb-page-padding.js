@@ -550,8 +550,8 @@ function makeTableScrollable(){
   }
 
   function setCellHeights(original, copy) {
-    var tr = original.find('tr'),
-        tr_copy = copy.find('tr'),
+    var tr = original.find('tr');
+    var tr_copy = copy.find('tr');
 
     tr.each(function (index) {
       var self = $(this),
