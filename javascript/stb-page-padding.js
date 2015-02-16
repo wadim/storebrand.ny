@@ -1,4 +1,5 @@
-﻿(function($){// Start navigation padding
+﻿(function($){
+// Start navigation padding
 
   $(document).ready(function(){
     $(".dropdown").on("hide.bs.dropdown", function(){
@@ -103,13 +104,21 @@
 
    $(document).ready(function(){
      $('.stb-accordion').on('show.bs.collapse', function (event) {
-       $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up');
-       $(event.target).parent().addClass('active');
+        if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
+            $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up red');
+        }else{
+            $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up');
+        }
+        $(event.target).parent().addClass('active');
      });
 
      $('.stb-accordion').on('hide.bs.collapse', function () {
-       $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up');
-       $('.panel-collapse.collapse.in').parent().removeClass('active');
+        if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
+            $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up red');
+        }else{
+            $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up');
+        }
+        $('.panel-collapse.collapse.in').parent().removeClass('active');
      });
    });
 // End twister effect on accordion/FAQ

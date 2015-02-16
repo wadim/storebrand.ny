@@ -118,9 +118,20 @@ var s,search = {
     $("input.searchbox").keydown(function(event){
       if(!s.hasURL){
         if(event.which == 13 && this.value.trim()){
-             search.checkSearch( this.value );
-             return false;
-
+           var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
+           if(/\d{11}/.test(searchVal)){
+               search.minimizeSearch();
+               setTimeout(function(){
+                     $('li.login>a').click();
+                     var field =  $('#start-login-form input');
+                     field.val(searchVal);
+                     $('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
+                     $('#start-login-form').submit();
+              }, s.animSpeed);
+           }else{
+               search.checkSearch( this.value );
+           }
+           return false;
         }
       }
     });
@@ -135,12 +146,28 @@ var s,search = {
            event.preventDefault();
           }
       }else{
-        if(s.maximized && $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()){
-          //window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-desktop.typeahead.tt-input').typeahead('val');
-          search.checkSearch($('.tt-desktop.typeahead.tt-input').typeahead('val'));
+        var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
+        if(/\d{11}/.test(searchVal)){
+            if(s.maximized){
+             search.minimizeSearch();
+             setTimeout(function(){$('li.login>a').click();
+                    var field =  $('#start-login-form input');
+                    field.val(searchVal);
+                    $('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
+                    $('#start-login-form').submit();
+             }, s.animSpeed);
+            }else{
+              setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
+            }
         }else{
-          setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
+           if(s.maximized && searchVal){
+            //window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-desktop.typeahead.tt-input').typeahead('val');
+            search.checkSearch(searchVal);
+          }else{
+            setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
+          }
         }
+
       }
     });
 
@@ -204,10 +231,9 @@ var s,search = {
     $(document).click(function() {
       // If the search field is in focus and not animating
       if(s.maximized===true &&  s.animating===false) {
-
         // Do not minimize if there is text in the search field
         if(!$('.navbar-nav .typeahead.tt-input').val()){
-          minimizeSearch();
+          search.minimizeSearch();
         }
       }
     });
@@ -215,14 +241,14 @@ var s,search = {
     // Close search if Escape button is pressed
     $("input.searchbox").keydown(function(event){
       if(event.which == 27){
-        minimizeSearch();
+        search.minimizeSearch();
         $(this).blur();
       }
     });
 
     // Close search if close icon is clicked
     $('.navbar-nav .search .remove').click(function(){
-      minimizeSearch();
+      search.minimizeSearch();
     });
 
     // If the search icon or the input element itself gets clicked, do not pass the click event to the document.
@@ -231,102 +257,99 @@ var s,search = {
 
       // If it's currently minimized and not animating, maximize it.
       if (s.maximized===false &&  s.animating===false) {
-        maximizeSearch();
+        search.maximizeSearch();
       }
 
       // This will prevent the minimizeSearch from being called too early.
       e.stopPropagation();
       return false;
     });
+  },
+  minimizeSearch : function(){
 
-    function maximizeSearch() {
-      s.maximized = true;
+    // Save the animating state, and reset it once the animations complete
+    s.animating = true;
+    setTimeout(function(){
+      s.animating = false;
+    }, s.animSpeed);
 
-      //Hide overlay when search is focus
-      $('.shadow-overlay').hide();
+    // Hide the remove icon
+    $('.navbar-nav li.search .remove').toggle();
 
-      // Save the animation state, and reset it once the animations complete
-      s.animating = true;
-      setTimeout(function(){
-        s.animating = false;
-      }, s.animSpeed);
+    // Reset the searchParent to the original width. The text box will fit on its own as its width is 100 %.
+    $('.navbar-nav > li.search').animate({width: s.searchParentWidthPercent+'%'},  s.animSpeed);
+    $('.navbar-nav .typeahead').animate({backgroundColor: s.backgroundColor,color:"#fff"},  s.animSpeed);
 
-      // Store the current width
-      var searchParentWidth = $('.navbar-nav > li.search').css('width');
-      s.backgroundColor = $('.navbar-nav .typeahead').css('background-color');
-      // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
-      s.searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
+    // Fade out the white search icon
+    $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
 
-      // Give the text element a fixed size
-      //$('.navbar-nav .typeahead').css('width',searchParentWidth);
-      // Hide the menu
+    // After half the animation time has passed, fade in the inverted icon
+    setTimeout(function(){
+      $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn( s.animSpeed/2);
+    }, s.animSpeed/4);
+
+    $('.navbar-nav .search-icon').animate({backgroundColor: s.backgroundColor}, s.animSpeed);
+
+    // Reset all the states after the animations complete
+    setTimeout(function(){
+      // Show the menu
       $('.navbar-nav > li.group').toggle();
 
-      // Expand the search parent to take 95 % of the available width
-      $('.navbar-nav > li.search').css('width','95%');
+      // Remove the focus from the smaller search box in case the user clicked on it during the animation
+      $('.navbar-nav .typeahead').blur();
 
-      // Fade out the white search icon
-      $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
+      // Save the new state
+      s.maximized = false;
 
-      // After fading out icon, fade in inverted (charcoal) icon with new background
-      setTimeout(function(){
-        $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(s.animSpeed/2);
-      }, s.animSpeed/4);
+      // Reset the span container to initial value
+      $('.navbar-nav .twitter-typeahead').css('width',s.initialWidth);
+    },  s.animSpeed);
+  },
+  maximizeSearch : function (){
+    s.maximized = true;
+    //Hide overlay when search is focus
+    $('.shadow-overlay').hide();
 
-      $('.navbar-nav .search-icon').animate({backgroundColor:'"fff'}, s.animSpeed);
+    // Save the animation state, and reset it once the animations complete
+    s.animating = true;
+    setTimeout(function(){
+      s.animating = false;
+    }, s.animSpeed);
 
-      // Animate span parent container to 100 %
-      $('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
+    // Store the current width
+    var searchParentWidth = $('.navbar-nav > li.search').css('width');
+    s.backgroundColor = $('.navbar-nav .typeahead').css('background-color');
+    // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
+    s.searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 
-      // Animate the text box
-      $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
+    // Give the text element a fixed size
+    //$('.navbar-nav .typeahead').css('width',searchParentWidth);
+    // Hide the menu
+    $('.navbar-nav > li.group').toggle();
 
-      // Show the "Close search" icon
-      setTimeout(function(){
-        $('.navbar-nav li.search .remove').toggle();
-      }, s.animSpeed);
-    }
+    // Expand the search parent to take 95 % of the available width
+    $('.navbar-nav > li.search').css('width','95%');
 
-    function minimizeSearch() {
-      // Save the animating state, and reset it once the animations complete
-      s.animating = true;
-      setTimeout(function(){
-        s.animating = false;
-      }, s.animSpeed);
+    // Fade out the white search icon
+    $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
 
-      // Hide the remove icon
+    // After fading out icon, fade in inverted (charcoal) icon with new background
+    setTimeout(function(){
+      $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(s.animSpeed/2);
+    }, s.animSpeed/4);
+
+    $('.navbar-nav .search-icon').animate({backgroundColor:'"fff'}, s.animSpeed);
+
+    // Animate span parent container to 100 %
+    $('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
+
+    // Animate the text box
+    $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
+
+    // Show the "Close search" icon
+    setTimeout(function(){
       $('.navbar-nav li.search .remove').toggle();
-
-      // Reset the searchParent to the original width. The text box will fit on its own as its width is 100 %.
-      $('.navbar-nav > li.search').animate({width: s.searchParentWidthPercent+'%'},  s.animSpeed);
-      $('.navbar-nav .typeahead').animate({backgroundColor: s.backgroundColor,color:"#fff"},  s.animSpeed);
-
-      // Fade out the white search icon
-      $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
-
-      // After half the animation time has passed, fade in the inverted icon
-      setTimeout(function(){
-        $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn( s.animSpeed/2);
-      }, s.animSpeed/4);
-
-      $('.navbar-nav .search-icon').animate({backgroundColor: s.backgroundColor}, s.animSpeed);
-
-      // Reset all the states after the animations complete
-      setTimeout(function(){
-        // Show the menu
-        $('.navbar-nav > li.group').toggle();
-
-        // Remove the focus from the smaller search box in case the user clicked on it during the animation
-        $('.navbar-nav .typeahead').blur();
-
-        // Save the new state
-        s.maximized = false;
-
-        // Reset the span container to initial value
-        $('.navbar-nav .twitter-typeahead').css('width',s.initialWidth);
-      },  s.animSpeed);
-
-    }
+    }, s.animSpeed);
   },
   getQuery : function (){
     // Get the query from the location URL
