@@ -5192,7 +5192,7 @@ var s,search = {
     highlight: true,
     minLength: 3,
     limit: 10
-  }],
+   }],
 
   promotions : "",
   typeaheads : {},
@@ -5211,11 +5211,11 @@ var s,search = {
     search.promotions = enonicSearchData.search.promotion;
 
     if(enonicSearchData.search.autocomplete != undefined && enonicSearchData.search.autocomplete.anbefalt != undefined){
-      search.typeaheads.anbefalte = enonicSearchData.search.autocomplete.anbefalt;
+       search.typeaheads.anbefalte = enonicSearchData.search.autocomplete.anbefalt;
     }
 
     if(enonicSearchData.search.typeahead != undefined && enonicSearchData.search.typeahead.direkte != undefined){
-      search.typeaheads.direkte = enonicSearchData.search.typeahead.direkte;
+       search.typeaheads.direkte = enonicSearchData.search.typeahead.direkte;
     }
 
     //typeaheads['anbefalte'] = anbefalte;
@@ -5287,49 +5287,49 @@ var s,search = {
     $("input.searchbox").keydown(function(event){
       if(!s.hasURL){
         if(event.which == 13 && this.value.trim()){
-          var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
-          if(/\d{11}/.test(searchVal)){
-            search.minimizeSearch();
-            setTimeout(function(){
-              $('li.login>a').click();
-              var field =  $('#start-login-form input');
-              field.val(searchVal);
-              $('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
-              $('#start-login-form').submit();
-            }, s.animSpeed);
-          }else{
-            search.checkSearch( this.value );
-          }
-          return false;
+           var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
+           if(/\d{11}/.test(searchVal)){
+               search.minimizeSearch();
+               setTimeout(function(){
+                     $('li.login>a').click();
+                     var field =  $('#start-login-form input');
+                     field.val(searchVal);
+                     $('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
+                     $('#start-login-form').submit();
+              }, s.animSpeed);
+           }else{
+               search.checkSearch( this.value );
+           }
+           return false;
         }
       }
     });
 
     $('.search-icon').on('click',function(event){
       if($(event.target).closest('form').is('#searchMobile')){
-        if($('.tt-mobile .typeahead.tt-input').typeahead('val').trim()){
-          event.preventDefault();
-          //window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-mobile .typeahead.tt-input').typeahead('val');
-          search.checkSearch($('.tt-mobile .typeahead.tt-input').typeahead('val'));
-        }else{
-          event.preventDefault();
-        }
+          if($('.tt-mobile .typeahead.tt-input').typeahead('val').trim()){
+           event.preventDefault();
+           //window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-mobile .typeahead.tt-input').typeahead('val');
+           search.checkSearch($('.tt-mobile .typeahead.tt-input').typeahead('val'));
+          }else{
+           event.preventDefault();
+          }
       }else{
         var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
         if(/\d{11}/.test(searchVal)){
-          if(s.maximized){
-            search.minimizeSearch();
-            setTimeout(function(){$('li.login>a').click();
-              var field =  $('#start-login-form input');
-              field.val(searchVal);
-              $('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
-              $('#start-login-form').submit();
-            }, s.animSpeed);
-          }else{
-            setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
-          }
+            if(s.maximized){
+             search.minimizeSearch();
+             setTimeout(function(){$('li.login>a').click();
+                    var field =  $('#start-login-form input');
+                    field.val(searchVal);
+                    $('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
+                    $('#start-login-form').submit();
+             }, s.animSpeed);
+            }else{
+              setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
+            }
         }else{
-          if(s.maximized && searchVal){
+           if(s.maximized && searchVal){
             //window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-desktop.typeahead.tt-input').typeahead('val');
             search.checkSearch(searchVal);
           }else{
@@ -5540,8 +5540,7 @@ var s,search = {
     jQuery.support.cors = true;
     $.ajax({
       type: "GET",
-      url: "//site/stb.nsf/domprox?OpenAgent&url=http://www.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dutf-8%26oe%3Dutf-8%26q%3D"+query+"'&diagnostics=false",
-      //url: "//query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fwww.google.com%2Fcse%3Fcx%3D005330830390972510741%253A_ylpvikmny8%26client%3Dgoogle-csbe%26gl%3Dno%26start%3D"+start+"%26num%3D20%26output%3Dxml_no_dtd%26ie%3Dutf-8%26oe%3Dutf-8%26q%3D"+query+"'&diagnostics=false",
+      url: "https://www.storebrand.no/site/stb.nsf/domproxs?OpenAgent&url=https://www.google.com/cse?cx=005330830390972510741%3A_ylpvikmny8&client=google-csbe&gl=no&start="+start+"&num=20&output=xml_no_dtd&ie=utf8&oe=latin1&q="+query,
       dataType: "xml",
       success: search.xmlParser,
       error: function(error){
@@ -5654,7 +5653,7 @@ var s,search = {
     });
   },
   scroll : function(){
-    if ($('#main_search').length > 0 ){
+   if ($('#main_search').length > 0 ){
       // Prevent the scroll from searching again while the search is still running, or if the search result limit has been reached
       if (s.searchIsRunning===true || (s.start+20)> s.hitcounter ) {
         return false;
@@ -5673,7 +5672,7 @@ var s,search = {
         s.start =  s.start + 20;
         search.searchQuery( s.urlParams.q , s.start);
       }
-    }
+   }
   }
 };
 
