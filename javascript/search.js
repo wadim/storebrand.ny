@@ -147,7 +147,7 @@ var s,search = {
           }
       }else{
         var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
-        if(/\d{11}/.test(searchVal)){
+        if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
             if(s.maximized){
              search.minimizeSearch();
              setTimeout(function(){$('li.login>a').click();
