@@ -665,7 +665,7 @@
     left: 0;
   }
   span, span:before, span:after{
-    transition: all 200ms  ease-in-out;
+    transition: all 100ms  ease-in-out;
   }
 
   &.active span {
@@ -675,14 +675,16 @@
     }
 
     &:before{
-      -webkit-transform: rotate(45deg);
+      -moz-transform:rotate(45deg);
       -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
     }
 
     &:after{
-      -webkit-transform: rotate(-45deg);
+      -moz-transform:rotate(-45deg);
       -ms-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg);
     }
   }
