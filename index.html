@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>storebrand.ny 0.69 - Life can be fine if we both</title>
+  <title>storebrand.ny 0.70 - Life can be fine if we both</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -12,18 +12,6 @@
   <script type="text/javascript" src="javascript/stb-all.min.js"></script>
   <!-- End of universally useful references -->
   
-  <!--Hearts Edition-->
-<script>
-if(!image_urls){var image_urls=Array()}
-image_urls['rain1']="http://www.picgifs.com/mini-graphics/mini-graphics/hearts/mini-graphics-hearts-655853.gif";
-image_urls['rain2']="http://www.clker.com/cliparts/3/8/4/a/11954241201556281584tomas_arad_heart.svg.med.png";
-image_urls['rain3']="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Python-Foot.png/50px-Python-Foot.png";
-image_urls['rain4']="http://upload.wikimedia.org/wikipedia/commons/5/58/Bookmark.png";
-$(document).ready(function(){var c=$(window).width();var d=$(window).height();var e=function(a,b){return Math.round(a+(Math.random()*(b-a)))};var f=function(a){setTimeout(function(){a.css({left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(50,100)}).animate({top:(d-10)+'px'},e(2500,8000),function(){$(this).fadeOut('slow',function(){f(a)})})},e(1,8000))};$('<div></div>').attr('id','rainDiv')
-.css({position:'fixed',width:(c-20)+'px',height:'1px',left:'0px',top:'-5px',display:'block'}).appendTo('body');for(var i=1;i<=20;i++){var g=$('<img/>').attr('src',image_urls['rain'+e(1,4)])
-.css({position:'absolute',left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(10,100),'margin-left':0}).addClass('rainDrop').appendTo('#rainDiv');f(g);g=null};var h=0;var j=0;$(window).resize(function(){c=$(window).width();d=$(window).height()})});
-</script>
-<!-- /Hearts Edition -->
 </head>
  
 <body>
@@ -544,25 +532,18 @@ $(document).ready(function(){var c=$(window).width();var d=$(window).height();va
       <div class="col-md-12 column">
         <div class="stb-box banner">
           <div class="text">
-            <h2>Storebrand.ny - Version 0.69</h2>
+            <h2>Storebrand.ny - Version 0.70</h2>
 
             <p class="intro">
-              Web manual as of <strong>14.02.2015</strong>
+              Web manual as of <strong>16.02.2015</strong>
             </p>
             <p>
-              Just in time, here's the Valentine's Day Edition of the Web manual! We're just two weeks shy of going to production, so there aren't any major changes in the web manual. The form manual, however, for the most part remains sadly neglected. 
-            </p>
-            <p>
-            <button class="stb-btn alarm pull-right"  style="background-color: #da077f; border-radius: 10px;" onclick="$('#rainDiv').toggle();">Hearts on/off</button> 
-              New this week is a slide-able table for narrow screens, with the option to lock the first column. Still, please don't use more tables than absolutely necessary!
-            </p>
-            <p>Also, version 0.666 had a "bug", @grid-gutter-width was reset to 30px when we upgraded from Bootstrap 3.2.0 to 3.3.1. <br />
-            Good news for lovers of tightness; it is now back to 48px.
+              Another day, another version. This time with minor and hopefully final fixes for storebrand.no launch next week.
             </p>
             <p>Here's the code you'll want to include to start playing:</p>
             <pre>
- &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.69/css/stb-all-min.css"&gt;
- &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.69/javascript/stb-all.min.js"&gt;&lt;/script&gt;</pre>
+ &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.70/css/stb-all-min.css"&gt;
+ &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.70/javascript/stb-all.min.js"&gt;&lt;/script&gt;</pre>
 
             <div class="row">
               <div class="col-md-6">
@@ -579,7 +560,7 @@ $(document).ready(function(){var c=$(window).width();var d=$(window).height();va
                   <li><a href="https://www.storebrand.no/">www.storebrand.no</a> is now served fresh on the Storebrand LAN.</li>
                 </ul>
                 <p>
-                  In less than two weeks, the world will finally see our creation...
+                  Next week the world will finally see our creation...
                 </p>
               </div>
             </div>
@@ -592,6 +573,7 @@ $(document).ready(function(){var c=$(window).width();var d=$(window).height();va
               Previous versions:
             </p>
             <ul class="stb">
+              <li><a href="../0.69/index.html">0.69 (Valentine's Edition)</a></li>
               <li><a href="../0.666/index.html">0.666</a></li>
               <li><a href="../0.50/index.html">0.50</a></li>
               <li><a href="../0.48/index.html">0.48</a></li>
