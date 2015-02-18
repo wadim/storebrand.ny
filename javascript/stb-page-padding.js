@@ -214,11 +214,20 @@
 // End of automatic generation of toc lists on article pages
 
 // Opens the href in the relattribute to the clickable class
-  $(document).ready(function($) {
-    $(".clickable").click(function() {
+$(document).ready(function($) {
+  $(".clickable").click(function() {
+    if ($(this).find("a").first().attr("target") === '_blank') {
+      window.open($(this).attr("rel"));
+    } else {
       window.document.location = $(this).attr("rel");
-    });
+    }
   });
+
+  $(".clickable a").click(function(e){
+    e.preventDefault();
+    //Do nothing, as the clickable will handle this click.
+  });
+});
 
 //Appending arrow after link for clickable links
   $(document).ready(function() {
@@ -512,6 +521,32 @@ $(document).ready(function(){
     });
 });
 
+//Show and hide contactus links
+$(document).ready(function(){
+    $('a.contact').click(function(){
+      showHideForm(this);
+    });
+
+    $('.contactus-cancel').click( function(){
+      showHideForm($(this).parents('.contactus-form').prev('div').find('.contact'));
+    });
+
+    $('.contactus').submit(function(event){
+      var form = $(this);
+      event.preventDefault();
+      if($(form).find('input.phone').val()){
+        $(form).next('.contactus-receipt').find('.contact-number').append($(form).find('input.phone').val());
+        $(form).next('.contactus-receipt').show();
+        $(form).hide();
+      }
+
+    });
+});
+
+function showHideForm(elem){
+    $(elem).parent('div').next('div').slideToggle('fast');
+    $(elem).find('span:last').toggleClass('chevron-down chevron-up');
+}
 
 /* ***** Function for making tables responsive ***** */
 function makeTableScrollable(){

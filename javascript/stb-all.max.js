@@ -5992,7 +5992,6 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
 function isHighDensity(){
   return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 124dpi), only screen and (min-resolution: 1.3dppx), only screen and (min-resolution: 48.8dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3)').matches)) || (window.devicePixelRatio && window.devicePixelRatio > 1.3));
 }
-
 (function($){
 // Start navigation padding
 
@@ -6019,11 +6018,11 @@ function isHighDensity(){
       }
     });
 
-    $(".dropdown").on("shown.bs.dropdown", function(){
-      if(!$(this).is($('.current.login'))){
-        $('#start-login-form input').focus();
-      }
-    });
+     $(".dropdown").on("shown.bs.dropdown", function(){
+        if(!$(this).is($('.current.login'))){
+            $('#start-login-form input').focus();
+          }
+     });
 
     // Slide up the dropdown on clicking the remove icon
     $(".dropdown-menu > li > a").click(function(){
@@ -6058,17 +6057,17 @@ function isHighDensity(){
   });
 
   // Script for populating the dropdown with the selected tab link
-  $(document).ready(function() {
-    $(".dropdown-tabs .dropdown .heading").html($(".dropdown-tabs .dropdown-menu li.active a").html());
-    $(".dropdown-tabs .dropdown-menu li a").click(function() {
-      $(".dropdown-tabs .dropdown-menu li.active").removeClass("active");
-      $(".dropdown-tabs .dropdown .heading").html($(this).html());
-    });
+    $(document).ready(function() {
+      $(".dropdown-tabs .dropdown .heading").html($(".dropdown-tabs .dropdown-menu li.active a").html());
+      $(".dropdown-tabs .dropdown-menu li a").click(function() {
+        $(".dropdown-tabs .dropdown-menu li.active").removeClass("active");
+        $(".dropdown-tabs .dropdown .heading").html($(this).html());
+      });
 
-    $(".dropdown-tabs button").click(function() {
-      $(".dropdown-tabs button span.icon").toggleClass('chevron-up chevron-down');
+      $(".dropdown-tabs button").click(function() {
+        $(".dropdown-tabs button span.icon").toggleClass('chevron-up chevron-down');
+      });
     });
-  });
 
 // Start prevent top menu clicks from running away with the page
   $(document).on('click', '.yamm .dropdown-menu', function(e) {
@@ -6085,42 +6084,42 @@ function isHighDensity(){
     $("ul[data-widget=stbFaq]").stbFaq();
   }),
 
-      function (a) {
-        a.fn.stbFaq = function () {
-          a(this).find("a").on("click", function (b) {
-            if (a(this).hasClass("twister")) {
-              b.preventDefault();
-              var c = a(this).siblings("ul.accordion li .answer");
-              a(this).hasClass("open") ? (a(this).removeClass("open"), c.slideUp(200)) : (a(this).addClass("open"), c.slideDown(200));
-            }
-          });
-        };
-      }(jQuery);
+  function (a) {
+    a.fn.stbFaq = function () {
+      a(this).find("a").on("click", function (b) {
+        if (a(this).hasClass("twister")) {
+          b.preventDefault();
+          var c = a(this).siblings("ul.accordion li .answer");
+          a(this).hasClass("open") ? (a(this).removeClass("open"), c.slideUp(200)) : (a(this).addClass("open"), c.slideDown(200));
+        }
+      });
+    };
+  }(jQuery);
 
-  $(document).ready(function(){
-    $('.stb-accordion').on('show.bs.collapse', function (event) {
-      if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
-        $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up red');
-      }else{
-        $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up');
-      }
-      $(event.target).parent().addClass('active');
-    });
+   $(document).ready(function(){
+     $('.stb-accordion').on('show.bs.collapse', function (event) {
+        if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
+            $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up red');
+        }else{
+            $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up');
+        }
+        $(event.target).parent().addClass('active');
+     });
 
-    $('.stb-accordion').on('hide.bs.collapse', function () {
-      if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
-        $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up red');
-      }else{
-        $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up');
-      }
-      $('.panel-collapse.collapse.in').parent().removeClass('active');
-    });
-  });
+     $('.stb-accordion').on('hide.bs.collapse', function () {
+        if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
+            $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up red');
+        }else{
+            $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up');
+        }
+        $('.panel-collapse.collapse.in').parent().removeClass('active');
+     });
+   });
 // End twister effect on accordion/FAQ
 
 // Achieve Equal height columns
   $("document").ready(function(){
-    $(".row .column").matchHeight(true);
+	  $(".row .column").matchHeight(true);
   });
 
   $(window).resize(function() {
@@ -6130,15 +6129,15 @@ function isHighDensity(){
 
 // Handling automatic generation of TOC lists on article pages
 // Prepare the TOC link for a given header tag
-  function prepareTocLink(headerTag, prefix) {
-    //take the header text
-    var headerText = $(headerTag).text();
-    //prepare the header ID from its text
-    $(headerTag).attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/\-/g,'').replace(/ /g,"-").toLowerCase()); // generating id for the h3
-    var headerId = $(headerTag).attr("id").replace(/\W/g, ''); // set the id
-    //create the link and return it
-    return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
-  }
+    function prepareTocLink(headerTag, prefix) {
+      //take the header text
+      var headerText = $(headerTag).text();
+      //prepare the header ID from its text
+      $(headerTag).attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/\-/g,'').replace(/ /g,"-").toLowerCase()); // generating id for the h3
+      var headerId = $(headerTag).attr("id").replace(/\W/g, ''); // set the id
+      //create the link and return it
+      return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
+    }
 
   $(document).ready(function() {
     // Prepare the row that contains the table of contents
@@ -6168,25 +6167,25 @@ function isHighDensity(){
 
     //check if URL already has a hash and scroll to the correct heading
     if( window.location.hash.length > 0 && window.location.hash.indexOf("/") == -1 ) {  // only do scrolling now, since the has tag is present and it does not have a / which is for angular JS
-      try {
-        var hashId = window.location.hash;
-        //if a matching heading has the hash ID, then scroll to it.
+	  try {
+	    var hashId = window.location.hash;
+	    //if a matching heading has the hash ID, then scroll to it.
 
-        if( $(hashId).length > 0 ){
-          scrollToHash( hashId );
-        }
+	    if( $(hashId).length > 0 ){
+	      scrollToHash( hashId );
+	    }
 
-      } catch(e) {
-        // Don't do a thing!
-      }
-    }
+	    } catch(e) {
+	      // Don't do a thing!
+	    }
+     }
 
     // Perform a smooth page scroll to an anchor on the same page.
     $(function() {
       $('.toc-list .items a[href*=#]:not([href=#])').click(function(event) {
         event.preventDefault();
         //if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        scrollToHash( this.hash);
+          scrollToHash( this.hash);
         //}
       });
     });
@@ -6209,11 +6208,20 @@ function isHighDensity(){
 // End of automatic generation of toc lists on article pages
 
 // Opens the href in the relattribute to the clickable class
-  $(document).ready(function($) {
-    $(".clickable").click(function() {
+$(document).ready(function($) {
+  $(".clickable").click(function() {
+    if ($(this).find("a").first().attr("target") === '_blank') {
+      window.open($(this).attr("rel"));
+    } else {
       window.document.location = $(this).attr("rel");
-    });
+    }
   });
+
+  $(".clickable a").click(function(e){
+    e.preventDefault();
+    //Do nothing, as the clickable will handle this click.
+  });
+});
 
 //Appending arrow after link for clickable links
   $(document).ready(function() {
@@ -6262,34 +6270,34 @@ function isHighDensity(){
       makeExpandableList($(this),2);
     });
   });
-  /* ***** START Make lists expandable ***** */
-  function makeExpandableList(selector){
-    initialExpandable(selector);
+    /* ***** START Make lists expandable ***** */
+    function makeExpandableList(selector){
+      initialExpandable(selector);
 
-    var showMore = selector.find('.showMore');
+      var showMore = selector.find('.showMore');
 
-    showMore.click(function() {
-      if(showMore.hasClass('open')){
-        initialExpandable(selector);
-        showMore.find('span').toggleClass('chevron-up red chevron-down');
-      }else{
-        selector.children('li').show(400);
-        showMore.find('span').toggleClass('chevron-up red chevron-down');
-      }
-      showMore.find("span.show-detail, span.hide-detail").toggle();
-      showMore.toggleClass('open');
-    });
-  }
-  /* ***** END Make lists expandable ***** */
-  /* ***** START Loop through list, showing li elements with summary class and hide all other li elements ***** */
-  function initialExpandable(selector){
+      showMore.click(function() {
+        if(showMore.hasClass('open')){
+          initialExpandable(selector);
+          showMore.find('span').toggleClass('chevron-up red chevron-down');
+        }else{
+          selector.children('li').show(400);
+          showMore.find('span').toggleClass('chevron-up red chevron-down');
+        }
+        showMore.find("span.show-detail, span.hide-detail").toggle();
+        showMore.toggleClass('open');
+      });
+    }
+    /* ***** END Make lists expandable ***** */
+    /* ***** START Loop through list, showing li elements with summary class and hide all other li elements ***** */
+    function initialExpandable(selector){
     selector.children('li').each(function(index){
       if(!$(this).is('.summary, .showMore')){
         $(this).hide(400);
       }
     });
-  }
-  /* ***** END Loop through list, showing li elements with summary class and hide all other li elements ***** */
+    }
+    /* ***** END Loop through list, showing li elements with summary class and hide all other li elements ***** */
 
 // Google Analytics event tagging - automated for various design elements
 // To enable analytics the element needs a 'analyze' class
@@ -6336,47 +6344,47 @@ function isHighDensity(){
       ga('send', 'event', path , 'Klikk på accordion ', q);
     });
 
-    //Analytics for list group
+   //Analytics for list group
     $('.list-group-item.analyze').bind( "click", function() {
-      var q = $(this).prev('.header').html();
-      var path = window.location.pathname;
-      //console.log(q);
-      //console.log(path);
-      ga('send', 'event', path , 'Klikk på list group ', q);
-    });
+        var q = $(this).prev('.header').html();
+        var path = window.location.pathname;
+        //console.log(q);
+        //console.log(path);
+        ga('send', 'event', path , 'Klikk på list group ', q);
+      });
     //Analytics for radio buttons and checkboxes
     $('label.analyze').bind( "click", function() {
-      var parent = $(this).parent()
-      var q = $(this).html();
-      var label = $(this).parent().prev('label').length > 0 ? $(this).parent().prev('label').html() : "" ;
-      var path = window.location.pathname;
-      //console.log(q);
-      //console.log(path);
-      if(parent.hasClass('radiobuttons')){
-        ga('send', 'event', path , 'Radiobutton: '+label+' checked', q);
-      }else if(parent.hasClass('checkboxes')){
-        ga('send', 'event', path , 'Checkbox: '+label+' checked', q);
-      }
-    });
-    //Analytics for select
-    $('select.analyze').bind( "change", function() {
-      var q = $(this).val();
-      var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
-      var path = window.location.pathname;
-      //console.log(q);
-      //console.log(path);
-      ga('send', 'event', path , 'Dropdown:'+label+' endret valg.', q);
-    });
+        var parent = $(this).parent()
+        var q = $(this).html();
+        var label = $(this).parent().prev('label').length > 0 ? $(this).parent().prev('label').html() : "" ;
+        var path = window.location.pathname;
+        //console.log(q);
+        //console.log(path);
+        if(parent.hasClass('radiobuttons')){
+            ga('send', 'event', path , 'Radiobutton: '+label+' checked', q);
+        }else if(parent.hasClass('checkboxes')){
+            ga('send', 'event', path , 'Checkbox: '+label+' checked', q);
+        }
+      });
+     //Analytics for select
+     $('select.analyze').bind( "change", function() {
+            var q = $(this).val();
+            var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
+            var path = window.location.pathname;
+            //console.log(q);
+            //console.log(path);
+            ga('send', 'event', path , 'Dropdown:'+label+' endret valg.', q);
+     });
     //Analytics for datepicker
-    $('.datePicker.analyze').bind('dp.change dp.show', function(){
-      var q = $(this).find('input').val();
-      var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
-      var path = window.location.pathname;
-      //console.log(q);
-      //console.log(path);
-      ga('send', 'event', path , 'Date changed for: '+label, q);
+      $('.datePicker.analyze').bind('dp.change dp.show', function(){
+            var q = $(this).find('input').val();
+            var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
+            var path = window.location.pathname;
+            //console.log(q);
+            //console.log(path);
+            ga('send', 'event', path , 'Date changed for: '+label, q);
 
-    });
+      });
 
   });
 
@@ -6401,7 +6409,7 @@ function isHighDensity(){
             '</div>' +
             '</div>' +
             '</div>' +
-            '</div>';
+        '</div>';
 
         if($('#dialogModal').length === 0){
           $('body').append(markup);
@@ -6438,161 +6446,186 @@ function isHighDensity(){
 
 
 // login
-  $(document).ready(function(){
-    /* Verify National Identity Number ***********************************************/
-    var loginFields=  {
-      nationalIdentityNumber: {
-        container: '#menulogin-message',
-        validators: {
-          callback: idValidator,
-          notEmpty: {
-            message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
-          }
+$(document).ready(function(){
+/* Verify National Identity Number ***********************************************/
+var loginFields=  {
+    nationalIdentityNumber: {
+    container: '#menulogin-message',
+    validators: {
+       callback: idValidator,
+       notEmpty: {
+         message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
+       }
+     }
+   }
+ };
+var frontpageLoginFields =  {
+     nationalIdentityNumber: {
+     container: '#startlogin-message',
+     validators: {
+        callback: idValidator,
+        notEmpty: {
+          message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
         }
       }
-    };
-    var frontpageLoginFields =  {
-      nationalIdentityNumber: {
-        container: '#startlogin-message',
-        validators: {
-          callback: idValidator,
-          notEmpty: {
-            message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
-          }
-        }
-      }
-    };
+    }
+  };
 
-    var callback = function(e) {
-      // Prevent form submission
-      e.preventDefault();
-      loginFromMenu($(e.target).find("input[name='nationalIdentityNumber']").val());
-    };
+var callback = function(e) {
+  // Prevent form submission
+   e.preventDefault();
+   loginFromMenu($(e.target).find("input[name='nationalIdentityNumber']").val());
+ };
 
-    try{
-      initBootstrapValidator ($('#start-login-form'),loginFields,callback);
-      initBootstrapValidator ($('#start-login-form-mobile'),loginFields,callback);
-    }catch(err){}
-  });
+try{
+ initBootstrapValidator ($('#start-login-form'),loginFields,callback);
+ initBootstrapValidator ($('#start-login-form-mobile'),loginFields,callback);
+}catch(err){}
+});
 
-  $(document).ready(function(){
-    var accept = readCookie('acceptCookie');
-    if(accept=='Yes'){
-      jQuery('#cookieNote').hide();
+$(document).ready(function(){
+var accept = readCookie('acceptCookie');
+if(accept=='Yes'){
+  jQuery('#cookieNote').hide();
+}
+});
+
+$(document).ready(function() {
+  if(!isHighDensity()){
+     $('.scroll-indicator img').attr('height','24');
+  }
+
+  $('.table-responsive').each(function() {
+    if($(this).hasScrollBar()) {
+      $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
     }
   });
-
-  $(document).ready(function() {
-    if(!isHighDensity()){
-      $('.scroll-indicator img').attr('height','24');
-    }
-
-    $('.table-responsive').each(function() {
-      if($(this).hasScrollBar()) {
-        $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
-      }
-    });
-    $('.table-responsive-pinned').each(function() {
-      if($(this).hasScrollBar()) {
-        $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
-      }
-    });
-    makeTableScrollable();
+  $('.table-responsive-pinned').each(function() {
+    if($(this).hasScrollBar()) {
+      $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
+   }
   });
+  makeTableScrollable();
+});
 
 //Equalheights fix for elements in hidden tabs
-  $(document).ready(function(){
+$(document).ready(function(){
     $('ul[data-tabs="tabs"] a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-      $('.tab-pane.active .row .column').matchHeight(true);
+       $('.tab-pane.active .row .column').matchHeight(true);
     });
-  });
+});
 
+//Show and hide contactus links
+$(document).ready(function(){
+    $('a.contact').click(function(){
+      showHideForm(this);
+    });
 
-  /* ***** Function for making tables responsive ***** */
-  function makeTableScrollable(){
-    var switched = false;
-    var updateTables = function() {
-      if (($(window).width() < 767) && !switched ){
-        switched = true;
-        $(".table-responsive-pinned.scrollable table.responsive").each(function(i, element) {
-          splitTable($(element));
-        });
-        return true;
+    $('.contactus-cancel').click( function(){
+      showHideForm($(this).parents('.contactus-form').prev('div').find('.contact'));
+    });
+
+    $('.contactus').submit(function(event){
+      var form = $(this);
+      event.preventDefault();
+      if($(form).find('input.phone').val()){
+        $(form).next('.contactus-receipt').find('.contact-number').append($(form).find('input.phone').val());
+        $(form).next('.contactus-receipt').show();
+        $(form).hide();
       }
-      else if (switched && ($(window).width() > 767)) {
-        switched = false;
-        $(".table-responsive-pinned.scrollable table.responsive").each(function(i, element) {
-          unsplitTable($(element));
-        });
-      }
-    };
 
-    $(window).load(updateTables);
-    $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
-    $(window).on("resize", updateTables);
+    });
+});
 
-    function splitTable(original)
-    {
-      original.wrap("<div class='table-wrapper' />");
+function showHideForm(elem){
+    $(elem).parent('div').next('div').slideToggle('fast');
+    $(elem).find('span:last').toggleClass('chevron-down chevron-up');
+}
 
-      var copy = original.clone();
-      copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
-      copy.removeClass("responsive");
-
-      original.closest(".table-wrapper").append(copy);
-      copy.wrap("<div class='pinned' />");
-      original.wrap("<div class='scrollable' />");
-
-      setCellHeights(original, copy);
-    }
-
-    function unsplitTable(original) {
-      original.closest(".table-wrapper").find(".pinned").remove();
-      original.unwrap();
-      original.unwrap();
-    }
-
-    function setCellHeights(original, copy) {
-      var tr = original.find('tr'),
-          tr_copy = copy.find('tr'),
-          heights = [];
-
-      tr.each(function (index) {
-        var self = $(this),
-            tx = self.find('th, td');
-        tx.each(function () {
-          var height = $(this).outerHeight(true);
-          heights[index] = heights[index] || 0;
-          if (height > heights[index]) heights[index] = height;
-        });
-
+/* ***** Function for making tables responsive ***** */
+function makeTableScrollable(){
+  var switched = false;
+  var updateTables = function() {
+    if (($(window).width() < 767) && !switched ){
+      switched = true;
+      $(".table-responsive-pinned.scrollable table.responsive").each(function(i, element) {
+        splitTable($(element));
       });
-
-      tr_copy.each(function (index) {
-        //Integration with boostrap fix
-        $(this).height(heights[index]);
-      });
-      tr.each(function (index){
-        $(this).height(heights[index]);
-      })
+      return true;
     }
+    else if (switched && ($(window).width() > 767)) {
+      switched = false;
+      $(".table-responsive-pinned.scrollable table.responsive").each(function(i, element) {
+        unsplitTable($(element));
+      });
+    }
+  };
+
+  $(window).load(updateTables);
+  $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
+  $(window).on("resize", updateTables);
+
+  function splitTable(original)
+  {
+    original.wrap("<div class='table-wrapper' />");
+
+    var copy = original.clone();
+    copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
+    copy.removeClass("responsive");
+
+    original.closest(".table-wrapper").append(copy);
+    copy.wrap("<div class='pinned' />");
+    original.wrap("<div class='scrollable' />");
+
+    setCellHeights(original, copy);
   }
-  /* ***** End of Function for making tables responsive ***** */
 
-  $.fn.hasScrollBar = function() {
+  function unsplitTable(original) {
+    original.closest(".table-wrapper").find(".pinned").remove();
+    original.unwrap();
+    original.unwrap();
+  }
+
+  function setCellHeights(original, copy) {
+    var tr = original.find('tr'),
+        tr_copy = copy.find('tr'),
+        heights = [];
+
+    tr.each(function (index) {
+      var self = $(this),
+          tx = self.find('th, td');
+      tx.each(function () {
+        var height = $(this).outerHeight(true);
+        heights[index] = heights[index] || 0;
+        if (height > heights[index]) heights[index] = height;
+      });
+
+    });
+
+    tr_copy.each(function (index) {
+      //Integration with boostrap fix
+      $(this).height(heights[index]);
+    });
+    tr.each(function (index){
+      $(this).height(heights[index]);
+    })
+  }
+}
+/* ***** End of Function for making tables responsive ***** */
+
+$.fn.hasScrollBar = function() {
     return this.get(0).scrollWidth > this.get(0).clientWidth;
-  }
+}
 
 }(jQuery));
-/* ***** Validator for national identity number ***** */
 
+/* ***** Validator for national identity number ***** */
 var idValidator = {
   message: '<span class="stb-color-sprite-small warning"></span> Ugyldig fødselsnummer!',
   callback: function(value, validor){
     return verifyIDNumber(value);
   }
 };
-
 
 // This loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
