@@ -119,7 +119,7 @@ var s,search = {
       if(!s.hasURL){
         if(event.which == 13 && this.value.trim()){
            var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
-           if(/\d{11}/.test(searchVal)){
+           if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
                search.minimizeSearch();
                setTimeout(function(){
                      $('li.login>a').click();
@@ -381,7 +381,7 @@ var s,search = {
   },
   getPromotions : function () {
     // Populate the promotion area
-    if (s.start===0){
+    if (s.start===0 && search.promotions != undefined){
       $.each(search.promotions,function(value) {
         if (value.toLowerCase() == s.urlParams.q.toLowerCase()){
           if(search.promotions[value].length > 1){
@@ -416,7 +416,7 @@ var s,search = {
 
       // If we don't get anything initially, show corresponding message
       if ($(xml).find("R").length===0 && $(xml).find("Spelling").length===0 ) {
-        $(".resultsummary div").append('<div class="nogo"' + '>Fant ingen treff ved s&oslash;k etter <' + 'strong>'+ $(xml).find("Q").text()+'<' + '/strong>.<' + '/div>');
+        $(".resultsummary div").append('<div class="nogo"' + '>Fant ingen treff ved s&oslash;k etter <' + 'strong>'+ unescape($(xml).find("Q").text())+'<' + '/strong>.<' + '/div>');
         noresult=true;
       }
 
