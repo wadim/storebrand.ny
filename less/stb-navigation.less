@@ -225,12 +225,14 @@
 
       li{
         &:first-child{
-          a{
+          a.closeLink{
+            border-bottom: none;
             margin-right: 24px;
             margin-top: 9px;
-
-            &:hover,&:focus,&:active{
-                     border-bottom: none;
+            &:hover, &:active, &:focus{
+              span.stb-sprite-medium.remove{
+                background-position: -500px -800px;
+              }
             }
           }
         }
