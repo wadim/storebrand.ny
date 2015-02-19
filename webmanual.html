@@ -1668,6 +1668,7 @@ $(document).ready(function() {
       </div>
       
       <h4>Sand background</h4>
+      <p> On sand background, the message part of the box must be on white background.</p>
       <div class="row stbcolor-secondary sixth top-padding-40">
         <div class="col-md-8 col-md-offset-2">
           
@@ -1675,7 +1676,7 @@ $(document).ready(function() {
             <div class="col-sm-2 msgIcon column stbcolor-secondary fifth">
               <span class="stb-color-sprite-medium info"></span>
             </div>
-            <div class="col-sm-10 pull-right msgText column stbcolor-secondary sixth">
+            <div class="col-sm-10 pull-right msgText column stbcolor-primary third">
               <h3>Information box</h3>
               <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
               <p>Thank you for your patience</p>
@@ -1686,7 +1687,7 @@ $(document).ready(function() {
             <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
               <span class="stb-color-sprite-medium warning"></span>
             </div>
-            <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
+            <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
               <h3>Error box</h3>
               <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
               <p>We apologize for the inconvenience</p>
@@ -1697,7 +1698,7 @@ $(document).ready(function() {
             <div class="col-sm-2 msgIcon column stbcolor-secondary third lighter">
               <span class="stb-color-sprite-medium ok-circle"></span>
             </div>
-            <div class="col-sm-10 msgText column pull-right stbcolor-visuals fourth">
+            <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
               <h3>Success box</h3>
               <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
               <p>Thank you for your purchase</p>
@@ -1705,7 +1706,7 @@ $(document).ready(function() {
           </div>
         </div>
       </div>
-      <h4>Code:</h4>
+      <h4>Code example for boxes on white background:</h4>
       <pre class="prettyprint">
 &lt;!-- Information box: --&gt;
 
@@ -1758,7 +1759,7 @@ $(document).ready(function() {
           </div>
         </div>
       </div>
-      
+      <br />
       <div class="row">
         <div class="errormessage">
           <div class="col-sm-2 msgIcon column stbcolor-primary first lighter"><span class="stb-color-sprite-medium warning"></span></div>
@@ -1774,12 +1775,13 @@ $(document).ready(function() {
       </div>
       
       <h4>Sand background</h4>
+      <p> On sand background, the message part of the box must be on white background.</p>
       <div class="row stbcolor-secondary sixth top-padding-40">
         <div class="col-md-8 col-md-offset-2">
           <div class="row">
             <div class="commonmessage">
               <div class="col-sm-2 msgIcon column stbcolor-secondary fifth"><span class="stb-color-sprite-medium info"></span></div>
-              <div class="col-sm-10 msgText column pull-right stbcolor-secondary sixth">
+              <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
                 <a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;">
                   <p>Close <span class="stb-sprite-small remove"></span></p>
                 </a>
@@ -1789,11 +1791,11 @@ $(document).ready(function() {
               </div>
             </div>
           </div>
-          
+          <br />
           <div class="row">
             <div class="errormessage">
               <div class="col-sm-2 msgIcon column stbcolor-primary first lighter"><span class="stb-color-sprite-medium warning"></span></div>
-              <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
+              <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
                 <a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;">
                   <p>Close <span class="stb-sprite-small remove"></span></p>
                 </a>
@@ -1805,8 +1807,8 @@ $(document).ready(function() {
           </div>
         </div>
       </div>
-   
-      <strong>Code:</strong>
+      <br />
+      <strong>Code examples for boxes on white background:</strong>
         <pre class="prettyprint">
 
 &lt;!-- Common Message: --&gt;
@@ -1855,7 +1857,6 @@ $(document).ready(function() {
       Example:
     </p>
     <div> <!-- FAQ example div -->
-      <br />
       <h3>Alt om din pensjon</h3>
       <ul class="accordion analyze" data-widget="stbFaq">
         <li>
@@ -2136,15 +2137,10 @@ $('ul[data-widget=stbFaq]').stbFaq();
       By adding the class "analyze", Google Analytics tracking of button use is enabled.
     </p>
     <p><strong>Missing description:</strong> When to use a button vs when to use a text link.</p>
-  </div>
-
-</div>
-
-<div class="row">
-  <div class="col-md-6">
     <strong>Usage:</strong> <br />
-    <pre class="prettyprint"> &lt;button class="stb-btn [analyze]"&gt;Standard&lt;/button&gt; </pre>
+    <pre class="prettyprint"> &lt;button class="stb-btn [analyze]"&gt;Standard&lt;/button&gt;</pre>
   </div>
+
 </div>
 
 <hr />
