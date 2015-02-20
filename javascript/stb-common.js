@@ -243,11 +243,6 @@ function loginFromMenu(fnr){
 }
 /* ***** End of functionality for login ***** */
 
-function acceptCookies(){
-  createCookie('acceptCookies','Yes', '90');
-  $('#cookieNote').hide('slow');
-}
-
 $.fn.extend({
   openChat: function(){
     var width = 650;

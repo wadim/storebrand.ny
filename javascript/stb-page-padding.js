@@ -489,12 +489,6 @@ try{
 }catch(err){}
 });
 
-$(document).ready(function(){
-var accept = readCookie('acceptCookie');
-if(accept=='Yes'){
-  jQuery('#cookieNote').hide();
-}
-});
 
 $(document).ready(function() {
   if(!isHighDensity()){
