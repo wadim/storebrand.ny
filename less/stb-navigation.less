@@ -670,7 +670,7 @@
     left: 0;
   }
   span, span:before, span:after{
-    transition: all 200ms  ease-in-out;
+    transition: all 200ms linear;
   }
 
   &.active span {
@@ -680,6 +680,11 @@
     }
 
     &:before{
+
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+
       -moz-transform:rotate(45deg);
       -ms-transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
@@ -687,6 +692,11 @@
     }
 
     &:after{
+
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+
       -moz-transform:rotate(-45deg);
       -ms-transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg);
