@@ -2091,6 +2091,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <button class="stb-btn" onclick="$('#cookieNote').toggle('slow');">Toggle notification</button>
           <script type="text/javascript">
             createCookie('acceptCookies','Yes', '1000');
+
+            function acceptCookies(){
+               createCookie('acceptCookies','Yes', '90');
+               $('#cookieNote').hide('slow');
+             }
           </script>
         </p>
 
