@@ -585,7 +585,7 @@
                 <label for="selectLevel1">Henvendelsen gjelder</label>
                 <div class="stb-form-group">
                   <div class="selectContainer" style="max-width: 320px;">
-                    <select name="choose1" id="selectLevel1" class="form-control analyze">
+                    <select name="choose1" id="selectLevel1" class="form-control">
                       <option value="">Velg fra listen</option>
                       <option value="1">Bank</option>
                       <option value="2">Privat forsikring</option>
@@ -601,7 +601,7 @@
                   <label for="selectLevel2Bank">Nærmere bestemt</label>
                   <div class="stb-form-group">
                     <div class="selectContainer" style="max-width: 320px;">
-                      <select name="choose2-1" id="selectLevel2Bank" class="form-control analyze">
+                      <select name="choose2Bank" id="selectLevel2Bank" class="form-control">
                         <option value="">Velg fra listen</option>
                         <option value="1">Nettbank</option>
                         <option value="2">Konto</option>
@@ -613,21 +613,161 @@
                     </div>
                   </div>
                 </div>
-                <p><br /><button id="ok2-1" onclick="$('#messageActually').removeClass('hidden'); return false;" class=" hidden stb-btn stb-form">Ok</button></p>
+
+                <div id="bankAllTexts" class="hidden">
+                  <br />
+                  <div id="bankText1" class="hidden">
+                  <!-- Nettbank -->
+                  Nettbank
+                  </div>
+ 
+                  <div id="bankText2" class="hidden">
+                  <!-- Konto -->
+                  Konto
+                  </div>                
+
+                  <div id="bankText3" class="hidden">
+                  <!-- Kort -->
+                  Kort
+                  </div>            
+
+                  <div id="bankText4" class="hidden">                
+                  <!-- Lån -->
+                  Lån
+                  </div>
+
+                  <div id="bankText5" class="hidden">
+                  <!-- BankID -->                
+                  BankID
+                  </div>            
+
+                  <div id="bankText6" class="hidden">
+                  <!-- Annet -->                
+                  Annet
+                  </div>
+                </div>
                 <!-- /Bank -->
+
+                <!-- Insurance -->
+                <div id="regarding2" class="hidden">
+                  <br />
+                  <label for="selectLevel2Insurance">Nærmere bestemt</label>
+                  <div class="stb-form-group">
+                    <div class="selectContainer" style="max-width: 320px;">
+                      <select name="choose2Insurance" id="selectLevel2Insurance" class="form-control">
+                        <option value="">Velg fra listen</option>
+                        <option value="1">Eksisterende forsikring av eiendeler</option>
+                        <option value="2">Eksisterende forsikring av liv</option>
+                        <option value="3">Eksisterende helseforsikring</option>
+                        <option value="4">Ny forsikring</option>
+                        <option value="5">Tidligere meldt skadesak</option>                      
+                        <option value="6">Annet</option>
+                      </select>                      
+                    </div>
+                  </div>
+                </div>
+
+                <div id="insuranceAllTexts" class="hidden">
+                  <br />
+                  <div id="insuranceText1" class="hidden">
+                  <!-- Eksisterende forsikring av eiendeler -->
+                  Eksisterende forsikring av eiendeler
+                  </div>
+ 
+                  <div id="insuranceText2" class="hidden">
+                  <!-- Eksisterende forsikring av liv -->
+                  Eksisterende forsikring av liv
+                  </div>                
+
+                  <div id="insuranceText3" class="hidden">
+                  <!-- Eksisterende helseforsikring -->
+                  Eksisterende helseforsikring
+                  </div>            
+
+                  <div id="insuranceText4" class="hidden">                
+                  <!-- Ny forsikring -->
+                  Ny forsikring
+                  </div>
+
+                  <div id="insuranceText5" class="hidden">
+                  <!-- Tidligere meldt skadesak -->                
+                  Tidligere meldt skadesak
+                  </div>            
+
+                  <div id="insuranceText6" class="hidden">
+                  <!-- Annet -->                
+                  Annet
+                  </div>
+                </div>
+                <!-- /Insurance -->
+
+                <!-- Savings -->
+                <div id="regarding3" class="hidden">
+                  <br />
+                  <label for="selectLevel2savings">Nærmere bestemt</label>
+                  <div class="stb-form-group">
+                    <div class="selectContainer" style="max-width: 320px;">
+                      <select name="choose2Savings" id="selectLevel2savings" class="form-control">
+                        <option value="">Velg fra listen</option>
+                        <option value="1">Starte sparing</option>
+                        <option value="2">Flytte fond</option>
+                        <option value="3">Flytte Linkavtale</option>
+                        <option value="4">Flytte pensjonskapitalbevis</option>
+                        <option value="5">Bytte bank</option>
+                        <option value="6">Annet</option>
+                      </select>                      
+                    </div>
+                  </div>
+                </div>
+
+                <div id="savingsAllTexts" class="hidden">
+                  <br />
+                  <div id="savingsText1" class="hidden">
+                  <!-- Starte sparing -->
+                  Starte sparing
+                  </div>
+ 
+                  <div id="savingsText2" class="hidden">
+                  <!-- Flytte fond -->
+                  Flytte fond
+                  </div>                
+
+                  <div id="savingsText3" class="hidden">
+                  <!-- Flytte Linkavtale -->
+                  Flytte Linkavtale
+                  </div>            
+
+                  <div id="savingsText4" class="hidden">                
+                  <!-- Flytte pensjonskapitalbevis -->
+                  Flytte pensjonskapitalbevis
+                  </div>
+
+                  <div id="savingsText5" class="hidden">
+                  <!-- Bytte bank -->                
+                  Bytte bank
+                  </div>            
+
+                  <div id="savingsText6" class="hidden">
+                  <!-- Annet -->                
+                  Annet
+                  </div>
+                </div>
+                <!-- /Savings -->                
+
 
 
               </div>
               <!-- /The one where the category is decided -->
 
               <!-- The one where the message is entered -->
+              <br />
               <div id="messageActually" class="hidden">
                 <div class="stb-form-group" style="width: 320px">
                   <label for="messageText">Her er det jeg vil si:</label>
                   <textarea id="messageText" class="form-control" rows="4" cols="60"></textarea>
                 </div>
               </div>
-              <!-- /THe one where the message is entered -->
+              <!-- /The one where the message is entered -->
 
             </form>
           </div>
@@ -654,31 +794,221 @@ $("#selectLevel1").change( function(){
   var chosenLevel1 = $("#selectLevel1").val();
   if( chosenLevel1 =="1") {
     $("#regarding1").removeClass("hidden");
+    $("#bankAllTexts").removeClass("hidden");
     $("#regarding2").addClass("hidden");
-    $("#regarding3").addClass("hidden");    
+    $("#insuranceAllTexts").addClass("hidden");
+    $("#regarding3").addClass("hidden");
+    $("#savingsAllTexts").addClass("hidden");   
     $("#regarding4").addClass("hidden");    
   } else if (chosenLevel1 == "2") {
     $("#regarding1").addClass("hidden");
+    $("#bankAllTexts").addClass("hidden");
     $("#regarding2").removeClass("hidden");
+    $("#insuranceAllTexts").removeClass("hidden");
     $("#regarding3").addClass("hidden");    
+    $("#savingsAllTexts").addClass("hidden"); 
     $("#regarding4").addClass("hidden");      
   } else if (chosenLevel1 == "3") {
     $("#regarding1").addClass("hidden");
-    $("#regarding2").addeClass("hidden");
-    $("#regarding3").removeClass("hidden");    
+    $("#bankAllTexts").addClass("hidden");
+    $("#regarding2").addClass("hidden");
+    $("#insuranceAllTexts").addClass("hidden");
+    $("#regarding3").removeClass("hidden"); 
+    $("#savingsAllTexts").removeClass("hidden");   
     $("#regarding4").addClass("hidden");      
   } else if (chosenLevel1 == "4") {
     $("#regarding1").addClass("hidden");
+    $("#bankAllTexts").addClass("hidden");
     $("#regarding2").addClass("hidden");
-    $("#regarding3").addClass("hidden");    
+    $("#insuranceAllTexts").addClass("hidden");
+    $("#regarding3").addClass("hidden");   
+    $("#savingsAllTexts").addClass("hidden");   
     $("#regarding4").removeClass("hidden");      
   }
 })
 
 $("#selectLevel2Bank").change( function(){
-  $("#ok2-1").removeClass("hidden");  
+  var chosenLevel2Bank = $("#selectLevel2Bank").val();
+  $("#bankAllTexts").removeClass("hidden");
+  $("#insuranceAllTexts").addClass("hidden");
+  if (chosenLevel2Bank == "1") {
+    // Nettbank
+    $("#bankText1").removeClass("hidden");
+    $("#bankText2").addClass("hidden");
+    $("#bankText3").addClass("hidden");        
+    $("#bankText4").addClass("hidden");        
+    $("#bankText5").addClass("hidden");
+    $("#bankText6").addClass("hidden");        
+  }
+  if (chosenLevel2Bank == "2") {
+    // Konto
+    $("#bankText1").addClass("hidden");
+    $("#bankText2").removeClass("hidden");
+    $("#bankText3").addClass("hidden");        
+    $("#bankText4").addClass("hidden");        
+    $("#bankText5").addClass("hidden");
+    $("#bankText6").addClass("hidden");      
+  }
+  if (chosenLevel2Bank == "3") {
+    // Kort
+    $("#bankText1").addClass("hidden");
+    $("#bankText2").addClass("hidden");
+    $("#bankText3").removeClass("hidden");        
+    $("#bankText4").addClass("hidden");        
+    $("#bankText5").addClass("hidden");
+    $("#bankText6").addClass("hidden");     
+  }  
+  if (chosenLevel2Bank == "4") {
+    // Lån
+    $("#bankText1").addClass("hidden");
+    $("#bankText2").addClass("hidden");
+    $("#bankText3").addClass("hidden");        
+    $("#bankText4").removeClass("hidden");        
+    $("#bankText5").addClass("hidden");
+    $("#bankText6").addClass("hidden");     
+  }
+  if (chosenLevel2Bank == "5") {
+    // BankID/Pålogging
+    $("#bankText1").addClass("hidden");
+    $("#bankText2").addClass("hidden");
+    $("#bankText3").addClass("hidden");        
+    $("#bankText4").addClass("hidden");        
+    $("#bankText5").removeClass("hidden");
+    $("#bankText6").addClass("hidden");     
+  }
+  if (chosenLevel2Bank == "6") {
+    // Annet 
+    $("#bankText1").addClass("hidden");
+    $("#bankText2").addClass("hidden");
+    $("#bankText3").addClass("hidden");        
+    $("#bankText4").addClass("hidden");        
+    $("#bankText5").addClass("hidden");
+    $("#bankText6").removeClass("hidden");     
+  }
+  $("#messageActually").removeClass("hidden");
 })
 
+$("#selectLevel2Insurance").change( function(){
+  var chosenLevel2Insurance = $("#selectLevel2Insurance").val();
+  $("#bankAllTexts").addClass("hidden");
+  $("#insuranceAllTexts").removeClass("hidden");
+  if (chosenLevel2Insurance == "1") {
+    // Eksisterende forsikring av eiendeler
+    $("#insuranceText1").removeClass("hidden");
+    $("#insuranceText2").addClass("hidden");
+    $("#insuranceText3").addClass("hidden");        
+    $("#insuranceText4").addClass("hidden");        
+    $("#insuranceText5").addClass("hidden");
+    $("#insuranceText6").addClass("hidden");        
+  }
+  if (chosenLevel2Insurance == "2") {
+    // Eksisterende forsikring av liv
+    $("#insuranceText1").addClass("hidden");
+    $("#insuranceText2").removeClass("hidden");
+    $("#insuranceText3").addClass("hidden");        
+    $("#insuranceText4").addClass("hidden");        
+    $("#insuranceText5").addClass("hidden");
+    $("#insuranceText6").addClass("hidden");      
+  }
+  if (chosenLevel2Insurance == "3") {
+    // Eksisterende helseforsikring
+    $("#insuranceText1").addClass("hidden");
+    $("#insuranceText2").addClass("hidden");
+    $("#insuranceText3").removeClass("hidden");        
+    $("#insuranceText4").addClass("hidden");        
+    $("#insuranceText5").addClass("hidden");
+    $("#insuranceText6").addClass("hidden");     
+  }  
+  if (chosenLevel2Insurance == "4") {
+    // Ny forsikring
+    $("#insuranceText1").addClass("hidden");
+    $("#insuranceText2").addClass("hidden");
+    $("#insuranceText3").addClass("hidden");        
+    $("#insuranceText4").removeClass("hidden");        
+    $("#insuranceText5").addClass("hidden");
+    $("#insuranceText6").addClass("hidden");     
+  }
+  if (chosenLevel2Insurance == "5") {
+    // Tidligere meldt skadesak
+    $("#insuranceText1").addClass("hidden");
+    $("#insuranceText2").addClass("hidden");
+    $("#insuranceText3").addClass("hidden");        
+    $("#insuranceText4").addClass("hidden");        
+    $("#insuranceText5").removeClass("hidden");
+    $("#insuranceText6").addClass("hidden");     
+  }
+  if (chosenLevel2Insurance == "6") {
+    // Annet
+    $("#insuranceText1").addClass("hidden");
+    $("#insuranceText2").addClass("hidden");
+    $("#insuranceText3").addClass("hidden");        
+    $("#insuranceText4").addClass("hidden");        
+    $("#insuranceText5").addClass("hidden");
+    $("#insuranceText6").removeClass("hidden");     
+  }
+  $("#messageActually").removeClass("hidden");
+})
+
+$("#selectLevel2Savings").change( function(){
+  var chosenLevel2Savings = $("#selectLevel2Savings").val();
+  $("#bankAllTexts").addClass("hidden");
+  $("#savingsAllTexts").removeClass("hidden");
+  if (chosenLevel2Savings == "1") {
+    // Eksisterende forsikring av eiendeler
+    $("#savingsText1").removeClass("hidden");
+    $("#savingsText2").addClass("hidden");
+    $("#savingsText3").addClass("hidden");        
+    $("#savingsText4").addClass("hidden");        
+    $("#savingsText5").addClass("hidden");
+    $("#savingsText6").addClass("hidden");        
+  }
+  if (chosenLevel2Savings == "2") {
+    // Eksisterende forsikring av liv
+    $("#savingsText1").addClass("hidden");
+    $("#savingsText2").removeClass("hidden");
+    $("#savingsText3").addClass("hidden");        
+    $("#savingsText4").addClass("hidden");        
+    $("#savingsText5").addClass("hidden");
+    $("#savingsText6").addClass("hidden");      
+  }
+  if (chosenLevel2Savings == "3") {
+    // Eksisterende helseforsikring
+    $("#savingsText1").addClass("hidden");
+    $("#savingsText2").addClass("hidden");
+    $("#savingsText3").removeClass("hidden");        
+    $("#savingsText4").addClass("hidden");        
+    $("#savingsText5").addClass("hidden");
+    $("#savingsText6").addClass("hidden");     
+  }  
+  if (chosenLevel2Savings == "4") {
+    // Ny forsikring
+    $("#savingsText1").addClass("hidden");
+    $("#savingsText2").addClass("hidden");
+    $("#savingsText3").addClass("hidden");        
+    $("#savingsText4").removeClass("hidden");        
+    $("#savingsText5").addClass("hidden");
+    $("#savingsText6").addClass("hidden");     
+  }
+  if (chosenLevel2Savings == "5") {
+    // Tidligere meldt skadesak
+    $("#savingsText1").addClass("hidden");
+    $("#savingsText2").addClass("hidden");
+    $("#savingsText3").addClass("hidden");        
+    $("#savingsText4").addClass("hidden");        
+    $("#savingsText5").removeClass("hidden");
+    $("#savingsText6").addClass("hidden");     
+  }
+  if (chosenLevel2Savings == "6") {
+    // Annet
+    $("#savingsText1").addClass("hidden");
+    $("#savingsText2").addClass("hidden");
+    $("#savingsText3").addClass("hidden");        
+    $("#savingsText4").addClass("hidden");        
+    $("#savingsText5").addClass("hidden");
+    $("#savingsText6").removeClass("hidden");     
+  }
+  $("#messageActually").removeClass("hidden");
+})
 
 </script>
 <!-- /Adding functionality to contact form -->
