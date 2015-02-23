@@ -177,7 +177,7 @@
 	    var hashId = window.location.hash;
 	    //if a matching heading has the hash ID, then scroll to it.
 
-	    if( $(hashId).length > 0 ){
+	    if( hashId.length > 0 ){
 	      scrollToHash( hashId );
 	    }
 
