@@ -579,7 +579,7 @@
                       <option value="1">Bank</option>
                       <option value="2">Privat forsikring</option>
                       <option value="3">Sparing</option>
-                      <option value="4">Pensjon og forsikring gjennom arbeidsgiver</option>
+                      <option value="4">Pensjon</option>
                     </select>
                   </div>
                 </div>
@@ -693,10 +693,10 @@
                 <!-- Savings -->
                 <div id="regarding3" class="hidden">
                   <br />
-                  <label for="selectLevel2savings">Nærmere bestemt</label>
+                  <label for="selectLevel2Savings">Nærmere bestemt</label>
                   <div class="stb-form-group">
                     <div class="selectContainer" style="max-width: 320px;">
-                      <select name="choose2Savings" id="selectLevel2savings" class="form-control">
+                      <select name="choose2Savings" id="selectLevel2Savings" class="form-control">
                         <option value="">Velg fra listen</option>
                         <option value="1">Starte sparing</option>
                         <option value="2">Flytte fond</option>
@@ -743,6 +743,58 @@
                 </div>
                 <!-- /Savings -->                
 
+                <!-- Pension -->
+                <div id="regarding4" class="hidden">
+                  <br />
+                  <label for="selectLevel2Pension">Nærmere bestemt</label>
+                  <div class="stb-form-group">
+                    <div class="selectContainer" style="max-width: 320px;">
+                      <select name="choose2Pension" id="selectLevel2Pension" class="form-control">
+                        <option value="">Velg fra listen</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">Annet</option>
+                      </select>                      
+                    </div>
+                  </div>
+                </div>
+
+                <div id="pensionAllTexts" class="hidden">
+                  <br />
+                  <div id="pensionText1" class="hidden">
+                    <!-- 1 -->
+                    1
+                  </div>
+ 
+                  <div id="pensionText2" class="hidden">
+                    <!-- 2 -->
+                    2
+                  </div>                
+
+                  <div id="pensionText3" class="hidden">
+                  <!-- 3 -->
+                    3
+                  </div>            
+
+                  <div id="pensionText4" class="hidden">                
+                  <!-- 4 -->                  
+                    4
+                  </div>
+
+                  <div id="pensionText5" class="hidden">
+                  <!-- 5 -->                
+                    5
+                  </div>            
+
+                  <div id="pensionText6" class="hidden">
+                  <!-- 6 -->                
+                    6
+                  </div>
+                </div>
+                <!-- /Pension -->   
 
 
               </div>
@@ -789,6 +841,7 @@ $("#selectLevel1").change( function(){
     $("#regarding3").addClass("hidden");
     $("#savingsAllTexts").addClass("hidden");   
     $("#regarding4").addClass("hidden");    
+    $("#pensionAllTexts").addClass("hidden");   
   } else if (chosenLevel1 == "2") {
     $("#regarding1").addClass("hidden");
     $("#bankAllTexts").addClass("hidden");
@@ -797,6 +850,7 @@ $("#selectLevel1").change( function(){
     $("#regarding3").addClass("hidden");    
     $("#savingsAllTexts").addClass("hidden"); 
     $("#regarding4").addClass("hidden");      
+    $("#pensionAllTexts").addClass("hidden");       
   } else if (chosenLevel1 == "3") {
     $("#regarding1").addClass("hidden");
     $("#bankAllTexts").addClass("hidden");
@@ -804,7 +858,8 @@ $("#selectLevel1").change( function(){
     $("#insuranceAllTexts").addClass("hidden");
     $("#regarding3").removeClass("hidden"); 
     $("#savingsAllTexts").removeClass("hidden");   
-    $("#regarding4").addClass("hidden");      
+    $("#regarding4").addClass("hidden");
+    $("#pensionAllTexts").addClass("hidden");       
   } else if (chosenLevel1 == "4") {
     $("#regarding1").addClass("hidden");
     $("#bankAllTexts").addClass("hidden");
@@ -812,7 +867,8 @@ $("#selectLevel1").change( function(){
     $("#insuranceAllTexts").addClass("hidden");
     $("#regarding3").addClass("hidden");   
     $("#savingsAllTexts").addClass("hidden");   
-    $("#regarding4").removeClass("hidden");      
+    $("#regarding4").removeClass("hidden");
+    $("#pensionAllTexts").removeClass("hidden");   
   }
 })
 
@@ -820,6 +876,8 @@ $("#selectLevel2Bank").change( function(){
   var chosenLevel2Bank = $("#selectLevel2Bank").val();
   $("#bankAllTexts").removeClass("hidden");
   $("#insuranceAllTexts").addClass("hidden");
+  $("#savingsAllTexts").addClass("hidden");
+  $("#pensionAllTexts").addClass("hidden");
   if (chosenLevel2Bank == "1") {
     // Nettbank
     $("#bankText1").removeClass("hidden");
@@ -881,6 +939,8 @@ $("#selectLevel2Insurance").change( function(){
   var chosenLevel2Insurance = $("#selectLevel2Insurance").val();
   $("#bankAllTexts").addClass("hidden");
   $("#insuranceAllTexts").removeClass("hidden");
+  $("#savingsAllTexts").addClass("hidden");
+  $("#pensionAllTexts").addClass("hidden");  
   if (chosenLevel2Insurance == "1") {
     // Eksisterende forsikring av eiendeler
     $("#insuranceText1").removeClass("hidden");
@@ -941,7 +1001,9 @@ $("#selectLevel2Insurance").change( function(){
 $("#selectLevel2Savings").change( function(){
   var chosenLevel2Savings = $("#selectLevel2Savings").val();
   $("#bankAllTexts").addClass("hidden");
+  $("#insuranceAllTexts").addClass("hidden");
   $("#savingsAllTexts").removeClass("hidden");
+  $("#pensionAllTexts").addClass("hidden");  
   if (chosenLevel2Savings == "1") {
     // Eksisterende forsikring av eiendeler
     $("#savingsText1").removeClass("hidden");
@@ -995,6 +1057,69 @@ $("#selectLevel2Savings").change( function(){
     $("#savingsText4").addClass("hidden");        
     $("#savingsText5").addClass("hidden");
     $("#savingsText6").removeClass("hidden");     
+  }
+  $("#messageActually").removeClass("hidden");
+})
+
+$("#selectLevel2Pension").change( function(){
+  var chosenLevel2Pension = $("#selectLevel2Pension").val();
+  $("#bankAllTexts").addClass("hidden");
+  $("#insuranceAllTexts").addClass("hidden");  
+  $("#savingsAllTexts").addClass("hidden");  
+  $("#pensionAllTexts").removeClass("hidden");
+  if (chosenLevel2Pension == "1") {
+    // 1
+    $("#pensionText1").removeClass("hidden");
+    $("#pensionText2").addClass("hidden");
+    $("#pensionText3").addClass("hidden");        
+    $("#pensionText4").addClass("hidden");        
+    $("#pensionText5").addClass("hidden");
+    $("#pensionText6").addClass("hidden");        
+  }
+  if (chosenLevel2Pension == "2") {
+    // 2
+    $("#pensionText1").addClass("hidden");
+    $("#pensionText2").removeClass("hidden");
+    $("#pensionText3").addClass("hidden");        
+    $("#pensionText4").addClass("hidden");        
+    $("#pensionText5").addClass("hidden");
+    $("#pensionText6").addClass("hidden");      
+  }
+  if (chosenLevel2Pension == "3") {
+    // 3
+    $("#pensionText1").addClass("hidden");
+    $("#pensionText2").addClass("hidden");
+    $("#pensionText3").removeClass("hidden");        
+    $("#pensionText4").addClass("hidden");        
+    $("#pensionText5").addClass("hidden");
+    $("#pensionText6").addClass("hidden");     
+  }  
+  if (chosenLevel2Pension == "4") {
+    // 4
+    $("#pensionText1").addClass("hidden");
+    $("#pensionText2").addClass("hidden");
+    $("#pensionText3").addClass("hidden");        
+    $("#pensionText4").removeClass("hidden");        
+    $("#pensionText5").addClass("hidden");
+    $("#pensionText6").addClass("hidden");     
+  }
+  if (chosenLevel2Pension == "5") {
+    // 5
+    $("#pensionText1").addClass("hidden");
+    $("#pensionText2").addClass("hidden");
+    $("#pensionText3").addClass("hidden");        
+    $("#pensionText4").addClass("hidden");        
+    $("#pensionText5").removeClass("hidden");
+    $("#pensionText6").addClass("hidden");     
+  }
+  if (chosenLevel2Pension == "6") {
+    // 6
+    $("#pensionText1").addClass("hidden");
+    $("#pensionText2").addClass("hidden");
+    $("#pensionText3").addClass("hidden");        
+    $("#pensionText4").addClass("hidden");        
+    $("#pensionText5").addClass("hidden");
+    $("#pensionText6").removeClass("hidden");     
   }
   $("#messageActually").removeClass("hidden");
 })
