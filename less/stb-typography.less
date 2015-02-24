@@ -267,6 +267,16 @@ div a{
 a {
   color: @stb-secondary-charcoal;
   cursor: pointer;
+  &.contact{
+    border-bottom: none;
+    span.iconCompanion{
+      border-bottom: 1px solid @stb-primary-black;
+      +span{
+        margin-bottom: -3px;
+        margin-left: 3px;
+      }
+    }
+  }
 }
 
 a:visited {
@@ -286,6 +296,12 @@ a:active{
     padding-bottom: 0;
     border-radius: 0;
     border-bottom: 0;
+  }
+  &.contact{
+    border-bottom: none;
+    span.iconCompanion{
+      border-bottom: 1px solid @stb-primary-color;
+    }
   }
 }
 
