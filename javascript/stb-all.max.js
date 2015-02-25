@@ -5234,9 +5234,10 @@ var s,search = {
 
       // If there is a search term to use, perform the search
       if (s.urlParams.q!==undefined && s.urlParams.q.length > 0 ) {
-        $("form.stb-form-inline input.searchbox").val(s.urlParams.q);
+        var strQuery =  search.stripChars(s.urlParams.q);
+        $("form.stb-form-inline input.searchbox").val(strQuery);
         search.getPromotions();
-        search.searchQuery(s.urlParams.q, s.start);
+        search.searchQuery(strQuery, s.start);
       }
     }
   },
@@ -5367,14 +5368,8 @@ var s,search = {
   },
   // Remove certain special characters from search, in order to not break the Google search URL
   checkSearch : function (query) {
-    var reg1 = new RegExp("\"","g");
-    var reg2 = new RegExp("'", "g");
-    var reg3 = new RegExp("<", "g");
-    query = query.replace(reg1, "");
-    query = query.replace(reg2, "");
-    query = query.replace(reg3, "");
     //absURL is defined elsewhere so not initialized here again
-    window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + query;  // link to the search result page
+    window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + search.stripChars(query);  // link to the search result page
   },
   initExtendedSearch : function() {
 
@@ -5669,6 +5664,18 @@ var s,search = {
         search.searchQuery( s.urlParams.q , s.start);
       }
    }
+  },
+  stripChars: function(query){
+    var reg1 = new RegExp("\"","g");
+    var reg2 = new RegExp("'", "g");
+    var reg3 = new RegExp("<", "g");
+    var reg4 = new RegExp(">", "g");
+    query = query.replace(reg1, "");
+    query = query.replace(reg2, "");
+    query = query.replace(reg3, "");
+    query = query.replace(reg4, "");
+
+    return query;
   }
 };
 
