@@ -366,7 +366,7 @@ var s,search = {
     $(".searchresults").append("<row><div class='col-12' style='text-align: center;'><img id='loadingimage' src='./_public/theme-storebrand.ny/images/ajax-loader.gif'></div></div>");
     s.searchIsRunning = true;
 
-    var query = encodeURI( encodeURI( inputQuery ) ); // Used because of the yahoo api. Replace with Storebrand proxy later.
+    var query = encodeURI(inputQuery); // Used because of the yahoo api. Replace with Storebrand proxy later.
     //Internet explorer ajax fix
     jQuery.support.cors = true;
     $.ajax({
@@ -408,11 +408,13 @@ var s,search = {
       $(resultSummary).insertAfter($('.stb-form-inline #main_search.searchbox').closest('form').parent().parent());
 
       // Show search suggestions
-      $(xml).find("Spelling").each(function() {
-        var suggestedSpelling = $(this).find("Suggestion").attr("q");
-        $(".resultsummary div").append('<div id="suggestion"' + '>Vi har f&aring; eller ingen treff p&aring; det s&oslash;keordet, men pr&oslash;v <a href="?action=search&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
-        noresult= true;
-      });
+      if($(xml).find("R").length===0 && $(xml).find("Spelling").length > 0){
+        $(xml).find("Spelling").each(function() {
+          var suggestedSpelling = $(this).find("Suggestion").attr("q");
+          $(".resultsummary div").append('<div id="suggestion"' + '>Vi har f&aring; eller ingen treff p&aring; det s&oslash;keordet, men pr&oslash;v <a href="?action=search&q=' + suggestedSpelling + '">' + suggestedSpelling + '<' + '/a>.<' + '/div>');
+          noresult= true;
+        });
+      }
 
       // If we don't get anything initially, show corresponding message
       if ($(xml).find("R").length===0 && $(xml).find("Spelling").length===0 ) {
