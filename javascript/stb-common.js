@@ -149,7 +149,7 @@
   /* ***** END OF GET URL PARAMETER BY NAME ***** */
 
   /* ***** START TOGGLING "important messages" ***** */
- 
+
   function showImportantNotice() {
     $('.important-notice').each(function() {
       if (readCookie($(this).attr('id')) === null) {
@@ -243,6 +243,7 @@ function loginFromMenu(fnr){
 }
 /* ***** End of functionality for login ***** */
 
+/* ***** Function for opening chat ***** */
 $.fn.extend({
   openChat: function(){
     var width = 650;
@@ -254,35 +255,9 @@ $.fn.extend({
     window.open(url, '_blank', parameters);
   }
 });
+/* ***** End of Function for opening chat ***** */
 
-$(document).ready(function(){
-
-  $(".contactElements a.chat.open").click(function(event){
-    var contactElement = $(this);
-    var contentKey = $(this).attr('data-key');
-    var elementId = $(this).attr('data-element-id');
-    var chatStatusUrl = $('#chat-status').attr('data-url');
-    if (chatStatusUrl != '' && contentKey != null) {
-      $.getJSON(chatStatusUrl + '?key=' + contentKey, function(chatData) {
-        if (chatData.status == 'true') {
-          try {
-            $(contactElement).openChat();
-          } catch (e) {
-            return true;
-          }
-        } else {
-          $(contactElement).removeAttr('href').removeClass('open').addClass('closed');
-          $(contactElement).next().children().text(chatData.text);
-          var icon = $(contactElement).children('.circle-16');
-          $(icon).removeClass("stbcolor-secondary");
-          $(icon).addClass("stbcolor-gray");
-        }
-      });
-    }
-    event.preventDefault();
-  });
-});
-
+/* ***** Function for initializing bootstrap validator ***** */
 function initBootstrapValidator (formSelector,validatorFields,callback) {
   formSelector.bootstrapValidator({
     live: 'disabled',
@@ -295,6 +270,7 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
     fields: validatorFields
   }).on('success.form.bv',callback);
 }
+/* ***** End of Function for initializing bootstrap validator ***** */
 
 //Checking if the device is a high dppc device
 function isHighDensity(){
