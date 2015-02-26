@@ -650,6 +650,17 @@
 
 //First
 #nav-toggle{
+  span{
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
   span,span:before, span:after{
     cursor: pointer;
     border-radius: 1px;
@@ -680,11 +691,6 @@
     }
 
     &:before{
-
-      -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      backface-visibility: hidden;
-
       -moz-transform:rotate(45deg);
       -ms-transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
@@ -692,12 +698,7 @@
     }
 
     &:after{
-
-      -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      backface-visibility: hidden;
-
-      -moz-transform:rotate(-45deg);
+      -moz-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg);

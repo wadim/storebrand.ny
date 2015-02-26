@@ -24,20 +24,8 @@ function onYouTubeIframeAPIReady() {
   $('.video-player-inline').each(function(index, element) {
     new YT.Player($(element).attr('id'), {
       videoId: $(element).attr('data-youtube-id'),
-      playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0},
-      events: {
-        'onReady': onPlayerReadyInline,
-        'onStateChange': onPlayerStateChangeInline
-      }
+      playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0}
     });
-  });
-}
-
-// The API will call this function when the video player is ready.
-function onPlayerReadyInline(event) {
-  $(event.target.d).prev().click(function() {
-    event.target.playVideo();
-    $(this).fadeOut('slow');
   });
 }
 
@@ -53,14 +41,6 @@ function onPlayerReadyBanner(event) {
 
 // The API calls this function when the player's state changes.
 // The function indicates that when playing a video (state=1), the player should play for six seconds and then stop.
-function onPlayerStateChangeInline(event) {
-  if(event.data == 0){
-    $(event.target.d).prev().show();
-    event.target.seekTo(0, false);
-  } else if(event.data == 2) {
-    $(event.target.d).prev().show();
-  }
-};
 
 function onPlayerStateChangeBanner(event) {
   if(event.data == 0) {
@@ -89,3 +69,22 @@ function playVideoBanner(player) {
    }
   });
 }
+
+/* ***** Function for finding the bootstrap environment ***** */
+function findBootstrapEnvironment() {
+  var envs = ['xs', 'sm', 'md', 'lg'];
+
+  $el = $('<div>');
+  $el.appendTo($('body'));
+
+  for (var i = envs.length - 1; i >= 0; i--) {
+    var env = envs[i];
+
+    $el.addClass('hidden-'+env);
+    if ($el.is(':hidden')) {
+      $el.remove();
+      return env
+    }
+  };
+}
+/* ***** End of Function for finding the bootstrap environment ***** */

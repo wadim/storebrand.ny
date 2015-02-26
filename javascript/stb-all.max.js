@@ -5687,242 +5687,223 @@ $(document).ready(function(){
 $(document).scroll(function(event){
   search.scroll();
 });;
-  /*
-   * Common functions for general use
-  /*
+/*
+ * Common functions for general use
+ /*
 
-  /* ***** SCROLL TO ***** */
-  function scrollTo(id,more){
-    $('html,body').animate({scrollTop: $('#'+id).height()}, 800);
-  }
-
-  // Take a hash as input and smooth-scroll to the related target element
-  function scrollToHash(hash) {
-    var target = $(hash);
-    target = target.length ? target : $('[name=' + hash.slice(1) +']');
-    if (target.length) {
-      var scrollToPosition = target.offset().top;
-      // Checking if the navigation header is fixed. If yes, set the scrollto position by subtracting the height of the fixed header
-      if($('.navbar-fixed-top').css("display") == "block") {
-        scrollToPosition -= $('.navbar-fixed-top').height();
-      }
-      $('html,body').animate({ scrollTop: scrollToPosition }, 1000);
-      // Highlighting the clicked heading for a brief period to make it easier to see what just happened.
-      $(target).animate({backgroundColor:"#FFF0F0"},1000);
-      $(target).animate({backgroundColor:"#FFFFFF"},1000);
-    }
-  }
-
-  /* ***** Verify National Identity Number ***** */
-  function verifyIDNumber(nr) {
-      var pn = new Array();
-      var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
-      var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
-      for(var i=0; i<nr.length; i++) {
-        pn[i] = nr.charAt(i);
-      }
-      var k1=0;
-      for(i=0; i<v1.length; i++) {
-        k1 += pn[i]*v1[i];
-      }
-      var k2=0;
-      for(i=0; i<v2.length; i++) {
-        k2 += pn[i]*v2[i];
-      }
-      if (k1%11==0 && k2%11==0 ) {
-        return true;
-      } else {
-        return false;
-      }
-  }
-
-  /* ***** ENCODE AND DECODE BASE64 ***** */
-  var ua = navigator.userAgent.toLowerCase();
-  if (ua.indexOf(" chrome/") >= 0 || ua.indexOf(" firefox/") >= 0 || ua.indexOf(' gecko/') >= 0) {
-    var StringMaker = function () {
-      this.str = "";
-      this.length = 0;
-      this.append = function (s) {
-        this.str += s;
-        this.length += s.length;
-      }
-      this.prepend = function (s) {
-        this.str = s + this.str;
-        this.length += s.length;
-      }
-      this.toString = function () {
-        return this.str;
-      }
-    }
-  } else {
-    var StringMaker = function () {
-      this.parts = [];
-      this.length = 0;
-      this.append = function (s) {
-        this.parts.push(s);
-        this.length += s.length;
-      }
-      this.prepend = function (s) {
-        this.parts.unshift(s);
-        this.length += s.length;
-      }
-      this.toString = function () {
-        return this.parts.join('');
-      }
-    }
-  }
-  var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-
-  function encode64(input) {
-    var output = new StringMaker();
-    var chr1, chr2, chr3;
-    var enc1, enc2, enc3, enc4;
-    var i = 0;
-    while (i < input.length) {
-      chr1 = input.charCodeAt(i++);
-      chr2 = input.charCodeAt(i++);
-      chr3 = input.charCodeAt(i++);
-      enc1 = chr1 >> 2;
-      enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
-      enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
-      enc4 = chr3 & 63;
-      if (isNaN(chr2)) {
-        enc3 = enc4 = 64;
-      } else if (isNaN(chr3)) {
-        enc4 = 64;
-      }
-      output.append(keyStr.charAt(enc1) + keyStr.charAt(enc2) + keyStr.charAt(enc3) + keyStr.charAt(enc4));
-    }
-    return output.toString();
-  }
-
-  function decode64(input) {
-    var output = new StringMaker();
-    var chr1, chr2, chr3;
-    var enc1, enc2, enc3, enc4;
-    var i = 0;
-    input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-    while (i < input.length) {
-      enc1 = keyStr.indexOf(input.charAt(i++));
-      enc2 = keyStr.indexOf(input.charAt(i++));
-      enc3 = keyStr.indexOf(input.charAt(i++));
-      enc4 = keyStr.indexOf(input.charAt(i++));
-      chr1 = (enc1 << 2) | (enc2 >> 4);
-      chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
-      chr3 = ((enc3 & 3) << 6) | enc4;
-      output.append(String.fromCharCode(chr1));
-      if (enc3 != 64) {
-        output.append(String.fromCharCode(chr2));
-      }
-      if (enc4 != 64) {
-        output.append(String.fromCharCode(chr3));
-      }
-    }
-    return output.toString();
-  }
-  /* ***** END OF BASE64 OPERATIONS ***** */
-
-  /* ***** GET URL PARAMETER BY NAME ****** */
-  function gup(name){
-    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-    var regexS = "[\\?&]"+name+"=([^&#]*)";
-    var regex = new RegExp( regexS );
-    var results = regex.exec( window.location.href );
-    if( results == null ) {
-      return "";
-    } else {
-      return results[1];
-    }
-  }
-  /* ***** END OF GET URL PARAMETER BY NAME ***** */
-
-  /* ***** START TOGGLING "important messages" ***** */
- 
-  function showImportantNotice() {
-    $('.important-notice').each(function() {
-      if (readCookie($(this).attr('id')) === null) {
-        $(this).slideDown('slow');
-      }
-    });
-  }
-
-  function hideImportantNotice(element){
-    var notice = $(element).closest('.important-notice');
-    $(notice).slideUp('fast');
-    createCookie($(notice).attr('id'),'true');
-  }
-  
-  function showCommonMsg(element) {
-    if(element != undefined){
-      $(element).parent().next('.commonmessage').slideToggle('fast');
-    }else{
-      $('.commonmessage').slideDown('fast');
-    }
-  }
-
-  function hideCommonMsg(element) {
-    $(element).closest('.commonmessage').slideUp('fast');
-    createCookie('commonMessageRead','Yes');
-  }  
-  
-  function showErrorMsg() {
-    $('.errormessage').slideDown('slow');
-  }
-
-  function hideErrorMsg(element) {
-    $(element).closest('.errormessage').slideUp('slow');
-    createCookie('errorMessageRead','Yes');
-  }  
-  /* ***** END TOGGLING "important messages" ***** */
-
-  /* ***** CREATE COOKIE ***** */
-  function createCookie(n,value,days) {
-    if (days) {
-      var date = new Date();
-      date.setTime(date.getTime()+(days*24*60*60*1000));
-      var expires = "; expires="+date.toGMTString();
-    } else {
-      var expires = "";
-    }
-    dom = "; domain=.storebrand.no";
-    document.cookie = n+"="+value+expires+"; path=/"+dom;
-  }
-
-  /* ***** READ COOKIE ***** */
-  function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i=0;i < ca.length;i++) {
-      var c = ca[i];
-      while (c.charAt(0)==' ') c = c.substring(1,c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-  }
-
-  /* ***** ERASE COOKIE ***** */
-  function eraseCookie(name) {
-    createCookie(name,"",-1);
-  }
-
-/* ***** Function for finding the bootstrap environment ***** */
-function findBootstrapEnvironment() {
-  var envs = ['xs', 'sm', 'md', 'lg'];
-
-  $el = $('<div>');
-  $el.appendTo($('body'));
-
-  for (var i = envs.length - 1; i >= 0; i--) {
-    var env = envs[i];
-
-    $el.addClass('hidden-'+env);
-    if ($el.is(':hidden')) {
-      $el.remove();
-      return env
-    }
-  };
+ /* ***** SCROLL TO ***** */
+function scrollTo(id,more){
+  $('html,body').animate({scrollTop: $('#'+id).height()}, 800);
 }
-/* ***** End of Function for finding the bootstrap environment ***** */
+
+// Take a hash as input and smooth-scroll to the related target element
+function scrollToHash(hash) {
+  var target = $(hash);
+  target = target.length ? target : $('[name=' + hash.slice(1) +']');
+  if (target.length) {
+    var scrollToPosition = target.offset().top;
+    // Checking if the navigation header is fixed. If yes, set the scrollto position by subtracting the height of the fixed header
+    if($('.navbar-fixed-top').css("display") == "block") {
+      scrollToPosition -= $('.navbar-fixed-top').height();
+    }
+    $('html,body').animate({ scrollTop: scrollToPosition }, 1000);
+    // Highlighting the clicked heading for a brief period to make it easier to see what just happened.
+    $(target).animate({backgroundColor:"#FFF0F0"},1000);
+    $(target).animate({backgroundColor:"#FFFFFF"},1000);
+  }
+}
+
+/* ***** Verify National Identity Number ***** */
+function verifyIDNumber(nr) {
+  var pn = new Array();
+  var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
+  var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+  for(var i=0; i<nr.length; i++) {
+    pn[i] = nr.charAt(i);
+  }
+  var k1=0;
+  for(i=0; i<v1.length; i++) {
+    k1 += pn[i]*v1[i];
+  }
+  var k2=0;
+  for(i=0; i<v2.length; i++) {
+    k2 += pn[i]*v2[i];
+  }
+  if (k1%11==0 && k2%11==0 ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+/* ***** ENCODE AND DECODE BASE64 ***** */
+var ua = navigator.userAgent.toLowerCase();
+if (ua.indexOf(" chrome/") >= 0 || ua.indexOf(" firefox/") >= 0 || ua.indexOf(' gecko/') >= 0) {
+  var StringMaker = function () {
+    this.str = "";
+    this.length = 0;
+    this.append = function (s) {
+      this.str += s;
+      this.length += s.length;
+    }
+    this.prepend = function (s) {
+      this.str = s + this.str;
+      this.length += s.length;
+    }
+    this.toString = function () {
+      return this.str;
+    }
+  }
+} else {
+  var StringMaker = function () {
+    this.parts = [];
+    this.length = 0;
+    this.append = function (s) {
+      this.parts.push(s);
+      this.length += s.length;
+    }
+    this.prepend = function (s) {
+      this.parts.unshift(s);
+      this.length += s.length;
+    }
+    this.toString = function () {
+      return this.parts.join('');
+    }
+  }
+}
+var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+function encode64(input) {
+  var output = new StringMaker();
+  var chr1, chr2, chr3;
+  var enc1, enc2, enc3, enc4;
+  var i = 0;
+  while (i < input.length) {
+    chr1 = input.charCodeAt(i++);
+    chr2 = input.charCodeAt(i++);
+    chr3 = input.charCodeAt(i++);
+    enc1 = chr1 >> 2;
+    enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+    enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+    enc4 = chr3 & 63;
+    if (isNaN(chr2)) {
+      enc3 = enc4 = 64;
+    } else if (isNaN(chr3)) {
+      enc4 = 64;
+    }
+    output.append(keyStr.charAt(enc1) + keyStr.charAt(enc2) + keyStr.charAt(enc3) + keyStr.charAt(enc4));
+  }
+  return output.toString();
+}
+
+function decode64(input) {
+  var output = new StringMaker();
+  var chr1, chr2, chr3;
+  var enc1, enc2, enc3, enc4;
+  var i = 0;
+  input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+  while (i < input.length) {
+    enc1 = keyStr.indexOf(input.charAt(i++));
+    enc2 = keyStr.indexOf(input.charAt(i++));
+    enc3 = keyStr.indexOf(input.charAt(i++));
+    enc4 = keyStr.indexOf(input.charAt(i++));
+    chr1 = (enc1 << 2) | (enc2 >> 4);
+    chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+    chr3 = ((enc3 & 3) << 6) | enc4;
+    output.append(String.fromCharCode(chr1));
+    if (enc3 != 64) {
+      output.append(String.fromCharCode(chr2));
+    }
+    if (enc4 != 64) {
+      output.append(String.fromCharCode(chr3));
+    }
+  }
+  return output.toString();
+}
+/* ***** END OF BASE64 OPERATIONS ***** */
+
+/* ***** GET URL PARAMETER BY NAME ****** */
+function gup(name){
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null ) {
+    return "";
+  } else {
+    return results[1];
+  }
+}
+/* ***** END OF GET URL PARAMETER BY NAME ***** */
+
+/* ***** START TOGGLING "important messages" ***** */
+
+function showImportantNotice() {
+  $('.important-notice').each(function() {
+    if (readCookie($(this).attr('id')) === null) {
+      $(this).slideDown('slow');
+    }
+  });
+}
+
+function hideImportantNotice(element){
+  var notice = $(element).closest('.important-notice');
+  $(notice).slideUp('fast');
+  createCookie($(notice).attr('id'),'true');
+}
+
+function showCommonMsg(element) {
+  if(element != undefined){
+    $(element).parent().next('.commonmessage').slideToggle('fast');
+  }else{
+    $('.commonmessage').slideDown('fast');
+  }
+}
+
+function hideCommonMsg(element) {
+  $(element).closest('.commonmessage').slideUp('fast');
+  createCookie('commonMessageRead','Yes');
+}
+
+function showErrorMsg() {
+  $('.errormessage').slideDown('slow');
+}
+
+function hideErrorMsg(element) {
+  $(element).closest('.errormessage').slideUp('slow');
+  createCookie('errorMessageRead','Yes');
+}
+/* ***** END TOGGLING "important messages" ***** */
+
+/* ***** CREATE COOKIE ***** */
+function createCookie(n,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  } else {
+    var expires = "";
+  }
+  dom = "; domain=.storebrand.no";
+  document.cookie = n+"="+value+expires+"; path=/"+dom;
+}
+
+/* ***** READ COOKIE ***** */
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+/* ***** ERASE COOKIE ***** */
+function eraseCookie(name) {
+  createCookie(name,"",-1);
+}
 
 /* ***** Functionality for login ***** */
 function loginFromMenu(fnr){
@@ -5931,6 +5912,7 @@ function loginFromMenu(fnr){
 }
 /* ***** End of functionality for login ***** */
 
+/* ***** Function for opening chat ***** */
 $.fn.extend({
   openChat: function(){
     var width = 650;
@@ -5942,35 +5924,9 @@ $.fn.extend({
     window.open(url, '_blank', parameters);
   }
 });
+/* ***** End of Function for opening chat ***** */
 
-$(document).ready(function(){
-
-  $(".contactElements a.chat.open").click(function(event){
-    var contactElement = $(this);
-    var contentKey = $(this).attr('data-key');
-    var elementId = $(this).attr('data-element-id');
-    var chatStatusUrl = $('#chat-status').attr('data-url');
-    if (chatStatusUrl != '' && contentKey != null) {
-      $.getJSON(chatStatusUrl + '?key=' + contentKey, function(chatData) {
-        if (chatData.status == 'true') {
-          try {
-            $(contactElement).openChat();
-          } catch (e) {
-            return true;
-          }
-        } else {
-          $(contactElement).removeAttr('href').removeClass('open').addClass('closed');
-          $(contactElement).next().children().text(chatData.text);
-          var icon = $(contactElement).children('.circle-16');
-          $(icon).removeClass("stbcolor-secondary");
-          $(icon).addClass("stbcolor-gray");
-        }
-      });
-    }
-    event.preventDefault();
-  });
-});
-
+/* ***** Function for initializing bootstrap validator ***** */
 function initBootstrapValidator (formSelector,validatorFields,callback) {
   formSelector.bootstrapValidator({
     live: 'disabled',
@@ -5983,6 +5939,7 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
     fields: validatorFields
   }).on('success.form.bv',callback);
 }
+/* ***** End of Function for initializing bootstrap validator ***** */
 
 //Checking if the device is a high dppc device
 function isHighDensity(){
@@ -6014,11 +5971,11 @@ function isHighDensity(){
       }
     });
 
-     $(".dropdown").on("shown.bs.dropdown", function(){
-        if(!$(this).is($('.current.login'))){
-            $('#start-login-form input').focus();
-          }
-     });
+    $(".dropdown").on("shown.bs.dropdown", function(){
+      if(!$(this).is($('.current.login'))){
+        $('#start-login-form input').focus();
+      }
+    });
 
     // Slide up the dropdown on clicking the remove icon
     $(".dropdown-menu > li > a").click(function(){
@@ -6041,29 +5998,20 @@ function isHighDensity(){
     //Recalculate the overlay when window is resized
     $(".shadow-overlay").css("width",$(document).width());
     $(".shadow-overlay").css("height",$(document).height());
-
-    var bootstrapEnv = findBootstrapEnvironment();
-    if(bootstrapEnv == "xs" || bootstrapEnv == "sm"){
-      $(".shadow-overlay").css("display","none");
-    }else{
-      if($('#desktop-menu .navbar-nav .dropdown').hasClass("open")){
-        $(".shadow-overlay").css("display","block");
-      }
-    }
   });
 
   // Script for populating the dropdown with the selected tab link
-    $(document).ready(function() {
-      $(".dropdown-tabs .dropdown .heading").html($(".dropdown-tabs .dropdown-menu li.active a").html());
-      $(".dropdown-tabs .dropdown-menu li a").click(function() {
-        $(".dropdown-tabs .dropdown-menu li.active").removeClass("active");
-        $(".dropdown-tabs .dropdown .heading").html($(this).html());
-      });
-
-      $(".dropdown-tabs button").click(function() {
-        $(".dropdown-tabs button span.icon").toggleClass('chevron-up chevron-down');
-      });
+  $(document).ready(function() {
+    $(".dropdown-tabs .dropdown .heading").html($(".dropdown-tabs .dropdown-menu li.active a").html());
+    $(".dropdown-tabs .dropdown-menu li a").click(function() {
+      $(".dropdown-tabs .dropdown-menu li.active").removeClass("active");
+      $(".dropdown-tabs .dropdown .heading").html($(this).html());
     });
+
+    $(".dropdown-tabs button").click(function() {
+      $(".dropdown-tabs button span.icon").toggleClass('chevron-up chevron-down');
+    });
+  });
 
 // Start prevent top menu clicks from running away with the page
   $(document).on('click', '.yamm .dropdown-menu', function(e) {
@@ -6080,42 +6028,42 @@ function isHighDensity(){
     $("ul[data-widget=stbFaq]").stbFaq();
   }),
 
-  function (a) {
-    a.fn.stbFaq = function () {
-      a(this).find("a").on("click", function (b) {
-        if (a(this).hasClass("twister")) {
-          b.preventDefault();
-          var c = a(this).siblings("ul.accordion li .answer");
-          a(this).hasClass("open") ? (a(this).removeClass("open"), c.slideUp(200)) : (a(this).addClass("open"), c.slideDown(200));
-        }
-      });
-    };
-  }(jQuery);
+      function (a) {
+        a.fn.stbFaq = function () {
+          a(this).find("a").on("click", function (b) {
+            if (a(this).hasClass("twister")) {
+              b.preventDefault();
+              var c = a(this).siblings("ul.accordion li .answer");
+              a(this).hasClass("open") ? (a(this).removeClass("open"), c.slideUp(200)) : (a(this).addClass("open"), c.slideDown(200));
+            }
+          });
+        };
+      }(jQuery);
 
-   $(document).ready(function(){
-     $('.stb-accordion').on('show.bs.collapse', function (event) {
-        if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
-            $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up red');
-        }else{
-            $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up');
-        }
-        $(event.target).parent().addClass('active');
-     });
+  $(document).ready(function(){
+    $('.stb-accordion').on('show.bs.collapse', function (event) {
+      if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
+        $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up red');
+      }else{
+        $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up');
+      }
+      $(event.target).parent().addClass('active');
+    });
 
-     $('.stb-accordion').on('hide.bs.collapse', function () {
-        if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
-            $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up red');
-        }else{
-            $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up');
-        }
-        $('.panel-collapse.collapse.in').parent().removeClass('active');
-     });
-   });
+    $('.stb-accordion').on('hide.bs.collapse', function () {
+      if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
+        $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up red');
+      }else{
+        $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up');
+      }
+      $('.panel-collapse.collapse.in').parent().removeClass('active');
+    });
+  });
 // End twister effect on accordion/FAQ
 
 // Achieve Equal height columns
   $("document").ready(function(){
-	  $(".row .column").matchHeight(true);
+    $(".row .column").matchHeight(true);
   });
 
   $(window).resize(function() {
@@ -6125,15 +6073,15 @@ function isHighDensity(){
 
 // Handling automatic generation of TOC lists on article pages
 // Prepare the TOC link for a given header tag
-    function prepareTocLink(headerTag, prefix) {
-      //take the header text
-      var headerText = $(headerTag).text();
-      //prepare the header ID from its text
-      $(headerTag).attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/\-/g,'').replace(/ /g,"-").toLowerCase()); // generating id for the h3
-      var headerId = $(headerTag).attr("id").replace(/\W/g, ''); // set the id
-      //create the link and return it
-      return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
-    }
+  function prepareTocLink(headerTag, prefix) {
+    //take the header text
+    var headerText = $(headerTag).text();
+    //prepare the header ID from its text
+    $(headerTag).attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/\-/g,'').replace(/ /g,"-").toLowerCase()); // generating id for the h3
+    var headerId = $(headerTag).attr("id").replace(/\W/g, ''); // set the id
+    //create the link and return it
+    return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
+  }
 
   $(document).ready(function() {
     // Prepare the row that contains the table of contents
@@ -6163,25 +6111,25 @@ function isHighDensity(){
 
     //check if URL already has a hash and scroll to the correct heading
     if( window.location.hash.length > 0 && window.location.hash.indexOf("/") == -1 ) {  // only do scrolling now, since the has tag is present and it does not have a / which is for angular JS
-	  try {
-	    var hashId = window.location.hash;
-	    //if a matching heading has the hash ID, then scroll to it.
+      try {
+        var hashId = window.location.hash;
+        //if a matching heading has the hash ID, then scroll to it.
 
-	    if( hashId.length > 0 ){
-	      scrollToHash( hashId );
-	    }
+        if( hashId.length > 0 ){
+          scrollToHash( hashId );
+        }
 
-	    } catch(e) {
-	      // Don't do a thing!
-	    }
-     }
+      } catch(e) {
+        // Don't do a thing!
+      }
+    }
 
     // Perform a smooth page scroll to an anchor on the same page.
     $(function() {
       $('.toc-list .items a[href*=#]:not([href=#])').click(function(event) {
         event.preventDefault();
         //if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          scrollToHash( this.hash);
+        scrollToHash( this.hash);
         //}
       });
     });
@@ -6204,20 +6152,20 @@ function isHighDensity(){
 // End of automatic generation of toc lists on article pages
 
 // Opens the href in the relattribute to the clickable class
-$(document).ready(function($) {
-  $(".clickable").click(function() {
-    if ($(this).find("a").first().attr("target") === '_blank') {
-      window.open($(this).attr("rel"));
-    } else {
-      window.document.location = $(this).attr("rel");
-    }
-  });
+  $(document).ready(function($) {
+    $(".clickable").click(function() {
+      if ($(this).find("a").first().attr("target") === '_blank') {
+        window.open($(this).attr("rel"));
+      } else {
+        window.document.location = $(this).attr("rel");
+      }
+    });
 
-  $(".clickable a").click(function(e){
-    e.preventDefault();
-    //Do nothing, as the clickable will handle this click.
+    $(".clickable a").click(function(e){
+      e.preventDefault();
+      //Do nothing, as the clickable will handle this click.
+    });
   });
-});
 
 //Appending arrow after link for clickable links
   $(document).ready(function() {
@@ -6266,34 +6214,34 @@ $(document).ready(function($) {
       makeExpandableList($(this),2);
     });
   });
-    /* ***** START Make lists expandable ***** */
-    function makeExpandableList(selector){
-      initialExpandable(selector);
+  /* ***** START Make lists expandable ***** */
+  function makeExpandableList(selector){
+    initialExpandable(selector);
 
-      var showMore = selector.find('.showMore');
+    var showMore = selector.find('.showMore');
 
-      showMore.click(function() {
-        if(showMore.hasClass('open')){
-          initialExpandable(selector);
-          showMore.find('span').toggleClass('chevron-up red chevron-down');
-        }else{
-          selector.children('li').show(400);
-          showMore.find('span').toggleClass('chevron-up red chevron-down');
-        }
-        showMore.find("span.show-detail, span.hide-detail").toggle();
-        showMore.toggleClass('open');
-      });
-    }
-    /* ***** END Make lists expandable ***** */
-    /* ***** START Loop through list, showing li elements with summary class and hide all other li elements ***** */
-    function initialExpandable(selector){
+    showMore.click(function() {
+      if(showMore.hasClass('open')){
+        initialExpandable(selector);
+        showMore.find('span').toggleClass('chevron-up red chevron-down');
+      }else{
+        selector.children('li').show(400);
+        showMore.find('span').toggleClass('chevron-up red chevron-down');
+      }
+      showMore.find("span.show-detail, span.hide-detail").toggle();
+      showMore.toggleClass('open');
+    });
+  }
+  /* ***** END Make lists expandable ***** */
+  /* ***** START Loop through list, showing li elements with summary class and hide all other li elements ***** */
+  function initialExpandable(selector){
     selector.children('li').each(function(index){
       if(!$(this).is('.summary, .showMore')){
         $(this).hide(400);
       }
     });
-    }
-    /* ***** END Loop through list, showing li elements with summary class and hide all other li elements ***** */
+  }
+  /* ***** END Loop through list, showing li elements with summary class and hide all other li elements ***** */
 
 // Google Analytics event tagging - automated for various design elements
 // To enable analytics the element needs a 'analyze' class
@@ -6340,47 +6288,47 @@ $(document).ready(function($) {
       ga('send', 'event', path , 'Klikk på accordion ', q);
     });
 
-   //Analytics for list group
+    //Analytics for list group
     $('.list-group-item.analyze').bind( "click", function() {
-        var q = $(this).prev('.header').html();
-        var path = window.location.pathname;
-        //console.log(q);
-        //console.log(path);
-        ga('send', 'event', path , 'Klikk på list group ', q);
-      });
+      var q = $(this).prev('.header').html();
+      var path = window.location.pathname;
+      //console.log(q);
+      //console.log(path);
+      ga('send', 'event', path , 'Klikk på list group ', q);
+    });
     //Analytics for radio buttons and checkboxes
     $('label.analyze').bind( "click", function() {
-        var parent = $(this).parent()
-        var q = $(this).html();
-        var label = $(this).parent().prev('label').length > 0 ? $(this).parent().prev('label').html() : "" ;
-        var path = window.location.pathname;
-        //console.log(q);
-        //console.log(path);
-        if(parent.hasClass('radiobuttons')){
-            ga('send', 'event', path , 'Radiobutton: '+label+' checked', q);
-        }else if(parent.hasClass('checkboxes')){
-            ga('send', 'event', path , 'Checkbox: '+label+' checked', q);
-        }
-      });
-     //Analytics for select
-     $('select.analyze').bind( "change", function() {
-            var q = $(this).val();
-            var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
-            var path = window.location.pathname;
-            //console.log(q);
-            //console.log(path);
-            ga('send', 'event', path , 'Dropdown:'+label+' endret valg.', q);
-     });
+      var parent = $(this).parent()
+      var q = $(this).html();
+      var label = $(this).parent().prev('label').length > 0 ? $(this).parent().prev('label').html() : "" ;
+      var path = window.location.pathname;
+      //console.log(q);
+      //console.log(path);
+      if(parent.hasClass('radiobuttons')){
+        ga('send', 'event', path , 'Radiobutton: '+label+' checked', q);
+      }else if(parent.hasClass('checkboxes')){
+        ga('send', 'event', path , 'Checkbox: '+label+' checked', q);
+      }
+    });
+    //Analytics for select
+    $('select.analyze').bind( "change", function() {
+      var q = $(this).val();
+      var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
+      var path = window.location.pathname;
+      //console.log(q);
+      //console.log(path);
+      ga('send', 'event', path , 'Dropdown:'+label+' endret valg.', q);
+    });
     //Analytics for datepicker
-      $('.datePicker.analyze').bind('dp.change dp.show', function(){
-            var q = $(this).find('input').val();
-            var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
-            var path = window.location.pathname;
-            //console.log(q);
-            //console.log(path);
-            ga('send', 'event', path , 'Date changed for: '+label, q);
+    $('.datePicker.analyze').bind('dp.change dp.show', function(){
+      var q = $(this).find('input').val();
+      var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
+      var path = window.location.pathname;
+      //console.log(q);
+      //console.log(path);
+      ga('send', 'event', path , 'Date changed for: '+label, q);
 
-      });
+    });
 
   });
 
@@ -6405,7 +6353,7 @@ $(document).ready(function($) {
             '</div>' +
             '</div>' +
             '</div>' +
-        '</div>';
+            '</div>';
 
         if($('#dialogModal').length === 0){
           $('body').append(markup);
@@ -6442,71 +6390,71 @@ $(document).ready(function($) {
 
 
 // login
-$(document).ready(function(){
-/* Verify National Identity Number ***********************************************/
-var loginFields=  {
-    nationalIdentityNumber: {
-    container: '#menulogin-message',
-    validators: {
-       callback: idValidator,
-       notEmpty: {
-         message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
-       }
-     }
-   }
- };
-var frontpageLoginFields =  {
-     nationalIdentityNumber: {
-     container: '#startlogin-message',
-     validators: {
-        callback: idValidator,
-        notEmpty: {
-          message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
+  $(document).ready(function(){
+    /* Verify National Identity Number ***********************************************/
+    var loginFields=  {
+      nationalIdentityNumber: {
+        container: '#menulogin-message',
+        validators: {
+          callback: idValidator,
+          notEmpty: {
+            message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
+          }
         }
       }
-    }
-  };
+    };
+    var frontpageLoginFields =  {
+      nationalIdentityNumber: {
+        container: '#startlogin-message',
+        validators: {
+          callback: idValidator,
+          notEmpty: {
+            message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
+          }
+        }
+      }
+    };
 
-var callback = function(e) {
-  // Prevent form submission
-   e.preventDefault();
-   loginFromMenu($(e.target).find("input[name='nationalIdentityNumber']").val());
- };
+    var callback = function(e) {
+      // Prevent form submission
+      e.preventDefault();
+      loginFromMenu($(e.target).find("input[name='nationalIdentityNumber']").val());
+    };
 
-try{
- initBootstrapValidator ($('#start-login-form'),loginFields,callback);
- initBootstrapValidator ($('#start-login-form-mobile'),loginFields,callback);
-}catch(err){}
-});
-
-
-$(document).ready(function() {
-  if(!isHighDensity()){
-     $('.scroll-indicator img').attr('height','24');
-  }
-
-  $('.table-responsive').each(function() {
-    if($(this).hasScrollBar()) {
-      $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
-    }
+    try{
+      initBootstrapValidator ($('#start-login-form'),loginFields,callback);
+      initBootstrapValidator ($('#start-login-form-mobile'),loginFields,callback);
+    }catch(err){}
   });
-  $('.table-responsive-pinned').each(function() {
-    if($(this).hasScrollBar()) {
-      $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
-   }
+
+
+  $(document).ready(function() {
+    if(!isHighDensity()){
+      $('.scroll-indicator img').attr('height','24');
+    }
+
+    $('.table-responsive').each(function() {
+      if($(this).hasScrollBar()) {
+        $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
+      }
+    });
+    $('.table-responsive-pinned').each(function() {
+      if($(this).hasScrollBar()) {
+        $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
+      }
+    });
+    makeTableScrollable();
   });
-  makeTableScrollable();
-});
 
 //Equalheights fix for elements in hidden tabs
-$(document).ready(function(){
+  $(document).ready(function(){
     $('ul[data-tabs="tabs"] a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-       $('.tab-pane.active .row .column').matchHeight(true);
+      $('.tab-pane.active .row .column').matchHeight(true);
     });
-});
+  });
 
 //Show and hide contactus links
-$(document).ready(function(){
+  $(document).ready(function(){
     $('a.contact').click(function(){
       showHideForm(this);
     });
@@ -6525,87 +6473,114 @@ $(document).ready(function(){
       }
 
     });
-});
+  });
 
-function showHideForm(elem){
+  function showHideForm(elem){
     $(elem).parent('div').next('div').slideToggle('fast');
     $(elem).find('span:last').toggleClass('chevron-down chevron-up');
-}
+  }
 
-/* ***** Function for making tables responsive ***** */
-function makeTableScrollable(){
-  var switched = false;
-  var updateTables = function() {
-    if (($(window).width() < 767) && !switched ){
-      switched = true;
-      $(".table-responsive-pinned.scrollable table.responsive").each(function(i, element) {
-        splitTable($(element));
-      });
-      return true;
+  /* ***** Function for making tables responsive ***** */
+  function makeTableScrollable(){
+    var switched = false;
+    var updateTables = function() {
+      if (($(window).width() < 767) && !switched ){
+        switched = true;
+        $(".table-responsive-pinned.scrollable table.responsive").each(function(i, element) {
+          splitTable($(element));
+        });
+        return true;
+      }
+      else if (switched && ($(window).width() > 767)) {
+        switched = false;
+        $(".table-responsive-pinned.scrollable table.responsive").each(function(i, element) {
+          unsplitTable($(element));
+        });
+      }
+    };
+
+    $(window).load(updateTables);
+    $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
+    $(window).on("resize", updateTables);
+
+    function splitTable(original)
+    {
+      original.wrap("<div class='table-wrapper' />");
+
+      var copy = original.clone();
+      copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
+      copy.removeClass("responsive");
+
+      original.closest(".table-wrapper").append(copy);
+      copy.wrap("<div class='pinned' />");
+      original.wrap("<div class='scrollable' />");
+
+      setCellHeights(original, copy);
     }
-    else if (switched && ($(window).width() > 767)) {
-      switched = false;
-      $(".table-responsive-pinned.scrollable table.responsive").each(function(i, element) {
-        unsplitTable($(element));
-      });
+
+    function unsplitTable(original) {
+      original.closest(".table-wrapper").find(".pinned").remove();
+      original.unwrap();
+      original.unwrap();
     }
-  };
 
-  $(window).load(updateTables);
-  $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
-  $(window).on("resize", updateTables);
+    function setCellHeights(original, copy) {
+      var tr = original.find('tr'),
+          tr_copy = copy.find('tr'),
+          heights = [];
 
-  function splitTable(original)
-  {
-    original.wrap("<div class='table-wrapper' />");
+      tr.each(function (index) {
+        var self = $(this),
+            tx = self.find('th, td');
+        tx.each(function () {
+          var height = $(this).outerHeight(true);
+          heights[index] = heights[index] || 0;
+          if (height > heights[index]) heights[index] = height;
+        });
 
-    var copy = original.clone();
-    copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
-    copy.removeClass("responsive");
-
-    original.closest(".table-wrapper").append(copy);
-    copy.wrap("<div class='pinned' />");
-    original.wrap("<div class='scrollable' />");
-
-    setCellHeights(original, copy);
-  }
-
-  function unsplitTable(original) {
-    original.closest(".table-wrapper").find(".pinned").remove();
-    original.unwrap();
-    original.unwrap();
-  }
-
-  function setCellHeights(original, copy) {
-    var tr = original.find('tr'),
-        tr_copy = copy.find('tr'),
-        heights = [];
-
-    tr.each(function (index) {
-      var self = $(this),
-          tx = self.find('th, td');
-      tx.each(function () {
-        var height = $(this).outerHeight(true);
-        heights[index] = heights[index] || 0;
-        if (height > heights[index]) heights[index] = height;
       });
 
-    });
-
-    tr_copy.each(function (index) {
-      //Integration with boostrap fix
-      $(this).height(heights[index]);
-    });
-    tr.each(function (index){
-      $(this).height(heights[index]);
-    })
+      tr_copy.each(function (index) {
+        //Integration with boostrap fix
+        $(this).height(heights[index]);
+      });
+      tr.each(function (index){
+        $(this).height(heights[index]);
+      })
+    }
   }
-}
-/* ***** End of Function for making tables responsive ***** */
+  /* ***** End of Function for making tables responsive ***** */
 
-$.fn.hasScrollBar = function() {
+  $.fn.hasScrollBar = function() {
     return this.get(0).scrollWidth > this.get(0).clientWidth;
-}
+  }
+
+  $(document).ready(function(){
+    $(".contactElements a.chat.open").click(function(event){
+      var contactElement = $(this);
+      var contentKey = $(this).attr('data-key');
+      var elementId = $(this).attr('data-element-id');
+      var chatStatusUrl = $('#chat-status').attr('data-url');
+      if (chatStatusUrl != '' && contentKey != null) {
+        $.getJSON(chatStatusUrl + '?key=' + contentKey, function(chatData) {
+          if (chatData.status == 'true') {
+            try {
+              $(contactElement).openChat();
+            } catch (e) {
+              return true;
+            }
+          } else {
+            $(contactElement).removeAttr('href').removeClass('open').addClass('closed');
+            $(contactElement).next().children().text(chatData.text);
+            var icon = $(contactElement).children('.circle-16');
+            $(icon).removeClass("stbcolor-secondary");
+            $(icon).addClass("stbcolor-gray");
+          }
+        });
+      }
+      event.preventDefault();
+    });
+  });
 
 }(jQuery));
 /* ***** Validator for national identity number ***** */
@@ -6642,20 +6617,8 @@ function onYouTubeIframeAPIReady() {
   $('.video-player-inline').each(function(index, element) {
     new YT.Player($(element).attr('id'), {
       videoId: $(element).attr('data-youtube-id'),
-      playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0},
-      events: {
-        'onReady': onPlayerReadyInline,
-        'onStateChange': onPlayerStateChangeInline
-      }
+      playerVars: { autohide:1, modestbranding: 1, controls: 1,theme:'light',html5:1, showinfo:0, rel:0}
     });
-  });
-}
-
-// The API will call this function when the video player is ready.
-function onPlayerReadyInline(event) {
-  $(event.target.d).prev().click(function() {
-    event.target.playVideo();
-    $(this).fadeOut('slow');
   });
 }
 
@@ -6671,14 +6634,6 @@ function onPlayerReadyBanner(event) {
 
 // The API calls this function when the player's state changes.
 // The function indicates that when playing a video (state=1), the player should play for six seconds and then stop.
-function onPlayerStateChangeInline(event) {
-  if(event.data == 0){
-    $(event.target.d).prev().show();
-    event.target.seekTo(0, false);
-  } else if(event.data == 2) {
-    $(event.target.d).prev().show();
-  }
-};
 
 function onPlayerStateChangeBanner(event) {
   if(event.data == 0) {
@@ -6706,7 +6661,26 @@ function playVideoBanner(player) {
      player.playVideo();
    }
   });
-};/*!
+}
+
+/* ***** Function for finding the bootstrap environment ***** */
+function findBootstrapEnvironment() {
+  var envs = ['xs', 'sm', 'md', 'lg'];
+
+  $el = $('<div>');
+  $el.appendTo($('body'));
+
+  for (var i = envs.length - 1; i >= 0; i--) {
+    var env = envs[i];
+
+    $el.addClass('hidden-'+env);
+    if ($el.is(':hidden')) {
+      $el.remove();
+      return env
+    }
+  };
+}
+/* ***** End of Function for finding the bootstrap environment ***** */;/*!
  * BootstrapValidator (http://bootstrapvalidator.com)
  * The best jQuery plugin to validate form fields. Designed to use with Bootstrap 3
  *
