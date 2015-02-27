@@ -31,7 +31,7 @@
   <script type="text/javascript" src="javascript/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
   <script type="text/javascript" src="javascript/typeahead.bundle.min.js"></script>  
-  <script type="text/javascript" src="javascript/search.js"></script>  
+  <script type="text/javascript" src="javascript/stb-search.js"></script>
   <script type="text/javascript" src="javascript/stb-common.js"></script>
   <script type="text/javascript" src="javascript/stb-page-padding.js"></script>
   <script type="text/javascript" src="javascript/stb-video.js"></script>
@@ -639,7 +639,7 @@ $(document).ready(function() {
 
     <h3>Standard table</h3>
     <h4>Standard responsive Bootstrap table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img src="images/PictoScrollTable@2x.gif"/></div>
+    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive">
       <table class="stb-table">
         <thead>
@@ -689,7 +689,7 @@ $(document).ready(function() {
       </table>
     </div>
     <h4>Locked left column Zurb table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img src="images/PictoScrollTable@2x.gif"/></div>
+    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive-pinned">
       <table class="responsive stb-table">
         <thead>
@@ -744,7 +744,7 @@ $(document).ready(function() {
       Add a hover effect on the table rows by adding the class "hoverable" to the table.
     </p>
     <h4>Standard responsive Bootstrap table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img src="images/PictoScrollTable@2x.gif"/></div>
+    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive">
       <table class="stb-table hoverable">
         <thead>
@@ -782,7 +782,7 @@ $(document).ready(function() {
       </table>
     </div>
     <h4>Locked left column Zurb table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img src="images/PictoScrollTable@2x.gif"/></div>
+    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive-pinned">
       <table class="responsive stb-table hoverable">
         <thead>
@@ -825,7 +825,7 @@ $(document).ready(function() {
       Remove alternating rows by adding the class "noalt" to the table.
     </p>
     <h4>Standard responsive Bootstrap table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img src="images/PictoScrollTable@2x.gif"/></div>
+    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive">
       <table class="stb-table no-alt hoverable nude">
         <thead>
@@ -875,7 +875,7 @@ $(document).ready(function() {
       </table>
     </div>
     <h4>Locked left column Zurb table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img src="images/PictoScrollTable@2x.gif"/></div>
+    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive-pinned">
         <table class="responsive stb-table no-alt hoverable nude">
           <thead>
@@ -930,7 +930,7 @@ $(document).ready(function() {
       By adding the class "analyze" Google Analytics tracking of clicking is enabled.
     </p>
     <h4>Standard responsive Bootstrap table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img src="images/PictoScrollTable@2x.gif"/></div>
+    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive">
         <table class="stb-table no-alt hoverable nude">
           <thead>
@@ -984,7 +984,7 @@ $(document).ready(function() {
         </table>
       </div>
     <h4>Locked left column Zurb table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img src="images/PictoScrollTable@2x.gif"/></div>
+    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive-pinned">
       <table class="responsive stb-table no-alt hoverable nude">
         <thead>
@@ -1040,7 +1040,7 @@ $(document).ready(function() {
     <strong>Code:</strong> <br />
           <pre class="prettyprint">
 &lt;!-- Standard responsive table --&gt;
-&lt;div class="scroll-indicator"&gt;Tabellen kan sveipes &lt;img src="../images/PictoScrollTable@2x.gif"/&gt;&lt;/div&gt;
+&lt;div class="scroll-indicator"&gt;Tabellen kan sveipes &lt;img height="24" src="../images/PictoScrollTable@2x.gif"/&gt;&lt;/div&gt;
 &lt;div class="table-responsive"&gt;
   &lt;table class=&quot;stb-table [hoverable] [clickable] [noalt] [analyze] &quot;&gt;
     &lt;thead&gt;
@@ -1062,7 +1062,7 @@ $(document).ready(function() {
 &lt;/div&gt;
 
 &lt;!-- Table with a pinned left column --&gt;
-&lt;div class="scroll-indicator"&gt;Tabellen kan sveipes &lt;img src="../images/PictoScrollTable@2x.gif"/&gt;&lt;/div&gt;
+&lt;div class="scroll-indicator"&gt;Tabellen kan sveipes &lt;img height="24" src="../images/PictoScrollTable@2x.gif"/&gt;&lt;/div&gt;
 &lt;div class="table-responsive-pinned"&gt;
   &lt;table class=&quot;responsive stb-table [hoverable] [clickable] [noalt] [analyze] &quot;&gt;
     &lt;thead&gt;
@@ -2091,11 +2091,6 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <button class="stb-btn" onclick="$('#cookieNote').toggle('slow');">Toggle notification</button>
           <script type="text/javascript">
             createCookie('acceptCookies','Yes', '1000');
-
-            function acceptCookies(){
-               createCookie('acceptCookies','Yes', '90');
-               $('#cookieNote').hide('slow');
-             }
           </script>
         </p>
 
