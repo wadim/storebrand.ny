@@ -5281,7 +5281,7 @@ var s,search = {
     // Call checkSearch when hitting Enter while in the input area
     $("input.searchbox").keydown(function(event){
       if(!s.hasURL){
-        if(event.which == 13 && this.value.trim()){
+        if(event.which === 13 && this.value.trim()){
            var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
            if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
                search.minimizeSearch();
@@ -5398,7 +5398,7 @@ var s,search = {
 
     // Close search if Escape button is pressed
     $("input.searchbox").keydown(function(event){
-      if(event.which == 27){
+      if(event.which === 27){
         search.minimizeSearch();
         $(this).blur();
       }
@@ -5541,7 +5541,7 @@ var s,search = {
     // Populate the promotion area
     if (s.start===0 && search.promotions !== undefined){
       $.each(search.promotions,function(value) {
-        if (value.toLowerCase() == s.urlParams.q.toLowerCase()){
+        if (value.toLowerCase() === s.urlParams.q.toLowerCase()){
           if(search.promotions[value].length > 1){
             $(search.promotions[value]).each(function(index, promo) {
               $(".searchresults").append('<div class="promotion' + '"><h3>'+promo.header + '<' + '/h3><' + 'p class="description">' + promo.text + '</p' + ' ><p class="showurl"' + '><a href="' + promo.url + '">' +promo.name + '<' + '/a><' + '/p><' + '/div>');
@@ -5618,14 +5618,14 @@ var s,search = {
       //get the index of the last / in the url
       var lastSlashIndex = shortenedU.lastIndexOf("/");
       //if the last / was at the end of the URL, for example in storebrand.no/bank/
-      if( lastSlashIndex+1 == shortenedU.length ) {
+      if( lastSlashIndex+1 === shortenedU.length ) {
         //remove the last /
         shortenedU = shortenedU.substr( 0, shortenedU.length-1 );
         //now look for the new last /
         lastSlashIndex = shortenedU.lastIndexOf("/", lastSlashIndex);
       }
       //if no slash was found, reset it to 0
-      if( lastSlashIndex == -1 ) {
+      if( lastSlashIndex === -1 ) {
         lastSlashIndex = 0;
       }
       //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
@@ -5651,7 +5651,7 @@ var s,search = {
       }
 
       // If the page has search query and the user has scrolled to the bottom of the page, load more search results
-      if((s.urlParams.q!==undefined &&  s.urlParams.q.length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
+      if((s.urlParams.q!==undefined &&  s.urlParams.q.length>0) && $(window).scrollTop() + $(window).height() === $(document).height()) {
         // Show message after searching 40 items
         if(s.start>=40) {
           $(".searchresults").append("<row><div class='col-12' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");
@@ -5703,7 +5703,7 @@ function scrollToHash(hash) {
   if (target.length) {
     var scrollToPosition = target.offset().top;
     // Checking if the navigation header is fixed. If yes, set the scrollto position by subtracting the height of the fixed header
-    if($('.navbar-fixed-top').css("display") == "block") {
+    if($('.navbar-fixed-top').css("display") === "block") {
       scrollToPosition -= $('.navbar-fixed-top').height();
     }
     $('html,body').animate({ scrollTop: scrollToPosition }, 1000);
@@ -5811,10 +5811,10 @@ function decode64(input) {
     chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
     chr3 = ((enc3 & 3) << 6) | enc4;
     output.append(String.fromCharCode(chr1));
-    if (enc3 != 64) {
+    if (enc3 !== 64) {
       output.append(String.fromCharCode(chr2));
     }
-    if (enc4 != 64) {
+    if (enc4 !== 64) {
       output.append(String.fromCharCode(chr3));
     }
   }
@@ -5895,7 +5895,7 @@ function readCookie(name) {
   var ca = document.cookie.split(';');
   for (var i=0;i < ca.length;i++) {
     var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    while (c.charAt(0) === ' ') c = c.substring(1,c.length);
     if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
   }
   return null;
@@ -6111,7 +6111,7 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
     }
 
     //check if URL already has a hash and scroll to the correct heading
-    if( window.location.hash.length > 0 && window.location.hash.indexOf("/") == -1 ) {  // only do scrolling now, since the has tag is present and it does not have a / which is for angular JS
+    if( window.location.hash.length > 0 && window.location.hash.indexOf("/") === -1 ) {  // only do scrolling now, since the has tag is present and it does not have a / which is for angular JS
       try {
         var hashId = window.location.hash;
         //if a matching heading has the hash ID, then scroll to it.
@@ -6336,7 +6336,7 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
   //Adjustments to Bootstraps Modal window
   var modalDialog = {
     triggerModal : function(type,options){
-      if(type == 'confirm'){
+      if(type === 'confirm'){
         var markup = '<div class="modal stb-modal fade" id="dialogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
             '<div class="modal-dialog modal-span6">' +
             '<div class="modal-content">' +
@@ -6552,7 +6552,7 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
       var chatStatusUrl = $('#chat-status').attr('data-url');
       if (chatStatusUrl !== '' && contentKey !== null) {
         $.getJSON(chatStatusUrl + '?key=' + contentKey, function(chatData) {
-          if (chatData.status == 'true') {
+          if (chatData.status === 'true') {
             try {
               $(contactElement).openChat();
             } catch (e) {
@@ -6631,7 +6631,7 @@ function onPlayerStateChangeBanner(event) {
 }
 
 function stopVideoBanner(player) {
-  if(bootstrapEnv == 'md' || bootstrapEnv == 'lg') {
+  if(bootstrapEnv === 'md' || bootstrapEnv === 'lg') {
     player.stopVideo();
     player.seekTo(0, false);
   }
@@ -6646,7 +6646,7 @@ function playVideoBanner(player) {
   bannerVideo.parent().removeClass('top-padding-30');
   bannerVideo.children('.video-text').hide(500);
   bannerVideo.children('.video-container').show(500, function() {
-   if(bootstrapEnv == 'md' || bootstrapEnv == 'lg'){
+   if(bootstrapEnv === 'md' || bootstrapEnv === 'lg'){
      player.playVideo();
    }
   });

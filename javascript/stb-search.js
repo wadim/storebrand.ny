@@ -118,7 +118,7 @@ var s,search = {
     // Call checkSearch when hitting Enter while in the input area
     $("input.searchbox").keydown(function(event){
       if(!s.hasURL){
-        if(event.which == 13 && this.value.trim()){
+        if(event.which === 13 && this.value.trim()){
            var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
            if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
                search.minimizeSearch();
@@ -235,7 +235,7 @@ var s,search = {
 
     // Close search if Escape button is pressed
     $("input.searchbox").keydown(function(event){
-      if(event.which == 27){
+      if(event.which === 27){
         search.minimizeSearch();
         $(this).blur();
       }
@@ -378,7 +378,7 @@ var s,search = {
     // Populate the promotion area
     if (s.start===0 && search.promotions !== undefined){
       $.each(search.promotions,function(value) {
-        if (value.toLowerCase() == s.urlParams.q.toLowerCase()){
+        if (value.toLowerCase() === s.urlParams.q.toLowerCase()){
           if(search.promotions[value].length > 1){
             $(search.promotions[value]).each(function(index, promo) {
               $(".searchresults").append('<div class="promotion' + '"><h3>'+promo.header + '<' + '/h3><' + 'p class="description">' + promo.text + '</p' + ' ><p class="showurl"' + '><a href="' + promo.url + '">' +promo.name + '<' + '/a><' + '/p><' + '/div>');
@@ -455,14 +455,14 @@ var s,search = {
       //get the index of the last / in the url
       var lastSlashIndex = shortenedU.lastIndexOf("/");
       //if the last / was at the end of the URL, for example in storebrand.no/bank/
-      if( lastSlashIndex+1 == shortenedU.length ) {
+      if( lastSlashIndex+1 === shortenedU.length ) {
         //remove the last /
         shortenedU = shortenedU.substr( 0, shortenedU.length-1 );
         //now look for the new last /
         lastSlashIndex = shortenedU.lastIndexOf("/", lastSlashIndex);
       }
       //if no slash was found, reset it to 0
-      if( lastSlashIndex == -1 ) {
+      if( lastSlashIndex === -1 ) {
         lastSlashIndex = 0;
       }
       //if there are more than 1 slash, then we want to add "/..." to the start of the short URL
@@ -488,7 +488,7 @@ var s,search = {
       }
 
       // If the page has search query and the user has scrolled to the bottom of the page, load more search results
-      if((s.urlParams.q!==undefined &&  s.urlParams.q.length>0) && $(window).scrollTop() + $(window).height() == $(document).height()) {
+      if((s.urlParams.q!==undefined &&  s.urlParams.q.length>0) && $(window).scrollTop() + $(window).height() === $(document).height()) {
         // Show message after searching 40 items
         if(s.start>=40) {
           $(".searchresults").append("<row><div class='col-12' style='text-align: center;'> <p class='intro'>Kanskje du b&oslash;r pr&oslash;ve et <a href='#'> annet s&oslash;keord</a>?</p></div></div>");

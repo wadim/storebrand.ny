@@ -15,7 +15,7 @@ function scrollToHash(hash) {
   if (target.length) {
     var scrollToPosition = target.offset().top;
     // Checking if the navigation header is fixed. If yes, set the scrollto position by subtracting the height of the fixed header
-    if($('.navbar-fixed-top').css("display") == "block") {
+    if($('.navbar-fixed-top').css("display") === "block") {
       scrollToPosition -= $('.navbar-fixed-top').height();
     }
     $('html,body').animate({ scrollTop: scrollToPosition }, 1000);
@@ -123,10 +123,10 @@ function decode64(input) {
     chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
     chr3 = ((enc3 & 3) << 6) | enc4;
     output.append(String.fromCharCode(chr1));
-    if (enc3 != 64) {
+    if (enc3 !== 64) {
       output.append(String.fromCharCode(chr2));
     }
-    if (enc4 != 64) {
+    if (enc4 !== 64) {
       output.append(String.fromCharCode(chr3));
     }
   }
@@ -207,7 +207,7 @@ function readCookie(name) {
   var ca = document.cookie.split(';');
   for (var i=0;i < ca.length;i++) {
     var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    while (c.charAt(0) === ' ') c = c.substring(1,c.length);
     if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
   }
   return null;

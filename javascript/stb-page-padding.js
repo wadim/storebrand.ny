@@ -168,7 +168,7 @@
     }
 
     //check if URL already has a hash and scroll to the correct heading
-    if( window.location.hash.length > 0 && window.location.hash.indexOf("/") == -1 ) {  // only do scrolling now, since the has tag is present and it does not have a / which is for angular JS
+    if( window.location.hash.length > 0 && window.location.hash.indexOf("/") === -1 ) {  // only do scrolling now, since the has tag is present and it does not have a / which is for angular JS
       try {
         var hashId = window.location.hash;
         //if a matching heading has the hash ID, then scroll to it.
@@ -393,7 +393,7 @@
   //Adjustments to Bootstraps Modal window
   var modalDialog = {
     triggerModal : function(type,options){
-      if(type == 'confirm'){
+      if(type === 'confirm'){
         var markup = '<div class="modal stb-modal fade" id="dialogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
             '<div class="modal-dialog modal-span6">' +
             '<div class="modal-content">' +
@@ -609,7 +609,7 @@
       var chatStatusUrl = $('#chat-status').attr('data-url');
       if (chatStatusUrl !== '' && contentKey !== null) {
         $.getJSON(chatStatusUrl + '?key=' + contentKey, function(chatData) {
-          if (chatData.status == 'true') {
+          if (chatData.status === 'true') {
             try {
               $(contactElement).openChat();
             } catch (e) {

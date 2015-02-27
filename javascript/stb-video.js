@@ -49,7 +49,7 @@ function onPlayerStateChangeBanner(event) {
 }
 
 function stopVideoBanner(player) {
-  if(bootstrapEnv == 'md' || bootstrapEnv == 'lg') {
+  if(bootstrapEnv === 'md' || bootstrapEnv === 'lg') {
     player.stopVideo();
     player.seekTo(0, false);
   }
@@ -64,7 +64,7 @@ function playVideoBanner(player) {
   bannerVideo.parent().removeClass('top-padding-30');
   bannerVideo.children('.video-text').hide(500);
   bannerVideo.children('.video-container').show(500, function() {
-   if(bootstrapEnv == 'md' || bootstrapEnv == 'lg'){
+   if(bootstrapEnv === 'md' || bootstrapEnv === 'lg'){
      player.playVideo();
    }
   });
