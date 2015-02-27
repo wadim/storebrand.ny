@@ -5204,11 +5204,11 @@ var s,search = {
 
     search.promotions = enonicSearchData.search.promotion;
 
-    if(enonicSearchData.search.autocomplete != undefined && enonicSearchData.search.autocomplete.anbefalt != undefined){
+    if(enonicSearchData.search.autocomplete !== undefined && enonicSearchData.search.autocomplete.anbefalt !== undefined){
        search.typeaheads.anbefalte = enonicSearchData.search.autocomplete.anbefalt;
     }
 
-    if(enonicSearchData.search.typeahead != undefined && enonicSearchData.search.typeahead.direkte != undefined){
+    if(enonicSearchData.search.typeahead !== undefined && enonicSearchData.search.typeahead.direkte !== undefined){
        search.typeaheads.direkte = enonicSearchData.search.typeahead.direkte;
     }
 
@@ -5245,7 +5245,7 @@ var s,search = {
     $('#desktop-menu ul.nav li.search').show();
 
     // Prepare for type-ahead
-    if(search.typeaheads != ""){
+    if(search.typeaheads !== ""){
       search.initTypeahead();
     }
     // The search field on desktop must be made extendable upon click
@@ -5282,7 +5282,7 @@ var s,search = {
     $("input.searchbox").keydown(function(event){
       if(!s.hasURL){
         if(event.which == 13 && this.value.trim()){
-           var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
+           var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
            if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
                search.minimizeSearch();
                setTimeout(function(){
@@ -5310,7 +5310,7 @@ var s,search = {
            event.preventDefault();
           }
       }else{
-        var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
+        var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
         if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
             if(s.maximized){
              search.minimizeSearch();
@@ -5539,7 +5539,7 @@ var s,search = {
   },
   getPromotions : function () {
     // Populate the promotion area
-    if (s.start===0 && search.promotions != undefined){
+    if (s.start===0 && search.promotions !== undefined){
       $.each(search.promotions,function(value) {
         if (value.toLowerCase() == s.urlParams.q.toLowerCase()){
           if(search.promotions[value].length > 1){
@@ -5715,9 +5715,9 @@ function scrollToHash(hash) {
 
 /* ***** Verify National Identity Number ***** */
 function verifyIDNumber(nr) {
-  var pn = new Array();
-  var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
-  var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+  var pn = [];
+  var v1 = [3,7,6,1,8,9,4,5,2,1,0];
+  var v2 = [5,4,3,2,7,6,5,4,3,2,1];
   for(var i=0; i<nr.length; i++) {
     pn[i] = nr.charAt(i);
   }
@@ -5729,7 +5729,7 @@ function verifyIDNumber(nr) {
   for(i=0; i<v2.length; i++) {
     k2 += pn[i]*v2[i];
   }
-  if (k1%11==0 && k2%11==0 ) {
+  if (k1%11===0 && k2%11===0 ) {
     return true;
   } else {
     return false;
@@ -5745,15 +5745,15 @@ if (ua.indexOf(" chrome/") >= 0 || ua.indexOf(" firefox/") >= 0 || ua.indexOf(' 
     this.append = function (s) {
       this.str += s;
       this.length += s.length;
-    }
+    };
     this.prepend = function (s) {
       this.str = s + this.str;
       this.length += s.length;
-    }
+    };
     this.toString = function () {
       return this.str;
-    }
-  }
+    };
+  };
 } else {
   var StringMaker = function () {
     this.parts = [];
@@ -5761,15 +5761,15 @@ if (ua.indexOf(" chrome/") >= 0 || ua.indexOf(" firefox/") >= 0 || ua.indexOf(' 
     this.append = function (s) {
       this.parts.push(s);
       this.length += s.length;
-    }
+    };
     this.prepend = function (s) {
       this.parts.unshift(s);
       this.length += s.length;
-    }
+    };
     this.toString = function () {
       return this.parts.join('');
-    }
-  }
+    };
+  };
 }
 var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 
@@ -5828,7 +5828,7 @@ function gup(name){
   var regexS = "[\\?&]"+name+"=([^&#]*)";
   var regex = new RegExp( regexS );
   var results = regex.exec( window.location.href );
-  if( results == null ) {
+  if( results === null ) {
     return "";
   } else {
     return results[1];
@@ -5853,7 +5853,7 @@ function hideImportantNotice(element){
 }
 
 function showCommonMsg(element) {
-  if(element != undefined){
+  if(element !== undefined){
     $(element).parent().next('.commonmessage').slideToggle('fast');
   }else{
     $('.commonmessage').slideDown('fast');
@@ -5877,12 +5877,13 @@ function hideErrorMsg(element) {
 
 /* ***** CREATE COOKIE ***** */
 function createCookie(n,value,days) {
+  var expires;
   if (days) {
     var date = new Date();
     date.setTime(date.getTime()+(days*24*60*60*1000));
-    var expires = "; expires="+date.toGMTString();
+    expires = "; expires="+date.toGMTString();
   } else {
-    var expires = "";
+    expires = "";
   }
   dom = "; domain=.storebrand.no";
   document.cookie = n+"="+value+expires+"; path=/"+dom;
@@ -5895,7 +5896,7 @@ function readCookie(name) {
   for (var i=0;i < ca.length;i++) {
     var c = ca[i];
     while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
   }
   return null;
 }
@@ -6021,19 +6022,17 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
 // Start Adding twister effect to accordion/FAQ
   $(document).ready(function () {
     $("ul[data-widget=stbFaq]").stbFaq();
-  }),
+  });
 
-      function (a) {
-        a.fn.stbFaq = function () {
-          a(this).find("a").on("click", function (b) {
-            if (a(this).hasClass("twister")) {
-              b.preventDefault();
-              var c = a(this).siblings("ul.accordion li .answer");
-              a(this).hasClass("open") ? (a(this).removeClass("open"), c.slideUp(200)) : (a(this).addClass("open"), c.slideDown(200));
-            }
-          });
-        };
-      }(jQuery);
+  $.fn.stbFaq = function () {
+      $(this).find("a").on("click", function (b) {
+        if ($(this).hasClass("twister")) {
+          b.preventDefault();
+          var c = $(this).siblings("ul.accordion li .answer");
+          $(this).hasClass("open") ? ($(this).removeClass("open"), c.slideUp(200)) : ($(this).addClass("open"), c.slideDown(200));
+        }
+      });
+  };
 
   $(document).ready(function(){
     $('.stb-accordion').on('show.bs.collapse', function (event) {
@@ -6300,7 +6299,7 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
     });
     //Analytics for radio buttons and checkboxes
     $('label.analyze').bind( "click", function() {
-      var parent = $(this).parent()
+      var parent = $(this).parent();
       var q = $(this).html();
       var label = $(this).parent().prev('label').length > 0 ? $(this).parent().prev('label').html() : "" ;
       var path = window.location.pathname;
@@ -6510,14 +6509,14 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
       });
       tr.each(function (index){
         $(this).height(heights[index]);
-      })
+      });
     }
   }
   /* ***** End of Function for making tables responsive ***** */
 
   $.fn.hasScrollBar = function() {
     return this.get(0).scrollWidth > this.get(0).clientWidth;
-  }
+  };
 
   //Show and hide contactus links
   $(document).ready(function(){
@@ -6551,7 +6550,7 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
       var contentKey = $(this).attr('data-key');
       var elementId = $(this).attr('data-element-id');
       var chatStatusUrl = $('#chat-status').attr('data-url');
-      if (chatStatusUrl != '' && contentKey != null) {
+      if (chatStatusUrl !== '' && contentKey !== null) {
         $.getJSON(chatStatusUrl + '?key=' + contentKey, function(chatData) {
           if (chatData.status == 'true') {
             try {
@@ -6626,7 +6625,7 @@ function onPlayerReadyBanner(event) {
 // The function indicates that when playing a video (state=1), the player should play for six seconds and then stop.
 
 function onPlayerStateChangeBanner(event) {
-  if(event.data == 0) {
+  if(event.data === 0) {
     stopVideoBanner(event.target);
   }
 }
@@ -6666,9 +6665,9 @@ function findBootstrapEnvironment() {
     $el.addClass('hidden-'+env);
     if ($el.is(':hidden')) {
       $el.remove();
-      return env
+      return env;
     }
-  };
+  }
 }
 /* ***** End of Function for finding the bootstrap environment ***** */;/*!
  * BootstrapValidator (http://bootstrapvalidator.com)

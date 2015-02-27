@@ -27,9 +27,9 @@ function scrollToHash(hash) {
 
 /* ***** Verify National Identity Number ***** */
 function verifyIDNumber(nr) {
-  var pn = new Array();
-  var v1 = new Array(3,7,6,1,8,9,4,5,2,1,0);
-  var v2 = new Array(5,4,3,2,7,6,5,4,3,2,1);
+  var pn = [];
+  var v1 = [3,7,6,1,8,9,4,5,2,1,0];
+  var v2 = [5,4,3,2,7,6,5,4,3,2,1];
   for(var i=0; i<nr.length; i++) {
     pn[i] = nr.charAt(i);
   }
@@ -41,7 +41,7 @@ function verifyIDNumber(nr) {
   for(i=0; i<v2.length; i++) {
     k2 += pn[i]*v2[i];
   }
-  if (k1%11==0 && k2%11==0 ) {
+  if (k1%11===0 && k2%11===0 ) {
     return true;
   } else {
     return false;
@@ -57,15 +57,15 @@ if (ua.indexOf(" chrome/") >= 0 || ua.indexOf(" firefox/") >= 0 || ua.indexOf(' 
     this.append = function (s) {
       this.str += s;
       this.length += s.length;
-    }
+    };
     this.prepend = function (s) {
       this.str = s + this.str;
       this.length += s.length;
-    }
+    };
     this.toString = function () {
       return this.str;
-    }
-  }
+    };
+  };
 } else {
   var StringMaker = function () {
     this.parts = [];
@@ -73,15 +73,15 @@ if (ua.indexOf(" chrome/") >= 0 || ua.indexOf(" firefox/") >= 0 || ua.indexOf(' 
     this.append = function (s) {
       this.parts.push(s);
       this.length += s.length;
-    }
+    };
     this.prepend = function (s) {
       this.parts.unshift(s);
       this.length += s.length;
-    }
+    };
     this.toString = function () {
       return this.parts.join('');
-    }
-  }
+    };
+  };
 }
 var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 
@@ -140,7 +140,7 @@ function gup(name){
   var regexS = "[\\?&]"+name+"=([^&#]*)";
   var regex = new RegExp( regexS );
   var results = regex.exec( window.location.href );
-  if( results == null ) {
+  if( results === null ) {
     return "";
   } else {
     return results[1];
@@ -165,7 +165,7 @@ function hideImportantNotice(element){
 }
 
 function showCommonMsg(element) {
-  if(element != undefined){
+  if(element !== undefined){
     $(element).parent().next('.commonmessage').slideToggle('fast');
   }else{
     $('.commonmessage').slideDown('fast');
@@ -189,12 +189,13 @@ function hideErrorMsg(element) {
 
 /* ***** CREATE COOKIE ***** */
 function createCookie(n,value,days) {
+  var expires;
   if (days) {
     var date = new Date();
     date.setTime(date.getTime()+(days*24*60*60*1000));
-    var expires = "; expires="+date.toGMTString();
+    expires = "; expires="+date.toGMTString();
   } else {
-    var expires = "";
+    expires = "";
   }
   dom = "; domain=.storebrand.no";
   document.cookie = n+"="+value+expires+"; path=/"+dom;
@@ -207,7 +208,7 @@ function readCookie(name) {
   for (var i=0;i < ca.length;i++) {
     var c = ca[i];
     while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
   }
   return null;
 }

@@ -79,19 +79,17 @@
 // Start Adding twister effect to accordion/FAQ
   $(document).ready(function () {
     $("ul[data-widget=stbFaq]").stbFaq();
-  }),
+  });
 
-      function (a) {
-        a.fn.stbFaq = function () {
-          a(this).find("a").on("click", function (b) {
-            if (a(this).hasClass("twister")) {
-              b.preventDefault();
-              var c = a(this).siblings("ul.accordion li .answer");
-              a(this).hasClass("open") ? (a(this).removeClass("open"), c.slideUp(200)) : (a(this).addClass("open"), c.slideDown(200));
-            }
-          });
-        };
-      }(jQuery);
+  $.fn.stbFaq = function () {
+      $(this).find("a").on("click", function (b) {
+        if ($(this).hasClass("twister")) {
+          b.preventDefault();
+          var c = $(this).siblings("ul.accordion li .answer");
+          $(this).hasClass("open") ? ($(this).removeClass("open"), c.slideUp(200)) : ($(this).addClass("open"), c.slideDown(200));
+        }
+      });
+  };
 
   $(document).ready(function(){
     $('.stb-accordion').on('show.bs.collapse', function (event) {
@@ -358,7 +356,7 @@
     });
     //Analytics for radio buttons and checkboxes
     $('label.analyze').bind( "click", function() {
-      var parent = $(this).parent()
+      var parent = $(this).parent();
       var q = $(this).html();
       var label = $(this).parent().prev('label').length > 0 ? $(this).parent().prev('label').html() : "" ;
       var path = window.location.pathname;
@@ -568,14 +566,14 @@
       });
       tr.each(function (index){
         $(this).height(heights[index]);
-      })
+      });
     }
   }
   /* ***** End of Function for making tables responsive ***** */
 
   $.fn.hasScrollBar = function() {
     return this.get(0).scrollWidth > this.get(0).clientWidth;
-  }
+  };
 
   //Show and hide contactus links
   $(document).ready(function(){
@@ -609,7 +607,7 @@
       var contentKey = $(this).attr('data-key');
       var elementId = $(this).attr('data-element-id');
       var chatStatusUrl = $('#chat-status').attr('data-url');
-      if (chatStatusUrl != '' && contentKey != null) {
+      if (chatStatusUrl !== '' && contentKey !== null) {
         $.getJSON(chatStatusUrl + '?key=' + contentKey, function(chatData) {
           if (chatData.status == 'true') {
             try {

@@ -43,7 +43,7 @@ function onPlayerReadyBanner(event) {
 // The function indicates that when playing a video (state=1), the player should play for six seconds and then stop.
 
 function onPlayerStateChangeBanner(event) {
-  if(event.data == 0) {
+  if(event.data === 0) {
     stopVideoBanner(event.target);
   }
 }
@@ -83,8 +83,8 @@ function findBootstrapEnvironment() {
     $el.addClass('hidden-'+env);
     if ($el.is(':hidden')) {
       $el.remove();
-      return env
+      return env;
     }
-  };
+  }
 }
 /* ***** End of Function for finding the bootstrap environment ***** */

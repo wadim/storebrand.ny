@@ -41,11 +41,11 @@ var s,search = {
 
     search.promotions = enonicSearchData.search.promotion;
 
-    if(enonicSearchData.search.autocomplete != undefined && enonicSearchData.search.autocomplete.anbefalt != undefined){
+    if(enonicSearchData.search.autocomplete !== undefined && enonicSearchData.search.autocomplete.anbefalt !== undefined){
        search.typeaheads.anbefalte = enonicSearchData.search.autocomplete.anbefalt;
     }
 
-    if(enonicSearchData.search.typeahead != undefined && enonicSearchData.search.typeahead.direkte != undefined){
+    if(enonicSearchData.search.typeahead !== undefined && enonicSearchData.search.typeahead.direkte !== undefined){
        search.typeaheads.direkte = enonicSearchData.search.typeahead.direkte;
     }
 
@@ -82,7 +82,7 @@ var s,search = {
     $('#desktop-menu ul.nav li.search').show();
 
     // Prepare for type-ahead
-    if(search.typeaheads != ""){
+    if(search.typeaheads !== ""){
       search.initTypeahead();
     }
     // The search field on desktop must be made extendable upon click
@@ -119,7 +119,7 @@ var s,search = {
     $("input.searchbox").keydown(function(event){
       if(!s.hasURL){
         if(event.which == 13 && this.value.trim()){
-           var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
+           var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
            if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
                search.minimizeSearch();
                setTimeout(function(){
@@ -147,7 +147,7 @@ var s,search = {
            event.preventDefault();
           }
       }else{
-        var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim()
+        var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
         if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
             if(s.maximized){
              search.minimizeSearch();
@@ -376,7 +376,7 @@ var s,search = {
   },
   getPromotions : function () {
     // Populate the promotion area
-    if (s.start===0 && search.promotions != undefined){
+    if (s.start===0 && search.promotions !== undefined){
       $.each(search.promotions,function(value) {
         if (value.toLowerCase() == s.urlParams.q.toLowerCase()){
           if(search.promotions[value].length > 1){
