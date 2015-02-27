@@ -5940,11 +5940,6 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
   }).on('success.form.bv',callback);
 }
 /* ***** End of Function for initializing bootstrap validator ***** */
-
-//Checking if the device is a high dppc device
-function isHighDensity(){
-  return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 124dpi), only screen and (min-resolution: 1.3dppx), only screen and (min-resolution: 48.8dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3)').matches)) || (window.devicePixelRatio && window.devicePixelRatio > 1.3));
-}
 ;(function($){
 // Start navigation padding
 
@@ -6069,10 +6064,17 @@ function isHighDensity(){
   $(window).resize(function() {
     $(".row .column").matchHeight(true);
   });
-// End achieve Equal heights
 
-// Handling automatic generation of TOC lists on article pages
-// Prepare the TOC link for a given header tag
+  //Equalheights fix for elements in hidden tabs
+  $(document).ready(function(){
+    $('ul[data-tabs="tabs"] a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      $('.tab-pane.active .row .column').matchHeight(true);
+    });
+  });
+  // End achieve Equal heights
+
+  // Handling automatic generation of TOC lists on article pages
+  // Prepare the TOC link for a given header tag
   function prepareTocLink(headerTag, prefix) {
     //take the header text
     var headerText = $(headerTag).text();
@@ -6243,8 +6245,8 @@ function isHighDensity(){
   }
   /* ***** END Loop through list, showing li elements with summary class and hide all other li elements ***** */
 
-// Google Analytics event tagging - automated for various design elements
-// To enable analytics the element needs a 'analyze' class
+  // Google Analytics event tagging - automated for various design elements
+  // To enable analytics the element needs a 'analyze' class
   $(document).ready(function(){
     //Analytics for buttons
     $('button.analyze').bind( "click", function() {
@@ -6332,7 +6334,7 @@ function isHighDensity(){
 
   });
 
-//Adjustments to Bootstraps Modal window
+  //Adjustments to Bootstraps Modal window
   var modalDialog = {
     triggerModal : function(type,options){
       if(type == 'confirm'){
@@ -6364,9 +6366,9 @@ function isHighDensity(){
       }
     }
   };
-//End Adjustments to Bootstraps Modal window
+  //End Adjustments to Bootstraps Modal window
 
-// Script to highlight anchor tags in mini and big boxes on mouseenter
+  // Script to highlight anchor tags in mini and big boxes on mouseenter
   $("document").ready(function() {
     $( ".mini" ).mouseenter(function() {
       $(this).find('a').css('color', '#DA291C');
@@ -6429,10 +6431,6 @@ function isHighDensity(){
 
 
   $(document).ready(function() {
-    if(!isHighDensity()){
-      $('.scroll-indicator img').attr('height','24');
-    }
-
     $('.table-responsive').each(function() {
       if($(this).hasScrollBar()) {
         $(this).addClass('scrollable').prevAll('.scroll-indicator').show();
@@ -6445,40 +6443,6 @@ function isHighDensity(){
     });
     makeTableScrollable();
   });
-
-//Equalheights fix for elements in hidden tabs
-  $(document).ready(function(){
-    $('ul[data-tabs="tabs"] a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-      $('.tab-pane.active .row .column').matchHeight(true);
-    });
-  });
-
-//Show and hide contactus links
-  $(document).ready(function(){
-    $('a.contact').click(function(){
-      showHideForm(this);
-    });
-
-    $('.contactus-cancel').click( function(){
-      showHideForm($(this).parents('.contactus-form').prev('div').find('.contact'));
-    });
-
-    $('.contactus').submit(function(event){
-      var form = $(this);
-      event.preventDefault();
-      if($(form).find('input.phone').val()){
-        $(form).next('.contactus-receipt').find('.contact-number').append($(form).find('input.phone').val());
-        $(form).next('.contactus-receipt').show();
-        $(form).hide();
-      }
-
-    });
-  });
-
-  function showHideForm(elem){
-    $(elem).parent('div').next('div').slideToggle('fast');
-    $(elem).find('span:last').toggleClass('chevron-down chevron-up');
-  }
 
   /* ***** Function for making tables responsive ***** */
   function makeTableScrollable(){
@@ -6553,6 +6517,32 @@ function isHighDensity(){
 
   $.fn.hasScrollBar = function() {
     return this.get(0).scrollWidth > this.get(0).clientWidth;
+  }
+
+  //Show and hide contactus links
+  $(document).ready(function(){
+    $('a.contact').click(function(){
+      showHideForm(this);
+    });
+
+    $('.contactus-cancel').click( function(){
+      showHideForm($(this).parents('.contactus-form').prev('div').find('.contact'));
+    });
+
+    $('.contactus').submit(function(event){
+      var form = $(this);
+      event.preventDefault();
+      if($(form).find('input.phone').val()){
+        $(form).next('.contactus-receipt').find('.contact-number').append($(form).find('input.phone').val());
+        $(form).next('.contactus-receipt').show();
+        $(form).hide();
+      }
+    });
+  });
+
+  function showHideForm(elem){
+    $(elem).parent('div').next('div').slideToggle('fast');
+    $(elem).find('span:last').toggleClass('chevron-down chevron-up');
   }
 
   $(document).ready(function(){
