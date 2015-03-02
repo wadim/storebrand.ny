@@ -6010,7 +6010,7 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
   });
 
   $(document).ready(function() {
-    $(".dropdown-tabs.dropdown-select").change(function() {
+    $(".dropdown-tabs .dropdown-select").change(function() {
       $(".tab-content > .tab-pane.active").removeClass("active");
       $(".tab-content #"+this.value.toLowerCase()).addClass("active");
     });
