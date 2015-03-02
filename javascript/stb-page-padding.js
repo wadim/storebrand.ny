@@ -66,13 +66,13 @@
     });
   });
 
-  $(document).ready(function() {
+ $(document).ready(function() {
     $(".dropdown-tabs .dropdown-select").change(function() {
-      $(".tab-content > .tab-pane.active").removeClass("active");
+      $("#main-tab-content > .tab-pane.active").removeClass("active");
       $(".tab-content #"+this.value.toLowerCase()).addClass("active");
     });
   });
-
+  
 // Start prevent top menu clicks from running away with the page
   $(document).on('click', '.yamm .dropdown-menu', function(e) {
     e.stopPropagation();
