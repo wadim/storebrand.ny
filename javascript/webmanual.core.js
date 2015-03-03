@@ -414,3 +414,8 @@ $(document).ready(function(){
         });
   };
 })
+
+function acceptCookies(){
+  createCookie('acceptCookies','Yes', '90');
+  $('#cookieNote').hide('slow');
+}
