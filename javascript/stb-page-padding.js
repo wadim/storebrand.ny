@@ -69,7 +69,7 @@
  $(document).ready(function() {
     $(".dropdown-tabs .dropdown-select").change(function() {
       $("#main-tab-content > .tab-pane.active").removeClass("active");
-      $(".tab-content #"+this.value.toLowerCase()).addClass("active");
+      $(".tab-content #tab-"+this.value).addClass("active");
     });
   });
   
