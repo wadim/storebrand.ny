@@ -253,3 +253,23 @@ function initBootstrapValidator (formSelector,validatorFields,callback) {
   }).on('success.form.bv',callback);
 }
 /* ***** End of Function for initializing bootstrap validator ***** */
+
+
+/* ***** Function for finding the bootstrap environment ***** */
+function findBootstrapEnvironment() {
+  var envs = ['xs', 'sm', 'md', 'lg'];
+
+  $el = $('<div>');
+  $el.appendTo($('body'));
+
+  for (var i = envs.length - 1; i >= 0; i--) {
+    var env = envs[i];
+
+    $el.addClass('hidden-'+env);
+    if ($el.is(':hidden')) {
+      $el.remove();
+      return env;
+    }
+  }
+}
+/* ***** End of Function for finding the bootstrap environment ***** */
