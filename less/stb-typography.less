@@ -104,6 +104,14 @@ h3 {
     padding-bottom: 0;
     margin-top: 24px;
   }
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    padding-bottom: 0px;
+    border-bottom: 0;
+    text-decoration: underline;
+  }
 }
 
 h4 {
@@ -250,8 +258,9 @@ blockquote {
 
 }
 
-p a,
-div a{
+a {
+  color: @stb-secondary-charcoal;
+  cursor: pointer;
   text-decoration: none;
   border-bottom: 1px solid @stb-gray-fifth;
   &.twister, &.dropdown-toggle, {
@@ -262,11 +271,6 @@ div a{
     border-radius: 0 !important;
     border-bottom: 0;
   }
-}
-
-a {
-  color: @stb-secondary-charcoal;
-  cursor: pointer;
   &.contact{
     border-bottom: none;
     span.iconCompanion{
