@@ -31,11 +31,11 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReadyBanner(event) {
   $('.playVideoBtn').click(function() {
-    playVideoBanner(event.target);
+    playVideoBanner(event.target,this);
   });
 
   $('.video-close').click(function() {
-    stopVideoBanner(event.target);
+    stopVideoBanner(event.target,this);
   });
 }
 
@@ -48,19 +48,19 @@ function onPlayerStateChangeBanner(event) {
   }
 }
 
-function stopVideoBanner(player) {
+function stopVideoBanner(player, btn) {
   if(bootstrapEnv === 'md' || bootstrapEnv === 'lg') {
     player.stopVideo();
     player.seekTo(0, false);
   }
-  var bannerVideo = $(player.d).closest('.banner-video');
+  var bannerVideo = $(btn).closest('.banner-video');
   bannerVideo.children('.video-container').hide(500);
   bannerVideo.children('.video-text').show(500);
   bannerVideo.parent().addClass('top-padding-30');
 }
 
-function playVideoBanner(player) {
-  var bannerVideo = $(player.d).closest('.banner-video');
+function playVideoBanner(player, btn) {
+  var bannerVideo = $(btn).closest('.banner-video');
   bannerVideo.parent().removeClass('top-padding-30');
   bannerVideo.children('.video-text').hide(500);
   bannerVideo.children('.video-container').show(500, function() {
