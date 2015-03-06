@@ -1,11 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<<<<<<< HEAD
-  <title>storebrand.ny 0.75 - Life can be fine if we both</title>
-=======
   <title>storebrand.ny 0.75 - Three Quarters</title>
->>>>>>> db8c77e11f945ce1cad53a36201537db40882f33
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -539,10 +535,10 @@
             <h2>Storebrand.ny - Version 0.75</h2>
 
             <p class="intro">
-              Web manual as of <strong>05.03.2015</strong>
+              Web manual as of <strong>06.03.2015</strong>
             </p>
             <p>
-              This is the first update after the launch of storebrand.no on Enonic (partially).
+              This is the first update after the launch of storebrand.no on Enonic (partially). It's all bug fixes, really.
             </p>
             <p>Here's the code you'll want to include to start playing:</p>
             <pre>
@@ -550,18 +546,17 @@
  &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.75/javascript/stb-all.min.js"&gt;&lt;/script&gt;</pre>
             <div class="row">
               <div class="col-md-6">
-                <p class="top-padding-20"><strong>Relevant information this week</strong></p>
-                <p>No big news in the webmanual this week. We have prioritized fixing bugs etc. after the release</p>
+                <p class="top-padding-20"><strong>Relevant links this week</strong></p>
                 <ul class="stb">
+                  <li><a href="https://www.storebrand.no/">It's alive!</a></li>
                   <li><a href="webmanual.html">Web manual</a> nothing new, some small bug fixes.</li>
                   <li><a href="formmanual.html">Form manual</a> added a margin bottom to the select boxes. </li>
-
                 </ul>
               </div>
             </div>
             <hr />               
             <p>
-              Schwing!
+              Scha-wing!
             </p>
             <hr />
             <p>
@@ -616,6 +611,20 @@
       </div>
     </div>
   </div>
+  <script>
+   jQuery(document).ready(function(){
+   var accept = readCookie('acceptCookies');
+   if(accept=='Yes'){
+   jQuery('#cookieNote').hide();
+   }
+   });
+   
+   function acceptCookies(){
+   createCookie('acceptCookies','Yes', '90');
+   $('#cookieNote').hide('slow');
+   }
+   
+</script>
   <!-- End Cookie notice -->
 
 <!-- Start responsive footer -->
