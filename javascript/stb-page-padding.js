@@ -599,7 +599,6 @@
       var phoneNumber = $(form).find('input.phone').val();
       if(!isNaN(phoneNumber) && phoneNumber.length === 8){
         var callbackUrl = $(form).find(".callback-channel").val() + phoneNumber;
-        alert(callbackUrl);
         $.ajax({
           url: callbackUrl,
           success: function(data) {
