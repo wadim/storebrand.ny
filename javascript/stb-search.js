@@ -39,7 +39,7 @@ var s,search = {
       return;
     }
 
-    search.promotions = enonicSearchData.search.promotions.promotion;
+    search.promotions = enonicSearchData.search.promotions != undefined ? enonicSearchData.search.promotions.promotion :  undefined;
 
     if(enonicSearchData.search.autocomplete !== undefined && enonicSearchData.search.autocomplete.anbefalt !== undefined){
        search.typeaheads.anbefalte = enonicSearchData.search.autocomplete.anbefalt;
