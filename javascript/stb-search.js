@@ -246,8 +246,8 @@ var s,search = {
     });
 
     // If the search icon or the input element itself gets clicked, do not pass the click event to the document.
-    $('.navbar-nav .typeahead.tt-desktop.tt-input').focus(function(e) {
-
+    $('.navbar-nav .typeahead').focus(function(e) {
+      e.preventDefault();
       // If it's currently minimized and not animating, maximize it.
       if (s.maximized===false &&  s.animating===false) {
         search.maximizeSearch();

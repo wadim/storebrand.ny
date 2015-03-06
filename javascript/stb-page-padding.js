@@ -255,7 +255,7 @@
 
     //Hotkey for search
     if($('.typeahead').length){
-      $(document).bind('keydown', 'shift+s', function(event){event.preventDefault();$('.typeahead').click();});
+      $(document).bind('keydown', 'shift+s', function(event){event.preventDefault();$('.navbar-nav .typeahead').focus();});
     }
 
     //Hotkey for bottom
