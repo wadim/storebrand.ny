@@ -140,10 +140,11 @@
   // Prepare the TOC link for a given header tag
   function prepareTocLink(headerTag, prefix) {
     //take the header text
-    var headerText = $(headerTag).text();
+    var headerText = headerTag.text();
     //prepare the header ID from its text
-    $(headerTag).attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/\-/g,'').replace(/ /g,"-").replace(/[æå]/gi,'a').replace(/ø/gi,'o').toLowerCase()); // generating id for the h3
-    var headerId = $(headerTag).attr("id").replace(/\W/g, ''); // set the id
+    headerTag.attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/\-/g,'').replace(/ /g,"-").replace(/[æå]/gi,'a').replace(/ø/gi,'o').toLowerCase()); // generating id for the h3
+    var headerId = headerTag.attr("id").replace(/\W/g, ''); // set the id
+    headerTag.attr('name', headerId);
     //create the link and return it
     return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
   }
@@ -160,15 +161,13 @@
 
     // Iterate through all the top level headings (h3)
     for(var i=0; i<tocHeaders.length; i++) {
-      var heading = tocHeaders[i];
-
-      $(heading).attr('name', heading.textContent.replace(/\W/g, '').toLowerCase());
+      var heading = $(tocHeaders[i]);
 
       // Appending heading text to table to contents and also preparing links
       $('.toc-list .items').append( prepareTocLink(heading, "") );
 
       // Find all sub-headings(h4) inside each heading(h3)
-      var subHeading = $(heading).nextUntil('h3','h4');
+      var subHeading = heading.nextUntil('h3','h4');
 
       // Check if there are any h4 elements. If there are none, we should not run the code below.
       if(subHeading.length === 0) continue;
