@@ -39,7 +39,7 @@ var s,search = {
       return;
     }
 
-    search.promotions = enonicSearchData.search.promotion;
+    search.promotions = enonicSearchData.search.promotions.promotion;
 
     if(enonicSearchData.search.autocomplete !== undefined && enonicSearchData.search.autocomplete.anbefalt !== undefined){
        search.typeaheads.anbefalte = enonicSearchData.search.autocomplete.anbefalt;
@@ -375,15 +375,9 @@ var s,search = {
   getPromotions : function () {
     // Populate the promotion area
     if (s.start===0 && search.promotions !== undefined){
-      $.each(search.promotions,function(value) {
-        if (value.toLowerCase() === s.urlParams.q.toLowerCase()){
-          if(search.promotions[value].length > 1){
-            $(search.promotions[value]).each(function(index, promo) {
-              $(".searchresults").append('<div class="promotion' + '"><h3>'+promo.header + '<' + '/h3><' + 'p class="description">' + promo.text + '</p' + ' ><p class="showurl"' + '><a href="' + promo.url + '">' +promo.name + '<' + '/a><' + '/p><' + '/div>');
-            });
-          }else{
-            $(".searchresults").append('<div class="promotion' + '"><h3>'+search.promotions[value].header + '<' + '/h3><' + 'p class="description">' + search.promotions[value].text + '</p' + ' ><p class="showurl"' + '><a href="' + search.promotions[value].url + '">' + search.promotions[value].name + '<' + '/a><' + '/p><' + '/div>');
-          }
+      search.promotions.forEach(function (promotionObj){
+        if (promotionObj.query.toLowerCase() === s.urlParams.q.toLowerCase()){
+          $(".searchresults").append('<div class="promotion' + '"><h3>'+promotionObj.header + '<' + '/h3><' + 'p class="description">' + promotionObj.text + '</p' + ' ><p class="showurl"' + '><a href="' + promotionObj.url + '">' + promotionObj.name + '<' + '/a><' + '/p><' + '/div>');
         }
       });
     }
