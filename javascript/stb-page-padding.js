@@ -593,12 +593,26 @@
     });
 
     $('.contactus').submit(function(event){
-      var form = $(this);
       event.preventDefault();
-      if($(form).find('input.phone').val()){
-        $(form).next('.contactus-receipt').find('.contact-number').append($(form).find('input.phone').val());
-        $(form).next('.contactus-receipt').show();
-        $(form).hide();
+      var form = $(this);
+      $(form).find(".help-block").remove();
+      var phoneNumber = $(form).find('input.phone').val();
+      if(!isNaN(phoneNumber) && phoneNumber.length === 8){
+        var callbackUrl = $(form).find(".callback-channel").val() + phoneNumber;
+        alert(callbackUrl);
+        $.ajax({
+          url: callbackUrl,
+          success: function(data) {
+            $(form).next('.contactus-receipt').find('.contact-number').append(phoneNumber);
+            $(form).next('.contactus-receipt').show();
+            $(form).hide();
+          },
+          error: function(data, textStatus) {
+            $(form).find('input.phone').before("<span class='help-block has-error'><small class='help-block'><span class='stb-color-sprite-small warning'></span> Beklager, vi har problemer med denne tjenesten. Prøv igjen seinere.</small></span>");
+          }
+        });
+      } else {
+        $(form).find('input.phone').before("<span class='help-block has-error'><small class='help-block'><span class='stb-color-sprite-small warning'></span> Ugyldig telefonnummer!</small></span>");
       }
     });
   });
