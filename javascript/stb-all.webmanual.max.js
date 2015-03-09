@@ -5324,12 +5324,14 @@ var s,search = {
               setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
             }
         }else{
-           if(s.maximized && searchVal){
-            //window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-desktop.typeahead.tt-input').typeahead('val');
-            search.checkSearch(searchVal);
-          }else{
-            setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
-          }
+            if(s.maximized && searchVal){
+              search.checkSearch(searchVal);
+            }else if(!s.maximized){
+              search.maximizeSearch();
+              setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
+            }else{
+              search.minimizeSearch();
+           }
         }
       }
     });
