@@ -5409,16 +5409,18 @@ var s,search = {
     });
 
     // If the search icon or the input element itself gets clicked, do not pass the click event to the document.
-    $('.navbar-nav .typeahead').focus(function(e) {
-      e.preventDefault();
-      // If it's currently minimized and not animating, maximize it.
-      if (s.maximized===false &&  s.animating===false) {
-        search.maximizeSearch();
-      }
-
-      // This will prevent the minimizeSearch from being called too early.
-      e.stopPropagation();
-      return false;
+   $('.navbar-nav .typeahead').focus(function(e) {
+       e.preventDefault();
+       // If it's currently minimized and not animating, maximize it.
+       if (s.maximized===false && s.animating===false) {
+         search.maximizeSearch();
+         if(!$(document.activateElement).is('.tt-input')){
+            setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
+         }
+       }
+       // This will prevent the minimizeSearch from being called too early.
+       e.stopPropagation();
+       return false;
     });
   },
   minimizeSearch : function(){
