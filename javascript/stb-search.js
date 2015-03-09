@@ -163,12 +163,10 @@ var s,search = {
         }else{
             if(s.maximized && searchVal){
               search.checkSearch(searchVal);
-            }else if(!s.maximized){
+            else if(!s.maximized && !s.animating){
               search.maximizeSearch();
               setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
-            }else{
-              search.minimizeSearch();
-           }
+            }
         }
       }
     });
