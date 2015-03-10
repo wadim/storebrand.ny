@@ -1,0 +1,76 @@
+/****************************
+*      Progress-Diamonds       *
+*****************************/
+.progressBar {
+  background-image: url('../images/stripes.png');
+  background-repeat: repeat-x;
+  background-size: 100px;
+  background-position: 0 18px;
+  margin: 0 5%;
+}
+.progressBar #stepFigures {
+  margin-top: 48px;
+}
+.progressBar #stepNumbers {
+  margin-top: 6px;
+}
+.progressBar #stepLabels {
+  margin-top: 96px;
+}
+.progressBar div.square {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #808080;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+}
+.progressBar.noWizard div.square {
+  background: #d9291c;
+  width: 65px;
+  height: 65px;
+}
+.progressBar.noWizard #stepLabels {
+  text-align: center;
+}
+.progressBar.noWizard #stepNumbers .number {
+  font-size: 24px;
+  font-weight: bold;
+}
+.progressBar div.square.completed {
+  background: #6C8524;
+  cursor: pointer;
+}
+.progressBar div.square.completed:hover,
+.progressBar div.square.current:hover {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
+.progressBar div.square.active {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  background: #6C8524;
+}
+.progressBar div.square.current {
+  background: #FAA61A;
+  cursor: pointer;
+}
+.progressBar div.square.completed.hovered,
+.progressBar div.square.current.hovered {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+}
+.progressBar span.number {
+  position: absolute;
+  font-size: 50px;
+  color: white;
+  margin-left: 25px;
+  cursor: pointer;
+}
