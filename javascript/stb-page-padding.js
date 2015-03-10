@@ -647,6 +647,22 @@
     });
   });
 
+  $(document).ready(function(){
+    $('.attachmentUpload input.file').change(function(e){
+      var attachments = '';
+      for(var i = 0; i < e.target.files.length; i++){
+        attachments += '<div class="bottom-margin-10"><a>'+e.target.files[i].name+'</a><a class="pull-right closeLink"><p> Fjern <span class="stb-sprite-small remove"></span></p></a></div>';
+      }
+      $(this).parent().prev('.uploadedAttachments').append(attachments);
+    });
+
+    $('.stb-btn.uploadFile').click(function(e){
+      e.preventDefault();
+      $(this).prev('.attachmentUpload').find('input.file').click();
+    });
+
+  });
+
 }(jQuery));
 /* ***** Validator for national identity number ***** */
 

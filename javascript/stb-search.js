@@ -164,7 +164,6 @@ var s,search = {
             if(s.maximized && searchVal){
               search.checkSearch(searchVal);
             }else if(!s.maximized && !s.animating){
-              search.maximizeSearch();
               setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
             }
         }
@@ -221,21 +220,9 @@ var s,search = {
     // Set initial width
     s.initialWidth =  $('.navbar-nav .twitter-typeahead').css('width');
 
-    // Check when the document is clicked anywhere outside the search input field
-    $(document).click(function() {
-      // If the search field is in focus and not animating
-      if(s.maximized===true &&  s.animating===false) {
-        // Do not minimize if there is text in the search field
-        if(!$('.navbar-nav .typeahead.tt-input').val()){
-          search.minimizeSearch();
-        }
-      }
-    });
-
     // Close search if Escape button is pressed
     $("input.searchbox").keydown(function(event){
       if(event.which === 27){
-        search.minimizeSearch();
         $(this).blur();
       }
     });
@@ -244,6 +231,13 @@ var s,search = {
     $('.navbar-nav .search .remove').click(function(){
       search.minimizeSearch();
     });
+
+   $('.navbar-nav .typeahead').blur(function(e) {
+       e.preventDefault();
+       if(s.maximized===true &&  s.animating===false) {
+         search.minimizeSearch();
+       }
+   });
 
     // If the search icon or the input element itself gets clicked, do not pass the click event to the document.
    $('.navbar-nav .typeahead').focus(function(e) {
@@ -291,7 +285,7 @@ var s,search = {
       $('.navbar-nav > li.group').toggle();
 
       // Remove the focus from the smaller search box in case the user clicked on it during the animation
-      $('.navbar-nav .typeahead').blur();
+      //$('.navbar-nav .typeahead').blur();
 
       // Save the new state
       s.maximized = false;
