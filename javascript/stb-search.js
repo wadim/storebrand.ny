@@ -239,15 +239,18 @@ var s,search = {
        }
    });
 
+   //If for some reason input.tt-hint gets focus instead of tt-input(IE9)
+   	$('.navbar-nav .typeahead.tt-hint').focus(function(e) {
+   		e.preventDefault();
+   		$('input.searchbox.tt-input.tt-desktop').focus();
+   	});
+
     // If the search icon or the input element itself gets clicked, do not pass the click event to the document.
-   $('.navbar-nav .typeahead').focus(function(e) {
+   $('.navbar-nav .typeahead.tt-input').focus(function(e) {
        e.preventDefault();
        // If it's currently minimized and not animating, maximize it.
        if (s.maximized===false && s.animating===false) {
          search.maximizeSearch();
-         if(!$(document.activateElement).is('.tt-input')){
-            setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
-         }
        }
        // This will prevent the minimizeSearch from being called too early.
        e.stopPropagation();
