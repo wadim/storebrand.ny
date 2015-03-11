@@ -5535,7 +5535,7 @@ var s,search = {
     // Populate the promotion area
     if (s.start===0 && search.promotions !== undefined){
       search.promotions.forEach(function (promotionObj){
-        if (promotionObj.query.toLowerCase() === s.urlParams.q.toLowerCase()){
+        if (s.urlParams.q.match(/promotionObj.query/gi)){
           $(".searchresults").append('<div class="promotion' + '"><h3>'+promotionObj.header + '<' + '/h3><' + 'p class="description">' + promotionObj.text + '</p' + ' ><p class="showurl"' + '><a href="' + promotionObj.url + '">' + promotionObj.name + '<' + '/a><' + '/p><' + '/div>');
         }
       });
