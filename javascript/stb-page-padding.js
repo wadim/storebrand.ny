@@ -649,9 +649,11 @@
 
   $(document).ready(function(){
     $('.attachmentUpload input.file').change(function(e){
-      var attachments = '';
+
+      var attachments = e.target.files.length>1 ? "<p><b>"+e.target.files.length+" filer valgt:</b></p>" :  "<p><b>1 fil valgt:</b></p>";
+
       for(var i = 0; i < e.target.files.length; i++){
-        attachments += '<div class="bottom-margin-20"><a>'+e.target.files[i].name+'</a></div>';
+        attachments += '<ul class="stb"><li>'+e.target.files[i].name+'</li></ul>';
       }
       $(this).parent().prev('.uploadedAttachments').empty().append(attachments);
     });
