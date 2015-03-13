@@ -10,31 +10,32 @@
   <!-- Universal references useful everywhere -->
   <link rel="stylesheet" type="text/css" href="css/stb-all.min.css">
   <script type="text/javascript">
-    function loadMenu() {
+
+    function loadContent(url, callback) {
       var xmlhttp;
       // compatible with IE7+, Firefox, Chrome, Opera, Safari
       xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function(){
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-          document.body.insertAdjacentHTML("afterbegin",xmlhttp.responseText);
+          callback(xmlhttp);
         }
       }
-      xmlhttp.open("GET", "toppmeny.html", true);
+      xmlhttp.open("GET", url, true);
       xmlhttp.send();
     }
-
-    loadMenu();
+    loadContent("toppmeny.html", function(xmlhttp){document.body.insertAdjacentHTML("afterbegin",xmlhttp.responseText);})
+    loadContent("bunnmeny.html", function(xmlhttp){document.body.insertAdjacentHTML("beforeend",xmlhttp.responseText);})
   </script>
   <script type="text/javascript" src="javascript/stb-all.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
       $("#customerYes, #customerNo").change(function() {
         if($("#customerYes").is(":checked") == true) {
-          $("#noticeCustomer").removeClass("hidden");
-          $("#noticeNonCustomer").addClass("hidden");
+          $("#noticeCustomer").show();
+          $("#noticeNonCustomer").hide();
         } else {
-          $("#noticeCustomer").addClass("hidden");
-          $("#noticeNonCustomer").removeClass("hidden");
+          $("#noticeCustomer").hide();
+          $("#noticeNonCustomer").show();
         }
       })
 
@@ -75,7 +76,7 @@
   <!-- Start actual page contents -->
   <div class="container">   
     <div class="row">
-      <div class="col-md-8 col-sm-12 column">
+      <div class="col-md-8 col-sm-12">
         <div class="stb-box banner">
           <div class="text">
             <h2>Melding til Storebrand</h2>
@@ -92,27 +93,27 @@
                   <input class="stb-radio" type="radio" id="customerYes" name="stb-status" value="Ja" /><label class="xanalyze" for="customerYes" style="width: 100px;"><span></span>Ja</label>
                   <input class="stb-radio" type="radio" id="customerNo" name="stb-status" value="Nei" /><label class="xanalyze" for="customerNo" style="width: 100px;"><span></span>Nei</label>
                 </div> 
-                <div id="noticeCustomer" class="hidden stb-box transparent dashed info">
+                <div id="noticeCustomer" class="stb-box transparent dashed info" style="display: none;">
                   <span class="pull-left infoIcon"></span>
                   <div class="left-padding-60">
                     <h4>Obs!</h4>
                     <p>Hvis spørsmålet eller svaret ditt inneholder personlig informasjon, anbefaler vi at du logger inn på <a href="https://www.storebrand.no/">storebrand.no</a> og sender spørsmålet ditt fra postkassen på dine personlige sider. Henvendelser fra denne åpne siden kan vi bare besvare med generell informasjon. </p>
-                    <p><button onclick="$('#messageIntro').addClass('hidden'); $('#messageSpecify').removeClass('hidden'); return false;" class="stb-btn stb-form">Ok, fortsett</button></p>                 
+                    <p><button onclick="$('#messageIntro').hide(); $('#messageSpecify').show(); return false;" class="stb-btn stb-form">Ok, fortsett</button></p>
                   </div>
                 </div>
-                <div id="noticeNonCustomer" class="hidden stb-box transparent dashed info">
+                <div id="noticeNonCustomer" class="stb-box transparent dashed info" style="display: none;">
                   <span class="pull-left infoIcon"></span>
                   <div class="left-padding-60">
                     <h4>Obs!</h4>
                     <p>Fordi vi ikke vet sikkert hvem du er, er det grenser for hva slags spørsmål vi kan svare på med annet enn generell informasjon.</p>
-                    <p><button onclick="$('#messageIntro').addClass('hidden'); $('#messageSpecify').removeClass('hidden'); return false;" class="stb-btn stb-form">Ok, fortsett</button></p>
+                    <p><button onclick="$('#messageIntro').hide(); $('#messageSpecify').show(); return false;" class="stb-btn stb-form">Ok, fortsett</button></p>
                   </div>
                 </div>  
               </div>
               <!-- /The one where we find out if this is a customer -->
 
               <!-- The one where the category is decided -->
-              <div id="messageSpecify" class="hidden">
+              <div id="messageSpecify" style="display: none;">
                 <p class="intro">
                   For å få sendt henvendelsen din rett til riktig person, beskriv nærmere hva spørsmålet ditt gjelder.
                 </p>
@@ -200,39 +201,6 @@
                     </div>
                   </div>
                 </div>
-
-                <div id="insuranceAllTexts" class="hidden">
-                  <br />
-                  <div id="insuranceText1" class="hidden">
-                  <!-- Eksisterende forsikring av eiendeler -->
-                  Eksisterende forsikring av eiendeler
-                  </div>
- 
-                  <div id="insuranceText2" class="hidden">
-                  <!-- Eksisterende forsikring av liv -->
-                  Eksisterende forsikring av liv
-                  </div>                
-
-                  <div id="insuranceText3" class="hidden">
-                  <!-- Eksisterende helseforsikring -->
-                  Eksisterende helseforsikring
-                  </div>            
-
-                  <div id="insuranceText4" class="hidden">                
-                  <!-- Ny forsikring -->
-                  Ny forsikring
-                  </div>
-
-                  <div id="insuranceText5" class="hidden">
-                  <!-- Tidligere meldt skadesak -->                
-                  Tidligere meldt skadesak
-                  </div>            
-
-                  <div id="insuranceText6" class="hidden">
-                  <!-- Annet -->                
-                  Annet
-                  </div>
-                </div>
                 <!-- /Insurance -->
 
                 <!-- Savings -->
@@ -253,40 +221,7 @@
                     </div>
                   </div>
                 </div>
-
-                <div id="savingsAllTexts" class="hidden">
-                  <br />
-                  <div id="savingsText1" class="hidden">
-                  <!-- Starte sparing -->
-                  Starte sparing
-                  </div>
- 
-                  <div id="savingsText2" class="hidden">
-                  <!-- Flytte fond -->
-                  Flytte fond
-                  </div>                
-
-                  <div id="savingsText3" class="hidden">
-                  <!-- Flytte Linkavtale -->
-                  Flytte Linkavtale
-                  </div>            
-
-                  <div id="savingsText4" class="hidden">                
-                  <!-- Flytte pensjonskapitalbevis -->
-                  Flytte pensjonskapitalbevis
-                  </div>
-
-                  <div id="savingsText5" class="hidden">
-                  <!-- Bytte bank -->                
-                  Bytte bank
-                  </div>            
-
-                  <div id="savingsText6" class="hidden">
-                  <!-- Annet -->                
-                  Annet
-                  </div>
-                </div>
-                <!-- /Savings -->                
+                <!-- /Savings -->
 
                 <!-- Pension -->
                 <div id="regarding-pensjon" class="regarding">
@@ -306,40 +241,7 @@
                     </div>
                   </div>
                 </div>
-
-                <div id="pensionAllTexts" class="hidden">
-                  <br />
-                  <div id="pensionText1" class="hidden">
-                    <!-- 1 -->
-                    1
-                  </div>
- 
-                  <div id="pensionText2" class="hidden">
-                    <!-- 2 -->
-                    2
-                  </div>                
-
-                  <div id="pensionText3" class="hidden">
-                  <!-- 3 -->
-                    3
-                  </div>            
-
-                  <div id="pensionText4" class="hidden">                
-                  <!-- 4 -->                  
-                    4
-                  </div>
-
-                  <div id="pensionText5" class="hidden">
-                  <!-- 5 -->                
-                    5
-                  </div>            
-
-                  <div id="pensionText6" class="hidden">
-                  <!-- 6 -->                
-                    6
-                  </div>
-                </div>
-                <!-- /Pension -->   
+                <!-- /Pension -->
 
 
               </div>
@@ -381,7 +283,6 @@
                           <td>Husforsikring</td>
                           <td>Livsforsikring</td>
                           <td>Andre forsikringer</td>
-
                         </tr>
                         <tr>
                           <td>
@@ -413,20 +314,20 @@
 
              <div class="contactForm">
                <div class="stb-form-group top-margin-10">
-                 <label for="formInput8">Min kommentar</label>
-                 <textarea id="formInput8" class="form-control" rows="4" cols="40"></textarea>
+                 <label for="comment">Min kommentar</label>
+                 <textarea id="comment" class="form-control" rows="4" cols="40"></textarea>
                </div>
-               <label for="navn">Navn</label>
+               <label for="name">Navn</label>
                <div class="stb-form-group">
-                 <input id="navn" type="text" class="" placeholder="Navn"/>
+                 <input id="name" type="text" class="" placeholder="Navn"/>
                </div>
-               <label for="epost">Epost</label>
+               <label for="email">Epost</label>
                <div class="stb-form-group">
-                 <input id="epost" type="email" class="" placeholder="Placeholder">
+                 <input id="email" type="email" class="" placeholder="Placeholder">
                </div>
-               <label for="formInput1">Telefonnummer</label>
+               <label for="phone">Telefonnummer</label>
                <div class="stb-form-group">
-                 <input id="formInput1" type="tel" class="" placeholder="Telefonnummer">
+                 <input id="phone" type="tel" class="" placeholder="Telefonnummer">
                </div>
                <label for="attachments">Vedlegg</label>
                <div class="uploadedAttachments bottom-margin-20">

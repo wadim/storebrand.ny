@@ -546,33 +546,5 @@
 </div>
 </div>
 </div>
-<div xmlns:portal="http://www.enonic.com/cms/xslt/portal" xmlns:stk="http://www.enonic.com/cms/xslt/stk" xmlns:stb="http://www.storebrand.no/cms/xslt/stb" xmlns:xs="http://www.w3.org/2001/XMLSchema" data-spy="affix" class="cookieNote" id="cookieNote">
-  <div class="cookieClose">
-    <a title="Lukk" href="#" onclick="acceptCookies(); return false">Lukk
-      <span class="stb-sprite-small white remove"></span>
-    </a>
-  </div>
-  <div class="cookieInfo">
-    <div class="info">På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet
-      til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke
-      siden bekrefter du at du godtar det. <a href="https://www.storebrand.no/site/stb.nsf/Pages/samfunnsansvar_personopplysninger.html">Mer info om hvordan vi bruker cookies</a>.
-    </div>
-  </div>
-</div>
-<script xmlns:portal="http://www.enonic.com/cms/xslt/portal" xmlns:stk="http://www.enonic.com/cms/xslt/stk" xmlns:stb="http://www.storebrand.no/cms/xslt/stb" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  jQuery(document).ready(function(){
-    var accept = readCookie('acceptCookies');
-    if(accept=='Yes'){
-      jQuery('#cookieNote').hide();
-    }
-  });
-
-  function acceptCookies(){
-    createCookie('acceptCookies','Yes', '90');
-    $('#cookieNote').hide('slow');
-  }
-
-</script><div id="window-resizer-tooltip"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span>
-</div>
 </body>
 </html>
