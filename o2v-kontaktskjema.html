@@ -30,7 +30,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $("#customerYes, #customerNo").change(function() {
-        if($("#customerYes").is(":checked") == true) {
+        if($("#customerYes").is(":checked")) {
           $("#noticeCustomer").show();
           $("#noticeNonCustomer").hide();
         } else {
@@ -54,9 +54,59 @@
         if(showmessage){
           $("#message-level2-"+showmessage).show();
         }
-        var showForm = $(this).find("option:selected").attr("data-showform");
-        showForm ? $(".contactForm").show() : $(".contactForm").hide();
-      })
+        $(this).find("option:selected").attr("data-showform") ? $(".contactForm").show() : $(".contactForm").hide();
+      });
+
+      var contactValidationFields =  {
+        comment: {
+          trigger: 'blur',
+          container: '#comment-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-small warning"></span> Oppgi kommentar'
+            }
+          }
+        },
+        name: {
+          trigger: 'blur',
+          container: '#name-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-small warning"></span> Oppgi navn'
+            }
+          }
+        },
+        email: {
+          trigger: 'blur',
+          container: '#email-message',
+          validators: {
+            emailAddress : {
+              message: '<span class="stb-color-sprite-small warning"></span> Ugyldig epost'
+            },
+            notEmpty: {
+              message: '<span class="stb-color-sprite-small warning"></span> Oppgi epost'
+            }
+          }
+        },
+        phone: {
+          trigger: 'blur',
+          container: '#phone-message',
+          validators: {
+            phone: {
+              country: 'DK',
+              message: '<span class="stb-color-sprite-small warning"></span> Ugyldig telefonnr'
+            },
+            notEmpty: {
+              message: '<span class="stb-color-sprite-small warning"></span> Oppgi telefonnr'
+            }
+          }
+        }
+      };
+
+      initBootstrapValidator($('form#contactus'),contactValidationFields, function(e) {
+        // Prevent form submission
+        e.preventDefault();
+        alert("Submit")},"enabled");
     });
   </script>
 
@@ -80,7 +130,7 @@
         <div class="stb-box banner">
           <div class="text">
             <h2>Melding til Storebrand</h2>
-            <form id="message" class="stb-form" enctype="multipart" method="post">
+            <form id="contactus" class="stb-form" enctype="multipart" method="post">
 
               <!-- The one where we find out if this is a customer -->
               <div id="messageIntro"> 
@@ -313,21 +363,25 @@
               <!-- /The one where the message is entered -->
 
              <div class="contactForm">
+               <label for="comment">Min kommentar</label>
+               <span id="comment-message" class="help-block"></span>
                <div class="stb-form-group top-margin-10">
-                 <label for="comment">Min kommentar</label>
-                 <textarea id="comment" class="form-control" rows="4" cols="40"></textarea>
+                 <textarea id="comment" name="comment" class="form-control" rows="4" cols="40"></textarea>
                </div>
                <label for="name">Navn</label>
-               <div class="stb-form-group">
-                 <input id="name" type="text" class="" placeholder="Navn"/>
+               <span id="name-message" class="help-block"></span>
+               <div class="stb-form-group" style="width: 230px">
+                 <input id="name" name="name" type="text" class="" placeholder="Navn"/>
                </div>
                <label for="email">Epost</label>
-               <div class="stb-form-group">
-                 <input id="email" type="email" class="" placeholder="Placeholder">
+               <span id="email-message" class="help-block"></span>
+               <div class="stb-form-group" style="width: 230px">
+                 <input id="email" name="email" type="text" class="" placeholder="Placeholder"/>
                </div>
                <label for="phone">Telefonnummer</label>
-               <div class="stb-form-group">
-                 <input id="phone" type="tel" class="" placeholder="Telefonnummer">
+               <span id="phone-message" class="help-block"></span>
+               <div class="stb-form-group" style="width: 230px">
+                 <input id="phone" name="phone" type="text" class="" placeholder="Telefonnummer"/>
                </div>
                <label for="attachments">Vedlegg</label>
                <div class="uploadedAttachments bottom-margin-20">
