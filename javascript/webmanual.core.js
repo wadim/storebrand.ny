@@ -419,3 +419,13 @@ function acceptCookies(){
   createCookie('acceptCookies','Yes', '90');
   $('#cookieNote').hide('slow');
 }
+
+/* ***** Date validator for boootstrap validator and datetimepicker ***** */
+var dateValidator = {
+  message: '<span class="glyphicon glyphicon-exclamation-sign"></span> Verdien er ikke en gyldig dato.',
+  callback: function(value,validator){
+    var m = new moment(value, 'DD.MM.YYYY', true);
+    return m.isValid();
+  }
+};
+/* ***** End of date validator for boootstrap validator and datetimepicker ***** */

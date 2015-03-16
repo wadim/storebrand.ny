@@ -1,0 +1,550 @@
+<html>
+<head></head>
+<body>
+<div xmlns:portal="http://www.enonic.com/cms/xslt/portal" xmlns:stk="http://www.enonic.com/cms/xslt/stk" xmlns:stb="http://www.storebrand.no/cms/xslt/stb" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="login-urls" data-login-all="/cms/innlogging/logg-inn" data-login-fail="/cms/innlogging/velg-selv" data-login-mobile="/cms/innlogging/logg-inn-med-bankid-mobil" data-login-bankid="/cms/innlogging/logg-inn-med-bankid" style="display:none;"></div>
+<div xmlns:portal="http://www.enonic.com/cms/xslt/portal" xmlns:stk="http://www.enonic.com/cms/xslt/stk" xmlns:stb="http://www.storebrand.no/cms/xslt/stb" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="chat-status" data-url="/cms/api/chat-status"></div>
+<div xmlns:portal="http://www.enonic.com/cms/xslt/portal" xmlns:stk="http://www.enonic.com/cms/xslt/stk" xmlns:stb="http://www.storebrand.no/cms/xslt/stb" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="shadow-overlay"></div>
+<div xmlns:portal="http://www.enonic.com/cms/xslt/portal" xmlns:stk="http://www.enonic.com/cms/xslt/stk" xmlns:stb="http://www.storebrand.no/cms/xslt/stb" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="top-menu-nav">
+<div class="navbar desktop navbar-default hidden-xs hidden-sm">
+<div class="container yamm">
+<div class="navbar-header col-md-4">
+  <a href="/cms/privat">
+    <img src="images/logo.png" title="Storebrand-logo" class="logo" width="200" style="max-width: 100%;">
+  </a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav col-md-8">
+<li class="current col-md-3 yamm-fw group dropdown">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+    <span class="stb-sprite-medium white menu-bars"></span>Privat
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <a href="#" class="pull-right closeLink">
+        <span class="stb-sprite-medium remove"></span>
+      </a>
+    </li>
+    <li class="menulinks">
+      <ul>
+        <li class="col-md-2">
+          <h4>
+            <a href="/cms/privat/pensjon">Pensjon</a>
+          </h4>
+          <ul>
+            <li>
+              <a href="/cms/privat/pensjon/finn-pensjonstallet-ditt">Finn ditt pensjonstall</a>
+            </li>
+            <li>
+              <a href="/cms/privat/pensjon/velg-riktig-spareprofil">Velg riktig spareprofil</a>
+            </li>
+            <li>
+              <a href="/cms/privat/pensjon/pensjonskapitalbevis">Pensjonskapitalbevis</a>
+            </li>
+            <li>
+              <a href="/cms/privat/pensjon/fripolise-med-investeringsvalg">Fripolise med investeringsvalg</a>
+            </li>
+            <li>
+              <a href="/cms/privat/pensjon/sparing-til-pensjon">Sparing til pensjon</a>
+            </li>
+            <li>
+              <a href="/cms/privat/pensjon/ekstrapensjon">Ekstrapensjon</a>
+            </li>
+            <li>
+              <a href="/cms/privat/pensjon/fripolise">Fripolise</a>
+            </li>
+          </ul>
+        </li>
+        <li class="col-md-2">
+          <h4>
+            <a href="/cms/privat/sparing">Sparing</a>
+          </h4>
+          <ul>
+            <li>
+              <a href="/cms/privat/sparing/sparing-i-fond">Sparing i fond</a>
+            </li>
+            <li>
+              <a href="/cms/privat/sparing/fond-til-barnet-ditt">Fond til barnet ditt</a>
+            </li>
+            <li>
+              <a href="/cms/privat/sparing/fond-i-gave">Fond i gave</a>
+            </li>
+            <li>
+              <a href="/cms/privat/sparing/fondskonto">Fondskonto</a>
+            </li>
+            <li>
+              <a href="/cms/privat/sparing/fondsliste-alle-vare-fond">Fondsliste — Alle våre fond</a>
+            </li>
+          </ul>
+        </li>
+        <li class="col-md-2">
+          <h4>
+            <a href="/cms/privat/bank-og-lan">Bank og lån</a>
+          </h4>
+          <ul>
+            <li>
+              <a href="/cms/privat/bank-og-lan/boliglan">Boliglån</a>
+            </li>
+            <li>
+              <a href="/cms/privat/bank-og-lan/boliglan-blu40">Boliglån — BLU40</a>
+            </li>
+            <li>
+              <a href="/cms/privat/bank-og-lan/dagens-lanerenter">Dagens lånerenter</a>
+            </li>
+            <li>
+              <a href="/cms/privat/bank-og-lan/kredittkort">Kredittkort</a>
+            </li>
+            <li>
+              <a href="/cms/privat/bank-og-lan/bsu-konto">BSU-konto</a>
+            </li>
+            <li>
+              <a href="/cms/privat/bank-og-lan/sparekonto">Sparekonto</a>
+            </li>
+            <li>
+              <a href="/cms/privat/bank-og-lan/plasseringskonto">Plasseringskonto</a>
+            </li>
+          </ul>
+        </li>
+        <li class="col-md-2">
+          <h4>
+            <a href="/cms/privat/forsikring">Forsikring</a>
+          </h4>
+          <ul>
+            <li>
+              <a href="/cms/privat/forsikring/barneforsikring">Barneforsikring</a>
+            </li>
+            <li>
+              <a href="/cms/privat/forsikring/bilforsikring">Bilforsikring</a>
+            </li>
+            <li>
+              <a href="/cms/privat/forsikring/dodsfallsforsikring">Dødsfallsforsikring</a>
+            </li>
+            <li>
+              <a href="/cms/privat/forsikring/helseforsikring">Helseforsikring</a>
+            </li>
+            <li>
+              <a href="/cms/privat/forsikring/husforsikring">Husforsikring</a>
+            </li>
+            <li>
+              <a href="/cms/privat/forsikring/hytteforsikring">Hytteforsikring</a>
+            </li>
+            <li>
+              <a href="/cms/privat/forsikring/innboforsikring">Innboforsikring</a>
+            </li>
+            <li>
+              <a href="/cms/privat/forsikring/mc-forsikring">MC-forsikring</a>
+            </li>
+            <li>
+              <a href="/cms/privat/forsikring/reiseforsikring">Reiseforsikring</a>
+            </li>
+            <li>
+              <a href="/cms/privat/forsikring/uforeforsikring">Uføreforsikring</a>
+            </li>
+          </ul>
+        </li>
+        <li class="col-md-4 sidelinks">
+          <ul>
+            <li>
+              <a href="/cms/privat/pensjon/storebrand-fordel">
+                <span class="stb-theme-sprites medal"></span>
+                <span>Storebrand Fordel</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="top-margin-20">
+            <li>
+              <a href="/cms/privat/forsikring/meld-skade">
+                <span class="stb-sprite-medium edit"></span>
+                <span>Meld skade</span>
+              </a>
+            </li>
+            <li>
+              <a href="/cms/kontakt-oss">
+                <span class="stb-sprite-medium bubble"></span>
+                <span>Kontakt oss</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:02222">
+                <span class="stb-sprite-medium phone"></span>
+                <span>Ring veihjelp 02222</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li class="col-md-3 yamm-fw group dropdown">
+  <a href="/cms/bedrift" class="dropdown-toggle">Bedrift</a>
+</li>
+<li class="login col-md-3 yamm-fw group dropdown">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+    <span class="stb-sprite-medium white lock"></span>Logg inn
+  </a>
+  <ul class="dropdown-menu">
+    <li class="clearfix">
+      <a href="#" class="pull-right closeLink">
+        <span class="stb-sprite-medium remove"></span>
+      </a>
+    </li>
+    <li>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h3>Innlogging</h3>
+            <p>Tast inn fødselsnummeret ditt.
+              <a href="https://www.storebrand.no/site/stb.nsf/pages/forsidebedrift.html?opendocument?login=true" class="loginlink">Bedriftskunder kan logge inn her</a>
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <form id="start-login-form" method="post" data-login-page="login" class="stb-form-inline login" role="form">
+              <label>Fødselsnummer</label>
+              <span id="menulogin-message" class="help-block"></span>
+              <div class="stb-form-group with-submit">
+                <input type="tel" class="" maxlength="11" name="nationalIdentityNumber" placeholder="11 siffer" style="width: 230px">
+                <button class="stb-btn stb-form is-submit">Logg inn</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</li>
+<li class="search col-md-3">
+  <div class="stb-sprite-small remove white pull-left"></div>
+  <form>
+    <label>
+      <input type="text" class="typeahead tt-desktop searchbox" data-search-url="/cms/search" data-searchdata-url="/cms/utvikling/json/search">
+                        <span class="search-icon">
+                           <span class="stb-sprite-small search white"></span>
+                        </span>
+    </label>
+  </form>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-6 column rightColor"></div>
+</div>
+<nav class="navbar mobile navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
+  <div class="container">
+    <div class="col-xs-6">
+      <a href="/cms/privat">
+        <img class="stb-logo-mobile" src="images/logo.png" title="Storebrand-logo" width="200" style="max-width: 100%;">
+      </a>
+    </div>
+    <div class="col-xs-6">
+      <ul class="nav">
+        <li>
+          <a id="nav-toggle" href="#" onclick="$('#mobilemenu').slideToggle(100); $(this).toggleClass('active');">
+            <span></span>
+            <p>Meny</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-xs-6 column leftColor"></div>
+  <div class="col-xs-6 column rightColor"></div>
+</nav>
+</div>
+<div xmlns:portal="http://www.enonic.com/cms/xslt/portal" xmlns:stk="http://www.enonic.com/cms/xslt/stk" xmlns:stb="http://www.storebrand.no/cms/xslt/stb" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="mobilemenu" class="hidden-md hidden-lg">
+<div class="row">
+<div class="col-xs-12">
+<ul class="nav nav-tabs">
+  <li class="tab-box active">
+    <a href="#tab-privat" data-toggle="tab">Privat</a>
+  </li>
+  <li class="tab-box">
+    <a href="/cms/bedrift">Bedrift</a>
+  </li>
+  <li class="tab-box">
+    <a href="#tab-login" data-toggle="tab">Logg inn</a>
+  </li>
+  <li class="tab-box">
+    <a href="#tab-search" data-toggle="tab">
+      <span class="stb-sprite-medium search"></span>
+    </a>
+  </li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane fade in active" id="tab-privat">
+  <div class="panel-group stb-accordion" id="accordion-privat">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#panel-285">
+          <h4 class="panel-title">Pensjon
+            <span class="stb-sprite-medium chevron-down red pull-right"></span>
+          </h4>
+        </a>
+      </div>
+      <div id="panel-285" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="stb-list-group">
+            <a class="menu-item" href="/cms/privat/pensjon">Forside Pensjon</a>
+            <a class="menu-item" href="/cms/privat/pensjon/finn-pensjonstallet-ditt">Finn ditt pensjonstall</a>
+            <a class="menu-item" href="/cms/privat/pensjon/velg-riktig-spareprofil">Velg riktig spareprofil</a>
+            <a class="menu-item" href="/cms/privat/pensjon/pensjonskapitalbevis">Pensjonskapitalbevis</a>
+            <a class="menu-item" href="/cms/privat/pensjon/fripolise-med-investeringsvalg">Fripolise med investeringsvalg</a>
+            <a class="menu-item" href="/cms/privat/pensjon/sparing-til-pensjon">Sparing til pensjon</a>
+            <a class="menu-item" href="/cms/privat/pensjon/ekstrapensjon">Ekstrapensjon</a>
+            <a class="menu-item" href="/cms/privat/pensjon/fripolise">Fripolise</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#panel-289">
+          <h4 class="panel-title">Sparing
+            <span class="stb-sprite-medium chevron-down red pull-right"></span>
+          </h4>
+        </a>
+      </div>
+      <div id="panel-289" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="stb-list-group">
+            <a class="menu-item" href="/cms/privat/sparing">Forside Sparing</a>
+            <a class="menu-item" href="/cms/privat/sparing/sparing-i-fond">Sparing i fond</a>
+            <a class="menu-item" href="/cms/privat/sparing/fond-til-barnet-ditt">Fond til barnet ditt</a>
+            <a class="menu-item" href="/cms/privat/sparing/fond-i-gave">Fond i gave</a>
+            <a class="menu-item" href="/cms/privat/sparing/fondskonto">Fondskonto</a>
+            <a class="menu-item" href="/cms/privat/sparing/fondsliste-alle-vare-fond">Fondsliste — Alle våre fond</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#panel-288">
+          <h4 class="panel-title">Bank og lån
+            <span class="stb-sprite-medium chevron-down red pull-right"></span>
+          </h4>
+        </a>
+      </div>
+      <div id="panel-288" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="stb-list-group">
+            <a class="menu-item" href="/cms/privat/bank-og-lan">Forside Bank og lån</a>
+            <a class="menu-item" href="/cms/privat/bank-og-lan/boliglan">Boliglån</a>
+            <a class="menu-item" href="/cms/privat/bank-og-lan/boliglan-blu40">Boliglån — BLU40</a>
+            <a class="menu-item" href="/cms/privat/bank-og-lan/dagens-lanerenter">Dagens lånerenter</a>
+            <a class="menu-item" href="/cms/privat/bank-og-lan/kredittkort">Kredittkort</a>
+            <a class="menu-item" href="/cms/privat/bank-og-lan/bsu-konto">BSU-konto</a>
+            <a class="menu-item" href="/cms/privat/bank-og-lan/sparekonto">Sparekonto</a>
+            <a class="menu-item" href="/cms/privat/bank-og-lan/plasseringskonto">Plasseringskonto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="accordion" data-toggle="collapse" data-parent="#accordion-privat" href="#panel-287">
+          <h4 class="panel-title">Forsikring
+            <span class="stb-sprite-medium chevron-down red pull-right"></span>
+          </h4>
+        </a>
+      </div>
+      <div id="panel-287" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="stb-list-group">
+            <a class="menu-item" href="/cms/privat/forsikring">Forside Forsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/barneforsikring">Barneforsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/bilforsikring">Bilforsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/dodsfallsforsikring">Dødsfallsforsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/helseforsikring">Helseforsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/husforsikring">Husforsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/hytteforsikring">Hytteforsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/innboforsikring">Innboforsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/mc-forsikring">MC-forsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/reiseforsikring">Reiseforsikring</a>
+            <a class="menu-item" href="/cms/privat/forsikring/uforeforsikring">Uføreforsikring</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stbcolor-gray second top-padding-20">
+    <div class="row sidelinks">
+      <div class="col-sm-6">
+        <ul class="stb">
+          <li>
+            <a href="/cms/privat/pensjon/storebrand-fordel">
+              <span class="stb-theme-sprites medal"></span>
+              <span>Storebrand Fordel</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <ul class="stb">
+          <li>
+            <a href="/cms/privat/forsikring/meld-skade">
+              <span class="stb-sprite-medium edit"></span>
+              <span>Meld skade</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cms/kontakt-oss">
+              <span class="stb-sprite-medium bubble"></span>
+              <span>Kontakt oss</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:02222">
+              <span class="stb-sprite-medium phone"></span>
+              <span>Ring veihjelp 02222</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tab-pane fade" id="tab-bedrift">
+  <div class="panel-group stb-accordion" id="accordion-bedrift">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="accordion" data-toggle="collapse" data-parent="#accordion-bedrift" href="#panel-299">
+          <h4 class="panel-title">Tjenestepensjon
+            <span class="stb-sprite-medium chevron-down red pull-right"></span>
+          </h4>
+        </a>
+      </div>
+      <div id="panel-299" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="stb-list-group">
+            <a class="menu-item" href="/cms/bedrift/tjenestepensjon">Forside Tjenestepensjon</a>
+            <a class="menu-item" href="/cms/bedrift/tjenestepensjon/innskuddspensjon">Innskuddspensjon</a>
+            <a class="menu-item" href="/cms/bedrift/tjenestepensjon/ytelsespensjon">Ytelsespensjon</a>
+            <a class="menu-item" href="/cms/bedrift/tjenestepensjon/obligatorisk-tjenestepensjon">Obligatorisk tjenestepensjon</a>
+            <a class="menu-item" href="/cms/bedrift/tjenestepensjon/offentlig-pensjon">Offentlig pensjon</a>
+            <a class="menu-item" href="/cms/bedrift/tjenestepensjon/internasjonale-l%C3%B8sninger">Internasjonale løsninger</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="accordion" data-toggle="collapse" data-parent="#accordion-bedrift" href="#panel-300">
+          <h4 class="panel-title">Forsikring av ansatte
+            <span class="stb-sprite-medium chevron-down red pull-right"></span>
+          </h4>
+        </a>
+      </div>
+      <div id="panel-300" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="stb-list-group">
+            <a class="menu-item" href="/cms/bedrift/forsikring-av-ansatte">Forside Forsikring av ansatte</a>
+            <a class="menu-item" href="/cms/bedrift/forsikring-av-ansatte/helseforsikring">Helseforsikring</a>
+            <a class="menu-item" href="/cms/bedrift/forsikring-av-ansatte/ufore-og-etterlattepensjon">Ufore- og etterlattepensjon</a>
+            <a class="menu-item" href="/cms/bedrift/forsikring-av-ansatte/personalforsikring">Personalforsikring</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="accordion" data-toggle="collapse" data-parent="#accordion-bedrift" href="#panel-404">
+          <h4 class="panel-title">Rådgivning og betjening
+            <span class="stb-sprite-medium chevron-down red pull-right"></span>
+          </h4>
+        </a>
+      </div>
+      <div id="panel-404" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="stb-list-group">
+            <a class="menu-item" href="/cms/bedrift/r%C3%A5dgivning-og-betjening">Forside Rådgivning og betjening</a>
+            <a class="menu-item" href="/cms/bedrift/r%C3%A5dgivning-og-betjening/selvstendig-n%C3%A6ringsdrivende">Selvstendig næringsdrivende</a>
+            <a class="menu-item" href="/cms/bedrift/r%C3%A5dgivning-og-betjening/nyetablert-bedrift">Nyetablert bedrift</a>
+            <a class="menu-item" href="/cms/bedrift/r%C3%A5dgivning-og-betjening/sm%C3%A5-og-mellomstore-bedrifter">Små- og mellomstore bedrifter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="accordion" data-toggle="collapse" data-parent="#accordion-bedrift" href="#panel-407">
+          <h4 class="panel-title">Pensjon i praksis
+            <span class="stb-sprite-medium chevron-down red pull-right"></span>
+          </h4>
+        </a>
+      </div>
+      <div id="panel-407" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="stb-list-group">
+            <a class="menu-item" href="/cms/bedrift/pensjon-i-praksis">Forside Pensjon i praksis</a>
+            <a class="menu-item" href="/cms/bedrift/pensjon-i-praksis/storebrand-fordel">Storebrand Fordel</a>
+            <a class="menu-item" href="/cms/bedrift/pensjon-i-praksis/kurs-og-seminarer">Kurs og seminarer</a>
+            <a class="menu-item" href="/cms/bedrift/pensjon-i-praksis/in-english">In English</a>
+            <a class="menu-item" href="/cms/bedrift/pensjon-i-praksis/ekstra-sparing-til-pensjon">Ekstra sparing til pensjon</a>
+            <a class="menu-item" href="/cms/bedrift/pensjon-i-praksis/lederpensjon">Lederpensjon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stbcolor-gray second top-padding-20">
+    <div class="row sidelinks">
+      <div class="col-sm-6">
+        <ul class="stb"></ul>
+      </div>
+      <div class="col-sm-6">
+        <ul class="stb">
+          <li>
+            <a href="tel:02222">
+              <span class="stb-sprite-medium phone"></span>
+              <span>Ring veihjelp 02222</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tab-pane fade" id="tab-login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Innlogging</h3>
+        <p>Tast inn fødselsnummeret ditt.
+          <a href="https://www.storebrand.no/site/stb.nsf/pages/forsidebedrift.html?opendocument?login=true" class="loginlink">Bedriftskunder kan logge inn her</a>
+        </p>
+        <form id="start-login-form-mobile" method="post" class="stb-form-inline login" role="form">
+          <label for="nationalIdentityNumber">Fødselsnummer</label>
+          <span class="help-block info-message"></span>
+          <div class="stb-form-group with-submit">
+            <input id="nationalIdentityNumber" class="has-submit" type="tel" name="nationalIdentityNumber" maxlength="11" placeholder="11 siffer" style="width: 230px;">
+            <button class="stb-btn stb-form is-submit bottom-margin-20">Logg inn</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tab-pane fade" id="tab-search">
+  <div class="container">
+    <div class="row searchcontainer">
+      <div class="col-md-12">
+        <form id="searchMobile" class="stb-form-inline search tt-mobile" role="form">
+          <div class="stb-form-group">
+            <input type="text" class="has-submit searchbox typeahead" placeholder="Søk i sidene">
+                              <span class="search-icon">
+                                 <button>
+                                   <span class="stb-sprite-medium search charcoal"></span>
+                                 </button>
+                              </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

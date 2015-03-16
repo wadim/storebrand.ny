@@ -240,9 +240,9 @@ $.fn.extend({
 /* ***** End of Function for opening chat ***** */
 
 /* ***** Function for initializing bootstrap validator ***** */
-function initBootstrapValidator (formSelector,validatorFields,callback) {
+function initBootstrapValidator (formSelector,validatorFields,callback,live) {
   formSelector.bootstrapValidator({
-    live: 'disabled',
+    live: live === undefined ? 'disabled' : live,
     group: '.stb-form-group',
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',

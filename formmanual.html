@@ -6,35 +6,27 @@
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+
+  <!-- Full list of elements needed for web manual, non-optimized -->
   <link rel="stylesheet" type="text/css" href="css/stb-all-webmanual.min.css">
+  <script type="text/javascript" src="javascript/modernizr.custom.js"></script>
+  <script type="text/javascript" src="javascript/jquery.min.js"></script>
+  <script type="text/javascript" src="javascript/jquery.eqheight.js"></script>
+  <script type="text/javascript" src="javascript/jquery-ui-1.11.0.js"></script>
+  <script type="text/javascript" src="javascript/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript/typeahead.bundle.min.js"></script>
+  <script type="text/javascript" src="javascript/stb-search.js"></script>
+  <script type="text/javascript" src="javascript/stb-common.js"></script>
+  <script type="text/javascript" src="javascript/stb-page-padding.js"></script>
+  <script type="text/javascript" src="javascript/stb-video.js"></script>
+  <script type="text/javascript" src="javascript/bootstrapValidator-0.5.2.min.js"></script>
+  <!-- End of full list of elements needed for web manual, non-optimized -->
 
-  <script type="text/javascript" src="js/dist/modernizr.custom.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="js/dist/moment.min.js"></script>
-  <script type="text/javascript" src="js/dist/bootstrap-datetimepicker.min.js"></script>
-  <script type="text/javascript" src="js/dist/bootstrap-datetimepicker.nb.js"></script>
-  <script type="text/javascript" src="js/dist/bootstrapValidator-0.5.0.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.slider.all.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.hotkeys.js"></script>
-  <script type="text/javascript" src="js/dist/custom-select-menu.jquery.js"></script>
-  <script type="text/javascript" src="js/dist/tooltip.js"></script>
-  <script type="text/javascript" src="js/dist/affix.js"></script>
-  <script type="text/javascript" src="js/dist/popover.js"></script>
-  <script type="text/javascript" src="js/dist/chosen.jquery.js"></script>
-  <script type="text/javascript" src="js/dist/jquery.eqheight.js"></script>
-  <script type="text/javascript" src="js/stb-common.js"></script>
-  <script type="text/javascript" src="js/stb-page-padding.js"></script>
-  <script type="text/javascript" src="js/src/stb-video.js"></script>
-  <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+  <!-- Stuff just for the web manual... -->
   <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
-  <script type="text/javascript" src="js/dist/formmanual.core.js"></script>
-
-  <!-- Start JavaScript for this page only -->
-  <script>
-
-  </script>
-  <!-- End of JavaScript for this page only -->
-
+  <script type="text/javascript" src="javascript/webmanual.core.js"></script>
+  <!-- End of just for the web manual -->
   <!-- Start CSS for this page only -->
   <style>
     .toc-list ul.items {
@@ -1050,7 +1042,6 @@
     </div>
 </div>  <!-- /Datepicker row -->
 <hr class="top-margin-30" />
-
 <div class="row">
 
   <div class="col-md-3">
@@ -1129,6 +1120,38 @@
 &lt;/div&gt;
       </pre>
     </div>
+</div>  <!-- /Datepicker row -->
+
+<hr class="top-margin-30" />
+<div class="row">
+
+  <div class="col-md-3">
+    <h2 class="toc-header">File Upload</h2>
+  </div>
+  <div class="col-md-9">
+    <form method="post" enctype="multipart">
+      <label>Single upload</label>
+      <div class="uploadedAttachments bottom-margin-20">
+        <p>Ingen vedlegg</p>
+      </div>
+      <div class="attachmentUpload">
+        <input name="upload" type="file" class="file" multiple/>
+      </div>
+      <button class="stb-btn transparent light uploadFile">Velg fil</button>
+    </form>
+    <pre class="prettyprint hidden-xs hidden-sm top-margin-50">
+ &lt;form method="post" enctype="multipart"&gt;
+   &lt;label&gt;Single upload&lt;/label&gt;
+   &lt;div class="uploadedAttachments bottom-margin-20"&gt;
+     &lt;p&gt;Ingen vedlegg&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class="attachmentUpload"&gt;
+     &lt;input name="upload" type="file" class="file" multiple/&gt;
+   &lt;/div&gt;
+   &lt;button class="stb-btn transparent light uploadFile"&gt;Velg fil&lt;/button&gt;
+ &lt;/form&gt;
+      </pre>
+  </div>
 </div>  <!-- /Datepicker row -->
 
 </div> <!-- /End Container-->

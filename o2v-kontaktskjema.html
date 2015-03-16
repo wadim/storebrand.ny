@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+<head>
+  <title>Kontakt Storebrand</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-128x128-precomposed.png">
+  <!-- Universal references useful everywhere -->
+  <link rel="stylesheet" type="text/css" href="css/stb-all.min.css">
+  <script type="text/javascript">
+
+    function loadContent(url, callback) {
+      var xmlhttp;
+      // compatible with IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+          callback(xmlhttp);
+        }
+      }
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    }
+    loadContent("toppmeny.html", function(xmlhttp){document.body.insertAdjacentHTML("afterbegin",xmlhttp.responseText);})
+    loadContent("bunnmeny.html", function(xmlhttp){document.body.insertAdjacentHTML("beforeend",xmlhttp.responseText);})
+  </script>
+  <script type="text/javascript" src="javascript/stb-all.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#customerYes, #customerNo").change(function() {
+        if($("#customerYes").is(":checked")) {
+          $("#noticeCustomer").show();
+          $("#noticeNonCustomer").hide();
+        } else {
+          $("#noticeCustomer").hide();
+          $("#noticeNonCustomer").show();
+        }
+      })
+
+      $("#selectLevel1").change( function(){
+        var chosenLevel1 = $("#selectLevel1").val();
+        $(".regarding").hide();
+        $(".contactForm").hide();
+        $(".messageFeedback").hide();
+        $("#message-level1-"+chosenLevel1).show();
+        $("#regarding-"+chosenLevel1).show();
+      });
+
+      $(".selectLevel2").change( function(){
+        var showmessage = $(this).find("option:selected").attr("data-show-message");
+        $(".messageFeedback").hide();
+        if(showmessage){
+          $("#message-level2-"+showmessage).show();
+        }
+        $(this).find("option:selected").attr("data-showform") ? $(".contactForm").show() : $(".contactForm").hide();
+      });
+
+      var contactValidationFields =  {
+        comment: {
+          trigger: 'blur',
+          container: '#comment-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-small warning"></span> Oppgi kommentar'
+            }
+          }
+        },
+        name: {
+          trigger: 'blur',
+          container: '#name-message',
+          validators: {
+            notEmpty: {
+              message: '<span class="stb-color-sprite-small warning"></span> Oppgi navn'
+            }
+          }
+        },
+        email: {
+          trigger: 'blur',
+          container: '#email-message',
+          validators: {
+            emailAddress : {
+              message: '<span class="stb-color-sprite-small warning"></span> Ugyldig epost'
+            },
+            notEmpty: {
+              message: '<span class="stb-color-sprite-small warning"></span> Oppgi epost'
+            }
+          }
+        },
+        phone: {
+          trigger: 'blur',
+          container: '#phone-message',
+          validators: {
+            phone: {
+              country: 'DK',
+              message: '<span class="stb-color-sprite-small warning"></span> Ugyldig telefonnr'
+            },
+            notEmpty: {
+              message: '<span class="stb-color-sprite-small warning"></span> Oppgi telefonnr'
+            }
+          }
+        }
+      };
+
+      initBootstrapValidator($('form#contactus'),contactValidationFields, function(e) {
+        // Prevent form submission
+        e.preventDefault();
+        alert("Submit")},"enabled");
+    });
+  </script>
+
+  <!-- End of universally useful references -->
+  <style>
+    .regarding, .contactForm, .messageFeedback{
+      display: none;
+    }
+  </style>
+
+</head>
+ 
+<body>
+
+<!-- End top of page -->
+
+  <!-- Start actual page contents -->
+  <div class="container">   
+    <div class="row">
+      <div class="col-md-8 col-sm-12">
+        <div class="stb-box banner">
+          <div class="text">
+            <h2>Melding til Storebrand</h2>
+            <form id="contactus" class="stb-form" enctype="multipart" method="post">
+
+              <!-- The one where we find out if this is a customer -->
+              <div id="messageIntro"> 
+                <p class="intro">
+                  Oppgi litt info, så finner vi ut hvordan du best kontakter oss.
+                </p>
+                <br />
+                <label for="customerStatus">Er du kunde i Storebrand?</label>
+                <div class="radiobuttons" id="customerStatus">
+                  <input class="stb-radio" type="radio" id="customerYes" name="stb-status" value="Ja" /><label class="xanalyze" for="customerYes" style="width: 100px;"><span></span>Ja</label>
+                  <input class="stb-radio" type="radio" id="customerNo" name="stb-status" value="Nei" /><label class="xanalyze" for="customerNo" style="width: 100px;"><span></span>Nei</label>
+                </div> 
+                <div id="noticeCustomer" class="stb-box transparent dashed info" style="display: none;">
+                  <span class="pull-left infoIcon"></span>
+                  <div class="left-padding-60">
+                    <h4>Obs!</h4>
+                    <p>Hvis spørsmålet eller svaret ditt inneholder personlig informasjon, anbefaler vi at du logger inn på <a href="https://www.storebrand.no/">storebrand.no</a> og sender spørsmålet ditt fra postkassen på dine personlige sider. Henvendelser fra denne åpne siden kan vi bare besvare med generell informasjon. </p>
+                    <p><button onclick="$('#messageIntro').hide(); $('#messageSpecify').show(); return false;" class="stb-btn stb-form">Ok, fortsett</button></p>
+                  </div>
+                </div>
+                <div id="noticeNonCustomer" class="stb-box transparent dashed info" style="display: none;">
+                  <span class="pull-left infoIcon"></span>
+                  <div class="left-padding-60">
+                    <h4>Obs!</h4>
+                    <p>Fordi vi ikke vet sikkert hvem du er, er det grenser for hva slags spørsmål vi kan svare på med annet enn generell informasjon.</p>
+                    <p><button onclick="$('#messageIntro').hide(); $('#messageSpecify').show(); return false;" class="stb-btn stb-form">Ok, fortsett</button></p>
+                  </div>
+                </div>  
+              </div>
+              <!-- /The one where we find out if this is a customer -->
+
+              <!-- The one where the category is decided -->
+              <div id="messageSpecify" style="display: none;">
+                <p class="intro">
+                  For å få sendt henvendelsen din rett til riktig person, beskriv nærmere hva spørsmålet ditt gjelder.
+                </p>
+                <br />
+                <label for="selectLevel1">Henvendelsen gjelder</label>
+                <div class="stb-form-group">
+                  <div class="selectContainer" style="max-width: 320px;">
+                    <select name="choose1" id="selectLevel1" class="form-control">
+                      <option value="">Velg fra listen</option>
+                      <option value="bank" data-show-message="bank">Bank</option>
+                      <option value="forsikring">Privat forsikring</option>
+                      <option value="sparing" data-show-message="sparing">Sparing</option>
+                      <option value="pensjon" data-show-message="pensjon">Pensjon</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="message-level1-bank" class="messageFeedback">
+                  <div class="stb-box transparent dashed info">
+                    <span class="pull-left infoIcon" ></span>
+                    <div class="left-padding-60 bottom-padding-10">
+                    <p>
+                    <strong>Før du går videre.</strong><br>
+                    Har du spørsmål relatert til pålogging eller bruk av nettbanken, kan du finne nyttig informasjon på denne siden
+                    <a href="/site/stb.nsf/Pages/nynettbank-oktober2014.html">Nettbank og mobilbank</a><br>
+                    Vi gjør oppmerksom at vi for tiden har lang behandlingstid på mail. Dersom det haster er du velkommen til å bruke vår
+                    <a href="/site/stb.nsf/chooseChat?readForm" onclick="window.open(this.href, '','height=500,width=560');return false;">chatløsning</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div id="message-level1-sparing" class="messageFeedback">
+                  <div class="stb-box transparent dashed info">
+                    <span class="pull-left infoIcon" ></span>
+                    <div class="left-padding-60 bottom-padding-30">
+                      <p>
+                        Dersom det haster er du velkommen til å ta kontakt med oss på tlf. <a href="tel:22315098">22 31 50 98</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div id="message-level1-pensjon" class="messageFeedback">
+                  <div class="stb-box transparent dashed info">
+                    <span class="pull-left infoIcon" ></span>
+                    <div class="left-padding-60 bottom-padding-30">
+                      <p>
+                        Dersom det haster er du velkommen til å ta kontakt med oss på tlf. <a href="tel:22315098">22 31 50 98</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bank -->
+                <div id="regarding-bank" class="regarding">
+                  <br />
+                  <label for="selectLevel2Bank">Nærmere bestemt</label>
+                  <div class="stb-form-group">
+                    <div class="selectContainer" style="max-width: 320px;">
+                      <select name="choose2Bank" id="selectLevel2Bank" class="form-control selectLevel2">
+                        <option value="">Velg fra listen</option>
+                        <option value="nettbank" data-showform=true>Nettbank</option>
+                        <option value="konto" data-showform=true>Konto & Kort</option>
+                        <option value="lan" data-showform=true data-show-message="lan">Lån</option>
+                        <option value="bankid" data-show-message="bankid">BankID / pålogging</option>
+                        <option value="annet" data-showform=true>Andre bankhenvendelser</option>
+                      </select>                      
+                    </div>
+                  </div>
+                </div>
+                <!-- /Bank -->
+
+                <!-- Insurance -->
+                <div id="regarding-forsikring" class="regarding">
+                  <br />
+                  <label for="selectLevel2Insurance">Nærmere bestemt</label>
+                  <div class="stb-form-group">
+                    <div class="selectContainer" style="max-width: 320px;">
+                      <select name="choose2Insurance" id="selectLevel2Insurance" class="form-control selectLevel2">
+                        <option value="">Velg fra listen</option>
+                        <option value="insurance1" data-showform=true>Eksisterende forsikring av eiendeler</option>
+                        <option value="insurance2" data-showform=true>Eksisterende forsikring av liv</option>
+                        <option value="insurance3" data-showform=true>Eksisterende helseforsikring</option>
+                        <option value="insurance4" data-showform=true data-show-message="nyforsikring">Ny forsikring</option>
+                        <option value="insuranse5" data-showform=true>Tidligere meldt skadesak</option>
+                        <option value="insurance6" data-showform=true>Annet</option>
+                      </select>                      
+                    </div>
+                  </div>
+                </div>
+                <!-- /Insurance -->
+
+                <!-- Savings -->
+                <div id="regarding-sparing" class="regarding">
+                  <br />
+                  <label for="selectLevel2Savings">Nærmere bestemt</label>
+                  <div class="stb-form-group">
+                    <div class="selectContainer" style="max-width: 320px;">
+                      <select name="choose2Savings" id="selectLevel2Savings" class="form-control">
+                        <option value="">Velg fra listen</option>
+                        <option value="1">Starte sparing</option>
+                        <option value="2">Flytte fond</option>
+                        <option value="3">Flytte Linkavtale</option>
+                        <option value="4">Flytte pensjonskapitalbevis</option>
+                        <option value="5">Bytte bank</option>
+                        <option value="6">Annet</option>
+                      </select>                      
+                    </div>
+                  </div>
+                </div>
+                <!-- /Savings -->
+
+                <!-- Pension -->
+                <div id="regarding-pensjon" class="regarding">
+                  <br />
+                  <label for="selectLevel2Pension">Nærmere bestemt</label>
+                  <div class="stb-form-group">
+                    <div class="selectContainer" style="max-width: 320px;">
+                      <select name="choose2Pension" id="selectLevel2Pension" class="form-control">
+                        <option value="">Velg fra listen</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">Annet</option>
+                      </select>                      
+                    </div>
+                  </div>
+                </div>
+                <!-- /Pension -->
+
+
+              </div>
+              <!-- /The one where the category is decided -->
+              <div id="message-level2-lan" class="messageFeedback">
+                <div class="stb-box transparent dashed info">
+                  <span class="pull-left infoIcon" ></span>
+                  <div class="left-padding-60">
+                    <p>
+                      <strong>NB!</strong> Du søker enklest og raskest om lån ved å bruke egne skjema:
+                    </p>
+                    <ul class="stb">
+                      <li><a href="https://www.storebrand.no/web/bank/sbb.nsf/wfrmLanesoknadBolig?OpenForm">Boliglån og boligkreditt</a></li>
+                      <li><a href="https://www.storebrand.no/web/bank/sbb.nsf/wfrmLanesoknadForstehjem?OpenForm">BLU40 - Boliglån for deg under 40</a></li>
+                    </ul>
+                    <p>Hvis du bare har spørsmål om lån, les først <a href="https://www.storebrand.no/site/stb.nsf/Enter/forsideboliglaan.html" target="_blank">lånesidene våre</a>. <br>Finner du ikke det du trenger der, kontakt oss gjerne via skjemaet nedenfor.</p>
+                  </div>
+                </div>
+              </div>
+              <div id="message-level2-bankid" class="messageFeedback">
+                <div class="stb-box transparent dashed info">
+                  <span class="pull-left infoIcon" ></span>
+                  <div class="left-padding-60">
+                    <p><a href="http://www.storebrand.no/site/stb.nsf/pages/javaplaga.html" target="_blank">Klikk her for informasjon</a></p><br>
+                  </div>
+                </div>
+              </div>
+              <div id="message-level2-nyforsikring" class="messageFeedback">
+                <div class="stb-box transparent dashed info">
+                  <span class="pull-left infoIcon" ></span>
+                  <div class="left-padding-60 bottom-padding-10">
+                      <strong>Før du går videre.</strong><br>
+                      Den raskeste måte å finne pris på er å benytte våre kalkulatorer. <br>
+                      Her kan du fylle inn dine opplysninger og få pris/tilbud med en gang.
+                      <br><br>
+                      <table>
+                        <tbody><tr>
+                          <td>Bilforsikring</td>
+                          <td>Husforsikring</td>
+                          <td>Livsforsikring</td>
+                          <td>Andre forsikringer</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="https://www.storebrand.no/site/stb.nsf/Pages/bilforsikring.html" target="_blank"><img src="https://www.storebrand.no/site/stb.nsf/Ikon/get28d293ad7b259756d3117971d7ec785f/$FILE/ATTJ8ML1" style="height:40px;"></a>
+                          </td>
+                          <td>
+                            <a href="https://www.storebrand.no/site/stb.nsf/Pages/husforsikring.html" target="_blank"><img src="https://www.storebrand.no/site/stb.nsf/Ikon/get7879831ff75c3979b57262ec00f2c206/$FILE/icon.product.insurance.house.122x63.gif" style="height:40px;"></a>
+                          </td>
+                          <td>
+                            <center><a href="https://www.storebrand.no/site/stb.nsf/Enter/forsidepersonforsikring.html" target="_blank"><img src="https://www.storebrand.no/site/stb.nsf/Ikon/get5f183e26f0bf4a8f97388f67263f9815/$FILE/icon.product.insurance.death.64x64.gif" style="height:40px;"></a></center>
+                          </td>
+                          <td>
+                            <a href="https://www.storebrand.no/site/stb.nsf/Pages/forsideforsikring.html" target="_blank">
+                              <img src="https://www.storebrand.no/site/stb.nsf/Ikon/get9c639ab0a4b50efabb95fa3f06140f98/$FILE/icon.product.insurance.travel.33x36.gif" style="height:30px;">
+                              <img src="https://www.storebrand.no/site/stb.nsf/Ikon/getb2d1e10e71dc8139ca1d22a564c68221/$FILE/icon.product.insurance.boat.39x37.gif" style="height:30px;">
+                              <img src="https://www.storebrand.no/site/stb.nsf/Ikon/getcf0ff2092f7c3a17f6b46eb08c654028/$FILE/icon.product.insurance.child.32x32.gif" style="height:30px;">
+                            </a>
+                          </td>
+                        </tr>
+                        </tbody></table>
+                      <span style="font-weight:bold">Forespørsel om tilbud på forsikringer</span><br><br>
+                      For at vi skal kunne beregne et tilbud til deg, må skjemaet under fylles ut med detaljer<br> om alle forsikringene du ønsker tilbud på. I noen tilfeller vil det være behov for utfyllende opplysninger og i den forbindelse vil en rådgiver ta kontakt på telefon.<br><br>
+                      Etter at du har fylt ut skjemaet må du lagre det lokalt på maskinen din (gjerne på skrivebordet), deretter laster du det opp under "Vedlegg".
+                      <br><br><a href="https://www.storebrand.no/mail/mailinn/meldaapnesider.nsf/67acdb15b97c0d5ec1257b7a003df6ed/$FILE/SkjemaTilbudsberegning.doc">Last ned skjema for tilbudsberegning</a>
+                  </div>
+                </div>
+              </div>
+              <!-- /The one where the message is entered -->
+
+             <div class="contactForm">
+               <label for="comment">Min kommentar</label>
+               <span id="comment-message" class="help-block"></span>
+               <div class="stb-form-group top-margin-10">
+                 <textarea id="comment" name="comment" class="form-control" rows="4" cols="40"></textarea>
+               </div>
+               <label for="name">Navn</label>
+               <span id="name-message" class="help-block"></span>
+               <div class="stb-form-group" style="width: 230px">
+                 <input id="name" name="name" type="text" class="" placeholder="Navn"/>
+               </div>
+               <label for="email">Epost</label>
+               <span id="email-message" class="help-block"></span>
+               <div class="stb-form-group" style="width: 230px">
+                 <input id="email" name="email" type="text" class="" placeholder="Placeholder"/>
+               </div>
+               <label for="phone">Telefonnummer</label>
+               <span id="phone-message" class="help-block"></span>
+               <div class="stb-form-group" style="width: 230px">
+                 <input id="phone" name="phone" type="text" class="" placeholder="Telefonnummer"/>
+               </div>
+               <label for="attachments">Vedlegg</label>
+               <div class="uploadedAttachments bottom-margin-20">
+                 <p>Ingen vedlegg</p>
+               </div>
+               <div class="attachmentUpload">
+                 <input id="attachments" name="upload" type="file" class="file" multiple/>
+               </div>
+               <button class="stb-btn transparent light uploadFile">Velg fil(er)</button><br><br>
+               <hr>
+               <div class="submitionBar">
+                 <button class="stb-btn pull-right">Send inn</button> <button class="stb-btn transparent light pull-left">Avbryt</button>
+               </div>
+             </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- End actual page contents -->
+
+
+<script  type="text/javascript">
+  var enonicSearchData = {"search":{"typeahead":{"direkte":[{"query":"demo","name":"Tema 2 - Hus og hjem","url":"/cms/utvikling/demo/2014-10-17/tema-2"},{"query":"tema","name":"Tema 2 - Hus og hjem","url":"/cms/utvikling/demo/2014-10-17/tema-2"},{"query":"demo","name":"Tema 3 - Kundefordeler","url":"/cms/utvikling/demo/2014-10-17/tema-3"},{"query":"tema","name":"Tema 3 - Kundefordeler","url":"/cms/utvikling/demo/2014-10-17/tema-3"},{"query":"Demo","name":"Demo-kategori 2014-09-19","url":"/cms/utvikling/demo/2014-10-03/kategoriside"},{"query":"Pensjon","name":"Forside pensjon","url":"/cms/"},{"query":"Sparing","name":"Forside sparing","url":"/cms/privat/sparing"},{"query":"Forsikring","name":"Forside forsikring","url":"/cms/privat/forsikring"},{"query":"Pensjon","name":"Forside pensjon","url":"/cms/privat/pensjon"},{"query":"Bank","name":"Forside bank","url":"/cms/privat/bank-og-lan"},{"query":"Bil","name":"Bilforsikring","url":"/cms/privat/forsikring/bilforsikring"},{"query":"Husforsikring","name":"Husforsikring","url":"/cms/privat/forsikring/husforsikring"},{"query":"Ulykkesforsikring","name":"Ulykkesforsikring","url":"/cms/privat/forsikring/ulykkesforsikring"},{"query":"Pensjon","name":"Ekstrapensjon","url":"/cms/privat/pensjon/ekstrapensjon"},{"query":"demo","name":"Demo-artikkel 2014-09-19","url":"/cms/utvikling/demo/2014-10-03/artikkelside"},{"query":"Pensjon","name":"Hva bør du gjøre når? ","url":"/cms/privat/pensjon/dette-bor-du-gjore"},{"query":"Fripolise","name":"Fripolise med investeringsvalg","url":"/cms/privat/pensjon/fripolise-med-investeringsvalg"},{"query":"IPS","name":"IPS – Individuell pensjonssparing ","url":"/cms/privat/pensjon/ips"},{"query":"Nettbank","name":"Nettbank","url":"/cms/"},{"query":"Mobilbank","name":"Mobilbank","url":"/cms/"},{"query":"Helseforsikring","name":"Helseforsikring","url":"/cms/privat/forsikring/helseforsikring"},{"query":"Pensjonskapitalbevis","name":"Pensjonskapitalbevis","url":"/cms/privat/pensjon/pensjonskapitalbevis"},{"query":"demo","name":"Demo-produkt 2014-09-19","url":"/cms/utvikling/test/produkt"},{"query":"Barneforsikring","name":"Barneforsikring","url":"/cms/privat/forsikring/barneforsikring"},{"query":"Pensjon","name":"Dette bør du vite om pensjon","url":"/cms/privat/pensjon/dette-bor-du-vite"},{"query":"Lån","name":"Boliglån","url":"/cms/privat/bank-og-lan/boliglan"},{"query":"bsu","name":"Boliglån for unge","url":"/cms/privat/bank-og-lan/boliglan-for-unge"},{"query":"Kredittkort","name":"MasterCard kredittkort","url":"/cms/privat/bank-og-lan/kredittkort"},{"query":"Sperre kort","name":"Sperre kort","url":"/cms/privat/bank-og-lan/sperre-kort"},{"query":"BankID","name":"BankID - spørsmål og svar","url":"/cms/privat/bank-og-lan/bankid-info"},{"query":"Java","name":"Problemer med java / BankID","url":"/cms/privat/bank-og-lan/java-og-bankid"}]},"promotion":{"pensjon":[{"header":"Ekstrapensjon","text":"Ekstrapensjon er den pensjonssparingen vi anbefaler til folk flest. Du kan ta ut sparepengene når du selv vil, men jo lengre du lar dem stå, jo bedre.","name":"Spar i Ekstrapensjon","url":"/cms/privat/pensjon/ekstrapensjon"},{"header":"Råd om pensjon","text":"Du trenger ikke vite alt om pensjon, men noen enkle grep kan ha stor betydning for hvor mye du får utbetalt.","name":"Hva bør du gjøre når?","url":"/cms/privat/pensjon/dette-bor-du-gjore"}],"bsu":{"header":"Boligsparing for ungdom","text":"Storebrand gir deg som sparer til bolig en ekstra god innskuddsrente","name":"Boligsparing for ungdom","url":"/cms/privat/bank-og-lan/bsu-konto"},"barneforsikring":{"header":"Våre barneforsikringer — Best i test 2014","text":"Barneforskringen vår er kåret til bransjens beste av Norsk Familieøkonomi i november 2014","name":"Våre barneforsikringer","url":"/cms/privat/forsikring/barneforsikring"}},"autocomplete":{"anbefalt":[{"query":"Fond","name":"Fond"},{"query":"Fondssparing","name":"Fondssparing"},{"query":"Bank","name":"Bank"},{"query":"Banksparing","name":"Banksparing"},{"query":"Forsikring","name":"Forsikring"},{"query":"Bilforsikring","name":"Bilforsikring"},{"query":"Pensjon","name":"Pensjon"},{"query":"IPS","name":"IPS – Individuell pensjonssparing"},{"query":"Kvartalsrapporter","name":"Kvartalsrapporter"},{"query":"Årsrapporter","name":"Årsrapporter"},{"query":"Lånekalkulator boliglån","name":"Lånekalkulator boliglån"},{"query":"Innboforsikring","name":"Innboforsikring"},{"query":"Bankkort","name":"Konto og kort i hverdagen"},{"query":"Boliglån","name":"Boliglån"},{"query":"Helseforsikring","name":"Helseforsikring"},{"query":"Skade","name":"Meld skade"},{"query":"Melding","name":"Meld skade"},{"query":"Pensjon","name":"Spar i Ekstrapensjon"},{"query":"Pensjon","name":"Lær om pensjon"},{"query":"Bankkunde","name":"Bli bankkunde"},{"query":"Ekstrapensjon","name":"Spar i Ekstrapensjon"},{"query":"Barneforsikring","name":"Barneforsikring"},{"query":"Sperre kort","name":"Sperre kort"},{"query":"Rente","name":"Dagens lånerente"},{"query":"Fordel","name":"Storebrand Fordel"},{"query":"Brann","name":"Skademelding brann"},{"query":"Fond","name":"Spar i fond"},{"query":"Eiendom","name":"Storebrand Eiendom"},{"query":"Kontakt","name":"Kontakt Storebrand"},{"query":"BSU","name":"BSU - Boliglån for unge"},{"query":"Husforsikring","name":"Husforsikring"},{"query":"Fripolise","name":"Fripolise"},{"query":"Logg inn","name":"Logg inn"},{"query":"Fondslister","name":"Fondslister"},{"query":"Ditt pensjonstall","name":"Ditt pensjonstall"},{"query":"Chat","name":"Velg emne for chat"},{"query":"Epost","name":"Kontakt Storebrand"},{"query":"Nettbank","name":"Nettbank"},{"query":"Java og bankID","name":"Java og bankID"},{"query":"Mobilbank","name":"Mobilbank"}]}}}
+  </script>  
+  <!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('require', 'ecommerce', 'ecommerce.js');
+    ga('create', 'UA-41882079-4', 'storebrand.no');
+    ga('require', 'displayfeatures');
+    ga('set', 'dimension1', 'webmanual');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+    </script-->
+
+  </body>
+</html>
