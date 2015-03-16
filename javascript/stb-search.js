@@ -116,67 +116,7 @@ var s,search = {
     });
 
     // Call checkSearch when hitting Enter while in the input area
-    $("input.searchbox").keydown(function(event){
-      if(!s.hasURL){
-        if(event.which === 13 && this.value.trim()){
-           var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
-           if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
-               search.minimizeSearch();
-               setTimeout(function(){
-                     $('li.login>a').click();
-                     var field =  $('#start-login-form input');
-                     field.val(searchVal);
-                     $('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
-                     $('#start-login-form').submit();
-              }, s.animSpeed);
-           }else{
-               search.checkSearch( this.value );
-           }
-           return false;
-        }
-      }
-    });
 
-    $('.search-icon').on('click',function(event){
-      if($(event.target).closest('form').is('#searchMobile')){
-          if($('.tt-mobile .typeahead.tt-input').typeahead('val').trim()){
-           event.preventDefault();
-           //window.location = $('input.searchbox.tt-input.tt-desktop').attr('data-search-url')+"?action=search&q=" + $('.tt-mobile .typeahead.tt-input').typeahead('val');
-           search.checkSearch($('.tt-mobile .typeahead.tt-input').typeahead('val'));
-          }else{
-           event.preventDefault();
-          }
-      }else{
-        var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
-        if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
-            if(s.maximized){
-             search.minimizeSearch();
-             setTimeout(function(){$('li.login>a').click();
-                    var field =  $('#start-login-form input');
-                    field.val(searchVal);
-                    $('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
-                    $('#start-login-form').submit();
-             }, s.animSpeed);
-            }else{
-              setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
-            }
-        }else{
-            if(s.maximized && searchVal){
-              search.checkSearch(searchVal);
-            }else if(!s.maximized && !s.animating){
-              setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
-            }
-        }
-      }
-    });
-
-    // Call checkSearch when clicking the submit button
-    $(".searchcontainer .stb-form-inline button[type=submit]").click(function(event) {
-      //alert($('input#main_search').val());
-      search.checkSearch($('input#main_search').val());
-      return false;
-
-    });
   },
   createDatasets : function (index){
 
@@ -232,116 +172,178 @@ var s,search = {
       search.minimizeSearch();
     });
 
-   $('.navbar-nav .typeahead').blur(function(e) {
+   $('.navbar-nav .typeahead.tt-input').blur(function(e) {
        e.preventDefault();
-       if(s.maximized===true &&  s.animating===false) {
+       if(s.maximized && !s.animating) {
          search.minimizeSearch();
        }
    });
-
-   //If for some reason input.tt-hint gets focus instead of tt-input(IE9)
-   	$('.navbar-nav .typeahead.tt-hint').focus(function(e) {
-   		e.preventDefault();
-   		$('input.searchbox.tt-input.tt-desktop').focus();
-   	});
-
+   $('.navbar-nav .typeahead.tt-hint').focus(function(e) {
+	   e.preventDefault();
+	   $('input.searchbox.tt-input.tt-desktop').focus();
+   });
     // If the search icon or the input element itself gets clicked, do not pass the click event to the document.
    $('.navbar-nav .typeahead.tt-input').focus(function(e) {
        e.preventDefault();
        // If it's currently minimized and not animating, maximize it.
-       if (s.maximized===false && s.animating===false) {
+       if (!s.maximized && !s.animating) {
          search.maximizeSearch();
        }
        // This will prevent the minimizeSearch from being called too early.
-       e.stopPropagation();
-       return false;
     });
+
+    $("input.searchbox").keydown(function(event){
+	  if(!s.hasURL){
+		if(event.which === 13 && this.value.trim()){
+		   var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
+		   if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
+			   search.minimizeSearch();
+			   setTimeout(function(){
+					 $('li.login>a').click();
+					 var field =  $('#start-login-form input');
+					 field.val(searchVal);
+					 $('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
+					 $('#start-login-form').submit();
+			  }, s.animSpeed);
+		   }else{
+			   search.checkSearch( this.value );
+		   }
+		   return false;
+		}
+	  }
+	});
+
+	$('.search-icon').on('click',function(event){
+	  event.preventDefault();
+	  if($(event.target).closest('form').is('#searchMobile')){
+		  if($('.tt-mobile .typeahead.tt-input').typeahead('val').trim()){
+		   search.checkSearch($('.tt-mobile .typeahead.tt-input').typeahead('val'));
+		  }
+	  }else{
+		var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
+		if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
+			if(s.maximized){
+			 $('.navbar-nav .typeahead.tt-input').blur();
+			 setTimeout(function(){$('li.login>a').click();
+					var field =  $('#start-login-form input');
+					field.val(searchVal);
+					$('#start-login-form').data('bootstrapValidator').updateStatus(field, 'NOT_VALIDATED').validateField(field);
+					$('#start-login-form').submit();
+			 }, s.animSpeed);
+			}else{
+			  setTimeout(function(){ $('input.searchbox.tt-input.tt-desktop').focus(); }, s.animSpeed);
+			}
+		}else{
+			if(s.maximized && searchVal){
+			  search.checkSearch(searchVal);
+			}else if(s.maximized && !s.animating){
+			   $('.navbar-nav .typeahead.tt-input').blur();
+			}else if(!s.maximized && !s.animating){
+               $('.navbar-nav .typeahead.tt-input').focus();
+            }
+		}
+	  }
+	});
+
+	// Call checkSearch when clicking the submit button
+	$(".searchcontainer .stb-form-inline button[type=submit]").click(function(event) {
+	  //alert($('input#main_search').val());
+	  search.checkSearch($('input#main_search').val());
+	  return false;
+
+	});
   },
   minimizeSearch : function(){
+	if(s.maximized){
+		// Save the animating state, and reset it once the animations complete
+		s.animating = true;
+		$('.navbar-nav .typeahead').prop('disabled', true);
+		setTimeout(function(){
+		  s.animating = false;
+		  $('.navbar-nav .typeahead').prop('disabled', false);
+		}, s.animSpeed);
 
-    // Save the animating state, and reset it once the animations complete
-    s.animating = true;
-    setTimeout(function(){
-      s.animating = false;
-    }, s.animSpeed);
+		// Hide the remove icon
+		$('.navbar-nav li.search .remove').toggle();
 
-    // Hide the remove icon
-    $('.navbar-nav li.search .remove').toggle();
+		// Reset the searchParent to the original width. The text box will fit on its own as its width is 100 %.
+		$('.navbar-nav > li.search').animate({width: s.searchParentWidthPercent+'%'},  s.animSpeed);
+		$('.navbar-nav .typeahead').animate({backgroundColor: s.backgroundColor,color:"#fff"},  s.animSpeed);
 
-    // Reset the searchParent to the original width. The text box will fit on its own as its width is 100 %.
-    $('.navbar-nav > li.search').animate({width: s.searchParentWidthPercent+'%'},  s.animSpeed);
-    $('.navbar-nav .typeahead').animate({backgroundColor: s.backgroundColor,color:"#fff"},  s.animSpeed);
+		// Fade out the white search icon
+		$('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
 
-    // Fade out the white search icon
-    $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
+		// After half the animation time has passed, fade in the inverted icon
+		setTimeout(function(){
+		  $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn( s.animSpeed/2);
+		}, s.animSpeed/4);
 
-    // After half the animation time has passed, fade in the inverted icon
-    setTimeout(function(){
-      $('.navbar-nav .search-icon .search').removeClass("charcoal").addClass("white").fadeIn( s.animSpeed/2);
-    }, s.animSpeed/4);
+		$('.navbar-nav .search-icon').animate({backgroundColor: s.backgroundColor}, s.animSpeed);
 
-    $('.navbar-nav .search-icon').animate({backgroundColor: s.backgroundColor}, s.animSpeed);
+		// Reset all the states after the animations complete
+		setTimeout(function(){
+		  // Show the menu
+		  $('.navbar-nav > li.group').toggle();
 
-    // Reset all the states after the animations complete
-    setTimeout(function(){
-      // Show the menu
-      $('.navbar-nav > li.group').toggle();
+		  // Remove the focus from the smaller search box in case the user clicked on it during the animation
+		  //$('.navbar-nav .typeahead').blur();
 
-      // Remove the focus from the smaller search box in case the user clicked on it during the animation
-      //$('.navbar-nav .typeahead').blur();
+		  // Save the new state
+		  s.maximized = false;
 
-      // Save the new state
-      s.maximized = false;
-
-      // Reset the span container to initial value
-      $('.navbar-nav .twitter-typeahead').css('width',s.initialWidth);
-    },  s.animSpeed);
+		  // Reset the span container to initial value
+		  $('.navbar-nav .twitter-typeahead').css('width',s.initialWidth);
+		},  s.animSpeed);
+    }
   },
   maximizeSearch : function (){
-    s.maximized = true;
-    //Hide overlay when search is focus
-    $('.shadow-overlay').hide();
+   if(!s.maximized){
+		s.maximized = true;
+		//Hide overlay when search is focus
+		$('.shadow-overlay').hide();
 
-    // Save the animation state, and reset it once the animations complete
-    s.animating = true;
-    setTimeout(function(){
-      s.animating = false;
-    }, s.animSpeed);
+		// Save the animation state, and reset it once the animations complete
+		s.animating = true;
 
-    // Store the current width
-    var searchParentWidth = $('.navbar-nav > li.search').css('width');
-    s.backgroundColor = $('.navbar-nav .typeahead').css('background-color');
-    // Since the width is given in pixels instead of percentage, we need to calculate it ourselves
-    s.searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
+		setTimeout(function(){
+		  s.animating = false;
+		}, s.animSpeed);
 
-    // Give the text element a fixed size
-    //$('.navbar-nav .typeahead').css('width',searchParentWidth);
-    // Hide the menu
-    $('.navbar-nav > li.group').toggle();
+		// Store the current width
+		var searchParentWidth = $('.navbar-nav > li.search').css('width');
+		s.backgroundColor = $('.navbar-nav .typeahead').css('background-color');
+		// Since the width is given in pixels instead of percentage, we need to calculate it ourselves
+		s.searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 
-    // Expand the search parent to take 95 % of the available width
-    $('.navbar-nav > li.search').css('width','95%');
+		// Give the text element a fixed size
+		//$('.navbar-nav .typeahead').css('width',searchParentWidth);
+		// Hide the menu
+		$('.navbar-nav > li.group').toggle();
 
-    // Fade out the white search icon
-    $('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
+		// Expand the search parent to take 95 % of the available width
+		$('.navbar-nav > li.search').css('width','95%');
 
-    // After fading out icon, fade in inverted (charcoal) icon with new background
-    setTimeout(function(){
-      $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(s.animSpeed/2);
-    }, s.animSpeed/4);
+		// Fade out the white search icon
+		$('.navbar-nav .search-icon .search').fadeOut( s.animSpeed/4);
 
-    $('.navbar-nav .search-icon').animate({backgroundColor:'"fff'}, s.animSpeed);
+		// After fading out icon, fade in inverted (charcoal) icon with new background
+		setTimeout(function(){
+		  $('.navbar-nav .search-icon .search').removeClass("white").fadeIn(s.animSpeed/2);
+		}, s.animSpeed/4);
 
-    // Animate span parent container to 100 %
-    $('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
+		$('.navbar-nav .search-icon').animate({backgroundColor:'"fff'}, s.animSpeed);
 
-    // Animate the text box
-    $('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
+		// Animate span parent container to 100 %
+		$('.navbar-nav .typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
 
-    // Show the "Close search" icon
-    setTimeout(function(){
-      $('.navbar-nav li.search .remove').toggle();
-    }, s.animSpeed);
+		// Animate the text box
+		$('.navbar-nav .twitter-typeahead').animate({width:'100%',backgroundColor:'"fff',color:"#000"}, s.animSpeed);
+
+		// Show the "Close search" icon
+		setTimeout(function(){
+		  $('.navbar-nav li.search .remove').toggle();
+		}, s.animSpeed);
+    }
   },
   getQuery : function (){
     // Get the query from the location URL
@@ -375,7 +377,7 @@ var s,search = {
     // Populate the promotion area
     if (s.start===0 && search.promotions !== undefined){
       search.promotions.forEach(function (promotionObj){
-        if (promotionObj.query.toLowerCase() === s.urlParams.q.toLowerCase()){
+        if (s.urlParams.q.match(/promotionObj.query/gi)){
           $(".searchresults").append('<div class="promotion' + '"><h3>'+promotionObj.header + '<' + '/h3><' + 'p class="description">' + promotionObj.text + '</p' + ' ><p class="showurl"' + '><a href="' + promotionObj.url + '">' + promotionObj.name + '<' + '/a><' + '/p><' + '/div>');
         }
       });
