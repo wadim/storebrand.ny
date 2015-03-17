@@ -223,7 +223,7 @@ var s,search = {
 		var searchVal = $('.tt-desktop.typeahead.tt-input').typeahead('val').trim();
 		if(/\d{11}/.test(searchVal) || /\d{10}/.test(searchVal)){
 			if(s.maximized){
-			 $('.navbar-nav .typeahead.tt-input').blur();
+             search.minimizeSearch();
 			 setTimeout(function(){$('li.login>a').click();
 					var field =  $('#start-login-form input');
 					field.val(searchVal);
