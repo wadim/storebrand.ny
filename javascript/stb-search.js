@@ -174,7 +174,7 @@ var s,search = {
 
    $('.navbar-nav .typeahead.tt-input').blur(function(e) {
        e.preventDefault();
-       if(s.maximized && !s.animating) {
+       if(s.maximized && !s.animating && $('.tt-desktop.typeahead.tt-input').typeahead('val').trim().length === 0) {
          search.minimizeSearch();
        }
    });
