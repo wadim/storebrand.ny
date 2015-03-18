@@ -106,7 +106,12 @@
       initBootstrapValidator($('form#contactus'),contactValidationFields, function(e) {
         // Prevent form submission
         e.preventDefault();
-        alert("Submit")},"enabled");
+        alert("Submit")},
+        function(e) {
+        // Prevent form submission
+        e.preventDefault();
+        },
+        "enabled");
     });
   </script>
 

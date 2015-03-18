@@ -5921,7 +5921,7 @@ $.fn.extend({
 /* ***** End of Function for opening chat ***** */
 
 /* ***** Function for initializing bootstrap validator ***** */
-function initBootstrapValidator (formSelector,validatorFields,callback,live) {
+function initBootstrapValidator (formSelector,validatorFields,successcallback,errorcallback,live) {
   formSelector.bootstrapValidator({
     live: live === undefined ? 'disabled' : live,
     group: '.stb-form-group',
@@ -5931,7 +5931,7 @@ function initBootstrapValidator (formSelector,validatorFields,callback,live) {
       validating: 'glyphicon glyphicon-refresh'
     },
     fields: validatorFields
-  }).on('success.form.bv',callback);
+  }).on('success.form.bv',successcallback).on('err.form.fv',errorcallback);
 }
 /* ***** End of Function for initializing bootstrap validator ***** */
 
