@@ -5417,7 +5417,7 @@ var s,search = {
 	});
   },
   minimizeSearch : function(){
-	if(s.maximized){
+	if(s.maximized && !s.animating){
 		// Save the animating state, and reset it once the animations complete
 		s.animating = true;
 		$('.navbar-nav .typeahead').prop('disabled', true);
@@ -5460,7 +5460,7 @@ var s,search = {
     }
   },
   maximizeSearch : function (){
-   if(!s.maximized){
+   if(!s.maximized && !s.animating){
 		s.maximized = true;
 		//Hide overlay when search is focus
 		$('.shadow-overlay').hide();
@@ -5540,7 +5540,7 @@ var s,search = {
     // Populate the promotion area
     if (s.start===0 && search.promotions !== undefined){
       search.promotions.forEach(function (promotionObj){
-        if (s.urlParams.q.match(/promotionObj.query/gi)){
+        if (promotionObj.match(new RegExp("\\b"+s.urlParams.q+"\\b",'gi'))){
           $(".searchresults").append('<div class="promotion' + '"><h3>'+promotionObj.header + '<' + '/h3><' + 'p class="description">' + promotionObj.text + '</p' + ' ><p class="showurl"' + '><a href="' + promotionObj.url + '">' + promotionObj.name + '<' + '/a><' + '/p><' + '/div>');
         }
       });
