@@ -254,7 +254,7 @@ var s,search = {
 	});
   },
   minimizeSearch : function(){
-	if(s.maximized){
+	if(s.maximized && !s.animating){
 		// Save the animating state, and reset it once the animations complete
 		s.animating = true;
 		$('.navbar-nav .typeahead').prop('disabled', true);
@@ -297,7 +297,7 @@ var s,search = {
     }
   },
   maximizeSearch : function (){
-   if(!s.maximized){
+   if(!s.maximized && !s.animating){
 		s.maximized = true;
 		//Hide overlay when search is focus
 		$('.shadow-overlay').hide();
