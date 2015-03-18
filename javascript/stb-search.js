@@ -377,7 +377,7 @@ var s,search = {
     // Populate the promotion area
     if (s.start===0 && search.promotions !== undefined){
       search.promotions.forEach(function (promotionObj){
-        if (promotionObj.match(new RegExp("\\b"+s.urlParams.q+"\\b",'gi')){
+        if (promotionObj.match(new RegExp("\\b"+s.urlParams.q+"\\b",'gi'))){
           $(".searchresults").append('<div class="promotion' + '"><h3>'+promotionObj.header + '<' + '/h3><' + 'p class="description">' + promotionObj.text + '</p' + ' ><p class="showurl"' + '><a href="' + promotionObj.url + '">' + promotionObj.name + '<' + '/a><' + '/p><' + '/div>');
         }
       });
