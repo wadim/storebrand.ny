@@ -411,6 +411,14 @@ ul.stb,ol.stb {
     }
   }
 
+  &.pdf li a, li.pdf a, li a.pdf {
+      &:after{
+        content: "";
+        &:extend(.stb-color-sprite-medium);
+        &:extend(.stb-color-sprite-medium.pdf);
+      }
+  }
+
 } //end:ul.stb
 
 // End of styling of ordered and unordered lists
