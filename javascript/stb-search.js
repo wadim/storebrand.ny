@@ -258,10 +258,6 @@ var s,search = {
 		// Save the animating state, and reset it once the animations complete
 		s.animating = true;
 		$('.navbar-nav .typeahead').prop('disabled', true);
-		setTimeout(function(){
-		  s.animating = false;
-		  $('.navbar-nav .typeahead').prop('disabled', false);
-		}, s.animSpeed);
 
 		// Hide the remove icon
 		$('.navbar-nav li.search .remove').toggle();
@@ -285,29 +281,23 @@ var s,search = {
 		  // Show the menu
 		  $('.navbar-nav > li.group').toggle();
 
-		  // Remove the focus from the smaller search box in case the user clicked on it during the animation
-		  //$('.navbar-nav .typeahead').blur();
-
-		  // Save the new state
-		  s.maximized = false;
-
 		  // Reset the span container to initial value
 		  $('.navbar-nav .twitter-typeahead').css('width',s.initialWidth);
+      // Save the new state
+      s.maximized = false;
+      s.animating = false;
+      $('.navbar-nav .typeahead').prop('disabled', false);
 		},  s.animSpeed);
     }
   },
   maximizeSearch : function (){
    if(!s.maximized && !s.animating){
+    // Save the animation state, and reset it once the animations complete
+    s.animating = true;
 		s.maximized = true;
+
 		//Hide overlay when search is focus
 		$('.shadow-overlay').hide();
-
-		// Save the animation state, and reset it once the animations complete
-		s.animating = true;
-
-		setTimeout(function(){
-		  s.animating = false;
-		}, s.animSpeed);
 
 		// Store the current width
 		var searchParentWidth = $('.navbar-nav > li.search').css('width');
@@ -315,8 +305,6 @@ var s,search = {
 		// Since the width is given in pixels instead of percentage, we need to calculate it ourselves
 		s.searchParentWidthPercent = Math.round(100*(parseInt(searchParentWidth) / $('.navbar-nav').width()));
 
-		// Give the text element a fixed size
-		//$('.navbar-nav .typeahead').css('width',searchParentWidth);
 		// Hide the menu
 		$('.navbar-nav > li.group').toggle();
 
@@ -342,7 +330,8 @@ var s,search = {
 		// Show the "Close search" icon
 		setTimeout(function(){
 		  $('.navbar-nav li.search .remove').toggle();
-		}, s.animSpeed);
+      s.animating = false;
+    }, s.animSpeed);
     }
   },
   getQuery : function (){
