@@ -484,23 +484,8 @@
   position:relative;
   top:0;
   left:0;
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.15s ease-out;
-  -moz-transition: max-height 0.15s ease-out;
-  -ms-transition: max-height 0.15s ease-out;
-  -o-transition: max-height 0.15s ease-out;
-  transition: max-height 0.15s ease-out;
-
-  &.open{
-    max-height: 1000px;
-    -webkit-transition: max-height 0.25s ease-in;
-    -moz-transition: max-height 0.25s ease-in;
-    -ms-transition: max-height 0.25s ease-in;
-    -o-transition: max-height 0.25s ease-in;
-    transition: max-height 0.25s ease-in;
-    border-bottom: solid 2px @stb-gray-second;
-  }
+  display: none;
+  border-bottom: solid 2px @stb-gray-second;
 
   >div.row{
     margin-right: 0; margin-left: 0;
