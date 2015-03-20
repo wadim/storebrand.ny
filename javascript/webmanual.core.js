@@ -35,7 +35,7 @@ function toggleMsg(){
     showCommonMsg();
   }, 1000);
 }
-/*
+
 $(document).ready(function() {
   $.datepicker.regional.no = {
     closeText: "Lukk",
@@ -55,7 +55,35 @@ $(document).ready(function() {
     yearSuffix: ""
   }, $.datepicker.setDefaults($.datepicker.regional.no), $("input[data-widget=stb-datepicker]").datepicker().children().show();
 });
-*/
+
+$(document).ready(function(){
+  if($('.datePicker').length > 0){
+    $('.datePicker').datetimepicker(
+        {language: 'nb',
+          pickTime: false,
+          icons: {
+            date: 'stb-sprite-small white calendar'
+          }
+        }
+    );
+    $('.datePicker')
+        .on('dp.change dp.show', function(e) {
+          var name = $(e.target).find('input').attr('name');
+          // Validate the date when user change it
+          if($(this).parents('form.validateForm').length > 0){
+            $(this).parents('form.validateForm')
+              // Get the bootstrapValidator instance
+                .data('bootstrapValidator')
+              // Mark the field as not validated, so it'll be re-validated when the user change date
+                .updateStatus(name, 'NOT_VALIDATED', null)
+              // Validate the field
+                .validateField(name);
+          }
+        });
+  }
+});
+
+
 $(document).ready(function() {
   var sliderObj = {
     from: 0,
@@ -94,8 +122,8 @@ $(document).ready(function() {
       return d;
     }
   };
-  //var sliderEl = $("#stb-slider");
-  //initiateSlider(sliderEl, sliderObj, "år", "percent");
+  var sliderEl = $("#stb-slider");
+  initiateSlider(sliderEl, sliderObj, "år", "percent");
 });
 
 /*$("document").ready(function() {
@@ -429,3 +457,15 @@ var dateValidator = {
   }
 };
 /* ***** End of date validator for boootstrap validator and datetimepicker ***** */
+/* ***** Function for intitiating a slider with a input element on the side ***** */
+function initiateSlider(sliderEl, sliderObj, unit, name){
+
+  var sliderInput = '<input id="'+name+'" type="number" class="text-center sliderInput" name="'+name+'"/>';
+  sliderEl.parent().prepend(sliderInput+'<p class="unit">'+unit+'</p>');
+  sliderEl.slider(sliderObj);
+
+  $('#'+name).on('change',function(){
+    sliderEl.slider('value', $(this).val());
+  });
+}
+/* ***** End of slider function ***** */
