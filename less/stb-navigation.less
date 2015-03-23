@@ -655,16 +655,6 @@
 
 //First
 #nav-toggle{
-  span{
-    -webkit-transform: translatez(0);
-    -moz-transform: translatez(0);
-    -ms-transform: translatez(0);
-    -o-transform: translatez(0);
-    transform: translatez(0);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
 
   span,span:before, span:after{
     cursor: pointer;
@@ -675,17 +665,28 @@
     position: absolute;
     display: inline-block;
     content: '';
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
   }
 
   span:before {
     top: -7px;
     left: 0;
-    transition: all 200ms linear;
 
   }
   span:after {
     bottom: -7px;
     left: 0;
+  }
+
+  span, span:before,span:after {
     transition: all 200ms linear;
   }
 
@@ -710,5 +711,3 @@
     }
   }
 }
-
-
