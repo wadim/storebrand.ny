@@ -281,6 +281,11 @@ a {
       }
     }
   }
+  &.pdf_document:before{
+    content: "";
+    &:extend(.stb-color-sprite-medium);
+    &:extend(.stb-color-sprite-medium.pdf);
+  }
 }
 
 a:visited {
@@ -411,7 +416,7 @@ ul.stb,ol.stb {
     }
   }
 
-  &.pdf li a, li.pdf a, li a.pdf {
+  li.pdf_document a {
       &:before{
         content: "";
         &:extend(.stb-color-sprite-medium);

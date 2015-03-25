@@ -52,7 +52,12 @@
       margin-top: 12px;
     }
   }
-
+  a.pdf_document:before{
+    content: "";
+    display: inline-block;
+    &:extend(.stb-color-sprite-medium);
+    &:extend(.stb-color-sprite-medium.pdf);
+  }
 }
 
 
@@ -108,9 +113,3 @@
   }
 }
 
-a.pdf_document:before{
-  content: "";
-  display: inline-block;
-  &:extend(.stb-color-sprite-medium);
-  &:extend(.stb-color-sprite-medium.pdf);
-}
