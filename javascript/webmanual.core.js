@@ -123,7 +123,9 @@ $(document).ready(function() {
     }
   };
   var sliderEl = $("#stb-slider");
-  initiateSlider(sliderEl, sliderObj, "år", "percent");
+  if(sliderEl.length > 0){
+    initiateSlider(sliderEl, sliderObj, "år", "percent");
+  }
 });
 
 /*$("document").ready(function() {
