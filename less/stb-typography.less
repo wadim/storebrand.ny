@@ -215,6 +215,12 @@ p {
     font-size: 60px;
     margin: 18px 12px 12px 0;
   }
+
+  &.pdf_document a:before {
+      content: "";
+      &:extend(.stb-color-sprite-medium);
+      &:extend(.stb-color-sprite-medium.pdf);
+  }
 }
 
 .input-required {
@@ -423,7 +429,6 @@ ul.stb,ol.stb {
         &:extend(.stb-color-sprite-medium.pdf);
       }
   }
-
 } //end:ul.stb
 
 // End of styling of ordered and unordered lists
@@ -456,7 +461,6 @@ ul.stb,ol.stb {
     margin: 18px 6px 6px 0;
   }
 
-
   h2 + h3 {
     margin: 6px 6px 6px 0;
   }
@@ -474,7 +478,7 @@ ul.stb,ol.stb {
       font-size: 52px;
     }
   }
-  
+
   blockquote {
     font-size: 14px;
     line-height: 20px;
