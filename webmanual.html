@@ -27,7 +27,6 @@
   <script type="text/javascript" src="javascript/modernizr.custom.js"></script>
   <script type="text/javascript" src="javascript/jquery.min.js"></script>
   <script type="text/javascript" src="javascript/jquery.eqheight.js"></script>
-  <script type="text/javascript" src="javascript/jquery-ui-1.11.0.js"></script>
   <script type="text/javascript" src="javascript/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
   <script type="text/javascript" src="javascript/typeahead.bundle.min.js"></script>  
@@ -2123,8 +2122,21 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
   <div class="col-md-11">
     <p class="center-block">
-      Buttons come in one size only (although with variable width);
-      <br /><br />
+      We differentiate between two types of buttons:
+      <ol class="stb">
+        <li>
+          Buttons used for navigation
+        </li>
+        <li>
+          Buttons used other purposes
+        </li>
+      </ol>
+      For navigation we use the anchor tag markup and for the others we use the standard button tag.
+      <br />
+      Buttons come in one size only (although with variable width)
+      <br />
+      <br />
+      <strong>Navigation button</strong>: <a class="stb-btn">Navigate to</a><br />
       <strong>Standard button</strong>: <button class="stb-btn">Standard</button><br />
       Height: 48px<br />
       Width: 100-200px<br />
@@ -2134,7 +2146,12 @@ $('ul[data-widget=stbFaq]').stbFaq();
     </p>
     <p><strong>Missing description:</strong> When to use a button vs when to use a text link.</p>
     <strong>Usage:</strong> <br />
-    <pre class="prettyprint"> &lt;button class="stb-btn [analyze]"&gt;Standard&lt;/button&gt;</pre>
+    <pre class="prettyprint">
+&lt;!--For navigation --&gt;
+&lt;a class="stb-btn [analyze]"&gt;Navigate to&lt;/a&gt;
+
+&lt;!--For other purposes --&gt;
+&lt;button class="stb-btn [analyze]"&gt;Standard&lt;/button&gt;</pre>
   </div>
 
 </div>
