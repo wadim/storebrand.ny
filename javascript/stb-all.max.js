@@ -6412,9 +6412,9 @@ function findBootstrapEnvironment() {
         }
       }
     };
-    var frontpageLoginFields =  {
+    var mobileLoginFields=  {
       nationalIdentityNumber: {
-        container: '#startlogin-message',
+        container: '#mobile-menulogin-message',
         validators: {
           callback: idValidator,
           notEmpty: {
@@ -6432,7 +6432,7 @@ function findBootstrapEnvironment() {
 
     try{
       initBootstrapValidator ($('#start-login-form'),loginFields,callback);
-      initBootstrapValidator ($('#start-login-form-mobile'),loginFields,callback);
+      initBootstrapValidator ($('#start-login-form-mobile'),mobileLoginFields,callback);
     }catch(err){}
   });
 
