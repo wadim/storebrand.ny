@@ -1,1 +1,6 @@
 node_modules/
+css/*.min.css
+css/*.max.css
+javascript/stb-all.max.js
+javascript/stb-all.min.js
+javascript/stb-all.webmanual.max.js
