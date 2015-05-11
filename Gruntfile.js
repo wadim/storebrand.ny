@@ -75,10 +75,21 @@ module.exports = function(grunt) {
         files: ['less/**/*.less'],
         tasks: ['less'],
         options: {
-          nospawn: true
+          nospawn: true,
+          livereload: true
+        }
+      }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: './',
+          livereload: true
         }
       }
     }
+
 
 
   });
@@ -87,7 +98,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task
-  grunt.registerTask('default', ['less','watch','jshint','concat', 'uglify']);
+  grunt.registerTask('default', ['less','watch','jshint','concat','uglify']);
+  grunt.registerTask('serve',   ['connect','less','watch','jshint','concat','uglify']);
 };
