@@ -9,14 +9,16 @@
   "author": "",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "grunt-contrib-clean": "~0.5.0"
   },
   "devDependencies": {
-    "grunt-shell": "~0.6.1",
-    "patsy": "0.2.2-beta",
-    "node-spritesheet": "https://github.com/nilsel/node-spritesheet/tarball/b000fa4ad615daaaf9e54d5bd032d7b599f9e504",
     "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-recess": "~0.5.0",
-    "grunt-contrib-clean": "~0.5.0"
+    "grunt-shell": "~0.6.1"
   }
 }
