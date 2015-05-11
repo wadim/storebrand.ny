@@ -78,6 +78,13 @@ module.exports = function(grunt) {
           nospawn: true,
           livereload: true
         }
+      },
+      script: {
+        files: ['Gruntfile.js', 'javascript/stb-page-padding.js','javascript/stb-common.js','javascript/stb-search.js','javascript/stb-video.js'],
+        tasks: ['jshint','concat','uglify'],
+        options: {
+          livereload: true
+        }
       }
     },
     connect: {
