@@ -598,18 +598,10 @@
       var phoneNumber = $(form).find('input.phone').val();
       if(!isNaN(phoneNumber) && phoneNumber.length === 8){
         var callbackUrl = $(form).find(".callback-channel").val() + phoneNumber;
-        $.support.cors = true;
-        $.ajax({
-          url: callbackUrl,
-          success: function(data) {
-            $(form).next('.contactus-receipt').find('.contact-number').append(phoneNumber);
-            $(form).next('.contactus-receipt').show();
-            $(form).hide();
-          },
-          error: function(data, textStatus) {
-            $(form).find('input.phone').before("<span class='help-block has-error'><small class='help-block'><span class='stb-color-sprite-small warning'></span> Beklager, vi har problemer med denne tjenesten. Prøv igjen seinere.</small></span>");
-          }
-        });
+        $(form).append("<iframe src='" + callbackUrl + "' scrolling='auto' frameborder='0' width='1' height='1' name='call'></iframe>");
+        $(form).next('.contactus-receipt').find('.contact-number').append(phoneNumber);
+        $(form).next('.contactus-receipt').show();
+        $(form).hide();
       } else {
         $(form).find('input.phone').before("<span class='help-block has-error'><small class='help-block'><span class='stb-color-sprite-small warning'></span> Ugyldig telefonnummer!</small></span>");
       }
