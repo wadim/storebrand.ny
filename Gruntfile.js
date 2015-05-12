@@ -78,6 +78,13 @@ module.exports = function(grunt) {
           nospawn: true,
           livereload: true
         }
+      },
+      script: {
+        files: ['Gruntfile.js', 'javascript/stb-page-padding.js','javascript/stb-common.js','javascript/stb-search.js','javascript/stb-video.js'],
+        tasks: ['jshint','concat','uglify'],
+        options: {
+          livereload: true
+        }
       }
     },
     connect: {
@@ -101,6 +108,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task
-  grunt.registerTask('default', ['less','watch','jshint','concat','uglify']);
-  grunt.registerTask('serve',   ['connect','less','watch','jshint','concat','uglify']);
+  grunt.registerTask('default', ['less','jshint','concat','uglify','watch']);
+  grunt.registerTask('serve',   ['connect','less','jshint','concat','uglify','watch']);
 };
