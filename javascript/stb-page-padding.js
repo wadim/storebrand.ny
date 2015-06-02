@@ -40,7 +40,7 @@
   //Checking for carts
   $(document).ready(function() {
    var cartCount = readCookie("cartCount");
-    if (cartCount != null) {
+    if (cartCount != null && showCartIcon == true) {
       addCartBtn(cartCount);  
     }
   }); 
