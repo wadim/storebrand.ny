@@ -316,57 +316,65 @@
   // Google Analytics event tagging - automated for various design elements
   // To enable analytics the element needs a 'analyze' class
   $(document).ready(function() {
-    // Analytics for buttons
+
+    // Analytics for Button
     $('button.analyze').bind( "click", function() {
       var btnTxt = $(this).html();
       var path = window.location.pathname;
       //console.log(btnTxt);
       //console.log(path);
-      ga('send', 'event', path , 'Klikk på knappen', btnTxt);
+      ga('send', 'event', path , 'Klikk på knapp', btnTxt);
     });
-    // Analytics for links
-    $('a.analyze').bind( "click", function() {
-      var linkTxt = $(this).html();
-      var path = window.location.pathname;
-      //console.log(linkTxt);
-      //console.log(path;
-      ga('send', 'event', path , 'Klikk på lenke', linkTxt);
-    });
-    // Analytics for miniboxes
+
+    // Analytics for links - Removed because it is too general, so it stole the thunder from other analyze events!
+    //$('a.analyze').bind( "click", function() {
+    //  var linkTxt = $(this).html();
+    //  var path = window.location.pathname;
+    //  //console.log(linkTxt);
+    //  //console.log(path;
+    //  ga('send', 'event', path , 'Klikk på lenke', linkTxt);
+    //});
+
+    // Analytics for Mini box
     $('.mini.clickable.analyze').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
       //console.log(boxId);
       //console.log(path);
-      ga('send', 'event', path , 'Klikk på miniboks', boxId);
+      ga('send', 'event', path , 'Klikk på Mini Box', boxId);
     });
-    // Analytics for big boxes
+
+    // Analytics for Big box
     $('.big.clickable.analyze').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
       //console.log(boxId);
       //console.log(path);
-      ga('send', 'event', path , 'Klikk på store boks ', boxId);
+      ga('send', 'event', path , 'Klikk på Big Box ', boxId);
     });
-    // Analytics for accordion
+
+    // Analytics for Accordion
     $('.accordion.analyze a').bind( "click", function() {
       //console.log('faq');
       var q = $(this).find('.question').html();
       var path = window.location.pathname;
       //console.log(q);
       //console.log(path);
-      ga('send', 'event', path , 'Klikk på accordion ', q);
+      ga('send', 'event', path , 'Klikk i FAQ ', q);
     });
 
-    // Analytics for list group
+    // Analytics for List group
     $('.list-group-item.analyze').bind( "click", function() {
-      var q = $(this).prev('.header').html();
+      var q = $(this).html();
+      var qspan = q.indexOf("<span", 0);
+      var q2 = q.substring(0,qspan);
       var path = window.location.pathname;
-      //console.log(q);
+      //console.log(q2);
       //console.log(path);
-      ga('send', 'event', path , 'Klikk på list group ', q);
+      ga('send', 'event', path , 'Klikk i List Group ', q2);
     });
-    // Analytics for radio buttons and checkboxes
+
+    // Analytics for Radio buttons and Checkboxes
     $('label.analyze').bind( "click", function() {
       var parent = $(this).parent();
       var q = $(this).html();
@@ -375,12 +383,13 @@
       //console.log(q);
       //console.log(path);
       if(parent.hasClass('radiobuttons')) {
-        ga('send', 'event', path , 'Radiobutton: ' + label + ' checked', q);
+        ga('send', 'event', path , 'Radio button: ' + label + ' checked', q);
       } else if(parent.hasClass('checkboxes')) {
         ga('send', 'event', path , 'Checkbox: ' + label + ' checked', q);
       }
     });
-    // Analytics for select
+
+    // Analytics for Select
     $('select.analyze').bind( "change", function() {
       var q = $(this).val();
       var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
@@ -389,7 +398,8 @@
       //console.log(path);
       ga('send', 'event', path , 'Dropdown:' + label + ' endret valg.', q);
     });
-    //Analytics for datepicker
+
+    //Analytics for Datepicker
     $('.datePicker.analyze').bind('dp.change dp.show', function(){
       var q = $(this).find('input').val();
       var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
@@ -401,7 +411,7 @@
 
   });
 
-  // Adjustments to Bootstraps Modal window
+  // Adjustments to Bootstrap Modal window
   var modalDialog = {
     triggerModal : function(type,options) {
       if(type === 'confirm') {
