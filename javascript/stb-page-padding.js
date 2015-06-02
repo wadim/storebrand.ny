@@ -194,21 +194,6 @@
       }
     }
 
-    //Adds cartIcon if cartCount cookie is found 
-    function addCartBtn(count){
-      $('body').prepend("<div class='cartIcon shoppingCartIcon'><a href='https://www2.storebrand.no/static/open/utsjekk/#/cart/'><div class='circle-24 stbcolor-gray fifth '><span class='stb-sprite-medium white shopping-cart'></span></div><div class='circle-16 stbcolor-primary first darker cartNr' style='border-radius:24px;height:24px;width:24px;padding-left:9px;padding-top:2px;'><h6 class='h2Number'>"+count+"</h6></div></a></div>");
-    }
-
-    //Toggles cart when scroll
-    $(window).scroll(function(event){
-      if ($(window).scrollTop() == 0) {
-        $('.shoppingCartIcon').fadeIn('slow');
-      } 
-      else{
-        $('.shoppingCartIcon').fadeOut('slow');
-     }
-    });
-
     // Perform a smooth page scroll to an anchor on the same page.
     $(function() {
       $('.toc-list .items a[href*=#]:not([href=#])').click(function(event) {
@@ -692,3 +677,18 @@ var idValidator = {
     return verifyIDNumber(value);
   }
 };
+
+//Adds cartIcon if cartCount cookie is found 
+function addCartBtn(count){
+  $('body').prepend("<div class='cartIcon shoppingCartIcon'><a href='https://www2.storebrand.no/static/open/utsjekk/#/cart/'><div class='circle-24 stbcolor-gray fifth '><span class='stb-sprite-medium white shopping-cart'></span></div><div class='circle-16 stbcolor-primary first darker cartNr' style='border-radius:24px;height:24px;width:24px;padding-left:9px;padding-top:2px;'><h6 class='h2Number'>"+count+"</h6></div></a></div>");
+}
+
+//Toggles cart when scroll
+$(window).scroll(function(event){
+  if ($(window).scrollTop() === 0) {
+    $('.shoppingCartIcon').fadeIn('slow');
+  } 
+  else{
+    $('.shoppingCartIcon').fadeOut('slow');
+ }
+});
