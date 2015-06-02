@@ -3579,6 +3579,14 @@ $('ul[data-widget=stbFaq]').stbFaq();
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var accept = readCookie('acceptCookies');
+    if(accept==='Yes' || window.location.href.indexOf("storebrand.no")<0 ) { 
+      $('#cookieNote').hide(); 
+    }
+  });
+</script>
 
 <footer class="stbcolor-primary first stb-footer">
 </footer>
