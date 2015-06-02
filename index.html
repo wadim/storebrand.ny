@@ -212,7 +212,14 @@
                                     <label>Fødselsnummer</label>
                                     <span id="menulogin-message" class="help-block has-error"><small class="help-block" data-bv-validator="callback" data-bv-for="nationalIdentityNumber" data-bv-result="NOT_VALIDATED" style="display: none;"><span class="stb-color-sprite-small warning"></span> Ugyldig fødselsnummer!</small><small class="help-block" data-bv-validator="notEmpty" data-bv-for="nationalIdentityNumber" data-bv-result="NOT_VALIDATED" style="display: none;"><span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer</small><small class="help-block" data-bv-validator="stringLength" data-bv-for="nationalIdentityNumber" data-bv-result="NOT_VALIDATED" style="display: none;">Please enter a value with valid length</small></span>
                                     <div class="stb-form-group with-submit has-feedback">
-                                       <input type="text" class="" maxlength="11" name="nationalIdentityNumber" placeholder="11 siffer" style="width: 230px" data-bv-field="nationalIdentityNumber"><i class="form-control-feedback bv-no-label" data-bv-icon-for="nationalIdentityNumber" style="display: none;"></i>
+                                       <input type="text" class="" maxlength="11" id="dropdownLogin" name="nationalIdentityNumber" placeholder="11 siffer" style="width: 230px" data-bv-field="nationalIdentityNumber"><i class="form-control-feedback bv-no-label" data-bv-icon-for="nationalIdentityNumber" style="display: none;"></i>
+                                       <script type="text/javascript">
+                                         $("#dropdownLogin").keyup(function(e) {
+                                         	 if(e.keyCode=="27") {
+                                         	 	 $("li.login").click();
+                                         	 }
+                                         });
+                                       </script>
                                        <button class="stb-btn stb-form is-submit">Logg inn</button>
                                     </div>
                                  </form>
