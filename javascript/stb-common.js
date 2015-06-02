@@ -4,7 +4,7 @@
  /*
 
  /* ***** SCROLL TO ***** */
-function scrollTo(id,more){
+function scrollTo(id,more) {
   $('html,body').animate({scrollTop: $('#'+id).height()}, 800);
 }
 
@@ -135,7 +135,7 @@ function decode64(input) {
 /* ***** END OF BASE64 OPERATIONS ***** */
 
 /* ***** GET URL PARAMETER BY NAME ****** */
-function gup(name){
+function gup(name) {
   name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
   var regexS = "[\\?&]"+name+"=([^&#]*)";
   var regex = new RegExp( regexS );
@@ -219,7 +219,7 @@ function eraseCookie(name) {
 }
 
 /* ***** Functionality for login ***** */
-function loginFromMenu(fnr){
+function loginFromMenu(fnr) {
   var pid64= encode64(fnr);
   window.location.href="https://www2.storebrand.no/site/guiding.nsf/bankCheck?openpage&pid64="+pid64;
 }
@@ -227,7 +227,7 @@ function loginFromMenu(fnr){
 
 /* ***** Function for opening chat ***** */
 $.fn.extend({
-  openChat: function(){
+  openChat: function() {
     var width = 650;
     var height = 450;
     var leftPosition = (screen.width/2)-(width/2);
@@ -239,7 +239,7 @@ $.fn.extend({
 });
 /* ***** End of Function for opening chat ***** */
 
-/* ***** Function for initializing bootstrap validator ***** */
+/* ***** Function for initializing Bootstrap validator ***** */
 function initBootstrapValidator (formSelector,validatorFields,successcallback,errorcallback,live) {
   formSelector.bootstrapValidator({
     live: live === undefined ? 'disabled' : live,
@@ -252,10 +252,10 @@ function initBootstrapValidator (formSelector,validatorFields,successcallback,er
     fields: validatorFields
   }).on('success.form.bv',successcallback).on('err.form.fv',errorcallback);
 }
-/* ***** End of Function for initializing bootstrap validator ***** */
+/* ***** End of Function for initializing Bootstrap validator ***** */
 
 
-/* ***** Function for finding the bootstrap environment ***** */
+/* ***** Function for finding the Bootstrap environment ***** */
 function findBootstrapEnvironment() {
   var envs = ['xs', 'sm', 'md', 'lg'];
 

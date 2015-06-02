@@ -1,8 +1,8 @@
 ﻿(function($){
 // Start navigation padding
 
-  $(document).ready(function(){
-    $(".dropdown").on("hide.bs.dropdown", function(){
+  $(document).ready(function() {
+    $(".dropdown").on("hide.bs.dropdown", function() {
       if( $(this).find('.dropdown-menu') ) {
         $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
         if( $(this).closest('#top-menu-nav').length ) {
@@ -12,41 +12,41 @@
       }
     });
 
-    $(".dropdown").on("show.bs.dropdown", function(){
+    $(".dropdown").on("show.bs.dropdown", function() {
       if( $(this).find('.dropdown-menu') ) {
         $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
         if( $(this).closest('#top-menu-nav').length ) {
           $(".shadow-overlay").css("display","block");
-          if(!$(this).is($('.current'))){
+          if(!$(this).is($('.current'))) {
             $('.current').css("background-color", "#bb1b18");
           }
         }
       }
     });
 
-    $(".dropdown").on("shown.bs.dropdown", function(){
+    $(".dropdown").on("shown.bs.dropdown", function() {
       if(!$(this).is($('.current.login'))){
         $('#start-login-form input').focus();
       }
     });
 
     // Slide up the dropdown on clicking the remove icon
-    $(".dropdown-menu > li > a").click(function(){
+    $(".dropdown-menu > li > a").click(function() {
       $(".dropdown").removeClass('open');
       $(".dropdown").trigger("hide.bs.dropdown");
     });
   });
 
   //Checking for carts
-  $(document).ready(function(){
+  $(document).ready(function() {
    var cartCount = readCookie("cartCount");
     if (cartCount != null) {
-        addCartBtn(cartCount);  
+      addCartBtn(cartCount);  
     }
   }); 
 
 // Showing/hiding the overlay on clicking the dropdown toggle
-  $(document).ready(function(){
+  $(document).ready(function() {
     //initialize the overlay to get the document's dimensions
     $(".shadow-overlay").css("width",$(document).width());
     $(".shadow-overlay").css("height",$(document).height());
@@ -95,18 +95,18 @@
   });
 
   $.fn.stbFaq = function () {
-      $(this).find("a").on("click", function (b) {
-        if ($(this).hasClass("twister")) {
-          b.preventDefault();
-          var c = $(this).siblings("ul.accordion li .answer");
-          $(this).hasClass("open") ? ($(this).removeClass("open"), c.slideUp(200)) : ($(this).addClass("open"), c.slideDown(200));
-        }
-      });
+    $(this).find("a").on("click", function (b) {
+      if ($(this).hasClass("twister")) {
+        b.preventDefault();
+        var c = $(this).siblings("ul.accordion li .answer");
+        $(this).hasClass("open") ? ($(this).removeClass("open"), c.slideUp(200)) : ($(this).addClass("open"), c.slideDown(200));
+      }
+    });
   };
 
-  $(document).ready(function(){
+  $(document).ready(function() {
     $('.stb-accordion').on('show.bs.collapse', function (event) {
-      if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
+      if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')) {
         $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up red');
       }else{
         $(event.target).prev().find('span:last').toggleClass('chevron-down chevron-up');
@@ -115,7 +115,7 @@
     });
 
     $('.stb-accordion').on('hide.bs.collapse', function () {
-      if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')){
+      if($(event.target).parents('.stb-accordion').is('.toggle-red-chevron')) {
         $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up red');
       }else{
         $('.panel-collapse.collapse.in').prev().find('span:last').toggleClass('chevron-down chevron-up');
@@ -126,7 +126,7 @@
 // End twister effect on accordion/FAQ
 
 // Achieve Equal height columns
-  $("document").ready(function(){
+  $("document").ready(function() {
     $(".row .column").matchHeight(true);
   });
 
@@ -135,7 +135,7 @@
   });
 
   //Equalheights fix for elements in hidden tabs
-  $(document).ready(function(){
+  $(document).ready(function() {
     $('ul[data-tabs="tabs"] a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
       $('.tab-pane.active .row .column').matchHeight(true);
     });
@@ -145,13 +145,13 @@
   // Handling automatic generation of TOC lists on article pages
   // Prepare the TOC link for a given header tag
   function prepareTocLink(headerTag, prefix) {
-    //take the header text
+    // Take the header text
     var headerText = headerTag.text();
-    //prepare the header ID from its text
+    // Prepare the header ID from its text
     headerTag.attr("id",prefix.replace(/ /g,"-").toLowerCase() + "--" + headerText.replace(/\-/g,'').replace(/ /g,"-").replace(/[æå]/gi,'a').replace(/ø/gi,'o').toLowerCase()); // generating id for the h3
     var headerId = headerTag.attr("id").replace(/\W/g, ''); // set the id
     headerTag.attr('name', headerId);
-    //create the link and return it
+    // Create the link and return it
     return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
   }
 
@@ -205,7 +205,7 @@
     });
 
     // replace medium with small chevron icon in mobile view
-    if( $( window ).width() <= 768){
+    if( $( window ).width() <= 768) {
       $('.toc-list p span').toggleClass("stb-sprite-small stb-sprite-medium");
     }
 
@@ -218,9 +218,9 @@
     });
 
   });
-// End of automatic generation of toc lists on article pages
+  // End of automatic generation of toc lists on article pages
 
-// Opens the href in the relattribute to the clickable class
+  // Opens the href in the rel-attribute to the clickable class
   $(document).ready(function($) {
     $(".clickable").click(function() {
       if ($(this).find("a").first().attr("target") === '_blank') {
@@ -230,19 +230,19 @@
       }
     });
 
-    $(".clickable a").click(function(e){
+    $(".clickable a").click(function(e) {
       e.preventDefault();
       //Do nothing, as the clickable will handle this click.
     });
   });
 
-//Appending arrow after link for clickable links
+  //Appending arrow after link for clickable links
   $(document).ready(function() {
     var arrowCode ='<span class="stb-sprite-small arrow-right pull-right"></span>';
     $('a.list-group-item').append(arrowCode);
   });
 
-//Adding link visibility to contents in first column in clickable rows in tables
+  //Adding link visibility to contents in first column in clickable rows in tables
   $(document).ready(function() {
     $('tr.clickable td:first-child').each(function() {
       if($(this).parent().hasClass('analyze')){
@@ -253,18 +253,18 @@
     });
   });
 
-// End content padding
+  // End content padding
 
-// Adding hotkeys based on Resig
-  $("document").ready(function(){
+  // Adding hotkeys based on Resig
+  $("document").ready(function() {
 
     //Hotkey for search
-    if($('.typeahead').length){
+    if($('.typeahead').length) {
       $(document).bind('keydown', 'shift+s', function(event){event.preventDefault();$('.navbar-nav .typeahead').focus();});
     }
 
     //Hotkey for bottom
-    if( $('footer').length){
+    if( $('footer').length) {
       $(document).bind('keydown', 'shift+b', function(){$('html, body').animate({ scrollTop: $('footer').offset().top}, 500);});
     }
 
@@ -277,23 +277,23 @@
     $(document).bind('keydown', 'shift+t', function(){$('html, body').animate({ scrollTop: 0}, 500);});
   });
 
-// Check  for list groups with .expandable class and make them expandable
-  $(document).ready(function(){
-    $('ul.stb-list-group.expandable').each(function(index){
+// Check for list groups with .expandable class and make them expandable
+  $(document).ready(function() {
+    $('ul.stb-list-group.expandable').each(function(index) {
       makeExpandableList($(this),2);
     });
   });
   /* ***** START Make lists expandable ***** */
-  function makeExpandableList(selector){
+  function makeExpandableList(selector) {
     initialExpandable(selector);
 
     var showMore = selector.find('.showMore');
 
     showMore.click(function() {
-      if(showMore.hasClass('open')){
+      if(showMore.hasClass('open')) {
         initialExpandable(selector);
         showMore.find('span').toggleClass('chevron-up red chevron-down');
-      }else{
+      } else {
         selector.children('li').show(400);
         showMore.find('span').toggleClass('chevron-up red chevron-down');
       }
@@ -302,10 +302,11 @@
     });
   }
   /* ***** END Make lists expandable ***** */
+
   /* ***** START Loop through list, showing li elements with summary class and hide all other li elements ***** */
-  function initialExpandable(selector){
-    selector.children('li').each(function(index){
-      if(!$(this).is('.summary, .showMore')){
+  function initialExpandable(selector) {
+    selector.children('li').each(function(index) {
+      if(!$(this).is('.summary, .showMore')) {
         $(this).hide(400);
       }
     });
@@ -314,8 +315,8 @@
 
   // Google Analytics event tagging - automated for various design elements
   // To enable analytics the element needs a 'analyze' class
-  $(document).ready(function(){
-    //Analytics for buttons
+  $(document).ready(function() {
+    // Analytics for buttons
     $('button.analyze').bind( "click", function() {
       var btnTxt = $(this).html();
       var path = window.location.pathname;
@@ -323,7 +324,7 @@
       //console.log(path);
       ga('send', 'event', path , 'Klikk på knappen', btnTxt);
     });
-    //Analytics for links
+    // Analytics for links
     $('a.analyze').bind( "click", function() {
       var linkTxt = $(this).html();
       var path = window.location.pathname;
@@ -331,7 +332,7 @@
       //console.log(path;
       ga('send', 'event', path , 'Klikk på lenke', linkTxt);
     });
-    //Analytics for miniboxes
+    // Analytics for miniboxes
     $('.mini.clickable.analyze').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
@@ -339,7 +340,7 @@
       //console.log(path);
       ga('send', 'event', path , 'Klikk på miniboks', boxId);
     });
-    //Analytics for big boxes
+    // Analytics for big boxes
     $('.big.clickable.analyze').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
@@ -347,7 +348,7 @@
       //console.log(path);
       ga('send', 'event', path , 'Klikk på store boks ', boxId);
     });
-    //Analytics for accordion
+    // Analytics for accordion
     $('.accordion.analyze a').bind( "click", function() {
       //console.log('faq');
       var q = $(this).find('.question').html();
@@ -357,7 +358,7 @@
       ga('send', 'event', path , 'Klikk på accordion ', q);
     });
 
-    //Analytics for list group
+    // Analytics for list group
     $('.list-group-item.analyze').bind( "click", function() {
       var q = $(this).prev('.header').html();
       var path = window.location.pathname;
@@ -365,7 +366,7 @@
       //console.log(path);
       ga('send', 'event', path , 'Klikk på list group ', q);
     });
-    //Analytics for radio buttons and checkboxes
+    // Analytics for radio buttons and checkboxes
     $('label.analyze').bind( "click", function() {
       var parent = $(this).parent();
       var q = $(this).html();
@@ -373,20 +374,20 @@
       var path = window.location.pathname;
       //console.log(q);
       //console.log(path);
-      if(parent.hasClass('radiobuttons')){
-        ga('send', 'event', path , 'Radiobutton: '+label+' checked', q);
-      }else if(parent.hasClass('checkboxes')){
-        ga('send', 'event', path , 'Checkbox: '+label+' checked', q);
+      if(parent.hasClass('radiobuttons')) {
+        ga('send', 'event', path , 'Radiobutton: ' + label + ' checked', q);
+      } else if(parent.hasClass('checkboxes')) {
+        ga('send', 'event', path , 'Checkbox: ' + label + ' checked', q);
       }
     });
-    //Analytics for select
+    // Analytics for select
     $('select.analyze').bind( "change", function() {
       var q = $(this).val();
       var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
       var path = window.location.pathname;
       //console.log(q);
       //console.log(path);
-      ga('send', 'event', path , 'Dropdown:'+label+' endret valg.', q);
+      ga('send', 'event', path , 'Dropdown:' + label + ' endret valg.', q);
     });
     //Analytics for datepicker
     $('.datePicker.analyze').bind('dp.change dp.show', function(){
@@ -395,16 +396,15 @@
       var path = window.location.pathname;
       //console.log(q);
       //console.log(path);
-      ga('send', 'event', path , 'Date changed for: '+label, q);
-
+      ga('send', 'event', path , 'Date changed for: ' + label, q);
     });
 
   });
 
-  //Adjustments to Bootstraps Modal window
+  // Adjustments to Bootstraps Modal window
   var modalDialog = {
-    triggerModal : function(type,options){
-      if(type === 'confirm'){
+    triggerModal : function(type,options) {
+      if(type === 'confirm') {
         var markup = '<div class="modal stb-modal fade" id="dialogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">' +
             '<div class="modal-dialog modal-span6">' +
             '<div class="modal-content">' +
@@ -424,7 +424,7 @@
             '</div>' +
             '</div>';
 
-        if($('#dialogModal').length === 0){
+        if($('#dialogModal').length === 0) {
           $('body').append(markup);
         }
 
@@ -433,7 +433,7 @@
       }
     }
   };
-  //End Adjustments to Bootstraps Modal window
+  // End Adjustments to Bootstraps Modal window
 
   // Script to highlight anchor tags in mini and big boxes on mouseenter
   $("document").ready(function() {
@@ -459,8 +459,8 @@
 
 
 // login
-  $(document).ready(function(){
-    /* Verify National Identity Number ***********************************************/
+  $(document).ready(function() {
+    /* Verify National Identity Number */
     var loginFields=  {
       nationalIdentityNumber: {
         container: '#menulogin-message',
@@ -472,7 +472,7 @@
         }
       }
     };
-    var mobileLoginFields=  {
+    var mobileLoginFields= {
       nationalIdentityNumber: {
         container: '#mobile-menulogin-message',
         validators: {
@@ -490,10 +490,10 @@
       loginFromMenu($(e.target).find("input[name='nationalIdentityNumber']").val());
     };
 
-    try{
+    try {
       initBootstrapValidator ($('#start-login-form'),loginFields,callback);
       initBootstrapValidator ($('#start-login-form-mobile'),mobileLoginFields,callback);
-    }catch(err){}
+    } catch(err) { }
   });
 
 
@@ -512,10 +512,10 @@
   });
 
   /* ***** Function for making tables responsive ***** */
-  function makeTableScrollable(){
+  function makeTableScrollable() {
     var switched = false;
     var updateTables = function() {
-      if (($(window).width() < 767) && !switched ){
+      if (($(window).width() < 767) && !switched ) {
         switched = true;
         $(".table-responsive-pinned.scrollable table.responsive").each(function(i, element) {
           splitTable($(element));
@@ -534,18 +534,14 @@
     $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
     $(window).on("resize", updateTables);
 
-    function splitTable(original)
-    {
+    function splitTable(original) {
       original.wrap("<div class='table-wrapper' />");
-
       var copy = original.clone();
       copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
       copy.removeClass("responsive");
-
       original.closest(".table-wrapper").append(copy);
       copy.wrap("<div class='pinned' />");
       original.wrap("<div class='scrollable' />");
-
       setCellHeights(original, copy);
     }
 
@@ -575,7 +571,7 @@
         //Integration with boostrap fix
         $(this).height(heights[index]);
       });
-      tr.each(function (index){
+      tr.each(function (index) {
         $(this).height(heights[index]);
       });
     }
@@ -587,16 +583,16 @@
   };
 
   //Show and hide contactus links
-  $(document).ready(function(){
-    $('a.contact').click(function(){
+  $(document).ready(function() {
+    $('a.contact').click(function() {
       showHideForm(this);
     });
 
-    $('.contactus-cancel').click( function(){
+    $('.contactus-cancel').click( function() {
       showHideForm($(this).parents('.contactus-form').prev('div').find('.contact'));
     });
 
-    $('.contactus').submit(function(event){
+    $('.contactus').submit(function(event) {
       event.preventDefault();
       var form = $(this);
       $(form).find(".help-block").remove();
@@ -613,12 +609,12 @@
     });
   });
 
-  function showHideForm(elem){
+  function showHideForm(elem) {
     $(elem).parent('div').next('div').slideToggle('fast');
     $(elem).find('span:last').toggleClass('chevron-down chevron-up');
   }
 
-  $(document).ready(function(){
+  $(document).ready(function() {
     $(".contactElements a.chat.open").click(function(event){
       var contactElement = $(this);
       var contentKey = $(this).attr('data-key');
@@ -645,8 +641,8 @@
     });
   });
 
-  $(document).ready(function(){
-    $('.attachmentUpload input.file').change(function(e){
+  $(document).ready(function() {
+    $('.attachmentUpload input.file').change(function(e) {
       if(e.target.files.length > 0){
         var attachments = e.target.files.length > 1 ? "<p><b>"+e.target.files.length+" filer valgt:</b></p>" :  "<p><b>1 fil valgt:</b></p>";
 
@@ -661,7 +657,7 @@
 
     });
 
-    $('.stb-btn.uploadFile').click(function(e){
+    $('.stb-btn.uploadFile').click(function(e) {
       e.preventDefault();
       $(this).prev('.attachmentUpload').find('input.file').click();
     });
@@ -669,8 +665,8 @@
   });
 
 }(jQuery));
-/* ***** Validator for national identity number ***** */
 
+/* Validator for national identity number */
 var idValidator = {
   message: '<span class="stb-color-sprite-small warning"></span> Ugyldig fødselsnummer!',
   callback: function(value, validor){
@@ -679,16 +675,15 @@ var idValidator = {
 };
 
 //Adds cartIcon if cartCount cookie is found 
-function addCartBtn(count){
+function addCartBtn(count) {
   $('body').prepend("<div class='cartIcon shoppingCartIcon'><a href='https://www2.storebrand.no/static/open/utsjekk/#/cart/'><div class='circle-24 stbcolor-gray fifth '><span class='stb-sprite-medium white shopping-cart'></span></div><div class='circle-16 stbcolor-primary first darker cartNr' style='border-radius:24px;height:24px;width:24px;padding-left:9px;padding-top:2px;'><h6 class='h2Number'>"+count+"</h6></div></a></div>");
 }
 
-//Toggles cart when scroll
-$(window).scroll(function(event){
+//Toggle cart show/hide when scrolling
+$(window).scroll(function(event) {
   if ($(window).scrollTop() === 0) {
     $('.shoppingCartIcon').fadeIn('slow');
-  } 
-  else{
+  } else {
     $('.shoppingCartIcon').fadeOut('slow');
  }
 });
