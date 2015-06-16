@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>storebrand.ny 0.78</title>
+  <title>storebrand.ny 0.82</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -23,8 +23,8 @@
    <div class="navbar desktop navbar-default hidden-xs hidden-sm">
       <div class="container yamm">
          <div class="navbar-header col-md-4">
-            <a href="/cms/privat">
-               <img src="images/frontpage/StorebrandBeta.png" title="Storebrand-logo" class="logo" style="width: 200px; max-width: 100%;"></img>
+            <a href="https://www.storebrand.no"/>
+               <img src="images/logo.png" title="Storebrand-logo" class="logo" style="width: 200px; max-width: 100%;"></img>
             </a>
          </div>
          <div class="navbar-collapse collapse">
@@ -188,7 +188,7 @@
                   </ul>
                </li>
                <li class="col-md-3 yamm-fw group dropdown">
-                  <a href="/cms/bedrift" class="dropdown-toggle">Bedrift</a>
+                  <a href="https://www.storebrand.no/cms/bedrift" class="dropdown-toggle">Bedrift</a>
                </li>
                <li class="login col-md-3 yamm-fw group dropdown">
                   <a href="#" data-toggle="dropdown" class="dropdown-toggle">
@@ -218,7 +218,7 @@
                                          	 if(e.keyCode=="27") {
                                          	 	 $("li.login").click();
                                          	 }
-                                           if($('#dropdownLogin').val()==='L'){$('#dropdownLogin').val('');}
+                                           if($('#dropdownLogin').val()==='L'){$('#dropdownLogin').val('');}                                           
                                          });
                                        </script>
                                        <button class="stb-btn stb-form is-submit">Logg inn</button>
@@ -250,7 +250,7 @@
       <div class="container">
          <div class="col-xs-6">
             <a href="/cms/privat">
-               <img class="stb-logo-mobile" src="images/frontpage/StorebrandBeta.png" title="Storebrand-logo" style="width: 200px; max-width: 100%;"></img>
+               <img class="stb-logo-mobile" src="images/logo.png" title="Storebrand-logo" style="width: 200px; max-width: 100%;"></img>
             </a>
          </div>
          <div class="col-xs-6">
@@ -395,13 +395,13 @@
                </div>
                <div class="row verktoymobile">
                   <div class="col-xs-6 col-sm-3">
-                     <button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='/cms/privat/forsikring/meld-skade'">Meld skade</button>
+                     <button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='https://www.storebrand.no/cms/privat/forsikring/meld-skade'">Meld skade</button>
                   </div>
                   <div class="col-xs-6 col-sm-3">
-                     <button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='/cms/kontakt-oss'">Kontakt oss</button>
+                     <button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='https://www.storebrand.no/cms/kontakt-oss'">Kontakt oss</button>
                   </div>
                   <div class="col-xs-6 col-sm-3">
-                     <button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='/cms/privat/forsikring/veihjelp'">Veihjelp</button>
+                     <button class="stb-btn transparent light" onclick="event.preventDefault(); window.location.href='https://www.storebrand.no/cms/privat/forsikring/veihjelp'">Veihjelp</button>
                   </div>
                </div>
             </div>
@@ -540,37 +540,41 @@
       <div class="col-md-12 column">
         <div class="stb-box banner">
           <div class="text">
-            <h2>Storebrand.ny - Version 0.78</h2>
+            <h2>Storebrand.ny - Version 0.82</h2>
 
             <p class="intro">
-              Web manual as of <strong>25.03.2015</strong>
+              Web manual as of <strong>03.06.2015</strong>
             </p>
             <p>
-              Another bugfix release. You probably won't notice any differences. It's mostly related to the search and menu on storebrand.no. PDF icons are available in Enonic text-editor.
+              Various fixes and a few new fragments of functionality:
             </p>
+            <ul class="stb">
+              <li>Fading icon for shopping cart is available, in case the SSX project suddenly delivers something.</li>
+              <li>PDF link icon fixed for retina display</li>
+              <li>Cookie note will now only display when page is served on storebrand.no URL</li>
+              <li>Escape key closes login dropdown in standard menu</li>
+              <li>Google Analytics event tracking for big box, mini box, list group and accordion now logs more useful information</li>
+            </ul>
             <p>Here's the code you'll want to include to start playing:</p>
             <pre>
- &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.78/css/stb-all.min.css"&gt;
- &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.78/javascript/stb-all.min.js"&gt;&lt;/script&gt;</pre>
+ &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.82/css/stb-all.min.css"&gt;
+ &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.82/javascript/stb-all.min.js"&gt;&lt;/script&gt;</pre>
             <div class="row">
               <div class="col-md-6">
                 <p class="top-padding-20"><strong>Relevant links this week</strong></p>
                 <ul class="stb">
                   <li><a href="https://www.storebrand.no/">It's alive!</a></li>
-                  <li><a href="webmanual.html">Web manual</a> nothing new, some small bug fixes.</li>
-                  <li><a href="formmanual.html">Form manual</a> fixed datepicker and slider </li>
+                  <li><a href="webmanual.html">Web manual</a></li>
+                  <li><a href="formmanual.html">Form manual</a></li>
                 </ul>
               </div>
             </div>
             <hr />               
             <p>
-              - Easter edition -
-            </p>
-            <hr />
-            <p>
               Previous versions:
             </p>
             <ul class="stb">
+              <li><a href="../0.78/index.html">0.78</a></li>               
               <li><a href="../0.77/index.html">0.77</a></li> 
               <li><a href="../0.75/index.html">0.75</a></li>              
               <li><a href="../0.70/index.html">0.70</a></li>
@@ -622,11 +626,11 @@
     </div>
   </div>
   <script>
-   jQuery(document).ready(function(){
-   var accept = readCookie('acceptCookies');
-   if(accept=='Yes'){
-   jQuery('#cookieNote').hide();
-   }
+   $(document).ready(function(){
+     var accept = readCookie('acceptCookies');
+     if(accept==='Yes' || window.location.href.indexOf("storebrand.no")<0 ) {
+       $('#cookieNote').hide();
+     }
    });
    
    function acceptCookies(){
