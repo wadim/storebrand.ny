@@ -317,6 +317,22 @@
   // To enable analytics the element needs a 'analyze' class
   $(document).ready(function() {
 
+    // Analytics for menu usage
+    $("ul.dropdown-menu a").bind( "click", function() {
+      var aLinkDescribed = $(this).html();
+      if (aLinkDescribed.indexOf("<span") > 0 ) {
+        var spanStart = $(this).html().indexOf("</span>");
+        aLinkDescribed = aLinkDescribed.substring(spanStart, aLinkDescribed.length);
+        if (aLinkDescribed.indexOf("<span") > 0 ) {       
+          spanStart = $(this).html().indexOf("<span");
+          spanEnd = $(this).html().indexOf("</span>");
+          aLinkDescribed = aLinkDescribed.substring(spanStart, spanEnd);
+        }
+      }
+      var path = window.location.pathname;      
+      ga('send', 'event', path , 'Klikk i meny', aLinkDescribed);
+    });
+
     // Analytics for Button
     $('button.analyze').bind( "click", function() {
       var btnTxt = $(this).html();
@@ -325,15 +341,6 @@
       //console.log(path);
       ga('send', 'event', path , 'Klikk på knapp', btnTxt);
     });
-
-    // Analytics for links - Removed because it is too general, so it stole the thunder from other analyze events!
-    //$('a.analyze').bind( "click", function() {
-    //  var linkTxt = $(this).html();
-    //  var path = window.location.pathname;
-    //  //console.log(linkTxt);
-    //  //console.log(path;
-    //  ga('send', 'event', path , 'Klikk på lenke', linkTxt);
-    //});
 
     // Analytics for Mini box
     $('.mini.clickable.analyze').bind( "click", function() {
@@ -592,7 +599,7 @@
     return this.get(0).scrollWidth > this.get(0).clientWidth;
   };
 
-  //Show and hide contactus links
+  //Show and hide contact us links
   $(document).ready(function() {
     $('a.contact').click(function() {
       showHideForm(this);
