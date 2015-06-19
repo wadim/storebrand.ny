@@ -369,9 +369,9 @@ var s,search = {
         if (promotionObj.query.match(new RegExp("\\b"+s.urlParams.q+"\\b",'gi'))){
           var linkDecoration = "";
           if(promotionObj.pdficon === 'true'){
-            linkDecoration = ' class="pdf_document" ';
+            linkDecoration = ' class="pdf_document"';
           }
-          $(".searchresults").append('<div class="promotion' + '"><h3'+ linkDecoration +'>'+promotionObj.header + '<' + '/h3><' + 'p class="description">' + promotionObj.text + '</p' + ' ><p class="showurl"' + '><a href="' + promotionObj.url + '">' + promotionObj.name + '<' + '/a><' + '/p><' + '/div>');
+          $(".searchresults").append('<div class="promotion' + '"><h3>'+promotionObj.header + '<' + '/h3><' + 'p class="description">' + promotionObj.text + '</p' + ' ><p class="showurl"' + '><a'+ linkDecoration +' href="' + promotionObj.url + '">' + promotionObj.name + '<' + '/a><' + '/p><' + '/div>');
         }
       });
     }
