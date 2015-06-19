@@ -367,7 +367,11 @@ var s,search = {
     if (s.start===0 && search.promotions !== undefined){
       search.promotions.forEach(function (promotionObj){
         if (promotionObj.query.match(new RegExp("\\b"+s.urlParams.q+"\\b",'gi'))){
-          $(".searchresults").append('<div class="promotion' + '"><h3>'+promotionObj.header + '<' + '/h3><' + 'p class="description">' + promotionObj.text + '</p' + ' ><p class="showurl"' + '><a href="' + promotionObj.url + '">' + promotionObj.name + '<' + '/a><' + '/p><' + '/div>');
+          var linkDecoration = "";
+          if(promo.pdficon === 'true'){
+            linkDecoration = ' class="pdf_document" ';
+          }
+          $(".searchresults").append('<div class="promotion' + '"><h3'+ linkDecoration +'>'+promotionObj.header + '<' + '/h3><' + 'p class="description">' + promotionObj.text + '</p' + ' ><p class="showurl"' + '><a href="' + promotionObj.url + '">' + promotionObj.name + '<' + '/a><' + '/p><' + '/div>');
         }
       });
     }
