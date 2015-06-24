@@ -70,6 +70,66 @@
 
 <div class="container">
 
+<div class="row"> 
+<div class="col-md-3">
+  <h2 class="toc-header">Form Design Principles</h2>
+</div>
+<div class="col-md-9">
+  <p>The following are our rules for how design elements and form elements must be combined when designing forms. Follow them.</p> 
+  <h3>Placement of buttons and links in forms</h3>
+  <h4>Next/"Neste" and Previous/"Tilbake"</h4>
+  <p>We want to push the user forwards, so the emphasis is on the "Neste"/"Gå videre" button. The button should be placed to the right and below the form elements that have been completed. On a form with only one page and few fields, the button should be put right below the fields, on the <strong>left</strong> side.</p>
+  <p>If there is a natural something to go "back" to, for example the previous step of a multi-page form, add a "Tilbake" link below and to the left of the input fields. The "Tilbake" link should never be replaced with a "Tilbake" button that may compete for the user's attention with the "Gå videre" button.</p>
+
+  <a name="ButtonExampleShort"></a>
+  <h4>Example: Short form</h4>
+
+  <div class="stbcolor-background fifth" style="padding: 12px;">
+    <form class="stb-form-inline" role="form">
+      <label for="formInputShort" style="width: 200px;">What do you like?</label>
+      <div class="stb-form-group">
+        <input id="formInputShort" type="text" class="" placeholder="Turtles">
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button class="stb-btn" onclick="window.location.href='#ButtonExampleShort';">Send</button>
+        </div>
+      </div>      
+    </form>
+  </div>  
+
+  <a name="ButtonExampleLong"></a>
+  <h4>Example: Multi-step form</h4>
+
+  <div class="stbcolor-background sixth" style="padding: 12px;">
+  <p>Imagine numerous fields on a beautifully designed multi-step form here ...</p>
+  <hr />
+  <div class="row">
+    <div class="col-md-4">
+      <a href="#ButtonExampleLong">Tilbake</a>
+    </div>
+    <div class="col-md-4">
+      <p>&nbsp;</p>
+    </div>
+    <div class="col-md-4">
+      <button class="stb-btn pull-right">Gå videre</button>
+    </div>
+  </div>
+  </div>
+
+  <h4>Cancel/"Avbryt"</h4>
+  <p>We do <strong>not</strong> put cancel buttons on our order forms. There's no point in distracting the users with the option to stop doing what they're doing. If they want to stop filling in a form, they probably know how to do that.</p>
+
+
+</div>
+</div>
+</div>
+
+<hr class="top-margin-30" />
+
+
+<div class="container">
+
 <div class="row"> <!-- / General input fields row -->
 <div class="col-md-3">
   <h2 class="toc-header">Bootstrap Validator</h2>
