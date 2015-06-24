@@ -707,7 +707,7 @@ $(window).scroll(function(event) {
 
 // Adding Chrome-friendly "Skip to main content" functionality
 $(document).ready(function () {
-    $("#skipToContent").click(function () {
-        $('#mainContent').attr('tabIndex', -1).focus();
-    });
+  $("#skipToContent").click(function () {
+    $('#mainContent').attr('tabIndex', -1).focus();
+  });
 });
