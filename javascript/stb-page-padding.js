@@ -704,3 +704,10 @@ $(window).scroll(function(event) {
     $('.shoppingCartIcon').fadeOut('slow');
  }
 });
+
+// Adding Chrome-friendly "Skip to main content" functionality
+$(document).ready(function () {
+    $("#skipToContent").click(function () {
+        $('#mainContent').attr('tabIndex', -1).focus();
+    });
+});

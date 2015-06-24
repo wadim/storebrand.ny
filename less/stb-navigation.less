@@ -729,3 +729,23 @@
     margin-top:2px;
   }
 
+// Skip to content link fix
+#skipper a {
+  position: absolute;
+  top:-40px;
+  left:0px;
+  background:transparent;
+  -webkit-transition: top 1s ease-out, background 1s linear;
+  transition: top 1s ease-out, background 1s linear;
+  z-index: 100
+}
+
+#skipper a:focus {
+  position:absolute;
+  left:0px;
+  top:0px;
+  background:#F1B82D;
+  -webkit-transition: top .1s ease-in, background .5s linear;
+  transition: top .1s ease-in, background .5s linear
+}
+// End of skip to content fix
