@@ -1,9 +1,17 @@
 .stb-list-group {
   .list-group();
+
+  ul {
+    list-style-type: none;
+  }
+
+  ul:last-child {
+    border-bottom: 1px solid @stb-gray-third;
+  }
   
   &.expandable {
 
-    li.showMore{
+    li.showMore {
       cursor: pointer;
       a {
         border-bottom: none;
@@ -28,14 +36,13 @@
       }
     }
    
-   .hide-detail { display: none;}
+    .hide-detail { display: none;}
 
-	@media (max-width: @screen-sm-min) {
-	  .list-group-item{
-	    font-size: 14px;
-	 }
+	  @media (max-width: @screen-sm-min) {
+  	  .list-group-item {
+	      font-size: 14px;
+	    }
     }
-   
   }  
   
   a.list-group-item {
@@ -71,18 +78,13 @@
     border-radius: 0px;
     border-bottom: none;
   }
-  
-   .list-group-item:last-child {
-    border-radius: 0px;
-    border-bottom: 1px solid @stb-gray-third;
-  }
-  
+    
   @media (max-width: @screen-sm-max) {
-	  a.list-group-item, a.list-group-item:hover, .list-group-item, .list-group-item:hover{
+	  a.list-group-item, a.list-group-item:hover, .list-group-item, .list-group-item:hover {
 	    font-size: 14px;
-	 }
-    }
-  
+	  }
+  }
+
 }
 
 //Standalone stb-list-group-items
