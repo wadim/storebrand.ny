@@ -157,7 +157,7 @@
 
   $(document).ready(function() {
     // Prepare the row that contains the table of contents
-    var tocList ='<div class="row"><div class="col-md-8 toc-list top-padding-10 border-top-and-bottom stbcolor-background fifth"><p class="intro"><a href="#" onclick="$('.toc-list .items').slideToggle();$('.toc-list p span').toggleClass('chevron-down red chevron-up');">G&aring; direkte til<span class="stb-sprite-medium chevron-down pull-right"></a></span></p><ul class="items"></ul></div></div>';
+    var tocList ='<div class="row"><div class="col-md-8 toc-list top-padding-10 border-top-and-bottom stbcolor-background fifth"><p class="intro"><a href="#" onclick="$(\".toc-list .items\").slideToggle();$(\".toc-list p span\").toggleClass(\"chevron-down red chevron-up\");">G&aring; direkte til<span class="stb-sprite-medium chevron-down pull-right"></a></span></p><ul class="items"></ul></div></div>';
 
     // Place the table of content above the first h3.toc-header
     $(tocList).insertBefore( $('h3.toc-header:first').closest("div.row") );
