@@ -333,12 +333,19 @@
       ga('send', 'event', path , 'Klikk i meny', aLinkDescribed);
     });
 
+    // Analytics for footer menu items usage
+    $("footer a").bind("click", function() { 
+      var footLink = $(this).html(); 
+      if (footLink.indexOf("<span") < 1) {
+        var path = window.location.pathname;    
+        ga('send', 'event', path , 'Klikk i bunnmeny', footLink);
+      } 
+    });    
+
     // Analytics for Button
     $('button.analyze').bind( "click", function() {
       var btnTxt = $(this).html();
       var path = window.location.pathname;
-      //console.log(btnTxt);
-      //console.log(path);
       ga('send', 'event', path , 'Klikk på knapp', btnTxt);
     });
 
@@ -346,8 +353,6 @@
     $('.mini.clickable.analyze').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
-      //console.log(boxId);
-      //console.log(path);
       ga('send', 'event', path , 'Klikk på Mini Box', boxId);
     });
 
@@ -355,18 +360,13 @@
     $('.big.clickable.analyze').bind( "click", function() {
       var boxId = $(this).attr('alt');
       var path = window.location.pathname;
-      //console.log(boxId);
-      //console.log(path);
       ga('send', 'event', path , 'Klikk på Big Box ', boxId);
     });
 
     // Analytics for Accordion
     $('.accordion.analyze a').bind( "click", function() {
-      //console.log('faq');
       var q = $(this).find('.question').html();
       var path = window.location.pathname;
-      //console.log(q);
-      //console.log(path);
       ga('send', 'event', path , 'Klikk i FAQ ', q);
     });
 
@@ -376,8 +376,6 @@
       var qspan = q.indexOf("<span", 0);
       var q2 = q.substring(0,qspan);
       var path = window.location.pathname;
-      //console.log(q2);
-      //console.log(path);
       ga('send', 'event', path , 'Klikk i List Group ', q2);
     });
 
@@ -387,8 +385,6 @@
       var q = $(this).html();
       var label = $(this).parent().prev('label').length > 0 ? $(this).parent().prev('label').html() : "" ;
       var path = window.location.pathname;
-      //console.log(q);
-      //console.log(path);
       if(parent.hasClass('radiobuttons')) {
         ga('send', 'event', path , 'Radio button: ' + label + ' checked', q);
       } else if(parent.hasClass('checkboxes')) {
@@ -401,8 +397,6 @@
       var q = $(this).val();
       var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
       var path = window.location.pathname;
-      //console.log(q);
-      //console.log(path);
       ga('send', 'event', path , 'Dropdown:' + label + ' endret valg.', q);
     });
 
@@ -411,8 +405,6 @@
       var q = $(this).find('input').val();
       var label = $(this).prev('label').length > 0 ? $(this).prev('label').html() : "" ;
       var path = window.location.pathname;
-      //console.log(q);
-      //console.log(path);
       ga('send', 'event', path , 'Date changed for: ' + label, q);
     });
 
