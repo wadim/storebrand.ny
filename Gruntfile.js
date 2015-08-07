@@ -69,6 +69,21 @@ module.exports = function(grunt) {
         }
       }
     },
+    // gzip assets
+    compress: {
+      main: {
+        options: {
+          mode: 'gzip',
+          level: 9
+        },
+        files: [
+          // Each of the files in the src/ folder will be output to
+          // the dist/ folder each with the extension .gz.js
+          {expand: true, src: ['css/stb-all.min.css', 'css/stb-main.css'], dest: './', ext: '.gz.css'},
+          {expand: true, src: ['javascript/stb-all.min.js'], dest: './', ext: '.gz.js'}, //weird path handling for JS..
+        ]
+      }
+    },
     watch: {
       styles: {
         // Which files to watch (all .less files recursively in the less directory)
@@ -106,8 +121,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
   // Default task
-  grunt.registerTask('default', ['less','jshint','concat','uglify','watch']);
-  grunt.registerTask('serve',   ['connect','less','jshint','concat','uglify','watch']);
+  grunt.registerTask('default', ['less','jshint','concat','uglify','compress','watch']);
+  grunt.registerTask('serve',   ['connect','less','jshint','concat','uglify','compress','watch']);
+  grunt.registerTask('dist',    ['less','jshint','concat','uglify','compress']);
 };
