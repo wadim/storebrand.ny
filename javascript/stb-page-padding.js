@@ -99,7 +99,7 @@
       if ($(this).hasClass("twister")) {
         b.preventDefault();
         var c = $(this).siblings("ul.accordion li .answer");
-        $(this).hasClass("open") ? ($(this).removeClass("open"), c.slideUp(200)) : ($(this).addClass("open"), c.slideDown(200));
+        $(this).hasClass("open") ? ($(this).removeClass("open"), c.slideUp(200)) : ($(this).addClass("open"), c.slideDown(200)); // jshint ignore:line
       }
     });
   };
