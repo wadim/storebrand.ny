@@ -40,8 +40,11 @@
   //Checking for carts
   $(document).ready(function() {
    var cartCount = readCookie("cartCount");
+   // seatbelt: window.showCartIcon might not be defined:
+   if(window.hasOwnProperty('showCartIcon')){
     if (cartCount != null && showCartIcon === true) {
-      addCartBtn(cartCount);  
+        addCartBtn(cartCount);  
+      }
     }
   }); 
 
