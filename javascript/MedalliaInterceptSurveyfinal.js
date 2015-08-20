@@ -14,9 +14,9 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 				qaParam : 'M_QAMODE',
 				qaCookie : 'M_INTERCEPT_QAMODE',
 				quarantineCookie : 'M_INTERCEPT_QUARANTINE',
-				surveyURL : 'http://survey.medallia.eu/storebrandwebexperience',//This is where you enter the survey URL for the Storebrand survey
-				daysToQuarantine : null, //Don't set quarantine here :)
-				domain: 'storebrand.no' //Same as above but put storebrand.no if they're not sure.
+				surveyURL : 'http://survey.medallia.eu/storebrandwebexperience',
+				daysToQuarantine : null, 
+				domain: 'storebrand.no' 
 			},
 			sUrl = window.location.href,
 			m_result = null, m_params = {};
@@ -425,6 +425,4 @@ MEDALLIA.Invite = function (o) {
 	} catch (e) {
 		return false;
 	}
-};/*<div id="timeSpentContainer" style="text-align: center"><div style="font-size:xx-small; text-align: left; width: 750px; margin: 0 auto; color:#bbb;">
-Struts 121<br>    Process Action 119<br>    Velocity Parse 0<br>    Velocity Render 1<br>Total: 125 ms (3 other)<br>Queries: 18 / 26 ms (6 / 10 ms, 10 / 11 ms, 2 / 4 ms, 0 / 0 ms)</div></div>
-*/
+};
