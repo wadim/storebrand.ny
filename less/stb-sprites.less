@@ -10,7 +10,8 @@
 .stb-sprite-small, 
 .stb-sprite-medium,
 .stb-color-sprite-small,
-.stb-color-sprite-medium {
+.stb-color-sprite-medium,
+.stb-color-sprite-big {
   display: inline-block;
 }
 
@@ -908,6 +909,20 @@
   
 }
 
+.stb-color-sprite-big {
+  background: url("../images/stb-sprites/big-color-sprites.png") no-repeat;  
+  width: 284px;
+  height: 284px;
+  
+  &.ok {
+    background-position: 0px 0px;
+  }
+  
+  &.warning {
+    background-position: 0px -500px;
+  }
+}
+
 // Circling of progress bar counters in forms
 div.circle-12,
 span.circle-12 {
@@ -982,6 +997,13 @@ span.circle-24 a {
     // reduce to 1x size
     background-size: 200px;  
   }
+
+  .stb-color-sprite-big {
+    background: url("../images/stb-sprites/big-color-sprites.png") no-repeat;
+    // reduce to 1x size
+    //background-size: 200px;  
+  }
+
   .stb-theme-sprites {
   	background: url("../images/stb-sprites/theme-sprites-2x.png") no-repeat;
   	 // reduce to 1x size
@@ -990,7 +1012,11 @@ span.circle-24 a {
 }
 
 a {
-  > span.stb-sprite-medium, > span.stb-color-sprite-small, >span.stb-color-sprite-medium, >span.stb-color-sprite-small{
+  > span.stb-sprite-medium, 
+  > span.stb-color-sprite-small, 
+  > span.stb-color-sprite-medium, 
+  > span.stb-color-sprite-big, 
+  > span.stb-color-sprite-small{
     margin-right: 6px;
   }
 }
