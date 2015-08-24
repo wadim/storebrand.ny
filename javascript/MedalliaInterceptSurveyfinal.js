@@ -14,14 +14,20 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 				qaParam : 'M_QAMODE',
 				qaCookie : 'M_INTERCEPT_QAMODE',
 				quarantineCookie : 'M_INTERCEPT_QUARANTINE',
-				surveyURL : 'http://survey.medallia.eu/storebrandwebexperience',
-				daysToQuarantine : null, 
-				domain: 'storebrand.no' 
+				surveyURLse : 'http://survey.medallia.eu/?webintercept-spp',//This is where you enter the survey URL for the SPP survey
+				surveyURL : 'http://survey.medallia.eu/storebrandwebexperience',//This is where you enter the survey URL for the Storebrand survey
+				daysToQuarantine : null, //Don't set quarantine here :)
+				domainse: 'spp.se', //This is the cookie domain for spp.se. You might want to ask about this but if they don't know just put spp.se
+				domain: 'storebrand.no' //Same as above but put storebrand.no if they're not sure.
 			},
 			sUrl = window.location.href,
 			m_result = null, m_params = {};
 		if (!m_data) {
 			m_data = {};
+		}
+		if (/SWEDEN/i.test(m_data.cn)) {
+			m_config.surveyURL = m_config.surveyURLse;
+			m_config.domain = m_config.domainse;
 		}
 		if (!m_callback && MEDALLIA.Invite) {
 			m_callback = MEDALLIA.Invite;
@@ -31,13 +37,18 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 		} 
 		if (sUrl.indexOf(m_config.qaParam+'=1')>0) {
 			m_Util.setCookie(m_config.qaCookie, true, 365,arguments[2] || m_config.domain);
+			console.log('qa');
+			console.log(m_config.qaCookie, true, 365,arguments[2] || m_config.domain);
 		} 
 		else if (sUrl.indexOf(m_config.qaParam+'=0')>0) {
 			m_Util.setCookie(m_config.qaCookie, false, null,arguments[2] || m_config.domain);
+			console.log('not qa');
 		}
+		console.log('cookie', m_Util.getCookie(m_config.qaCookie));
 		//The following section is for QA mode, so you can ignore this.
 		if (m_Util.getCookie(m_config.qaCookie) == 'true') {
-			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName, "serviceArea ":m_data.serviceArea , "serviceType":m_data.serviceType};
+			console.log('1');
+			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName};
 			m_result = function () {
 				m_config.daysToQuarantine = 0;
 				// Prescaling throttle and quarantine check
@@ -53,7 +64,8 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 		} 
 		//This is the section you need to change for the live survey. This is the part for people who have completed the survey. 
 		else if (!m_Util.getCookie(m_config.quarantineCookie)) {
-			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName, "serviceArea ":m_data.serviceArea , "serviceType":m_data.serviceType};
+			console.log('2');		
+			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName};
 			m_result = function () {
 				m_config.daysToQuarantine = 60.0; //This is where you set the number of days for quarantine.
 				// Prescaling throttle and quarantine check
@@ -224,6 +236,7 @@ MEDALLIA._util = {
 		if (domain) {
 			cookStr += '; domain='+ domain;
 		}
+		console.log(cookStr);
 		document.cookie =  cookStr;
 	},
 	merge: function (s, r) {
@@ -425,4 +438,6 @@ MEDALLIA.Invite = function (o) {
 	} catch (e) {
 		return false;
 	}
-};
+};/*<div id="timeSpentContainer" style="text-align: center"><div style="font-size:xx-small; text-align: left; width: 750px; margin: 0 auto; color:#bbb;">
+Struts 121<br>    Process Action 119<br>    Velocity Parse 0<br>    Velocity Render 1<br>Total: 125 ms (3 other)<br>Queries: 18 / 26 ms (6 / 10 ms, 10 / 11 ms, 2 / 4 ms, 0 / 0 ms)</div></div>
+*/
