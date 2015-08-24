@@ -304,7 +304,7 @@ MEDALLIA.Invite = function (o) {
 				'optOutDays': 90, //This is the number of days people won't be asked to take the survey after they say 'No thank you'. This is where you quarantine for people who have said No.
 				'visible': true, 
 				'useMask': true,
-				'logo': /SWEDEN/i.test(o.data.cn) ? 'www2.spp.se/cms/content/themes/spp/css/img/spp_logotype.png" alt="" width="96" height="25"' : 'https://www.storebrand.no/_public/theme-storebrand.ny/images/StorebrandLogo_2x.png" alt="logo" width="172" height="21"', //This is where you specify the logo for the pop-up. Note that there's one logo for SPP and one for Storebrand.
+				'logo': /SWEDEN/i.test(o.data.cn) ? 'www2.spp.se/cms/content/themes/spp/css/img/spp_logotype.png" alt="" width="96" height="25"' : 'www.storebrand.no/_public/theme-storebrand.ny/images/StorebrandLogo_2x.png" alt="logo" width="172" height="21"', //This is where you specify the logo for the pop-up. Note that there's one logo for SPP and one for Storebrand.
 				'html': function () {
 					var str = '<div class="MEDALLIA_panel">';
 						str += '<div class="MEDALLIA_panel_inner">';
