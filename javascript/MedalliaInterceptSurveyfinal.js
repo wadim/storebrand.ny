@@ -293,7 +293,7 @@ MEDALLIA.Invite = function (o) {
 					},
 					'no': {	
 						'title':"Hva syns du om v&aringre nettsider?",
-						'msg':"Hjelp oss med &aring bli bedre ved &aring svare på to korte sp&oslashrsmål. ",
+						'msg':"Hjelp oss med &aring bli bedre ved &aring svare på to korte sp&oslashrsm&aringl. ",
 						'no':"Ikke n&aring",
 						'yes':"Fortsett"
 					}
