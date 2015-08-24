@@ -292,10 +292,10 @@ MEDALLIA.Invite = function (o) {
 						'yes':"Forts&auml;tt"
 					},
 					'no': {	
-						'title':"Please Take Our Survey",
-						'msg':"Click the 'Continue' button to take the survey or the 'Not Now' button to skip it.",
-						'no':"Not now",
-						'yes':"Continue"
+						'title':"Hva syns du om v&aringre nettsider?",
+						'msg':"Hjelp oss med &aring bli bedre ved &aring svare på to korte sp&oslashrsmål. ",
+						'no':"Ikke n&aring",
+						'yes':"Fortsett"
 					}
 				},
 				'newWindowWidth':750, //This is the size of the survey window.
@@ -304,7 +304,7 @@ MEDALLIA.Invite = function (o) {
 				'optOutDays': 90, //This is the number of days people won't be asked to take the survey after they say 'No thank you'. This is where you quarantine for people who have said No.
 				'visible': true, 
 				'useMask': true,
-				'logo': /SWEDEN/i.test(o.data.cn) ? 'www2.spp.se/cms/content/themes/spp/css/img/spp_logotype.png" alt="" width="96" height="25"' : 'www.storebrand.no/site/stb.nsf/logo.storebrand.172x21.png" alt="" width="172" height="21"', //This is where you specify the logo for the pop-up. Note that there's one logo for SPP and one for Storebrand.
+				'logo': /SWEDEN/i.test(o.data.cn) ? 'www2.spp.se/cms/content/themes/spp/css/img/spp_logotype.png" alt="" width="96" height="25"' : 'https://www.storebrand.no/_public/theme-storebrand.ny/images/StorebrandLogo_2x.png" alt="logo" width="172" height="21"', //This is where you specify the logo for the pop-up. Note that there's one logo for SPP and one for Storebrand.
 				'html': function () {
 					var str = '<div class="MEDALLIA_panel">';
 						str += '<div class="MEDALLIA_panel_inner">';
