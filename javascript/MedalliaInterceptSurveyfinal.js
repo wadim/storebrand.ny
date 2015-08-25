@@ -37,18 +37,13 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 		} 
 		if (sUrl.indexOf(m_config.qaParam+'=1')>0) {
 			m_Util.setCookie(m_config.qaCookie, true, 365,arguments[2] || m_config.domain);
-			console.log('qa');
-			console.log(m_config.qaCookie, true, 365,arguments[2] || m_config.domain);
 		} 
 		else if (sUrl.indexOf(m_config.qaParam+'=0')>0) {
 			m_Util.setCookie(m_config.qaCookie, false, null,arguments[2] || m_config.domain);
-			console.log('not qa');
 		}
-		console.log('cookie', m_Util.getCookie(m_config.qaCookie));
 		//The following section is for QA mode, so you can ignore this.
 		if (m_Util.getCookie(m_config.qaCookie) == 'true') {
-			console.log('1');
-			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName};
+			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName, "serviceArea ":m_data.serviceArea , "serviceType":m_data.serviceType};
 			m_result = function () {
 				m_config.daysToQuarantine = 0;
 				// Prescaling throttle and quarantine check
@@ -64,7 +59,6 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 		} 
 		//This is the section you need to change for the live survey. This is the part for people who have completed the survey. 
 		else if (!m_Util.getCookie(m_config.quarantineCookie)) {
-			console.log('2');		
 			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName};
 			m_result = function () {
 				m_config.daysToQuarantine = 60.0; //This is where you set the number of days for quarantine.
@@ -236,7 +230,6 @@ MEDALLIA._util = {
 		if (domain) {
 			cookStr += '; domain='+ domain;
 		}
-		console.log(cookStr);
 		document.cookie =  cookStr;
 	},
 	merge: function (s, r) {
