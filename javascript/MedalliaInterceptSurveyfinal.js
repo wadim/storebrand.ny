@@ -59,7 +59,7 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 		} 
 		//This is the section you need to change for the live survey. This is the part for people who have completed the survey. 
 		else if (!m_Util.getCookie(m_config.quarantineCookie)) {
-			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName};
+			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName, "serviceArea ":m_data.serviceArea , "serviceType":m_data.serviceType};
 			m_result = function () {
 				m_config.daysToQuarantine = 60.0; //This is where you set the number of days for quarantine.
 				// Prescaling throttle and quarantine check
