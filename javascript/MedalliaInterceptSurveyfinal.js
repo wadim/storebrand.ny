@@ -292,7 +292,7 @@ MEDALLIA.Invite = function (o) {
 					}
 				},
 				'newWindowWidth':750, //This is the size of the survey window.
-				'newWindowHeight':875, //This is the size of the survey window.
+				'newWindowHeight':975, //This is the size of the survey window.
 				'popunder': false,
 				'optOutDays': 90, //This is the number of days people won't be asked to take the survey after they say 'No thank you'. This is where you quarantine for people who have said No.
 				'visible': true, 
