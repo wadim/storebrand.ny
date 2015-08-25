@@ -15,7 +15,7 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 				qaCookie : 'M_INTERCEPT_QAMODE',
 				quarantineCookie : 'M_INTERCEPT_QUARANTINE',
 				surveyURLse : 'http://survey.medallia.eu/?webintercept-spp',//This is where you enter the survey URL for the SPP survey
-				surveyURL : 'http://survey.medallia.eu/?sppwebexperience',//This is where you enter the survey URL for the Storebrand survey
+				surveyURL : 'http://survey.medallia.eu/?storebrandwebexperience',//This is where you enter the survey URL for the Storebrand survey
 				daysToQuarantine : null, //Don't set quarantine here :)
 				domainse: 'spp.se', //This is the cookie domain for spp.se. You might want to ask about this but if they don't know just put spp.se
 				domain: 'storebrand.no' //Same as above but put storebrand.no if they're not sure.
