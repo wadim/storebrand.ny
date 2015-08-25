@@ -285,7 +285,7 @@ MEDALLIA.Invite = function (o) {
 						'yes':"Forts&auml;tt"
 					},
 					'no': {	
-						'title':"Hva syns du om v&aringre nettsider?",
+						'title':"Hva synes du om v&aringre nettsider?",
 						'msg':"Hjelp oss med &aring bli bedre ved &aring svare på to korte sp&oslashrsm&aringl. ",
 						'no':"Ikke n&aring",
 						'yes':"Fortsett"
