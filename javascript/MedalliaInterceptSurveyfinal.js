@@ -61,7 +61,7 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 		else if (!m_Util.getCookie(m_config.quarantineCookie)) {
 			m_params = {"cn":m_data.cn, "pageName":m_data.pageName, "prodName":m_data.prodName, "custID":m_data.custID, "custName":m_data.custName, "corpID":m_data.corpID, "corpName":m_data.corpName, "serviceArea":m_data.serviceArea , "serviceType":m_data.serviceType};
 			m_result = function () {
-				m_config.daysToQuarantine = 60.0; //This is where you set the number of days for quarantine.
+				m_config.daysToQuarantine = 180.0; //This is where you set the number of days for quarantine.
 				// Prescaling throttle and quarantine check
 				// Since we're excluding people here, not including them, we use the greater-than operator.
 				if (Math.random() > 0.1) { //This is where you set the percentage to be excluded.
