@@ -3150,8 +3150,13 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
   <div class="col-md-9">
     <p>
-      This element will either be replaced or supplemented by another more button-based tab-like element, "Toggle buttons". Just you wait and see. Do not use this element yet without consulting with storebrand.ny team first.
+      This element may be supplemented by another more button-based tab-like element, "Toggle buttons". Just you wait and see. Please verify with the .ny team that using this element is the best choice for you. 
+    </p>
+    <p> 
       By adding the class "analyze" to the link in the tab, Google Analytics tracking of tab switching as an event is enabled.
+    </p>
+    <p>
+      The element is UU compliant if you tag it the way it has been done since 0.86.
     </p>
     <p class="bottom-margin-30">Place the code below outside any container if you want the border bottom to strech to the entire screen </p>
     <p>Please note that navigation tabs requires including the bootstrap.min.js script on the page.</p>
@@ -3159,12 +3164,22 @@ $('ul[data-widget=stbFaq]').stbFaq();
     <!-- Desktop -->
     <div class="tab-container hidden-xs">
       <div>
-        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-          <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
-          <li><a href="#company" data-toggle="tab">Bedrift</a></li>
-          <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
-          <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
-          <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
+        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs" role="tablist">
+          <li class="active" role="presentation">
+            <a href="#privat" data-toggle="tab" role="tab" aria-controls="privat" aria-selected="true">Privat</a>
+          </li>
+          <li role="presentation">
+            <a href="#bedrift" data-toggle="tab" role="tab" aria-controls="bedrift" aria-selected="false">Bedrift</a>
+          </li>
+          <li role="presentation">
+            <a href="#presse" data-toggle="tab" role="tab" aria-controls="presse" aria-selected="false">Presse og IR</a>
+          </li>
+          <li role="presentation">
+            <a href="#eiendom" data-toggle="tab" role="tab" aria-controls="eiendom" aria-selected="false">Eiendom</a>
+          </li>
+          <li role="presentation">
+            <a href="#asset-management" data-toggle="tab" role="tab" aria-controls="asset-management" aria-selected="false">Asset management</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -3177,51 +3192,52 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <span class="icon stb-sprite-small charcoal chevron-down pull-right"></span>
         </button>
         <ul class="dropdown-menu" data-tabs="tabs">
-          <li class="active"><a href="#private" data-toggle="tab">Privat</a></li>
-          <li><a href="#company" data-toggle="tab">Bedrift</a></li>
-          <li><a href="#press" data-toggle="tab">Presse og IR</a></li>
-          <li><a href="#real-estate" data-toggle="tab">Eiendom</a></li>
+          <li class="active"><a href="#privat" data-toggle="tab">Privat</a></li>
+          <li><a href="#bedrift" data-toggle="tab">Bedrift</a></li>
+          <li><a href="#presse" data-toggle="tab">Presse og IR</a></li>
+          <li><a href="#eiendom" data-toggle="tab">Eiendom</a></li>
           <li><a href="#asset-management" data-toggle="tab">Asset management</a></li>
         </ul>
       </div>
     </div>
 
-    <div id="my-tab-content" class="tab-content">
-      <div class="top-padding-20 tab-pane active" id="private">
+    <div id="my-tab-content" class="tab-content" aria-live="polite">
+      
+      <div class="top-padding-20 tab-pane active" id="privat" aria-labeled-by="tab1" tabindex="0">
         <div class="row">
-          <div class="col-md-12 col-lg-4">
+          <div class="col-md-12 col-lg-4" role="tabpanel">
             Privatgreier...
           </div>
         </div>
       </div>
 
-      <div class="top-padding-20 tab-pane" id="company">
+      <div class="top-padding-20 tab-pane" id="bedrift" aria-labeled-by="tab2" tabindex="0">
         <div class="row">
-          <div class="col-md-12 col-lg-4">
+          <div class="col-md-12 col-lg-4" role="tabpanel">
             Bedriftsgreier...
           </div>
         </div>
       </div>
 
-      <div class="top-padding-20 tab-pane" id="press">
+      <div class="top-padding-20 tab-pane" id="presse" aria-labeled-by="tab3" tabindex="0">
         <div class="row">
-          <div class="col-md-12 col-lg-4">
+          <div class="col-md-12 col-lg-4" role="tabpanel">
             Pressegreier...
           </div>
         </div>
       </div>
 
-      <div class="top-padding-20 tab-pane" id="real-estate">
+      <div class="top-padding-20 tab-pane" id="eiendom" aria-labeled-by="tab4" tabindex="0">
         <div class="row">
-          <div class="col-md-12 col-lg-4">
+          <div class="col-md-12 col-lg-4" role="tabpanel">
             Eiendomsgreier...
           </div>
         </div>
       </div>
 
-      <div class="top-padding-20 tab-pane" id="asset-management">
+      <div class="top-padding-20 tab-pane" id="asset-management" aria-labeled-by="tab5" tabindex="0">
         <div class="row">
-          <div class="col-md-12 col-lg-4">
+          <div class="col-md-12 col-lg-4" role="tabpanel">
             Alt om min kapitalforvaltning...
           </div>
         </div>
@@ -3235,15 +3251,26 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 &lt;div class=&quot;tab-container hidden-xs&quot;&gt; 
   &lt;div class=&quot;container&quot;&gt;
-    &lt;ul id=&quot;tabs&quot; class=&quot;nav nav-tabs&quot; data-tabs=&quot;tabs&quot;&gt;
-      &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#private&quot; data-toggle=&quot;tab&quot;&gt;Privat&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#company&quot; data-toggle=&quot;tab&quot;&gt;Bedrift&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#press&quot; data-toggle=&quot;tab&quot;&gt;Presse og IR&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#real-estate&quot; data-toggle=&quot;tab&quot;&gt;Eiendom&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot;&gt;Asset management&lt;/a&gt;&lt;/li&gt;
+    &lt;ul id=&quot;tabs&quot; class=&quot;nav nav-tabs&quot; data-tabs=&quot;tabs&quot; role=&quot;tablist&quot;&gt;
+      &lt;li class=&quot;active&quot; role=&quot;presentation&quot;&gt;
+        &lt;a href=&quot;#privat&quot; data-toggle=&quot;tab&quot; role=&quot;tab&quot; aria-controls=&quot;privat&quot; aria-selected=&quot;true&quot;&gt;Privat&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li role=&quot;presentation&quot;&gt;
+        &lt;a class=&quot;[analyze]&quot; href=&quot;#bedrift&quot; data-toggle=&quot;tab&quot; aria-controls=&quot;bedrift&quot; aria-selected=&quot;false&quot;&gt;Bedrift&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li role=&quot;presentation&quot;&gt;
+        &lt;a class=&quot;[analyze]&quot; href=&quot;#presse&quot; data-toggle=&quot;tab&quot; aria-controls=&quot;presse&quot; aria-selected=&quot;false&quot;&gt;Presse og IR&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li role=&quot;presentation&quot;&gt;
+        &lt;a class=&quot;[analyze]&quot; href=&quot;#eiendom&quot; data-toggle=&quot;tab&quot; aria-controls=&quot;eiendom&quot; aria-selected=&quot;false&quot;&gt;Eiendom&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li role=&quot;presentation&quot;&gt;
+        &lt;a class=&quot;[analyze]&quot; href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot; aria-controls=&quot;asset-management&quot; aria-selected=&quot;false&quot;&gt;A.m.&lt;/a&gt;
+      &lt;/li&gt;
     &lt;/ul&gt; 
   &lt;/div&gt; 
 &lt;/div&gt;
+
 
 &lt;!-- Mobile --&gt;
 
@@ -3254,50 +3281,50 @@ $('ul[data-widget=stbFaq]').stbFaq();
       &lt;span class=&quot;icon stb-sprite-small charcoal chevron-down pull-right&quot;&gt;&lt;/span&gt;
     &lt;/button&gt;
     &lt;ul class=&quot;dropdown-menu&quot; data-tabs=&quot;tabs&quot; &gt;
-      &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#private&quot; data-toggle=&quot;tab&quot;&gt;Privat&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#company&quot; data-toggle=&quot;tab&quot;&gt;Bedrift&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#press&quot; data-toggle=&quot;tab&quot;&gt;Presse og IR&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#real-estate&quot; data-toggle=&quot;tab&quot;&gt;Eiendom&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot;&gt;Asset management&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#privat&quot; data-toggle=&quot;tab&quot;&gt;Privat&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#bedrift&quot; data-toggle=&quot;tab&quot;&gt;Bedrift&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#presse&quot; data-toggle=&quot;tab&quot;&gt;Presse og IR&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#eiendom&quot; data-toggle=&quot;tab&quot;&gt;Eiendom&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;[analyze]&quot; href=&quot;#asset-management&quot; data-toggle=&quot;tab&quot;&gt;Asset mgmt&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;!-- Content area --&gt;
 
-&lt;div id=&quot;my-tab-content&quot; class=&quot;tab-content&quot;&gt;
-  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane active&quot; id=&quot;private&quot;&gt;
+&lt;div id=&quot;my-tab-content&quot; class=&quot;tab-content&quot; aria-live=&quot;polite&quot;&gt;
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane active&quot; id=&quot;privat&quot; aria-labeled-by=&quot;1&quot; tabindex=&quot;0&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt;
-        Privatgreier...
+      &lt;div class=&quot;col-md-12 col-lg-4&quot; role=&quot;tabpanel&quot;&gt;
+        Privatgreier ...
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;company&quot;&gt;
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;bedrift&quot; aria-labeled-by=&quot;2&quot; tabindex=&quot;0&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt;
-        Bedriftsgreir...
+      &lt;div class=&quot;col-md-12 col-lg-4&quot; role=&quot;tabpanel&quot;&gt;
+        Bedriftsgreier ...
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;press&quot;&gt;
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;presse&quot; aria-labeled-by=&quot;3&quot; tabindex=&quot;0&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt;
-        Pressegreier...
+      &lt;div class=&quot;col-md-12 col-lg-4&quot; role=&quot;tabpanel&quot;&gt;
+        Pressegreier ...
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;real-estate&quot;&gt;
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;eiendom&quot; aria-labeled-by=&quot;4&quot; tabindex=&quot;0&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt;
-        Eiendomsgreier...
+      &lt;div class=&quot;col-md-12 col-lg-4&quot; role=&quot;tabpanel&quot;&gt;
+        Eiendomsgreier ...
       &lt;/div&gt; 
     &lt;/div&gt; 
   &lt;/div&gt; 
-  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;asset-management&quot;&gt; 
+  &lt;div class=&quot;container top-padding-30 bottom-padding-30 tab-pane&quot; id=&quot;asset-management&quot; aria-labeled-by=&quot;5&quot; tabindex=&quot;0&quot;&gt; 
     &lt;div class=&quot;row&quot;&gt; 
-      &lt;div class=&quot;col-md-12 col-lg-4&quot;&gt; 
-        Alt om min kapitalforvaltning... 
+      &lt;div class=&quot;col-md-12 col-lg-4&quot; role=&quot;tabpanel&quot;&gt; 
+        Alt om min kapitalforvaltning ... 
       &lt;/div&gt; 
     &lt;/div&gt; 
   &lt;/div&gt; 

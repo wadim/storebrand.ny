@@ -706,3 +706,12 @@ $(document).ready(function () {
     $('#mainContent').attr('tabIndex', -1).focus();
   });
 });
+
+// Adding ARIA fixes
+$(document).ready(function() {
+  $('.tab-container a').click(function(e){
+    e.preventDefault();
+    $('.tab-container a').attr('aria-selected', 'false');
+    $(this).tab('show').attr('aria-selected', 'true');
+  });
+});
