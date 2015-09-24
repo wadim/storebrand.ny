@@ -64,7 +64,7 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 				m_config.daysToQuarantine = 180.0; //This is where you set the number of days for quarantine.
 				// Prescaling throttle and quarantine check
 				// Since we're excluding people here, not including them, we use the greater-than operator.
-				if (Math.random() > 0.1) { //This is where you set the percentage to be excluded.
+				if (Math.random() > 1.0) { //This is where you set the percentage to be excluded. -- UZU: 0.1 = 10%
 					return false;
 			}
 			// Global JavaScript Block from prod
@@ -285,8 +285,8 @@ MEDALLIA.Invite = function (o) {
 						'yes':"Forts&auml;tt"
 					},
 					'no': {	
-						'title':"Hva synes du om v&aringre nettsider?",
-						'msg':"Hjelp oss med &aring bli bedre ved &aring svare på to korte sp&oslashrsm&aringl. ",
+						'title':"Vil du hjelpe oss &aring forbedre nettsidene?",
+						'msg':"Vi har tre korte sp&oslashrsm&aringl til deg.",
 						'no':"Ikke n&aring",
 						'yes':"Fortsett"
 					}
@@ -297,7 +297,7 @@ MEDALLIA.Invite = function (o) {
 				'optOutDays': 180, //This is the number of days people won't be asked to take the survey after they say 'No thank you'. This is where you quarantine for people who have said No.
 				'visible': true, 
 				'useMask': true,
-				'logo': /SWEDEN/i.test(o.data.cn) ? 'www2.spp.se/cms/content/themes/spp/css/img/spp_logotype.png" alt="" width="96" height="25"' : 'www.storebrand.no/_public/theme-storebrand.ny/images/StorebrandLogo_2x.png" alt="logo" width="172" height="21"', //This is where you specify the logo for the pop-up. Note that there's one logo for SPP and one for Storebrand.
+				'logo': /SWEDEN/i.test(o.data.cn) ? 'www2.spp.se/cms/content/themes/spp/css/img/spp_logotype.png" alt="" width="96" height="25"' : 'www.storebrand.no/_public/theme-storebrand.ny/images/StorebrandLogo_2x.png" alt="logo"', //This is where you specify the logo for the pop-up. Note that there's one logo for SPP and one for Storebrand.
 				'html': function () {
 					var str = '<div class="MEDALLIA_panel">';
 						str += '<div class="MEDALLIA_panel_inner">';
