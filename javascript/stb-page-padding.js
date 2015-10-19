@@ -2,6 +2,22 @@
 // Start navigation padding
 
   $(document).ready(function() {
+
+    if(window.location.href.indexOf("/kontakt-oss") > -1 && document.referrer.indexOf("/bedrift") > -1){
+       window.location.href=window.location.href + '#tab-Bedrift';
+    }
+
+    if ( window.location.href.indexOf('#tab-') > -1 ){
+      var anchor = window.location.href.substring(window.location.href.lastIndexOf("#")).split("?")[0];
+      var contactTabs = $('#tabs li');
+      $(contactTabs).each(function(){
+        if($(this).children("a").attr("href") === anchor) {
+          $(this).children("a").click();
+          return;
+        }
+      });
+    }
+
     $(".dropdown").on("hide.bs.dropdown", function() {
       if( $(this).find('.dropdown-menu') ) {
         $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
@@ -495,6 +511,54 @@
         }
       }
     };
+    /**CORPORATE**/
+ var loginFieldsCorporate=  {
+    nationalIdentityNumberCorporate: {
+    container: '#mobile-menulogin-message-corporate',
+    validators: {
+       callback: idValidator,
+       notEmpty: {
+         message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
+       }
+     }
+   }
+ };
+ var mobileLoginFieldsCorporate=  {
+    nationalIdentityNumberCorporate: {
+    container: '#menulogin-message-corporate',
+    validators: {
+       callback: idValidator,
+       notEmpty: {
+         message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
+       }
+     }
+   }
+ };
+
+ var LoginFieldsBankIDCorporate=  {
+    nationalIdentityNumberCorporate: {
+    container: '#menulogin-message-BankID-corporate',
+    validators: {
+       callback: idValidator,
+       notEmpty: {
+         message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
+       }
+     }
+   }
+ };
+
+ var LoginFieldsPWCorporate=  {
+    nationalIdentityNumberCorporate: {
+    container: '#menulogin-message-PW-corporate',
+    validators: {
+       callback: idValidator,
+       notEmpty: {
+         message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
+       }
+     }
+   }
+ };
+
 
     var callback = function(e) {
       // Prevent form submission
@@ -502,9 +566,37 @@
       loginFromMenu($(e.target).find("input[name='nationalIdentityNumber']").val());
     };
 
+    /**CORPORATE**/
+    var callbackCorporate = function(e) {
+    // Prevent form submission
+    e.preventDefault();
+    loginFromMenuCorporate($(e.target).find("input[name='nationalIdentityNumberCorporate']").val());
+    };
+    var callbackBankIDporate = function(e) {
+    // Prevent form submission
+    e.preventDefault();
+    loginBankID();
+    };
+    var callbackPWporate = function(e) {
+    // Prevent form submission
+    e.preventDefault();
+    alert('pw');
+    //$('#frmLoginBpPW').submit();
+    };
+
+
     try {
       initBootstrapValidator ($('#start-login-form'),loginFields,callback);
       initBootstrapValidator ($('#start-login-form-mobile'),mobileLoginFields,callback);
+      /**CORPORATE**/
+      initBootstrapValidator ($('#start-login-form-corporate'),loginFieldsCorporate,callbackCorporate);
+      initBootstrapValidator ($('#start-login-form-mobile-corporate'),mobileLoginFieldsCorporate,callbackCorporate);
+      /*BankID corporate*/
+      initBootstrapValidator ($('#bankIDCorporate'),LoginFieldsBankIDCorporate,callbackBankIDporate);
+      /*Passord corporate*/
+      initBootstrapValidator ($('#frmLoginBpPW'),LoginFieldsPWCorporate,callbackPWporate);
+      
+
     } catch(err) { }
   });
 

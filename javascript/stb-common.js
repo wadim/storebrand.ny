@@ -223,6 +223,23 @@ function loginFromMenu(fnr) {
   var pid64= encode64(fnr);
   window.location.href="https://www2.storebrand.no/site/guiding.nsf/bankCheck?openpage&pid64="+pid64;
 }
+function loginFromMenuCorporate(fnr){
+  var pid64= encode64(fnr);
+  var bankIdPage = $('#start-login-form-corporate').attr('data-loginallpage');
+  
+  window.location.href= bankIdPage + "?user=" + pid64;
+  //window.location.href="http://localhost:8080/site/3/bedrift/min-bedrift/logg-inn-bedriftsportalen?user=" + pid64;
+  //window.location.href="https://www2.storebrand.no/site/guiding.nsf/bankCheck?openpage&pid64="+pid64;
+}
+
+ $(document).ready(function() {
+  var temp = gup('login');
+  if(temp==='yes'){
+    setTimeout(function(){ 
+      $("#menuLogin").dropdown("toggle");
+    },1000);
+  }
+});
 /* ***** End of functionality for login ***** */
 
 /* ***** Function for opening chat ***** */
