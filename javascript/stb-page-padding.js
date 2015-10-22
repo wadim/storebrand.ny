@@ -548,8 +548,8 @@
  };
 
  var LoginFieldsPWCorporate=  {
-    nationalIdentityNumberCorporate: {
-    container: '#menulogin-message-PW-corporate',
+    brukernavnBp: {
+    container: '#brukernavn-bp-menu-message',
     validators: {
        callback: idValidator,
        notEmpty: {
@@ -579,9 +579,7 @@
     };
     var callbackPWporate = function(e) {
     // Prevent form submission
-    e.preventDefault();
-    alert('pw');
-    //$('#frmLoginBpPW').submit();
+    //e.preventDefault();
     };
 
 
@@ -594,7 +592,7 @@
       /*BankID corporate*/
       initBootstrapValidator ($('#bankIDCorporate'),LoginFieldsBankIDCorporate,callbackBankIDporate);
       /*Passord corporate*/
-      initBootstrapValidator ($('#frmLoginBpPW'),LoginFieldsPWCorporate,callbackPWporate);
+      initBootstrapValidator ($('#frmLoginBp'),LoginFieldsPWCorporate,callbackPWporate);
       
 
     } catch(err) { }
