@@ -1,13 +1,13 @@
 /*General margins and paddings in layout with exceptions*/
-.container{
+.container {
   padding-top: 48px;
 }
-.row{
+.row {
   .ColumnMarginBottom(48px);
 }
 
-.container.article{
-  .row{
+.container.article {
+  .row {
     .ColumnMarginBottom(24px);
     > div.toc-list{
       margin-bottom: 48px;
@@ -15,42 +15,42 @@
   }
 }
 
-.banner{
+.banner {
 
-  h2,h1{
+  h2,h1 {
     margin: 0 12px 0 0;
   }
 
   @media (max-width: @screen-md-max) {
-    p.intro{
+    p.intro {
        margin: 0 0 6px;
     }
   }
-  .row{
+  .row {
     .ColumnMarginBottom(0);
   }
 }
 
 @media (max-width: @screen-sm-max) {
-  .container{
+  .container {
     padding-top: 24px;
   }
-  .row{
+  .row {
     .ColumnMarginBottom(24px);
   }
 
-  .banner{
-    .row{
+  .banner {
+    .row {
       .ColumnMarginBottom(0);
     }
   }
 }
 
-footer{
-  .container{
+footer {
+  .container {
     padding-top: 0;
   }
-  .row{
+  .row {
     padding-bottom: 0;
   }
 }
@@ -62,18 +62,12 @@ footer{
   display: none; 
 } 
   
-// Gives no gap between rows - needs to be modified
-// (Deprecated, there's by default no gap between rows, instead add margin/padding using top-margin-xx/bottom-padding-xx classes.
-.nogap{
-  margin-bottom:0px;
+// Removes top and bottom margin
+// (Deprecated for rows, there's by default no gap between rows, instead add margin/padding using top-margin-xx/bottom-padding-xx classes.)
+.nogap {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
-
-// Styling for toc lists on article pages
-//@media screen and (max-width: 991px) {
-//  .toc-list .items {
-//    display: none;
-//  }
-//}
 
 // Fix for TinyMCE formatting 
 img.editor-image-right {
@@ -86,9 +80,9 @@ img.editor-image-left {
   margin-right: 24px;
 } 
 
-
 // End of TinyMCE fixes
     
+// Styling for toc lists on article pages 
 .toc-list ul.items > li {
   list-style-type: none;
 }
@@ -96,7 +90,6 @@ img.editor-image-left {
 .toc-list ul.items > li:not(:first-child) {
   margin-top: 10px; 
 }
-
 // End of styling for toc lists on article pages 
 
 
@@ -105,6 +98,21 @@ img.editor-image-left {
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: @stb-gray-third;
+}
+
+@media(min-width:@screen-sm-min) {
+.border-right {
+  border-right: 1px solid;
+  border-color: @stb-gray-third;
+}
+}
+
+// Padding of whatever on top and bottom only
+.padded-10 {
+  margin-top: 12px;
+  padding-top: 12px; 
+  margin-bottom: 12px;
+  padding-bottom: 12px;
 }
 
 // Various top and bottom gaps for all screen widths
@@ -315,85 +323,85 @@ img.editor-image-left {
 
 @media(max-width:@screen-md-min) {
   
-.top-margin-50-mdlg {
-  margin-top: 0px;
-}
+  .top-margin-50-mdlg {
+    margin-top: 0px;
+  }
 
-.top-padding-50-mdlg {
-  padding-top: 0px;
-}
+  .top-padding-50-mdlg {
+    padding-top: 0px;
+  }
 
-.top-margin-40-mdlg {
-  margin-top: 0px;
-}
+  .top-margin-40-mdlg {
+    margin-top: 0px;
+  }
 
-.top-padding-40-mdlg {
-  padding-top: 0px;
-}
+  .top-padding-40-mdlg {
+    padding-top: 0px;
+  }
 
-.top-margin-30-mdlg {
-  margin-top: 0px;
-}
+  .top-margin-30-mdlg {
+    margin-top: 0px;
+  }
 
-.top-padding-30-mdlg {
-  padding-top: 0px;
-}
+  .top-padding-30-mdlg {
+    padding-top: 0px;
+  }
 
-.top-margin-20-mdlg {
-  margin-top: 0px;
-}
+  .top-margin-20-mdlg {
+    margin-top: 0px;
+  }
 
-.top-padding-20-mdlg {
-  padding-top: 0px;
-}
+  .top-padding-20-mdlg {
+    padding-top: 0px;
+  }
 
-.top-margin-10-mdlg {
-  margin-top: 0px;
-}
+  .top-margin-10-mdlg {
+    margin-top: 0px;
+  }
 
-.top-padding-10-mdlg {
-  padding-top: 0px;
-}
+  .top-padding-10-mdlg {
+    padding-top: 0px;
+  }
 
-.bottom-margin-50-mdlg {
-  margin-bottom: 0px;
-}
+  .bottom-margin-50-mdlg {
+    margin-bottom: 0px;
+  }
 
-.bottom-padding-50-mdlg {
-  padding-bottom: 0px;
-}
+  .bottom-padding-50-mdlg {
+    padding-bottom: 0px;
+  }
 
-.bottom-margin-40-mdlg {
-  margin-bottom: 0px;
-}
+  .bottom-margin-40-mdlg {
+    margin-bottom: 0px;
+  }
 
-.bottom-padding-40-mdlg {
-  padding-bottom: 0px;
-}
+  .bottom-padding-40-mdlg {
+    padding-bottom: 0px;
+  }
 
-.bottom-margin-30-mdlg {
-  margin-bottom: 0px;
-}
+  .bottom-margin-30-mdlg {
+    margin-bottom: 0px;
+  }
 
-.bottom-padding-30-mdlg {
-  padding-bottom: 0px;
-}
+  .bottom-padding-30-mdlg {
+    padding-bottom: 0px;
+  }
 
-.bottom-margin-20-mdlg {
-  margin-bottom: 0px;
-}
+  .bottom-margin-20-mdlg {
+    margin-bottom: 0px;
+  }
 
-.bottom-padding-20-mdlg {
-  padding-bottom: 0px;
-}
+  .bottom-padding-20-mdlg {
+    padding-bottom: 0px;
+  }
 
-.bottom-margin-10-mdlg {
-  margin-bottom: 0px;
-}
+  .bottom-margin-10-mdlg {
+    margin-bottom: 0px;
+  }
 
-.bottom-padding-10-mdlg {
-  padding-bottom: 0px;
-}
+  .bottom-padding-10-mdlg {
+    padding-bottom: 0px;
+  }
   
 }
 
