@@ -178,21 +178,36 @@
     // Prepare the row that contains the table of contents
     var tocList ='<div class="row"><div class="col-md-8 toc-list top-padding-10 border-top-and-bottom stbcolor-background fifth"><p class="intro"><a href="#" onclick="$(\".toc-list .items\").slideToggle();$(\".toc-list p span\").toggleClass(\"chevron-down red chevron-up\");">G&aring; direkte til<span class="stb-sprite-medium chevron-down pull-right"></a></span></p><ul class="items"></ul></div></div>';
 
-    // Place the table of content above the first h3.toc-header
-    $(tocList).insertBefore( $('h3.toc-header:first').closest("div.row") );
+    // Place the table of content above the first hx.toc-header
+    if($('h2.toc-header').length===0) {
+      $(tocList).insertBefore( $('h3.toc-header:first').closest("div.row") );
+    } else {
+      // When we don't have to support h3-based toc any more, we can replace this if with just the following line
+      $(tocList).insertBefore( $('h2.toc-header:first').closest("div.row") );
+    }
 
-    // Find all the top level TOC headings (h3)
-    var tocHeaders= $('h3.toc-header');
+    // Find all the top level TOC headings (h2)
+    var tocHeaders= $('h2.toc-header');
+    // Small more or less temporary fix if because we moved the tocHeaders from h3 to h2
+    var tocMode = "h2";
+    if (tocHeaders.length===0) {
+      tocHeaders = $('h3.toc-header');
+      tocMode = "h3";
+    }
 
-    // Iterate through all the top level headings (h3)
+    // Iterate through all the top level headings
     for(var i=0; i<tocHeaders.length; i++) {
       var heading = $(tocHeaders[i]);
 
       // Appending heading text to table to contents and also preparing links
       $('.toc-list .items').append( prepareTocLink(heading, "") );
 
-      // Find all sub-headings(h4) inside each heading(h3)
-      var subHeading = heading.nextUntil('h3','h4');
+      // Find all sub-headings(h3) inside each heading(h2)
+      var subHeading = heading.nextUntil('h2','h3');
+      // h3->h2 temporary fix if
+      if (tocMode==="h3") {
+        subHeading = heading.nextUntil('h3','h4');
+      }
 
       // Check if there are any h4 elements. If there are none, we should not run the code below.
       if(subHeading.length === 0) continue;
