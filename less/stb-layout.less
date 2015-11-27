@@ -79,7 +79,6 @@ img.editor-image-left {
   .pull-left();
   margin-right: 24px;
 } 
-
 // End of TinyMCE fixes
     
 // Styling for toc lists on article pages 
@@ -93,11 +92,45 @@ img.editor-image-left {
 // End of styling for toc lists on article pages 
 
 
+
 // Adds visual border at top and bottom of element
 .border-top-and-bottom {
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: @stb-gray-third;
+}
+
+// Gray border
+.grayborder {
+  &.full {
+    border: solid @stb-gray-third 2px;
+  }
+  &.side1 {
+    border-top: solid @stb-gray-third 2px;
+  }
+  &.side124 {
+    border-top: solid @stb-gray-third 2px;
+    border-left: solid @stb-gray-third 2px;
+    border-right: solid @stb-gray-third 2px;
+  }
+  &.side24 {
+    border-left: solid @stb-gray-third 2px;
+    border-right: solid @stb-gray-third 2px;    
+  }
+  &.side234 {
+    border-bottom: solid @stb-gray-third 2px;
+    border-left: solid @stb-gray-third 2px;
+    border-right: solid @stb-gray-third 2px;
+  }
+  &.side3 {
+    border-bottom: solid @stb-gray-third 2px;
+  }  
+}
+
+// Centering of images
+.img-center {
+  display: block;
+  margin: 0 auto;
 }
 
 @media(min-width:@screen-sm-min) {

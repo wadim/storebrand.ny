@@ -373,9 +373,13 @@
     <div role="main" id="mainContent" tab-index="-1">        
     </div>
 
-    <div class="stbcolor-background sixth bottom-padding-10">
+    <div class="stbcolor-gray second bottom-padding-10">
       <div class="banner">
         <div class="container">
+
+          <div class="text-right visible-xs visible-sm">
+          <p><strong><span class="stb-sprite-medium user" style="margin-bottom: -6px;"></span> Kari Normann</strong></p>
+          </div>
 
           <div class="row">
             <div class="col-sm-8">
@@ -386,15 +390,16 @@
             </div>
           </div><!-- Row, Mine dekninger -->
 
-          <div class="text-right">
+          <div class="text-right hidden-xs hidden-sm">
           <p><strong><span class="stb-sprite-medium user" style="margin-bottom: -6px;"></span> Kari Normann</strong></p>
           </div>
 
-          <div class="row top-margin-10 stbcolor-primary third">
+          <div class="row top-margin-10 stbcolor-primary third grayborder full">
 
             <div class="col-sm-4 border-right padded-10 column">
-              <img src="https://www2.storebrand.no/site/redkun.nsf/Get/geta95b2b3d2f46e7491f12db9e8a4d0a16/$FILE/Statoil.png" alt="Din arbeidsgiver er Statoil" />
-              <hr />
+              <img class="hidden-xs hidden-sm img-center" src="https://www2.storebrand.no/site/redkun.nsf/Get/geta95b2b3d2f46e7491f12db9e8a4d0a16/$FILE/Statoil.png" alt="Din arbeidsgiver er Statoil" />
+              <img class="visible-xs visible-sm img-center" src="https://www2.storebrand.no/site/redkun.nsf/Get/geta95b2b3d2f46e7491f12db9e8a4d0a16/$FILE/Statoil.png" alt="Din arbeidsgiver er Statoil" />
+              <hr class="hidden-xs hidden-sm" />
               <p><strong>SPØRSMÅL OM ORDNINGEN?</strong></p>
               <p>Statoil har egne telefonnumre du kan ringe for å få informasjon om din tjenestepensjon.</p>
               <div>
@@ -402,7 +407,7 @@
                   <span class="circle-16 stbcolor-secondary third pull-left">
                     <span class="stb-sprite-small white phone"></span>
                   </span>
-                  <span class="iconCompanion">22&nbsp;33&nbsp;XX&nbsp;55</span>
+                  <span class="iconCompanion">Ring&nbsp;22&nbsp;33&nbsp;XX&nbsp;55</span>
                 </a>
               </div>
             </div>
@@ -412,8 +417,11 @@
               <p>
                 Hver arbeidsgiver kan innenfor en øvre og en nedre grense selv bestemme hvor mye de sparer i pensjon for de ansatte.
               </p>
-              <p class="text-center top-margin-40">
-                <span class="circled-text three">5+8</span>
+              <p class="top-padding-10">
+                <strong>SPAREPROSENT</strong><br />
+              </p>
+              <p class="intro">
+                4+2
               </p>
             </div>
 
@@ -432,28 +440,23 @@
 
           </div><!-- /Row, Logoboks -->
 
-          <div>
-            <h3>Dekningsoversikt</h3>
+          <div class="top-margin-40 bottom-margin-10">
+            <h2>Produktoversikt</h2>
           </div>
 
           <!-- Tjenestepensjonsdelen av dekningsoversikt -->
-          <div class="row top-margin-10 stbcolor-primary third">
+          <div class="row top-margin-10 stbcolor-primary third grayborder side124">
 
-            <div class="col-sm-3 border-right padded-10 column">
-              <p>
+            <div class="col-sm-6 padded-10 column">
+              <p class="bolded">
                 <img src="https://www.storebrand.no/_image/1820.png" alt="" width="36" /> Tjenestepensjon
               </p>                      
             </div>
-            <div class="col-sm-3 border-right padded-10 column">
+            <div class="col-sm-3 padded-10 column">
               <p>
                 Innskuddspensjon (1349034)
               </p>                      
             </div>            
-            <div class="col-sm-3 border-right padded-10 column">
-              <p>
-                Profil: Anbefalt
-              </p>                      
-            </div>
             <div class="col-sm-3 text-right padded-10 column">
               <p id="pension-toggler">
                 Detaljer&nbsp;&nbsp;<span class="stb-sprite-medium chevron-up red pull-right"></span></p>
@@ -461,102 +464,121 @@
             </div>
           </div><!-- /Row, Topp for pensjonsdekninger -->
 
-          <div class="row stbcolor-primary third">
+          <div class="row stbcolor-primary third grayborder side24">
             <div class="col-sm-12">
             <hr class="nogap"/>
             </div>
           </div>
 
-          <div class="row stbcolor-primary third">
+          <div class="row stbcolor-primary third grayborder side24">
 
-            <div class="col-sm-2 padded-10 border-right column">
+            <div class="col-sm-8 padded-10 border-right column">
+              <h3>Slik er du dekket</h3>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p>Pensjonstype</p>
+                </div>
+                <div class="col-sm-8">
+                  <p><strong>Innskuddspensjon</strong></p>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p>Spareprofil</p>
+                </div>
+                <div class="col-sm-8">
+                  <p><span class="pilled">Anbefalt</span></p>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p>Avtalenummer</p>
+                </div>
+                <div class="col-sm-8">
+                  <p><strong>1349034</strong></p>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p>Estimert årlig avkastning</p>
+                </div>
+                <div class="col-sm-8">
+                  <p><strong>6&nbsp;%</strong></p>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p>Utbetaling starter</p>
+                </div>
+                <div class="col-sm-8">
+                  <p><strong>01.05.2036</strong></p>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p>Utbetales til</p>
+                </div>
+                <div class="col-sm-8">
+                  <p><strong>Kari Normann</strong></p>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p>Innbetaling i år</p>
+                </div>
+                <div class="col-sm-8">
+                  <p><strong>41&nbsp;395&nbsp;kr</strong></p>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <p>Pensjonsavtalen inkluderer innskuddsfritak og uførepensjon med 12 måneders karenstid.</p>
+                  <p><button class="stb-btn transparent light">Endre spareprofil</button></p>
+                </div>              
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <img src="images/saldoutvikling.png" />
+                </div>              
+              </div>            
+            </div>
+
+            <div class="col-sm-4 padded-10 border-right column">
+              <h3>PENSJONSGRUNNLAG</h3>            
               <p>
                 Årslønn<br />
                 <strong>600&nbsp;000</strong><br />
                 Stillingsprosent<br />
                 <strong>100&nbsp;%</strong><br />
                 Ansatt siden<br />
-                <strong>1.5.2008</strong>
-              </p>
-            </div>
-
-            <div class="col-sm-4 padded-10 border-right column">
-              <p>
+                <strong>01.05.2014</strong><br />
                 Type tjenestepensjon<br />
                 <strong>Innskuddspensjon</strong><br />
                 Spareprosent<br />
-                <strong>5+8</strong><br />
+                <strong>4+2</strong><br />
                 Spart siden<br />
-                <strong>1.4.2015</strong>
-              </p>
-            </div>
-
-            <div class="col-sm-3 padded-10 border-right column">
-              <p>
+                <strong>01.05.2015</strong><br />
                 Saldo i dag<br />
-                <strong>123&nbsp;734&nbsp;kr</strong>
+                <strong>187&nbsp;249&nbsp;kr</strong><br />
+                Estimert pensjon<br />
+                <strong>18&nbsp;500&nbsp;kr/mnd</strong>
               </p>
             </div>
-
-            <div class="col-sm-3 padded-10 column">
-              <p>
-                Beregnet pensjon<br />
-                <strong>18&nbsp;500&nbsp;kr/år</strong>
-              </p>
-            </div>            
+          
           </div><!-- /Row, Pensjonsgrunnlag -->
 
-          <div class="row stbcolor-primary third">
+          <div class="row stbcolor-primary third grayborder side24">
             <div class="col-sm-12">
-              <div class="table-responsive">
-                <table class="stb-table">
-                  <thead>
-                    <tr>
-                      <th>Pensjonsavtale</th>
-                      <th class="text-right">Årlig utbetaling (estimat)</th>
-                      <th class="text-right">Utbetaling starter</th>
-                      <th>Utbetales til</th>
-                      <th class="text-right">Årlig innskudd</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Innskuddspensjon</td>
-                      <td class="text-right">222&nbsp;000&nbsp;kr</td>
-                      <td class="text-right">1.5.2036</td>
-                      <td>Kari Normann</td>
-                      <td class="text-right">41&nbsp;395&nbsp;kr</td>
-                    </tr>
-                    <tr>
-                      <td>Innskuddsfritak</td>
-                      <td class="text-right">222&nbsp;000&nbsp;kr</td>
-                      <td class="text-right">1.5.2036</td>
-                      <td>Kari Normann</td>
-                      <td class="text-right">41&nbsp;395&nbsp;kr</td>
-                    </tr>
-                    <tr>
-                      <td>Uførepensjon med 12 måneders karenstid</td>
-                      <td class="text-right">222&nbsp;000&nbsp;kr</td>
-                      <td class="text-right">1.5.2036</td>
-                      <td>Kari Normann</td>
-                      <td class="text-right">41&nbsp;395&nbsp;kr</td>
-                    </tr>                    
-                  </tbody>
-                </table>
-              </div>
+              
 
             </div>
           </div><!-- /Row, Tabell for pensjonsdekninger -->
 
-          <div class="row stbcolor-primary third">
-            <div class="col-sm-12 text-right margin-right-10">
-              <button class="stb-btn transparent light">Endre spareprofil</button>
-            </div>
-          </div><!-- /Row for spareprofilknapp -->
+
           <!-- /Tjenestepensjonsdelen av dekningsoversikt -->
 
           <!-- Forsikringsdel av dekningsoversikt -->
-          <div class="row top-margin-10 stbcolor-primary third">
+          <div class="row top-margin-10 stbcolor-primary third grayborder full">
 
             <div class="col-sm-6 border-right padded-10 column">
               <p>
@@ -577,7 +599,7 @@
           <!-- /Forsikringsdel av dekningsoversikt -->
 
           <!-- Helseforsikringsdel av dekningsoversikt -->
-          <div class="row top-margin-10 stbcolor-primary third">
+          <div class="row top-margin-10 stbcolor-primary third grayborder full">
 
             <div class="col-sm-6 border-right padded-10 column">
               <p>
@@ -621,9 +643,7 @@
     </footer>
     <!-- /Bunnmeny -->
 
-    <script type="text/javascript"
-      src="https://www.storebrand.no/site/stb.nsf/cxense-basic.js"></script><script type="text/javascript"
-      src="https://stbdesign.s3.amazonaws.com/storebrand.ny/js/taskMetric.js"></script><script type="text/javascript">
+    <script type="text/javascript">
       var enonicSearchData={"search":{"typeahead":{"direkte":[{"query":"Sperre kort","name":"Sperre kort","url":"/cms/privat/bank-og-lan/sperre-kort"},{"query":"Mistet kort","name":"Sperre kort","url":"/cms/privat/bank-og-lan/sperre-kort"},{"query":"Stjålet kort","name":"Sperre kort","url":"/cms/privat/bank-og-lan/sperre-kort"},{"query":"Ødelagt kort","name":"Sperre kort","url":"/cms/privat/bank-og-lan/sperre-kort"},{"query":"Bank","name":"Forside bank","url":"/cms/privat/bank-og-lan"},{"query":"Mobilbank","name":"Mobilbank","url":"/cms/privat/bank-og-lan/mobilbank"},{"query":"BSU","name":"BSU-konto","url":"/cms/privat/bank-og-lan/bsu-konto"},{"query":"Renter","name":"Dagens lånerenter","url":"/cms/privat/bank-og-lan/dagens-lanerenter"},{"query":"BankID","name":"BankID - spørsmål og svar","url":"/cms/privat/bank-og-lan/bankid-sporsmal-og-svar"},{"query":"Nettbank","name":"Detaljer om nettbank","url":"/cms/privat/bank-og-lan/nettbank/detaljer"},{"query":"Renter","name":"Dagens sparerenter","url":"/cms/privat/bank-og-lan/dagens-sparerenter"},{"query":"Lån","name":"Boliglån","url":"/cms/privat/bank-og-lan/boliglan"},{"query":"Boliglån","name":"Boliglån","url":"/cms/privat/bank-og-lan/boliglan"},{"query":"Kredittkort","name":"MasterCard kredittkort","url":"/cms/privat/bank-og-lan/kredittkort"},{"query":"BLU","name":"Boliglån - BLU40","url":"/cms/privat/bank-og-lan/boliglan-blu40"},{"query":"Betaling","name":"Betalinger i høytidene","url":"/cms/privat/bank-og-lan/bank-i-hoytidene"},{"query":"Frister","name":"Betalinger i høytidene","url":"/cms/privat/bank-og-lan/bank-i-hoytidene"},{"query":"Jul","name":"Betalinger i høytidene","url":"/cms/privat/bank-og-lan/bank-i-hoytidene"},{"query":"Nyttår","name":"Betalinger i høytidene","url":"/cms/privat/bank-og-lan/bank-i-hoytidene"},{"query":"Påske","name":"Betalinger i høytidene","url":"/cms/privat/bank-og-lan/bank-i-hoytidene"},{"query":"Høytid","name":"Betalinger i høytidene","url":"/cms/privat/bank-og-lan/bank-i-hoytidene"},{"query":"swift","name":"SWIFT/BIC-kode","url":"/cms/privat/bank-og-lan/nettbank/detaljer#bankensswiftbickodeerstfbnokk"},{"query":"bic","name":"SWIFT/BIC-kode","url":"/cms/privat/bank-og-lan/nettbank/detaljer#bankensswiftbickodeerstfbnokk"},{"query":"iban","name":"SWIFT/BIC-kode","url":"/cms/privat/bank-og-lan/nettbank/detaljer#bankensswiftbickodeerstfbnokk"},{"query":"betalinger fra utlandet","name":"SWIFT/BIC-kode","url":"/cms/privat/bank-og-lan/nettbank/detaljer#bankensswiftbickodeerstfbnokk"},{"query":"Forsikring","name":"Forside forsikring","url":"/cms/privat/forsikring"},{"query":"Helseforsikring","name":"Helseforsikring","url":"/cms/privat/forsikring/helseforsikring"},{"query":"Behandlingsforsikring","name":"Helseforsikring","url":"/cms/privat/forsikring/helseforsikring"},{"query":"Ulykkesforsikring","name":"Ulykkesforsikring","url":"/cms/privat/forsikring/ulykkesforsikring"},{"query":"Husforsikring","name":"Husforsikring","url":"/cms/privat/forsikring/husforsikring"},{"query":"Bil","name":"Bilforsikring","url":"/cms/privat/forsikring/bilforsikring"},{"query":"Barneforsikring","name":"Barneforsikring","url":"/cms/privat/forsikring/barneforsikring"},{"query":"Avslutte forskring","name":"Hvordan avslutte forsikringen","url":"https://www.storebrand.no/privat/forsikring/bilforsikring/alt-om-bil-og-bonus#avslutteforsikringen"},{"query":"Oppsigelse av forsikring","name":"Hvordan avslutte forsikringen","url":"https://www.storebrand.no/privat/forsikring/bilforsikring/alt-om-bil-og-bonus#avslutteforsikringen"},{"query":"Grønt kort","name":"Bestill «Grønt kort»","url":"https://www.storebrand.no/privat/forsikring/bestill-gront-kort"},{"query":"Hundeforsikring","name":"Hund- og kattforsikring","url":"/cms/privat/forsikring/hund-og-kattforsikring"},{"query":"Katteforsikring","name":"Hund- og kattforsikring","url":"/cms/privat/forsikring/hund-og-kattforsikring"},{"query":"husdyr","name":"Hund- og kattforsikring","url":"/cms/privat/forsikring/hund-og-kattforsikring"},{"query":"dyreforsikring","name":"Hund- og kattforsikring","url":"/cms/privat/forsikring/hund-og-kattforsikring"},{"query":"Meld skade","name":"Meld skade","url":"/cms/privat/forsikring/meld-skade"},{"query":"Skademelding","name":"Meld skade","url":"/cms/privat/forsikring/meld-skade"},{"query":"Innbo","name":"Innboforsikring","url":"/cms/privat/forsikring/innboforsikring"},{"query":"Sykkel","name":"Innboforsikring","url":"/cms/privat/forsikring/innboforsikring"},{"query":"Refusjonsskjema","name":"Refusjonsskjema","url":"/cms/privat/forsikring/helseforsikring/slik-bruker-du-forsikringen"},{"query":"Handlekurv","name":"Hent lagret handlekurv","url":"https://www2.storebrand.no/skade/handlekurv/hent"},{"query":"Sparing","name":"Forside sparing","url":"/cms/privat/sparing"},{"query":"aksjespar","name":"Kvartalsrapport Storebrand AksjeSpar","url":"/cms/privat/_attachment/2436?_ts=1506aa7e833"},{"query":"kvartalsrapport","name":"Kvartalsrapport Storebrand AksjeSpar","url":"/cms/privat/_attachment/2436?_ts=1506aa7e833"},{"query":"Pensjon","name":"Forside pensjon","url":"/cms/privat/pensjon"},{"query":"Fripolise","name":"Fripolise med investeringsvalg","url":"/cms/privat/pensjon/fripolise-med-investeringsvalg"},{"query":"Pensjon","name":"Ekstrapensjon","url":"/cms/privat/pensjon/ekstrapensjon"},{"query":"Pensjonskapitalbevis","name":"Pensjonskapitalbevis","url":"/cms/privat/pensjon/pensjonskapitalbevis"},{"query":"Fripolise","name":"IPS - Individuell pensjonssparing","url":"/cms/privat/pensjon/ips"},{"query":"Pensjon","name":"Dette bør du vite om pensjon","url":"/cms/privat/pensjon/dette-bor-du-vite"},{"query":"Pensjon","name":"Hva bør du gjøre når?","url":"/cms/privat/pensjon/dette-bor-du-gjore"},{"query":"prisliste","name":"Bankens prisliste 30. september 2015","url":"/cms/privat/_attachment/3328?_ts=15017b336e7"},{"query":"renter","name":"Bankens prisliste 30. september 2015","url":"/cms/privat/_attachment/3328?_ts=15017b336e7"},{"query":"fast er trygt","name":"Fastrentelån","url":"/cms/privat/bank-og-lan/fastrentelan"},{"query":"rente","name":"Fastrentelån","url":"/cms/privat/bank-og-lan/fastrentelan"},{"query":"bolig","name":"Fastrentelån","url":"/cms/privat/bank-og-lan/fastrentelan"},{"query":"lån","name":"Fastrentelån","url":"/cms/privat/bank-og-lan/fastrentelan"}]},"promotions":"","autocomplete":{"anbefalt":[{"query":"Årsrapport","name":"Årsrapport"},{"query":"Halvårsrapport","name":"Halvårsrapport"},{"query":"Kvartalsrapport","name":"Kvartalsrapport"},{"query":"Eiendom","name":"Storebrand Eiendom"},{"query":"Kontakt","name":"Kontakt Storebrand"},{"query":"Chat","name":"Velg emne for chat"},{"query":"Epost","name":"Kontakt Storebrand"},{"query":"Logg inn","name":"Logg inn"},{"query":"Pensjon","name":"Pensjon"},{"query":"IPS","name":"IPS – Individuell pensjonssparing"},{"query":"Pensjon","name":"Spar i Ekstrapensjon"},{"query":"Pensjon","name":"Lær om pensjon"},{"query":"Ekstrapensjon","name":"Ekstrapensjon"},{"query":"Fordel","name":"Storebrand Fordel"},{"query":"Fripolise","name":"Fripolise"},{"query":"Ditt pensjonstall","name":"Ditt pensjonstall"},{"query":"Bank","name":"Bank"},{"query":"Banksparing","name":"Banksparing"},{"query":"Bankkort","name":"Bankkort"},{"query":"Nettbank","name":"Nettbank"},{"query":"Mobilbank","name":"Mobilbank"},{"query":"Prisliste","name":"Prisliste"},{"query":"Renter og priser","name":"Renter og priser"},{"query":"Banksparing","name":"Sparekonto"},{"query":"Sparekonto","name":"Sparekonto"},{"query":"BSU","name":"Boligsparing for ungdom - BSU"},{"query":"Høyrentekonto","name":"Plasseringskonto"},{"query":"Sparerenter","name":"Sparerenter"},{"query":"Visa-kort","name":"Visa-kort"},{"query":"Kredittkort","name":"Kredittkort"},{"query":"MasterCard","name":"MasterCard kredittkort"},{"query":"Betal smart","name":"Betal smart"},{"query":"Sperre kort","name":"Sperre kort"},{"query":"Nettbank","name":"Nettbank"},{"query":"Nettbank","name":"Logg inn"},{"query":"BankID","name":"BankID"},{"query":"Mobilbank","name":"Mobilbank"},{"query":"bic","name":"BIC-kode"},{"query":"betalinger fra utlandet","name":"SWIFT/BIC-kode"},{"query":"swift","name":"SWIFT-adresse"},{"query":"Forsikring","name":"Forsikring"},{"query":"Bilforsikring","name":"Bilforsikring"},{"query":"Innboforsikring","name":"Innboforsikring"},{"query":"Helseforsikring","name":"Helseforsikring"},{"query":"Skade","name":"Meld skade"},{"query":"Melding","name":"Meld skade"},{"query":"Barneforsikring","name":"Barneforsikring"},{"query":"Brann","name":"Skademelding brann"},{"query":"Husforsikring","name":"Husforsikring"},{"query":"Skademelding","name":"Skademelding"},{"query":"Reiseforsikring","name":"Reiseforsikring"},{"query":"MC-forsikring","name":"MC-forsikring"},{"query":"Kritisk Sykdom","name":"Kritisk Sykdom"},{"query":"Båtforsikring","name":"Båtforsikring"},{"query":"Husforsikring","name":"Husforsikring"},{"query":"Hjemforsikring","name":"Husforsikring"},{"query":"Boligforsikring","name":"Husforsikring"},{"query":"Avslutte","name":"Avslutte forsikring"},{"query":"Oppsigelse","name":"Oppsigelse av forsikring"},{"query":"Grønt kort","name":"Grønt kort"},{"query":"Bobil","name":"Bobil"},{"query":"Campingbil","name":"Campingbil"},{"query":"Fond","name":"Fond"},{"query":"Fondssparing","name":"Fondssparing"},{"query":"Fond","name":"Spar i fond"},{"query":"Fondslister","name":"Fondslister"},{"query":"Boliglån","name":"Boliglån"},{"query":"Boliglån for unge","name":"Boliglån for unge"},{"query":"BLU40","name":"Boliglån for unge "},{"query":"Lånekalkulator","name":"Lånekalkulator"},{"query":"Lånerenter","name":"Lånerenter"},{"query":"Boligkreditt","name":"Boligkreditt"},{"query":"Fastrentelån","name":"Fastrentelån"},{"query":"fast","name":"Fastrentelån"},{"query":"rente","name":"Fastrentelån"},{"query":"bolig","name":"Fastrentelån"},{"query":"lån","name":"Fastrentelån"}]}}};     
     </script>
 

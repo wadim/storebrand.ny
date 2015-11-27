@@ -79,22 +79,12 @@ h1 {
   &.dark {
     color: @stb-primary-white;
   }
-  &.red {
-    color: @stb-primary-color;
+  &.black {
+    color: @stb-secondary-charcoal;
   }
 }
-h2 {
-  font-size: 40px;
-  line-height: 46px;
-  margin: 48px 12px 6px 0;
-  color: @stb-secondary-charcoal;
-  font-family: @font-family-signa-extralight;
-  &.dark {
-    color: @stb-primary-white;
-  }
 
-}
-h3 {
+h2 {
   font-size: 24px;
   line-height: 30px;
   margin: 48px 6px 6px 0;
@@ -117,8 +107,8 @@ h3 {
   }
 }
 
-h4 {
-  font-size: 16px;
+h3 {
+  font-size: 18px;
   line-height: 22px;
   margin: 24px 9px 6px 0;
   color: @stb-secondary-charcoal;
@@ -130,7 +120,8 @@ h4 {
     color: @stb-primary-white;
   }
 }
-h5 {
+
+h4 {
   font-size: 16px;
   line-height: 18px;
   margin: 0;
@@ -141,7 +132,8 @@ h5 {
     color: @stb-primary-white;
   }
 }
-h6 {
+
+h5 {
   font-size: 14px;
   line-height: 16px;
   margin: 0;
@@ -180,7 +172,7 @@ div.row div{
   }
 }
 
-div.row.video-text > div{
+div.row.video-text > div {
   >h2:first-child{
     margin-top: 48px;
   }
@@ -234,6 +226,14 @@ p {
       &:extend(.stb-color-sprite-medium);
       background-position: -100px -400px;
   }
+
+  &.bolded {
+    font-size: 18px;
+    line-height: 22px;
+    color: @stb-secondary-charcoal;
+    font-weight: bold;
+  }
+
 }
 
 .input-required {
@@ -255,7 +255,14 @@ small, .petit {
   font-style: normal;
   font-family: @font-family-sans-serif;
   margin-bottom: 12px;
+}
 
+.pilled {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 12px;
+  border-radius: 18px;
+  font-weight: bold;
 }
 
 ol,ul,p {
@@ -452,21 +459,15 @@ ul.stb,ol.stb {
     line-height: 30px;
     margin: 0px 9px 9px 0;
   }
-  
+   
   h2 {
-    font-size: 24px;
-    line-height: 30px;
-    margin: 36px 9px 6px 0;
-  }
-  
-  h3 {
     font-size: 18px;
     line-height: 22px;
     margin: 36px 6px 6px 0;
   }
 
-  h4{
-    font-size: 14px;
+  h3 {
+    font-size: 16px;
     line-height: 20px;
     margin: 18px 6px 6px 0;
   }
