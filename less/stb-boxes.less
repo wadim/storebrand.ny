@@ -1,22 +1,6 @@
 .stb-box {
   padding: 24px 24px 12px 24px;
   border: 1px solid transparent;
-
-// Header inside a box
-  > .box-header {
-    font-size: 18px;
-    line-height: 22px;
-    margin: 0 6px 6px 0;
-    color: @stb-secondary-charcoal;
-    font-family: @font-family-signa-light;
-    &.stbfont {
-      font-family: @font-family-signa-book;
-    }
-    &.dark {
-      color: @stb-primary-white;
-    }
-  }
-
   &.row, .row{
     .ColumnMarginBottom(0px);
   }
@@ -142,22 +126,10 @@
      	}
      }
 
-    .text {
+    .text{
       h2,h3 {
         padding-top: 0;
         margin: 0 12px 12px 0;
-      }
-      >.box-header {
-        font-size: 16px;
-        line-height: 36px;
-        color: @stb-secondary-charcoal;
-        font-family: @font-family-signa-light;
-        &.stbfont {
-          font-family: @font-family-signa-book;
-        }
-        &.dark {
-          color: @stb-primary-white;
-        }
       }
     }
 
@@ -196,7 +168,7 @@
     }
   }
 
-  h3 {
+  h3{
     font-weight: normal;
     font-family: @font-family-signa-extralight;
     margin: 0 6px 6px 0;
@@ -282,38 +254,38 @@ a + div.iconInfo{
 }
 
 
-.stb-link-group {
-  h3 {
-    margin: 0 12px 12px 0;
-  }
+.stb-link-group{
+ h3{
+   margin: 0 12px 12px 0;
+ }
 }
 
-.banner {
-  .stb-box {
+.banner{
+  .stb-box{
     padding: 24px 24px 0 24px;
     margin-bottom: 0;
   }
   @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
-    .stb-btn {
+    .stb-btn{
       margin-bottom: 0;
     }
   }
 }
 
-.important-notice {
-  .row {
+.important-notice{
+  .row{
     .ColumnMarginBottom(24px);
   }
 }
 
 @media (max-width: @screen-sm-max) {
- .important-notice {
-   .row {
+ .important-notice{
+   .row{
      .ColumnMarginBottom(0px);
    }
  }
 }
 
-.column-element {
+.column-element{
   margin-bottom: 48px;
 }
