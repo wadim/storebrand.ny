@@ -109,9 +109,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
 $(document).ready(function(){
   if($('#validateDate').length > 0){
     $('#validateDate').bootstrapValidator({

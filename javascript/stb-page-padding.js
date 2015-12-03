@@ -1,4 +1,4 @@
-﻿(function($){
+(function($){
 // Start navigation padding
 
   $(document).ready(function() {
@@ -59,10 +59,10 @@
    // seatbelt: window.showCartIcon might not be defined:
    if(window.hasOwnProperty('showCartIcon')){
     if (cartCount != null && showCartIcon === true) {
-        addCartBtn(cartCount);  
+        addCartBtn(cartCount);
       }
     }
-  }); 
+  });
 
 // Showing/hiding the overlay on clicking the dropdown toggle
   $(document).ready(function() {
@@ -97,7 +97,7 @@
       $(".tab-content #tab-"+this.value).addClass("active");
     });
   });
-  
+
 // Start prevent top menu clicks from running away with the page
   $(document).on('click', '.yamm .dropdown-menu', function(e) {
     e.stopPropagation();
@@ -176,19 +176,19 @@
 
   $(document).ready(function() {
     // Prepare the row that contains the table of contents
-    var tocList ='<div class="row"><div class="col-md-8 toc-list top-padding-10 border-top-and-bottom stbcolor-background fifth"><p class="intro"><a href="#" onclick="$(\".toc-list .items\").slideToggle();$(\".toc-list p span\").toggleClass(\"chevron-down red chevron-up\");">G&aring; direkte til<span class="stb-sprite-medium chevron-down pull-right"></a></span></p><ul class="items"></ul></div></div>';
+    var tocList ='<div class="row"><div class="col-md-8 toc-list top-padding-10 border-top-and-bottom stbcolor-background fifth"><p class="intro"><a href="#" onclick="$(\'.toc-list .items\').slideToggle();$(\'.toc-list p span\').toggleClass(\'chevron-down red chevron-up\');return false;">G&aring; direkte til<span class="stb-sprite-medium chevron-up red pull-right"></a></span></p><ul class="items"></ul></div></div>';
 
     // Place the table of content above the first hx.toc-header
     if($('h2.toc-header').length===0) {
       $(tocList).insertBefore( $('h3.toc-header:first').closest("div.row") );
     } else {
-      // When we don't have to support h3-based toc any more, we can replace this if with just the following line
+      // When we don't have to support h3-based toc any more, we can replace this if sentence with just the following line
       $(tocList).insertBefore( $('h2.toc-header:first').closest("div.row") );
     }
 
     // Find all the top level TOC headings (h2)
     var tocHeaders= $('h2.toc-header');
-    // Small more or less temporary fix if because we moved the tocHeaders from h3 to h2
+    // Small more or less temporary fix, because we moved the tocHeaders from h3 to h2
     var tocMode = "h2";
     if (tocHeaders.length===0) {
       tocHeaders = $('h3.toc-header');
@@ -200,7 +200,7 @@
       var heading = $(tocHeaders[i]);
 
       // Appending heading text to table to contents and also preparing links
-      $('.toc-list .items').append( prepareTocLink(heading, "") );
+      $('.toc-list .items').append( prepareTocLink(heading, ""));
 
       // Find all sub-headings(h3) inside each heading(h2)
       var subHeading = heading.nextUntil('h2','h3');
@@ -219,7 +219,7 @@
         var hashId = window.location.hash;
         //if a matching heading has the hash ID, then scroll to it.
 
-        if( hashId.length > 0 ){
+        if( hashId.length > 0 ) {
           scrollToHash( hashId );
         }
 
@@ -242,14 +242,6 @@
     if( $( window ).width() <= 768) {
       $('.toc-list p span').toggleClass("stb-sprite-small stb-sprite-medium");
     }
-
-    // hide and show articles list
-    $('.toc-list p').click(function() {
-      // if the media screen width is large, then don't do anything
-      // the following will apply for mobile view
-      $('.toc-list .items').slideToggle();
-      $('.toc-list p span').toggleClass("chevron-down red chevron-up");
-    });
 
   });
   // End of automatic generation of toc lists on article pages
@@ -357,24 +349,24 @@
       if (aLinkDescribed.indexOf("<span") > 0 ) {
         var spanStart = $(this).html().indexOf("</span>");
         aLinkDescribed = aLinkDescribed.substring(spanStart, aLinkDescribed.length);
-        if (aLinkDescribed.indexOf("<span") > 0 ) {       
+        if (aLinkDescribed.indexOf("<span") > 0 ) {
           spanStart = $(this).html().indexOf("<span");
           spanEnd = $(this).html().indexOf("</span>");
           aLinkDescribed = aLinkDescribed.substring(spanStart, spanEnd);
         }
       }
-      var path = window.location.pathname;      
+      var path = window.location.pathname;
       ga('send', 'event', path , 'Klikk i meny', aLinkDescribed);
     });
 
     // Analytics for footer menu items usage
-    $("footer a").bind("click", function() { 
-      var footLink = $(this).html(); 
+    $("footer a").bind("click", function() {
+      var footLink = $(this).html();
       if (footLink.indexOf("<span") < 1) {
-        var path = window.location.pathname;    
+        var path = window.location.pathname;
         ga('send', 'event', path , 'Klikk i bunnmeny', footLink);
-      } 
-    });    
+      }
+    });
 
     // Analytics for Button
     $('button.analyze').bind( "click", function() {
@@ -597,7 +589,6 @@
     //e.preventDefault();
     };
 
-
     try {
       initBootstrapValidator ($('#start-login-form'),loginFields,callback);
       initBootstrapValidator ($('#start-login-form-mobile'),mobileLoginFields,callback);
@@ -608,7 +599,6 @@
       initBootstrapValidator ($('#bankIDCorporate'),LoginFieldsBankIDCorporate,callbackBankIDporate);
       /*Passord corporate*/
       initBootstrapValidator ($('#frmLoginBp'),LoginFieldsPWCorporate,callbackPWporate);
-      
 
     } catch(err) { }
   });
@@ -791,7 +781,7 @@ var idValidator = {
   }
 };
 
-//Adds cartIcon if cartCount cookie is found 
+//Adds cartIcon if cartCount cookie is found
 function addCartBtn(count) {
   $('body').prepend("<div class='cartIcon shoppingCartIcon'><a href='https://www2.storebrand.no/static/open/utsjekk/#/cart/'><div class='circle-24 stbcolor-gray fifth '><span class='stb-sprite-medium white shopping-cart'></span></div><div class='circle-16 stbcolor-primary first darker cartNr' style='border-radius:24px;height:24px;width:24px;padding-left:9px;padding-top:2px;'><h6 class='h2Number'>"+count+"</h6></div></a></div>");
 }
