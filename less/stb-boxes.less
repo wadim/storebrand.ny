@@ -100,8 +100,17 @@
 
   &.info {
     padding: 24px;
-    h4{
+    h4, .info-header {
       margin: 6px 9px 6px 0;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    span.info-header {
+      margin: 6px 9px 6px 0;
+      font-size: 16px;
+      line-height: 36px;
+      font-weight: 500;
+      font-family: @font-family-sans-serif-bold;
     }
     @media (max-width: @screen-xs-max) {
       padding: 12px;
@@ -189,8 +198,8 @@
         padding: 12px;
       }
     }
-    .row{
-      h2,h3{
+    .row {
+      h2,h3 {
         margin: 12px 12px 12px 0;
       }
     }
@@ -219,7 +228,6 @@
   padding: 24px;
 }
 
-
 @media (max-width: @screen-xs-max) {
 	.msgText {
     width: 100%;
@@ -232,6 +240,14 @@
   }
 }
 
+span.notification-header {
+  display: block;
+  margin: 0px 6px 6px 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: @font-family-sans-serif-bold;
+}
 
 &.infoIcon {
 	background: transparent url("../images/InfoShoutout.png") left top no-repeat;
@@ -256,13 +272,13 @@
 
   /* Chat boxes */
 
-.chatText{
+.chatText {
   padding-left: 42px;
   margin-top: -20px;
 }
 
-p + div.iconInfo{
-  p:first-child{
+p + div.iconInfo {
+  p:first-child {
     margin-top: -12px;
   }
   p{
@@ -271,8 +287,8 @@ p + div.iconInfo{
   }
 }
 
-a + div.iconInfo{
-  p:first-child{
+a + div.iconInfo {
+  p:first-child {
     margin-top: 0px;
   }
   p{
@@ -281,6 +297,18 @@ a + div.iconInfo{
   }
 }
 
+span.box-header {
+      font-size: 18px;
+      line-height: 36px;
+      color: @stb-secondary-charcoal;
+      font-family: @font-family-signa-light;
+      &.stbfont {
+        font-family: @font-family-signa-book;
+      }
+      &.dark {
+        color: @stb-primary-white;
+      }
+    }
 
 .stb-link-group {
   h3 {

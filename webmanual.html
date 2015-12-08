@@ -1548,9 +1548,9 @@ $(document).ready(function() {
   <h3>Big box</h3>
   <p>
     Clickable element containing more than just a tiny bit of contents. The element can contain an image that goes above the text on screen widths xs and lg, but to the left of the text on screen widths sm and md.
-    <br/><strong> The images in square formats are  112 x 112 px .</strong>
-    <strong> The images in 16:9 formats are  192 x 108 px .</strong>
-    By adding the class "analyze", event logging to Google Analytics is enabled. To make it useful, the big box div needs to have an alt tag set to the label we want to send to Google Analytics.
+    <br/><strong> The image in square format should be 112 x 112 px .</strong>
+    <strong> The image in 16:9 format should be 192 x 108 px .</strong>
+    Event logging of link click to Google Analytics is done by adding the class "analyze". If you do this, the big box div must have an alt tag set to the label we want to send to Google Analytics.
   </p>
 
   <div class="col-md-12 col-lg-4">
@@ -1560,12 +1560,9 @@ $(document).ready(function() {
           <img src="images/placeholder112x112.png">
         </div>
         <div class="col-xs-12">
-          <h3><a href="#">Tjenestepensjon</a></h3>
+          <a href="#"><span class="box-header">Tjenestepensjon</span></a>
           <p>
             En god pensjonsordning er et viktig personalgode som har stor verdi for de ansatte og som bidrar til at bedriftene stiller sterkere i kampen om å tiltrekke seg og beholde de beste medarbeiderne.
-          </p>
-          <p>
-            Med tjenestepensjon er det du som arbeidsgiver som sparer til pensjon for de ansatte. Du kan også knytte til utvidede dekninger for å gi dine ansatte en bedre pensjonsordning enn det lovpålagte minimumskravet.
           </p>
         </div>
       </div>
@@ -1580,12 +1577,9 @@ $(document).ready(function() {
           <img src="images/placeholder192x108.png">
         </div>
         <div class="col-xs-12">
-          <h3><a href="#">Tjenestepensjon</a></h3>
+          <a href="#"><span class="box-header">Tjenestepensjon</span></a>
           <p>
             En god pensjonsordning er et viktig personalgode som har stor verdi for de ansatte og som bidrar til at bedriftene stiller sterkere i kampen om å tiltrekke seg og beholde de beste medarbeiderne.
-          </p>
-          <p>
-            Med tjenestepensjon er det du som arbeidsgiver som sparer til pensjon for de ansatte. Du kan også knytte til utvidede dekninger for å gi dine ansatte en bedre pensjonsordning enn det lovpålagte minimumskravet.
           </p>
         </div>
       </div>
@@ -1601,7 +1595,7 @@ $(document).ready(function() {
         &lt;img src="images/contactus.png"&gt;
       &lt;/div&gt;
       &lt;div class="col-xs-12"&gt;
-        &lt;h3&gt;&lt;a href="#"&gt;Tjenestepensjon&lt;/a&gt;&lt;/h3&gt;
+        &lt;a href="#"&gt;&lt;span class="box-header"&gt;Tjenestepensjon&lt;/span&gt;&lt;/a&gt;
         ..content
       &lt;/div&gt;
     &lt;/div&gt;
@@ -1620,7 +1614,7 @@ $(document).ready(function() {
       <div class="stb-box transparent dashed info">
         <span class="pull-left infoIcon"></span>
         <div class="left-padding-60">
-          <h4>Angrerett</h4>
+          <span class="info-header">Angrerett</span>
           <p>Husk at du alltid har angrerett på alt som handles over nett. Se våre sider om dine rettigheter</p>
         </div>
       </div>
@@ -1629,7 +1623,7 @@ $(document).ready(function() {
       <div class="stb-box transparent dashed info">
         <span class="pull-left infoIcon" ></span>
         <div class="left-padding-60">
-          <h4>Angrerett</h4>
+          <span class="info-header">Angrerett</span>
           <p>Husk at du alltid har angrerett på alt som handles over nett. Se våre sider om dine rettigheter</p>
         </div>
       </div>
@@ -1646,7 +1640,7 @@ $(document).ready(function() {
     &lt;div class="stb-box transparent dashed info"&gt;
       &lt;span class="pull-left infoIcon"&gt;&lt;/span&gt;
       &lt;div class="left-padding-60"&gt;
-        &lt;h4&gt;Angrerett&lt;/h4&gt;
+        &lt;span class="info-header"&gt;Angrerett&lt;/span&gt;
         &lt;p&gt;..content&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -1655,7 +1649,7 @@ $(document).ready(function() {
     &lt;div class="stb-box transparent dashed info"&gt;
       &lt;span class="pull-left infoIcon" &gt;&lt;/span&gt;
       &lt;div class="left-padding-60"&gt;
-        &lt;h4&gt;Angrerett&lt;/h4&gt;
+        &lt;span class="info-header"&gt;Angrerett&lt;/span&gt;
         &lt;p&gt;..content&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -1688,7 +1682,7 @@ $(document).ready(function() {
           <span class="stb-color-sprite-medium info"></span>
         </div>
         <div class="col-sm-10 pull-right msgText column stbcolor-secondary sixth">
-          <h3>Information box</h3>
+          <span class="notification-header">Information box</span>
           <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
           <p>Thank you for your patience</p>
         </div>
@@ -1698,7 +1692,7 @@ $(document).ready(function() {
           <span class="stb-color-sprite-medium warning"></span>
         </div>
         <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
-          <h3>Error box</h3>
+          <span class="notification-header">Error box</span>
           <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
           <p>We apologize for the inconvenience</p>
         </div>
@@ -1708,7 +1702,7 @@ $(document).ready(function() {
           <span class="stb-color-sprite-medium ok-circle"></span>
         </div>
         <div class="col-sm-10 msgText column pull-right stbcolor-visuals fourth">
-          <h3>Success box</h3>
+          <span class="notification-header">Success box</span>
           <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
           <p>Thank you for your purchase</p>
         </div>
@@ -1724,7 +1718,7 @@ $(document).ready(function() {
               <span class="stb-color-sprite-medium info"></span>
             </div>
             <div class="col-sm-10 pull-right msgText column stbcolor-primary third">
-              <h3>Information box</h3>
+              <span class="notification-header">Information box</span>
               <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
               <p>Thank you for your patience</p>
             </div>
@@ -1735,7 +1729,7 @@ $(document).ready(function() {
               <span class="stb-color-sprite-medium warning"></span>
             </div>
             <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
-              <h3>Error box</h3>
+              <span class="notification-header">Error box</span>
               <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
               <p>We apologize for the inconvenience</p>
             </div>
@@ -1746,7 +1740,7 @@ $(document).ready(function() {
               <span class="stb-color-sprite-medium ok-circle"></span>
             </div>
             <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
-              <h3>Success box</h3>
+              <span class="notification-header">Success box</span>
               <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
               <p>Thank you for your purchase</p>
             </div>
@@ -1761,7 +1755,7 @@ $(document).ready(function() {
     &lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary sixth"&gt;
-    &lt;h3&gt;Information box&lt;/h3&gt;
+    &lt;span class="notification-header"&gt;Information box&lt;/span&gt;
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
 
@@ -1771,7 +1765,7 @@ $(document).ready(function() {
     &lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class="col-md-10 msgText column pull-right stbcolor-background first"&gt;
-    &lt;h3&gt;Error box&lt;/h3&gt;
+    &lt;span class="notification-header"&gt;Error box&lt;/span&gt;
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
 
@@ -1783,7 +1777,7 @@ $(document).ready(function() {
     &lt;span class="stb-color-sprite-medium ok-circle"&gt;&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class="col-md-10 msgText column pull-right stbcolor-background second"&gt;
-    &lt;h3&gt;Success box&lt;/h3&gt;
+    &lt;span class="notification-header"&gt;Success box&lt;/span&gt;
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
 
@@ -1800,7 +1794,7 @@ $(document).ready(function() {
             <a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;">
               <p>Close <span class="stb-sprite-small remove"></span></p>
             </a>
-            <h3 style="margin:0;">Quarterly reports</h3>
+            <span class="notification-header">Quarterly reports</span>
             <p>Due to sausage fingers, we have trouble posting our quarterly reports. We're working on it and will post them as soon as soon as possible.</p>
             <p>Thank you for your patience.</p>
           </div>
@@ -1814,7 +1808,7 @@ $(document).ready(function() {
             <a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;">
               <p>Close <span class="stb-sprite-small remove"></span></p>
             </a>
-            <h3 style="margin: 0">Error</h3>
+            <span class="notification-header">Error</span>
             <p>We are experiencing network problems. At the moment you can't log on. Please try again later.</p>
             <p>We apologize for the inconvenience</p>
           </div>
@@ -1832,7 +1826,7 @@ $(document).ready(function() {
                 <a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;">
                   <p>Close <span class="stb-sprite-small remove"></span></p>
                 </a>
-                <h3 style="margin:0;">Quarterly reports</h3>
+                <span class="notification-header">Quarterly reports</span>
                 <p>Due to sausage fingers, we have trouble posting our quarterly reports. We're working on it and will post them as soon as soon as possible.</p>
                 <p>Thank you for your patience.</p>
               </div>
@@ -1846,7 +1840,7 @@ $(document).ready(function() {
                 <a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;">
                   <p>Close <span class="stb-sprite-small remove"></span></p>
                 </a>
-                <h3 style="margin: 0">Error</h3>
+                <span class="notification-header">Error</span>
                 <p>We are experiencing network problems. At the moment you can't log on. Please try again later.</p>
                 <p>We apologize for the inconvenience</p>
               </div>
@@ -1860,24 +1854,28 @@ $(document).ready(function() {
 
 &lt;!-- Common Message: --&gt;
 &lt;div class="commonmessage"&gt;
-  &lt;div class="col-md-2 msgIcon column stbcolor-secondary fifth"&gt;&lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="col-md-2 msgIcon column stbcolor-secondary fifth"&gt;
+    &lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;
+  &lt;/div&gt;
   &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary sixth"&gt;
     &lt;a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;"&gt;
       &lt;p&gt;Close &lt;span class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
     &lt;/a&gt;
-    &lt;h3&gt;Headline..&lt;/h3&gt;
+    &lt;span class="notification-header"&gt;Headline..&lt;/span&gt;
     &lt;p&gt;Content...&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;!-- Error Message: --&gt;
 &lt;div class="errormessage"&gt;
-  &lt;div class="col-md-2 msgIcon column stbcolor-primary first lighter"&gt;&lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="col-md-2 msgIcon column stbcolor-primary first lighter"&gt;
+    &lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;
+  &lt;/div&gt;
   &lt;div class="col-md-12 msgText column pull-right stbcolor-visuals third"&gt;
     &lt;a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;"&gt;
       &lt;p&gt;Close &lt;span class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
     &lt;/a&gt;
-    &lt;h3&gt;Error&lt;/h3&gt;
+    &lt;span class="notification-header"&gt;Error&lt;/span&gt;
     &lt;p&gt;We are experiencing network problems. At the moment you can't log on. Please try again later.&lt;/p&gt;
     &lt;p&gt;We apologize for the inconvenience&lt;/p&gt;
   &lt;/div&gt;
@@ -1982,21 +1980,21 @@ $('ul[data-widget=stbFaq]').stbFaq();
     <div class="row">
       <div class="col-xs-12">
         <h3>Basic modals</h3>
-        <p>The basic modals are based on twitter bootstrap modals. For mobile device screen sizes, the modal is fullscreen. By adding the class "analyze" google analytics is enabled.</p>
+        <p>The basic modals are based on Twitter Bootstrap modals. For mobile device screen sizes, the modal is fullscreen. Tracking of modal use to Google Analytics is enabled by adding the class "analyze" to the button shown in the modal.</p>
         <div id="not-a-p-tag"></div>
         <button class="stb-btn transparent light" data-toggle="modal" data-target="#infoSpan6">Info</button>
         <div class="modal stb-modal fade" id="infoSpan6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header stbcolor-secondary fifth">
-                <h4 class="modal-title"><span class="stb-color-sprite-medium info"></span>
+                <span class="modal-title"><span class="stb-color-sprite-medium info"></span>
                   <a class="pull-right closeLink"  data-dismiss="modal" href="#">
                     <p>Lukk <span class="stb-sprite-small remove"></span></p>
                   </a>
-                </h4>
+                </span>
               </div>
               <div class="modal-body">
-                <h3>Type gjenstand (merke og modell)</h3>
+                <span class="notification-header">Type gjenstand (merke og modell)</span>
                 <p>F.eks. Canon EOS 500D dersom det er digitalt speilreflekskamera av merke Canon og modell EOS 500D.</p>
                 <p>Husker du ikke merke og modell?</p>
                 <ul class="stb">
@@ -2014,14 +2012,14 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header stbcolor-primary first lighter">
-                <h4 class="modal-title"><span class="stb-color-sprite-medium warning"></span>
+                <span class="modal-title"><span class="stb-color-sprite-medium warning"></span>
                   <a class="pull-right closeLink"  data-dismiss="modal" href="#">
                     <p>Lukk <span class="stb-sprite-small remove"></span></p>
                   </a>
-                </h4>
+                </span>
               </div>
               <div class="modal-body">
-                <h3>Dette er en advarsel</h3>
+                <span class="notification-header">Dette er en advarsel</span>
                 <p>Du har kanskje foretatt deg noe som gjør at vi bare er nødt til å si ifra.
                   Det kan for eksempel være at vi tror at du ikke har fått med deg noe viktig, så vi
                   må be deg trykke på en knapp for å bekrefte at du har forstått.</p>
@@ -2035,14 +2033,14 @@ $('ul[data-widget=stbFaq]').stbFaq();
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header stbcolor-visuals fourth">
-                <h4 class="modal-title"><span class="stb-color-sprite-medium ok-circle"></span>
+                <span class="modal-title"><span class="stb-color-sprite-medium ok-circle"></span>
                   <a class="pull-right closeLink"  data-dismiss="modal" href="#">
                     <p>Lukk <span class="stb-sprite-small remove"></span></p>
                   </a>
-                </h4>
+                </span>
               </div>
               <div class="modal-body">
-                <h3>Så flink du er :)</h3>
+                <span class="notification-header">Så flink du er :)</span>
                 <p>Dette gikk aldeles strålende og alter er superbra!
                   Nå kan du bare klikke på knappen under her, så kan resten av denne glimrende dagen begynne.</p>
                 <button class="stb-btn" data-dismiss="modal"> Bekreft</button>
@@ -2062,10 +2060,10 @@ $('ul[data-widget=stbFaq]').stbFaq();
       &lt;a class=&quot;pull-right closeLink&quot;  data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;
         &lt;p&gt;Lukk &lt;span class=&quot;stb-sprite-small remove&quot;&gt;&lt;/span&gt;&lt;/p&gt;
       &lt;/a&gt;
-      &lt;h4 class=&quot;modal-title&quot;&gt;&lt;span class=&quot;stb-color-sprite-medium info&quot;&gt;&lt;/span&gt;&lt;/h4&gt;
+      &lt;span class=&quot;modal-title&quot;&gt;&lt;span class=&quot;stb-color-sprite-medium info&quot;&gt;&lt;/span&gt;&lt;/span&gt;
     &lt;/div&gt;
     &lt;div class=&quot;modal-body&quot;&gt;
-      &lt;h3&gt;Type gjenstand (merke og modell)&lt;/h3&gt;
+      &lt;span class="notification-header"&gt;Type gjenstand (merke og modell)&lt;/span&gt;
       &lt;p&gt;F.eks. Canon EOS 500D dersom det er digitalt speilreflekskamera av merke Canon og modell EOS 500D.&lt;/p&gt;
       &lt;p&gt;Husker du ikke merke og modell?&lt;/p&gt;
       &lt;ul&gt;
@@ -2086,10 +2084,10 @@ $('ul[data-widget=stbFaq]').stbFaq();
       &lt;a class=&quot;pull-right closeLink&quot;  data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;
         &lt;p&gt;Lukk &lt;span class=&quot;stb-sprite-small remove&quot;&gt;&lt;/span&gt;&lt;/p&gt;
       &lt;/a&gt;
-      &lt;h4 class=&quot;modal-title&quot;&gt;&lt;span class=&quot;stb-color-sprite-medium warning&quot;&gt;&lt;/span&gt;&lt;/h4&gt;
+      &lt;span class=&quot;modal-title&quot;&gt;&lt;span class=&quot;stb-color-sprite-medium warning&quot;&gt;&lt;/span&gt;&lt;/span&gt;
     &lt;/div&gt;
     &lt;div class=&quot;modal-body&quot;&gt;
-      &lt;h3&gt;Dette er en advarsel&lt;/h3&gt;
+      &lt;span class="notification-header"&gt;Dette er en advarsel&lt;/span&gt;
       &lt;button class=&quot;stb-btn alarm&quot; data-dismiss=&quot;modal&quot;&gt; Bekreft&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -2107,10 +2105,10 @@ $('ul[data-widget=stbFaq]').stbFaq();
       &lt;a class=&quot;pull-right closeLink&quot;  data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;
         &lt;p&gt;Lukk &lt;span class=&quot;stb-sprite-small remove&quot;&gt;&lt;/span&gt;&lt;/p&gt;
       &lt;/a&gt;
-      &lt;h4 class=&quot;modal-title&quot;&gt;&lt;span class=&quot;stb-color-sprite-medium ok-circle&quot;&gt;&lt;/span&gt;&lt;/h4&gt;
+      &lt;span class=&quot;modal-title&quot;&gt;&lt;span class=&quot;stb-color-sprite-medium ok-circle&quot;&gt;&lt;/span&gt;&lt;/span&gt;
     &lt;/div&gt;
     &lt;div class=&quot;modal-body&quot;&gt;
-      &lt;h3&gt;Så flink du er :)&lt;/h3&gt;
+      &lt;span class="notification-header"&gt;Så flink du er :)&lt;/span&gt;
       &lt;p&gt;Dette gikk aldeles strålende og alter er superbra!
         Nå kan du bare klikke på knappen under her, så kan resten av denne glimrende dagen begynne.&lt;/p&gt;
       &lt;button class=&quot;stb-btn&quot; data-dismiss=&quot;modal&quot;&gt; Bekreft&lt;/button&gt;
@@ -2127,32 +2125,28 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <div class="row">
   <div class="col-md-3">
-    <h2 class="toc-header">Cookie Notice</h2>
+    <h2 class="toc-header">Notice from below</h2>
   </div>
   <div class="col-md-9">
     <div class="row">
       <div class="col-xs-12">
         <p>
-          This is a very specific element that in theory should be on all pages where a customer is likely to enter our site. It is NOT necessary on pages that require authentication, as the notification will have been given prior to reaching them.
-        <p>
-          The notification needs the script acceptCookies() from stb-page-padding.js to function. As long as a cookie "acceptCookies" does not exist and contain the value "Yes", the notification will be displayed upon document.ready.
+          This element was created to "bug" people to accept our cookie usage. This use has been disabled now, but we keep the design element in the web manual, just in case we get another use case where we need an approved design for this kind of notification. 
         </p>
+
         <p>
-          <button class="stb-btn" onclick="$('#cookieNote').toggle('slow');">Toggle notification</button>
-          <script type="text/javascript">
-            createCookie('acceptCookies','Yes', '1000');
-          </script>
+          <button class="stb-btn" onclick="$('#footieNote').toggle('slow');">Toggle notification</button>
         </p>
 
         <p>Code needed, placed near bottom of page outside any container:</p>
 <pre class="prettyprint">
-  &lt;div data-spy="affix" class="cookieNote" id="cookieNote"&gt;
-    &lt;div class="cookieClose"&gt;
-      &nbsp;&nbsp;&nbsp;&lt;a title="Lukk" href="#" onclick="acceptCookies(); return false"&gt;Lukk&lt;span class="stb-sprite-small white remove"&gt;&lt;/span&gt;&lt;/a&gt;
+  &lt;div data-spy="affix" class="footieNote" id="footieNote"&gt;
+    &lt;div class="footieClose"&gt;
+      &nbsp;&nbsp;&nbsp;&lt;a title="Lukk" href="#" onclick="$('#footieNote').hide('slow');"&gt;Lukk&lt;span class="stb-sprite-small white remove"&gt;&lt;/span&gt;&lt;/a&gt;
     &lt;/div&gt;
-    &lt;div class="cookieInfo"&gt;
+    &lt;div class="footieInfo"&gt;
       &lt;div class="info"&gt;
-        På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. &lt;a href="Pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies&lt;/a&gt;.
+        Whatever text you need
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -2175,26 +2169,29 @@ $('ul[data-widget=stbFaq]').stbFaq();
   <div class="col-md-11">
     <p class="center-block">
       We differentiate between two types of buttons:
-      <ol class="stb">
-        <li>
-          Buttons used for navigation
-        </li>
-        <li>
-          Buttons used other purposes
-        </li>
-      </ol>
+    </p>
+    <ol class="stb">
+      <li>
+        Buttons used for navigation
+      </li>
+      <li>
+        Buttons used other purposes
+      </li>
+    </ol>
+    <p>
       For navigation we use the anchor tag markup and for the others we use the standard button tag.
-      <br />
+    </p>
+    <p>
       Buttons come in one size only (although with variable width)
-      <br />
-      <br />
-      <strong>Navigation button</strong>: <a class="stb-btn">Navigate to</a><br />
+    </p>
+    <p>
+      <strong>Navigation button</strong>: <a href="#" onclick="return false;" class="stb-btn">Navigate to</a><br />
       <strong>Standard button</strong>: <button class="stb-btn">Standard</button><br />
       Height: 48px<br />
       Width: 100-200px<br />
       Font: 16px Open Sans Bold<br />
       <br />
-      By adding the class "analyze", Google Analytics tracking of button use is enabled.
+      You can enable tracking to Google Analytics of button use by adding the class "analyze" to the a tag that is the button.
     </p>
     <p><strong>Missing description:</strong> When to use a button vs when to use a text link.</p>
     <strong>Usage:</strong> <br />
@@ -3676,22 +3673,20 @@ $('ul[data-widget=stbFaq]').stbFaq();
 </div>
 
 
-<div data-spy="affix" class="cookieNote" id="cookieNote">
-  <div class="cookieClose">
-    &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="acceptCookies(); return false">Lukk<span class="stb-sprite-small white remove"></span></a>
+<div data-spy="affix" class="footieNote" id="footieNote">
+  <div class="footieClose">
+    &nbsp;&nbsp;&nbsp;<a title="Lukk" href="#" onclick="$('#footieNote').hide('slow');return false">Lukk<span class="stb-sprite-small white remove"></span></a>
   </div>
-  <div class="cookieInfo">
+  <div class="footieInfo">
     <div class="info">
-      På storebrand.no brukes informasjonskapsler ("cookies") til å få statistikk over bruk av sidene våre og for å gi ekstra funksjonalitet til deg. Vi kan også bruke cookies i forbindelse med markedsføring av våre produkter og tjenester. Ved å fortsette å bruke siden bekrefter du at du godtar det. <a href="https://www.storebrand.no/pages/samfunnsansvar_personopplysninger.html"> Mer info om hvordan vi bruker cookies</a>.
+      <h2 class="dark top-margin-5">Yes</h2>
+      We have no <a href="https://www.google.no/search?q=bananas&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiS1rX-uMzJAhUDiywKHeOVAsYQ_AUIBygB&biw=1196&bih=970">bananas</a>.
     </div>
   </div>
 </div>
 <script type="text/javascript">
   $(document).ready(function() {
-    var accept = readCookie('acceptCookies');
-    if(accept==='Yes' || window.location.href.indexOf("storebrand.no")<0 ) {
-      $('#cookieNote').hide();
-    }
+    $('#footieNote').hide();
   });
 </script>
 
