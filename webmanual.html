@@ -145,7 +145,8 @@
 
       <div class="col-xs-12">
         <p><strong>Secondary colors</strong> are used on important elements besides branding.</p>
-        <p>Example use: Buttons, links, messages, errors</p>
+        <p>Example use: Buttons, links, messages, errors. <br />
+        Note: Vanilla and its darker sibling can only be used for notifications of the warning type for now.</p>
         <code>Class:<br />stbcolor-secondary first/second/third/fourth/fifth/sixth/seventh</code>
         <br />
         <div id="secondary-first" data-placement="top" data-trigger="hover" data-content="Charcoal #404040" class="color-swatch stbcolor-secondary first"></div>
@@ -162,6 +163,8 @@
         <script>$('#secondary-sixth').popover();</script>
         <div id="secondary-seventh" data-placement="top" data-trigger="hover" data-content="Sky #b0dfdb" class="color-swatch stbcolor-secondary seventh"></div>
         <script>$('#secondary-seventh').popover();</script>
+        <div id="secondary-eighth" data-placement="top" data-trigger="hover" data-content="Vanilla #fcf0be" class="color-swatch stbcolor-secondary eighth"></div>
+        <script>$('#secondary-eighth').popover();</script>
       </div>
     </div>
 
@@ -178,6 +181,8 @@
         <script>$('#secondarycolor-third-darker').popover();</script>
         <div id="secondarycolor-third-lighter" data-placement="top" data-trigger="hover" data-content="Lighter Forest #a8c432" class="color-swatch stbcolor-secondary third lighter"></div>
         <script>$('#secondarycolor-third-lighter').popover();</script>
+        <div id="secondarycolor-eighth-darker" data-placement="top" data-trigger="hover" data-content="Darker Vanilla #fce06d" class="color-swatch stbcolor-secondary eighth darker"></div>
+        <script>$('#secondarycolor-eighth-darker').popover();</script>
       </div>
     </div>
 
@@ -1688,13 +1693,13 @@ $(document).ready(function() {
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
-          <span class="stb-color-sprite-medium warning"></span>
+        <div class="col-sm-2 msgIcon column stbcolor-secondary eighth darker">
+          <span class="stb-color-sprite-medium caution"></span>
         </div>
-        <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
-          <span class="notification-header">Error box</span>
-          <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
-          <p>We apologize for the inconvenience</p>
+        <div class="col-sm-10 msgText column pull-right stbcolor-secondary eighth">
+          <span class="notification-header">Warning box</span>
+          <p>Really?! You want to remove ALL items from the shopping basket???</p>
+          <p>That's not recommended at all ...</p>
         </div>
       </div>
       <div class="row">
@@ -1707,6 +1712,18 @@ $(document).ready(function() {
           <p>Thank you for your purchase</p>
         </div>
       </div>
+      <h3>Error box (deprecated)</h3>
+      <p>You're encouraged to not use this box. The only exceptions may be on "full stop" crash pages, where it's not possible to proceed because the whole or parts of a system are currently down.</p>
+      <div class="row">
+        <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
+          <span class="stb-color-sprite-medium warning"></span>
+        </div>
+        <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
+          <span class="notification-header">Error box</span>
+          <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
+          <p>We apologize for the inconvenience</p>
+        </div>
+      </div>      
 
       <h4>Sand background</h4>
       <p> On sand background, the message part of the box must be on white background.</p>
@@ -1725,13 +1742,13 @@ $(document).ready(function() {
           </div>
 
           <div class="row">
-            <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
-              <span class="stb-color-sprite-medium warning"></span>
+            <div class="col-sm-2 msgIcon column stbcolor-secondary eighth darker">
+              <span class="stb-color-sprite-medium caution"></span>
             </div>
             <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
-              <span class="notification-header">Error box</span>
-              <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
-              <p>We apologize for the inconvenience</p>
+              <span class="notification-header">Warning box</span>
+              <p>Really?! You want to remove ALL items from the shopping basket???</p>
+              <p>That's not recommended at all ...</p>
             </div>
           </div>
 
@@ -1750,7 +1767,6 @@ $(document).ready(function() {
       <h4>Code example for boxes on white background:</h4>
       <pre class="prettyprint">
 &lt;!-- Information box: --&gt;
-
   &lt;div class="col-md-2 msgIcon column stbcolor-secondary fifth"&gt;
     &lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;
   &lt;/div&gt;
@@ -1759,20 +1775,16 @@ $(document).ready(function() {
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
 
-&lt;!-- Error box: --&gt;
-
-  &lt;div class="col-md-2 msgIcon column stbcolor-primary first lighter"&gt;
-    &lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;
+&lt;!-- Warning box: --&gt;
+  &lt;div class="col-md-2 msgIcon column stbcolor-secondary eighth darker"&gt;
+    &lt;span class="stb-color-sprite-medium caution"&gt;&lt;/span&gt;
   &lt;/div&gt;
-  &lt;div class="col-md-10 msgText column pull-right stbcolor-background first"&gt;
-    &lt;span class="notification-header"&gt;Error box&lt;/span&gt;
+  &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary eight"&gt;
+    &lt;span class="notification-header"&gt;Warning box&lt;/span&gt;
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
 
-
-
 &lt;!-- Success box: --&gt;
-
    &lt;div class="col-md-2 msgIcon column stbcolor-secondary third lighter"&gt;
     &lt;span class="stb-color-sprite-medium ok-circle"&gt;&lt;/span&gt;
   &lt;/div&gt;
@@ -1803,8 +1815,8 @@ $(document).ready(function() {
       <br />
       <div class="row">
         <div class="errormessage">
-          <div class="col-sm-2 msgIcon column stbcolor-primary first lighter"><span class="stb-color-sprite-medium warning"></span></div>
-          <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
+          <div class="col-sm-2 msgIcon column stbcolor-secondary eighth darker"><span class="stb-color-sprite-medium caution"></span></div>
+          <div class="col-sm-10 msgText column pull-right stbcolor-secondary eighth">
             <a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;">
               <p>Close <span class="stb-sprite-small remove"></span></p>
             </a>
@@ -1835,7 +1847,7 @@ $(document).ready(function() {
           <br />
           <div class="row">
             <div class="errormessage">
-              <div class="col-sm-2 msgIcon column stbcolor-primary first lighter"><span class="stb-color-sprite-medium warning"></span></div>
+              <div class="col-sm-2 msgIcon column stbcolor-secondary eighth darker"><span class="stb-color-sprite-medium caution"></span></div>
               <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
                 <a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;">
                   <p>Close <span class="stb-sprite-small remove"></span></p>
@@ -1849,7 +1861,7 @@ $(document).ready(function() {
         </div>
       </div>
       <br />
-      <strong>Code examples for boxes on white background:</strong>
+      <strong>Code example for box on white background:</strong>
         <pre class="prettyprint">
 
 &lt;!-- Common Message: --&gt;
@@ -1865,22 +1877,6 @@ $(document).ready(function() {
     &lt;p&gt;Content...&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;!-- Error Message: --&gt;
-&lt;div class="errormessage"&gt;
-  &lt;div class="col-md-2 msgIcon column stbcolor-primary first lighter"&gt;
-    &lt;span class="stb-color-sprite-medium warning"&gt;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class="col-md-12 msgText column pull-right stbcolor-visuals third"&gt;
-    &lt;a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;"&gt;
-      &lt;p&gt;Close &lt;span class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
-    &lt;/a&gt;
-    &lt;span class="notification-header"&gt;Error&lt;/span&gt;
-    &lt;p&gt;We are experiencing network problems. At the moment you can't log on. Please try again later.&lt;/p&gt;
-    &lt;p&gt;We apologize for the inconvenience&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
 
 </pre>
   </div>
@@ -3694,7 +3690,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 </footer>
 
 
-<!-- Google Analytics - Tracking to test ID ->
+<!-- Google Analytics - Tracking to test ID -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
