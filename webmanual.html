@@ -572,8 +572,23 @@ $(document).ready(function() {
     <strong>Code:</strong> <code>&lt;ul class="stb"&gt;...&lt;/ul&gt;</code>
 
   </div>
-</div> <!-- /Typography / Lists row -->
+</div> <!-- /Typography / Special FX row -->
 
+<hr class="top-margin-30" />
+
+<div class="row">
+  <div class="col-md-3">
+    <h2 class="toc-header">Typography / SFX</h2>
+  </div>
+  <div class="col-md-9">
+    <p>
+      Circles are popping up in various design work lately. Here's an example of how you can avoid using graphics when circle + text is required. It works with various degrees of success, the current styling is optimized for three average-width characters, suitable for the purpose so far. The possibilities can be extended. 
+    </p>
+    <p class="top-padding-40">
+    <span class="circled-text three">1+1</span> <span class="circled-text three">&nbsp;&nbsp;=&nbsp;&nbsp;</span> <span class="circled-text three">TWO</span><br /><br /></p>
+    <strong>Code:</strong> <code>&lt;span class="circled-text three"&gt;1+1&lt;/span&gt;</code>
+  </div>
+</div> <!-- /Typography / Special FX row -->
 
 <hr class="top-margin-30"/>
 
@@ -1779,7 +1794,7 @@ $(document).ready(function() {
   &lt;div class="col-md-2 msgIcon column stbcolor-secondary eighth darker"&gt;
     &lt;span class="stb-color-sprite-medium caution"&gt;&lt;/span&gt;
   &lt;/div&gt;
-  &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary eight"&gt;
+  &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary eighth"&gt;
     &lt;span class="notification-header"&gt;Warning box&lt;/span&gt;
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
@@ -2374,12 +2389,12 @@ $('ul[data-widget=stbFaq]').stbFaq();
   <div class="row">
     <div class="col-md-6">
       <p>Big button</p>
-      <button class="stb-btn stb-big-btn"><h3>Kjøp spareavtale</h3></button>
+      <button class="stb-btn stb-big-btn"><span class="cta">Kjøp spareavtale</span></button>
     </div>
     <div class="col-md-6">
       <p><b>&nbsp;</b></p>
-      <p>This button is created to increase the visibility of the wanted action.</p>
-      <p>Just add the class "stb-big-btn" and use a H3 class for the buttontext</p>
+      <p>This button is created to increase the visibility of the singular most important action on a page.</p>
+      <p>Just add the class "stb-big-btn" and use the class "cta" for the button text.</p>
     </div>
   </div>
 

@@ -6,7 +6,7 @@
   &:focus {
     outline: 0;
   }
-  
+
   // Base setup, defaults set for "primary button", so there is no need to add a class to indicate that the button is primary
   border: none;
   color: @stb-primary-white;
@@ -20,11 +20,11 @@
   overflow: hidden;
   cursor: pointer;
   margin-bottom: 12px;
-  
+
   // Smooth transition on hover:
   .transition(all .2s ease-in-out);
   transition-property: background-color, color;
-  
+
   &:hover, &:focus, &:active {
     .stbcolor-secondary.third .darker;
     // Needs specification because stb-btn:hover has default color
@@ -33,13 +33,13 @@
 
  &:visited {
     color: @stb-primary-white;
-  } 
+  }
 
   &.shimmer {
     -webkit-animation: shimmerGreen 2s ease-in-out 0s infinite;
     animation-name: shimmerGreen 2s ease-in-out 0s infinite;
   }
-  
+
   &.transparent {
     background: transparent;
     border-style: solid;
@@ -64,18 +64,18 @@
     &.maxWidth {
       max-width: 100%;
     }
-    
+
     &.shimmer {
       -webkit-animation: shimmerTransparent 2s ease-in-out 0s infinite;
       animation-name: shimmerTransparent 2s ease-in-out 0s infinite;
     }
-    
+
   }
-  
+
   &.alarm {
     .stbcolor-primary .first;
     .box-shadow(none);
-    
+
     &:hover, &:focus, &:active {
       .stbcolor-primary.first .darker;
     }
@@ -87,7 +87,7 @@
     p{
       color:@stb-primary-white !important;
     }
-  }  
+  }
 
   &.link-icon {
     font-weight: normal;
@@ -127,13 +127,15 @@
    margin-bottom:24px;
    height: 60px;
    background-color: @stb-secondary-forest;
-   h3{
+   h3, span.cta {
      color: @stb-primary-white;
+     font-size: 18px;
+     line-height: 22px;
      margin: 6px 6px 6px 0;
    }
   }
 
-  &.stb-big-btn:hover {
+  &.stb-big-btn:hover, &.stb-big-btn:active, &.stb-big-btn:focus {
   	background-color: @stb-secondary-forest-darker;
   }
 
