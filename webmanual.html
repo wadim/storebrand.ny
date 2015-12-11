@@ -1692,11 +1692,13 @@ $(document).ready(function() {
   </div>
   <div class="col-md-9">
 	  <p>
-        This element is used to display something important on a page. It comes in two versions, one that stays on the page no matter what, and one that can be closed by clicking an icon in the corner. The latter is typically used to convey particularly important messages upon loading of a page.
+        This element is used to display a high priority message on a page. It comes in two versions, one that stays on the page no matter what, and one that can be closed by clicking an icon in the corner. The latter is typically used to convey particularly important must-read-once messages upon loading of a page.
       </p>
 
-      <p> The below code will give expected styles irrespective of the different columns they are put in </p>
       <h3>Notifications that can not be closed</h3>
+      <br />
+      <h4>Information box</h4>
+      <p>Possibly dull, but still important information that must be conveyed.</p>
       <div class="row">
         <div class="col-sm-2 msgIcon column stbcolor-secondary fifth">
           <span class="stb-color-sprite-medium info"></span>
@@ -1707,16 +1709,8 @@ $(document).ready(function() {
           <p>Thank you for your patience</p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-2 msgIcon column stbcolor-secondary eighth darker">
-          <span class="stb-color-sprite-medium caution"></span>
-        </div>
-        <div class="col-sm-10 msgText column pull-right stbcolor-secondary eighth">
-          <span class="notification-header">Warning box</span>
-          <p>Really?! You want to remove ALL items from the shopping basket???</p>
-          <p>That's not recommended at all ...</p>
-        </div>
-      </div>
+      <h4>Success box</h4>
+      <p>For those happy times when you just want to bring on some good news.</p>
       <div class="row">
          <div class="col-sm-2 msgIcon column stbcolor-secondary third lighter">
           <span class="stb-color-sprite-medium ok-circle"></span>
@@ -1727,11 +1721,24 @@ $(document).ready(function() {
           <p>Thank you for your purchase</p>
         </div>
       </div>
-      <h3>Error box (deprecated)</h3>
-      <p>You're encouraged to not use this box. The only exceptions may be on "full stop" crash pages, where it's not possible to proceed because the whole or parts of a system are currently down.</p>
+      <h4>Warning box</h4>
+      <p>Used when we do not require feedback, but we have something the user should definitely know. It can also be used for confirmation steps before doing something more or less irreversible; "Are you sure you want to continue without telling us your BMI? This could affect your price ...".
+      <div class="row">
+        <div class="col-sm-2 msgIcon column stbcolor-secondary eighth darker">
+          <span class="stb-color-sprite-medium caution"></span>
+        </div>
+        <div class="col-sm-10 msgText column pull-right stbcolor-secondary eighth">
+          <span class="notification-header">Warning box</span>
+          <p>Really?! You want to remove ALL items from the shopping basket???</p>
+          <p>That's not recommended at all ...</p>
+        </div>
+      </div>      
+      <h4>Error box</h4>
+      <p>Only used on "full stop" crash pages, where it's not possible to proceed because the whole or parts of a system are currently down.</p>
+      <p>Previously this box came with a red exclamation mark icon. This should be replaced with the current red X icon, as shown below.</p>
       <div class="row">
         <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
-          <span class="stb-color-sprite-medium warning"></span>
+          <span class="stb-color-sprite-medium error"></span>
         </div>
         <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
           <span class="notification-header">Error box</span>
@@ -1777,6 +1784,18 @@ $(document).ready(function() {
               <p>Thank you for your purchase</p>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
+              <span class="stb-color-sprite-medium error"></span>
+            </div>
+            <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
+              <span class="notification-header">Error box</span>
+              <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
+              <p>We apologize for the inconvenience</p>
+            </div>
+          </div> 
+
         </div>
       </div>
       <h4>Code example for boxes on white background:</h4>
@@ -2507,11 +2526,6 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <span class="stb-color-sprite-medium powerpoint"></span>
     </p>
     <p>
-      question <br />
-      <span class="stb-color-sprite-small question"></span>
-      <span class="stb-color-sprite-medium question"></span>
-    </p>
-    <p>
       error <br />
       <span class="stb-color-sprite-small error"></span>
       <span class="stb-color-sprite-medium error"></span>
@@ -2522,6 +2536,11 @@ $('ul[data-widget=stbFaq]').stbFaq();
       <span class="stb-color-sprite-medium caution"></span>
     </p>
     <h4>Deprecated icons</h4>
+    <p>
+      question, should be replaced by the info icon everywhere <br />
+      <span class="stb-color-sprite-small question"></span>
+      <span class="stb-color-sprite-medium question"></span>
+    </p>    
     <p>
       warning, still available, but considered too "dramatic". Use the yellow caution icon instead <br />
       <span class="stb-color-sprite-small warning"></span>
