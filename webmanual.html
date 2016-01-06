@@ -21,19 +21,9 @@
   <link rel="shortcut icon" href="images/favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-128x128-precomposed.png">
 
-  <!-- Full list of elements needed for web manual, non-optimized -->
+  <!-- List of elements needed for web manual -->
   <link rel="stylesheet" type="text/css" href="css/stb-all-webmanual.min.css">
-  <script type="text/javascript" src="javascript/modernizr.custom.js"></script>
-  <script type="text/javascript" src="javascript/jquery.min.js"></script>
-  <script type="text/javascript" src="javascript/jquery.eqheight.js"></script>
-  <script type="text/javascript" src="javascript/jquery.hotkeys.js"></script>
-  <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
-  <script type="text/javascript" src="javascript/typeahead.bundle.min.js"></script>
-  <script type="text/javascript" src="javascript/stb-search.js"></script>
-  <script type="text/javascript" src="javascript/stb-common.js"></script>
-  <script type="text/javascript" src="javascript/stb-page-padding.js"></script>
-  <script type="text/javascript" src="javascript/stb-video.js"></script>
-  <script type="text/javascript" src="javascript/bootstrapValidator-0.5.2.min.js"></script>
+  <script type="text/javascript" src="javascript/stb-all.min.js"></script>
   <!-- End of full list of elements needed for web manual, non-optimized -->
 
   <!-- Stuff just for the web manual... -->
@@ -2001,6 +1991,88 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 <hr class="top-margin-30" />
 
+<div class="row"> <!-- Spinner row -->
+  <div class="col-md-3">
+    <h2 class="toc-header">Spinner</h2>
+  </div>
+  <div class="col-md-9">
+    <h3>Waiting for Godot</h3>
+    <p>
+      This animation can be used when you want to tell the user to wait for something to happen. 
+    </p>
+
+		<div class="col-md-12 bottom-padding-10">
+      <div class="col-md-3 column top-padding-10 stbcolor-secondary second">
+        <div id="spinner1"></div>
+        <h3>stb</h3>
+        <p>
+        This is the default Storebrand spinner.
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        </p>
+      </div>
+      <div class="col-md-3 column top-padding-10 stbcolor-secondary sixth">
+        <div id="spinner2"></div>
+        <h3>small</h3>
+        <p>
+          This is a small spinner.
+        </p>
+      </div>
+      <div class="col-md-3 column top-padding-10 stbcolor-secondary third">
+        <div id="spinner3"></div>
+        <h3>large</h3>
+        <p>
+          This is a large spinner.
+        </p>
+      </div>
+      <div class="col-md-3 column top-padding-10 stbcolor-primary third">
+        <div id="spinner4"></div>
+        <h3>custom</h3>
+        <p>
+          This is a customized spinner. Use only when you are authorized to go wild.
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+     $('#spinner1').spin('stb');
+     $('#spinner2').spin('small');
+     $('#spinner3').spin('large');
+     $('#spinner4').spin({ lines: 30, length: 20, width: 10, radius: 10, corners: 1, color: '#c00', opacity: 0.01, speed: 1.5 });
+    </script>
+
+    <p>
+      The spinner has a default appearance, but this can be adjusted to match your use case. No CSS is required. Just add a placeholder inside the element where you want the spinner to live, and the spinner will position itself in the middle of that element. Start the spinner with $('#elementID').spin('stb'), stop it with $('#elementID').spin(false).
+    </p>
+    <p>
+      For full description of how this works, see the <a href="http://spin.js.org/">spin.js</a> web site.
+    </p>
+
+    <p>
+      Example code for the examples above:
+    </p>
+
+<pre class="prettyprint">
+     // Standard Storebrand spinner
+     $('#spinner1').spin('stb');
+     // Small spinner
+     $('#spinner2').spin('small');
+     // Large spinner
+     $('#spinner3').spin('large');
+     // Customized spinner
+     $('#spinner4').spin({ lines: 30, length: 20, width: 10, radius: 10, corners: 1, color: '#c00', opacity: 0.01, speed: 1.5 });
+</pre>
+
+  </div>
+</div>
+
+<hr class="top-margin-30" />
+
 <div class="row">
   <div class="col-md-3">
     <h2 class="toc-header">Modals</h2>
@@ -3724,7 +3796,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 </footer>
 
 
-<!-- Google Analytics - Tracking to test ID -->
+<!-- Google Analytics - Tracking to test ID ->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
