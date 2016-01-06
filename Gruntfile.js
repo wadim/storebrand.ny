@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         src: ['javascript/modernizr.custom.js','javascript/jquery.min.js','javascript/jquery.eqheight.js',
               'javascript/jquery-ui-1.11.0.js','javascript/jquery.hotkeys.js','javascript/bootstrap.min.js',
               'javascript/typeahead.bundle.min.js','javascript/stb-search.js','javascript/stb-common.js',
-              'javascript/stb-page-padding.js','javascript/stb-video.js','javascript/bootstrapValidator-0.5.3.js'],
+              'javascript/stb-page-padding.js','javascript/stb-video.js','javascript/bootstrapValidator-0.5.3.js', 'javascript/stb-spin.v2.3.2.js'],
         dest: 'javascript/stb-all.max.js'
       },
       webmanual: {
