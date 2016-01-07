@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>storebrand.ny 0.88</title>
+  <title>storebrand.ny 0.89</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -539,40 +539,24 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-12">
-        <div class="text">
-          <h1>Storebrand.ny - Version 0.88</h1>
+      <div class="col-md-12" style="margin-bottom: 6px;">
+        <h1>Storebrand.ny - Version 0.89</h1>
+        <p class="intro">
+          <a href="webmanual.html">Web manual</a> and <a href="formmanual.html">form manual</a> as of <strong>2016-01-xx</strong>
+        </p>
 
-          <p class="intro">
-            <a href="webmanual.html">Web manual</a> and <a href="formmanual.html">form manual</a> as of <strong>2015-12-09</strong>
-          </p>
-
-          <p>
-            This version has not yet been thoroughly tested, but it will probably soon be. You're welcome to plug your client to it and see if it works well enough for your use cases. If so, just go ahead to production with it. If it doesn't, please notify us.
-          </p>
-          <p>
-            So, what's new in this version?
-          </p>
-          <ul class="stb bottom-padding-20">
-            <li>We're now based on Bootstrap 3.3.5 and jQuery 2.1.4, fewer bugs in more compact code. (Previously 3.3.1 and 2.0.3)</li>
-            <li>We have a couple of new icons; <span class="stb-color-sprite-small error"></span> and <span class="stb-color-sprite-small caution"></span></li>
-            <li>We have made a few additions to support design coming up in the new employee overview</li>
-            <li>Modifications to typography, in order to make h1-h6 hierarchy on pages more UU-friendly</li>
-            <li>Removed the use of various h tags in all elements, so that h tags are not used in elements that can appear different places on pages, at different hierarchy levels. This means you WILL have to rewrite the html tagging of those elements in your application.</li>
-            <li class="top-margin-20 bottom-margin-30">Also, a <span class="circled-text three">new</span> thing that may or may not be used a lot.</li>
-            <li>There's a new warning/caution notification, pretty much replacing the old error notification:</li>
-          </ul>
-          <div>
-            <div class="col-md-2 msgIcon column stbcolor-secondary eighth darker">
-              <span class="stb-color-sprite-medium caution"></span>
-            </div>
-            <div class="col-md-10 msgText column pull-right stbcolor-secondary eighth">
-              <span class="notification-header">Caution!</span>
-              <p>You will ignore me at your own peril ...</p>
-            </div>
-          </div>
-
-        </div>
+        <p>
+          Upcoming version with a few new elements that will be ready to use. Please do not use yet!
+        </p>
+        <p>
+          So, what's new in this version?
+        </p>
+        <ul class="stb">
+          <li>All font, javascript, CSS and XML elements served from elements.storebrand.no are now automatically gzipped when a capable browser initiates the request. So you probably don't have to reference the .gz version of the web manual any more.</li>
+          <li>More coming ...</li>
+          <li>Introducing a new spinner element that places itself into the center of any element with a given id.<br /><br />
+          <div class="row" style="margin-bottom: 0px;"><div class="col-xs-12"><br /><br /><div id="spinner1"></div><script type="text/javascript">$("#spinner1").spin("stb");</script></div></div></li>
+        </ul>
       </div>
     </div>
 
@@ -581,69 +565,55 @@
             <h2>How to play</h2>
             <p>Here's the code you'll want to include to start playing with this version:</p>
             <pre>
- &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.88/css/stb-all.min.css"&gt;
- &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.88/javascript/stb-all.min.js"&gt;&lt;/script&gt;</pre>
-	    <p>gzipped versions: smaller, faster, push to master!</p>
-	    <pre>
- &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.88/css/stb-all.gz.css"&gt;
- &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.88/javascript/stb-all.gz.js"&gt;&lt;/script&gt;</pre>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <p class="top-padding-20"><strong>Relevant links this time</strong></p>
-        <ul class="stb">
-          <li><a href="https://www.storebrand.no/">Production site</a></li>
-          <li><a href="webmanual.html">Web manual</a></li>
-          <li><a href="formmanual.html">Form manual</a></li>
-        </ul>
+ &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.89/css/stb-all.min.css"&gt;
+ &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.89/javascript/stb-all.min.js"&gt;&lt;/script&gt;</pre>
       </div>
     </div>
 
     <hr />
 
-            <p>
-              Previous versions:
-            </p>
-            <ul class="stb">
-              <li><a href="../0.87/index.html">0.87</a></li>
-              <li><a href="../0.85/index.html">0.85</a></li>
-              <li><a href="../0.84/index.html">0.84</a></li>
-            </ul>
-            <p>
-              <a href="#" onclick="$('#oldies').toggle(200); return false;">Older versions</a>:
-              <div id="oldies" style="display: none;">
-                <a href="../0.82/index.html">0.82</a><br />
-                <a href="../0.78/index.html">0.78</a><br />
-                <a href="../0.77/index.html">0.77</a><br />
-                <a href="../0.75/index.html">0.75</a><br />
-                <a href="../0.70/index.html">0.70</a><br />
-                <a href="../0.69/index.html">0.69 (Valentine's Edition)</a><br />
-                <a href="../0.50/index.html">0.666</a><br />
-                <a href="../0.50/index.html">0.50</a><br />
-                <a href="../0.48/index.html">0.48</a><br />
-                <a href="../0.47/index.html">0.47</a><br />
-                <a href="../0.46/index.html">0.46</a><br />
-                <a href="../0.45/index.html">0.45</a><br />
-                <a href="../0.44/index.html">0.44</a><br />
-                <a href="../0.42/index.html">0.42</a><br />
-                <a href="../0.40/index.html">0.40</a><br />
-                <a href="../0.38/index.html">0.38</a><br />
-                <a href="../0.37/index.html">0.37</a><br />
-                <a href="../0.36/index.html">0.36</a><br />
-                <a href="../0.34/index.html">0.34</a><br />
-                <a href="../0.33/index.html">0.33</a><br />
-                <a href="../0.32/index.html">0.32</a><br />
-                <a href="../0.314159265358979/index.html">0.314159265358979</a><br />
-                <a href="../0.31/index.html">0.31</a><br />
-                <a href="../0.29/index.html">0.29</a><br />
-                <a href="../0.28/index.html">0.28</a><br />
-                <a href="../0.25/index.html">0.25</a><br />
-                <a href="../0.2/index.html">0.2</a>
-              </div>
-            </p>
-          </div>
+    <p>
+      Previous versions:
+    </p>
+    <ul class="stb">
+      <li><a href="../0.88/index.html">0.88</a> (used on storebrand.no right now)</li>
+      <li><a href="../0.87/index.html">0.87</a></li>
+      <li><a href="../0.85/index.html">0.85</a></li>
+    </ul>
+    <p>
+      <a href="#" onclick="$('#oldies').toggle(200); return false;">List of ancient versions</a>
+      <div id="oldies" style="display: none;">
+        <a href="../0.84/index.html">0.84</a><br />
+        <a href="../0.82/index.html">0.82</a><br />
+        <a href="../0.78/index.html">0.78</a><br />
+        <a href="../0.77/index.html">0.77</a><br />
+        <a href="../0.75/index.html">0.75</a><br />
+        <a href="../0.70/index.html">0.70</a><br />
+        <a href="../0.69/index.html">0.69 (Valentine's Edition)</a><br />
+        <a href="../0.50/index.html">0.666</a><br />
+        <a href="../0.50/index.html">0.50</a><br />
+        <a href="../0.48/index.html">0.48</a><br />
+        <a href="../0.47/index.html">0.47</a><br />
+        <a href="../0.46/index.html">0.46</a><br />
+        <a href="../0.45/index.html">0.45</a><br />
+        <a href="../0.44/index.html">0.44</a><br />
+        <a href="../0.42/index.html">0.42</a><br />
+        <a href="../0.40/index.html">0.40</a><br />
+        <a href="../0.38/index.html">0.38</a><br />
+        <a href="../0.37/index.html">0.37</a><br />
+        <a href="../0.36/index.html">0.36</a><br />
+        <a href="../0.34/index.html">0.34</a><br />
+        <a href="../0.33/index.html">0.33</a><br />
+        <a href="../0.32/index.html">0.32</a><br />
+        <a href="../0.314159265358979/index.html">0.314159265358979</a><br />
+        <a href="../0.31/index.html">0.31</a><br />
+        <a href="../0.29/index.html">0.29</a><br />
+        <a href="../0.28/index.html">0.28</a><br />
+        <a href="../0.25/index.html">0.25</a><br />
+        <a href="../0.2/index.html">0.2</a>
+      </div>
+    </p>
+  </div>
 
         </div>
       </div>
