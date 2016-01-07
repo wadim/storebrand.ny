@@ -115,7 +115,7 @@ img.editor-image-left {
   }
   &.side24 {
     border-left: solid @stb-gray-third 2px;
-    border-right: solid @stb-gray-third 2px;    
+    border-right: solid @stb-gray-third 2px;
   }
   &.side234 {
     border-bottom: solid @stb-gray-third 2px;
@@ -124,7 +124,7 @@ img.editor-image-left {
   }
   &.side3 {
     border-bottom: solid @stb-gray-third 2px;
-  }  
+  }
 }
 
 // Centering of images
@@ -134,19 +134,36 @@ img.editor-image-left {
 }
 
 @media(min-width:@screen-sm-min) {
-.border-right {
-  border-right: 1px solid;
-  border-color: @stb-gray-third;
+  .border-right {
+    border-right: 1px solid;
+    border-color: @stb-gray-third;
+  }
 }
+
+@media(min-width:@screen-md-min) {
+  .border-right-md {
+    border-right: 1px solid;
+    border-color: @stb-gray-third;
+  }
 }
 
 // Padding of whatever on top and bottom only
-.padded-10 {
-  margin-top: 12px;
-  padding-top: 12px; 
-  margin-bottom: 12px;
-  padding-bottom: 12px;
+  .padded-10 {
+    margin-top: 12px;
+    padding-top: 12px; 
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+
+@media(min-width:@screen-md-min) {
+  .padded-10-mdlg {
+    margin-top: 12px;
+    padding-top: 12px; 
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
 }
+
 
 // Various top and bottom gaps for all screen widths
 

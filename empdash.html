@@ -32,7 +32,19 @@
           color: #fff !important;
         }
       }
+      #ribbon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 97px;
+        height: 95px;
+        background: url(images/beta.png) no-repeat;
+        z-index: 10000;
+      }
     </style>
+
+    <span id="ribbon" class="ribbonLink" href="#"></span>
+
 
     <div id="skipper">
       <a href="#mainContent" id="skipToContent">Hopp til innhold</a>
@@ -377,83 +389,70 @@
       <div class="banner">
         <div class="container">
 
-          <div class="text-right visible-xs visible-sm">
-          <p><strong><span class="stb-sprite-medium user" style="margin-bottom: -6px;"></span> Kari Normann</strong></p>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-8">
-              <h1 class="red">Mine dekninger gjennom arbeidsgiver</h1>
+          <div class="row"><!-- Row, Dine ordninger -->
+            <div class="col-xs-12 visible-xs text-right">
+              <p><strong><span class="stb-sprite-medium user" style="margin-bottom: -6px;"></span> Kari Normann</strong></p>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+              <h1 class="red">Dine ordninger hos arbeidsgiver</h1>
               <p class="intro">
                 Gjennom Storebrand gir din arbeidsgiver deg noen pensjons- og forsikringsordninger. Her er en oversikt over hva du får.
               </p>
             </div>
-          </div><!-- Row, Mine dekninger -->
+            <div class="col-sm-4 hidden-xs text-right">
+              <p><strong><span class="stb-sprite-medium user" style="margin-bottom: -6px;"></span> Kari Normann</strong></p>
+            </div>
+          </div><!-- /Row, Dine ordninger -->
 
-          <div class="text-right hidden-xs hidden-sm">
-          <p><strong><span class="stb-sprite-medium user" style="margin-bottom: -6px;"></span> Kari Normann</strong></p>
-          </div>
-
-          <div class="row top-margin-10 stbcolor-primary third grayborder full">
+          <div class="row top-margin-10 stbcolor-primary third grayborder full"><!-- Row, Logoboks -->
 
             <div class="col-sm-4 border-right padded-10 column">
-              <img class="hidden-xs hidden-sm img-center" src="https://www2.storebrand.no/site/redkun.nsf/Get/geta95b2b3d2f46e7491f12db9e8a4d0a16/$FILE/Statoil.png" alt="Din arbeidsgiver er Statoil" />
-              <img class="visible-xs visible-sm img-center" src="https://www2.storebrand.no/site/redkun.nsf/Get/geta95b2b3d2f46e7491f12db9e8a4d0a16/$FILE/Statoil.png" alt="Din arbeidsgiver er Statoil" />
-              <hr class="hidden-xs hidden-sm" />
-              <p><strong>SPØRSMÅL OM ORDNINGEN?</strong></p>
-              <p>Statoil har egne telefonnumre du kan ringe for å få informasjon om din tjenestepensjon.</p>
+              <img class="img-center" src="https://www2.storebrand.no/site/redkun.nsf/Get/geta95b2b3d2f46e7491f12db9e8a4d0a16/$FILE/Statoil.png" alt="Din arbeidsgiver er Statoil" />
+
+              <p class="top-padding-20"><strong>SPØRSMÅL OM ORDNINGEN?</strong></p>
+              <p>Kontakt oss for mer informasjon om din tjenestepensjon.</p>
               <div>
-                <a href="tel:2233XX55" class="analyze">
+                <a href="tel:223344xx" class="analyze">
                   <span class="circle-16 stbcolor-secondary third pull-left">
                     <span class="stb-sprite-small white phone"></span>
                   </span>
-                  <span class="iconCompanion">Ring&nbsp;22&nbsp;33&nbsp;XX&nbsp;55</span><br />
+                  <span class="iconCompanion">Ring&nbsp;22&nbsp;33&nbsp;44&nbsp;55</span><br />
                 </a>
-                <p>HR-ansvarlig Sissel Andersen</p>
               </div>
             </div>
 
             <div class="col-sm-4 border-right padded-10 column">
-              <hr class="visible-xs visible-sm" />
+              <hr class="visible-xs" />
               <p><strong>INNSKUDDSPENSJON</strong></p>
               <p>
-                Hver arbeidsgiver kan innenfor en øvre og en nedre grense selv bestemme hvor mye de sparer i pensjon for de ansatte.
+                Din arbeidsgiver velger selv, innenfor en øvre og en nedre grense, hvor mye de sparer i pensjon for deg som er ansatt.
               </p>
               <p class="top-padding-10">
-                <strong>SPAREPROSENT</strong><br />
+                <strong>Sparing 5&nbsp;%</strong><br />
+                for lønn opp til 12&nbsp;G (1&nbsp;080&nbsp;816&nbsp;kr)
               </p>
-              <p class="intro">
-                4+2
+              <p class="top-padding-10">
+                <strong>Tilleggssparing 3&nbsp;%</strong><br />
+                for lønn mellom 6 og 12&nbsp;G<br/>
+                (540&nbsp;408&nbsp;kr - 1&nbsp;080&nbsp;816&nbsp;kr)
               </p>
             </div>
 
-            <div class="hidden-xs hidden-sm col-sm-4 padded-10 text-center">
+            <div class="col-sm-4 padded-10">
+              <hr class="visible-xs" />
               <p>
                 <strong>BEREGNET PENSJON</strong><br />
-                fra 67 år
+                fra 67-77 år
               </p>
               <p class="intro">244 800 kr/år</p>
-              <hr />
-              <p><strong>SALDO I DAG</strong></p>
+
+              <hr class="visible-xs" />
+
+              <p class="top-margin-50-mdlg"><strong>SALDO I DAG</strong></p>
               <p class="intro">
                 153 638 kr
               </p>
             </div>
-
-            <div class="visible-xs visible-sm col-sm-4 padded-10">
-              <hr />
-              <p>
-                <strong>BEREGNET PENSJON</strong><br />
-                fra 67 år
-              </p>
-              <p class="intro">244 800 kr/år</p>
-              <hr />
-              <p><strong>SALDO I DAG</strong></p>
-              <p class="intro">
-                153 638 kr
-              </p>
-            </div>
-
 
           </div><!-- /Row, Logoboks -->
 
@@ -461,315 +460,196 @@
             <h2 class="h1lookalike black">Produktoversikt</h2>
           </div>
 
-          <!-- Tjenestepensjonsdelen av dekningsoversikt -->
-          <div class="row top-margin-10 stbcolor-primary third grayborder side124">
-
-            <div class="col-sm-6 padded-10 column">
-
-              <div class="hidden-xs hidden-sm">
-                <p>
-                  <img src="https://www.storebrand.no/_image/1820.png" alt="" width="36" /> Tjenestepensjon
-                </p>
-              </div>
-
-              <div class="row visible-xs visible-sm">
-                <div class="col-xs-2">
-                  <img src="https://www.storebrand.no/_image/1820.png" alt="" width="36" />
-                </div>
-                <div class="col-xs-8">
-                  <p class="bolded">
-                    Tjenestepensjon
-                  </p>
+          <!-- Product 1 -->
+          <div id="product1" class="row top-margin-10 stbcolor-primary third grayborder side124"><!-- Row, product1 header -->
+            <div class="col-xs-2 col-sm-1 padded-10">
+              <img src="https://www.storebrand.no/_image/1820.png" alt="" width="36" style="position: absolute; top: 0px;" />
+            </div>
+            <div class="col-xs-8 col-sm-5 padded-10">
+              <h3 class="stb-font">
+                Tjenestepensjon &nbsp;&nbsp;&nbsp;1349034
+              </h3>
+              <p class="visible-xs">
+                Spareprofil: Anbefalt pensjon
+              </p>
+            </div>
+            <div class="hidden-xs col-sm-4 padded-10">
                   <p>
-                    1349034
+                    Spareprofil: Anbefalt pensjon
                   </p>
-                </div>
-                <div class="col-xs-2">
-                  <p id="pension-toggler-mobile">
-                    &nbsp;&nbsp;<span class="stb-sprite-medium chevron-up red pull-right"></span>
-                  </p>
-                </div>
-              </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 padded-10 text-right">
+              <p><strong class="hidden-xs" onclick="$('.product1').slideToggle();$('#product1Toggler').toggleClass('chevron-down red chevron-up');scrollToHash('#product1');return false;">&nbsp;Detaljer</strong>&nbsp;<a href="#" onclick="$('.product1').slideToggle();$('#product1Toggler').toggleClass('chevron-down red chevron-up');scrollToHash('#product1');return false;"><span id="product1Toggler" class="stb-sprite-medium pull-right chevron-down"></span></a></p>
+            </div>
+          </div><!-- /Row, product1 header -->
+
+          <div style="display: none;" class="row product1 stbcolor-primary third grayborder side24">
+            <div class="col-xs-12">
+              <p class="nogap"><strong>DITT PENSJONSGRUNNLAG</strong></p>
             </div>
 
-            <div class="hidden-xs hidden-sm col-sm-3 padded-10 column">
-              <p>
-                Innskuddspensjon (1349034)
-              </p>
-            </div>
-            <div class="hidden-xs hidden-sm col-sm-3 text-right padded-10 column">
-              <p id="pension-toggler">
-                Detaljer&nbsp;&nbsp;<span class="stb-sprite-medium chevron-up red pull-right"></span></p>
-              </p>
-            </div>
-          </div><!-- /Row, Topp for pensjonsdekninger -->
-
-          <div class="row hidden-xs hidden-sm stbcolor-primary third grayborder side24">
-            <div class="col-sm-12">
-              <hr class="nogap"/>
-            </div>
-          </div>
-
-          <div class="row stbcolor-primary third grayborder side24">
-
-            <div class="col-sm-8 padded-10 border-right column">
-              <h3>SLIK ER DU DEKKET</h3>
-              <div class="row top-padding-5">
-                <div class="col-sm-4">
-                  <p>Pensjonstype</p>
-                </div>
-                <div class="col-sm-8">
-                  <p><strong>Innskuddspensjon</strong></p>
-                </div>
-              </div>
-              <div class="row top-padding-5">
-                <div class="col-sm-4">
-                  <p>Spareprofil</p>
-                </div>
-                <div class="col-sm-8">
-                  <p><span class="pilled">Anbefalt</span></p>
-                </div>
-              </div>
-              <div class="row top-padding-5">
-                <div class="col-sm-4">
-                  <p>Avtalenummer</p>
-                </div>
-                <div class="col-sm-8">
-                  <p><strong>1349034</strong></p>
-                </div>
-              </div>
-              <div class="row top-padding-5">
-                <div class="col-sm-4">
-                  <p>Estimert årlig avkastning</p>
-                </div>
-                <div class="col-sm-8">
-                  <p><strong>6&nbsp;%</strong></p>
-                </div>
-              </div>
-              <div class="row top-padding-5">
-                <div class="col-sm-4">
-                  <p>Utbetaling starter</p>
-                </div>
-                <div class="col-sm-8">
-                  <p><strong>01.05.2036</strong></p>
-                </div>
-              </div>
-              <div class="row top-padding-5">
-                <div class="col-sm-4">
-                  <p>Utbetales til</p>
-                </div>
-                <div class="col-sm-8">
-                  <p><strong>Kari Normann</strong></p>
-                </div>
-              </div>
-              <div class="row top-padding-5">
-                <div class="col-sm-4">
-                  <p>Innbetaling i år</p>
-                </div>
-                <div class="col-sm-8">
-                  <p><strong>41&nbsp;395&nbsp;kr</strong></p>
-                </div>
-              </div>
-              <div class="row top-padding-5">
-                <div class="col-sm-12">
-                  <p>Pensjonsavtalen inkluderer innskuddsfritak og uførepensjon med 12 måneders karenstid.</p>
-                  <p class="top-padding-5"><button class="stb-btn transparent light">Endre spareprofil</button></p>
-                </div>
-              </div>
-
-              <div class="row top-padding-5">
-                <div class="col-sm-12">
-                  <img class="img-responsive" src="images/saldoutvikling.png" />
-                </div>
-              </div>
-
-              <div class="row top-padding-30">
-                <div class="col-sm-12">
-                  <h3>BEHOLDNINGSOVERSIKT</h3>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <p>Fond</p>
-                    </div>
-                    <div class="col-sm-8">
-                      <p><strong>Anbefalt pensjon</strong></p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <p>Fordeling</p>
-                    </div>
-                    <div class="col-sm-8">
-                      <p><span class="pilled">100&nbsp;%</span></p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <p>Andeler</p>
-                    </div>
-                    <div class="col-sm-8">
-                      <p><strong>29,653248</strong></p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <p>Kursdato</p>
-                    </div>
-                    <div class="col-sm-8">
-                      <p><strong>30.11.2015</strong></p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <p>Kurs (i norske kroner)</p>
-                    </div>
-                    <div class="col-sm-8">
-                      <p><strong>1774,3175</strong></p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <p>Saldo</p>
-                    </div>
-                    <div class="col-sm-8">
-                      <p><strong>52&nbsp;614,28</strong></p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-sm-4 padded-10 border-right column">
-              <h3>PENSJONSGRUNNLAG</h3>
+            <div class="col-xs-12 col-sm-6 col-md-3 border-right padded-10-mdlg">
               <p>
                 Årslønn<br />
-                <strong>600&nbsp;000</strong>
+                <strong>600&nbsp;000&nbsp;kr</strong>
               </p>
+
               <p>
                 Stillingsprosent<br />
                 <strong>100&nbsp;%</strong>
-              <p>
-                Ansatt siden<br />
-                <strong>01.05.2014</strong>
               </p>
+
               <p>
-                Type tjenestepensjon<br />
-                <strong>Innskuddspensjon</strong>
-              </p>
-              <p>
-                Spareprosent<br />
-                <strong>4+2</strong>
-              </p>
-              <p>
-                Spart siden<br />
-                <strong>01.05.2015</strong>
-              </p>
-              <p>
-                Saldo i dag<br />
-                <strong>187&nbsp;249&nbsp;kr</strong>
-              </p>
-              <p>
-                Estimert pensjon<br />
-                <strong>18&nbsp;500&nbsp;kr/mnd</strong>
+                Sparingen startet<br />
+                <strong>01.04.2015</strong>
               </p>
             </div>
 
-          </div><!-- /Row, Pensjonsgrunnlag -->
+            <div class="col-xs-12 col-sm-6 col-md-3 border-right-md padded-10-mdlg">
+              <p>
+                Type tjenestepensjon <br />
+                <strong>Innskuddspensjon</strong>
+              </p>
 
-          <div class="row stbcolor-primary third grayborder side24">
-            <div class="col-sm-12">
+              <p>
+                Sparing<br />
+                <strong>5&nbsp;%</strong>
+              </p>
 
+              <p>
+                Tilleggssparing<br />
+                <strong>3&nbsp;%</strong>
+              </p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 padded-10-mdlg border-right">
+              <p>
+              Saldo i dag <br />
+              <strong>187&nbsp;249&nbsp;kr</strong>
+              </p>
+              <p>
+              Innbetaling i år<br />
+              <strong>41&nbsp;395&nbsp;kr</strong>
+              </p>
+              <p class="hidden-xs">&nbsp;<br />
+              &nbsp;
+              </p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 padded-10-mdlg">
+              <p>
+              Estimert pensjon<br />
+              <strong>18&nbsp;500&nbsp;kr/mnd</strong>
+              </p>
+              <p>
+              Estimert årlig avkastning<br />
+              <strong>6&nbsp;%</strong>
+              </p>
+              <p>
+              Forventet pensjonering<br />
+              <strong>01.05.2036</strong>
+              </p>
+            </div>
+
+          </div>
+
+          <div style="display: none;" class="row product1 stbcolor-primary third grayborder side24">
+            <div class="col-xs-12">
+              <hr class="visible-xs" />
+              <p><strong>SLIK ER DU DEKKET</strong></p>
+            </div>
+
+            <div class="col-xs-12 col-sm-8">
+              <p>Du sparer med profilen <strong>Anbefalt&nbsp;pensjon</strong>. Det betyr at du ved å godta noe risiko får forventet god avkastning mens du er relativt ung. Jo nærmere du kommer pensjonsalder, jo tryggere (og med lavere forventet avkastning) plasseres sparingen din.</p>
+              <p class="top-padding-5"><button class="stb-btn transparent light">Endre spareprofil</button></p>
+              <p>Pensjonsavtalen din inkluderer innskuddsfritak. Dermed fortsetter sparingen din til pensjon også hvis du blir sykemeldt, som om du var i jobb. Innskuddsfritak er lovpålagt og din arbeidsgiver betaler <strong>516 kroner</strong> i året for at du skal få det.</p>
+              <p>Pensjonsavtalen din inkluderer uførepensjon med 12 måneders karenstid. Det vil si at hvis du blir ufør så får du utbetalt uførepensjon frem til du pensjonerer deg, og deretter får du pensjon. Arbeidsgiver har valgt å gi deg denne ekstradekningen og betaler årlig <strong>3&nbsp;480&nbsp;kroner</strong> for det.</p>
+            </div>
+            <div class="hidden-xs col-sm-4">
+            </div>
+          </div>
+
+          <div style="display: none;" class="row product1 stbcolor-primary third grayborder side24">
+            <div class="col-xs-12">
+              <hr class="visible-xs" />
+              <p><strong>SALDOUTVIKLING</strong></p>
+              <img class="img-responsive bottom-padding-20" src="images/saldoutvikling.png" />
+            </div>
+          </div>
+
+          <div style="display: none;" class="row product1 stbcolor-primary third grayborder side24">
+            <div class="col-xs-12">
+              <hr class="visible-xs" />
+              <p>
+                <strong>BEHOLDNINGSOVERSIKT</strong>
+              </p>
+              <p>
+                Oppspart tjenestepensjon i denne avtalen:<br />
+                <strong>187&nbsp;249,05&nbsp;kr</strong><br />
+                <br />
+                Spart i følgende fond:<br />
+
+              <ul class="accordion" data-widget="stbFaq">
+                <li>
+                  <a href="#" class="twister">
+                    <span class="expander"></span>
+                    <span class="question">Anbefalt pensjon: 100&nbsp;%</span>
+                  </a>
+                  <div class="answer">
+                    <ul>
+                      <p>
+                        Saldo<br />
+                        <strong>187&nbsp;249,05&nbsp;kr</strong>
+                      </p>
+                      <p>
+                        Andeler<br />
+                        <strong>105,53</strong>
+                      </p>
+                      <p>
+                        Kurs<br />
+                        <strong>1774,32</strong>
+                      </p>
+                      <p>
+                        Kursdato<br />
+                        <strong>07.01.2016</strong>
+                      </p>
+                    <ul>
+                  </div>
+                </li>
+                <!-- One additional li item for each fund -->
+              </ul>
 
             </div>
           </div>
-          <!-- /Tjenestepensjonsdelen av dekningsoversikt -->
 
-          <!-- Forsikringsdel av dekningsoversikt -->
-          <div class="row top-margin-10 stbcolor-primary third grayborder side124">
+          <div class="row top-padding-10 stbcolor-primary third grayborder side234">
+          </div><!-- /End framing of product 1 -->
+          <!-- / Product 1 -->
 
-            <div class="col-sm-6 padded-10 column">
-
-              <div class="hidden-xs hidden-sm">
-                <p>
-                  <img src="https://www.storebrand.no/_image/1819.png" alt="" width="36" /> Forsikringsprodukt blah blah
-                </p>
-              </div>
-
-              <div class="row visible-xs visible-sm">
-                <div class="col-xs-2">
-                  <img src="https://www.storebrand.no/_image/1819.png" alt="" width="36" />
-                </div>
-                <div class="col-xs-8">
-                  <p class="bolded">
-                    Forsikringsprodukt blah blah
-                  </p>
-                  <p>
-                    Avtalenummer 1800107
-                  </p>
-                </div>
-                <div class="col-xs-2">
-                  <p id="insurance-toggler-mobile">
-                    &nbsp;&nbsp;<span class="stb-sprite-medium chevron-down pull-right"></span>
-                  </p>
-                </div>
-              </div>
+          <!-- Product 2 -->
+          <div id="product2" class="row top-margin-10 stbcolor-primary third grayborder side124"><!-- Row, product2 header -->
+            <div class="col-xs-2 col-sm-1 padded-10">
+              <img src="https://www.storebrand.no/_image/1819.png" alt="" width="36" style="position: absolute; top: 0px;" />
             </div>
-
-            <div class="hidden-xs hidden-sm col-sm-3 padded-10 column">
-              <p>
-                Avtalenummer (1800107)
-              </p>
+            <div class="col-xs-8 col-sm-9 padded-10">
+              <h3 class="stb-font">
+                Uførepensjon &nbsp;&nbsp;&nbsp;1349034
+              </h3>
             </div>
-            <div class="hidden-xs hidden-sm col-sm-3 text-right padded-10 column">
-              <p id="insurance-toggler">
-                Detaljer&nbsp;&nbsp;<span class="stb-sprite-medium chevron-down pull-right"></span></p>
-              </p>
+            <div class="col-xs-2 col-sm-2 padded-10 text-right">
+              <p><strong class="hidden-xs" onclick="$('.product2').slideToggle();$('#product2Toggler').toggleClass('chevron-down red chevron-up');scrollToHash('#product2');return false;">&nbsp;Detaljer</strong>&nbsp;<a href="#" onclick="$('.product2').slideToggle();$('#product2Toggler').toggleClass('chevron-down red chevron-up');scrollToHash('#product2');return false;"><span id="product2Toggler" class="stb-sprite-medium pull-right chevron-down"></span></a></p>
             </div>
-          </div><!-- /Row, Topp for forsikringsdekninger -->
+          </div><!-- /Row, product2 header -->
 
-          <!-- Helseforsikringsdel av dekningsoversikt -->
-          <div class="row top-margin-10 stbcolor-primary third grayborder side124">
-
-            <div class="col-sm-6 padded-10 column">
-
-              <div class="hidden-xs hidden-sm">
-                <p>
-                  <img src="https://www.storebrand.no/_image/1853.png" alt="" width="36" /> Helseforsikringsprodukt blah blah
-                </p>
-              </div>
-
-              <div class="row visible-xs visible-sm">
-                <div class="col-xs-2">
-                  <img src="https://www.storebrand.no/_image/1853.png" alt="" width="36" />
-                </div>
-                <div class="col-xs-8">
-                  <p class="bolded">
-                    Helseforsikringsprodukt blah blah
-                  </p>
-                  <p>
-                    Avtalenummer 7654321
-                  </p>
-                </div>
-                <div class="col-xs-2">
-                  <p id="insurance-toggler-mobile">
-                    &nbsp;&nbsp;<span class="stb-sprite-medium chevron-down pull-right"></span>
-                  </p>
-                </div>
-              </div>
+          <div style="display: none;" class="row product2 stbcolor-primary third grayborder side24">
+            <div class="col-xs-12">
+              <p><strong>Just you wait and see ... </strong></p>
             </div>
+          </div>
 
-            <div class="hidden-xs hidden-sm col-sm-3 padded-10 column">
-              <p>
-                Avtalenummer (7654321)
-              </p>
-            </div>
-            <div class="hidden-xs hidden-sm col-sm-3 text-right padded-10 column">
-              <p id="insurance-toggler">
-                Detaljer&nbsp;&nbsp;<span class="stb-sprite-medium chevron-down pull-right"></span></p>
-              </p>
-            </div>
-          </div><!-- /Row, Topp for helseforsikringsdekninger -->
+          <div class="row top-padding-10 stbcolor-primary third grayborder side234">
+          </div><!-- /End framing of product 2 -->
+          <!-- / Product 2 -->
 
         </div><!-- /Container -->
       </div><!-- /Banner -->
