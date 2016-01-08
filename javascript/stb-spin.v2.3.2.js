@@ -147,18 +147,18 @@
 
   // Built-in defaults
   var defaults = {
-    lines: 12             // The number of lines to draw
-  , length: 7             // The length of each line
-  , width: 5              // The line thickness
-  , radius: 10            // The radius of the inner circle
-  , scale: 1.0            // Scales overall size of the spinner
+    lines: 13             // The number of lines to draw
+  , length: 28             // The length of each line
+  , width: 14              // The line thickness
+  , radius: 47            // The radius of the inner circle
+  , scale: 0.75            // Scales overall size of the spinner
   , corners: 1            // Roundness (0..1)
-  , color: '#000'         // #rgb or #rrggbb
-  , opacity: 1/4          // Opacity of the lines
+  , color: '#da291c'         // #rgb or #rrggbb
+  , opacity: 0.25          // Opacity of the lines
   , rotate: 0             // Rotation offset
   , direction: 1          // 1: clockwise, -1: counterclockwise
-  , speed: 1              // Rounds per second
-  , trail: 100            // Afterglow percentage
+  , speed: 1.2              // Rounds per second
+  , trail: 64            // Afterglow percentage
   , fps: 20               // Frames per second when using setTimeout()
   , zIndex: 2e9           // Use a high z-index by default
   , className: 'spinner'  // CSS class to assign to the element
@@ -450,7 +450,7 @@ $('#el').spin('flower', 'red')
   }
 
   $.fn.spin.presets = {
-    stb:   { lines: 10, length: 15, width: 6, radius: 15}
+    stb:   { lines: 13, length: 28, width: 14, radius: 47, scale: 0.75, corners: 1, color: '#da291c', opacity: 0.25, speed: 1.2, trail: 64}
   , tiny:  { lines:  8, length: 2,  width: 2, radius: 3 }
   , small: { lines:  8, length: 4,  width: 3, radius: 5 }
   , large: { lines: 10, length: 8,  width: 4, radius: 8 }
