@@ -45,12 +45,369 @@
 
     <span id="ribbon" class="ribbonLink" href="#"></span>
 
+
     <div id="skipper">
       <a href="#mainContent" id="skipToContent">Hopp til innhold</a>
     </div>
 
+    <div id="chat-status" data-url="/cms/api/chat-status">
+    </div>
+
     <div class="shadow-overlay">
     </div>
+
+    <!-- Toppmeny -->
+    <div id="top-menu-nav">
+      <div class="navbar desktop navbar-default hidden-xs hidden-sm">
+
+        <div class="container yamm">
+
+          <div class="navbar-header col-md-4">
+            <a href="/cms/privat">
+              <img src="https://www.storebrand.no/cms/_public/theme-storebrand.ny/images/StorebrandLogo_2x.png" title="Storebrand-logo" alt="Til forsiden" class="logo" width="200" style="max-width: 100%;"></img>
+            </a>
+          </div>
+
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav col-md-8" role="banner">
+              <li class="col-md-3 yamm-fw group dropdown">
+                <a href="https://www.storebrand.no/cms/privat" role="link" class="dropdown-toggle">Privat</a>
+              </li>
+              <li class="col-md-3 yamm-fw group dropdown">
+                <a href="https://www.storebrand.no/cms/bedrift" role="link" class="dropdown-toggle">Bedrift</a>
+              </li>
+              <li role="navigation" aria-label="level 1 menu" class="current col-md-3 yamm-fw group dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle" role="menu">
+                  <span class="stb-sprite-medium white menu-bars"></span>Min side
+                </a>
+                <!-- /Min side - Undermeny -->
+
+                <ul class="dropdown-menu" role="navigation" aria-label="level 2 menu">
+                  <div style="margin: auto; width: 60%; padding: 10px; ">
+                    <p class="intro">
+                      Denne siden er en frittstående pilotside uten meny. Akkurat nå er det bare informasjonen du finner på denne siden vi gjerne vil ha din tilbakemelding om.
+                    </p>
+                    <p>
+                      Hvis du ønsker det kan du hoppe over til <a style="color: #da291c;" href="https://www2.storebrand.no/completeoverview/">de vanlige sidene</a>.
+                    </p>
+                  </div>
+                </ul>
+
+
+                <!-- Removing menu for now
+                <ul class="dropdown-menu" role="navigation" aria-label="level 2 menu">
+                  <li>
+                    <a href="#" class="pull-right closeLink" role="navigation" aria-label="Lukk meny">
+                      <span class="stb-sprite-medium remove"></span>
+                    </a>
+                  </li>
+                  <li class="menulinks">
+                    <ul>
+                      <li class="col-md-2">
+                        <h4>
+                          <a role="link" aria-label="Pensjon" href="https://www.storebrand.no/privat/pensjon">Pensjon</a>
+                        </h4>
+                        <ul>
+                          <li>
+                            <a role="link" aria-label="Finn pensjonstallet ditt" href="https://www.storebrand.no/privat/pensjon/finn-pensjonstallet-ditt">Finn pensjonstallet ditt</a>
+                          </li>
+                          <li>
+                            <a role="link" aria-label="Velg riktig spareprofil" href="https://www.storebrand.no/privat/pensjon/velg-riktig-spareprofil">Velg spareprofil</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="col-md-2">
+                        <h4>
+                          <a role="link" aria-label="Sparing" href="https://www.storebrand.no/privat/sparing">Sparing</a>
+                        </h4>
+                        <ul>
+                          <li>
+                            <a role="link" aria-label="Sparing i fond" href="https://www.storebrand.no/privat/sparing/sparing-i-fond">Dine fond</a>
+                          </li>
+                          <li>
+                            <a role="link" aria-label="Fond til barnet ditt" href="https://www.storebrand.no/privat/sparing/fond-til-barnet-ditt">Dine fondstips</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="col-md-2">
+                        <h4>
+                          <a role="link" aria-label="Bank og lån" href="https://www.storebrand.no/privat/bank-og-lan">Bank og lån</a>
+                        </h4>
+                        <ul>
+                          <li>
+                            <a role="link" aria-label="Boliglån" href="https://www.storebrand.no/privat/bank-og-lan/boliglan">Ditt boliglån</a>
+                          </li>
+                          <li>
+                            <a role="link" aria-label="Boliglån — BLU40" href="https://www.storebrand.no/privat/bank-og-lan/boliglan-blu40">Din banksparing</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="col-md-2">
+                        <h4>
+                          <a role="link" aria-label="Forsikring" href="https://www.storebrand.no/privat/forsikring">Forsikring</a>
+                        </h4>
+                        <ul>
+                          <li>
+                            <a role="link" aria-label="Bilforsikring" href="https://www.storebrand.no/privat/forsikring/bilforsikring">Din bilforsikring</a>
+                          </li>
+                          <li>
+                            <a role="link" aria-label="Husforsikring" href="https://www.storebrand.no/privat/forsikring">Flere forsikringer du bør kjøpe!</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="col-md-4 sidelinks">
+                        <ul>
+                          <li>
+                            <a role="link" aria-label="Storebrand Fordel" href="https://www.storebrand.no/privat/pensjon/storebrand-fordel">
+                              <span class="stb-theme-sprites heartGirl"></span>
+                              <span>Storebrand Fordel</span>
+                            </a>
+                          </li>
+                        </ul>
+                        <ul class="top-margin-20"
+                          <li>
+                            <a role="link" aria-label="Kontakt oss" href="https://www.storebrand.no/kontakt-oss">
+                              <span class="stb-sprite-medium bubble"></span>
+                              <span>Kontakt oss</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a role="link" aria-label="Meld skade" href="https://www.storebrand.no/privat/forsikring/meld-skade">
+                              <span class="stb-sprite-medium edit"></span>
+                              <span>Meld skade</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a role="link" aria-label="Ring veihjelp 02222" href="tel:02222">
+                              <span class="stb-sprite-medium phone"></span>
+                              <span>Ring veihjelp 02222</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <!-- /Min side - Undermeny -->
+              </li>
+              <li class="search col-md-3">
+                <div class="stb-sprite-small remove white pull-left">
+                </div>
+                <form>
+                  <label>
+                    <input placeholder="Søk" aria-label="Søk" type="text" class="typeahead tt-desktop searchbox" data-search-url="/cms/search" data-searchdata-url=""></input>
+                    <span class="search-icon" role="button">
+                      <span class="stb-sprite-small search white"></span>
+                    </span>
+                  </label>
+                </form>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="col-md-6 column rightColor">
+        </div>
+      </div>
+      <!-- Toppmeny for mobil -->
+      <nav class="navbar mobile navbar-default navbar-fixed-top hidden-md hidden-lg" role="navigation">
+        <div class="container">
+          <div class="col-xs-6">
+            <a href="/cms/privat">
+              <img class="stb-logo-mobile" src="https://www.storebrand.no/_public/theme-storebrand.ny/images/StorebrandLogo_2x.png" title="Storebrand-logo" width="200" alt="Til forsiden" style="max-width: 100%;"></img>
+            </a>
+          </div>
+          <div class="col-xs-6">
+            <ul class="nav">
+              <li>
+                <a id="nav-toggle" href="#" role="banner" onclick="$('#mobilemenu').slideToggle(); $(this).toggleClass('active');">
+                  <span></span>
+                  <p>Meny</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-6 column leftColor"></div>
+        <div class="col-xs-6 column rightColor"></div>
+      </nav>
+      <!-- /Toppmeny for mobil -->
+
+    </div>
+
+    <div id="mobilemenu" class="hidden-md hidden-lg">
+      <div style="margin: auto; width: 90%; padding: 10px;">
+        <p class="intro">
+          Denne siden er en frittstående pilotside uten meny. Akkurat nå er det bare informasjonen du finner på denne siden vi gjerne vil ha din tilbakemelding om.
+        </p>
+        <p>
+          Hvis du ønsker det kan du hoppe over til <a style="color: #da291c;" href="https://www2.storebrand.no/completeoverview/">de vanlige sidene</a>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Undermeny til toppmeny for mobil -->
+    <!-- Hiding the mobile menu for now
+    <div id="mobilemenu" class="hidden-md hidden-lg">
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="nav nav-tabs">
+            <li role="link" aria-label="Privat" class="tab-box">
+              <a href="https://www.storebrand.no/privat/">Privat</a>
+            </li>
+            <li role="link" aria-label="Bedrift" class="tab-box">
+              <a href="https://www.storebrand.no/bedrift/">Bedrift</a>
+            </li>
+            <li role="navigation" aria-label="Mine sider - Til menynivå 2" class="tab-box active">
+              <a href="#tab-mine" data-toggle="tab">Mine sider</a>
+            </li>
+            <li class="tab-box">
+              <a href="#tab-search" data-toggle="tab">
+                <span class="stb-sprite-medium search"></span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="tab-mine">
+              <div class="panel-group stb-accordion" id="accordion-mine">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <a role="menu" aria-label="level 2 menu" class="accordion" data-toggle="collapse" data-parent="#accordion-mine" href="#panel-285">
+                      <h4 class="panel-title">Pensjon
+                        <span class="stb-sprite-medium chevron-down red pull-right"></span>
+                      </h4>
+                    </a>
+                  </div>
+                  <div id="panel-285" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <div class="stb-list-group">
+                        <a role="link" aria-label="Pensjon" class="menu-item" href="#">Forside Pensjon</a>
+                          <a role="link" aria-label="Finn pensjonstallet ditt" class="menu-item" href="https://www.storebrand.no/privat/pensjon/finn-pensjonstallet-ditt">Finn pensjonstallet ditt</a>
+                          <a role="link" aria-label="Velg riktig spareprofil" class="menu-item" href="https://www.storebrand.no/privat/pensjon/velg-riktig-spareprofil">Velg spareprofil</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <a role="menu" aria-label="level 2 menu" class="accordion" data-toggle="collapse" data-parent="#accordion-mine" href="#panel-289">
+                        <h4 class="panel-title">Sparing
+                          <span class="stb-sprite-medium chevron-down red pull-right"></span>
+                        </h4>
+                      </a>
+                    </div>
+                    <div id="panel-289" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="stb-list-group">
+                          <a role="link" aria-label="Sparing" class="menu-item" href="/cms/privat/sparing">Forside Sparing</a>
+                          <a role="link" aria-label="Sparing i fond" class="menu-item" href="https://www.storebrand.no/privat/sparing/sparing-i-fond">Din sparing i fond</a>
+                          <a role="link" aria-label="Fond til barnet ditt" class="menu-item" href="#">Spar enda mer!</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <a role="menu" aria-label="level 2 menu" class="accordion" data-toggle="collapse" data-parent="#accordion-mine" href="#panel-288">
+                        <h4 class="panel-title">Bank og lån
+                          <span class="stb-sprite-medium chevron-down red pull-right"></span>
+                        </h4>
+                      </a>
+                    </div>
+                    <div id="panel-288" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="stb-list-group">
+                          <a role="link" aria-label="Bank og lån" class="menu-item" href="https://www.storebrand.no/privat/bank-og-lan">Forside Bank og lån</a>
+                          <a role="link" aria-label="Boliglån" class="menu-item" href="https://www.storebrand.no/privat/bank-og-lan/boliglan">Ditt boliglån</a>
+                          <a role="link" aria-label="Kontogreier" class="menu-item" href="#">Dine kontoer</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <a role="menu" aria-label="level 2 menu" class="accordion" data-toggle="collapse" data-parent="#accordion-mine" href="#panel-287">
+                        <h4 class="panel-title">Forsikring
+                          <span class="stb-sprite-medium chevron-down red pull-right"></span>
+                        </h4>
+                      </a>
+                    </div>
+                    <div id="panel-287" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="stb-list-group">
+                          <a role="link" aria-label="Forsikring" class="menu-item" href="/cms/privat/forsikring">Forside Forsikring</a>
+                          <a role="link" aria-label="Bilforsikring" class="menu-item" href="/cms/privat/forsikring/bilforsikring">Din bilforsikring</a>
+                          <a role="link" aria-label="Mer forsikring" class="menu-item" href="#">Flere forsikringer du kan kjøpe</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stbcolor-gray second top-padding-20 bottom-margin-10">
+                  <div class="row sidelinks">
+                    <div class="col-sm-6">
+                      <ul class="stb">
+                        <li>
+                          <a role="link" aria-label="Storebrand Fordel" href="/cms/privat/pensjon/storebrand-fordel">
+                            <span class="stb-theme-sprites heartGirl"></span>
+                            <span>Storebrand Fordel</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-6">
+                      <ul class="stb">
+                        <li>
+                          <a role="link" aria-label="Kontakt oss" href="/cms/kontakt-oss">
+                            <span class="stb-sprite-medium bubble"></span>
+                            <span>Kontakt oss</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a role="link" aria-label="Meld skade" href="/cms/privat/forsikring/meld-skade">
+                            <span class="stb-sprite-medium edit"></span>
+                            <span>Meld skade</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="tel:02222" role="link" aria-label="Ring veihjelp 02222">
+                            <span class="stb-sprite-medium phone"></span>
+                            <span>Ring veihjelp 02222</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="tab-search">
+                <div class="container">
+                  <div class="row searchcontainer">
+                    <div class="col-md-12">
+                      <form id="searchMobile" class="stb-form-inline search tt-mobile" role="form">
+                        <div class="stb-form-group">
+                          <input type="text" class="has-submit searchbox typeahead" placeholder="Søk i sidene"></input>
+                          <span class="search-icon">
+                            <button>
+                              <span class="stb-sprite-medium search charcoal"></span>
+                            </button>
+                          </span>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Undermeny til toppmeny for mobil -->
+
+    <!-- /Toppmeny -->
 
     <div role="main" id="mainContent" tab-index="-1">
     </div>
@@ -78,16 +435,20 @@
 
             <div class="col-sm-4 border-right padded-10 column">
               <p>
-                <strong>Beregnet pensjon fra arbeidsgiver</strong><br />
-                <span style="font-size: 24px; line-height: 30px;">244 800 kr/år</span><br />
+                <strong>Beregnet pensjon fra din nåværende arbeidsgiver</strong><br />
+              </p>
+              <p class="intro">244 800 kr/år</p>
+              <p>
                 (Utbetales fra 67-77 år)
               </p>
 
               <hr class="visible-xs" />
 
               <p class="top-margin-40-mdlg">
-                <strong>På din pensjonskonto i dag</strong><br />
-                <span style="font-size: 24px; line-height: 30px;">153 638 kr</span><br />
+                <strong>På din pensjonskonto i dag</strong>
+              </p>
+              <p class="intro">
+                153 638 kr
               </p>
               <hr class="visible-xs" />
             </div>
@@ -116,11 +477,11 @@
               <p class="top-padding-20"><strong>Spørsmål om ordningen?</strong></p>
               <p>Kontakt oss for mer informasjon om din tjenestepensjon.</p>
               <div>
-                <a href="tel:22312000" class="analyze">
+                <a href="tel:223344xx" class="analyze">
                   <span class="circle-16 stbcolor-secondary third pull-left">
                     <span class="stb-sprite-small white phone"></span>
                   </span>
-                  <span class="iconCompanion">Ring&nbsp;22&nbsp;31&nbsp;20&nbsp;00</span><br />
+                  <span class="iconCompanion">Ring&nbsp;22&nbsp;33&nbsp;44&nbsp;55</span><br />
                 </a>
               </div>
             </div>
@@ -162,8 +523,7 @@
             <div class="col-xs-12 col-sm-6 col-md-3 border-right padded-10-mdlg">
               <p>
                 Årslønn<br />
-                <strong>600&nbsp;000&nbsp;kr</strong><br />
-                <span style="font-size: 16px;">(Feil lønn? Kontakt personalavdelingen din.)</span>
+                <strong>600&nbsp;000&nbsp;kr</strong>
               </p>
 
               <p>
@@ -211,7 +571,7 @@
             <div class="col-xs-12 col-sm-6 col-md-3 padded-10-mdlg">
               <p>
               Beregnet pensjon<br />
-              <strong>244&nbsp;800&nbsp;kr/år</strong>
+              <strong>18&nbsp;500&nbsp;kr/mnd</strong>
               </p>
               <p>
               Forventet årlig avkastning<br />
