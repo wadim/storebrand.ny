@@ -7,8 +7,7 @@
   background-color: @stb-gray-second;
   .box-shadow(inset 0 0 4px rgba(0,0,0,.35));
 
-  &.gray {
-    
+  &.gray {   
     .stb-progress-bar {
       background-color: @stb-gray-third;
       .box-shadow(inset 0 0 4px rgba(0,0,0,.35));
@@ -27,7 +26,7 @@
 .progressBar-circle {
   margin: 0 5%;
 
-  div.stripes{
+  div.stripes {
     border-bottom: gray;
     border-style: dotted;
     border-top: none;
@@ -51,34 +50,37 @@
     padding: 0;
     list-style-type: none;
   }
-  ol.progtrckr{
+
+  ol.progtrckr {
     li {
       display: inline-block;
       text-align: center;
-      &:first-child{
+      &:first-child {
         margin-left: -80px;
       }
-      &:last-child{
+      &:last-child {
         margin-right: -80px;
       }
     }
   }
 
-  div.steplabel{
+  div.steplabel {
     margin-left: 12px;
     margin-right: 12px;
   }
-  div.circle{
+
+  div.circle {
     margin-left: 80px;
     margin-right: 80px;
   }
 
-  h4 {
+  h4, span.stepDescription {
     margin: 0;
     line-height: 16px;
   }
+
   li.prog-todo {
-    div.steplabel{
+    div.steplabel {
       a {
         padding-top: 10px;
         cursor: default;
@@ -86,7 +88,7 @@
         border-bottom: none;
       }
 
-      h4 {
+      h4, span.stepDescription {
         display: none;
       }
     }
@@ -99,12 +101,12 @@
 
   li.prog-done {
     div.steplabel {
-      a{
+      a {
         color: @stb-primary-black !important;
         padding-top: 10px;
       }
 
-      h4 {
+      h4, span.stepDescription {
         display: none;
       }
     }
@@ -126,7 +128,7 @@
         border-bottom: 1px solid #404040;
         padding-bottom: 1px;
       }
-      h4 {
+      h4, span.stepDescription {
         display: none;
       }
     }
@@ -141,7 +143,7 @@
       a{
       display: none;
       }
-      h4 {
+      h4, span.stepDescription {
         color: @stb-primary-black !important;
         display: block;
       }
@@ -156,6 +158,7 @@
     }
   }
 }
+
 .panel.panel-default {
 
   span.step {
