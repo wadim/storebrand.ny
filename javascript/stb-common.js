@@ -26,6 +26,7 @@ function scrollToHash(hash) {
 }
 
 /* ***** Verify National Identity Number ***** */
+/*PRIVATE*/
 function verifyIDNumber(nr) {
   var pn = [];
   var v1 = [3,7,6,1,8,9,4,5,2,1,0];
@@ -43,7 +44,41 @@ function verifyIDNumber(nr) {
   }
   if (k1%11===0 && k2%11===0 ) {
     return true;
-  } else {
+  } 
+  else {
+    return false;
+  }
+}
+/*CORPORATE*/
+/* Added access for Swedish Identity Numbers and D-number */
+function verifyIDNumberCorporate(nr) {
+  var pn = [];
+  var v1 = [3,7,6,1,8,9,4,5,2,1,0];
+  var v2 = [5,4,3,2,7,6,5,4,3,2,1];
+  for(var i=0; i<nr.length; i++) {
+    pn[i] = nr.charAt(i);
+  }
+  var k1=0;
+  for(i=0; i<v1.length; i++) {
+    k1 += pn[i]*v1[i];
+  }
+  var k2=0;
+  for(i=0; i<v2.length; i++) {
+    k2 += pn[i]*v2[i];
+  }
+  /* START Added access for Swedish Identity Numbers and D-number */
+  var nrString = ""+nr;
+  if(nr.length ==10 | nr.length ==12){
+    return true;
+  }
+  else if(nrString.length ==11 & Number(nrString.substring(0,2)) > 31){
+    return true;
+  }
+  /* STOP Added access for Swedish Identity Numbers and D-number */
+  else if (k1%11===0 && k2%11===0 ) {
+    return true;
+  } 
+  else {
     return false;
   }
 }

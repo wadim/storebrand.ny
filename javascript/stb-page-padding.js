@@ -523,7 +523,7 @@
     nationalIdentityNumberCorporate: {
     container: '#mobile-menulogin-message-corporate',
     validators: {
-       callback: idValidator,
+       callback: idValidatorCorporate,
        notEmpty: {
          message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
        }
@@ -534,7 +534,7 @@
     nationalIdentityNumberCorporate: {
     container: '#menulogin-message-corporate',
     validators: {
-       callback: idValidator,
+       callback: idValidatorCorporate,
        notEmpty: {
          message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
        }
@@ -546,7 +546,7 @@
     nationalIdentityNumberCorporate: {
     container: '#menulogin-message-BankID-corporate',
     validators: {
-       callback: idValidator,
+       callback: idValidatorCorporate,
        notEmpty: {
          message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
        }
@@ -558,7 +558,7 @@
     brukernavnBp: {
     container: '#brukernavn-bp-menu-message',
     validators: {
-       callback: idValidator,
+       callback: idValidatorCorporate,
        notEmpty: {
          message: '<span class="stb-color-sprite-small warning"></span> Oppgi fødselsnummer'
        }
@@ -774,10 +774,18 @@
 }(jQuery));
 
 /* Validator for national identity number */
+/* PRIVATE */
 var idValidator = {
   message: '<span class="stb-color-sprite-small warning"></span> Ugyldig fødselsnummer!',
   callback: function(value, validor){
     return verifyIDNumber(value);
+  }
+};
+/* CORPORATE */
+var idValidatorCorporate = {
+  message: '<span class="stb-color-sprite-small warning"></span> Ugyldig fødselsnummer!',
+  callback: function(value, validor){
+    return verifyIDNumberCorporate(value);
   }
 };
 
