@@ -66,15 +66,13 @@ function verifyIDNumberCorporate(nr) {
   for(i=0; i<v2.length; i++) {
     k2 += pn[i]*v2[i];
   }
-  /* START Added access for Swedish Identity Numbers and D-number */
   var nrString = ""+nr;
-  if(nr.length ==10 | nr.length ==12){
+  if(nr.length ===10 | nr.length ===12){
     return true;
   }
-  else if(nrString.length ==11 & Number(nrString.substring(0,2)) > 31){
+  else if(nrString.length ===11 & Number(nrString.substring(0,2)) > 31){
     return true;
   }
-  /* STOP Added access for Swedish Identity Numbers and D-number */
   else if (k1%11===0 && k2%11===0 ) {
     return true;
   } 
