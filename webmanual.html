@@ -1690,10 +1690,11 @@ $(document).ready(function() {
       <h4>Information box</h4>
       <p>Possibly dull, but still important information that must be conveyed.</p>
       <div class="row">
-        <div class="col-sm-2 msgIcon column stbcolor-secondary fifth">
+        <div class="col-sm-2 column hidden-xs hidden-sm msgIcon stbcolor-secondary fifth">
           <span class="stb-color-sprite-medium info"></span>
         </div>
-        <div class="col-sm-10 pull-right msgText column stbcolor-secondary sixth">
+        <div class="col-sm-10 column pull-right msgText stbcolor-secondary sixth">
+          <span class="visible-xs visible-sm bottom-margin-10 stb-color-sprite-medium info"></span>
           <span class="notification-header">Information box</span>
           <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
           <p>Thank you for your patience</p>
@@ -1702,10 +1703,11 @@ $(document).ready(function() {
       <h4>Success box</h4>
       <p>For those happy times when you just want to bring on some good news.</p>
       <div class="row">
-         <div class="col-sm-2 msgIcon column stbcolor-secondary third lighter">
+         <div class="col-sm-2 column msgIcon hidden-xs hidden-sm column stbcolor-secondary third lighter">
           <span class="stb-color-sprite-medium ok-circle"></span>
         </div>
-        <div class="col-sm-10 msgText column pull-right stbcolor-visuals fourth">
+        <div class="col-sm-10 column msgText pull-right stbcolor-visuals fourth">
+          <span class="visible-xs visible-sm bottom-margin-10 stb-color-sprite-medium ok-circle"></span>
           <span class="notification-header">Success box</span>
           <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
           <p>Thank you for your purchase</p>
@@ -1714,28 +1716,30 @@ $(document).ready(function() {
       <h4>Warning box</h4>
       <p>Used when we do not require feedback, but we have something the user should definitely know. It can also be used for confirmation steps before doing something more or less irreversible; "Are you sure you want to continue without telling us your BMI? This could affect your price ...".
       <div class="row">
-        <div class="col-sm-2 msgIcon column stbcolor-secondary eighth darker">
+        <div class="col-sm-2 column msgIcon hidden-xs hidden-sm column stbcolor-secondary eighth darker">
           <span class="stb-color-sprite-medium caution"></span>
         </div>
-        <div class="col-sm-10 msgText column pull-right stbcolor-secondary eighth">
+        <div class="col-sm-10 column msgText pull-right stbcolor-secondary eighth">
+          <span class="visible-xs visible-sm bottom-margin-10 stb-color-sprite-medium caution"></span>
           <span class="notification-header">Warning box</span>
           <p>Really?! You want to remove ALL items from the shopping basket???</p>
           <p>That's not recommended at all ...</p>
         </div>
-      </div>      
+      </div>
       <h4>Error box</h4>
       <p>Only used on "full stop" crash pages, where it's not possible to proceed because the whole or parts of a system are currently down.</p>
       <p>Previously this box came with a red exclamation mark icon. This should be replaced with the current red X icon, as shown below.</p>
       <div class="row">
-        <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
+        <div class="col-sm-2 column msgIcon hidden-xs hidden-sm stbcolor-primary first lighter">
           <span class="stb-color-sprite-medium error"></span>
         </div>
-        <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
+        <div class="col-sm-10 column msgText pull-right stbcolor-visuals third">
+          <span class="visible-xs visible-sm bottom-margin-10 stb-color-sprite-medium error"></span>
           <span class="notification-header">Error box</span>
           <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
           <p>We apologize for the inconvenience</p>
         </div>
-      </div>      
+      </div>
 
       <h4>Sand background</h4>
       <p> On sand background, the message part of the box must be on white background.</p>
@@ -1743,10 +1747,11 @@ $(document).ready(function() {
         <div class="col-md-8 col-md-offset-2">
 
           <div class="row">
-            <div class="col-sm-2 msgIcon column stbcolor-secondary fifth">
+            <div class="col-sm-2 column msgIcon hidden-xs hidden-sm column stbcolor-secondary fifth">
               <span class="stb-color-sprite-medium info"></span>
             </div>
             <div class="col-sm-10 pull-right msgText column stbcolor-primary third">
+              <span class="visible-xs visible-sm stb-color-sprite-medium info"></span>
               <span class="notification-header">Information box</span>
               <p>Unfortunately we have trouble posting our quarterly reports. We're working on it and will post as soon as soon as possible.</p>
               <p>Thank you for your patience</p>
@@ -1754,21 +1759,11 @@ $(document).ready(function() {
           </div>
 
           <div class="row">
-            <div class="col-sm-2 msgIcon column stbcolor-secondary eighth darker">
-              <span class="stb-color-sprite-medium caution"></span>
-            </div>
-            <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
-              <span class="notification-header">Warning box</span>
-              <p>Really?! You want to remove ALL items from the shopping basket???</p>
-              <p>That's not recommended at all ...</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-2 msgIcon column stbcolor-secondary third lighter">
+            <div class="col-sm-2 column msgIcon hidden-xs hidden-sm stbcolor-secondary third lighter">
               <span class="stb-color-sprite-medium ok-circle"></span>
             </div>
-            <div class="col-sm-10 msgText column pull-right stbcolor-primary third">
+            <div class="col-sm-10 column msgText pull-right stbcolor-primary third">
+              <span class="visible-xs visible-sm stb-color-sprite-medium ok-circle"></span>
               <span class="notification-header">Success box</span>
               <p>Form is successfully delivered and you will soon receive a confirmation e-mail</p>
               <p>Thank you for your purchase</p>
@@ -1776,48 +1771,42 @@ $(document).ready(function() {
           </div>
 
           <div class="row">
-            <div class="col-sm-2 msgIcon column stbcolor-primary first lighter">
+            <div class="col-sm-2 column msgIcon hidden-xs hidden-sm stbcolor-secondary eighth darker">
+              <span class="stb-color-sprite-medium caution"></span>
+            </div>
+            <div class="col-sm-10 column msgText pull-right stbcolor-primary third">
+              <span class="visible-xs visible-sm stb-color-sprite-medium caution"></span>
+              <span class="notification-header">Warning box</span>
+              <p>Really?! You want to remove ALL items from the shopping basket???</p>
+              <p>That's not recommended at all ...</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-2 column msgIcon hidden-xs hidden-sm stbcolor-primary first lighter">
               <span class="stb-color-sprite-medium error"></span>
             </div>
-            <div class="col-sm-10 msgText column pull-right stbcolor-visuals third">
+            <div class="col-sm-10 column msgText pull-right stbcolor-visuals third">
+              <span class="visible-xs visible-sm stb-color-sprite-medium error"></span>
               <span class="notification-header">Error box</span>
               <p>Our operations provider is experiencing network problems. Login to online banking is unfortunately not possible at the moment. Please try later.</p>
               <p>We apologize for the inconvenience</p>
             </div>
-          </div> 
+          </div>
 
         </div>
       </div>
-      <h4>Code example for boxes on white background:</h4>
+      <h4>Code example for box on white background:</h4>
       <pre class="prettyprint">
 &lt;!-- Information box: --&gt;
-  &lt;div class="col-md-2 msgIcon column stbcolor-secondary fifth"&gt;
+  &lt;div class="col-md-2 column msgIcon hidden-xs hidden-sm stbcolor-secondary fifth"&gt;
     &lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;
   &lt;/div&gt;
-  &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary sixth"&gt;
+  &lt;div class="col-md-10 column msgText pull-right stbcolor-secondary sixth"&gt;
+    &lt;span class="visible-xs visible-sm stb-color-sprite-medium info"&gt;&lt;/span&gt;
     &lt;span class="notification-header"&gt;Information box&lt;/span&gt;
     &lt;p&gt;..content&lt;/p&gt;
   &lt;/div&gt;
-
-&lt;!-- Warning box: --&gt;
-  &lt;div class="col-md-2 msgIcon column stbcolor-secondary eighth darker"&gt;
-    &lt;span class="stb-color-sprite-medium caution"&gt;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary eighth"&gt;
-    &lt;span class="notification-header"&gt;Warning box&lt;/span&gt;
-    &lt;p&gt;..content&lt;/p&gt;
-  &lt;/div&gt;
-
-&lt;!-- Success box: --&gt;
-   &lt;div class="col-md-2 msgIcon column stbcolor-secondary third lighter"&gt;
-    &lt;span class="stb-color-sprite-medium ok-circle"&gt;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class="col-md-10 msgText column pull-right stbcolor-background second"&gt;
-    &lt;span class="notification-header"&gt;Success box&lt;/span&gt;
-    &lt;p&gt;..content&lt;/p&gt;
-  &lt;/div&gt;
-
-
 </pre>
       <h3>Notifications that can be closed</h3>
       <p>
@@ -1825,7 +1814,9 @@ $(document).ready(function() {
       </p>
       <div class="row">
         <div class="commonmessage">
-          <div class="col-sm-2 msgIcon column stbcolor-secondary fifth"><span class="stb-color-sprite-medium info"></span></div>
+          <div class="col-sm-2 column msgIcon stbcolor-secondary fifth">
+            <span class="stb-color-sprite-medium info"></span>
+          </div>
           <div class="col-sm-10 msgText column pull-right stbcolor-secondary sixth">
             <a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;">
               <p>Close <span class="stb-sprite-small remove"></span></p>
@@ -1844,8 +1835,8 @@ $(document).ready(function() {
             <a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;">
               <p>Close <span class="stb-sprite-small remove"></span></p>
             </a>
-            <span class="notification-header">Error</span>
-            <p>We are experiencing network problems. At the moment you can't log on. Please try again later.</p>
+            <span class="notification-header">Caution</span>
+            <p>We are experiencing network problems. At the moment we may be serving you incoherent information. Please try again later.</p>
             <p>We apologize for the inconvenience</p>
           </div>
         </div>
@@ -1876,8 +1867,8 @@ $(document).ready(function() {
                 <a class="pull-right closeLink" href="#" onclick="hideErrorMsg(this);return false;">
                   <p>Close <span class="stb-sprite-small remove"></span></p>
                 </a>
-                <span class="notification-header">Error</span>
-                <p>We are experiencing network problems. At the moment you can't log on. Please try again later.</p>
+                <span class="notification-header">Caution</span>
+                <p>We are experiencing network problems. At the moment we may be serving you incoherent information. Please try again later.</p>
                 <p>We apologize for the inconvenience</p>
               </div>
             </div>
@@ -1885,15 +1876,15 @@ $(document).ready(function() {
         </div>
       </div>
       <br />
-      <strong>Code example for box on white background:</strong>
+      <strong>Code example for closeable box on white background:</strong>
         <pre class="prettyprint">
 
 &lt;!-- Common Message: --&gt;
 &lt;div class="commonmessage"&gt;
-  &lt;div class="col-md-2 msgIcon column stbcolor-secondary fifth"&gt;
+  &lt;div class="col-md-2 column msgIcon stbcolor-secondary fifth"&gt;
     &lt;span class="stb-color-sprite-medium info"&gt;&lt;/span&gt;
   &lt;/div&gt;
-  &lt;div class="col-md-10 msgText column pull-right stbcolor-secondary sixth"&gt;
+  &lt;div class="col-md-10 column msgText pull-right stbcolor-secondary sixth"&gt;
     &lt;a class="pull-right closeLink" href="#" onclick="hideCommonMsg(this);return false;"&gt;
       &lt;p&gt;Close &lt;span class="stb-sprite-small remove"&gt;&lt;/span&gt;&lt;/p&gt;
     &lt;/a&gt;
