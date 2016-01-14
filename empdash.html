@@ -351,6 +351,58 @@
       </div><!-- /Banner -->
     </div><!-- /Background -->
 
+    <!-- Feedback module, read from /site/redkun.nsf/vwpure?openview&restricttocategory=|tilbakemeldinger-fra-pilot| -->
+    <div class="container top-padding-10">
+      <div class="row">
+        <div class="col-sm-12 feedbackContainer" style="margin-bottom: 12px;">
+          <center>
+            <hr />
+            <p class="intro">
+              Gi oss din tilbakemelding
+            </p>
+            <p>
+              Hva synes du er bra? Hva kan vi gjøre bedre? Dine innspill kan gjøre denne siden bedre.
+              <br />
+              <strong>Viktig</strong>: Kommentarene behandles anonymt, vennligst ikke oppgi personlig informasjon.
+            </p>
+            <div class="feedbackContainer stbcolor-background fifth top-padding-10" style="border-radius: 10px;" id="feedbackMsg">
+              <textarea id="feedbackText" rows="5" cols="65" class="hidden-xs hidden-sm" placeholder="Si akkurat hva du mener."></textarea>
+              <textarea id="feedbackText" rows="5" cols="40" class="visible-xs visible-sm" placeholder="Si akkurat hva du mener."></textarea>
+              <br />
+              <button class="stb-btn transparent light" onclick="sendFeedBack()">
+                Send inn
+              </button>
+            </div>
+          </center>
+          <hr />
+        </div>
+        <div class="col-sm-12 hidden stbcolor-background fifth top-padding-10" style="border-radius:10px;" id="feedbackContainerReceipt">
+          <center>
+            <p class="intro bottom-padding-10">
+              Takk for hjelpen!
+            </p>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        jQuery("#feedbackText").bind("focus", function () {
+          jQuery('#feedbackText').val('');
+        });
+      });
+
+      function sendFeedBack() {
+        var page = window.location.pathname;
+        var msg = jQuery('#feedbackText').val();
+        ga('send', 'event', page, "Pilot Ansatteoversikten", msg);
+        jQuery('.feedbackContainer').addClass('hidden');
+        jQuery('#feedbackContainerReceipt').removeClass('hidden');
+      }
+    </script>
+    <!-- /Feedback-module -->
+
     <!-- Bunnmeny -->
     <footer class="desktopfooter stbcolor-primary first stb-footer">
       <div class="row toTop">
