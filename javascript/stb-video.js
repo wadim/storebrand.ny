@@ -40,8 +40,6 @@ function onPlayerReadyBanner(event) {
 }
 
 // The API calls this function when the player's state changes.
-// The function indicates that when playing a video (state=1), the player should play for six seconds and then stop.
-
 function onPlayerStateChangeBanner(event) {
   if(event.data === 0) {
     stopVideoBanner(event.target);
@@ -54,8 +52,8 @@ function stopVideoBanner(player, btn) {
     player.seekTo(0, true);
   }
   var bannerVideo = $(btn).closest('.banner-video');
-  bannerVideo.children('.video-container').hide(500);
-  bannerVideo.children('.video-text').show(500);
+  bannerVideo.children('.video-container').hide();
+  bannerVideo.children('.video-text').show();
   bannerVideo.parent().addClass('top-padding-30');
   var dataLayer = dataLayer||[];
   dataLayer.push({'event' : 'stopYouTubeVideo', 'youTubeTS' : player.getCurrentTime()});
@@ -64,8 +62,8 @@ function stopVideoBanner(player, btn) {
 function playVideoBanner(player, btn) {
   var bannerVideo = $(btn).closest('.banner-video');
   bannerVideo.parent().removeClass('top-padding-30');
-  bannerVideo.children('.video-text').hide(500);
-  bannerVideo.children('.video-container').show(500, function() {
+  bannerVideo.children('.video-text').hide();
+  bannerVideo.children('.video-container').show(0, function() {
    if(bootstrapEnv === 'md' || bootstrapEnv === 'lg'){
      player.playVideo();
    }
