@@ -57,6 +57,8 @@ function stopVideoBanner(player, btn) {
   bannerVideo.children('.video-container').hide(500);
   bannerVideo.children('.video-text').show(500);
   bannerVideo.parent().addClass('top-padding-30');
+  var dataLayer = dataLayer||[];
+  dataLayer.push({'event' : 'stopYouTubeVideo', 'youTubeTS' : player.getCurrentTime()});
 }
 
 function playVideoBanner(player, btn) {
@@ -68,4 +70,6 @@ function playVideoBanner(player, btn) {
      player.playVideo();
    }
   });
+  var dataLayer = dataLayer||[];
+  dataLayer.push({'event' : 'startYouTubeVideo' });
 }
