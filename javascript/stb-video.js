@@ -1,8 +1,12 @@
-// This loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// This loads the IFrame Player API code asynchronously, only on pages that actually contain video references as divs with certain classes
+$(document).ready(function() {
+  if($("div.video-player-inline").length > 0 || $("div.banner-video").length > 0) {
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  }
+});
 
 var bootstrapEnv;
 
