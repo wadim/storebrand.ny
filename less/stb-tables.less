@@ -9,7 +9,7 @@ table.stb-table {
   tr td:last-child {
     padding-right: 8px;
   }
-  
+
   // Set borders & colors to stb-style:
   border: 0;
   border-bottom-color: @stb-secondary-nude;
@@ -17,10 +17,10 @@ table.stb-table {
     &.small-text {
       font-size: 14px;
     }
- 
+
   thead {
     background-color: @stb-secondary-nude;
-    color: @stb-primary-black;
+    color: @stb-secondary-charcoal-text;
 
     &:first-child > tr:first-child > th{
       border-bottom-width: 1px;
@@ -30,15 +30,15 @@ table.stb-table {
       font-family: @font-family-sans-serif-bold;
     }
   }
-  
+
   tfoot {
     background-color: @stb-secondary-nude;
-    color: @stb-primary-black;  
+    color: @stb-secondary-charcoal-text;
     > tr > th {
       font-family: @font-family-sans-serif-bold;
-    }    
+    }
   }
-  
+
   tbody > tr > td {
     border-bottom: 1px solid @stb-secondary-nude;
     padding-top: 12px;
@@ -55,41 +55,41 @@ table.stb-table {
       background-color: @stb-gray-first;
      }
   }
-  
+
   &.hoverable {
     tbody {
       > tr:hover {
         background-color: @stb-chart-mint;
-      }    
+      }
     }
-  
+
     tbody > tr:nth-child(even):hover {
       > td,
       > th {
         background-color: @stb-chart-mint;
       }
-    }   
-  
+    }
+
   }
-  
+
   // Removing alternating rows
   &.no-alt {
     border: 0px;
-    
+
     tbody > tr > td {
       background-color: @stb-primary-white;
       border-bottom-style: solid;
       border-bottom-width: 1px;
       border-bottom-color: @stb-secondary-nude;
     }
-    
+
     &.hoverable {
       tbody > tr:hover,
       tbody > tr:hover > td {
         background-color: @stb-chart-mint;
-      }  
+      }
     }
-    
+
   }
 
   // Extra padding-right at right end of table

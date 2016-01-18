@@ -7,13 +7,13 @@ ul.accordion {
 
   p {
     padding-left: 12px;
-    color: @stb-secondary-charcoal;
+    color: @stb-secondary-charcoal-text;
   }
-  
+
   li:first-child {
     border-top: 1px solid @stb-gray-third;
   }
-  
+
   li {
     background: none;
     padding: 0;
@@ -22,8 +22,8 @@ ul.accordion {
     margin-bottom: 1px;
     border-bottom: 1px solid @stb-gray-third;
     background-color: @stb-primary-white;
-    color: @stb-secondary-charcoal;    
-    
+    color: @stb-secondary-charcoal-text;
+
 
     // Display numbered list items
     a.twister {
@@ -32,7 +32,7 @@ ul.accordion {
       line-height: 18px;
       padding: 10px 30px 10px 20px;
       position: relative;
-      color: @stb-secondary-charcoal;
+      color: @stb-secondary-charcoal-text;
       &:hover,
       &:focus {
         text-decoration: none;
@@ -40,12 +40,12 @@ ul.accordion {
       }
       &.open {
         text-decoration: none;
-        background-color: @stb-primary-white; 
+        background-color: @stb-primary-white;
 
       }
       &.open:hover {
         text-decoration: none;
-        background-color: @stb-gray-first; 
+        background-color: @stb-gray-first;
       }
 
       // Display open/close icons:
@@ -58,7 +58,7 @@ ul.accordion {
         float: right;
         margin-left: 6px;
       }
-      
+
       &.open {
         .expander {
           background: url(../images/stb-sprites/general-sprites.png) no-repeat;
@@ -75,7 +75,7 @@ ul.accordion {
         position: absolute;
         left: -1px;
         top: 10px;
-        color: @stb-secondary-charcoal;
+        color: @stb-secondary-charcoal-text;
       }
     }
 
@@ -83,7 +83,7 @@ ul.accordion {
       font-family: @font-family-sans-serif-bold;
       font-weight: normal;
     }
-    
+
     .answer {
       display: none;
       padding: 10px;
@@ -115,7 +115,7 @@ ul.accordion {
     }
 
   }
-  
+
    @media (max-width: @screen-sm-max) {
 	  li {
         font-size: 14px;
