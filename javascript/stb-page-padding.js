@@ -171,7 +171,13 @@
     var headerId = headerTag.attr("id").replace(/\W/g, ''); // set the id
     headerTag.attr('name', headerId);
     // Create the link and return it
-    return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
+
+    if (headerText === "") {
+      return '';
+    }  else {
+      return '<li><a href="#'+headerId+'">'+headerText+'</a></li>';
+    }
+    
   }
 
   $(document).ready(function() {
@@ -200,7 +206,7 @@
       var heading = $(tocHeaders[i]);
 
       // Appending heading text to table to contents and also preparing links
-      $('.toc-list .items').append( prepareTocLink(heading, ""));
+        $('.toc-list .items').append( prepareTocLink(heading, ""));
 
       // Find all sub-headings(h3) inside each heading(h2)
       var subHeading = heading.nextUntil('h2','h3');
