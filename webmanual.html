@@ -287,19 +287,10 @@
       <p>And here's a standard blockquote.</p>
       <small>Yours truly</small>
     </blockquote>
-    <p>
-      <strong>Code:</strong><br />
-    </p>
-          <pre class="prettyprint">
-&lt;blockquote&gt;
-  &lt;p&gt;And here's a standard blockquote.&lt;/p&gt;
-  &lt;small&gt;Yours truly&lt;/small&gt;
-&lt;/blockquote&gt;
-          </pre>
   </div>
 </div> <!-- /Typography / Text row -->
 
-<hr class="top-margin-30" />
+<hr class="top-margin-10" />
 
 
 <div class="row" id="typography-links">
@@ -483,63 +474,10 @@ $(document).ready(function() {
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-10">
-        <h4>Code:</h4>
-              <pre class="prettyprint">
-&lt;div&gt;
-  &lt;a href="tel:08880" class="analyze"&gt;
-    &lt;span class="circle-16 stbcolor-secondary third/first pull-left"&gt;
-      &lt;span class="stb-sprite-small white phone/chat/envelope"&gt;&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="iconCompanion"&gt;
-      Ring 08880
-    &lt;/span&gt;
-  &lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;stb-link-group&quot;&gt;
- &lt;h3&gt;Kontakt oss&lt;/h3&gt;
- &lt;div&gt;
-  &lt;a href=&quot;http://www.storebrand.no&quot; class=&quot;analyze&quot;&gt;
-    &lt;span class=&quot;circle-16 stbcolor-secondary third pull-left&quot;&gt;
-     &lt;span class=&quot;stb-sprite-small white envelope&quot;&gt;&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class=&quot;iconCompanion&quot;&gt;Skriv til oss&lt;/span&gt;
-   &lt;/a&gt;
- &lt;/div&gt;&lt;br&gt;
- &lt;div class=&quot;chatOpen&quot;&gt;
-   &lt;a href=&quot;http://www.storebrand.no/site/stb.nsf/chooseChat?readForm&quot; class=&quot;analyze&quot; onclick=&quot;window.open(this.href, '','height=500,width=560');return false;&quot;&gt;
-    &lt;span class=&quot;circle-16 stbcolor-secondary third pull-left&quot;&gt;
-    &lt;span class=&quot;stb-sprite-small white chat&quot;&gt;&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class=&quot;iconCompanion&quot;&gt;Chat med oss&lt;/span&gt;
-   &lt;/a&gt;
- &lt;/div&gt;&lt;br&gt;
- &lt;div&gt;
-   &lt;a href=&quot;http://www.storebrand.no&quot; class=&quot;analyze&quot;&gt;
-    &lt;span class=&quot;circle-16 stbcolor-secondary third pull-left&quot;&gt;
-    &lt;span class=&quot;stb-sprite-small white employee&quot;&gt;&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class=&quot;iconCompanion&quot;&gt;Avtal rådgivningstime&lt;/span&gt;
-   &lt;/a&gt;
- &lt;/div&gt;&lt;br&gt;
- &lt;div&gt;
-   &lt;a href=&quot;tel:08880&quot; class=&quot;analyze&quot;&gt;
-     &lt;span class=&quot;circle-16 stbcolor-secondary third pull-left&quot;&gt;
-     &lt;span class=&quot;stb-sprite-small white phone&quot;&gt;&lt;/span&gt;
-     &lt;span class=&quot;iconCompanion&quot;&gt;Ring 08880&lt;/span&gt;
-   &lt;/a&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-</pre>
-      </div>
-    </div>
   </div>
 </div>
 
-
-<hr class="top-margin-30" />
+<hr class="top-margin-10" />
 
 <div class="row">
   <div class="col-md-3">
@@ -1294,7 +1232,17 @@ $(document).ready(function() {
     &lt;li class="list-group-item &gt;Kontonummer&lt;/li&gt;
     &lt;li class="list-group-item &gt;Polisenummer&lt;/li&gt;
     &lt;li class="list-group-item showMore stbcolor-secondary fifth"&gt;
-      &lt;a&gt;&lt;span class="stb-sprite-small chevron-down"/&gt;&lt;/span&gt;&lt;span class="show-detail"&gt;Vis detaljer&lt;/span&gt;&lt;span class="hide-detail"&gt;Skjul detaljer&lt;/span&gt&lt;/a&gt;&lt;/li&gt;
+      &lt;a&gt;
+        &lt;span class="stb-sprite-small chevron-down"/&gt;
+        &lt;/span&gt;
+        &lt;span class="show-detail"&gt;
+          Vis detaljer
+        &lt;/span&gt;
+        &lt;span class="hide-detail"&gt;
+          Skjul detaljer
+        &lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
 &lt;/ul&gt;
 </pre>
   </div>
@@ -1349,19 +1297,21 @@ $(document).ready(function() {
     <h4>Code:</h4>
               <pre class="prettyprint">
 &lt;div class="col-md-4"&gt;
-&lt;div class="stb-box border"&gt;
-  ... contents ...
+  &lt;div class="stb-box border"&gt;
+    ... contents ...
+  &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
+
 &lt;div class="col-md-4"&gt;
-&lt;div class="stb-box gray fat border"&gt;
-  ... contents ...
+  &lt;div class="stb-box gray fat border"&gt;
+    ... contents ...
+  &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
+
 &lt;div class="col-md-4"&gt;
-&lt;div class="stb-box red dotted border"&gt;
-  ... contents ...
-&lt;/div&gt;
+  &lt;div class="stb-box red dotted border"&gt;
+    ... contents ...
+  &lt;/div&gt;
 &lt;/div&gt;
 </pre>
   </div>
@@ -2253,132 +2203,128 @@ $('ul[data-widget=stbFaq]').stbFaq();
 <hr class="top-margin-30" />
 
 <div class="row">
-<div class="col-md-3">
-  <h2 class="toc-header">Buttons</h2>
-</div>
-<div class="col-md-9">
-<div class="row">
-
-  <div class="col-md-11">
-    <p class="center-block">
-      We differentiate between two types of buttons:
-    </p>
-    <ol class="stb">
-      <li>
-        Buttons used for navigation
-      </li>
-      <li>
-        Buttons used other purposes
-      </li>
-    </ol>
-    <p>
-      For navigation we use the anchor tag markup and for the others we use the standard button tag.
-    </p>
-    <p>
-      Buttons come in one size only (although with variable width)
-    </p>
-    <p>
-      <strong>Navigation button</strong>: <a href="#" onclick="return false;" class="stb-btn">Navigate to</a><br />
-      <strong>Standard button</strong>: <button class="stb-btn">Standard</button><br />
-      Height: 48px<br />
-      Width: 100-200px<br />
-      Font: 16px Open Sans Bold<br />
-      <br />
-      You can enable tracking to Google Analytics of button use by adding the class "analyze" to the a tag that is the button.
-    </p>
-    <p><strong>Missing description:</strong> When to use a button vs when to use a text link.</p>
-    <strong>Usage:</strong> <br />
-    <pre class="prettyprint">
+  <div class="col-md-3">
+    <h2 class="toc-header">Buttons</h2>
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-11">
+        <p class="center-block">
+          We differentiate between two types of buttons:
+        </p>
+        <ol class="stb">
+          <li>
+            Buttons used for navigation
+          </li>
+          <li>
+            Buttons used other purposes
+          </li>
+        </ol>
+        <p>
+          For navigation we use the anchor tag markup and for the others we use the standard button tag.
+        </p>
+        <p>
+          Buttons come in one size only (although with variable width)
+        </p>
+        <p>
+          <strong>Navigation button</strong>: <a href="#" onclick="return false;" class="stb-btn">Navigate to</a><br />
+          <strong>Standard button</strong>: <button class="stb-btn">Standard</button><br />
+          Height: 48px<br />
+          Width: 100-200px<br />
+          Font: 16px Open Sans Bold<br />
+          <br />
+          You can enable tracking to Google Analytics of button use by adding the class "analyze" to the a tag that is the button.
+        </p>
+        <p>
+          <strong>Missing description:</strong> When to use a button vs when to use a text link.
+        </p>
+        <strong>Usage:</strong><br />
+        <pre class="prettyprint">
 &lt;!--For navigation --&gt;
 &lt;a class="stb-btn [analyze]"&gt;Navigate to&lt;/a&gt;
 
 &lt;!--For other purposes --&gt;
 &lt;button class="stb-btn [analyze]"&gt;Standard&lt;/button&gt;</pre>
-  </div>
+      </div>
+    </div>
 
-</div>
+    <div class="row">
+      <h2>Button examples</h2>
+      <div class="col-md-4 col-xs-10 text-center top-margin-10 bottom-margin-40">
+        <p>Primary</p>
+        <button class="stb-btn">Primary action</button><br /><br />
+        <code>Class: <br/>  stb-btn</code><br /><br />
+        <p>With icon:</p>
+        <button class="stb-btn link-icon">Primary action <span class="stb-sprite-small white pencil"></span></button><br /><br />
+        <code>Class:<br/> stb-btn link-icon</code><br /><br />
+        <p>Disabled:</p>
+        <button class="stb-btn disabled">Primary action</button><br /><br />
+        <code>Class:<br/> stb-btn disabled</code>
+      </div>
 
-<hr />
+      <div class="col-md-4 col-xs-10 text-center top-margin-10 bottom-margin-40">
+        <p>Transparent</p>
+        <button class="stb-btn transparent light">Cancel</button><br /><br />
+        <code>Class:<br/> stb-btn transparent light</code><br /><br />
+        <p> With icon:</p>
+        <button class="stb-btn transparent light">Cancel</button><br /><br />
+        <code>Class:<br/> stb-btn transparent light</code><br /><br />
+        <p>Disabled:</p>
+        <button class="stb-btn transparent light disabled">Cancel</button><br /><br />
+        <code>Class:<br/> stb-btn transparent disabled</code>
+      </div>
 
-<div class="row">
-  <h2>Button examples</h2>
-  <div class="col-md-4 col-xs-10 text-center top-margin-10 bottom-margin-40">
-    <p>Primary</p>
-    <button class="stb-btn">Primary action</button><br /><br />
-    <code>Class: <br/>  stb-btn</code><br /><br />
-    <p>With icon:</p>
-    <button class="stb-btn link-icon">Primary action <span class="stb-sprite-small white pencil"></span></button><br /><br />
-    <code>Class:<br/> stb-btn link-icon</code><br /><br />
-    <p>Disabled:</p>
-    <button class="stb-btn disabled">Primary action</button><br /><br />
-    <code>Class:<br/> stb-btn disabled</code>
-  </div>
+      <div class="col-md-4 col-xs-10 text-center top-margin-10 bottom-margin-40">
+        <p>Warning / Alarm</p>
+        <button class="stb-btn alarm">Warning</button><br /><br />
+        <code>Class:<br/>  stb-btn alarm</code><br /><br />
+        <p>With icon:</p>
+        <button class="stb-btn alarm link-icon">Warning <span class="stb-sprite-small white chat"></span></button><br /><br />
+        <code>Class:<br/> stb-btn alarm link-icon</code><br /><br />
+        <p>Disabled:</p>
+        <button class="stb-btn disabled">Action</span></button><br /><br />
+        <code>Class:<br/> stb-btn disabled</code>
+      </div>
+    </div> <!-- /row -->
 
-  <div class="col-md-4 col-xs-10 text-center top-margin-10 bottom-margin-40">
-    <p>Transparent</p>
-    <button class="stb-btn transparent light">Cancel</button><br /><br />
-    <code>Class:<br/> stb-btn transparent light</code><br /><br />
-    <p> With icon:</p>
-    <button class="stb-btn transparent light">Cancel</button><br /><br />
-    <code>Class:<br/> stb-btn transparent light</code><br /><br />
-    <p>Disabled:</p>
-    <button class="stb-btn transparent light disabled">Cancel</button><br /><br />
-    <code>Class:<br/> stb-btn transparent disabled</code>
-  </div>
+    <div class="row stbcolor-secondary sixth top-padding-20">
+      <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
+        <p>Primary</p>
+        <button class="stb-btn">Primary action</button><br /><br />
+        <code>Class: <br/>  stb-btn</code><br /><br />
+        <p>With icon:</p>
+        <button class="stb-btn link-icon">Primary action <span class="stb-sprite-small white pencil"></span></button><br /><br />
+        <code>Class:<br/> stb-btn link-icon</code><br /><br />
+        <p>Disabled:</p>
+        <button class="stb-btn disabled">Primary action</button><br /><br />
+        <code>Class:<br/> stb-btn disabled</code>
+      </div>
 
-  <div class="col-md-4 col-xs-10 text-center top-margin-10 bottom-margin-40">
-    <p>Warning / Alarm</p>
-    <button class="stb-btn alarm">Warning</button><br /><br />
-    <code>Class:<br/>  stb-btn alarm</code><br /><br />
-    <p>With icon:</p>
-    <button class="stb-btn alarm link-icon">Warning <span class="stb-sprite-small white chat"></span></button><br /><br />
-    <code>Class:<br/> stb-btn alarm link-icon</code><br /><br />
-    <p>Disabled:</p>
-    <button class="stb-btn disabled">Action</span></button><br /><br />
-    <code>Class:<br/> stb-btn disabled</code>
-  </div>
+      <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
+        <p>Transparent</p>
+        <button class="stb-btn transparent light">Cancel</button><br /><br />
+        <code>Class:<br/> stb-btn transparent light</code><br /><br />
+        <p>With icon:</p>
+        <button class="stb-btn transparent light">Cancel</button><br /><br />
+        <code>Class:<br/> stb-btn transparent light</code><br /><br />
+        <p>Disabled:</p>
+        <button class="stb-btn transparent light disabled">Cancel</button><br /><br />
+        <code>Class:<br/> stb-btn transparent disabled</code>
+      </div>
 
-</div> <!-- /row -->
+      <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
+        <p>Warning / Alarm</p>
+        <button class="stb-btn alarm">Warning</button><br /><br />
+        <code>Class:<br/>  stb-btn alarm</code><br /><br />
+        <p>With icon:</p>
+        <button class="stb-btn alarm link-icon">Warning <span class="stb-sprite-small white chat"></span></button><br /><br />
+        <code>Class:<br/> stb-btn alarm link-icon</code><br /><br />
+        <p>Disabled:</p>
+        <button class="stb-btn disabled">Action</span></button><br /><br />
+        <code>Class:<br/> stb-btn disabled</code>
+      </div>
 
-<div class="row stbcolor-secondary sixth top-padding-20">
-  <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
-
-    <p>Primary</p>
-    <button class="stb-btn">Primary action</button><br /><br />
-    <code>Class: <br/>  stb-btn</code><br /><br />
-    <p>With icon:</p>
-    <button class="stb-btn link-icon">Primary action <span class="stb-sprite-small white pencil"></span></button><br /><br />
-    <code>Class:<br/> stb-btn link-icon</code><br /><br />
-    <p>Disabled:</p>
-    <button class="stb-btn disabled">Primary action</button><br /><br />
-    <code>Class:<br/> stb-btn disabled</code>
-  </div>
-
-  <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
-    <p>Transparent</p>
-    <button class="stb-btn transparent light">Cancel</button><br /><br />
-    <code>Class:<br/> stb-btn transparent light</code><br /><br />
-    <p>With icon:</p>
-    <button class="stb-btn transparent light">Cancel</button><br /><br />
-    <code>Class:<br/> stb-btn transparent light</code><br /><br />
-    <p>Disabled:</p>
-    <button class="stb-btn transparent light disabled">Cancel</button><br /><br />
-    <code>Class:<br/> stb-btn transparent disabled</code>
-  </div>
-
-  <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
-    <p>Warning / Alarm</p>
-    <button class="stb-btn alarm">Warning</button><br /><br />
-    <code>Class:<br/>  stb-btn alarm</code><br /><br />
-    <p>With icon:</p>
-    <button class="stb-btn alarm link-icon">Warning <span class="stb-sprite-small white chat"></span></button><br /><br />
-    <code>Class:<br/> stb-btn alarm link-icon</code><br /><br />
-    <p>Disabled:</p>
-    <button class="stb-btn disabled">Action</span></button><br /><br />
-    <code>Class:<br/> stb-btn disabled</code>
-  </div>
-
-</div> <!-- /row -->
+    </div> <!-- /row -->
 
 <div class="row stbcolor-secondary first top-padding-20">
   <div class="col-md-4 col-xs-10 text-center bottom-margin-40">
@@ -2494,7 +2440,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 
 </div> <!-- /Buttons row -->
 
-<hr class="top-margin-30" />
+<hr class="top-margin-10" />
 
 
 <div class="row"> <!-- Image row -->
@@ -2530,7 +2476,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
   </div>
 </div>
 
-<hr class="top-margin-30" />
+<hr class="top-margin-10" />
 
 
 <div class="row"> <!-- Standard icons row -->
@@ -3645,7 +3591,7 @@ $('ul[data-widget=stbFaq]').stbFaq();
 </div>
 
 <div class="container">
-  <hr class="top-margin-30" />
+  <hr class="top-margin-10" />
 
   <div class="row"> <!-- In-line video row -->
     <div class="col-md-3">
