@@ -2488,12 +2488,17 @@ $('ul[data-widget=stbFaq]').stbFaq();
 <div class="row">
   <div class="col-md-12">
     <p>
-      We have two sets of icons; one with a few icons with colors that are fixed and another with some other, more
-      general icons available in the colors charcoal, white and red, and in the sizes 16, 24, 32 and 48 pixels width and height. Sizes 32 and 48 to be used in retina displays
+      We have four sets of icons;
     </p>
+    <ul class="stb">
+      <li>one with a few icons with colors that are fixed.</li>
+      <li>one with some other, more general icons available in the colors charcoal, white and red, and in two different sizes.</li>
+      <li>one with icons that are to be used only in very specific cases.</li>
+      <li>one with a couple of particularly large icons.</li>
+    </ul>
     <p>
-      <strong>Note!</strong> The icons come in only two sizes, small and medium. On standard screens we use 16 and 24 pixel size icons. On retina screens we use 32 and 48 pixel size icons.
-      We have just 2 classes "stb-sprite-small" and "stb-sprite-medium" to be used for size 16 and 24 in normal screens and for size 32 and 48 for retina displays with the help of media queries.
+      <strong>Note!</strong> Some icons come in only two sizes, small and medium. On standard screens we use 16 and 24 pixel size icons. On retina screens we use 32 and 48 pixel size icons.
+      We have just 2 classes "stb-sprite-small" and "stb-sprite-medium" to be used for size 16 and 24 in normal screens and for size 32 and 48 for retina displays. We're going to move to SVG icons eventually.
     </p>
     <h3>Color icons</h3>
     <strong class="top-margin-20">Code:</strong>
@@ -3221,18 +3226,80 @@ $('ul[data-widget=stbFaq]').stbFaq();
   </div>
 </div>
 
+<h3>Special case icons</h3>
+<p>
+  These icons are tailor-made for specific products and contexts, mainly "theme pages". Always ask an adult designer for permission before using these.
+</p>
+<strong class="top-margin-20">Code:</strong>
+<pre class="prettyprint">
+&lt;span class=&quot;stb-theme-sprites [icon-name]&quot;&gt;&lt;/span&gt;</pre>
+
+<p>
+  house, used in connection with "husforsikring" and nothing else.<br />
+  <span class="stb-theme-sprites house"></span>
+</p>
+
+<p>
+  car, used in connection with "bilforsikring" and nothing else.<br />
+  <span class="stb-theme-sprites car"></span>
+</p>
+
+<p>
+  couple, do not use unless you know it's okay.<br />
+  <span class="stb-theme-sprites couple"></span>
+</p>
+
+<p>
+  bike, do not use unless you know it's okay.<br />
+  <span class="stb-theme-sprites bike"></span>
+</p>
+
+<p>
+  medal, used only in "Best i test" contexts.<br />
+  <span class="stb-theme-sprites medal"></span>
+</p>
+
+<p>
+  heart-girl, only to be used when refering to Storebrand Fordel.<br />
+  <span class="stb-theme-sprites heart-girl"></span>
+</p>
+
+<p>
+  pluss-guy, only to be used when refering to Storebrand Pluss.<br />
+  <span class="stb-theme-sprites pluss-guy"></span>
+</p>
+
+<p>
+  owl, or maybe a backpack. Who knows? Do not use unless you're absolutely sure.<br />
+  <span class="stb-theme-sprites owl"></span>
+</p>
+
+<p>
+  puzzle, only to be used when refering to various organizations that cooperate with Storebrand.<br />
+  <span class="stb-theme-sprites puzzle"></span>
+</p>
+
+<p>
+  magazine, only to be used when refering to our on-line magazine for corporate customers, "Bedre pensjon".<br />
+  <span class="stb-theme-sprites magazine"></span>
+</p>
 
 <h3>Big icons</h3>
 
 <div class="row">
   <div class="col-md-6">
     <p>Width and height 284px</p>
-    <p>&lt;span class="stb-color-sprite-big ok"&gt;&lt;/span&gt;</p>
+    <strong class="top-margin-20">Code:</strong>
+<pre class="prettyprint">
+&lt;span class="stb-color-sprite-big ok"&gt;&lt;/span&gt;</pre>
+    <p></p>
     <span class="stb-color-sprite-big ok"></span>
   </div>
   <div class="col-md-6">
     <p>Width and height 284px</p>
-    <p>&lt;span class="stb-color-sprite-big warning"&gt;&lt;/span&gt;</p>
+    <strong class="top-margin-20">Code:</strong>
+<pre class="prettyprint">
+&lt;span class="stb-color-sprite-big warning"&gt;&lt;/span&gt;</pre>    
     <span class="stb-color-sprite-big warning"></span>
   </div>
 </div>
