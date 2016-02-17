@@ -107,7 +107,7 @@ h2 {
   }
 }
 
-h3 {
+h3, p.header3 {
   font-size: 18px;
   line-height: 22px;
   margin: 24px 9px 6px 0;
@@ -122,7 +122,7 @@ h3 {
   }
 }
 
-h4 {
+h4, p.header4 {
   font-size: 16px;
   line-height: 18px;
   margin: 0;
@@ -134,7 +134,7 @@ h4 {
   }
 }
 
-h5 {
+h5, p.header5 {
   font-size: 14px;
   line-height: 16px;
   margin: 0;
@@ -151,20 +151,24 @@ b, strong {
 }
 
 /* Header margin exceptions */
-h2 + h3 {
+h2 + h3, h2 + p.header3  {
   margin: 12px 6px 6px 0;
 }
 
-h3 + h4, img + h3 {
+h3 + h4, p.header3 + p.header4 , img + h3, img + p.header3 {
   margin: 6px 6px 6px 0;
 }
 
-figure + h3 {
+figure + h3, figure + p.header3 {
   margin: 24px 6px 6px 0;
 }
 
 div.row div {
   > h3:first-child {
+    margin: 0 6px 6px 0;
+  }
+
+  > p.header3:first-child {
     margin: 0 6px 6px 0;
   }
 
@@ -185,7 +189,10 @@ h1.link,
 h2.link,
 h3.link,
 h4.link,
-h5.link {
+h5.link,
+p.header3.link,
+p.header4.link,
+p.header5.link {
   text-decoration:underline;
 }
 
@@ -236,6 +243,8 @@ p {
   }
 
 }
+
+
 
 .input-required {
   color: @stb-primary-color;
@@ -476,13 +485,13 @@ ul.stb,ol.stb {
     }
   }
 
-  h3 {
+  h3, p.header3 {
     font-size: 16px;
     line-height: 20px;
     margin: 18px 6px 6px 0;
   }
 
-  h2 + h3 {
+  h2 + h3, h2 + p.header3 {
     margin: 6px 6px 6px 0;
   }
 

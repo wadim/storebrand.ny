@@ -61,7 +61,7 @@
 
   &.dark {
     color: @stb-primary-white;
-    & h1, h2, h3, h4, h5, h6, p {
+    & h1, h2, h3, h4, h5, h6, p, p.header3, p.header4, p.header5 {
       color: @stb-primary-white;
     }
   }
@@ -152,7 +152,7 @@
      }
 
     .text {
-      h2,h3 {
+      h2,h3, p.header3 {
         padding-top: 0;
         margin: 0 12px 12px 0;
       }
@@ -199,13 +199,13 @@
       }
     }
     .row {
-      h2,h3 {
+      h2,h3, p.header3 {
         margin: 12px 12px 12px 0;
       }
     }
   }
 
-  h3 {
+  h3, p.header3 {
     font-weight: normal;
     font-family: @font-family-signa-extralight;
     margin: 0 6px 6px 0;
@@ -311,7 +311,7 @@ span.box-header {
     }
 
 .stb-link-group {
-  h3 {
+  h3, p.header3 {
     margin: 0 12px 12px 0;
   }
 }
