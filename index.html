@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>storebrand.ny 0.89</title>
+  <title>storebrand.ny 0.90</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -540,7 +540,7 @@
 
     <div class="row">
       <div class="col-md-12" style="margin-bottom: 6px;">
-        <h1>Storebrand.ny - Version 0.89</h1>
+        <h1>Storebrand.ny - Version 0.90</h1>
         <p class="intro">
           <a href="webmanual.html">Web manual</a> and <a href="formmanual.html">form manual</a> as of <strong>2016-02-01</strong>
         </p>
@@ -552,19 +552,8 @@
           So, what's new in this version?
         </p>
         <ul class="stb">
-          <li>All font, javascript, CSS and XML elements served from elements.storebrand.no are now automatically gzipped when a capable browser initiates the request. You will only need the .gz files if you choose to host the files yourself.</li>
-          <li>Various typography fixes that enables us to build a cleaner header tag hierarchy on storebrand.no</li>
-          <li>Added various new styling to support the upcoming <a href="empdash.html">employee overview</a>. This may grow into the new responsive portal pages eventually.</li>
-          <li>Adding various special purpose icons that so far have only been used in menu or on theme pages from Enonic, for completeness.</li>
-          <li>Further tiny fixes that will allow us to meet more of the DIFI requirements we know of. All DIFI issues must be gone by the end of June 2016.</li>
-          <li>Improved rendering of message boxes on mobile.</li>
-          <li>Clickable elements (made clickable through class="clickable") now get a hovering hand icon across the whole element instead of just the link tag.</li>
-          <li>Improved YouTube video banner. Now pushes events in such a way that Google Tag Manager can pick them up. Also, the video iframe does not load unless there's actually a YouTube video on the page.</li>
-          <li>Added new class, "storebrand-stylecheck", that can be used by any client to check whether the stylesheet has been loaded yet or not.</li>
-          <li>Charcoal is now less char and more coal when used in text. While <span style="color: #404040;">stb-secondary-charcoal is #404040</span>, <span style="color: #282828;">stb-secondary-charcoal-text is #282828</span>. It's not a dramatic change, but it's required for sufficiently good contrast in some cases.</li>
-          <li>Introducing a new spinner element that places itself into the center of any element with a given id.<br />
-            Do not wait for the page to finish loading, this is just a demo:<br /><br />
-            <div class="row" style="margin-bottom: 0px;"><div class="col-xs-12"><br /><br /><div id="spinner1"></div><script type="text/javascript">$("#spinner1").spin("stb");</script></div></div></li>
+          <li>Version due to change in structure. This to meet the requirements for universal design.</li>
+          <li>Added p.header classes for h classes</li>
         </ul>
       </div>
     </div>
@@ -574,8 +563,8 @@
             <h2>How to play</h2>
             <p>Here's the code you'll want to include to start playing with this version:</p>
             <pre>
- &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.89/css/stb-all.min.css"&gt;
- &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.89/javascript/stb-all.min.js"&gt;&lt;/script&gt;</pre>
+ &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.90/css/stb-all.min.css"&gt;
+ &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.90/javascript/stb-all.min.js"&gt;&lt;/script&gt;</pre>
       </div>
     </div>
 
@@ -585,13 +574,15 @@
       Previous versions:
     </p>
     <ul class="stb">
+      <li><a href="../0.89/index.html">0.89</a></li>
       <li><a href="../0.88/index.html">0.88</a></li>
       <li><a href="../0.87/index.html">0.87</a></li>
-      <li><a href="../0.85/index.html">0.85</a></li>
     </ul>
     <p>
       <a href="#" onclick="$('#oldies').toggle(200); return false;">List of ancient versions</a>
       <div id="oldies" style="display: none;">
+        <a href="../0.86/index.html">0.86</a><br />
+        <a href="../0.85/index.html">0.85</a><br /> 
         <a href="../0.84/index.html">0.84</a><br />
         <a href="../0.82/index.html">0.82</a><br />
         <a href="../0.78/index.html">0.78</a><br />
