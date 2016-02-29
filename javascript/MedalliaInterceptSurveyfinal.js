@@ -64,7 +64,7 @@ MEDALLIA.Intercept = function (m_data, m_callback) {
 				m_config.daysToQuarantine = 180.0; //This is where you set the number of days for quarantine.
 				// Prescaling throttle and quarantine check
 				// Since we're excluding people here, not including them, we use the greater-than operator.
-				if (Math.random() > 0.5) { //This is where you set the percentage to be excluded. -- UZU: 0.1 = 10%
+				if (Math.random() > 0.15) { //This is where you set the percentage to be excluded. -- UZU: 0.1 = 10%
 					return false;
 			}
 			// Global JavaScript Block from prod
