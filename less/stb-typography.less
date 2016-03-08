@@ -38,12 +38,12 @@
 }
 
 // Font definitions
-@font-family-monospace:       Monaco, Menlo, Consolas, "Courier New", monospace;
-@font-family-sans-serif:      "Open Sans", Arial, ArialMT, sans-serif;
-@font-family-sans-serif-bold: "Open Sans Bold", Arial, ArialMT, sans-serif;
-@font-family-signa-book:      "SignaWeb-Book", Arial, "Times New Roman", Times, serif;
-@font-family-signa-light:     "SignaWeb-Light", Arial, "Times New Roman", Times, serif;
-@font-family-signa-extralight:     "SignaWeb-ExtraLight", Arial, "Times New Roman", Times, serif;
+@font-family-monospace:        Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-sans-serif:       "Open Sans", Arial, ArialMT, sans-serif;
+@font-family-sans-serif-bold:  "Open Sans Bold", Arial, ArialMT, sans-serif;
+@font-family-signa-book:       "SignaWeb-Book", Arial, "Times New Roman", Times, serif;
+@font-family-signa-light:      "SignaWeb-Light", Arial, "Times New Roman", Times, serif;
+@font-family-signa-extralight: "SignaWeb-ExtraLight", Arial, "Times New Roman", Times, serif;
 
 .stb-font {
   font-family: @font-family-signa-book;
@@ -75,7 +75,7 @@ h1, h2.h1lookalike {
   line-height: 46px;
   margin: 0 12px 12px 0;
   color: @stb-primary-color;
-  font-family: @font-family-signa-extralight;
+  font-family: @font-family-signa-light;
   &.dark {
     color: @stb-primary-white;
   }
@@ -89,7 +89,7 @@ h2 {
   line-height: 36px;
   margin: 48px 6px 6px 0;
   color: @stb-secondary-charcoal-text;
-  font-family: @font-family-signa-extralight;
+  font-family: @font-family-signa-light;
   &.dark {
     color: @stb-primary-white;
   }
@@ -108,11 +108,11 @@ h2 {
 }
 
 h3, p.header3 {
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 24px;
+  line-height: 28px;
   margin: 24px 9px 6px 0;
   color: @stb-secondary-charcoal-text;
-  font-family: @font-family-sans-serif-bold;
+  font-family: @font-family-signa-light;
   &.stb-font {
     font-family: @font-family-signa-book;
     font-weight: bolder;
@@ -123,24 +123,39 @@ h3, p.header3 {
 }
 
 h4, p.header4 {
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 600;
   margin: 0;
   margin: 9px 9px 6px 0;
   color: @stb-secondary-charcoal-text;
-  font-family: @font-family-sans-serif-bold;
+  font-family: @font-family-sans-serif;
   &.dark {
     color: @stb-primary-white;
   }
 }
 
 h5, p.header5 {
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 600;
   margin: 0;
   margin: 9px 9px 6px 0;
   color: @stb-secondary-charcoal-text;
-  font-family: @font-family-sans-serif-bold;
+  font-family: @font-family-sans-serif;
+  &.dark {
+    color: @stb-primary-white;
+  }
+}
+
+h6, p.header6 {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;  
+  margin: 0;
+  margin: 9px 9px 6px 0;
+  color: @stb-secondary-charcoal-text;
+  font-family: @font-family-sans-serif;
   &.dark {
     color: @stb-primary-white;
   }
@@ -196,7 +211,6 @@ p.header5.link {
   text-decoration:underline;
 }
 
-
 p {
   font-size: 16px;
   line-height: 24px;
@@ -240,8 +254,6 @@ p {
   }
 
 }
-
-
 
 .input-required {
   color: @stb-primary-color;
@@ -347,7 +359,6 @@ a:active {
   }
 }
 
-
 //For the webmanual examples
 #typography-links {
   a.standard {
@@ -363,7 +374,6 @@ a:active {
     border-bottom: 1px solid @stb-secondary-dust;
   }
 }
-
 
 a.help, a.help:hover, a.help:visited {
   color: @stb-secondary-dust;
