@@ -566,7 +566,7 @@ $(document).ready(function() {
       The class "border-top-and-bottom" adds visible borders at the top and bottom of the element.
     </p>
     <p class="border-right">
-      The class "border-right" adds a visible border at the right end of the element. It can be used to separate "cells" in a table-like div setup.
+      The class "border-right" adds a visible border at the right end of the element. It can be used to visually separate contents with a vertical line between different sections/columns.
     </p>
     <p>In some cases you may need to add a common border outside several rows that otherwise exist apart from each other. You can do this by adding a class grayborder with additional side-classes; side124 for top, right and left, side24 for right and left, and side234 for bottom, right and left. Example:
     <div class="row left-padding-10 top-padding-10 stbcolor-primary third grayborder side124">
@@ -2242,8 +2242,8 @@ $('ul[data-widget=stbFaq]').stbFaq();
           You can enable tracking to Google Analytics of button use by adding the class "analyze" to the a tag that is the button.
         </p>
         <p>
-          <strong>Missing description:</strong> When to use a button vs when to use a text link.
-        </p>
+          The button tag should be used to indicate that you can trig a function on this page. The a tag should be used to indicate that you are now trigging the loading of another page entirely. Visually they will for most users look the same way, ut to a screen reader there is a major difference in how the user will be prepared for what happens when the button is clicked.
+T        </p>
         <strong>Usage:</strong><br />
         <pre class="prettyprint">
 &lt;!--For navigation --&gt;
