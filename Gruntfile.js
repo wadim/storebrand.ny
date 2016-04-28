@@ -8,17 +8,10 @@ module.exports = function(grunt) {
       // for localhost: sourcemaps +etc
       develop: {
         options: {
-          // compress: false,
-          // mangle: false,
           preserveComments: 'all',
           sourceMap: true,
-          // sourceMapName: 'stb-all.min.map'
           sourceMapIncludeSources: true,
-          // sourceMapRoot: './public',
           banner: '/* <%= pkg.name %> (develop) <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-          // mangle: {
-          //   except: ['jQuery']
-          // }
         },
         files: {
           './public/js/stb-all.min.js': [
@@ -48,11 +41,11 @@ module.exports = function(grunt) {
     },
 
     less: {
-      development: {
+      develop: {
         options: {
-          compress: true,
-          yuicompress: true,
-          optimization: 2,
+          sourceMap: true,
+          sourceMapFileInline: true,
+          outputSourceFiles: true,
           ieCompat: true
         },
         files: {
@@ -60,7 +53,16 @@ module.exports = function(grunt) {
           "./public/css/stb-all.min.css": "./src/less/stb-main.less",
           "./public/css/stb-all-webmanual.min.css": "./src/less/stb-main-webmanual.less"
         }
-      }
+      },
+      prod: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2,
+          ieCompat: true
+        },
+        files: '<%= less.develop.files %>'
+      },
     },
 
     copy: {
@@ -70,12 +72,12 @@ module.exports = function(grunt) {
       },
       images: {
         expand: true,
-        src: './images/*',
+        src: './images/**',
         dest: './public/'
       },
       fonts: {
         expand: true,
-        src: './fonts/*',
+        src: './fonts/**',
         dest: './public/'
       }
     },
@@ -119,6 +121,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // serve http from localhost:
     connect: {
       server: {
         options: {
@@ -141,6 +144,7 @@ module.exports = function(grunt) {
   // Default task
   grunt.registerTask('default', ['less', 'uglify','watch']);
   // "grunt serve" is used for local development
-  grunt.registerTask('serve',   ['copy', 'connect', 'less', 'uglify:develop', 'watch']);
-  grunt.registerTask('dist',    ['copy', 'less', 'uglify:prod']);
+  grunt.registerTask('serve',   ['copy', 'connect', 'less:develop', 'uglify:develop', 'watch']);
+  // run "gulp dist" for minified/compressed output
+  grunt.registerTask('dist',    ['copy', 'less:prod', 'uglify:prod']);
 };
