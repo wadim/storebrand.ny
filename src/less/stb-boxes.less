@@ -1,0 +1,347 @@
+.stb-box {
+  padding: 24px 24px 12px 24px;
+  border: 1px solid transparent;
+
+// Header inside a box
+  > .box-header {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 6px 6px 0;
+    color: @stb-secondary-charcoal-text;
+    font-family: @font-family-signa-light;
+    &.stbfont {
+      font-family: @font-family-signa-book;
+    }
+    &.dark {
+      color: @stb-primary-white;
+    }
+  }
+
+  &.row, .row{
+    .ColumnMarginBottom(0px);
+  }
+  &.first {
+    .stbcolor-primary .third;
+    > p {
+      color: @stb-primary-black;
+    }
+  }
+
+  &.second {
+    .stbcolor-secondary.sixth;
+    a {
+      font-weight: strong;
+    }
+  }
+
+  &.third {
+    .stbcolor-gray .first;
+    border: 1px solid @stb-gray-third;
+  }
+
+  &.fourth {
+    .stbcolor-background .first;
+  }
+
+  &.fifth {
+    .stbcolor-background .second;
+  }
+
+  &.sixth {
+    .stbcolor-background .third;
+  }
+
+  &.seventh {
+    .stbcolor-gray .third;
+  }
+
+  &.noBorder{
+    border: none;
+  }
+
+  &.dark {
+    color: @stb-primary-white;
+    & h1, h2, h3, h4, h5, h6, p, p.header3, p.header4, p.header5 {
+      color: @stb-primary-white;
+    }
+  }
+
+  // Forcing solid border
+  &.border {
+    border: 1px solid;
+    border-color: @stb-secondary-charcoal;
+
+    &.red {
+	border-color: @stb-primary-color;
+    }
+
+    &.gray {
+	    border-color: @stb-gray-second;
+    }
+  }
+
+  // Adding possibility of thicker border
+  &.fat {
+	border: 2px solid;
+  }
+
+  // Forcing dotted border
+  &.dotted {
+    border: 1px dotted;
+  }
+
+  &.dashed {
+    border: 1px dashed;
+  }
+
+  ul.stb,ol.stb {
+    padding-bottom: 0;
+  }
+
+  &.info {
+    padding: 24px;
+    h4, .info-header {
+      margin: 6px 9px 6px 0;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    span.info-header {
+      margin: 6px 9px 6px 0;
+      font-size: 16px;
+      line-height: 36px;
+      font-weight: 500;
+      font-family: @font-family-sans-serif-bold;
+    }
+    @media (max-width: @screen-xs-max) {
+      padding: 12px;
+    }
+  }
+
+  &.mini{
+    background-color: @stb-gray-first;
+
+    &.row{
+      padding-bottom: 24px;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      padding: 12px 12px 6px;
+      &.row{
+        padding-bottom: 12px;
+      }
+
+      &.wide{
+        &:hover {
+          padding: 12px;
+        }
+      }
+
+    }
+
+    @media (max-width: @screen-xs-max) {
+      &.narrow .image {
+        float: left;
+		margin-right: 20px;
+	  }
+    }
+
+     @media (min-width: @screen-sm-min){
+	&.narrow img {
+		padding-bottom: 20px;
+	}
+     }
+
+    .text {
+      h2,h3, p.header3 {
+        padding-top: 0;
+        margin: 0 12px 12px 0;
+      }
+      >.box-header {
+        font-size: 16px;
+        line-height: 36px;
+        color: @stb-secondary-charcoal-text;
+        font-family: @font-family-signa-light;
+        &.stbfont {
+          font-family: @font-family-signa-book;
+        }
+        &.dark {
+          color: @stb-primary-white;
+        }
+      }
+    }
+
+    &.narrow{
+      margin-left:0;
+      margin-right: 0;
+    }
+
+    &.wide{
+      margin-left:0;
+      margin-right: 0;
+      .image {
+        float: left;
+	    padding-right: 20px;
+	    height: 100%
+      }
+    }
+  }
+
+  &.big{
+    background-color: @stb-gray-first;
+    padding: 24px;
+    @media(max-width: @screen-sm-min) {
+      padding: 12px;
+    }
+
+    &:hover {
+      @media(max-width: @screen-sm-min) {
+        padding: 12px;
+      }
+    }
+    .row {
+      h2,h3, p.header3 {
+        margin: 12px 12px 12px 0;
+      }
+    }
+  }
+
+  h3, p.header3 {
+    font-weight: normal;
+    font-family: @font-family-signa-extralight;
+    margin: 0 6px 6px 0;
+  }
+}
+
+//For non white backgrounds
+.stbcolor-secondary .stb-box.third{
+  background-color: @stb-primary-white;
+}
+
+/* Notification boxes */
+
+.msgIcon {
+  padding-top: 24px;
+  text-align: center;
+}
+
+.msgText {
+  padding: 24px;
+}
+
+@media (max-width: @screen-xs-max) {
+	.msgText {
+    width: 100%;
+    padding: 12px;
+  }
+  .msgIcon {
+    width: 100%;
+    padding: 12px;
+    text-align: left;
+  }
+}
+
+span.notification-header {
+  display: block;
+  margin: 0px 6px 6px 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: @font-family-sans-serif-bold;
+}
+
+&.infoIcon {
+	background: transparent url("../images/InfoShoutout.png") left top no-repeat;
+	width: 48px;
+	height: 48px;
+    @media (max-width: @screen-xs-max) {
+      margin-left: 4px;
+    }
+}
+
+// Adjustments for displays with enhanced pixel density
+@media
+  (min--moz-device-pixel-ratio: 2),
+  (-o-min-device-pixel-ratio: 2/1),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-device-pixel-ratio: 2) {
+	.infoIcon {
+	background: transparent url("../images/InfoShoutout@2x.png") left top no-repeat;
+	background-size: 48px;
+ }
+  }
+
+  /* Chat boxes */
+
+.chatText {
+  padding-left: 42px;
+  margin-top: -20px;
+}
+
+p + div.iconInfo {
+  p:first-child {
+    margin-top: -12px;
+  }
+  p{
+    margin-top: -10px;
+    margin-left: 42px;
+  }
+}
+
+a + div.iconInfo {
+  p:first-child {
+    margin-top: 0px;
+  }
+  p{
+    margin-top: -10px;
+    margin-left: 42px;
+  }
+}
+
+span.box-header {
+      font-size: 18px;
+      line-height: 36px;
+      color: @stb-secondary-charcoal-text;
+      font-family: @font-family-signa-light;
+      &.stbfont {
+        font-family: @font-family-signa-book;
+      }
+      &.dark {
+        color: @stb-primary-white;
+      }
+    }
+
+.stb-link-group {
+  h3, p.header3 {
+    margin: 0 12px 12px 0;
+  }
+}
+
+.banner {
+  .stb-box {
+    padding: 24px 24px 0 24px;
+    margin-bottom: 0;
+  }
+  @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
+    .stb-btn {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.important-notice {
+  .row {
+    .ColumnMarginBottom(24px);
+  }
+}
+
+@media (max-width: @screen-sm-max) {
+ .important-notice {
+   .row {
+     .ColumnMarginBottom(0px);
+   }
+ }
+}
+
+.column-element {
+  margin-bottom: 48px;
+}

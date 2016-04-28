@@ -1,0 +1,38 @@
+.stb-alert {
+  .alert();
+  padding: 7px;
+  font-size: 16px;
+
+  span.icon-alarm {
+    .glyphicon();
+    .glyphicon-warning-sign();
+    top: 0;
+    color: @stb-primary-color;
+    font-size: 22px;
+    margin-right: 10px;
+    margin-left: 2px;
+    vertical-align: bottom;
+  }
+
+  span.icon-info {
+    .glyphicon();
+    .glyphicon-info-sign();
+    top: 0;
+    color: @stb-secondary-forest;
+    font-size: 22px;
+    margin-right: 10px;
+    margin-left: 2px;
+    vertical-align: bottom;
+  }
+
+  &.stb-alert-alarm {
+    .stbcolor-background .first;
+    padding-left: 10px;
+ }
+
+  &.stb-alert-success {
+    .stbcolor-background .second;
+    padding-left: 10px;
+  }
+
+}

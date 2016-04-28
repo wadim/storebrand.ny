@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class=" js csstransitions">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class=" js csstransitions">
 <head>
   <title>Technical Web Design Manual for Storebrand</title>
   <meta name="robots" content="noindex">
@@ -20,9 +20,8 @@
 
   <!-- Stuff just for the web manual... -->
   <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
-  <script type="text/javascript" src="js/webmanual.core.js"></script>
-  <!-- End of just for the web manual -->
-  <style>
+
+  <style type="text/css">
     .toc-list ul.items {
       display: block;
     }
@@ -44,7 +43,10 @@
   </style>
 </head>
 
-<body ontouchstart="">
+<body>
+
+<!-- beta sticker! -->
+<div style="position: fixed; top:0; left:0; z-index: 10;"><img src="images/beta.png"></div>
 
 <div class="container">
 
@@ -61,6 +63,11 @@
       <p class="lead">
         - A technical description of Storebrand web elements.
       </p>
+
+      <blockquote>
+        <p>This fork is <strong>experimental</strong>.
+        <footer>cleanup on isle 10!</footer>
+      </blockquote>
 
       <h2>Table of contents</h2>
       <p>Click an element title to jump straight to the relevant section.</p>
