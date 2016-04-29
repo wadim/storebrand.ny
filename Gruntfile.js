@@ -41,6 +41,7 @@ module.exports = function(grunt) {
     },
 
     less: {
+      // develop should have sourcemaps
       develop: {
         options: {
           sourceMap: true,
@@ -54,6 +55,7 @@ module.exports = function(grunt) {
           "./public/css/stb-all-webmanual.min.css": "./src/less/stb-main-webmanual.less"
         }
       },
+      // prod: minified versions
       prod: {
         options: {
           compress: true,
@@ -132,9 +134,8 @@ module.exports = function(grunt) {
       }
     }
 
-
-
   });
+
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -142,7 +143,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task
-  grunt.registerTask('default', ['less', 'uglify','watch']);
+  grunt.registerTask('default', ['usage']);
+
+  grunt.registerTask('usage', 'Output usage information', function(){
+    grunt.log.error('Error: no grunt task specified, tasks available are:\n');
+    grunt.log.subhead('> grunt serve');
+    grunt.log.ok('  used locally, will expose webserver on port 8000 and listen for changes to files\n');
+    grunt.log.subhead('> grunt dist');
+    grunt.log.ok('  used to build your minified version, all files are put in ./public/\n');
+  });
   // "grunt serve" is used for local development
   grunt.registerTask('serve',   ['copy', 'connect', 'less:develop', 'uglify:develop', 'watch']);
   // run "gulp dist" for minified/compressed output
