@@ -14,20 +14,29 @@ module.exports = function(grunt) {
           banner: '/* <%= pkg.name %> (develop) <%= grunt.template.today("dd-mm-yyyy") %> */\n'
         },
         files: {
-          './public/js/stb-all.min.js': [
+          './public/js/stb-all.min.js':
+            [
               'src/js/modernizr.custom.js',
               './node_modules/jquery/dist/jquery.min.js',
               'src/js/jquery.eqheight.js',
               'src/js/jquery-ui-1.11.0.js',
               'src/js/jquery.hotkeys.js',
               'src/js/bootstrap.min.js',
+
               'src/js/typeahead.bundle.min.js',
               'src/js/stb-search.js',
               'src/js/stb-common.js',
               'src/js/stb-page-padding.js',
               'src/js/stb-video.js',
               'src/js/bootstrapValidator-0.5.3.js',
-              'src/js/stb-spin.v2.3.2.js']
+
+              // spin.js+jq-plugin (via npm) + custom config
+              './node_modules/spin.js/spin.js',
+              './node_modules/spin.js/jquery.spin.js',
+              'src/js/stb-spinjs-presets.js',
+
+              'src/js/stb-toc-list.js'
+            ]
         }
       },
       // for prod: no sourcemaps etc
@@ -118,6 +127,7 @@ module.exports = function(grunt) {
         files: ['src/js/*.js'],
         tasks: ['uglify'],
         options: {
+          nospawn: true,
           livereload: true
         }
       }
