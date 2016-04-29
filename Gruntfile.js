@@ -18,9 +18,10 @@ module.exports = function(grunt) {
             [
               './src/js/modernizr.custom.js',
               './node_modules/jquery/dist/jquery.js',
-              './src/js/jquery.eqheight.js',
+              './node_modules/jquery-match-height/dist/jquery.matchHeight.js',
               './src/js/jquery-ui-1.11.0.js',
               './src/js/jquery.hotkeys.js',
+
               './src/js/bootstrap.min.js',
 
               './src/js/typeahead.bundle.min.js',
