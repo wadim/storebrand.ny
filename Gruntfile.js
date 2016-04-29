@@ -17,7 +17,7 @@ module.exports = function(grunt) {
           './public/js/stb-all.min.js':
             [
               './src/js/modernizr.custom.js',
-              './node_modules/jquery/dist/jquery.min.js',
+              './node_modules/jquery/dist/jquery.js',
               './src/js/jquery.eqheight.js',
               './src/js/jquery-ui-1.11.0.js',
               './src/js/jquery.hotkeys.js',
@@ -30,7 +30,9 @@ module.exports = function(grunt) {
               './src/js/stb-video.js',
               './src/js/bootstrapValidator-0.5.3.js',
 
-              // spin.js+jq-plugin (via npm) + custom config
+              // './node_modules/moment/moment.js',
+
+              // spin.js+jq-plugin + custom presets
               './node_modules/spin.js/spin.js',
               './node_modules/spin.js/jquery.spin.js',
               './src/js/stb-spinjs-presets.js',
