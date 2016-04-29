@@ -22,7 +22,7 @@ module.exports = function(grunt) {
               './src/js/jquery-ui-1.11.0.js',
               './src/js/jquery.hotkeys.js',
 
-              './src/js/bootstrap.min.js',
+              './node_modules/bootstrap/dist/js/bootstrap.js',
 
               './src/js/typeahead.bundle.min.js',
               './src/js/stb-search.js',
