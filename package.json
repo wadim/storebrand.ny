@@ -10,8 +10,9 @@
   "author": "",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "bootstrap": "^3.3.5",
-    "jquery": "^2.1.0"
+    "bootstrap": "3.3.5",
+    "jquery": "2.1.0",
+    "spin.js": "2.3.2"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
