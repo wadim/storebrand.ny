@@ -35,7 +35,11 @@ module.exports = function(grunt) {
               './node_modules/spin.js/jquery.spin.js',
               './src/js/stb-spinjs-presets.js',
 
-              './src/js/stb-toc-list.js'
+              './src/js/stb-toc-list.js',
+              './src/js/stb-analyze-ga.js',
+
+              // Enonic-specific (todo: add new js-bundle task for this)
+              './src/js/enonic/stb-search.js'
             ]
         }
       },
