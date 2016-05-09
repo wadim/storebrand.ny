@@ -98,6 +98,11 @@ module.exports = function(grunt) {
         expand: true,
         src: './fonts/**',
         dest: './public/'
+      },
+      data: {
+        expand: true,
+        src: './data/**',
+        dest: './public/'
       }
     },
 
