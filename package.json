@@ -10,7 +10,7 @@
   "author": "",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "bootstrap": "3.3.5",
+    "bootstrap": "3.3.6",
     "jquery": "2.1.0",
     "jquery-match-height": "0.7.0",
     "jquery.hotkeys": "0.1.0",
