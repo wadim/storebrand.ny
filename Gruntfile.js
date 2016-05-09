@@ -103,8 +103,8 @@ module.exports = function(grunt) {
 
     watch: {
       styles: {
-        files: ['./src/less/*'],
-        tasks: ['less'],
+        files: ['./src/less/**'],
+        tasks: ['less:develop'],
         options: {
           nospawn: true,
           livereload: true
@@ -132,8 +132,8 @@ module.exports = function(grunt) {
         }
       },
       scripts: {
-        files: ['src/js/*.js'],
-        tasks: ['uglify'],
+        files: ['src/js/**'],
+        tasks: ['uglify:develop'],
         options: {
           nospawn: true,
           livereload: true
@@ -171,7 +171,7 @@ module.exports = function(grunt) {
     grunt.log.ok('  used to build your minified version, all files are put in ./public/\n');
   });
   // "grunt serve" is used for local development
-  grunt.registerTask('serve',   ['copy', 'connect', 'less:develop', 'uglify:develop', 'watch']);
+  grunt.registerTask('serve',   ['copy', 'uglify:develop', 'less:develop', 'connect', 'watch']);
   // run "gulp dist" for minified/compressed output
   grunt.registerTask('dist',    ['copy', 'less:prod', 'uglify:prod']);
 };
