@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>storebrand.ny 0.90</title>
+  <title>storebrand.ny 0.92</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -9,9 +9,8 @@
   <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-128x128-precomposed.png">
   <!-- Universal references useful everywhere -->
   <link rel="stylesheet" type="text/css" href="css/stb-all.min.css">
-  <script type="text/javascript" src="javascript/stb-all.min.js"></script>
+  <script type="text/javascript" src="js/stb-all.min.js"></script>
   <!-- End of universally useful references -->
-
 </head>
 
 <body>
@@ -80,31 +79,30 @@
 
     <div class="row">
       <div class="col-md-12" style="margin-bottom: 6px;">
-        <h1>Storebrand.ny - Version 0.90</h1>
+        <h1>Storebrand.ny - Version 0.92</h1>
         <p class="intro">
-          <a href="webmanual.html">Web manual</a> and <a href="formmanual.html">form manual</a> as of <strong>2016-03-10</strong>
+          <a href="webmanual.html">Web manual</a> and <a href="formmanual.html">form manual</a> as of <strong>2016-05-11</strong>
         </p>
 
         <p>
-          This version is not yet official and may still be changed without warning.
+          This version is not yet official and may still be subject to change without warning.
         </p>
         <p>
           So, what's new in this version?
         </p>
         <ul class="stb">
           <li>Upgraded Bootstrap from 3.3.5 to 3.3.6</li>
-          <li>Fix for fontfile SignaWeb Extralight (wrong line-height on Mac)</li>
-          <li>Cleaned up Gruntfile (+remove unused stuff)</li>
+          <li>Fix for fontfile SignaWeb Extralight (flawed line-height on Mac)</li>
+          <li>Cleaned up Gruntfile (+removed unused stuff)</li>
           <li>All public/generated files are now in ./public (files are copied on save)</li>
           <li>Fixed sourcemaps for JS+LESS</li>
           <li>Most of our dependencies are now handled with NPM <strong>(remember to "npm install")</strong></li>
-          <li>Some js-code separated into its own files</li>
-          <li>Production files are now named "stb-all.min.css" and "stb-all.min.js"</li>
-
-          <li>Various changes in markup in order to support "universell utforming", WCAG usability requirements.</li>
-          <li>Added p.header classes that can be used to keep the desired look of various text, without breaking h tag structure.</li>
-          <li>Made a few font changes to existing header tags.</li>
-          <li>Removed font aliasing in body.</li>
+          <li>Some JavaScript code has been separated into its own files, for improved intuitivity</li>
+          <li>Production files are now named "stb-all.min.css" and "stb-all.min.js", and the javascript folder was renamed to js</li>
+          <li>Various changes in markup in order to support "universell utforming", WCAG usability requirements</li>
+          <li>Added p.header classes that can be used to keep the desired look of various text, without breaking h tag structure</li>
+          <li>Made a few font changes to existing header tags</li>
+          <li>Removed font aliasing in body</li>
         </ul>
       </div>
     </div>
@@ -114,15 +112,15 @@
             <h2>How to play</h2>
             <p>Here's the gzipped code you'll want to include to start playing with this version:</p>
             <pre>
- &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.90/css/stb-all.min.css"&gt;
- &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.90/js/stb-all.min.js"&gt;&lt;/script&gt;</pre>
+ &lt;link rel="stylesheet" type="text/css" href="//elements.storebrand.no/storebrand.ny/0.92/css/stb-all.min.css"&gt;
+ &lt;script type="text/javascript" src="//elements.storebrand.no/storebrand.ny/0.92/js/stb-all.min.js"&gt;&lt;/script&gt;</pre>
       </div>
     </div>
 
     <hr class="top-margin-5"/>
 
     <p>
-      Previous versions:
+      Previous official versions:
     </p>
     <ul class="stb">
       <li><a href="../0.89/index.html">0.89</a></li>
