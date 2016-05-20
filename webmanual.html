@@ -642,36 +642,28 @@ $(document).ready(function() {
   </div>
   <div class="col-md-9">
     <p>
-      We should have learned to live practically without any tables by now. Still, sometimes they're needed. Tables shall not be used to space out contents, but in some cases a table is a good way to present a list.
+      By now we should have found ways to present our information without using tables. Still, sometimes we need them. Tables shall never be used to space out contents, but in some cases a table is a good way to present a list.
     </p>
     <p>
-      For a wide table to be responsive, you may have to create two tables with different visibility and different content for wide and narrow screens, or you can show/hide columns in a wide table.
+      For a wide table to be responsive, you may have to create two tables with different visibility and different contents for wide and narrow screens, or you can show/hide columns in a wide table.
     </p>
     <p>
       Tables have <strong>no color varieties</strong>, they will always follow the style displayed below. Although we can display information for rows as a hover effect, remember that this doesn't work on touch devices.
     </p>
     <p>
-      Tables have no vertical border markers anywhere.
+      Our tables have no vertical border markers.
     </p>
     <p>
-      The font-size in tables is 16px by default. By adding the class "small-text" to the table tag, the font-size is reduced to 14.
+      The font-size in tables is 16px by default. You can reduce this to 14px by adding the class "small-text" to the table tag.
     </p>
     <p>
-      The table head always has room for two lines of text, even if there is only one line of text. This is to make it easy to see where a table ends and begins, especially important when two or more tables are close to each other.
+      The table head always has room for two lines of text, even if there is only one line of text. This is to emphasize where a table ends and begins, which is especially important when two or more tables are close to each other.
     </p>
-    <p>There are two kinds of responsive tables:
-    <ol class="stb">
-      <li>
-        The standard responsive <a href="http://getbootstrap.com/css/#tables">Bootstrap table</a>
-      </li>
-      <li>
-        The pinned left column responsive table based on the <a href="http://zurb.com/playground/responsive-tables">Zurb responsive tables</a>
-      </li>
-    </ol></p>
+    <p>
+      Any table can be made so that it is sorted accordingly when a column header is clicked.
+    </p>
 
-
-    <h3>Standard table</h3>
-    <h4>Standard responsive Bootstrap table:</h4>
+    <h3 class="top-margin-20">Standard responsive Bootstrap table</h3>
     <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive">
       <table class="stb-table">
@@ -679,49 +671,47 @@ $(document).ready(function() {
         <tr>
           <th>Aksjefond</th>
           <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
-          <th>Aksjefond</th>
-          <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
+          <th class="text-right">Andre&nbsp;gebyrer</th>
+          <th>Grønnhet</th>
+          <th class="text-right">Risikograd</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td><a href="#">A link in a table</a></td>
-          <td class="text-right">1,25%</td>
+          <td>Storebrand&nbsp;Superb</td>
+          <td class="text-right">1,25&nbsp;%</td>
           <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td class="text-right">5</td>
+          <td class="text-right">Lav</td>
         </tr>
         <tr>
-          <td>Storebrand Barnespar</td>
-          <td class="text-right">1,50%</td>
+          <td>Storebrand&nbsp;Futuristic</td>
+          <td class="text-right">1,50&nbsp;%</td>
           <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td class="text-right">8</td>
+          <td class="text-right">Høy</td>
         </tr>
         <tr>
-          <td>Storebrand Aksjespar</td>
+          <td>Storebrand&nbsp;Nuclear</td>
           <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td class="text-right">50&nbsp;%</td>
+          <td class="text-right">2</td>
+          <td class="text-right">Middels</td>
         </tr>
         <tr>
-          <td>Storebrand Global</td>
-          <td class="text-right">2,00%</td>
+          <td>Storebrand&nbsp;Space</td>
+          <td class="text-right">2,00&nbsp;%</td>
           <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td class="text-right">9</td>
+          <td class="text-right">God</td>
         </tr>
         </tbody>
       </table>
     </div>
-    <h4>Locked left column Zurb table:</h4>
+    <h3 class="top-margin-40">Locked left column Zurb table</h3>
+    <p>
+      You can pin the leftmost column and let the rest be swipe-able, most useful on narrow devices. This table is based on <a href="http://zurb.com/playground/responsive-tables">Zurb</a>
+    </p>
     <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive-pinned">
       <table class="responsive stb-table">
@@ -729,55 +719,41 @@ $(document).ready(function() {
         <tr>
           <th>Aksjefond</th>
           <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
-          <th>Aksjefond</th>
-          <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
+          <th class="text-right">Andre&nbsp;gebyrer</th>
+          <th>Grønnhet</th>
+          <th class="text-right">Risikograd</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td><a href="#">A link in a table</a></td>
-          <td class="text-right">1,25%</td>
+          <td>Storebrand&nbsp;Superb</td>
+          <td class="text-right">1,25&nbsp;%</td>
           <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td class="text-right">5</td>
+          <td class="text-right">Lav</td>
         </tr>
         <tr>
-          <td>Storebrand Barnespar</td>
-          <td class="text-right">1,50%</td>
+          <td>Storebrand&nbsp;Futuristic</td>
+          <td class="text-right">1,50&nbsp;%</td>
           <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td class="text-right">8</td>
+          <td class="text-right">Høy</td>
         </tr>
         <tr>
-          <td>Storebrand Aksjespar</td>
+          <td>Storebrand&nbsp;Nuclear</td>
           <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-        </tr>
-        <tr>
-          <td>Storebrand Global</td>
-          <td class="text-right">2,00%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td class="text-right">50&nbsp;%</td>
+          <td class="text-right">2</td>
+          <td class="text-right">Middels</td>
         </tr>
         </tbody>
       </table>
     </div>
 
-    <h3>Table with hover effect in rows</h3>
+    <h3 class="top-margin-40">Table with hover effect in rows</h3>
     <p>
-      Add a hover effect on the table rows by adding the class "hoverable" to the table.
+      Add a hover effect on table rows by adding the class "hoverable" to the table. (Obviously useless on touch devices.)
     </p>
-    <h4>Standard responsive Bootstrap table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive">
       <table class="stb-table hoverable">
         <thead>
@@ -785,79 +761,76 @@ $(document).ready(function() {
           <th>Aksjefond</th>
           <th class="text-right">Forvaltningshonorar</th>
           <th class="text-right">Andre gebyrer</th>
-          <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td>Storebrand Barnespar</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td>Storebrand&nbsp;Superb</td>
+          <td class="text-right">1,50&nbsp;%</td>
           <td class="text-right">0</td>
         </tr>
         <tr>
-          <td>Storebrand Aksjespar</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td>Storebrand&nbsp;Futuristic</td>
+          <td class="text-right">1,50&nbsp;%</td>
           <td class="text-right">0</td>
         </tr>
         <tr>
-          <td>Storebrand Global</td>
-          <td class="text-right">2,00%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">2,00%</td>
-          <td class="text-right">0</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <h4>Locked left column Zurb table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
-    <div class="table-responsive-pinned">
-      <table class="responsive stb-table hoverable">
-        <thead>
-        <tr>
-          <th>Aksjefond</th>
-          <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
-          <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Storebrand Barnespar</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
+          <td>Storebrand&nbsp;Nuclear</td>
+          <td class="text-right">2,00&nbsp;%</td>
           <td class="text-right">0</td>
         </tr>
         <tr>
-          <td>Storebrand Aksjespar</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-        </tr>
-        <tr>
-          <td>Storebrand Global</td>
-          <td class="text-right">2,00%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">2,00%</td>
+          <td>Storebrand&nbsp;Space</td>
+          <td class="text-right">2,00&nbsp;%</td>
           <td class="text-right">0</td>
         </tr>
         </tbody>
       </table>
     </div>
 
-    <h3>Table without alternating rows</h3>
+    <h3 class="top-margin-40">Table without alternating rows</h3>
     <p>
-      Remove alternating rows by adding the class "noalt" to the table.
+      You can remove alternating rows by adding the class "noalt" to the table.
     </p>
-    <h4>Standard responsive Bootstrap table:</h4>
+    <h4 class="top-margin-40">Standard responsive Bootstrap table:</h4>
+    <div class="table-responsive">
+      <table class="stb-table no-alt hoverable nude">
+        <thead>
+        <tr>
+          <th>Aksjefond</th>
+          <th class="text-right">Forvaltningshonorar</th>
+          <th class="text-right">Andre gebyrer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Storebrand&nbsp;Superb</td>
+          <td class="text-right">1,50&nbsp;%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr>
+          <td>Storebrand&nbsp;Futuristic</td>
+          <td class="text-right">1,50&nbsp;%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr>
+          <td>Storebrand&nbsp;Nuclear</td>
+          <td class="text-right">2,00&nbsp;%</td>
+          <td class="text-right">0</td>
+        </tr>
+        <tr>
+          <td>Storebrand&nbsp;Space</td>
+          <td class="text-right">2,00&nbsp;%</td>
+          <td class="text-right">0</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="top-margin-40">Table with clickable rows</h3>
+    <p>
+      If you have a table containing links, you can make entire rows clickable with that link by adding the class "clickable" to the row tag. What happens upon a click is defined by what you add to the rel attribute of each particular row tag.
+    </p>
     <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
     <div class="table-responsive">
       <table class="stb-table no-alt hoverable nude">
@@ -866,195 +839,26 @@ $(document).ready(function() {
           <th>Aksjefond</th>
           <th class="text-right">Forvaltningshonorar</th>
           <th class="text-right">Andre gebyrer</th>
-          <th>Aksjefond</th>
-          <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td><a href="#">A link in a table</a></td>
-          <td class="text-right">1,25%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-        </tr>
-        <tr>
+        <tr class="clickable" rel="http://www.storebrand.no/">
           <td>Storebrand Barnespar</td>
           <td class="text-right">1,50%</td>
           <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
         </tr>
-        <tr>
+        <tr class="clickable" rel="http://www.storebrand.no/">
           <td>Storebrand Aksjespar</td>
           <td class="text-right">1,50%</td>
           <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
         </tr>
-        <tr>
+        <tr class="clickable" rel="http://www.storebrand.no/">
           <td>Storebrand Global</td>
           <td class="text-right">2,00%</td>
           <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
         </tr>
-        </tbody>
-      </table>
-    </div>
-    <h4>Locked left column Zurb table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
-    <div class="table-responsive-pinned">
-        <table class="responsive stb-table no-alt hoverable nude">
-          <thead>
-          <tr>
-            <th>Aksjefond</th>
-            <th class="text-right">Forvaltningshonorar</th>
-            <th class="text-right">Andre gebyrer</th>
-            <th>Aksjefond</th>
-            <th class="text-right">Forvaltningshonorar</th>
-            <th class="text-right">Andre gebyrer</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><a href="#">This is a normal link in a table</a></td>
-            <td class="text-right">1,25%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-          </tr>
-          <tr>
-            <td>Storebrand Barnespar</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-          </tr>
-          <tr>
-            <td>Storebrand Aksjespar</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-          </tr>
-          <tr>
-            <td>Storebrand Global</td>
-            <td class="text-right">2,00%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    <h3>Table with clickable rows</h3>
-    <p>
-      Make the rows clickable by adding the class "clickable" to the row tag. What happens upon a click is defined by what you add to the rel attribute of each particular row tag.
-      By adding the class "analyze" Google Analytics tracking of clicking is enabled.
-    </p>
-    <h4>Standard responsive Bootstrap table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
-    <div class="table-responsive">
-        <table class="stb-table no-alt hoverable nude">
-          <thead>
-          <tr>
-            <th>Aksjefond</th>
-            <th class="text-right">Forvaltningshonorar</th>
-            <th class="text-right">Andre gebyrer</th>
-            <th class="text-right">Forvaltningshonorar</th>
-            <th class="text-right">Andre gebyrer</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr class="clickable analyze" rel="#index-nav">
-            <td>Storebrand Barnespar</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-          </tr>
-          <tr class="clickable" rel="#index-nav">
-            <td>Storebrand Aksjespar</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">1,50%</td>
-            <td class="text-right">0</td>
-          </tr>
-          <tr class="clickable" rel="#index-nav">
-            <td>Storebrand Global</td>
-            <td class="text-right">2,00%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">2,00%</td>
-            <td class="text-right">0</td>
-          </tr>
-          <tr class="clickable" rel="#index-nav">
-            <td>Storebrand Norge</td>
-            <td class="text-right">2,00%</td>
-            <td class="text-right">0</td>
-            <td class="text-right">2,00%</td>
-            <td class="text-right">0</td>
-          </tr>
-          </tbody>
-          <tfoot>
-          <tr>
-            <th>And that's all of them</th>
-            <th class="text-right">Forvaltningshonorar</th>
-            <th class="text-right">Andre gebyrer</th>
-            <th class="text-right">Forvaltningshonorar</th>
-            <th class="text-right">Andre gebyrer</th>
-          </tr>
-          </tfoot>
-        </table>
-      </div>
-    <h4>Locked left column Zurb table:</h4>
-    <div class="scroll-indicator">Tabellen kan sveipes <img height="24" src="images/PictoScrollTable@2x.gif"/></div>
-    <div class="table-responsive-pinned">
-      <table class="responsive stb-table no-alt hoverable nude">
-        <thead>
-        <tr>
-          <th>Aksjefond</th>
-          <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
-          <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="clickable analyze" rel="#index-nav">
-          <td>Storebrand Barnespar</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-        </tr>
-        <tr class="clickable" rel="#index-nav">
-          <td>Storebrand Aksjespar</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">1,50%</td>
-          <td class="text-right">0</td>
-        </tr>
-        <tr class="clickable" rel="#index-nav">
-          <td>Storebrand Global</td>
-          <td class="text-right">2,00%</td>
-          <td class="text-right">0</td>
-          <td class="text-right">2,00%</td>
-          <td class="text-right">0</td>
-        </tr>
-        <tr class="clickable" rel="#index-nav">
+        <tr class="clickable" rel="http://www.storebrand.no/">
           <td>Storebrand Norge</td>
-          <td class="text-right">2,00%</td>
-          <td class="text-right">0</td>
           <td class="text-right">2,00%</td>
           <td class="text-right">0</td>
         </tr>
@@ -1064,62 +868,57 @@ $(document).ready(function() {
           <th>And that's all of them</th>
           <th class="text-right">Forvaltningshonorar</th>
           <th class="text-right">Andre gebyrer</th>
-          <th class="text-right">Forvaltningshonorar</th>
-          <th class="text-right">Andre gebyrer</th>
         </tr>
         </tfoot>
       </table>
     </div>
-    <strong>Code:</strong> <br />
-          <pre class="prettyprint">
-&lt;!-- Standard responsive table --&gt;
-&lt;div class="scroll-indicator"&gt;Tabellen kan sveipes &lt;img height="24" src="../images/PictoScrollTable@2x.gif"/&gt;&lt;/div&gt;
-&lt;div class="table-responsive"&gt;
-  &lt;table class=&quot;stb-table [hoverable] [clickable] [noalt] [analyze] &quot;&gt;
-    &lt;thead&gt;
-      &lt;tr class="clickable" rel="#index-nav"&gt;
-        &lt;th&gt;Aksjefond&lt;/th&gt;
-        &lt;th class=&quot;text-right&quot;&gt;Forvaltningshonorar&lt;/th&gt;
-        &lt;th class=&quot;text-right&quot;&gt;Andre gebyrer&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr class="clickable" rel="#index-nav"&gt;
-        &lt;td&gt;Storebrand Barnespar&lt;/td&gt;
-        &lt;td class=&quot;text-right&quot;&gt;1,50%&lt;/td&gt;
-        &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
-        ...
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
 
-&lt;!-- Table with a pinned left column --&gt;
-&lt;div class="scroll-indicator"&gt;Tabellen kan sveipes &lt;img height="24" src="../images/PictoScrollTable@2x.gif"/&gt;&lt;/div&gt;
-&lt;div class="table-responsive-pinned"&gt;
-  &lt;table class=&quot;responsive stb-table [hoverable] [clickable] [noalt] [analyze] &quot;&gt;
-    &lt;thead&gt;
-      &lt;tr class="clickable" rel="#index-nav"&gt;
-        &lt;th&gt;Aksjefond&lt;/th&gt;
-        &lt;th class=&quot;text-right&quot;&gt;Forvaltningshonorar&lt;/th&gt;
-        &lt;th class=&quot;text-right&quot;&gt;Andre gebyrer&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr class="clickable" rel="#index-nav"&gt;
-        &lt;td&gt;Storebrand Barnespar&lt;/td&gt;
-        &lt;td class=&quot;text-right&quot;&gt;1,50%&lt;/td&gt;
-        &lt;td class=&quot;text-right&quot;&gt;0&lt;/td&gt;
-        ...
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-          </pre>
+    <h3 class="top-margin-40">Sortable table</h3>
+    <p>
+      When using tables, we typically want them to be sortable in various ways. This is done with <a href="http://github.hubspot.com/sortable/">sortable</a> by adding the data attribute "data-sortable" to the table tag. The table will be sorted upon page loading, but you can re-sort tables by calling "Sortable.init()" or "Sortable.initTable('#yourtableID')".
+    </p>
+    <p>
+      If you want to sort a column based on a different value than what is displayed, you can do this by adding a data-value attribute to the td tags. You can disable sorting of a column by adding "data-sortable='false'" to the corresponding th tag. 
+    </p>
+    <p>
+      Sorting can be done by three default types; alpha, numeric and date; add this to the corresponding th tag: "data-sortable-type='numeric'". You can also define custom sorting.
+    </p>
+    <p>
+      You decide how a table initially is sorted, and how, by adding data-sorted and data-sorted-direction attributes to the corresponding th tag, see example below.
+    </p>
+    <div class="table-responsive">
+      <table class="stb-table sortable-theme-minimal" data-sortable>
+        <thead>
+          <tr>
+            <th data-sorted="true" data-sorted-direction="ascending">Aksjefond</th>
+            <th class="text-right">Forvaltningshonorar</th>
+            <th class="text-right">Andre gebyrer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Storebrand Good Stuff</td>
+            <td class="text-right">2,25%</td>
+            <td class="text-right">Nei</td>
+          </tr>
+          <tr>
+            <td>Storebrand Pretty Good Stuff</td>
+            <td class="text-right">1,50%</td>
+            <td class="text-right">Ja</td>
+          </tr>
+          <tr>
+            <td>Storebrand Whatever</td>
+            <td class="text-right">0,50%</td>
+            <td class="text-right">Kanskje</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
 </div> <!-- /Tables row -->
 
-<hr class="top-margin-30" />
+<hr class="top-margin-10" />
 
 <!-- List Group Row -->
 <div class="row">
