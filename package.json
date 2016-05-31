@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/storebrand/storebrand.ny",
   "scripts": {
+    "prepublish": "grunt dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
